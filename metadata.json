@@ -1,0 +1,7 @@
+{
+  "name": "Aplikasi Hapalan Jepang",
+  "description": "Aplikasi belajar dan hapalan bahasa Jepang interaktif dengan Kanji N5/N4, Kosakata JLPT, Frasa, audio pelafalan, Flashcards, kuis, dan kanvas latihan menulis Kanji.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
