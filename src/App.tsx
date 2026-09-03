@@ -305,7 +305,7 @@ export default function App() {
       <footer className="border-t border-slate-200/80 bg-white py-4 text-center text-xs text-slate-400">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p>
-            Aplikasi Hapalan Jepang &copy; {new Date().getFullYear()} &bull; Didesain untuk Pembelajar Bahasa Jepang
+            日本語 ケラス &copy; {new Date().getFullYear()} &bull; Didesain untuk Pembelajar Bahasa Jepang
           </p>
           <div className="flex items-center gap-3 text-slate-500 font-medium">
             <span>Kanji N5 & N4 (210)</span>

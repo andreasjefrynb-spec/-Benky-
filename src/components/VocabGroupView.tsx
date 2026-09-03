@@ -8,8 +8,7 @@ import {
   Layers, 
   BookOpen, 
   Sparkles,
-  CheckCircle2,
-  Star
+  CheckCircle2
 } from 'lucide-react';
 import { CardItem, UserItemProgress } from '../types';
 import { soundManager } from '../utils/audio';
@@ -309,8 +308,8 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
           </div>
         </div>
 
-        {/* Group Shortcut Quick Jump Bar */}
-        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 text-xs">
+        {/* Group Shortcut Quick Jump Bar - Ditumpuk 2 Baris */}
+        <div className="grid grid-rows-2 grid-flow-col auto-cols-max gap-1.5 overflow-x-auto no-scrollbar py-1 text-xs">
           <button
             onClick={() => scrollToGroup('all')}
             className={`px-3 py-1.5 rounded-xl font-bold whitespace-nowrap transition-all cursor-pointer ${
@@ -444,7 +443,6 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                     {group.cards.map((card) => {
                       const itemProg = progress[card.id];
                       const isMastered = itemProg?.status === 'mastered';
-                      const isFav = !!itemProg?.isFavorite;
 
                       return (
                         <div
@@ -508,7 +506,7 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                             )}
                           </div>
 
-                          {/* Card Bottom: Audio Pronounce & Favorite */}
+                          {/* Card Bottom: Audio Pronounce */}
                           <div className="flex items-center justify-between pt-2">
                             <button
                               onClick={() => playWordAudio(card.japanese)}
@@ -518,20 +516,6 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                               <Volume2 className="w-4 h-4" />
                               <span className="text-[11px]">Audio</span>
                             </button>
-
-                            {onToggleFavorite && (
-                              <button
-                                onClick={() => onToggleFavorite(card.id)}
-                                className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
-                                  isFav
-                                    ? 'text-amber-500 hover:text-amber-600 bg-amber-50'
-                                    : 'text-slate-300 hover:text-slate-500 hover:bg-slate-50'
-                                }`}
-                                title={isFav ? 'Hapus dari favorit' : 'Tandai favorit'}
-                              >
-                                <Star className={`w-4 h-4 ${isFav ? 'fill-amber-400' : ''}`} />
-                              </button>
-                            )}
                           </div>
                         </div>
                       );

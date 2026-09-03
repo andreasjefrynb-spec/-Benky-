@@ -22,21 +22,13 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Brand Logo & Name */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-red-600 text-white flex items-center justify-center font-bold text-xl shadow-md shadow-rose-200">
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-rose-500 to-red-600 text-white flex items-center justify-center font-bold text-2xl shadow-md shadow-rose-200 shrink-0">
             日
           </div>
           <div>
-            <div className="flex items-center gap-1.5">
-              <h1 className="text-lg font-extrabold text-slate-800 tracking-tight">
-                NihonGo!
-              </h1>
-              <span className="px-1.5 py-0.5 text-[10px] font-bold bg-rose-50 text-rose-700 rounded-md border border-rose-200">
-                Hapalan Jepang
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-500 hidden sm:block">
-              Belajar Hiragana, Katakana, Kanji & Kosakata
-            </p>
+            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 font-jp tracking-wider leading-none">
+              日本語 ケラス
+            </h1>
           </div>
         </div>
 
