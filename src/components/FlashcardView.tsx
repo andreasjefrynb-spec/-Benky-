@@ -194,7 +194,6 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
         <button
           onClick={() => {
             setSelectedSubCategory('all');
-            setStatusFilter('all');
             setLevelFilter('all');
             setSearchQuery('');
           }}
