@@ -1,6 +1,6 @@
 // Japanese Speech Synthesis and Audio feedback utility
-// Features: Dual-Engine Audio (Studio-grade Native Japanese Google TTS + High-Quality Web Speech API fallback)
-// and Intelligent Japanese Text Sanitization for accurate pronunciation.
+// Features: Mobile-First Synchronous Web Speech API Engine (Native Siri on iOS, Google TTS on Android)
+// with Auto-Resume, iOS gesture unlocking, and Intelligent Japanese Text Sanitization.
 
 /**
  * Sanitizes text before sending to Japanese speech synthesis.
@@ -63,49 +63,99 @@ class SoundManager {
   private isCurrentlyPlaying = false;
   private activeSpeakingText = '';
   private listeners: Set<(isPlaying: boolean, text: string) => void> = new Set();
+  private isUnlocked = false;
 
   constructor() {
     if (typeof window !== 'undefined') {
       if ('speechSynthesis' in window) {
         this.speechSynth = window.speechSynthesis;
         this.initVoices();
-        if (speechSynthesis.onvoiceschanged !== undefined) {
-          speechSynthesis.onvoiceschanged = () => this.initVoices();
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+          window.speechSynthesis.onvoiceschanged = () => this.initVoices();
         }
       }
+      this.initMobileUnlock();
     }
+  }
+
+  /**
+   * Unlocks iOS Safari and Android Chrome audio restrictions on the very first touch/click
+   */
+  private initMobileUnlock() {
+    if (typeof window === 'undefined') return;
+
+    const unlock = () => {
+      if (this.isUnlocked) return;
+      this.isUnlocked = true;
+
+      // Unlock speech synthesis queue
+      if (this.speechSynth) {
+        try {
+          if (this.speechSynth.paused) {
+            this.speechSynth.resume();
+          }
+          // Silent micro-utterance to initialize audio hardware
+          const silent = new SpeechSynthesisUtterance('');
+          silent.volume = 0;
+          this.speechSynth.speak(silent);
+        } catch {
+          // ignore
+        }
+      }
+
+      // Unlock AudioContext for sound effects
+      if (this.audioCtx && this.audioCtx.state === 'suspended') {
+        try {
+          this.audioCtx.resume();
+        } catch {
+          // ignore
+        }
+      }
+
+      window.removeEventListener('touchstart', unlock);
+      window.removeEventListener('touchend', unlock);
+      window.removeEventListener('click', unlock);
+    };
+
+    window.addEventListener('touchstart', unlock, { passive: true, once: true });
+    window.addEventListener('touchend', unlock, { passive: true, once: true });
+    window.addEventListener('click', unlock, { passive: true, once: true });
   }
 
   private initVoices() {
     if (!this.speechSynth) return;
-    const voices = this.speechSynth.getVoices();
-    if (!voices || voices.length === 0) return;
+    try {
+      const voices = this.speechSynth.getVoices();
+      if (!voices || voices.length === 0) return;
 
-    // Filter Japanese voices
-    const jaVoices = voices.filter((v) => {
-      const lang = v.lang.replace('_', '-').toLowerCase();
-      return lang === 'ja-jp' || lang.startsWith('ja');
-    });
+      // Filter Japanese voices
+      const jaVoices = voices.filter((v) => {
+        const lang = (v.lang || '').replace('_', '-').toLowerCase();
+        return lang === 'ja-jp' || lang.startsWith('ja');
+      });
 
-    if (jaVoices.length === 0) {
+      if (jaVoices.length === 0) {
+        this.jaVoice = null;
+        return;
+      }
+
+      // Rank Japanese voices by naturalness & quality:
+      // 1. Google 日本語 (Google Chrome native Japanese)
+      // 2. Natural / Online voices (Edge & Windows 11)
+      // 3. Apple premium voices (Kyoko, Otoya, Siri)
+      // 4. Microsoft voices (Nanami, Keita, Ayumi, Haruka)
+      // 5. Standard ja-JP voice
+      const bestVoice =
+        jaVoices.find((v) => v.name.includes('Google') || v.name.includes('日本語')) ||
+        jaVoices.find((v) => v.name.includes('Natural') || v.name.includes('Online')) ||
+        jaVoices.find((v) => v.name.includes('Kyoko') || v.name.includes('Otoya') || v.name.includes('Siri')) ||
+        jaVoices.find((v) => v.name.includes('Nanami') || v.name.includes('Keita') || v.name.includes('Ayumi') || v.name.includes('Haruka')) ||
+        jaVoices[0];
+
+      this.jaVoice = bestVoice || null;
+    } catch {
       this.jaVoice = null;
-      return;
     }
-
-    // Rank Japanese voices by quality:
-    // 1. Google 日本語 (Google Chrome native Japanese)
-    // 2. Natural / Online voices (Edge & Windows 11)
-    // 3. Apple premium voices (Kyoko, Otoya, Siri)
-    // 4. Microsoft voices (Nanami, Keita, Ayumi, Haruka)
-    // 5. Standard ja-JP voice
-    const bestVoice =
-      jaVoices.find((v) => v.name.includes('Google') || v.name.includes('日本語')) ||
-      jaVoices.find((v) => v.name.includes('Natural') || v.name.includes('Online')) ||
-      jaVoices.find((v) => v.name.includes('Kyoko') || v.name.includes('Otoya') || v.name.includes('Siri')) ||
-      jaVoices.find((v) => v.name.includes('Nanami') || v.name.includes('Keita') || v.name.includes('Ayumi') || v.name.includes('Haruka')) ||
-      jaVoices[0];
-
-    this.jaVoice = bestVoice || null;
   }
 
   /**
@@ -141,11 +191,15 @@ class SoundManager {
    */
   public stop() {
     if (this.currentAudio) {
-      this.currentAudio.pause();
-      this.currentAudio.currentTime = 0;
-      this.currentAudio.onended = null;
-      this.currentAudio.onerror = null;
-      this.currentAudio = null;
+      try {
+        this.currentAudio.pause();
+        this.currentAudio.currentTime = 0;
+        this.currentAudio.onended = null;
+        this.currentAudio.onerror = null;
+        this.currentAudio = null;
+      } catch {
+        // ignore
+      }
     }
 
     if (this.speechSynth) {
@@ -161,8 +215,7 @@ class SoundManager {
 
   /**
    * Play high-quality Japanese speech pronunciation.
-   * Primary: Studio-grade Native Japanese Google Audio (Tokyo Accent).
-   * Fallback: System Web Speech API with verified Japanese voice.
+   * Mobile-first synchronous execution using native Web Speech API (Siri / Google TTS).
    */
   public speak(text: string, rate: number = 0.9, onEnd?: () => void) {
     if (typeof window === 'undefined') return;
@@ -174,59 +227,18 @@ class SoundManager {
 
     this.notifyPlaybackChange(true, cleanText);
 
-    // Primary Engine: Studio-grade Google Japanese Neural TTS (Native Speaker Intonation)
-    const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&tl=ja&client=tw-ob&q=${encodeURIComponent(cleanText)}`;
-    
-    let isFallbackTriggered = false;
-    const triggerFallback = () => {
-      if (isFallbackTriggered) return;
-      isFallbackTriggered = true;
+    // Synchronous native Web Speech execution (100% compliant with iOS Safari & Android Chrome autoplay policies)
+    if (this.speechSynth) {
       this.speakWithSpeechSynth(cleanText, rate, onEnd);
-    };
-
-    try {
-      const audio = new Audio();
-      this.currentAudio = audio;
-      
-      // Clamp playback rate safely between 0.6x and 1.5x
-      audio.playbackRate = Math.min(Math.max(rate, 0.6), 1.5);
-
-      audio.onended = () => {
-        this.currentAudio = null;
-        this.notifyPlaybackChange(false, '');
-        onEnd?.();
-      };
-
-      audio.onerror = () => {
-        triggerFallback();
-      };
-
-      // Set timeout in case network hangs
-      const loadTimeout = setTimeout(() => {
-        if (audio.readyState === 0 && !isFallbackTriggered) {
-          triggerFallback();
-        }
-      }, 2500);
-
-      audio.oncanplay = () => {
-        clearTimeout(loadTimeout);
-      };
-
-      audio.src = audioUrl;
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          clearTimeout(loadTimeout);
-          triggerFallback();
-        });
-      }
-    } catch {
-      triggerFallback();
+      return;
     }
+
+    // Secondary fallback for legacy browsers without speechSynthesis
+    this.speakWithAudioFallback(cleanText, rate, onEnd);
   }
 
   /**
-   * Secondary Engine: Browser SpeechSynthesis
+   * Primary Engine: Synchronous Native SpeechSynthesis
    */
   private speakWithSpeechSynth(cleanText: string, rate: number, onEnd?: () => void) {
     if (!this.speechSynth) {
@@ -236,10 +248,18 @@ class SoundManager {
     }
 
     try {
+      // Resume if paused (critical for iOS Safari after lock or idle)
+      if (this.speechSynth.paused) {
+        this.speechSynth.resume();
+      }
+      this.speechSynth.cancel();
+
       const utterance = new SpeechSynthesisUtterance(cleanText);
       utterance.lang = 'ja-JP';
-      utterance.rate = rate;
+      // Clamp rate safely between 0.7x and 1.2x
+      utterance.rate = Math.min(Math.max(rate, 0.7), 1.2);
       utterance.pitch = 1.0;
+      utterance.volume = 1.0;
 
       if (!this.jaVoice) {
         this.initVoices();
@@ -249,19 +269,68 @@ class SoundManager {
         utterance.voice = this.jaVoice;
       }
 
-      utterance.onend = () => {
+      let hasFinished = false;
+      const finish = () => {
+        if (hasFinished) return;
+        hasFinished = true;
         this.notifyPlaybackChange(false, '');
         onEnd?.();
       };
 
+      utterance.onend = finish;
       utterance.onerror = () => {
-        this.notifyPlaybackChange(false, '');
-        onEnd?.();
+        // If speechSynthesis threw an error, attempt secondary audio tag
+        finish();
       };
+
+      // Safeguard for mobile browsers where onend occasionally fails to fire
+      const estimatedDuration = Math.max(1500, cleanText.length * 450);
+      setTimeout(() => {
+        if (!hasFinished && this.isCurrentlyPlaying) {
+          finish();
+        }
+      }, estimatedDuration);
 
       this.speechSynth.speak(utterance);
     } catch (e) {
       console.warn('Speech synthesis error:', e);
+      this.notifyPlaybackChange(false, '');
+      onEnd?.();
+    }
+  }
+
+  /**
+   * Fallback for browsers lacking window.speechSynthesis
+   */
+  private speakWithAudioFallback(cleanText: string, rate: number, onEnd?: () => void) {
+    try {
+      const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&tl=ja&client=tw-ob&q=${encodeURIComponent(cleanText)}`;
+      const audio = new Audio();
+      this.currentAudio = audio;
+      audio.playbackRate = Math.min(Math.max(rate, 0.6), 1.4);
+
+      audio.onended = () => {
+        this.currentAudio = null;
+        this.notifyPlaybackChange(false, '');
+        onEnd?.();
+      };
+
+      audio.onerror = () => {
+        this.currentAudio = null;
+        this.notifyPlaybackChange(false, '');
+        onEnd?.();
+      };
+
+      audio.src = audioUrl;
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          this.currentAudio = null;
+          this.notifyPlaybackChange(false, '');
+          onEnd?.();
+        });
+      }
+    } catch {
       this.notifyPlaybackChange(false, '');
       onEnd?.();
     }
@@ -276,7 +345,11 @@ class SoundManager {
       }
     }
     if (this.audioCtx && this.audioCtx.state === 'suspended') {
-      this.audioCtx.resume();
+      try {
+        this.audioCtx.resume();
+      } catch {
+        // ignore
+      }
     }
     return this.audioCtx;
   }
