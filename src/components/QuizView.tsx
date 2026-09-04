@@ -35,6 +35,13 @@ export const QuizView: React.FC<QuizViewProps> = ({
   const [answersHistory, setAnswersHistory] = useState<
     { question: QuizQuestion; userAnswer: string; isCorrect: boolean }[]
   >([]);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+
+  useEffect(() => {
+    return soundManager.onPlaybackChange((playing) => {
+      setIsPlayingAudio(playing);
+    });
+  }, []);
 
   // Check if cardPool has cards with N5/N4/N3 levels
   const hasLevelTags = cardPool.some((c) => c.level === 'N5' || c.level === 'N4' || c.level === 'N3');
@@ -61,7 +68,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
     // If first question is audio, play it
     if (qList[0]?.type === 'audio') {
       setTimeout(() => {
-        soundManager.speak(qList[0].item.kanji || qList[0].item.japanese, speechRate);
+        soundManager.speak(qList[0].item.furigana || qList[0].item.kanji || qList[0].item.japanese, speechRate);
       }, 300);
     }
   };
@@ -75,7 +82,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
   // Auto-play audio when question is of type 'audio'
   useEffect(() => {
     if (currentQ?.type === 'audio' && !isAnswered) {
-      soundManager.speak(currentQ.item.kanji || currentQ.item.japanese, speechRate);
+      soundManager.speak(currentQ.item.furigana || currentQ.item.kanji || currentQ.item.japanese, speechRate);
     }
   }, [currentIndex, currentQ, isAnswered, speechRate]);
 
@@ -421,14 +428,19 @@ export const QuizView: React.FC<QuizViewProps> = ({
         {currentQ.type === 'audio' ? (
           <div className="my-4 flex flex-col items-center">
             <button
-              onClick={() => soundManager.speak(currentQ.item.kanji || currentQ.item.japanese, speechRate)}
-              className="w-20 h-20 rounded-full bg-rose-500 hover:bg-rose-600 text-white flex items-center justify-center shadow-lg shadow-rose-200 hover:scale-105 active:scale-95 transition-all cursor-pointer mb-2"
-              title="Putar Suara"
+              id="quiz-audio-play-btn"
+              onClick={() => soundManager.speak(currentQ.item.furigana || currentQ.item.kanji || currentQ.item.japanese, speechRate)}
+              className={`w-20 h-20 rounded-full text-white flex items-center justify-center shadow-lg transition-all cursor-pointer mb-2 select-none ${
+                isPlayingAudio
+                  ? 'bg-rose-600 scale-110 ring-4 ring-rose-200 animate-pulse shadow-rose-300'
+                  : 'bg-rose-500 hover:bg-rose-600 shadow-rose-200 hover:scale-105 active:scale-95'
+              }`}
+              title="Putar Suara Bahasa Jepang"
             >
               <Volume2 className="w-9 h-9" />
             </button>
             <p className="text-xs font-bold text-slate-500">
-              Ketuk untuk mendengarkan pelafalannya
+              {isPlayingAudio ? 'Sedang memutar suara...' : 'Ketuk untuk mendengarkan pelafalannya'}
             </p>
           </div>
         ) : (

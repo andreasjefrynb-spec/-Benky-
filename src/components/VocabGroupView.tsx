@@ -308,8 +308,8 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
           </div>
         </div>
 
-        {/* Group Shortcut Quick Jump Bar - Ditumpuk 2 Baris */}
-        <div className="grid grid-rows-2 grid-flow-col auto-cols-max gap-1.5 overflow-x-auto no-scrollbar py-1 text-xs">
+        {/* Group Shortcut Quick Jump Bar - Flex Wrap Responsive */}
+        <div className="flex flex-wrap items-center gap-1.5 py-1 text-xs">
           <button
             onClick={() => scrollToGroup('all')}
             className={`px-3 py-1.5 rounded-xl font-bold whitespace-nowrap transition-all cursor-pointer ${
@@ -500,10 +500,17 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                               {card.meaningId}
                             </div>
                             {card.exampleJp && (
-                              <div className="mt-1.5 p-2 bg-slate-50 rounded-xl text-[11px] text-slate-600 border border-slate-100">
-                                <p className="font-medium text-slate-700">
-                                  {card.exampleJp}
-                                </p>
+                              <div
+                                onClick={() => playWordAudio(card.exampleJp!)}
+                                className="mt-1.5 p-2 bg-slate-50 hover:bg-rose-50/50 rounded-xl text-[11px] text-slate-600 border border-slate-100 hover:border-rose-200 transition-all cursor-pointer group/ex select-none active:scale-[0.99]"
+                                title="Klik untuk mendengarkan contoh kalimat"
+                              >
+                                <div className="flex items-center justify-between gap-1">
+                                  <p className="font-medium text-slate-700 font-jp">
+                                    {card.exampleJp}
+                                  </p>
+                                  <Volume2 className="w-3 h-3 text-slate-400 group-hover/ex:text-rose-500 shrink-0 transition-colors" />
+                                </div>
                                 {card.exampleId && (
                                   <p className="text-slate-400 mt-0.5 text-[10px]">
                                     {card.exampleId}
@@ -516,9 +523,9 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                           {/* Card Bottom: Audio Pronounce */}
                           <div className="flex items-center justify-between pt-2">
                             <button
-                              onClick={() => playWordAudio(card.japanese)}
-                              className="flex items-center gap-1.5 text-xs font-bold text-rose-600 hover:text-rose-700 p-1.5 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer"
-                              title="Dengarkan pelafalan bahasa Jepang"
+                              onClick={() => playWordAudio(card.furigana || card.japanese)}
+                              className="flex items-center gap-1.5 text-xs font-bold text-rose-600 hover:text-rose-700 p-1.5 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer select-none active:scale-95"
+                              title="Dengarkan pelafalan bahasa Jepang asli"
                             >
                               <Volume2 className="w-4 h-4" />
                               <span className="text-[11px]">Audio</span>

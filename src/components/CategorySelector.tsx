@@ -21,22 +21,22 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
   }[] = [
     {
       id: 'kanji',
-      title: 'Kanji N5-N3',
-      sub: 'Aksara N5, N4 & N3',
+      title: 'Kanji',
+      sub: 'Aksara N5–N3',
       badge: '漢',
       icon: '㊗️',
     },
     {
       id: 'vocab',
       title: 'Kosakata',
-      sub: 'JLPT N5-N3',
+      sub: 'JLPT N5–N3',
       badge: '語',
       icon: '📖',
     },
     {
       id: 'phrases',
       title: 'Frasa & Pola',
-      sub: 'Percakapan N5-N3',
+      sub: 'Percakapan N5–N3',
       badge: '話',
       icon: '💬',
     },
@@ -81,6 +81,17 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
                   : 'bg-white text-slate-700 border-slate-200/90 hover:border-rose-200 hover:bg-rose-50/30'
               }`}
             >
+              {/* Count Badge in top-right corner */}
+              <span
+                className={`absolute top-2 right-2 text-[10px] px-1.5 py-0.5 rounded-md font-extrabold leading-none ${
+                  isActive
+                    ? 'bg-white/25 text-white'
+                    : 'bg-slate-100 text-slate-600 group-hover:bg-rose-100 group-hover:text-rose-700'
+                }`}
+              >
+                {count}
+              </span>
+
               {/* Badge Icon */}
               <div
                 className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold text-base transition-colors shrink-0 ${
@@ -92,24 +103,13 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
                 {cat.badge}
               </div>
 
-              {/* Title & Count */}
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center justify-between gap-1">
-                  <span className="text-xs sm:text-sm font-bold tracking-tight truncate">
-                    {cat.title}
-                  </span>
-                  <span
-                    className={`text-[10px] px-1.5 py-0.5 rounded-md font-bold shrink-0 ${
-                      isActive
-                        ? 'bg-white/25 text-white'
-                        : 'bg-slate-100 text-slate-600'
-                    }`}
-                  >
-                    {count}
-                  </span>
-                </div>
+              {/* Title & Sub */}
+              <div className="min-w-0 flex-1 pr-6">
+                <span className="block text-xs sm:text-sm font-bold tracking-tight whitespace-nowrap leading-tight">
+                  {cat.title}
+                </span>
                 <p
-                  className={`text-[10px] truncate mt-0.5 ${
+                  className={`text-[10px] truncate mt-0.5 leading-tight ${
                     isActive ? 'text-rose-100 font-medium' : 'text-slate-400'
                   }`}
                 >

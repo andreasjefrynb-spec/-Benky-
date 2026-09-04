@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Volume2, PlusCircle } from 'lucide-react';
 import { soundManager } from '../utils/audio';
 
@@ -13,6 +13,14 @@ export const Navbar: React.FC<NavbarProps> = ({
   speechRate,
   onToggleSpeechRate,
 }) => {
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+
+  useEffect(() => {
+    return soundManager.onPlaybackChange((playing) => {
+      setIsPlayingAudio(playing);
+    });
+  }, []);
+
   const handleTestAudio = () => {
     soundManager.speak('日本語の勉強を始めましょう', speechRate);
   };
@@ -53,12 +61,16 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             id="audio-test-btn"
             onClick={handleTestAudio}
-            className="hidden sm:inline-flex min-h-[40px] px-2.5 py-1.5 text-slate-600 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition-colors cursor-pointer items-center gap-1 text-xs font-bold"
-            title="Tes Suara Bahasa Jepang"
+            className={`hidden sm:inline-flex min-h-[40px] px-2.5 py-1.5 rounded-xl transition-all cursor-pointer items-center gap-1.5 text-xs font-bold select-none ${
+              isPlayingAudio
+                ? 'bg-rose-50 text-rose-600 border border-rose-200 ring-2 ring-rose-100 animate-pulse'
+                : 'text-slate-600 hover:text-rose-600 hover:bg-rose-50'
+            }`}
+            title="Tes Suara Bahasa Jepang Asli (Tokyo Accent)"
             aria-label="Tes suara pelafalan"
           >
-            <Volume2 className="w-4 h-4 text-slate-500" />
-            <span className="hidden md:inline">Tes Audio</span>
+            <Volume2 className={`w-4 h-4 ${isPlayingAudio ? 'text-rose-600 animate-bounce' : 'text-slate-500'}`} />
+            <span className="hidden md:inline">{isPlayingAudio ? 'Memutar...' : 'Tes Audio'}</span>
           </button>
 
           {/* Add Custom Flashcard Button */}

@@ -205,9 +205,9 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
 
           <div className="flex items-center gap-2">
             <button
-              onClick={() => soundManager.speak(selectedCard.kanji || selectedCard.japanese, speechRate)}
-              className="p-2 text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
-              title="Dengarkan Suara"
+              onClick={() => soundManager.speak(selectedCard.furigana || selectedCard.kanji || selectedCard.japanese, speechRate)}
+              className="p-2 text-rose-600 hover:bg-rose-50 rounded-lg transition-colors cursor-pointer select-none active:scale-95"
+              title="Dengarkan Suara Asli"
             >
               <Volume2 className="w-4 h-4" />
             </button>

@@ -38,6 +38,21 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
   const [levelFilter, setLevelFilter] = useState<'all' | 'N5' | 'N4' | 'N3'>(initialLevel);
   const [searchQuery, setSearchQuery] = useState('');
   const [shuffledCards, setShuffledCards] = useState<CardItem[]>(cards);
+  const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+
+  // Subscribe to audio playback state for visual feedback
+  useEffect(() => {
+    return soundManager.onPlaybackChange((playing) => {
+      setIsPlayingAudio(playing);
+    });
+  }, []);
+
+  const handleSpeakCurrentCard = useCallback((card: CardItem | null) => {
+    if (!card) return;
+    // Prefer clean furigana reading or kanji or character
+    const textToSpeak = card.furigana || card.kanji || card.japanese;
+    soundManager.speak(textToSpeak, speechRate);
+  }, [speechRate]);
 
   // Check if current cards collection has level tags (e.g. N5 / N4 / N3)
   const hasLevelTags = cards.some(c => c.level === 'N5' || c.level === 'N4' || c.level === 'N3');
@@ -246,7 +261,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
   const progressPercent = Math.round(((currentIndex + 1) / filteredCards.length) * 100);
 
   return (
-    <div className="flex flex-col items-center w-full max-w-2xl mx-auto">
+    <div className="flex flex-col items-center w-full max-w-3xl mx-auto">
       {/* Search & Filters Header */}
       <div className="w-full flex flex-col gap-2.5 mb-5">
         {/* Search Bar & Level Filter */}
@@ -300,15 +315,15 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
           )}
         </div>
 
-        {/* Subcategory Pills - Ditumpuk 2 Baris */}
+        {/* Subcategory Pills - Flex Wrap Responsive */}
         {availableSubCats.length > 0 && (
-          <div className="grid grid-rows-2 grid-flow-col auto-cols-max gap-1.5 overflow-x-auto no-scrollbar py-1">
+          <div className="flex flex-wrap items-center gap-1.5 py-1">
             <button
               onClick={() => {
                 setSelectedSubCategory('all');
                 setCurrentIndex(0);
               }}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all shrink-0 cursor-pointer whitespace-nowrap ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap select-none ${
                 selectedSubCategory === 'all'
                   ? 'bg-slate-800 text-white shadow-xs'
                   : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
@@ -323,7 +338,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                   setSelectedSubCategory(sub);
                   setCurrentIndex(0);
                 }}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all shrink-0 cursor-pointer whitespace-nowrap ${
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap select-none ${
                   selectedSubCategory === sub
                     ? 'bg-rose-600 text-white shadow-xs'
                     : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
@@ -395,9 +410,14 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
               <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
                 {/* Audio button */}
                 <button
-                  onClick={() => soundManager.speak(currentCard.kanji || currentCard.japanese, speechRate)}
-                  className="p-2.5 rounded-full bg-rose-50 text-rose-600 hover:bg-rose-100 hover:scale-105 active:scale-95 transition-all shadow-xs cursor-pointer"
-                  title="Putar Audio Pelafalan"
+                  id="flashcard-audio-front"
+                  onClick={() => handleSpeakCurrentCard(currentCard)}
+                  className={`p-2.5 rounded-full transition-all shadow-xs cursor-pointer select-none ${
+                    isPlayingAudio
+                      ? 'bg-rose-500 text-white scale-110 ring-4 ring-rose-200 animate-pulse'
+                      : 'bg-rose-50 text-rose-600 hover:bg-rose-100 hover:scale-105 active:scale-95'
+                  }`}
+                  title="Putar Audio Pelafalan Asli"
                   aria-label="Putar audio"
                 >
                   <Volume2 className="w-5 h-5" />
@@ -455,9 +475,15 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
               <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
                 <button
-                  onClick={() => soundManager.speak(currentCard.kanji || currentCard.japanese, speechRate)}
-                  className="p-2 rounded-full bg-rose-50 text-rose-600 hover:bg-rose-100 transition-colors"
-                  title="Dengarkan kembali"
+                  id="flashcard-audio-back"
+                  onClick={() => handleSpeakCurrentCard(currentCard)}
+                  className={`p-2 rounded-full transition-colors cursor-pointer select-none ${
+                    isPlayingAudio
+                      ? 'bg-rose-500 text-white ring-2 ring-rose-300 animate-pulse'
+                      : 'bg-rose-50 text-rose-600 hover:bg-rose-100'
+                  }`}
+                  title="Dengarkan kembali pelafalan utama"
+                  aria-label="Putar ulang audio"
                 >
                   <Volume2 className="w-4 h-4" />
                 </button>
@@ -476,18 +502,38 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 </h4>
               </div>
 
-              {/* Onyomi & Kunyomi if Kanji */}
+              {/* Onyomi & Kunyomi with Audio if Kanji */}
               {(currentCard.onyomi || currentCard.kunyomi) && (
                 <div className="flex flex-wrap justify-center gap-2 text-xs font-medium text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-200/60 w-full max-w-md">
                   {currentCard.onyomi && (
-                    <div>
-                      <span className="text-rose-600 font-bold">On:</span> {currentCard.onyomi}
-                    </div>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        soundManager.speak(currentCard.onyomi!, speechRate);
+                      }}
+                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white hover:bg-rose-50 border border-slate-200/80 hover:border-rose-200 rounded-lg text-slate-700 transition-all cursor-pointer select-none active:scale-95 shadow-2xs"
+                      title="Klik untuk mendengarkan bacaan On-yomi (Katakana)"
+                    >
+                      <span className="text-rose-600 font-extrabold">On:</span>
+                      <span className="font-semibold">{currentCard.onyomi}</span>
+                      <Volume2 className="w-3.5 h-3.5 text-rose-500 shrink-0" />
+                    </button>
                   )}
                   {currentCard.kunyomi && (
-                    <div>
-                      <span className="text-indigo-600 font-bold">Kun:</span> {currentCard.kunyomi}
-                    </div>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        soundManager.speak(currentCard.kunyomi!, speechRate);
+                      }}
+                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white hover:bg-indigo-50 border border-slate-200/80 hover:border-indigo-200 rounded-lg text-slate-700 transition-all cursor-pointer select-none active:scale-95 shadow-2xs"
+                      title="Klik untuk mendengarkan bacaan Kun-yomi (Hiragana)"
+                    >
+                      <span className="text-indigo-600 font-extrabold">Kun:</span>
+                      <span className="font-semibold">{currentCard.kunyomi}</span>
+                      <Volume2 className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
+                    </button>
                   )}
                 </div>
               )}
