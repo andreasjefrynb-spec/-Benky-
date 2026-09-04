@@ -24,7 +24,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
   speechRate,
   onCompleteQuiz,
 }) => {
-  const [levelFilter, setLevelFilter] = useState<'all' | 'N5' | 'N4'>('all');
+  const [levelFilter, setLevelFilter] = useState<'all' | 'N5' | 'N4' | 'N3'>('all');
   const [countMode, setCountMode] = useState<'all' | 10 | 25 | 50 | 100>('all');
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,8 +36,8 @@ export const QuizView: React.FC<QuizViewProps> = ({
     { question: QuizQuestion; userAnswer: string; isCorrect: boolean }[]
   >([]);
 
-  // Check if cardPool has cards with N5/N4 levels
-  const hasLevelTags = cardPool.some((c) => c.level === 'N5' || c.level === 'N4');
+  // Check if cardPool has cards with N5/N4/N3 levels
+  const hasLevelTags = cardPool.some((c) => c.level === 'N5' || c.level === 'N4' || c.level === 'N3');
 
   // Filter pool based on level
   const effectivePool = useMemo(() => {
@@ -115,6 +115,34 @@ export const QuizView: React.FC<QuizViewProps> = ({
     const totalGuessed = answersHistory.length;
     onCompleteQuiz(score, totalGuessed > 0 ? totalGuessed : 1);
   };
+
+  // Keyboard navigation for desktop users (1-4, A-D, Enter/Space)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+
+      if (!isAnswered && currentQ) {
+        let selectedIdx = -1;
+        if (e.key === '1' || e.key.toLowerCase() === 'a') selectedIdx = 0;
+        else if (e.key === '2' || e.key.toLowerCase() === 'b') selectedIdx = 1;
+        else if (e.key === '3' || e.key.toLowerCase() === 'c') selectedIdx = 2;
+        else if (e.key === '4' || e.key.toLowerCase() === 'd') selectedIdx = 3;
+
+        if (selectedIdx >= 0 && selectedIdx < currentQ.options.length) {
+          e.preventDefault();
+          handleSelectOption(currentQ.options[selectedIdx]);
+        }
+      } else if (isAnswered) {
+        if (e.key === 'Enter' || e.code === 'Space') {
+          e.preventDefault();
+          handleNext();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isAnswered, currentQ, currentIndex, questions.length]);
 
   if (!currentQ || questions.length === 0) {
     return (
@@ -261,7 +289,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold text-slate-500">Level:</span>
             <div className="flex items-center bg-slate-100 p-1 rounded-xl">
-              {(['all', 'N5', 'N4'] as const).map((lvl) => (
+              {(['all', 'N5', 'N4', 'N3'] as const).map((lvl) => (
                 <button
                   key={lvl}
                   id={`quiz-level-${lvl}`}
@@ -421,7 +449,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
         </h3>
 
         {/* Options Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 mb-5 text-left">
           {currentQ.options.map((option, idx) => {
             const isSelected = selectedAnswer === option;
             const isCorrectAnswer = option === currentQ.correctAnswer;
@@ -441,23 +469,32 @@ export const QuizView: React.FC<QuizViewProps> = ({
             return (
               <button
                 key={idx}
+                id={`quiz-opt-${idx}`}
                 disabled={isAnswered}
                 onClick={() => handleSelectOption(option)}
-                className={`w-full p-4 rounded-2xl border text-sm sm:text-base font-semibold transition-all duration-200 flex items-center justify-between cursor-pointer ${btnStyle}`}
+                className={`w-full min-h-[52px] sm:min-h-[56px] p-3.5 sm:p-4 rounded-2xl border text-sm sm:text-base font-semibold transition-all duration-200 flex items-center justify-between cursor-pointer select-none active:scale-[0.98] ${btnStyle}`}
               >
-                <div className="flex items-center gap-3">
-                  <span className="w-7 h-7 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-xs font-bold text-slate-600 shrink-0">
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="w-7 h-7 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-xs font-bold text-slate-600 shrink-0 shadow-2xs">
                     {String.fromCharCode(65 + idx)}
                   </span>
-                  <span className="font-jp">{option}</span>
+                  <span className="font-jp truncate">{option}</span>
                 </div>
 
-                {isAnswered && isCorrectAnswer && (
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
-                )}
-                {isAnswered && isSelected && !isCorrectAnswer && (
-                  <XCircle className="w-5 h-5 text-rose-600 shrink-0" />
-                )}
+                <div className="flex items-center gap-2 shrink-0">
+                  {/* Keyboard shortcut hint on desktop */}
+                  {!isAnswered && (
+                    <span className="hidden sm:inline text-[10px] text-slate-400 font-mono bg-white px-1.5 py-0.5 rounded border border-slate-200">
+                      [{idx + 1}]
+                    </span>
+                  )}
+                  {isAnswered && isCorrectAnswer && (
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+                  )}
+                  {isAnswered && isSelected && !isCorrectAnswer && (
+                    <XCircle className="w-5 h-5 text-rose-600 shrink-0" />
+                  )}
+                </div>
               </button>
             );
           })}
@@ -481,13 +518,19 @@ export const QuizView: React.FC<QuizViewProps> = ({
 
             <button
               onClick={handleNext}
-              className="w-full sm:w-auto px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer shrink-0"
+              className="w-full sm:w-auto min-h-[44px] px-6 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0 select-none active:scale-95"
             >
               <span>{currentIndex < questions.length - 1 ? 'Kata Berikutnya' : 'Lihat Hasil'}</span>
+              <span className="text-[10px] text-slate-400 font-normal hidden sm:inline">[Enter]</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </motion.div>
         )}
+      </div>
+
+      {/* Helper info on PC */}
+      <div className="text-center text-xs text-slate-400 font-medium hidden sm:block">
+        Tekan angka <kbd className="px-1.5 py-0.5 bg-white border border-slate-200 rounded text-slate-600 font-mono text-[10px]">1</kbd>-<kbd className="px-1.5 py-0.5 bg-white border border-slate-200 rounded text-slate-600 font-mono text-[10px]">4</kbd> atau <kbd className="px-1.5 py-0.5 bg-white border border-slate-200 rounded text-slate-600 font-mono text-[10px]">A</kbd>-<kbd className="px-1.5 py-0.5 bg-white border border-slate-200 rounded text-slate-600 font-mono text-[10px]">D</kbd> untuk memilih &amp; <kbd className="px-1.5 py-0.5 bg-white border border-slate-200 rounded text-slate-600 font-mono text-[10px]">Enter</kbd> untuk lanjut
       </div>
     </div>
   );

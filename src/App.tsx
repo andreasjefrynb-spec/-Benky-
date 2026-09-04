@@ -48,7 +48,7 @@ export default function App() {
   const [writingTargetCard, setWritingTargetCard] = useState<CardItem | null>(null);
   const [vocabGroupTarget, setVocabGroupTarget] = useState<{
     subCategory: string;
-    level: 'all' | 'N5' | 'N4';
+    level: 'all' | 'N5' | 'N4' | 'N3';
   } | null>(null);
 
   // Initialize data from localStorage on mount
@@ -194,8 +194,8 @@ export default function App() {
     };
   }, [customCards.length]);
 
-  // Show chart option for Vocabulary Groups
-  const showChartOption = activeCategory === 'vocab';
+  // Show chart option for Vocabulary Groups or Kana character tables
+  const showChartOption = activeCategory === 'vocab' || activeCategory === 'hiragana' || activeCategory === 'katakana';
 
   // If user is on chart mode and switches to a category without chart, fallback to flashcard
   useEffect(() => {
@@ -204,9 +204,9 @@ export default function App() {
     }
   }, [activeCategory, showChartOption, studyMode]);
 
-  // If user is on writing mode and switches to a category other than kanji, fallback to flashcard
+  // If user is on writing mode and switches to a category other than kanji, hiragana, katakana, fallback to flashcard
   useEffect(() => {
-    if (studyMode === 'writing' && activeCategory !== 'kanji') {
+    if (studyMode === 'writing' && activeCategory !== 'kanji' && activeCategory !== 'hiragana' && activeCategory !== 'katakana') {
       setStudyMode('flashcard');
     }
   }, [activeCategory, studyMode]);
@@ -308,11 +308,11 @@ export default function App() {
             日本語 ケラス &copy; {new Date().getFullYear()} &bull; Didesain untuk Pembelajar Bahasa Jepang
           </p>
           <div className="flex items-center gap-3 text-slate-500 font-medium">
-            <span>Kanji N5 & N4 (210)</span>
+            <span>Kanji JLPT N5-N3</span>
             <span>&bull;</span>
-            <span>1.350+ Kosakata (N5 & N4)</span>
+            <span>1.400+ Kosakata (N5-N3)</span>
             <span>&bull;</span>
-            <span>Frasa N5 & N4</span>
+            <span>Frasa & Tata Bahasa N5-N3</span>
           </div>
         </div>
       </footer>

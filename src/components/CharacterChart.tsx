@@ -52,11 +52,11 @@ export const CharacterChart: React.FC<CharacterChartProps> = ({
         </div>
 
         {/* Sub-tabs */}
-        <div className="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl">
+        <div className="flex flex-wrap sm:flex-nowrap items-center gap-1.5 bg-slate-100 p-1 rounded-xl">
           <button
             id="tab-gojuon"
             onClick={() => setTab('gojuon')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+            className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer select-none text-center ${
               tab === 'gojuon'
                 ? 'bg-white text-slate-900 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900'
@@ -67,18 +67,18 @@ export const CharacterChart: React.FC<CharacterChartProps> = ({
           <button
             id="tab-dakuon"
             onClick={() => setTab('dakuon')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+            className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer select-none text-center ${
               tab === 'dakuon'
                 ? 'bg-white text-slate-900 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            Tenten & Maru (Dakuon)
+            Tenten &amp; Maru (Dakuon)
           </button>
           <button
             id="tab-yoon"
             onClick={() => setTab('yoon')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+            className={`flex-1 sm:flex-none px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer select-none text-center ${
               tab === 'yoon'
                 ? 'bg-white text-slate-900 shadow-xs'
                 : 'text-slate-600 hover:text-slate-900'

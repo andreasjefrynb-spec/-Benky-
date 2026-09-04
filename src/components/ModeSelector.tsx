@@ -38,7 +38,7 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
       label: chartLabel,
       icon: ChartIcon,
       description: isVocab
-        ? 'Daftar kosakata terkelompok N5 & N4'
+        ? 'Daftar kosakata terkelompok N5, N4 & N3'
         : 'Bagan lengkap karakter & audio cepat',
       enabled: showChartOption || isVocab,
     },
@@ -54,12 +54,12 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
       label: 'Latihan Tulis',
       icon: PenTool,
       description: 'Kanvas menulis karakter dengan jari/mouse',
-      enabled: activeCategory === 'kanji',
+      enabled: activeCategory === 'kanji' || activeCategory === 'hiragana' || activeCategory === 'katakana',
     },
   ];
 
   return (
-    <div className="bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/80 flex flex-wrap sm:flex-nowrap gap-1">
+    <div className="bg-slate-100/90 p-1.5 rounded-2xl border border-slate-200/80 grid grid-cols-2 sm:flex sm:flex-nowrap gap-1.5 shadow-2xs">
       {modes
         .filter((m) => m.enabled)
         .map((m) => {
@@ -71,14 +71,14 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
               key={m.id}
               id={`mode-btn-${m.id}`}
               onClick={() => onSelectMode(m.id)}
-              className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-2 px-3 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer ${
+              className={`flex-1 min-h-[44px] sm:min-h-[42px] flex items-center justify-center gap-2 py-2 px-3 rounded-xl font-bold text-xs sm:text-sm transition-all duration-150 cursor-pointer select-none active:scale-98 ${
                 isActive
-                  ? 'bg-white text-slate-900 shadow-sm border border-slate-200/60'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
+                  ? 'bg-white text-slate-900 shadow-sm border border-slate-200/80 ring-1 ring-slate-900/5'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
               }`}
             >
-              <Icon className={`w-4 h-4 ${isActive ? 'text-rose-600' : 'text-slate-500'}`} />
-              <span>{m.label}</span>
+              <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-rose-600' : 'text-slate-500'}`} />
+              <span className="truncate">{m.label}</span>
             </button>
           );
         })}

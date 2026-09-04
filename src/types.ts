@@ -48,6 +48,7 @@ export type SubCategory =
   | 'darurat'
   | 'tata_bahasa_n5'
   | 'tata_bahasa_n4'
+  | 'tata_bahasa_n3'
   | 'percakapan_harian'
   | 'bisnis_sopan'
   // General
@@ -68,7 +69,7 @@ export interface CardItem {
   onyomi?: string;         // For Kanji
   kunyomi?: string;        // For Kanji
   strokes?: number;        // Stroke count
-  level?: 'N5' | 'N4' | 'Dasar' | 'Lanjutan';
+  level?: 'N5' | 'N4' | 'N3' | 'Dasar' | 'Lanjutan';
   isCustom?: boolean;
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "日本語 ケラス",
-  "description": "Aplikasi belajar dan hapalan bahasa Jepang interaktif dengan Kanji N5/N4, Kosakata JLPT, Frasa, audio pelafalan, Flashcards, kuis, dan kanvas latihan menulis Kanji.",
+  "description": "Aplikasi belajar dan hapalan bahasa Jepang interaktif lengkap tingkat JLPT N5 hingga N3 (Kanji, Kosakata, Frasa & Tata Bahasa), audio pelafalan, Flashcards, kuis cerdas, dan kanvas latihan menulis Kanji.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

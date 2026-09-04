@@ -17,7 +17,7 @@ interface VocabGroupViewProps {
   cards: CardItem[];
   progress: Record<string, UserItemProgress>;
   speechRate: number;
-  onStartFlashcard: (subCategory: string, level: 'all' | 'N5' | 'N4') => void;
+  onStartFlashcard: (subCategory: string, level: 'all' | 'N5' | 'N4' | 'N3') => void;
   onToggleFavorite?: (cardId: string) => void;
 }
 
@@ -130,7 +130,7 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
   onStartFlashcard,
   onToggleFavorite,
 }) => {
-  const [levelFilter, setLevelFilter] = useState<'all' | 'N5' | 'N4'>('all');
+  const [levelFilter, setLevelFilter] = useState<'all' | 'N5' | 'N4' | 'N3'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({
     kata_kerja: true,
@@ -251,10 +251,10 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
             </p>
           </div>
 
-          {/* Level Filter (Semua, N5, N4) */}
+          {/* Level Filter (Semua, N5, N4, N3) */}
           <div className="flex items-center bg-slate-100 p-1 rounded-2xl self-start md:self-auto border border-slate-200/60 shadow-2xs">
             <span className="text-xs font-bold text-slate-500 px-2.5">Level JLPT:</span>
-            {(['all', 'N5', 'N4'] as const).map((lvl) => (
+            {(['all', 'N5', 'N4', 'N3'] as const).map((lvl) => (
               <button
                 key={lvl}
                 id={`filter-level-${lvl}`}
@@ -370,6 +370,7 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
           const isExpanded = !!expandedGroups[group.key];
           const n5Count = group.cards.filter((c) => c.level === 'N5').length;
           const n4Count = group.cards.filter((c) => c.level === 'N4').length;
+          const n3Count = group.cards.filter((c) => c.level === 'N3').length;
 
           return (
             <div
@@ -405,9 +406,13 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                   {/* Word Count Badges */}
                   <div className="flex items-center gap-1.5 text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl">
                     <span>{group.cards.length} kata</span>
-                    {(n5Count > 0 || n4Count > 0) && (
+                    {(n5Count > 0 || n4Count > 0 || n3Count > 0) && (
                       <span className="text-[10px] text-slate-400 font-normal">
-                        ({n5Count > 0 ? `N5: ${n5Count}` : ''}{n5Count > 0 && n4Count > 0 ? ', ' : ''}{n4Count > 0 ? `N4: ${n4Count}` : ''})
+                        ({[
+                          n5Count > 0 && `N5: ${n5Count}`,
+                          n4Count > 0 && `N4: ${n4Count}`,
+                          n3Count > 0 && `N3: ${n3Count}`,
+                        ].filter(Boolean).join(', ')})
                       </span>
                     )}
                   </div>
@@ -470,10 +475,12 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                             <div className="flex items-center gap-1.5 shrink-0">
                               {card.level && (
                                 <span
-                                  className={`px-2 py-0.5 text-[10px] font-extrabold rounded-md ${
+                                  className={`px-2 py-0.5 text-[10px] font-extrabold rounded-md border ${
                                     card.level === 'N5'
-                                      ? 'bg-sky-50 text-sky-700 border border-sky-200'
-                                      : 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                                      ? 'bg-sky-50 text-sky-700 border-sky-200'
+                                      : card.level === 'N4'
+                                      ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                      : 'bg-purple-50 text-purple-700 border-purple-200'
                                   }`}
                                 >
                                   {card.level}

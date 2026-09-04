@@ -31,6 +31,7 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
   const [brushWidth, setBrushWidth] = useState(8);
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [strokesHistory, setStrokesHistory] = useState<ImageData[]>([]);
 
@@ -46,20 +47,37 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
     clearCanvas();
   }, [selectedCard]);
 
-  // Set up canvas resolution
-  useEffect(() => {
+  // Set up high-DPI canvas resolution with ResizeObserver
+  const initCanvasResolution = () => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const container = containerRef.current;
+    if (!canvas || !container) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set internal dimensions for sharp high-DPI displays
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * 2;
-    canvas.height = rect.height * 2;
-    ctx.scale(2, 2);
+    const rect = container.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) return;
+
+    const dpr = Math.max(window.devicePixelRatio || 2, 2);
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.scale(dpr, dpr);
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
+  };
+
+  useEffect(() => {
+    initCanvasResolution();
+
+    const container = containerRef.current;
+    if (!container) return;
+
+    const resizeObserver = new ResizeObserver(() => {
+      initCanvasResolution();
+    });
+
+    resizeObserver.observe(container);
+    return () => resizeObserver.disconnect();
   }, []);
 
   const getCoordinates = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
@@ -67,18 +85,25 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
     if (!canvas) return { x: 0, y: 0 };
     const rect = canvas.getBoundingClientRect();
 
-    if ('touches' in e) {
+    if ('touches' in e && e.touches.length > 0) {
       const touch = e.touches[0];
       return {
         x: touch.clientX - rect.left,
         y: touch.clientY - rect.top,
       };
-    } else {
+    } else if ('changedTouches' in e && e.changedTouches.length > 0) {
+      const touch = e.changedTouches[0];
+      return {
+        x: touch.clientX - rect.left,
+        y: touch.clientY - rect.top,
+      };
+    } else if ('clientX' in e) {
       return {
         x: e.clientX - rect.left,
         y: e.clientY - rect.top,
       };
     }
+    return { x: 0, y: 0 };
   };
 
   const startDrawing = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
@@ -202,7 +227,10 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
         </div>
 
         {/* CANVAS CONTAINER WITH JAPANESE PRACTICE GRID (十字格) */}
-        <div className="relative w-full aspect-square max-w-[360px] sm:max-w-[380px] bg-[#fffdfa] rounded-3xl border-2 border-slate-300 shadow-md overflow-hidden select-none touch-none">
+        <div
+          ref={containerRef}
+          className="relative w-full aspect-square max-w-[340px] sm:max-w-[380px] bg-[#fffdfa] rounded-3xl border-2 border-slate-300 shadow-md overflow-hidden select-none touch-none"
+        >
           {/* Authentic Cross Grid Lines */}
           <div className="absolute inset-0 pointer-events-none">
             {/* Center Vertical Line */}
@@ -219,7 +247,7 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
           {/* Ghost Guide Character (Watermark) */}
           {showGuide && (
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-              <span className="font-jp text-[160px] sm:text-[180px] font-bold text-rose-500/18 leading-none">
+              <span className="font-jp text-[150px] sm:text-[180px] font-bold text-rose-500/18 leading-none">
                 {selectedCard.japanese}
               </span>
             </div>
@@ -235,12 +263,12 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
             onTouchStart={startDrawing}
             onTouchMove={draw}
             onTouchEnd={stopDrawing}
-            className="relative z-10 w-full h-full cursor-crosshair"
+            className="relative z-10 w-full h-full cursor-crosshair touch-none select-none"
           />
         </div>
 
         {/* Canvas Tools Toolbar */}
-        <div className="w-full max-w-[380px] mt-4 flex items-center justify-between gap-2 p-2 bg-white rounded-2xl border border-slate-200 shadow-xs">
+        <div className="w-full max-w-[380px] mt-4 flex items-center justify-between gap-1.5 p-2 bg-white rounded-2xl border border-slate-200 shadow-xs">
           {/* Color buttons */}
           <div className="flex items-center gap-1.5">
             {[
@@ -251,11 +279,12 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
               <button
                 key={c.color}
                 onClick={() => setBrushColor(c.color)}
-                className={`w-6 h-6 rounded-full transition-transform cursor-pointer ${
-                  brushColor === c.color ? 'scale-125 ring-2 ring-offset-1 ring-slate-400' : 'hover:scale-110'
+                className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full transition-transform cursor-pointer flex items-center justify-center ${
+                  brushColor === c.color ? 'scale-115 ring-2 ring-offset-1 ring-slate-500' : 'hover:scale-105 active:scale-95'
                 }`}
                 style={{ backgroundColor: c.color }}
                 title={c.label}
+                aria-label={`Pilih warna ${c.label}`}
               />
             ))}
           </div>
@@ -270,9 +299,9 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
               <button
                 key={s.size}
                 onClick={() => setBrushWidth(s.size)}
-                className={`px-2 py-1 text-[11px] font-bold rounded-md cursor-pointer transition-colors ${
+                className={`px-2.5 py-1.5 text-xs font-bold rounded-xl cursor-pointer transition-colors ${
                   brushWidth === s.size
-                    ? 'bg-slate-800 text-white'
+                    ? 'bg-slate-900 text-white shadow-2xs'
                     : 'text-slate-600 hover:bg-slate-100'
                 }`}
               >
@@ -286,14 +315,15 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
             <button
               onClick={handleUndo}
               disabled={strokesHistory.length === 0}
-              className="p-2 text-slate-600 hover:text-slate-900 disabled:opacity-30 disabled:cursor-not-allowed rounded-lg hover:bg-slate-100 cursor-pointer"
+              className="p-2 text-slate-600 hover:text-slate-900 disabled:opacity-30 disabled:cursor-not-allowed rounded-xl hover:bg-slate-100 cursor-pointer min-h-[38px] min-w-[38px] flex items-center justify-center"
               title="Kembalikan coretan sebelumnya (Undo)"
+              aria-label="Undo goresan"
             >
               <RotateCcw className="w-4 h-4" />
             </button>
             <button
               onClick={clearCanvas}
-              className="px-2.5 py-1 text-xs font-bold text-rose-600 hover:bg-rose-50 rounded-lg cursor-pointer transition-colors"
+              className="px-3 py-1.5 text-xs font-bold text-rose-600 hover:bg-rose-50 rounded-xl cursor-pointer transition-colors min-h-[38px]"
             >
               Hapus
             </button>
@@ -304,17 +334,17 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
         <div className="w-full max-w-[380px] mt-3 flex items-center justify-between gap-3">
           <button
             onClick={handlePrev}
-            className="flex-1 py-2 px-3 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 rounded-xl text-xs font-bold flex items-center justify-center gap-1 transition-all cursor-pointer"
+            className="flex-1 min-h-[44px] py-2.5 px-3 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 active:bg-slate-100 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 shadow-2xs transition-all cursor-pointer select-none"
           >
             <ChevronLeft className="w-4 h-4" />
             <span>Sebelumnya</span>
           </button>
-          <span className="text-xs font-semibold text-slate-500">
+          <span className="text-xs font-bold text-slate-500 font-mono">
             {currentIndex + 1} / {cards.length}
           </span>
           <button
             onClick={handleNext}
-            className="flex-1 py-2 px-3 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 rounded-xl text-xs font-bold flex items-center justify-center gap-1 transition-all cursor-pointer"
+            className="flex-1 min-h-[44px] py-2.5 px-3 bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 active:bg-slate-100 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 shadow-2xs transition-all cursor-pointer select-none"
           >
             <span>Berikutnya</span>
             <ChevronRight className="w-4 h-4" />

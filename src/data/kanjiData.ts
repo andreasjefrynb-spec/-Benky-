@@ -1,7 +1,8 @@
 import { CardItem } from '../types';
+import { kanjiN3Data } from './kanjiN3Data';
 
-// Koleksi Kanji Lengkap JLPT N5 & N4 (210 Kanji)
-export const kanjiData: CardItem[] = [
+// Koleksi Kanji Lengkap JLPT N5 & N4
+const kanjiN5N4Data: CardItem[] = [
   {
     "id": "kj-一",
     "category": "kanji",
@@ -3153,6 +3154,9 @@ export const kanjiData: CardItem[] = [
     "level": "N4"
   }
 ];
+
+// Koleksi Kanji Lengkap JLPT N5, N4 & N3
+export const kanjiData: CardItem[] = [...kanjiN5N4Data, ...kanjiN3Data];
 
 // Alias untuk backwards compatibility
 export const kanjiN5Data = kanjiData;

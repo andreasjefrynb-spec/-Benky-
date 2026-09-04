@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Volume2,
@@ -22,7 +22,7 @@ interface FlashcardViewProps {
   onToggleFavorite?: (id: string) => void;
   speechRate: number;
   initialSubCategory?: string;
-  initialLevel?: 'all' | 'N5' | 'N4';
+  initialLevel?: 'all' | 'N5' | 'N4' | 'N3';
 }
 
 export const FlashcardView: React.FC<FlashcardViewProps> = ({
@@ -35,12 +35,12 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>(initialSubCategory);
-  const [levelFilter, setLevelFilter] = useState<'all' | 'N5' | 'N4'>(initialLevel);
+  const [levelFilter, setLevelFilter] = useState<'all' | 'N5' | 'N4' | 'N3'>(initialLevel);
   const [searchQuery, setSearchQuery] = useState('');
   const [shuffledCards, setShuffledCards] = useState<CardItem[]>(cards);
 
-  // Check if current cards collection has level tags (e.g. N5 / N4)
-  const hasLevelTags = cards.some(c => c.level === 'N5' || c.level === 'N4');
+  // Check if current cards collection has level tags (e.g. N5 / N4 / N3)
+  const hasLevelTags = cards.some(c => c.level === 'N5' || c.level === 'N4' || c.level === 'N3');
 
   // Filter cards based on subcategory, level, and search query
   const filteredCards = shuffledCards.filter((card) => {
@@ -113,6 +113,43 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
     setCurrentIndex(0);
   };
 
+  // Touch swipe support for mobile (HP)
+  const touchStartXRef = useRef<number | null>(null);
+  const touchStartYRef = useRef<number | null>(null);
+  const isSwipeRef = useRef<boolean>(false);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+    touchStartYRef.current = e.touches[0].clientY;
+    isSwipeRef.current = false;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartXRef.current === null || touchStartYRef.current === null) return;
+    const diffX = e.changedTouches[0].clientX - touchStartXRef.current;
+    const diffY = e.changedTouches[0].clientY - touchStartYRef.current;
+
+    // Detect intentional horizontal swipe (> 45px threshold)
+    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 45) {
+      isSwipeRef.current = true;
+      if (diffX < 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+    touchStartXRef.current = null;
+    touchStartYRef.current = null;
+  };
+
+  const handleCardClick = () => {
+    if (isSwipeRef.current) {
+      isSwipeRef.current = false;
+      return;
+    }
+    handleFlip();
+  };
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -173,6 +210,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
       case 'darurat': return 'Darurat & Medis';
       case 'tata_bahasa_n5': return 'Pola Tata Bahasa N5';
       case 'tata_bahasa_n4': return 'Pola Tata Bahasa N4';
+      case 'tata_bahasa_n3': return 'Pola Tata Bahasa N3';
       case 'percakapan_harian': return 'Percakapan Sehari-hari';
       case 'bisnis_sopan': return 'Etiket Kerja & Bisnis';
       default: return sub;
@@ -239,10 +277,10 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
             )}
           </div>
 
-          {/* Level Filter (if cards have N5/N4 level tags) */}
+          {/* Level Filter (if cards have N5/N4/N3 level tags) */}
           {hasLevelTags && (
             <div className="flex items-center bg-white border border-slate-200 rounded-xl p-0.5 text-xs font-semibold shadow-2xs shrink-0">
-              {(['all', 'N5', 'N4'] as const).map((lvl) => (
+              {(['all', 'N5', 'N4', 'N3'] as const).map((lvl) => (
                 <button
                   key={lvl}
                   onClick={() => {
@@ -332,10 +370,12 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
       </div>
 
       {/* 3D FLASHCARD CONTAINER */}
-      <div className="w-full h-[360px] sm:h-[400px] perspective-1000 select-none mb-6">
+      <div className="w-full h-[360px] sm:h-[400px] md:h-[420px] perspective-1000 select-none mb-5">
         <motion.div
           id="flashcard-element"
-          onClick={handleFlip}
+          onClick={handleCardClick}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
           className="relative w-full h-full cursor-pointer transform-style-3d duration-500 rounded-3xl shadow-lg border border-slate-200/90"
           animate={{ rotateY: isFlipped ? 180 : 0 }}
           transition={{ duration: 0.45, ease: 'easeOut' }}
@@ -505,15 +545,15 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
       </div>
 
       {/* FLASHCARD CONTROLS: PREV, FLIP, NEXT */}
-      <div className="w-full flex items-center justify-between gap-2.5 sm:gap-4 mb-4">
+      <div className="w-full flex items-center justify-between gap-2 sm:gap-4 mb-3">
         <button
           id="btn-prev-card"
           onClick={handlePrev}
           disabled={filteredCards.length <= 1}
-          className="flex-1 py-3.5 px-3 sm:px-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 sm:gap-2 shadow-xs active:scale-98 transition-all cursor-pointer"
-          title="Kartu Sebelumnya (Panah Kiri)"
+          className="flex-1 min-h-[48px] sm:min-h-[52px] py-3 px-3 sm:px-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 sm:gap-2 shadow-xs active:scale-95 transition-all cursor-pointer select-none"
+          title="Kartu Sebelumnya (Panah Kiri / Geser Kanan)"
         >
-          <ChevronLeft className="w-4 h-4" />
+          <ChevronLeft className="w-4 h-4 shrink-0" />
           <span>Sebelumnya</span>
           <span className="text-[11px] text-slate-400 font-normal hidden md:inline">[←]</span>
         </button>
@@ -521,10 +561,10 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
         <button
           id="btn-flip-card"
           onClick={handleFlip}
-          className="flex-1 py-3.5 px-4 sm:px-6 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md active:scale-98 transition-all cursor-pointer"
-          title="Balik Kartu (Spasi)"
+          className="flex-1 min-h-[48px] sm:min-h-[52px] py-3 px-4 sm:px-6 rounded-2xl bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md active:scale-95 transition-all cursor-pointer select-none"
+          title="Balik Kartu (Spasi / Ketuk Kartu)"
         >
-          <RotateCw className="w-4 h-4" />
+          <RotateCw className="w-4 h-4 shrink-0" />
           <span>Balik Kartu</span>
           <span className="text-[11px] text-slate-400 font-normal hidden sm:inline">[Spasi]</span>
         </button>
@@ -533,18 +573,23 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
           id="btn-next-card"
           onClick={handleNext}
           disabled={filteredCards.length <= 1}
-          className="flex-1 py-3.5 px-3 sm:px-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 sm:gap-2 shadow-xs active:scale-98 transition-all cursor-pointer"
-          title="Kartu Berikutnya (Panah Kanan)"
+          className="flex-1 min-h-[48px] sm:min-h-[52px] py-3 px-3 sm:px-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 sm:gap-2 shadow-xs active:scale-95 transition-all cursor-pointer select-none"
+          title="Kartu Berikutnya (Panah Kanan / Geser Kiri)"
         >
           <span>Berikutnya</span>
           <span className="text-[11px] text-slate-400 font-normal hidden md:inline">[→]</span>
-          <ChevronRight className="w-4 h-4" />
+          <ChevronRight className="w-4 h-4 shrink-0" />
         </button>
       </div>
 
-      {/* Keyboard Shortcut Hint */}
-      <div className="text-center text-xs text-slate-400 font-medium">
-        Gunakan tombol <kbd className="px-1.5 py-0.5 bg-slate-100 border border-slate-200 rounded text-slate-600 font-mono text-[10px]">Spasi</kbd> untuk membalik &amp; tombol panah <kbd className="px-1.5 py-0.5 bg-slate-100 border border-slate-200 rounded text-slate-600 font-mono text-[10px]">←</kbd> <kbd className="px-1.5 py-0.5 bg-slate-100 border border-slate-200 rounded text-slate-600 font-mono text-[10px]">→</kbd> untuk berganti kartu
+      {/* Keyboard Shortcut & Mobile Swipe Hint */}
+      <div className="text-center text-xs text-slate-400 font-medium select-none pt-1">
+        <span className="hidden sm:inline">
+          Gunakan tombol <kbd className="px-1.5 py-0.5 bg-slate-100 border border-slate-200 rounded text-slate-600 font-mono text-[10px]">Spasi</kbd> untuk membalik &amp; tombol panah <kbd className="px-1.5 py-0.5 bg-slate-100 border border-slate-200 rounded text-slate-600 font-mono text-[10px]">←</kbd> <kbd className="px-1.5 py-0.5 bg-slate-100 border border-slate-200 rounded text-slate-600 font-mono text-[10px]">→</kbd> untuk berganti kartu
+        </span>
+        <span className="sm:hidden text-[11px] text-slate-500 font-semibold flex items-center justify-center gap-1">
+          <span>👈 Geser kartu ke samping untuk ganti kartu &bull; Ketuk untuk membalik 👉</span>
+        </span>
       </div>
     </div>
   );

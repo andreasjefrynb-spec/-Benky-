@@ -23,6 +23,7 @@ export const CustomCardModal: React.FC<CustomCardModalProps> = ({
   const [exampleJp, setExampleJp] = useState('');
   const [exampleId, setExampleId] = useState('');
   const [mnemonic, setMnemonic] = useState('');
+  const [level, setLevel] = useState<'Dasar' | 'N5' | 'N4' | 'N3'>('Dasar');
   const [error, setError] = useState('');
 
   if (!isOpen) return null;
@@ -44,7 +45,7 @@ export const CustomCardModal: React.FC<CustomCardModalProps> = ({
       exampleId: exampleId.trim() || undefined,
       mnemonic: mnemonic.trim() || undefined,
       isCustom: true,
-      level: 'Dasar',
+      level,
     };
 
     onAddCard(newCard);
@@ -56,6 +57,7 @@ export const CustomCardModal: React.FC<CustomCardModalProps> = ({
     setExampleJp('');
     setExampleId('');
     setMnemonic('');
+    setLevel('Dasar');
     setError('');
   };
 
@@ -175,6 +177,28 @@ export const CustomCardModal: React.FC<CustomCardModalProps> = ({
                 placeholder="Tips asosiasi kata agar mudah diingat..."
                 className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-rose-500/20 focus:border-rose-500"
               />
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1">
+                Level / Kategori
+              </label>
+              <div className="grid grid-cols-4 gap-2">
+                {(['Dasar', 'N5', 'N4', 'N3'] as const).map((lvl) => (
+                  <button
+                    key={lvl}
+                    type="button"
+                    onClick={() => setLevel(lvl)}
+                    className={`py-2 text-xs font-bold rounded-xl border transition-all cursor-pointer ${
+                      level === lvl
+                        ? 'bg-rose-50 border-rose-400 text-rose-700 shadow-2xs'
+                        : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'
+                    }`}
+                  >
+                    {lvl}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <button
