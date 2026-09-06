@@ -445,9 +445,26 @@ export const QuizView: React.FC<QuizViewProps> = ({
           </div>
         ) : (
           <div className="my-4">
-            <div className="font-jp text-5xl sm:text-6xl font-black text-slate-900 tracking-normal drop-shadow-xs">
-              {currentQ.type === 'reverse' ? currentQ.item.meaningId : currentQ.item.japanese}
-            </div>
+            {(() => {
+              const promptText = currentQ.type === 'reverse' ? currentQ.item.meaningId : currentQ.item.japanese;
+              const len = promptText.length;
+              const sizeClass =
+                len <= 2
+                  ? 'text-5xl sm:text-6xl'
+                  : len <= 5
+                  ? 'text-3xl sm:text-4xl lg:text-5xl'
+                  : len <= 12
+                  ? 'text-2xl sm:text-3xl lg:text-4xl'
+                  : len <= 25
+                  ? 'text-xl sm:text-2xl'
+                  : 'text-base sm:text-lg md:text-xl';
+
+              return (
+                <div className={`font-jp ${sizeClass} font-black text-slate-900 tracking-normal drop-shadow-xs max-w-xl mx-auto break-words leading-snug`}>
+                  {promptText}
+                </div>
+              );
+            })()}
             {currentQ.subText && (
               <p className="text-xs text-slate-500 mt-2 font-medium">
                 {currentQ.subText}
@@ -484,16 +501,16 @@ export const QuizView: React.FC<QuizViewProps> = ({
                 id={`quiz-opt-${idx}`}
                 disabled={isAnswered}
                 onClick={() => handleSelectOption(option)}
-                className={`w-full min-h-[52px] sm:min-h-[56px] p-3.5 sm:p-4 rounded-2xl border text-sm sm:text-base font-semibold transition-all duration-200 flex items-center justify-between cursor-pointer select-none active:scale-[0.98] ${btnStyle}`}
+                className={`w-full min-h-[56px] sm:min-h-[60px] p-3.5 sm:p-4 rounded-2xl border text-sm sm:text-base font-semibold transition-all duration-200 flex items-start sm:items-center justify-between gap-3 cursor-pointer select-none active:scale-[0.98] ${btnStyle}`}
               >
-                <div className="flex items-center gap-3 min-w-0">
-                  <span className="w-7 h-7 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-xs font-bold text-slate-600 shrink-0 shadow-2xs">
+                <div className="flex items-start sm:items-center gap-3 min-w-0 flex-1">
+                  <span className="w-7 h-7 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-xs font-bold text-slate-600 shrink-0 shadow-2xs mt-0.5 sm:mt-0">
                     {String.fromCharCode(65 + idx)}
                   </span>
-                  <span className="font-jp truncate">{option}</span>
+                  <span className="font-jp text-left break-words leading-snug flex-1">{option}</span>
                 </div>
 
-                <div className="flex items-center gap-2 shrink-0">
+                <div className="flex items-center gap-2 shrink-0 self-center">
                   {/* Keyboard shortcut hint on desktop */}
                   {!isAnswered && (
                     <span className="hidden sm:inline text-[10px] text-slate-400 font-mono bg-white px-1.5 py-0.5 rounded border border-slate-200">

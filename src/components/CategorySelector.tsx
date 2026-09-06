@@ -41,6 +41,20 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
       icon: '💬',
     },
     {
+      id: 'particles',
+      title: 'Partikel',
+      sub: 'Tata Bahasa 助詞',
+      badge: '助',
+      icon: '📎',
+    },
+    {
+      id: 'conjugation',
+      title: 'Konjugasi',
+      sub: 'Perubahan Bentuk',
+      badge: '活',
+      icon: '🔄',
+    },
+    {
       id: 'hiragana',
       title: 'Hiragana',
       sub: '46 Aksara Dasar',
@@ -65,7 +79,7 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
 
   return (
     <div className="w-full py-1">
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5">
+      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-2.5">
         {categories.map((cat) => {
           const isActive = activeCategory === cat.id;
           const count = counts[cat.id] || 0;
@@ -104,14 +118,15 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
               </div>
 
               {/* Title & Sub */}
-              <div className="min-w-0 flex-1 pr-6">
+              <div className="min-w-0 flex-1 pr-5">
                 <span className="block text-xs sm:text-sm font-bold tracking-tight whitespace-nowrap leading-tight">
                   {cat.title}
                 </span>
                 <p
-                  className={`text-[10px] truncate mt-0.5 leading-tight ${
+                  className={`text-[10px] mt-0.5 leading-tight line-clamp-1 ${
                     isActive ? 'text-rose-100 font-medium' : 'text-slate-400'
                   }`}
+                  title={cat.sub}
                 >
                   {cat.sub}
                 </p>

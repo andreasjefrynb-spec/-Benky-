@@ -431,7 +431,17 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 key={currentCard.id}
                 initial={{ scale: 0.85, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                className="font-jp text-6xl sm:text-7xl lg:text-8xl font-black text-slate-900 tracking-normal drop-shadow-xs"
+                className={`font-jp font-black text-slate-900 tracking-normal drop-shadow-xs max-w-full break-words leading-tight ${
+                  currentCard.japanese.length <= 2
+                    ? 'text-5xl sm:text-7xl lg:text-8xl'
+                    : currentCard.japanese.length <= 4
+                    ? 'text-4xl sm:text-5xl lg:text-6xl'
+                    : currentCard.japanese.length <= 8
+                    ? 'text-2xl sm:text-3xl lg:text-4xl'
+                    : currentCard.japanese.length <= 15
+                    ? 'text-xl sm:text-2xl lg:text-3xl'
+                    : 'text-lg sm:text-xl lg:text-2xl'
+                }`}
               >
                 {currentCard.japanese}
               </motion.div>
@@ -491,13 +501,19 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
             </div>
 
             {/* Center Content: Meaning & Details */}
-            <div className="flex flex-col items-center justify-center my-auto text-center px-2 space-y-3 overflow-y-auto max-h-[220px] py-1">
+            <div className="flex flex-col items-center justify-center my-auto text-center px-2 space-y-3 overflow-y-auto max-h-[300px] sm:max-h-[340px] py-1">
               {/* Indonesian Meaning */}
               <div>
                 <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
                   Arti Bahasa Indonesia
                 </p>
-                <h4 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-0.5 leading-snug">
+                <h4 className={`font-extrabold text-slate-900 mt-0.5 leading-snug ${
+                  currentCard.meaningId.length > 50
+                    ? 'text-base sm:text-lg'
+                    : currentCard.meaningId.length > 25
+                    ? 'text-lg sm:text-xl md:text-2xl'
+                    : 'text-2xl sm:text-3xl'
+                }`}>
                   {currentCard.meaningId}
                 </h4>
               </div>

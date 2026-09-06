@@ -4,8 +4,23 @@ import { katakanaData } from './katakanaData';
 import { kanjiData, kanjiN5Data } from './kanjiData';
 import { vocabData } from './vocabData';
 import { phrasesData } from './phrasesData';
+import { particlesList, particleComparisons, particlesCardItems } from './particlesData';
+import { trapVerbsGodan, verbProfiles, conjugationCardItems } from './conjugationsData';
 
-export { hiraganaData, katakanaData, kanjiData, kanjiN5Data, vocabData, phrasesData };
+export {
+  hiraganaData,
+  katakanaData,
+  kanjiData,
+  kanjiN5Data,
+  vocabData,
+  phrasesData,
+  particlesList,
+  particleComparisons,
+  particlesCardItems,
+  trapVerbsGodan,
+  verbProfiles,
+  conjugationCardItems,
+};
 
 export function getAllBuiltInCards(): CardItem[] {
   return [
@@ -14,6 +29,8 @@ export function getAllBuiltInCards(): CardItem[] {
     ...kanjiData,
     ...vocabData,
     ...phrasesData,
+    ...particlesCardItems,
+    ...conjugationCardItems,
   ];
 }
 

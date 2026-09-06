@@ -8,6 +8,8 @@ import { QuizView } from './components/QuizView';
 import { WritingCanvas } from './components/WritingCanvas';
 import { CustomCardModal } from './components/CustomCardModal';
 import { VocabGroupView } from './components/VocabGroupView';
+import { ParticlesView } from './components/ParticlesView';
+import { ConjugationView } from './components/ConjugationView';
 import {
   MainCategory,
   StudyMode,
@@ -21,6 +23,8 @@ import {
   kanjiData,
   vocabData,
   phrasesData,
+  particlesCardItems,
+  conjugationCardItems,
   getCardsByCategory,
   getAllBuiltInCards,
 } from './data';
@@ -185,17 +189,24 @@ export default function App() {
   // Counts for categories
   const categoryCounts: Record<MainCategory, number> = useMemo(() => {
     return {
-      hiragana: hiraganaData.length,
-      katakana: katakanaData.length,
       kanji: kanjiData.length,
       vocab: vocabData.length,
       phrases: phrasesData.length,
+      particles: particlesCardItems.length,
+      conjugation: conjugationCardItems.length,
+      hiragana: hiraganaData.length,
+      katakana: katakanaData.length,
       custom: customCards.length,
     };
   }, [customCards.length]);
 
-  // Show chart option for Vocabulary Groups or Kana character tables
-  const showChartOption = activeCategory === 'vocab' || activeCategory === 'hiragana' || activeCategory === 'katakana';
+  // Show chart option for Vocabulary Groups, Kana character tables, Particles, and Conjugation
+  const showChartOption =
+    activeCategory === 'vocab' ||
+    activeCategory === 'hiragana' ||
+    activeCategory === 'katakana' ||
+    activeCategory === 'particles' ||
+    activeCategory === 'conjugation';
 
   // If user is on chart mode and switches to a category without chart, fallback to flashcard
   useEffect(() => {
@@ -209,6 +220,11 @@ export default function App() {
     if (studyMode === 'writing' && activeCategory !== 'kanji' && activeCategory !== 'hiragana' && activeCategory !== 'katakana') {
       setStudyMode('flashcard');
     }
+  }, [activeCategory, studyMode]);
+
+  // Scroll to top whenever category or study mode changes so the view is fresh and never scrolled under header
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [activeCategory, studyMode]);
 
   return (
@@ -230,6 +246,9 @@ export default function App() {
               setActiveCategory(cat);
               setWritingTargetCard(null);
               setVocabGroupTarget(null);
+              if (cat === 'particles' || cat === 'conjugation') {
+                setStudyMode('chart');
+              }
             }}
             counts={categoryCounts}
           />
@@ -283,6 +302,14 @@ export default function App() {
             />
           )}
 
+          {studyMode === 'chart' && activeCategory === 'particles' && (
+            <ParticlesView speechRate={speechRate} />
+          )}
+
+          {studyMode === 'chart' && activeCategory === 'conjugation' && (
+            <ConjugationView speechRate={speechRate} />
+          )}
+
           {studyMode === 'quiz' && (
             <QuizView
               cardPool={currentCategoryCards.length >= 4 ? currentCategoryCards : allCardsCombined}
@@ -307,12 +334,14 @@ export default function App() {
           <p>
             日本語 ケラス &copy; {new Date().getFullYear()} &bull; Didesain untuk Pembelajar Bahasa Jepang
           </p>
-          <div className="flex items-center gap-3 text-slate-500 font-medium">
+          <div className="flex items-center gap-3 text-slate-500 font-medium flex-wrap justify-center">
             <span>Kanji JLPT N5-N3</span>
             <span>&bull;</span>
             <span>1.400+ Kosakata (N5-N3)</span>
             <span>&bull;</span>
-            <span>Frasa & Tata Bahasa N5-N3</span>
+            <span>Partikel & Konjugasi Lengkap</span>
+            <span>&bull;</span>
+            <span>Audio Pelafalan Alami</span>
           </div>
         </div>
       </footer>

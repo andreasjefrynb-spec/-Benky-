@@ -376,7 +376,7 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
             <div
               key={group.key}
               id={`vocab-group-${group.key}`}
-              className="bg-white rounded-3xl border border-slate-200/90 shadow-xs overflow-hidden transition-all"
+              className="scroll-mt-24 bg-white rounded-3xl border border-slate-200/90 shadow-xs overflow-hidden transition-all"
             >
               {/* Group Header Card */}
               <div

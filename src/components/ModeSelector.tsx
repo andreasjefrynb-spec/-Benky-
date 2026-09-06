@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layers, Grid3X3, Award, PenTool, FolderTree } from 'lucide-react';
+import { Layers, Grid3X3, Award, PenTool, FolderTree, BookOpen, RefreshCw } from 'lucide-react';
 import { StudyMode, MainCategory } from '../types';
 
 interface ModeSelectorProps {
@@ -16,8 +16,26 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
   activeCategory,
 }) => {
   const isVocab = activeCategory === 'vocab';
-  const chartLabel = isVocab ? 'Kelompok Kosakata' : 'Tabel Karakter';
-  const ChartIcon = isVocab ? FolderTree : Grid3X3;
+  const isParticles = activeCategory === 'particles';
+  const isConjugation = activeCategory === 'conjugation';
+
+  let chartLabel = 'Tabel Karakter';
+  let ChartIcon = Grid3X3;
+  let chartDesc = 'Bagan lengkap karakter & audio cepat';
+
+  if (isVocab) {
+    chartLabel = 'Kelompok Kosakata';
+    ChartIcon = FolderTree;
+    chartDesc = 'Daftar kosakata terkelompok N5, N4 & N3';
+  } else if (isParticles) {
+    chartLabel = 'Bagan & Materi Partikel';
+    ChartIcon = BookOpen;
+    chartDesc = 'Panduan partikel, perbandingan は/が/に/で & latihan';
+  } else if (isConjugation) {
+    chartLabel = 'Simulator & Panduan Bentuk';
+    ChartIcon = RefreshCw;
+    chartDesc = '12 bentuk perubahan kata kerja/sifat & panduan golongan';
+  }
 
   const modes: {
     id: StudyMode;
@@ -37,10 +55,8 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
       id: 'chart',
       label: chartLabel,
       icon: ChartIcon,
-      description: isVocab
-        ? 'Daftar kosakata terkelompok N5, N4 & N3'
-        : 'Bagan lengkap karakter & audio cepat',
-      enabled: showChartOption || isVocab,
+      description: chartDesc,
+      enabled: showChartOption || isVocab || isParticles || isConjugation,
     },
     {
       id: 'quiz',
@@ -78,7 +94,7 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
               }`}
             >
               <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-rose-600' : 'text-slate-500'}`} />
-              <span className="truncate">{m.label}</span>
+              <span className="whitespace-nowrap sm:whitespace-normal text-center leading-tight">{m.label}</span>
             </button>
           );
         })}

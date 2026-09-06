@@ -28,11 +28,7 @@ export function cleanJapaneseText(raw: string): string {
   // Remove the parentheses containing romaji
   t = t.replace(/[\(（][^）\)]*[a-zA-Z/][^）\)]*[\)）]/g, ' ');
 
-  // Remove any remaining parentheses and bracket contents
-  t = t.replace(/[\(（][^）\)]*[\)）]/g, ' ');
-  t = t.replace(/\[.*?\]/g, ' ');
-
-  // Remove wave dashes / tildes e.g. "〜と 呼んでください" -> "と 呼んでください"
+  // Remove wave dashes / tildes e.g. "〜と 呼んでください" -> "と 呼んでください", "〜て" -> "て"
   t = t.replace(/[〜~]/g, '');
 
   // Remove middle dots used in readings e.g. "ひと・つ" -> "ひとつ", "ふた・つ" -> "ふたつ"
@@ -41,14 +37,24 @@ export function cleanJapaneseText(raw: string): string {
   // Remove quotation marks and special Japanese brackets
   t = t.replace(/[「」『』【】〔〕〈〉《》\"']/g, ' ');
 
-  // Remove stray latin letters, numbers, punctuation that would cause garbled pronunciation
-  t = t.replace(/[a-zA-Z0-9_\-\/\\:;*#@+=]/g, ' ');
+  // Remove remaining parentheses but preserve any Japanese characters inside them
+  t = t.replace(/[\(（]([^\)）]*)[\)）]/g, ' $1 ');
+  t = t.replace(/\[(.*?)\]/g, ' $1 ');
+
+  // Remove stray latin letters, symbols, punctuation that would cause garbled pronunciation
+  // KEEP numbers 0-9 so expressions like 5時 (goji) or 1000円 (sen'en) are pronounced naturally!
+  t = t.replace(/[a-zA-Z_\-\/\\:;*#@+=]/g, ' ');
 
   // Collapse multiple whitespaces
   t = t.replace(/\s+/g, ' ').trim();
 
-  // If cleaning resulted in empty string (e.g. input was only romaji), fallback to original trimmed
+  // If cleaning resulted in empty string (e.g. input was only latin title with Japanese brackets),
+  // extract any Japanese characters present in the original raw string
   if (!t && raw.trim()) {
+    const jpChars = raw.match(/[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]+/g);
+    if (jpChars && jpChars.length > 0) {
+      return jpChars.join(' ');
+    }
     return raw.trim().replace(/[〜~\[\]()]/g, '');
   }
 
@@ -60,6 +66,7 @@ class SoundManager {
   private jaVoice: SpeechSynthesisVoice | null = null;
   private audioCtx: AudioContext | null = null;
   private currentAudio: HTMLAudioElement | null = null;
+  private currentUtterance: SpeechSynthesisUtterance | null = null;
   private isCurrentlyPlaying = false;
   private activeSpeakingText = '';
   private listeners: Set<(isPlaying: boolean, text: string) => void> = new Set();
@@ -269,10 +276,13 @@ class SoundManager {
         utterance.voice = this.jaVoice;
       }
 
+      this.currentUtterance = utterance;
+
       let hasFinished = false;
       const finish = () => {
         if (hasFinished) return;
         hasFinished = true;
+        this.currentUtterance = null;
         this.notifyPlaybackChange(false, '');
         onEnd?.();
       };
@@ -435,6 +445,53 @@ class SoundManager {
     } catch {
       // ignore
     }
+  }
+
+  /**
+   * Aliases for intuitive API access across components
+   */
+  public speakJapanese(text: string, rate: number = 0.9, onEnd?: () => void) {
+    this.speak(text, rate, onEnd);
+  }
+
+  public playCorrect() {
+    this.playCorrectSound();
+  }
+
+  public playWrong() {
+    this.playWrongSound();
+  }
+
+  /**
+   * Plays a musical tone with marimba/bell envelope for song melodies
+   */
+  public playTone(freq: number, duration: number = 0.35, type: OscillatorType = 'triangle', volume: number = 0.18) {
+    const ctx = this.getAudioContext();
+    if (!ctx) return;
+    try {
+      const now = ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, now);
+
+      gain.gain.setValueAtTime(volume, now);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + duration);
+    } catch {
+      // ignore
+    }
+  }
+
+  /**
+   * Stop both speech synthesis and any audio clips
+   */
+  public stopAll() {
+    this.stop();
   }
 }
 

@@ -198,7 +198,7 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
             <span className="text-xs font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-lg">
               {selectedCard.reading}
             </span>
-            <span className="text-xs text-slate-600 font-semibold truncate max-w-[160px]">
+            <span className="text-xs text-slate-600 font-semibold max-w-[260px] sm:max-w-md break-words leading-tight line-clamp-1" title={selectedCard.meaningId}>
               {selectedCard.meaningId}
             </span>
           </div>
