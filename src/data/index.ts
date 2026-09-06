@@ -6,6 +6,49 @@ import { vocabData } from './vocabData';
 import { phrasesData } from './phrasesData';
 import { particlesList, particleComparisons, particlesCardItems } from './particlesData';
 import { trapVerbsGodan, verbProfiles, conjugationCardItems } from './conjugationsData';
+import { minnaShokyu1Lessons } from './minnaShokyu1';
+import { minnaShokyu2Lessons } from './minnaShokyu2';
+import { irodoriTopics } from './irodoriData';
+import { sswSectors } from './sswData';
+
+export const allMinnaLessons = [...minnaShokyu1Lessons, ...minnaShokyu2Lessons];
+
+// Convert curriculum items to CardItem format for flashcard/quiz reuse
+export const minnaCardItems: CardItem[] = allMinnaLessons.flatMap(lesson =>
+  lesson.keyVocab.map((v, idx) => ({
+    id: `minna-${lesson.chapter}-${idx}`,
+    japanese: v.jp,
+    reading: v.reading,
+    meaningId: v.id,
+    category: 'minna' as MainCategory,
+    level: lesson.level,
+    notes: `Bab ${lesson.chapter} (${lesson.part}): ${lesson.title}`
+  }))
+);
+
+export const irodoriCardItems: CardItem[] = irodoriTopics.flatMap(topic =>
+  topic.keyPhrases.map((p, idx) => ({
+    id: `irodori-${topic.id}-${idx}`,
+    japanese: p.jp,
+    reading: p.reading,
+    meaningId: p.id,
+    category: 'irodori' as MainCategory,
+    level: topic.level,
+    notes: `${topic.topic} [Can-do: ${topic.canDo.slice(0, 50)}...]`
+  }))
+);
+
+export const sswCardItems: CardItem[] = sswSectors.flatMap(sec =>
+  sec.vocab.map((v, idx) => ({
+    id: `ssw-${sec.sectorId}-${idx}`,
+    japanese: v.jp,
+    reading: v.reading,
+    meaningId: v.id,
+    category: 'ssw' as MainCategory,
+    level: 'SSW / N4-N3',
+    notes: `Bidang SSW: ${sec.name}`
+  }))
+);
 
 export {
   hiraganaData,
@@ -20,6 +63,10 @@ export {
   trapVerbsGodan,
   verbProfiles,
   conjugationCardItems,
+  minnaShokyu1Lessons,
+  minnaShokyu2Lessons,
+  irodoriTopics,
+  sswSectors,
 };
 
 export function getAllBuiltInCards(): CardItem[] {
@@ -31,12 +78,24 @@ export function getAllBuiltInCards(): CardItem[] {
     ...phrasesData,
     ...particlesCardItems,
     ...conjugationCardItems,
+    ...minnaCardItems,
+    ...irodoriCardItems,
+    ...sswCardItems,
   ];
 }
 
 export function getCardsByCategory(category: MainCategory, customCards: CardItem[] = []): CardItem[] {
   if (category === 'custom') {
     return customCards;
+  }
+  if (category === 'minna') {
+    return minnaCardItems;
+  }
+  if (category === 'irodori') {
+    return irodoriCardItems;
+  }
+  if (category === 'ssw') {
+    return sswCardItems;
   }
   const all = getAllBuiltInCards();
   return all.filter(c => c.category === category);

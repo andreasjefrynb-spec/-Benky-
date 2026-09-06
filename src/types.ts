@@ -2,6 +2,9 @@ export type MainCategory =
   | 'kanji'
   | 'vocab'
   | 'phrases'
+  | 'minna'
+  | 'irodori'
+  | 'ssw'
   | 'particles'
   | 'conjugation'
   | 'hiragana'
@@ -87,7 +90,7 @@ export interface CardItem {
   onyomi?: string;         // For Kanji
   kunyomi?: string;        // For Kanji
   strokes?: number;        // Stroke count
-  level?: 'N5' | 'N4' | 'N3' | 'Dasar' | 'Lanjutan';
+  level?: 'N5' | 'N4' | 'N3' | 'Dasar' | 'Lanjutan' | 'Starter (A1)' | 'Shokyu 1 (A2)' | 'Shokyu 2 (A2)' | 'SSW / N4-N3';
   isCustom?: boolean;
 }
 
@@ -199,4 +202,102 @@ export interface VerbConjugationProfile {
   exceptionNote?: string;
   forms: ConjugationForm[];
 }
+
+// Minna no Nihongo (Bab 1 - 50)
+export interface MinnaGrammarPattern {
+  id: string;
+  pattern: string;
+  formula: string;
+  explanation: string;
+  examples: {
+    jp: string;
+    reading: string;
+    id: string;
+  }[];
+}
+
+export interface MinnaVocabItem {
+  jp: string;
+  reading: string;
+  id: string;
+  type?: string;
+  kanji?: string;
+}
+
+export interface MinnaDialogueLine {
+  speaker: string;
+  jp: string;
+  reading: string;
+  id: string;
+}
+
+export interface MinnaLesson {
+  chapter: number;
+  level: 'N5' | 'N4';
+  part: 'Shokyu I (N5)' | 'Shokyu II (N4)';
+  title: string;
+  theme: string;
+  summary: string;
+  grammarPatterns: MinnaGrammarPattern[];
+  keyVocab: MinnaVocabItem[];
+  dialogue?: {
+    title: string;
+    lines: MinnaDialogueLine[];
+  };
+}
+
+// Irodori (Can-do A1 & A2)
+export interface IrodoriKeyPhrase {
+  jp: string;
+  reading: string;
+  id: string;
+  situation?: string;
+}
+
+export interface IrodoriDialogueLine {
+  speaker: string;
+  jp: string;
+  reading: string;
+  id: string;
+}
+
+export interface IrodoriCanDoItem {
+  id: string;
+  topic: string;
+  lesson: string;
+  level: 'Starter (A1)' | 'Shokyu 1 (A2)' | 'Shokyu 2 (A2)';
+  canDo: string;
+  targetExpression: string;
+  keyPhrases: IrodoriKeyPhrase[];
+  tips: string;
+  dialogue?: IrodoriDialogueLine[];
+}
+
+// SSW (Tokutei Ginou 特定技能 12 Bidang)
+export interface SSWVocabItem {
+  jp: string;
+  reading: string;
+  id: string;
+}
+
+export interface SSWScenarioItem {
+  title: string;
+  situation: string;
+  japanese: string;
+  indonesian: string;
+}
+
+export interface SSWSectorItem {
+  id: string;
+  sectorId: string;
+  name: string;
+  kanji: string;
+  english: string;
+  summary: string;
+  coreSkills: string[];
+  safetyProtocol: string;
+  vocab: SSWVocabItem[];
+  scenarios?: SSWScenarioItem[];
+}
+
 

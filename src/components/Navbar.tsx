@@ -34,11 +34,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             日
           </div>
           <div>
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 font-jp tracking-wide leading-none">
+            <h1 className="text-lg sm:text-2xl md:text-3xl font-black text-slate-900 font-jp tracking-wide leading-none">
               日本語 ケラス
             </h1>
-            <p className="text-[10px] sm:text-xs font-semibold text-rose-600/90 leading-tight hidden xs:block mt-0.5">
-              Belajar Bahasa Jepang N5 - N3
+            <p className="text-[10px] sm:text-xs font-semibold text-rose-600/90 leading-tight hidden sm:block mt-0.5">
+              Minna Bab 1–50 &bull; Irodori &bull; SSW Tokutei Ginou &bull; JLPT
             </p>
           </div>
         </div>
@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             id="audio-speed-btn"
             onClick={onToggleSpeechRate}
-            className="flex items-center gap-1 min-h-[38px] sm:min-h-[40px] px-2.5 sm:px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl transition-colors cursor-pointer"
+            className="flex items-center gap-1 min-h-[44px] px-2.5 sm:px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl transition-colors cursor-pointer select-none"
             title={`Kecepatan suara: ${speechRate === 0.75 ? 'Lambat (0.75x)' : 'Normal (1.0x)'}`}
             aria-label="Ubah kecepatan audio"
           >
@@ -61,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             id="audio-test-btn"
             onClick={handleTestAudio}
-            className={`hidden sm:inline-flex min-h-[40px] px-2.5 py-1.5 rounded-xl transition-all cursor-pointer items-center gap-1.5 text-xs font-bold select-none ${
+            className={`hidden sm:inline-flex min-h-[44px] px-3 py-1.5 rounded-xl transition-all cursor-pointer items-center gap-1.5 text-xs font-bold select-none ${
               isPlayingAudio
                 ? 'bg-rose-50 text-rose-600 border border-rose-200 ring-2 ring-rose-100 animate-pulse'
                 : 'text-slate-600 hover:text-rose-600 hover:bg-rose-50'
@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             id="add-custom-card-btn"
             onClick={onOpenAddCustom}
-            className="flex items-center justify-center gap-1.5 min-h-[38px] sm:min-h-[40px] px-3 sm:px-4 py-1.5 text-xs font-bold text-white bg-rose-600 hover:bg-rose-700 active:bg-rose-800 rounded-xl shadow-xs shadow-rose-200 transition-all cursor-pointer select-none"
+            className="flex items-center justify-center gap-1.5 min-h-[44px] px-3 sm:px-4 py-1.5 text-xs font-bold text-white bg-rose-600 hover:bg-rose-700 active:bg-rose-800 rounded-xl shadow-xs shadow-rose-200 transition-all cursor-pointer select-none"
             aria-label="Tambah kartu catatan buatan sendiri"
           >
             <PlusCircle className="w-4 h-4 shrink-0" />

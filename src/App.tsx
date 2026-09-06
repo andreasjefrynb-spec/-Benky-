@@ -10,6 +10,9 @@ import { CustomCardModal } from './components/CustomCardModal';
 import { VocabGroupView } from './components/VocabGroupView';
 import { ParticlesView } from './components/ParticlesView';
 import { ConjugationView } from './components/ConjugationView';
+import { MinnaView } from './components/MinnaView';
+import { IrodoriView } from './components/IrodoriView';
+import { SSWView } from './components/SSWView';
 import {
   MainCategory,
   StudyMode,
@@ -25,6 +28,9 @@ import {
   phrasesData,
   particlesCardItems,
   conjugationCardItems,
+  minnaCardItems,
+  irodoriCardItems,
+  sswCardItems,
   getCardsByCategory,
   getAllBuiltInCards,
 } from './data';
@@ -189,6 +195,9 @@ export default function App() {
   // Counts for categories
   const categoryCounts: Record<MainCategory, number> = useMemo(() => {
     return {
+      minna: minnaCardItems.length,
+      irodori: irodoriCardItems.length,
+      ssw: sswCardItems.length,
       kanji: kanjiData.length,
       vocab: vocabData.length,
       phrases: phrasesData.length,
@@ -200,8 +209,11 @@ export default function App() {
     };
   }, [customCards.length]);
 
-  // Show chart option for Vocabulary Groups, Kana character tables, Particles, and Conjugation
+  // Show chart option for Minna, Irodori, SSW, Vocabulary Groups, Kana, Particles, and Conjugation
   const showChartOption =
+    activeCategory === 'minna' ||
+    activeCategory === 'irodori' ||
+    activeCategory === 'ssw' ||
     activeCategory === 'vocab' ||
     activeCategory === 'hiragana' ||
     activeCategory === 'katakana' ||
@@ -237,7 +249,7 @@ export default function App() {
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 flex flex-col gap-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-6 py-3.5 sm:py-6 flex flex-col gap-4 sm:gap-6">
         {/* Category Selector Bar */}
         <section aria-label="Pilihan Kategori Belajar">
           <CategorySelector
@@ -246,7 +258,7 @@ export default function App() {
               setActiveCategory(cat);
               setWritingTargetCard(null);
               setVocabGroupTarget(null);
-              if (cat === 'particles' || cat === 'conjugation') {
+              if (cat === 'minna' || cat === 'irodori' || cat === 'ssw' || cat === 'particles' || cat === 'conjugation') {
                 setStudyMode('chart');
               }
             }}
@@ -276,6 +288,33 @@ export default function App() {
               speechRate={speechRate}
               initialSubCategory={vocabGroupTarget?.subCategory || 'all'}
               initialLevel={vocabGroupTarget?.level || 'all'}
+            />
+          )}
+
+          {studyMode === 'chart' && activeCategory === 'minna' && (
+            <MinnaView
+              speechRate={speechRate}
+              onPracticeLesson={(_chapter) => {
+                setStudyMode('flashcard');
+              }}
+            />
+          )}
+
+          {studyMode === 'chart' && activeCategory === 'irodori' && (
+            <IrodoriView
+              speechRate={speechRate}
+              onPracticeTopic={(_topicId) => {
+                setStudyMode('flashcard');
+              }}
+            />
+          )}
+
+          {studyMode === 'chart' && activeCategory === 'ssw' && (
+            <SSWView
+              speechRate={speechRate}
+              onPracticeSector={(_sectorId) => {
+                setStudyMode('flashcard');
+              }}
             />
           )}
 

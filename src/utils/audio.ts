@@ -496,3 +496,8 @@ class SoundManager {
 }
 
 export const soundManager = new SoundManager();
+
+export function speakJapanese(text: string, rate: number = 0.9, onEnd?: () => void) {
+  soundManager.speakJapanese(text, rate, onEnd);
+}
+
