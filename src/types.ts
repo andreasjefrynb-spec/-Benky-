@@ -92,6 +92,7 @@ export interface CardItem {
   kunyomi?: string;        // For Kanji
   strokes?: number;        // Stroke count
   level?: 'N5' | 'N4' | 'N3' | 'Dasar' | 'Lanjutan' | 'Starter (A1)' | 'Shokyu 1 (A2)' | 'Shokyu 2 (A2)' | 'SSW / N4-N3';
+  notes?: string;
   isCustom?: boolean;
 }
 
@@ -106,6 +107,16 @@ export interface UserItemProgress {
   isFavorite?: boolean;
 }
 
+export interface QuizOptionDetail {
+  value: string;
+  label: string;
+  furigana?: string;
+  reading?: string;
+  meaning?: string;
+  wordTypeLabel?: string;
+  isCorrect: boolean;
+}
+
 export interface QuizQuestion {
   id: string;
   item: CardItem;
@@ -113,6 +124,7 @@ export interface QuizQuestion {
   questionText: string;
   subText?: string;
   options: string[];
+  optionDetails?: QuizOptionDetail[];
   correctAnswer: string;
   explanation: string;
 }

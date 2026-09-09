@@ -10,11 +10,16 @@ import {
   Flag,
   Layers,
   Sparkles,
+  Eye,
+  EyeOff,
 } from 'lucide-react';
 import { CardItem, QuizQuestion } from '../types';
 import { generateQuizQuestions } from '../data';
 import { soundManager } from '../utils/audio';
 import { GROUP_METAS } from './VocabGroupView';
+import { getWordClassification } from '../utils/wordClassifier';
+import { getHiraganaReading, containsJapanese } from '../utils/hiraganaConverter';
+import { getWordNuanceInfo } from '../utils/wordNuances';
 
 interface QuizViewProps {
   cardPool: CardItem[];
@@ -34,6 +39,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
   const [selectedGroup, setSelectedGroup] = useState<string>(initialSubCategory || 'all');
   const [levelFilter, setLevelFilter] = useState<'all' | 'N5' | 'N4' | 'N3'>(initialLevel || 'all');
   const [countMode, setCountMode] = useState<'all' | 10 | 25 | 50 | 100>('all');
+  const [showHiragana, setShowHiragana] = useState<boolean>(true);
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -438,90 +444,111 @@ export const QuizView: React.FC<QuizViewProps> = ({
         </div>
       )}
 
-      {/* Control Bar: Level & Jumlah Kata (Termasuk Tebak Semua Kata) */}
+      {/* Control Bar: Level, Jumlah Kata & Toggle Hiragana */}
       <div className="flex flex-wrap items-center justify-between gap-3 bg-white p-3.5 sm:px-5 sm:py-3 rounded-2xl border border-slate-200/90 shadow-2xs">
-        {/* Level Filter (if applicable) */}
-        {hasLevelTags && (
+        <div className="flex flex-wrap items-center gap-2.5">
+          {/* Level Filter (if applicable) */}
+          {hasLevelTags && (
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold text-slate-500">Level:</span>
+              <div className="flex items-center bg-slate-100 p-1 rounded-xl">
+                {(['all', 'N5', 'N4', 'N3'] as const).map((lvl) => (
+                  <button
+                    key={lvl}
+                    id={`quiz-level-${lvl}`}
+                    onClick={() => setLevelFilter(lvl)}
+                    className={`px-3 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
+                      levelFilter === lvl
+                        ? 'bg-rose-600 text-white shadow-2xs'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                    }`}
+                  >
+                    {lvl === 'all' ? 'Semua' : lvl}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Quiz Count Selector */}
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold text-slate-500">Level:</span>
+            <span className="text-xs font-bold text-slate-500">Tebak:</span>
             <div className="flex items-center bg-slate-100 p-1 rounded-xl">
-              {(['all', 'N5', 'N4', 'N3'] as const).map((lvl) => (
+              <button
+                id="quiz-count-all"
+                onClick={() => setCountMode('all')}
+                className={`px-3 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
+                  countMode === 'all'
+                    ? 'bg-rose-600 text-white shadow-2xs'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                }`}
+                title={`Tebak semua kata dalam kategori ini (${effectivePool.length} kata)`}
+              >
+                Semua ({effectivePool.length} kata)
+              </button>
+
+              {effectivePool.length > 10 && (
                 <button
-                  key={lvl}
-                  id={`quiz-level-${lvl}`}
-                  onClick={() => setLevelFilter(lvl)}
-                  className={`px-3 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
-                    levelFilter === lvl
+                  id="quiz-count-10"
+                  onClick={() => setCountMode(10)}
+                  className={`px-2.5 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
+                    countMode === 10
                       ? 'bg-rose-600 text-white shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
                   }`}
                 >
-                  {lvl === 'all' ? 'Semua' : lvl}
+                  10
                 </button>
-              ))}
+              )}
+
+              {effectivePool.length > 25 && (
+                <button
+                  id="quiz-count-25"
+                  onClick={() => setCountMode(25)}
+                  className={`px-2.5 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
+                    countMode === 25
+                      ? 'bg-rose-600 text-white shadow-2xs'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                  }`}
+                >
+                  25
+                </button>
+              )}
+
+              {effectivePool.length > 50 && (
+                <button
+                  id="quiz-count-50"
+                  onClick={() => setCountMode(50)}
+                  className={`px-2.5 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
+                    countMode === 50
+                      ? 'bg-rose-600 text-white shadow-2xs'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                  }`}
+                >
+                  50
+                </button>
+              )}
             </div>
           </div>
-        )}
+        </div>
 
-        {/* Quiz Count Selector */}
+        {/* Toggle Hiragana Switcher */}
         <div className="flex items-center gap-2">
-          <span className="text-xs font-bold text-slate-500">Tebak:</span>
-          <div className="flex items-center bg-slate-100 p-1 rounded-xl">
-            <button
-              id="quiz-count-all"
-              onClick={() => setCountMode('all')}
-              className={`px-3 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
-                countMode === 'all'
-                  ? 'bg-rose-600 text-white shadow-2xs'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-              }`}
-              title={`Tebak semua kata dalam kategori ini (${effectivePool.length} kata)`}
-            >
-              Semua ({effectivePool.length} kata)
-            </button>
-
-            {effectivePool.length > 10 && (
-              <button
-                id="quiz-count-10"
-                onClick={() => setCountMode(10)}
-                className={`px-2.5 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
-                  countMode === 10
-                    ? 'bg-rose-600 text-white shadow-2xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                }`}
-              >
-                10
-              </button>
-            )}
-
-            {effectivePool.length > 25 && (
-              <button
-                id="quiz-count-25"
-                onClick={() => setCountMode(25)}
-                className={`px-2.5 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
-                  countMode === 25
-                    ? 'bg-rose-600 text-white shadow-2xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                }`}
-              >
-                25
-              </button>
-            )}
-
-            {effectivePool.length > 50 && (
-              <button
-                id="quiz-count-50"
-                onClick={() => setCountMode(50)}
-                className={`px-2.5 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
-                  countMode === 50
-                    ? 'bg-rose-600 text-white shadow-2xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                }`}
-              >
-                50
-              </button>
-            )}
-          </div>
+          <button
+            type="button"
+            id="toggle-hiragana-reading"
+            onClick={() => setShowHiragana(!showHiragana)}
+            className={`px-3 py-1.5 text-xs font-extrabold rounded-xl border transition-all cursor-pointer flex items-center gap-1.5 select-none ${
+              showHiragana
+                ? 'bg-rose-50 text-rose-700 border-rose-300 ring-2 ring-rose-500/20 shadow-2xs'
+                : 'bg-slate-100 text-slate-500 border-slate-200 hover:bg-slate-200'
+            }`}
+            title="Tampilkan atau sembunyikan bacaan Hiragana untuk melatih hafalan kanji"
+          >
+            {showHiragana ? <Eye className="w-3.5 h-3.5 text-rose-600" /> : <EyeOff className="w-3.5 h-3.5 text-slate-400" />}
+            <span className="font-jp text-sm font-bold">あ</span>
+            <span>Hiragana: <strong className={showHiragana ? 'text-rose-700' : 'text-slate-600'}>{showHiragana ? 'ON' : 'OFF'}</strong></span>
+          </button>
         </div>
       </div>
 
@@ -574,6 +601,20 @@ export const QuizView: React.FC<QuizViewProps> = ({
             {currentQ.type === 'audio' && 'Kuis Pendengaran (Audio)'}
           </span>
 
+          {/* SPESIFIK GOLONGAN KATA: Kata Sifat -i / -na, Kata Kerja Gol 1, 2, 3, dsb */}
+          {(() => {
+            const wordClass = getWordClassification(currentQ.item);
+            return (
+              <span
+                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black border shadow-2xs ${wordClass.badgeClass}`}
+                title={wordClass.grammarHint}
+              >
+                <span>{wordClass.icon}</span>
+                <span>{wordClass.label}</span>
+              </span>
+            );
+          })()}
+
           {currentQ.item.subCategory && GROUP_METAS[currentQ.item.subCategory] && (
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200">
               <span>{GROUP_METAS[currentQ.item.subCategory].icon}</span>
@@ -611,6 +652,8 @@ export const QuizView: React.FC<QuizViewProps> = ({
           <div className="my-4">
             {(() => {
               const promptText = currentQ.type === 'reverse' ? currentQ.item.meaningId : currentQ.item.japanese;
+              const itemFurigana = getHiraganaReading(currentQ.item);
+              const isJpPrompt = currentQ.type !== 'reverse';
               const len = promptText.length;
               const sizeClass =
                 len <= 2
@@ -624,8 +667,16 @@ export const QuizView: React.FC<QuizViewProps> = ({
                   : 'text-base sm:text-lg md:text-xl';
 
               return (
-                <div className={`font-jp ${sizeClass} font-black text-slate-900 tracking-normal drop-shadow-xs max-w-xl mx-auto break-words leading-snug`}>
-                  {promptText}
+                <div>
+                  {/* Hiragana Subtitle jika prompt adalah Kanji Jepang dan Hiragana aktif */}
+                  {isJpPrompt && showHiragana && itemFurigana && itemFurigana !== promptText && (
+                    <div className="text-sm sm:text-base font-black text-rose-600 font-jp tracking-wider mb-1.5 animate-fadeIn">
+                      【 {itemFurigana} 】
+                    </div>
+                  )}
+                  <div className={`font-jp ${sizeClass} font-black text-slate-900 tracking-normal drop-shadow-xs max-w-xl mx-auto break-words leading-snug`}>
+                    {promptText}
+                  </div>
                 </div>
               );
             })()}
@@ -646,6 +697,10 @@ export const QuizView: React.FC<QuizViewProps> = ({
           {currentQ.options.map((option, idx) => {
             const isSelected = selectedAnswer === option;
             const isCorrectAnswer = option === currentQ.correctAnswer;
+            const optDetail = currentQ.optionDetails?.[idx] || currentQ.optionDetails?.find((d) => d.value === option);
+
+            // Cek apakah opsi ini memiliki bacaan Hiragana
+            const optFurigana = optDetail?.furigana || (containsJapanese(option) ? getHiraganaReading({ japanese: option }) : undefined);
 
             let btnStyle = 'bg-slate-50 hover:bg-rose-50/60 border-slate-200 text-slate-800';
 
@@ -665,13 +720,32 @@ export const QuizView: React.FC<QuizViewProps> = ({
                 id={`quiz-opt-${idx}`}
                 disabled={isAnswered}
                 onClick={() => handleSelectOption(option)}
-                className={`w-full min-h-[56px] sm:min-h-[60px] p-3.5 sm:p-4 rounded-2xl border text-sm sm:text-base font-semibold transition-all duration-200 flex items-start sm:items-center justify-between gap-3 cursor-pointer select-none active:scale-[0.98] ${btnStyle}`}
+                className={`w-full min-h-[60px] sm:min-h-[66px] p-3.5 sm:p-4 rounded-2xl border text-sm sm:text-base font-semibold transition-all duration-200 flex items-start justify-between gap-3 cursor-pointer select-none active:scale-[0.98] ${btnStyle}`}
               >
-                <div className="flex items-start sm:items-center gap-3 min-w-0 flex-1">
-                  <span className="w-7 h-7 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-xs font-bold text-slate-600 shrink-0 shadow-2xs mt-0.5 sm:mt-0">
+                <div className="flex items-start gap-3 min-w-0 flex-1">
+                  <span className="w-7 h-7 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-xs font-bold text-slate-600 shrink-0 shadow-2xs mt-0.5">
                     {String.fromCharCode(65 + idx)}
                   </span>
-                  <span className="font-jp text-left break-words leading-snug flex-1">{option}</span>
+                  <div className="flex flex-col min-w-0 flex-1">
+                    {/* Teks Opsi Utama */}
+                    <span className="font-jp text-left break-words text-base sm:text-lg font-bold leading-snug">
+                      {option}
+                    </span>
+
+                    {/* Bacaan Hiragana jika opsi berupa karakter Jepang dan fitur Hiragana aktif */}
+                    {showHiragana && optFurigana && optFurigana !== option && containsJapanese(option) && (
+                      <span className="text-xs font-black text-rose-600 font-jp tracking-wide mt-0.5">
+                        【 {optFurigana} 】
+                      </span>
+                    )}
+
+                    {/* Setelah dijawab, tampilkan arti Indonesia dari opsi ini agar langsung bisa dipelajari */}
+                    {isAnswered && optDetail?.meaning && currentQ.type === 'reverse' && (
+                      <span className="text-[11px] text-slate-500 font-medium line-clamp-1 mt-1">
+                        Arti: {optDetail.meaning} {optDetail.wordTypeLabel ? `• ${optDetail.wordTypeLabel}` : ''}
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0 self-center">
@@ -698,15 +772,34 @@ export const QuizView: React.FC<QuizViewProps> = ({
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-left"
+            className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 text-left"
           >
-            <div>
+            <div className="flex-1 min-w-0">
               <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wide block">
-                Penjelasan
+                Penjelasan & Golongan Kata
               </span>
-              <p className="text-xs sm:text-sm text-slate-700 font-medium">
+              <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
                 {currentQ.explanation}
               </p>
+
+              {/* Box Pembeda Nuansa jika kata ini memiliki makna mirip (seperti Tanjun vs Jimi) */}
+              {(() => {
+                const nuance = getWordNuanceInfo(currentQ.item);
+                if (!nuance) return null;
+                return (
+                  <div className="mt-2.5 p-2.5 rounded-xl bg-amber-50/90 border border-amber-200/80 text-xs shadow-2xs">
+                    <div className="font-extrabold text-amber-900 flex items-center gap-1.5 mb-0.5">
+                      <span>💡 Pembeda Nuansa: {nuance.japanese} (語彙の使い分け)</span>
+                    </div>
+                    <p className="text-[11px] text-amber-950 font-medium leading-relaxed">
+                      {nuance.nuanceExplanation}
+                    </p>
+                    <div className="mt-1 text-[10px] text-amber-800/90">
+                      <strong>Konteks:</strong> {nuance.contextUsage}
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
 
             <button

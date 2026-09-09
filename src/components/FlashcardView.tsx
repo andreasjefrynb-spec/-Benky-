@@ -16,6 +16,8 @@ import {
 import { CardItem, UserItemProgress, SubCategory } from '../types';
 import { soundManager } from '../utils/audio';
 import { KanjiStrokeOrderViewer } from './KanjiStrokeOrderViewer';
+import { getWordClassification } from '../utils/wordClassifier';
+import { getWordNuanceInfo } from '../utils/wordNuances';
 
 interface FlashcardViewProps {
   cards: CardItem[];
@@ -413,9 +415,20 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
           >
             {/* Top Toolbar */}
             <div className="flex items-center justify-between">
-              <span className="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-rose-50 text-rose-600 border border-rose-100 uppercase tracking-wider">
-                {currentCard.level || currentCard.category}
-              </span>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span className="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-rose-50 text-rose-600 border border-rose-100 uppercase tracking-wider">
+                  {currentCard.level || currentCard.category}
+                </span>
+                {(() => {
+                  const wordClass = getWordClassification(currentCard);
+                  return (
+                    <span className={`px-2.5 py-1 text-[11px] font-extrabold rounded-lg border shadow-2xs flex items-center gap-1 ${wordClass.badgeClass}`}>
+                      <span>{wordClass.icon}</span>
+                      <span>{wordClass.shortLabel}</span>
+                    </span>
+                  );
+                })()}
+              </div>
 
               <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
                 {/* Audio button */}
@@ -536,6 +549,55 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                   {currentCard.meaningId}
                 </h4>
               </div>
+
+              {/* Klasifikasi Golongan Kata & Kaidah Gramatikal */}
+              {(() => {
+                const wordClass = getWordClassification(currentCard);
+                return (
+                  <div className={`w-full max-w-md p-2.5 rounded-xl border text-xs text-left shadow-2xs ${wordClass.badgeClass}`}>
+                    <div className="font-extrabold flex items-center gap-1.5 mb-0.5">
+                      <span>{wordClass.icon}</span>
+                      <span>{wordClass.label}</span>
+                    </div>
+                    <p className="font-medium text-[11px] opacity-90 leading-relaxed">{wordClass.grammarHint}</p>
+                  </div>
+                );
+              })()}
+
+              {/* Pembeda Nuansa Kata (Agar Tidak Bingung Seperti Tanjun vs Jimi) */}
+              {(() => {
+                const nuance = getWordNuanceInfo(currentCard);
+                if (!nuance) return null;
+                return (
+                  <div className="w-full max-w-md bg-amber-50/90 border border-amber-200/90 p-3 rounded-2xl text-left shadow-2xs">
+                    <div className="flex items-center gap-1.5 text-amber-900 font-extrabold text-xs mb-1">
+                      <Lightbulb className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                      <span>Pembeda Nuansa: {nuance.japanese} (語彙の使い分け)</span>
+                    </div>
+                    <p className="text-xs font-semibold text-amber-950 leading-relaxed mb-1.5">
+                      {nuance.nuanceExplanation}
+                    </p>
+                    <div className="bg-white/85 rounded-xl p-2 border border-amber-200/60 text-[11px] space-y-1">
+                      <div className="text-slate-700">
+                        <strong className="text-amber-900">Konteks Pemakaian:</strong> {nuance.contextUsage}
+                      </div>
+                      {nuance.contrastedWith && nuance.contrastedWith.length > 0 && (
+                        <div className="pt-1 border-t border-amber-100">
+                          <span className="text-[10px] font-extrabold uppercase text-slate-400 block mb-0.5">
+                            Bandingkan dengan:
+                          </span>
+                          {nuance.contrastedWith.map((c, cIdx) => (
+                            <div key={cIdx} className="text-slate-700 flex items-start gap-1">
+                              <span className="font-jp font-bold text-amber-800 shrink-0">• {c.kanji} ({c.reading}):</span>
+                              <span>{c.nuance}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })()}
 
               {/* Onyomi & Kunyomi with Audio if Kanji */}
               {(currentCard.onyomi || currentCard.kunyomi) && (

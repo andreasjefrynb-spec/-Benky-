@@ -1,4 +1,4 @@
-import { CardItem, MainCategory, QuizQuestion } from '../types';
+import { CardItem, MainCategory, QuizQuestion, QuizOptionDetail } from '../types';
 import { hiraganaData } from './hiraganaData';
 import { katakanaData } from './katakanaData';
 import { kanjiData, kanjiN5Data } from './kanjiData';
@@ -10,6 +10,9 @@ import { minnaShokyu1Lessons } from './minnaShokyu1';
 import { minnaShokyu2Lessons } from './minnaShokyu2';
 import { irodoriTopics } from './irodoriData';
 import { sswSectors } from './sswData';
+import { getWordClassification } from '../utils/wordClassifier';
+import { getHiraganaReading } from '../utils/hiraganaConverter';
+import { getWordNuanceInfo } from '../utils/wordNuances';
 
 export const allMinnaLessons = [...minnaShokyu1Lessons, ...minnaShokyu2Lessons];
 
@@ -146,55 +149,100 @@ export function generateQuizQuestions(
       }
     }
 
+    const itemClassification = getWordClassification(item);
+    const itemHiragana = getHiraganaReading(item);
+
+    // Candidates: target item first, followed by distractors
+    const allCandidates = [item, ...distractors];
+
     let questionText = '';
     let subText = '';
     let correctAnswer = '';
-    let options: string[] = [];
+    let rawOptionDetails: QuizOptionDetail[] = [];
     let explanation = '';
 
     if (chosenType === 'meaning') {
       // Prompt Japanese, user picks Indonesian meaning
       questionText = `Apa arti dari: ${item.japanese}?`;
-      subText = item.reading ? `(${item.reading})` : '';
+      subText = itemHiragana && itemHiragana !== item.japanese
+        ? `【 ${itemHiragana} 】 (${item.reading})`
+        : `(${item.reading})`;
       correctAnswer = item.meaningId;
-      options = [
-        item.meaningId,
-        ...distractors.map(o => o.meaningId),
-      ];
-      explanation = `${item.japanese} (${item.reading}) artinya: ${item.meaningId}.`;
+      rawOptionDetails = allCandidates.map((c) => ({
+        value: c.meaningId,
+        label: c.meaningId,
+        furigana: getHiraganaReading(c),
+        reading: c.reading,
+        meaning: c.meaningId,
+        wordTypeLabel: getWordClassification(c).shortLabel,
+        isCorrect: c.id === item.id,
+      }));
+      explanation = `${item.japanese}【${itemHiragana}】(${item.reading}) [${itemClassification.label}] artinya: "${item.meaningId}". ${itemClassification.grammarHint}`;
     } else if (chosenType === 'reading') {
       // Prompt Japanese/Kanji, user picks Romaji/reading
       questionText = `Bagaimana cara membaca: ${item.japanese}?`;
-      subText = `Arti: ${item.meaningId}`;
+      subText = `Arti: "${item.meaningId}" • [${itemClassification.shortLabel}]`;
       correctAnswer = item.reading;
-      options = [
-        item.reading,
-        ...distractors.map(o => o.reading),
-      ];
-      explanation = `Bacaan dari ${item.japanese} adalah "${item.reading}".`;
+      rawOptionDetails = allCandidates.map((c) => ({
+        value: c.reading,
+        label: c.reading,
+        furigana: getHiraganaReading(c),
+        reading: c.reading,
+        meaning: c.meaningId,
+        wordTypeLabel: getWordClassification(c).shortLabel,
+        isCorrect: c.id === item.id,
+      }));
+      explanation = `Bacaan dari ${item.japanese} adalah "${itemHiragana}" (${item.reading}). [${itemClassification.shortLabel}]: "${item.meaningId}".`;
     } else if (chosenType === 'reverse') {
       // Prompt Indonesian meaning, user picks Japanese
       questionText = `Pilihlah bahasa Jepang untuk: "${item.meaningId}"`;
+      subText = `Golongan Kata: ${itemClassification.label}`;
       correctAnswer = item.japanese;
-      options = [
-        item.japanese,
-        ...distractors.map(o => o.japanese),
-      ];
-      explanation = `"${item.meaningId}" dalam bahasa Jepang adalah ${item.japanese} (${item.reading}).`;
+      rawOptionDetails = allCandidates.map((c) => ({
+        value: c.japanese,
+        label: c.japanese,
+        furigana: getHiraganaReading(c),
+        reading: c.reading,
+        meaning: c.meaningId,
+        wordTypeLabel: getWordClassification(c).shortLabel,
+        isCorrect: c.id === item.id,
+      }));
+      explanation = `"${item.meaningId}" dalam bahasa Jepang adalah ${item.japanese}【${itemHiragana}】(${item.reading}). [${itemClassification.label}]. ${itemClassification.grammarHint}`;
     } else {
       // Audio quiz: prompt audio listening
       questionText = `Dengarkan pelafalan audionya, karakter atau kata apakah itu?`;
-      subText = `Klik tombol suara untuk mendengar ulang`;
+      subText = `Klik tombol suara untuk mendengar ulang • [${itemClassification.shortLabel}]`;
       correctAnswer = `${item.japanese} (${item.reading})`;
-      options = [
-        `${item.japanese} (${item.reading})`,
-        ...distractors.map(o => `${o.japanese} (${o.reading})`),
-      ];
-      explanation = `Audio tersebut melafalkan ${item.japanese} [${item.reading}] yang artinya "${item.meaningId}".`;
+      rawOptionDetails = allCandidates.map((c) => ({
+        value: `${c.japanese} (${c.reading})`,
+        label: c.japanese,
+        furigana: getHiraganaReading(c),
+        reading: c.reading,
+        meaning: c.meaningId,
+        wordTypeLabel: getWordClassification(c).shortLabel,
+        isCorrect: c.id === item.id,
+      }));
+      explanation = `Audio tersebut melafalkan ${item.japanese}【${itemHiragana}】(${item.reading}) [${itemClassification.label}] yang artinya "${item.meaningId}".`;
     }
 
-    // Shuffle options
-    const shuffledOptions = Array.from(new Set(options)).sort(() => Math.random() - 0.5);
+    // Jika kata ini memiliki pembeda nuansa khusus (seperti Tanjun vs Jimi), tambahkan ke penjelasan kuis
+    const nuanceInfo = getWordNuanceInfo(item);
+    if (nuanceInfo) {
+      explanation += ` • 💡 Beda Nuansa: ${nuanceInfo.nuanceExplanation}`;
+    } else if (item.mnemonic) {
+      explanation += ` • 💡 Tips: ${item.mnemonic}`;
+    }
+
+    // Deduplicate and Shuffle options
+    const uniqueOptionsMap = new Map<string, QuizOptionDetail>();
+    rawOptionDetails.forEach((opt) => {
+      if (!uniqueOptionsMap.has(opt.value)) {
+        uniqueOptionsMap.set(opt.value, opt);
+      }
+    });
+
+    const shuffledDetails = Array.from(uniqueOptionsMap.values()).sort(() => Math.random() - 0.5);
+    const shuffledOptions = shuffledDetails.map((d) => d.value);
 
     return {
       id: `quiz-${item.id}-${index}`,
@@ -203,6 +251,7 @@ export function generateQuizQuestions(
       questionText,
       subText,
       options: shuffledOptions,
+      optionDetails: shuffledDetails,
       correctAnswer,
       explanation,
     };
