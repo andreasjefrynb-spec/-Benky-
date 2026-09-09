@@ -1,15 +1,16 @@
 import React, { useState, useMemo, useRef } from 'react';
 import { MinnaLesson } from '../types';
 import { allMinnaLessons } from '../data';
-import { Volume2, BookOpen, Layers, Search, CheckCircle2, ChevronRight, ChevronLeft, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import { Volume2, BookOpen, Layers, Search, CheckCircle2, ChevronRight, ChevronLeft, Sparkles, ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 import { speakJapanese } from '../utils/audio';
 
 interface MinnaViewProps {
   speechRate: number;
   onPracticeLesson?: (chapter: number) => void;
+  onStartQuiz?: (chapter: number) => void;
 }
 
-export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLesson }) => {
+export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLesson, onStartQuiz }) => {
   const [selectedChapter, setSelectedChapter] = useState<number>(1);
   const [filterPart, setFilterPart] = useState<'all' | 'shokyu1' | 'shokyu2'>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -273,15 +274,26 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                 </span>
               </div>
 
-              {onPracticeLesson && (
-                <button
-                  onClick={() => onPracticeLesson(currentLesson.chapter)}
-                  className="inline-flex items-center gap-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200/80 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
-                >
-                  <Layers className="w-3.5 h-3.5" />
-                  <span>Hafal Kosakata Bab Ini</span>
-                </button>
-              )}
+              <div className="flex items-center gap-2">
+                {onPracticeLesson && (
+                  <button
+                    onClick={() => onPracticeLesson(currentLesson.chapter)}
+                    className="inline-flex items-center gap-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200/80 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
+                  >
+                    <Layers className="w-3.5 h-3.5" />
+                    <span>Hafal Kosakata</span>
+                  </button>
+                )}
+                {onStartQuiz && (
+                  <button
+                    onClick={() => onStartQuiz(currentLesson.chapter)}
+                    className="inline-flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200/80 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
+                  >
+                    <HelpCircle className="w-3.5 h-3.5" />
+                    <span>Kuis Bab Ini</span>
+                  </button>
+                )}
+              </div>
             </div>
 
             <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-2">

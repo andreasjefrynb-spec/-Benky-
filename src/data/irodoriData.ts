@@ -240,5 +240,130 @@ export const irodoriTopics: IrodoriCanDoItem[] = [
       { speaker: 'Pemohon', jp: '引越しの 手続きを したいんですが、申請書は これで いいですか。', reading: 'Hikkoshi no tetsuzuki o shitai n desu ga, shinseisho wa kore de ii desu ka.', id: 'Saya mau urus prosedur pindah alamat, apakah formulirnya sudah benar ini?' },
       { speaker: 'Petugas', jp: 'はい、在留カードと 前の 市の 転出証明書を 見せて ください。', reading: 'Hai, zairyuu kaado to mae no shi no tenshutsu shoumeisho o misete kudasai.', id: 'Ya, tolong perlihatkan Zairyu Card dan surat pindah keluar dari kota sebelumnya.' }
     ]
+  },
+  {
+    id: 'iro-a2-8',
+    topic: '13. 郵便・荷物の受け取りと発送 (Layanan Pos, Pengiriman Paket & Takkyubin)',
+    lesson: 'Shokyu 2 Bab 11 & 12',
+    level: 'Shokyu 2 (A2)',
+    canDo: 'Mampu mengirim surat tercatat/paket di kantor pos, mengisi slip alamat (Denpyo), serta menjadwalkan pengantaran ulang saat menerima slip panggilan kurir (Fuzaihyo).',
+    targetExpression: '不在票が 入っていたので、再配達を お願いしたいんですが。',
+    keyPhrases: [
+      { jp: '郵便局 (ゆうびんきょく)', reading: 'yuubinkyoku', id: 'Kantor pos' },
+      { jp: '不在連絡票 (ふざい れんらくひょう)', reading: 'fuzai renrakuhyou', id: 'Slip pemberitahuan kurir saat penerima tidak ada di rumah' },
+      { jp: '再配達 (さいはいたつ) を お願いします。', reading: 'Saihaitatsu o onegai shimasu.', id: 'Tolong jadwalkan pengantaran ulang paket.' },
+      { jp: '送り状 / 伝票 (でんぴょう) に 住所を 書いてください。', reading: 'Okurijou / denpyou ni juusho o kaite kudasai.', id: 'Tolong tulis alamat pada slip pengiriman barang.' },
+      { jp: '割れ物注意 (われもの ちゅうい)', reading: 'waremono chuui', id: 'Awas barang mudah pecah (fragile)' },
+      { jp: '配達希望時間は ありますか。', reading: 'Haitatsu kibou jikan wa arimasu ka.', id: 'Apakah ada jam pengantaran yang diinginkan?' }
+    ],
+    tips: 'Jika ada slip Fuzaihyo di kotak surat, scan QR code di kertas tersebut atau telepon nomor otomatis untuk memilih waktu pengantaran (pagi, siang, atau malam 19:00-21:00).',
+    dialogue: [
+      { speaker: 'Warga', jp: 'すみません、不在連絡票が 入っていました。今日の 夜 ７時以降に 再配達できますか。', reading: 'Sumimasen, fuzai renrakuhyou ga haitte imashita. Kyou no yoru shichiji ikou ni saihaitatsu dekimasu ka.', id: 'Permisi, ada slip fuzaihyo di kotak pos saya. Apakah bisa dikirim ulang malam ini di atas jam 7?' },
+      { speaker: 'Kurir', jp: 'かしこまりました。伝票番号と お名前を お願いします。', reading: 'Kashikomarimashita. Denpyou bangou to o-namae o onegai shimasu.', id: 'Baik dimengerti. Mohon sebutkan nomor resi dan nama Anda.' }
+    ]
+  },
+  {
+    id: 'iro-a2-9',
+    topic: '14. 銀行・ATM・海外送金 (Perbankan, ATM & Pengiriman Uang)',
+    lesson: 'Shokyu 2 Bab 13 & 14',
+    level: 'Shokyu 2 (A2)',
+    canDo: 'Mampu menggunakan mesin ATM Jepang (tarik, setor, transfer/Furikomi), membuka rekening tabungan bank, dan melakukan pengiriman uang remitansi ke tanah air.',
+    targetExpression: 'キャッシュカードで お金を 引き出したいんですが、どう 操作しますか。',
+    keyPhrases: [
+      { jp: '口座開設 (こうざ かいせつ)', reading: 'kouza kaisetsu', id: 'Pembukaan buku rekening bank' },
+      { jp: '暗証番号 (あんしょう ばんごう)', reading: 'anshou bangou', id: 'Nomor PIN 4 angka kartu ATM' },
+      { jp: 'お引き出し (おひきだし)', reading: 'o-hikidashi', id: 'Tarik tunai uang' },
+      { jp: 'お預け入れ (おあずけいれ)', reading: 'o-azukeire', id: 'Setor tunai uang' },
+      { jp: 'お振込み (おふりこみ)', reading: 'o-furikomi', id: 'Transfer dana antar rekening' },
+      { jp: '海外送金 (かいがい そうきん)', reading: 'kaigai soukin', id: 'Remitansi kirim uang ke luar negeri / Indonesia' },
+      { jp: '手数料 (てすうりょう) は いくらですか。', reading: 'Tesuuryou wa ikura desu ka.', id: 'Berapa biaya admin transaksinya?' }
+    ],
+    tips: 'ATM di minimarket Jepang (Seven Bank, Lawson Bank) biasanya memiliki opsi bahasa Inggris dan Indonesia. Simpan kartu dan buku tabungan (Tsuuchou) di tempat aman terpisah.',
+    dialogue: [
+      { speaker: 'Nasabah', jp: '給料が 入ったので、インドネシアの 家族に 送金したいんですが。', reading: 'Kyuuryou ga haitta node, Indoneshia no kazoku ni soukin shitai n desu ga.', id: 'Gaji sudah masuk, saya ingin mengirim uang ke keluarga di Indonesia.' },
+      { speaker: 'Staf Bank', jp: '送金アプリまたは 送金カードを お持ちですか。窓口でも お手伝いできますよ。', reading: 'Soukin apuri matawa soukin kaado o omochi desu ka. Madoguchi demo o-tetsudai dekimasu yo.', id: 'Apakah membawa aplikasi remitansi atau kartu transfer luar negeri? Di loket juga bisa kami bantu.' }
+    ]
+  },
+  {
+    id: 'iro-a2-10',
+    topic: '15. 職場での相談・ホウレンソウ (Konsultasi Kerja & Etika Hou-Ren-So)',
+    lesson: 'Shokyu 2 Bab 17 & 18',
+    level: 'Shokyu 2 (A2)',
+    canDo: 'Mampu berkonsultasi mengenai hambatan kerja, melaporkan insiden keselamatan, serta meminta izin saat menghadapi kendala teknis.',
+    targetExpression: '今、少し お時間 よろしいでしょうか。ご相談したい ことが あります。',
+    keyPhrases: [
+      { jp: '今、お時間 よろしいでしょうか。', reading: 'Ima, o-jikan yoroshii deshou ka.', id: 'Apakah sekarang Bapak/Ibu ada waktu sebentar? (permisi sopan)' },
+      { jp: '作業中に 機械が 止まってしまいました。', reading: 'Sagyou-chuu ni kikai ga tomatte shimaimashita.', id: 'Saat sedang bekerja, mesinnya mendadak berhenti beroperasi.' },
+      { jp: 'やり方を 教えて いただけませんか。', reading: 'Yarikata o oshiete itadakemasen ka.', id: 'Sudikah Bapak/Ibu mengajarkan cara pengerjaannya kepada saya?' },
+      { jp: '私の ミスで ご迷惑を おかけして 申し訳ありません。', reading: 'Watashi no misu de go-meiwaku o okake shite moushiwake arimasen.', id: 'Mohon maaf yang sebesar-besarnya atas kesalahan saya yang merepotkan.' },
+      { jp: '再発防止に 努めます。', reading: 'Saihatsu boushi ni tsutomemasu.', id: 'Saya akan berusaha keras agar kesalahan ini tidak terulang kembali.' }
+    ],
+    tips: 'Di lingkungan kerja Jepang, jangan menyembunyikan kesalahan (shippai o kakusanai). Laporkan segera saat masalah masih kecil agar atasan dapat membantu jalan keluarnya.',
+    dialogue: [
+      { speaker: 'Karyawan', jp: '主任、今 ちょっと よろしいでしょうか。部品の 数が 合わないので、確認して いただきたいです。', reading: 'Shunin, ima chotto yoroshii deshou ka. Buhin no kazu ga awanai node, kakunin shite itadakitai desu.', id: 'Ketua seksi, apakah ada waktu sebentar? Karena jumlah komponen tidak pas, mohon berkenan memeriksanya.' },
+      { speaker: 'Atasan', jp: 'うん、どれどれ？すぐ 見てみよう。早く 相談してくれて ありがとう。', reading: 'Un, doredore? Sugu mite miyou. Hayaku soudan shite kurete arigatou.', id: 'Ya, coba kita lihat. Langsung kita periksa. Terima kasih sudah lekas berkonsultasi.' }
+    ]
+  },
+  {
+    id: 'iro-a2-11',
+    topic: '16. 飲み会・食事会・断り方 (Etika Pesta Makan & Cara Menolak Sopan)',
+    lesson: 'Shokyu 2 Bab 19 & 20',
+    level: 'Shokyu 2 (A2)',
+    canDo: 'Mampu berbaur dalam pesta santai pergaulan kantor (Nomikai / Shinjin Kangeikai), dan mampu menolak ajakan secara halus tanpa menyinggung perasaan lawan bicara.',
+    targetExpression: 'せっかくですが、その日は 先約が ありまして...。また 誘ってください。',
+    keyPhrases: [
+      { jp: 'お疲れ様です！乾杯！(かんぱい！)', reading: 'Otsukaresama desu! Kanpai!', id: 'Terima kasih atas kerja kerasnya! Bersulang (Cheers)!' },
+      { jp: 'ビールを もう一杯 いかがですか。', reading: 'Biiru o mou ippai ikaga desu ka.', id: 'Bagaimana kalau tambah satu gelas bir lagi?' },
+      { jp: 'お酒は 飲めないので、烏龍茶を お願いします。', reading: 'O-sake wa nomenai node, uuroncha o onegai shimasu.', id: 'Karena saya tidak minum alkohol, tolong teh oolong saja.' },
+      { jp: '今日は どうも ごちそうさまでした。', reading: 'Kyou wa doumo gochisousama deshita.', id: 'Terima kasih banyak atas traktiran makanannya hari ini.' },
+      { jp: 'あいにく 先約が ありまして...。', reading: 'Ainiku sen\'yaku ga arimashite...', id: 'Sayang sekali saya sudah ada janji terlebih dahulu sebelumnya...' }
+    ],
+    tips: 'Dalam budaya Jepang, menolak dengan kata "Iie" langsung dianggap terlalu kaku. Gunakan "Chotto tsugou ga warukute..." (kebetulan waktunya kurang pas) atau "Sekkaku desu ga..." agar terdengar santun.',
+    dialogue: [
+      { speaker: 'Senior', jp: '今週の 金曜日の 夜、みんなで 焼肉 行かない？', reading: 'Konshuu no kin\'youbi no yoru, minna de yakiniku ikanai?', id: 'Jumat malam minggu ini, mau ikut pergi makan yakiniku bersama semuanya?' },
+      { speaker: 'Junior', jp: '誘って いただき ありがとうございます。あいにく その日は 予定が ありまして...。また 次回 ぜひ お願いします！', reading: 'Sasotte itadaki arigatou gozaimasu. Ainiku sono hi wa yotei ga arimashite... Mata jikai zehi onegai shimasu!', id: 'Terima kasih banyak atas ajakannya. Sayang sekali hari itu saya sudah ada jadwal... Lain kali tolong ajak saya lagi ya!' }
+    ]
+  },
+  {
+    id: 'iro-a2-12',
+    topic: '17. 不動産・アパート契約と設備 (Kontrak Sewa & Mengatasi Gangguan Kamar)',
+    lesson: 'Shokyu 2 Bab 21 & 22',
+    level: 'Shokyu 2 (A2)',
+    canDo: 'Mampu berkomunikasi dengan pemilik rumah (Ooya-san) atau agen properti mengenai kerusakan fasilitas (air panas mati, kebocoran, tetangga berisik).',
+    targetExpression: 'お風呂の お湯が 出なくなってしまったんですが、見てもらえませんか。',
+    keyPhrases: [
+      { jp: '大家さん (おおやさん)', reading: 'ooyasan', id: 'Pemilik rumah sewa / induk semang apartemen' },
+      { jp: '管理会社 (かんり がいしゃ)', reading: 'kanri gaisha', id: 'Perusahaan pengelola gedung apartemen' },
+      { jp: 'お湯が 出ません / 給湯器 (きゅうとうき) が 故障しました。', reading: 'O-yu ga demasen / kyuutouki ga koushou shimashita.', id: 'Air panas tidak keluar / pemanas air water heater rusak.' },
+      { jp: '水道から 水漏れ (みずもれ) しています。', reading: 'Suidou kara mizumore shite imasu.', id: 'Kran pipa air mengalami kebocoran air.' },
+      { jp: '上の 部屋の 音が うるさいです。', reading: 'Ue no heya no oto ga urusai desu.', id: 'Suara hentakan dari kamar lantai atas berisik.' },
+      { jp: '鍵を 失くしてしまいました。', reading: 'Kagi o nakushite shimaimashita.', id: 'Kunci pintu apartemen saya hilang terjatuh.' }
+    ],
+    tips: 'Jika terjadi masalah fasilitas kamar (keran bocor, water heater rusak), hubungi Kanri Gaisha (perusahaan pengelola) yang tertera di kontrak sewa. Jangan memperbaikinya sendiri jika bisa merusak properti.',
+    dialogue: [
+      { speaker: 'Penyewa', jp: '２０３号室の リキです。昨日から お風呂の お湯が 出ないのですが、点検して いただけますか。', reading: 'Ni-maru-san goushitsu no Riki desu. Kinou kara o-furo no o-yu ga denai no desu ga, tenken shite itadakemasu ka.', id: 'Saya Riki dari kamar 203. Sejak kemarin air panas kamar mandi tidak keluar, bisakah tolong dilakukan pemeriksaan?' },
+      { speaker: 'Pengelola', jp: 'ご不便を おかけして すみません。今日の 午後 ２時に 業者を 手配しますね。', reading: 'Go-fuben o okake shite sumimasen. Kyou no gogo ni-ji ni gyousha o tehai shimasu ne.', id: 'Mohon maaf atas ketidaknyamanannya. Hari ini jam 2 siang akan kami tugaskan teknisi ke sana ya.' }
+    ]
+  },
+  {
+    id: 'iro-a2-13',
+    topic: '18. 冠婚葬祭と日本の年中行事 (Etika Sosial, Perayaan & Hari Besar Jepang)',
+    lesson: 'Shokyu 2 Bab 23 & 24',
+    level: 'Shokyu 2 (A2)',
+    canDo: 'Mampu memahami tradisi perayaan Jepang (Oshougatsu, Obon, Hanami) serta etika ucapan selamat pernikahan atau belasungkawa duka cita.',
+    targetExpression: 'あけまして おめでとうございます。/ この度は ご愁傷様でございます。',
+    keyPhrases: [
+      { jp: 'あけましておめでとうございます。', reading: 'Akemashite omedetou gozaimasu.', id: 'Selamat Tahun Baru (diucapkan setelah 1 Januari).' },
+      { jp: '良い お年を お迎えください。(よい おとしを)', reading: 'Yoi o-toshi o o-mukae kudasai.', id: 'Semoga menyambut tahun baru yang menyenangkan (diucapkan akhir Desember).' },
+      { jp: 'ご結婚 おめでとうございます。(ごけっこん)', reading: 'Go-kekkon omedetou gozaimasu.', id: 'Selamat atas pernikahan berbahagia.' },
+      { jp: 'この度は ご愁傷様でございます。(ごしゅうしょうさま)', reading: 'Kono tabi wa go-shuushousama de gozaimasu.', id: 'Turut berbelasungkawa duka cita yang sedalam-dalamnya.' },
+      { jp: 'お中元 (おちゅうげん) / お歳暮 (おせいぼ)', reading: 'ochuugen / oseibo', id: 'Tradisi bingkisan hadiah ucapan terima kasih musim panas / akhir tahun' },
+      { jp: 'お花見 (おはなみ)', reading: 'ohanami', id: 'Tradisi piknik berkumpul menikmati mekarnya bunga sakura' }
+    ],
+    tips: 'Pada acara pernikahan (Kekkonshiki), gunakan uang kertas baru yang licin tanpa lipatan di dalam amplop Shugi-bukuro. Sebaliknya, pada pemakaman gunakan uang kertas yang tidak licin di dalam amplop Koden-bukuro.',
+    dialogue: [
+      { speaker: 'A', jp: 'もうすぐ 年末ですね。今年も 一年間 大変 お世話に なりました。', reading: 'Mousugu nenmatsu desu ne. Kotoshi mo ichinenkan taihen osewa ni narimashita.', id: 'Sudah hampir akhir tahun ya. Terima kasih banyak atas semua bimbingan dan bantuannya sepanjang tahun ini.' },
+      { speaker: 'B', jp: 'こちらこそ、ありがとう。良い お年を お迎えくださいね。', reading: 'Kochira koso, arigatou. Yoi o-toshi o o-mukae kudasai ne.', id: 'Sama-sama, terima kasih kembali. Selamat menyambut tahun baru dengan bahagia ya.' }
+    ]
   }
 ];

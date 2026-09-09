@@ -72,8 +72,9 @@ export type SubCategory =
   // Conjugation
   | 'konjugasi_kata_kerja'
   | 'konjugasi_kata_sifat'
-  // General
-  | 'all';
+  // General & dynamic (Bab Minna, Irodori topic, SSW sector)
+  | 'all'
+  | (string & {});
 
 export interface CardItem {
   id: string;

@@ -1,15 +1,16 @@
 import React, { useState, useMemo, useRef } from 'react';
 import { SSWSectorItem } from '../types';
 import { sswSectors } from '../data';
-import { Volume2, Layers, Search, ShieldCheck, Wrench, Briefcase, AlertTriangle, ChevronDown, ChevronUp } from 'lucide-react';
+import { Volume2, Layers, Search, ShieldCheck, Wrench, Briefcase, AlertTriangle, ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 import { speakJapanese } from '../utils/audio';
 
 interface SSWViewProps {
   speechRate: number;
   onPracticeSector?: (sectorId: string) => void;
+  onStartQuiz?: (sectorId: string) => void;
 }
 
-export const SSWView: React.FC<SSWViewProps> = ({ speechRate, onPracticeSector }) => {
+export const SSWView: React.FC<SSWViewProps> = ({ speechRate, onPracticeSector, onStartQuiz }) => {
   const [selectedSectorId, setSelectedSectorId] = useState<string>(sswSectors[0]?.sectorId || 'kaigo');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [isMobileListExpanded, setIsMobileListExpanded] = useState<boolean>(false);
@@ -206,15 +207,26 @@ export const SSWView: React.FC<SSWViewProps> = ({ speechRate, onPracticeSector }
                 </span>
               </div>
 
-              {onPracticeSector && (
-                <button
-                  onClick={() => onPracticeSector(currentSector.sectorId)}
-                  className="inline-flex items-center gap-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200/80 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
-                >
-                  <Layers className="w-3.5 h-3.5" />
-                  <span>Latih Flashcard Kosakata Sektor Ini</span>
-                </button>
-              )}
+              <div className="flex items-center gap-2">
+                {onPracticeSector && (
+                  <button
+                    onClick={() => onPracticeSector(currentSector.sectorId)}
+                    className="inline-flex items-center gap-1.5 bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200/80 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
+                  >
+                    <Layers className="w-3.5 h-3.5" />
+                    <span>Hafal Kosakata</span>
+                  </button>
+                )}
+                {onStartQuiz && (
+                  <button
+                    onClick={() => onStartQuiz(currentSector.sectorId)}
+                    className="inline-flex items-center gap-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200/80 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
+                  >
+                    <HelpCircle className="w-3.5 h-3.5" />
+                    <span>Kuis Sektor Ini</span>
+                  </button>
+                )}
+              </div>
             </div>
 
             <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-2">

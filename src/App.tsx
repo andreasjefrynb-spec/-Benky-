@@ -262,6 +262,7 @@ export default function App() {
               setActiveCategory(cat);
               setWritingTargetCard(null);
               setVocabGroupTarget(null);
+              setQuizGroupTarget(null);
               if (cat === 'minna' || cat === 'irodori' || cat === 'ssw' || cat === 'particles' || cat === 'conjugation') {
                 setStudyMode('chart');
               }
@@ -299,8 +300,13 @@ export default function App() {
           {studyMode === 'chart' && activeCategory === 'minna' && (
             <MinnaView
               speechRate={speechRate}
-              onPracticeLesson={(_chapter) => {
+              onPracticeLesson={(chapter) => {
+                setVocabGroupTarget({ subCategory: `bab_${chapter}`, level: 'all' });
                 setStudyMode('flashcard');
+              }}
+              onStartQuiz={(chapter) => {
+                setQuizGroupTarget({ subCategory: `bab_${chapter}`, level: 'all' });
+                setStudyMode('quiz');
               }}
             />
           )}
@@ -308,8 +314,13 @@ export default function App() {
           {studyMode === 'chart' && activeCategory === 'irodori' && (
             <IrodoriView
               speechRate={speechRate}
-              onPracticeTopic={(_topicId) => {
+              onPracticeTopic={(topicId) => {
+                setVocabGroupTarget({ subCategory: topicId, level: 'all' });
                 setStudyMode('flashcard');
+              }}
+              onStartQuiz={(topicId) => {
+                setQuizGroupTarget({ subCategory: topicId, level: 'all' });
+                setStudyMode('quiz');
               }}
             />
           )}
@@ -317,8 +328,13 @@ export default function App() {
           {studyMode === 'chart' && activeCategory === 'ssw' && (
             <SSWView
               speechRate={speechRate}
-              onPracticeSector={(_sectorId) => {
+              onPracticeSector={(sectorId) => {
+                setVocabGroupTarget({ subCategory: sectorId, level: 'all' });
                 setStudyMode('flashcard');
+              }}
+              onStartQuiz={(sectorId) => {
+                setQuizGroupTarget({ subCategory: sectorId, level: 'all' });
+                setStudyMode('quiz');
               }}
             />
           )}
@@ -360,8 +376,9 @@ export default function App() {
 
           {studyMode === 'quiz' && (
             <QuizView
+              key={`quiz-${activeCategory}-${quizGroupTarget?.subCategory || 'all'}-${quizGroupTarget?.level || 'all'}`}
               cardPool={
-                quizGroupTarget
+                quizGroupTarget && activeCategory === 'vocab'
                   ? vocabData
                   : currentCategoryCards.length >= 4
                   ? currentCategoryCards

@@ -81,10 +81,12 @@ export const QuizView: React.FC<QuizViewProps> = ({
         count,
         meta: GROUP_METAS[key] || {
           id: key,
-          name: key.replace(/_/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase()),
-          kanjiTitle: '',
-          icon: '📁',
-          desc: '',
+          name: key.startsWith('bab_')
+            ? `Bab ${key.replace('bab_', '')}`
+            : key.replace(/_/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase()),
+          kanjiTitle: key.startsWith('bab_') ? `第${key.replace('bab_', '')}課` : '',
+          icon: key.startsWith('bab_') ? '📖' : '📁',
+          desc: key.startsWith('bab_') ? 'Kosakata Minna no Nihongo' : '',
         },
       }))
       .sort((a, b) => b.count - a.count);

@@ -1,15 +1,16 @@
 import React, { useState, useMemo, useRef } from 'react';
 import { IrodoriCanDoItem } from '../types';
 import { irodoriTopics } from '../data';
-import { Volume2, Layers, Search, Compass, Lightbulb, MessageSquare, CheckCircle, ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Volume2, Layers, Search, Compass, Lightbulb, MessageSquare, CheckCircle, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, HelpCircle } from 'lucide-react';
 import { speakJapanese } from '../utils/audio';
 
 interface IrodoriViewProps {
   speechRate: number;
   onPracticeTopic?: (topicId: string) => void;
+  onStartQuiz?: (topicId: string) => void;
 }
 
-export const IrodoriView: React.FC<IrodoriViewProps> = ({ speechRate, onPracticeTopic }) => {
+export const IrodoriView: React.FC<IrodoriViewProps> = ({ speechRate, onPracticeTopic, onStartQuiz }) => {
   const [selectedTopicId, setSelectedTopicId] = useState<string>(irodoriTopics[0]?.id || '');
   const [levelFilter, setLevelFilter] = useState<'all' | 'Starter (A1)' | 'Shokyu 1 (A2)' | 'Shokyu 2 (A2)'>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -210,15 +211,26 @@ export const IrodoriView: React.FC<IrodoriViewProps> = ({ speechRate, onPractice
                 </span>
               </div>
 
-              {onPracticeTopic && (
-                <button
-                  onClick={() => onPracticeTopic(currentTopic.id)}
-                  className="inline-flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200/80 px-3.5 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
-                >
-                  <Layers className="w-3.5 h-3.5" />
-                  <span>Latih Flashcard Frasa Ini</span>
-                </button>
-              )}
+              <div className="flex items-center gap-2">
+                {onPracticeTopic && (
+                  <button
+                    onClick={() => onPracticeTopic(currentTopic.id)}
+                    className="inline-flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200/80 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
+                  >
+                    <Layers className="w-3.5 h-3.5" />
+                    <span>Hafal Frasa</span>
+                  </button>
+                )}
+                {onStartQuiz && (
+                  <button
+                    onClick={() => onStartQuiz(currentTopic.id)}
+                    className="inline-flex items-center gap-1.5 bg-teal-50 hover:bg-teal-100 text-teal-800 border border-teal-200/80 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
+                  >
+                    <HelpCircle className="w-3.5 h-3.5" />
+                    <span>Kuis Topik Ini</span>
+                  </button>
+                )}
+              </div>
             </div>
 
             <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-2">

@@ -21,6 +21,7 @@ export const minnaCardItems: CardItem[] = allMinnaLessons.flatMap(lesson =>
     reading: v.reading,
     meaningId: v.id,
     category: 'minna' as MainCategory,
+    subCategory: `bab_${lesson.chapter}`,
     level: lesson.level,
     notes: `Bab ${lesson.chapter} (${lesson.part}): ${lesson.title}`
   }))
@@ -33,6 +34,7 @@ export const irodoriCardItems: CardItem[] = irodoriTopics.flatMap(topic =>
     reading: p.reading,
     meaningId: p.id,
     category: 'irodori' as MainCategory,
+    subCategory: topic.id,
     level: topic.level,
     notes: `${topic.topic} [Can-do: ${topic.canDo.slice(0, 50)}...]`
   }))
@@ -45,6 +47,7 @@ export const sswCardItems: CardItem[] = sswSectors.flatMap(sec =>
     reading: v.reading,
     meaningId: v.id,
     category: 'ssw' as MainCategory,
+    subCategory: sec.sectorId,
     level: 'SSW / N4-N3',
     notes: `Bidang SSW: ${sec.name}`
   }))

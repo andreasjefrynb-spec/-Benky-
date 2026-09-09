@@ -233,7 +233,12 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
       case 'tata_bahasa_n3': return 'Pola Tata Bahasa N3';
       case 'percakapan_harian': return 'Percakapan Sehari-hari';
       case 'bisnis_sopan': return 'Etiket Kerja & Bisnis';
-      default: return sub;
+      default: {
+        if (sub.startsWith('bab_')) {
+          return `Bab ${sub.replace('bab_', '')}`;
+        }
+        return sub.replace(/_/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
+      }
     }
   };
 
