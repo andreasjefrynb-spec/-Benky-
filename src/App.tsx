@@ -60,6 +60,10 @@ export default function App() {
     subCategory: string;
     level: 'all' | 'N5' | 'N4' | 'N3';
   } | null>(null);
+  const [quizGroupTarget, setQuizGroupTarget] = useState<{
+    subCategory: string;
+    level: 'all' | 'N5' | 'N4' | 'N3';
+  } | null>(null);
 
   // Initialize data from localStorage on mount
   useEffect(() => {
@@ -285,6 +289,7 @@ export default function App() {
               progress={progress}
               onUpdateProgress={handleUpdateProgress}
               onToggleFavorite={handleToggleFavorite}
+              onPracticeWriting={handlePracticeWriting}
               speechRate={speechRate}
               initialSubCategory={vocabGroupTarget?.subCategory || 'all'}
               initialLevel={vocabGroupTarget?.level || 'all'}
@@ -327,6 +332,10 @@ export default function App() {
                 setVocabGroupTarget({ subCategory, level });
                 setStudyMode('flashcard');
               }}
+              onStartQuiz={(subCategory, level) => {
+                setQuizGroupTarget({ subCategory, level });
+                setStudyMode('quiz');
+              }}
               onToggleFavorite={handleToggleFavorite}
             />
           )}
@@ -351,8 +360,16 @@ export default function App() {
 
           {studyMode === 'quiz' && (
             <QuizView
-              cardPool={currentCategoryCards.length >= 4 ? currentCategoryCards : allCardsCombined}
+              cardPool={
+                quizGroupTarget
+                  ? vocabData
+                  : currentCategoryCards.length >= 4
+                  ? currentCategoryCards
+                  : allCardsCombined
+              }
               speechRate={speechRate}
+              initialSubCategory={quizGroupTarget?.subCategory}
+              initialLevel={quizGroupTarget?.level}
               onCompleteQuiz={handleCompleteQuiz}
             />
           )}

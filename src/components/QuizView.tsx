@@ -8,23 +8,31 @@ import {
   ArrowRight,
   HelpCircle,
   Flag,
+  Layers,
+  Sparkles,
 } from 'lucide-react';
 import { CardItem, QuizQuestion } from '../types';
 import { generateQuizQuestions } from '../data';
 import { soundManager } from '../utils/audio';
+import { GROUP_METAS } from './VocabGroupView';
 
 interface QuizViewProps {
   cardPool: CardItem[];
   speechRate: number;
   onCompleteQuiz: (correctCount: number, total: number) => void;
+  initialSubCategory?: string;
+  initialLevel?: 'all' | 'N5' | 'N4' | 'N3';
 }
 
 export const QuizView: React.FC<QuizViewProps> = ({
   cardPool,
   speechRate,
   onCompleteQuiz,
+  initialSubCategory,
+  initialLevel,
 }) => {
-  const [levelFilter, setLevelFilter] = useState<'all' | 'N5' | 'N4' | 'N3'>('all');
+  const [selectedGroup, setSelectedGroup] = useState<string>(initialSubCategory || 'all');
+  const [levelFilter, setLevelFilter] = useState<'all' | 'N5' | 'N4' | 'N3'>(initialLevel || 'all');
   const [countMode, setCountMode] = useState<'all' | 10 | 25 | 50 | 100>('all');
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,20 +51,75 @@ export const QuizView: React.FC<QuizViewProps> = ({
     });
   }, []);
 
+  // Sync when initialSubCategory changes from parent
+  useEffect(() => {
+    if (initialSubCategory) {
+      setSelectedGroup(initialSubCategory);
+    }
+  }, [initialSubCategory]);
+
+  useEffect(() => {
+    if (initialLevel) {
+      setLevelFilter(initialLevel);
+    }
+  }, [initialLevel]);
+
+  // Extract all subcategories / groups present in cardPool
+  const availableGroups = useMemo(() => {
+    const map = new Map<string, number>();
+    cardPool.forEach((c) => {
+      if (c.subCategory) {
+        map.set(c.subCategory, (map.get(c.subCategory) || 0) + 1);
+      }
+    });
+
+    if (map.size === 0) return [];
+
+    return Array.from(map.entries())
+      .map(([key, count]) => ({
+        key,
+        count,
+        meta: GROUP_METAS[key] || {
+          id: key,
+          name: key.replace(/_/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase()),
+          kanjiTitle: '',
+          icon: '📁',
+          desc: '',
+        },
+      }))
+      .sort((a, b) => b.count - a.count);
+  }, [cardPool]);
+
   // Check if cardPool has cards with N5/N4/N3 levels
   const hasLevelTags = cardPool.some((c) => c.level === 'N5' || c.level === 'N4' || c.level === 'N3');
 
-  // Filter pool based on level
+  // Filter pool based on selected group & level
   const effectivePool = useMemo(() => {
-    if (levelFilter === 'all') return cardPool;
-    const filtered = cardPool.filter((c) => c.level === levelFilter);
-    return filtered.length >= 4 ? filtered : cardPool;
-  }, [cardPool, levelFilter]);
+    let pool = cardPool;
+
+    // Filter by group if selected
+    if (selectedGroup !== 'all') {
+      const groupFiltered = pool.filter((c) => c.subCategory === selectedGroup);
+      if (groupFiltered.length > 0) {
+        pool = groupFiltered;
+      }
+    }
+
+    // Filter by level
+    if (levelFilter !== 'all') {
+      const levelFiltered = pool.filter((c) => c.level === levelFilter);
+      if (levelFiltered.length > 0) {
+        pool = levelFiltered;
+      }
+    }
+
+    return pool;
+  }, [cardPool, selectedGroup, levelFilter]);
 
   // Start new quiz
   const startNewQuiz = (customCount?: 'all' | 10 | 25 | 50 | 100) => {
     const targetCount = customCount ?? countMode;
-    const qList = generateQuizQuestions(effectivePool, targetCount);
+    const qList = generateQuizQuestions(effectivePool, targetCount, cardPool);
     setQuestions(qList);
     setCurrentIndex(0);
     setSelectedAnswer(null);
@@ -280,15 +343,99 @@ export const QuizView: React.FC<QuizViewProps> = ({
             className="w-full sm:w-auto px-6 py-3 bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             <RotateCcw className="w-4 h-4" />
-            <span>Mulai Ulang Kuis</span>
+            <span>Ulangi Kuis Ini</span>
           </button>
+          {availableGroups.length > 0 && selectedGroup !== 'all' && (
+            <button
+              onClick={() => {
+                setSelectedGroup('all');
+              }}
+              className="w-full sm:w-auto px-6 py-3 bg-slate-800 hover:bg-slate-900 text-white font-bold text-sm rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <Layers className="w-4 h-4" />
+              <span>Coba Kelompok Lain</span>
+            </button>
+          )}
         </div>
       </div>
     );
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto flex flex-col gap-5">
+    <div className="w-full max-w-2xl mx-auto flex flex-col gap-4">
+      {/* VOCABULARY GROUP SELECTOR (When card pool has groups) */}
+      {availableGroups.length > 0 && (
+        <div className="bg-white p-3.5 sm:p-4 rounded-3xl border border-slate-200/90 shadow-2xs flex flex-col gap-2.5">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center border border-rose-100">
+                <Layers className="w-4 h-4" />
+              </div>
+              <div>
+                <h3 className="text-xs sm:text-sm font-black text-slate-900 leading-tight">
+                  Pilih Kelompok Kosakata:
+                </h3>
+                <p className="text-[11px] text-slate-500 hidden sm:block">
+                  Kuis khusus kelompok tema kata tertentu
+                </p>
+              </div>
+            </div>
+            <span className="text-[11px] font-mono font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200/60">
+              {effectivePool.length} kata
+            </span>
+          </div>
+
+          {/* Scrollable Group Pills with Emojis & Counts */}
+          <div className="flex items-center gap-1.5 overflow-x-auto pb-1.5 pt-0.5 scrollbar-thin">
+            <button
+              type="button"
+              onClick={() => setSelectedGroup('all')}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap transition-all cursor-pointer select-none shrink-0 ${
+                selectedGroup === 'all'
+                  ? 'bg-slate-900 text-white shadow-2xs'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+              }`}
+            >
+              <span>🌟 Semua Kelompok</span>
+              <span
+                className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-extrabold ${
+                  selectedGroup === 'all' ? 'bg-white/25 text-white' : 'bg-slate-200 text-slate-600'
+                }`}
+              >
+                {cardPool.length}
+              </span>
+            </button>
+
+            {availableGroups.map((g) => {
+              const isSelected = selectedGroup === g.key;
+              return (
+                <button
+                  key={g.key}
+                  type="button"
+                  onClick={() => setSelectedGroup(g.key)}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer select-none shrink-0 ${
+                    isSelected
+                      ? 'bg-rose-600 text-white shadow-2xs ring-2 ring-rose-600/20'
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  }`}
+                  title={`${g.meta.name}: ${g.meta.desc}`}
+                >
+                  <span>{g.meta.icon}</span>
+                  <span>{g.meta.name}</span>
+                  <span
+                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-extrabold ${
+                      isSelected ? 'bg-white/25 text-white' : 'bg-slate-200 text-slate-600'
+                    }`}
+                  >
+                    {g.count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       {/* Control Bar: Level & Jumlah Kata (Termasuk Tebak Semua Kata) */}
       <div className="flex flex-wrap items-center justify-between gap-3 bg-white p-3.5 sm:px-5 sm:py-3 rounded-2xl border border-slate-200/90 shadow-2xs">
         {/* Level Filter (if applicable) */}
@@ -416,13 +563,28 @@ export const QuizView: React.FC<QuizViewProps> = ({
 
       {/* Question Card */}
       <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-md text-center relative overflow-hidden">
-        {/* Type Badge */}
-        <span className="inline-block px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-rose-50 text-rose-600 border border-rose-100 mb-4">
-          {currentQ.type === 'meaning' && 'Tebak Arti Indonesia'}
-          {currentQ.type === 'reading' && 'Tebak Cara Baca Romaji'}
-          {currentQ.type === 'reverse' && 'Tebak Karakter Jepang'}
-          {currentQ.type === 'audio' && 'Kuis Pendengaran (Audio)'}
-        </span>
+        {/* Type, Group, and Level Badges */}
+        <div className="flex items-center justify-center gap-2 mb-4 flex-wrap">
+          <span className="inline-block px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-rose-50 text-rose-600 border border-rose-100">
+            {currentQ.type === 'meaning' && 'Tebak Arti Indonesia'}
+            {currentQ.type === 'reading' && 'Tebak Cara Baca Romaji'}
+            {currentQ.type === 'reverse' && 'Tebak Karakter Jepang'}
+            {currentQ.type === 'audio' && 'Kuis Pendengaran (Audio)'}
+          </span>
+
+          {currentQ.item.subCategory && GROUP_METAS[currentQ.item.subCategory] && (
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200">
+              <span>{GROUP_METAS[currentQ.item.subCategory].icon}</span>
+              <span>{GROUP_METAS[currentQ.item.subCategory].name}</span>
+            </span>
+          )}
+
+          {currentQ.item.level && (
+            <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-slate-100 text-slate-500 border border-slate-200">
+              {currentQ.item.level}
+            </span>
+          )}
+        </div>
 
         {/* Question Japanese Prompt */}
         {currentQ.type === 'audio' ? (

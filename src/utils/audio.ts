@@ -288,8 +288,16 @@ class SoundManager {
       };
 
       utterance.onend = finish;
-      utterance.onerror = () => {
-        // If speechSynthesis threw an error, attempt secondary audio tag
+      utterance.onerror = (e) => {
+        // If speechSynthesis threw an error or is canceled, try fallback audio if text wasn't spoken
+        if (e.error !== 'canceled' && e.error !== 'interrupted') {
+          try {
+            this.speakWithAudioFallback(cleanText, rate, onEnd);
+            return;
+          } catch {
+            // ignore
+          }
+        }
         finish();
       };
 

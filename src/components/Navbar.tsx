@@ -57,20 +57,20 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span className="font-mono">{speechRate}x</span>
           </button>
 
-          {/* Test Audio Button */}
+          {/* Test Audio Button (Accessible on Mobile and PC) */}
           <button
             id="audio-test-btn"
             onClick={handleTestAudio}
-            className={`hidden sm:inline-flex min-h-[44px] px-3 py-1.5 rounded-xl transition-all cursor-pointer items-center gap-1.5 text-xs font-bold select-none ${
+            className={`flex min-h-[44px] px-2.5 sm:px-3 py-1.5 rounded-xl transition-all cursor-pointer items-center gap-1.5 text-xs font-bold select-none active:scale-95 ${
               isPlayingAudio
                 ? 'bg-rose-50 text-rose-600 border border-rose-200 ring-2 ring-rose-100 animate-pulse'
-                : 'text-slate-600 hover:text-rose-600 hover:bg-rose-50'
+                : 'text-slate-600 hover:text-rose-600 hover:bg-rose-50 border border-slate-200/80 bg-white'
             }`}
             title="Tes Suara Bahasa Jepang Asli (Tokyo Accent)"
             aria-label="Tes suara pelafalan"
           >
-            <Volume2 className={`w-4 h-4 ${isPlayingAudio ? 'text-rose-600 animate-bounce' : 'text-slate-500'}`} />
-            <span className="hidden md:inline">{isPlayingAudio ? 'Memutar...' : 'Tes Audio'}</span>
+            <Volume2 className={`w-4 h-4 shrink-0 ${isPlayingAudio ? 'text-rose-600 animate-bounce' : 'text-slate-500'}`} />
+            <span className="hidden sm:inline">{isPlayingAudio ? 'Memutar...' : 'Tes Suara'}</span>
           </button>
 
           {/* Add Custom Flashcard Button */}

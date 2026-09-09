@@ -8,20 +8,22 @@ import {
   Layers, 
   BookOpen, 
   Sparkles,
-  CheckCircle2
+  CheckCircle2,
+  HelpCircle,
 } from 'lucide-react';
 import { CardItem, UserItemProgress } from '../types';
 import { soundManager } from '../utils/audio';
 
-interface VocabGroupViewProps {
+export interface VocabGroupViewProps {
   cards: CardItem[];
   progress: Record<string, UserItemProgress>;
   speechRate: number;
   onStartFlashcard: (subCategory: string, level: 'all' | 'N5' | 'N4' | 'N3') => void;
+  onStartQuiz?: (subCategory: string, level: 'all' | 'N5' | 'N4' | 'N3') => void;
   onToggleFavorite?: (cardId: string) => void;
 }
 
-interface GroupMeta {
+export interface GroupMeta {
   id: string;
   name: string;
   kanjiTitle: string;
@@ -29,7 +31,7 @@ interface GroupMeta {
   desc: string;
 }
 
-const GROUP_METAS: Record<string, GroupMeta> = {
+export const GROUP_METAS: Record<string, GroupMeta> = {
   kata_kerja: {
     id: 'kata_kerja',
     name: 'Kata Kerja',
@@ -128,6 +130,7 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
   progress,
   speechRate,
   onStartFlashcard,
+  onStartQuiz,
   onToggleFavorite,
 }) => {
   const [levelFilter, setLevelFilter] = useState<'all' | 'N5' | 'N4' | 'N3'>('all');
@@ -423,12 +426,27 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                       e.stopPropagation();
                       onStartFlashcard(group.key, levelFilter);
                     }}
-                    className="flex items-center gap-1.5 px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-bold shadow-2xs transition-all cursor-pointer"
+                    className="flex items-center gap-1.5 px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-bold shadow-2xs transition-all cursor-pointer select-none"
                     title={`Latihan flashcard kelompok ${group.meta.name}`}
                   >
                     <Layers className="w-3.5 h-3.5" />
                     <span>Latihan Kartu</span>
                   </button>
+
+                  {/* Practice Quiz Button */}
+                  {onStartQuiz && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onStartQuiz(group.key, levelFilter);
+                      }}
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold shadow-2xs transition-all cursor-pointer select-none"
+                      title={`Mulai kuis kosakata khusus kelompok ${group.meta.name}`}
+                    >
+                      <HelpCircle className="w-3.5 h-3.5" />
+                      <span>Kuis Grup</span>
+                    </button>
+                  )}
 
                   {/* Expand Toggle */}
                   <div className="p-1 text-slate-400 hover:text-slate-700 rounded-lg">

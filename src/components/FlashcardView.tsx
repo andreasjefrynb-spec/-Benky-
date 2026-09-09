@@ -11,15 +11,18 @@ import {
   BookOpen,
   Search,
   X,
+  PenTool,
 } from 'lucide-react';
 import { CardItem, UserItemProgress, SubCategory } from '../types';
 import { soundManager } from '../utils/audio';
+import { KanjiStrokeOrderViewer } from './KanjiStrokeOrderViewer';
 
 interface FlashcardViewProps {
   cards: CardItem[];
   progress: Record<string, UserItemProgress>;
   onUpdateProgress: (id: string, status: 'new' | 'learning' | 'mastered') => void;
   onToggleFavorite?: (id: string) => void;
+  onPracticeWriting?: (card: CardItem) => void;
   speechRate: number;
   initialSubCategory?: string;
   initialLevel?: 'all' | 'N5' | 'N4' | 'N3';
@@ -29,6 +32,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
   cards,
   progress,
   speechRate,
+  onPracticeWriting,
   initialSubCategory = 'all',
   initialLevel = 'all',
 }) => {
@@ -39,6 +43,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [shuffledCards, setShuffledCards] = useState<CardItem[]>(cards);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [strokeModalCard, setStrokeModalCard] = useState<CardItem | null>(null);
 
   // Subscribe to audio playback state for visual feedback
   useEffect(() => {
@@ -315,15 +320,15 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
           )}
         </div>
 
-        {/* Subcategory Pills - Flex Wrap Responsive */}
+        {/* Subcategory Pills - Clean Single-Row Scrollable Ribbon */}
         {availableSubCats.length > 0 && (
-          <div className="flex flex-wrap items-center gap-1.5 py-1">
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 select-none">
             <button
               onClick={() => {
                 setSelectedSubCategory('all');
                 setCurrentIndex(0);
               }}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap select-none ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap select-none shrink-0 ${
                 selectedSubCategory === 'all'
                   ? 'bg-slate-800 text-white shadow-xs'
                   : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
@@ -338,7 +343,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                   setSelectedSubCategory(sub);
                   setCurrentIndex(0);
                 }}
-                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap select-none ${
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap select-none shrink-0 ${
                   selectedSubCategory === sub
                     ? 'bg-rose-600 text-white shadow-xs'
                     : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
@@ -452,10 +457,19 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 </p>
               )}
 
-              {currentCard.strokes && (
-                <span className="mt-3 text-[11px] font-bold text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded-full">
-                  {currentCard.strokes} Goresan
-                </span>
+              {(currentCard.strokes || currentCard.category === 'kanji') && (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setStrokeModalCard(currentCard);
+                  }}
+                  className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200/80 hover:bg-rose-100 cursor-pointer transition-all active:scale-95 shadow-2xs select-none"
+                  title="Lihat urutan goresan & langkah tulis (Hitsujun)"
+                >
+                  <PenTool className="w-3.5 h-3.5 text-rose-600" />
+                  <span>{currentCard.strokes ? `${currentCard.strokes} Goresan` : 'Langkah Tulis'} &bull; 筆順</span>
+                </button>
               )}
             </div>
 
@@ -549,6 +563,20 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                       <span className="text-indigo-600 font-extrabold">Kun:</span>
                       <span className="font-semibold">{currentCard.kunyomi}</span>
                       <Volume2 className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
+                    </button>
+                  )}
+                  {(currentCard.strokes || currentCard.category === 'kanji') && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setStrokeModalCard(currentCard);
+                      }}
+                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white hover:bg-rose-50 border border-slate-200/80 hover:border-rose-200 rounded-lg text-slate-700 transition-all cursor-pointer select-none active:scale-95 shadow-2xs"
+                      title="Lihat urutan coretan langkah demi langkah (Hitsujun)"
+                    >
+                      <PenTool className="w-3.5 h-3.5 text-rose-500 shrink-0" />
+                      <span className="text-rose-600 font-extrabold">Urutan Coretan</span>
                     </button>
                   )}
                 </div>
@@ -653,6 +681,37 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
           <span>👈 Geser kartu ke samping untuk ganti kartu &bull; Ketuk untuk membalik 👉</span>
         </span>
       </div>
+
+      {/* Kanji Stroke Order Modal (Urutan Coretan Langkah demi Langkah) */}
+      {strokeModalCard && (
+        <div
+          className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-3 sm:p-4 backdrop-blur-xs"
+          onClick={() => setStrokeModalCard(null)}
+        >
+          <div
+            className="bg-white rounded-3xl max-w-md w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <KanjiStrokeOrderViewer
+              kanjiChar={strokeModalCard.japanese}
+              reading={strokeModalCard.reading}
+              meaningId={strokeModalCard.meaningId}
+              strokesCount={strokeModalCard.strokes}
+              speechRate={speechRate}
+              onClose={() => setStrokeModalCard(null)}
+              onPracticeWriting={
+                onPracticeWriting
+                  ? () => {
+                      const target = strokeModalCard;
+                      setStrokeModalCard(null);
+                      onPracticeWriting(target);
+                    }
+                  : undefined
+              }
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

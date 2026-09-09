@@ -104,15 +104,19 @@ export function getCardsByCategory(category: MainCategory, customCards: CardItem
 // Generate randomized quiz questions
 export function generateQuizQuestions(
   pool: CardItem[],
-  count: number | 'all' = 'all'
+  count: number | 'all' = 'all',
+  distractorPool?: CardItem[]
 ): QuizQuestion[] {
-  if (!pool || pool.length < 4) {
-    // If not enough cards in filtered pool, borrow from all built-in cards
-    pool = getAllBuiltInCards();
+  const fallbackPool =
+    distractorPool && distractorPool.length >= 4 ? distractorPool : getAllBuiltInCards();
+
+  let activePool = pool;
+  if (!activePool || activePool.length === 0) {
+    activePool = fallbackPool;
   }
 
   // Shuffle pool (Fisher-Yates shuffle)
-  const shuffled = [...pool];
+  const shuffled = [...activePool];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
@@ -126,13 +130,14 @@ export function generateQuizQuestions(
     const types: ('meaning' | 'reading' | 'reverse' | 'audio')[] = ['meaning', 'reading', 'reverse', 'audio'];
     const chosenType = types[index % types.length];
 
-    // Pick 3 random distinct distractors from pool quickly (O(1))
+    // Pick 3 random distinct distractors from activePool or fallbackPool
+    const candidateSource = activePool.length >= 4 ? activePool : fallbackPool;
     const distractors: CardItem[] = [];
     let attempts = 0;
-    while (distractors.length < 3 && attempts < 30 && distractors.length < pool.length - 1) {
+    while (distractors.length < 3 && attempts < 50 && candidateSource.length > distractors.length + 1) {
       attempts++;
-      const randIdx = Math.floor(Math.random() * pool.length);
-      const candidate = pool[randIdx];
+      const randIdx = Math.floor(Math.random() * candidateSource.length);
+      const candidate = candidateSource[randIdx];
       if (candidate.id !== item.id && !distractors.some(d => d.id === candidate.id)) {
         distractors.push(candidate);
       }
