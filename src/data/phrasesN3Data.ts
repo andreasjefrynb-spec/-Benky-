@@ -1,10 +1,7 @@
 import { CardItem } from '../types';
 
-// Koleksi Frasa, Tata Bahasa & Ungkapan Lengkap JLPT N3
+// Koleksi Frasa, Tata Bahasa & Ungkapan Lengkap JLPT N3 (Kurikulum Lengkap)
 export const phrasesN3Data: CardItem[] = [
-  // ==========================================
-  // 1. POLA TATA BAHASA JLPT N3 (文法 / Bunpou)
-  // ==========================================
   {
     id: 'pn3-gr-1',
     category: 'phrases',
@@ -14,7 +11,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Tidak mungkin ada alasan untuk ~ / Mustahil sekali bahwa ~',
     exampleJp: 'あんなに真面目な彼が嘘をつくわけがありません。',
     exampleId: 'Pria serajin dan sejujur dia tidak mungkin berbohong.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-2',
@@ -25,7 +22,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Tidak bisa begitu saja melakukan ~ (karena alasan moral/sosial)',
     exampleJp: '大事な会議があるので、仕事を休むわけにはいきません。',
     exampleId: 'Karena ada rapat penting, saya tidak bisa begitu saja libur kerja.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-3',
@@ -37,7 +34,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Berdasarkan pada ~ / Berlandaskan data atau fakta',
     exampleJp: '調査のデータに基づいて、新しい計画を立てました。',
     exampleId: 'Berdasarkan data hasil survei penelitian, kami menyusun rencana baru.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-4',
@@ -49,7 +46,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Mengenai / Berkenaan dengan topik ~',
     exampleJp: 'この問題に関して、ご意見はありませんか？',
     exampleId: 'Mengenai masalah ini, apakah Anda memiliki pandangan atau masukan?',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-5',
@@ -61,7 +58,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Terhadap ~ / Berbanding terbalik dengan ~',
     exampleJp: 'お客様に対しては丁寧な言葉遣いを心がけています。',
     exampleId: 'Terhadap pelanggan, kami senantiasa menjaga tutur kata yang sopan.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-6',
@@ -72,7 +69,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Bagi / Menurut sudut pandang kepentingan ~',
     exampleJp: '留学生にとって、健康管理はとても重要です。',
     exampleId: 'Bagi mahasiswa asing, menjaga kesehatan fisik sangatlah penting.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-7',
@@ -83,7 +80,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Oleh karena / Bergantung pada / Menurut sumber ~',
     exampleJp: '人によって考え方はそれぞれ異なります。',
     exampleId: 'Bergantung pada orangnya, cara berpikir masing-masing berbeda.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-8',
@@ -94,7 +91,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Bukan hanya ~, bahkan juga / melainkan juga ~',
     exampleJp: '彼は英語ばかりか、フランス語も流暢に話せます。',
     exampleId: 'Dia bukan hanya bahasa Inggris, bahkan bahasa Prancis pun fasih.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-9',
@@ -105,7 +102,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Asalkan saja ~ (maka yang lain tidak masalah)',
     exampleJp: '健康でさえあれば、どんな困難も乗り越えられます。',
     exampleId: 'Asalkan sehat badan, rintangan apa pun dapat kita lalui.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-10',
@@ -117,7 +114,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Pasti / Tidak diragukan lagi bahwa ~',
     exampleJp: 'あんなに練習したのだから、合格するに違いありません。',
     exampleId: 'Karena sudah berlatih sekeras itu, dia pasti tidak diragukan lagi akan lulus.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-11',
@@ -128,7 +125,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Dikhawatirkan berisiko buruk / Ada potensi bahaya ~',
     exampleJp: 'この大雨で川が氾濫するおそれがあります。',
     exampleId: 'Dikhawatirkan ada risiko sungai meluap akibat hujan lebat ini.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-12',
@@ -140,7 +137,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Cenderung agak merasa ~ (sedikit kurang fit)',
     exampleJp: '最近少し風邪気味なので、今夜は早く寝ます。',
     exampleId: 'Akhir-akhir ini agak merasa meriang masuk angin, jadi malam ini saya tidur cepat.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-13',
@@ -152,7 +149,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Di satu sisi ~, tetapi di sisi sebaliknya ~',
     exampleJp: '都会の生活は便利な反面、ストレスも多いです。',
     exampleId: 'Hidup di kota metropolitan praktis, tetapi di sisi lain tingkat stresnya tinggi.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-14',
@@ -163,7 +160,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Berkat pertolongan / Berkat faktor baik ~',
     exampleJp: '先生のおかげで、無事にJLPT N3に合格できました！',
     exampleId: 'Berkat bimbingan guru, saya berhasil lulus JLPT N3 dengan selamat!',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-15',
@@ -174,7 +171,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Gara-gara hal buruk / Kesalahan ~ (akibat negatif)',
     exampleJp: '夜更かししたせいで、朝起きられませんでした。',
     exampleId: 'Gara-gara begadang semalam suntuk, saya jadi tidak bisa bangun pagi.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-16',
@@ -185,7 +182,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Setiap kali melakukan ~ selalu terjadi ~',
     exampleJp: '母の声を聞くたびに、故郷を思い出します。',
     exampleId: 'Setiap kali mendengar suara ibu, saya selalu teringat kampung halaman.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-17',
@@ -196,7 +193,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Selagi masih sempat / Sebelum terlanjur berubah ~',
     exampleJp: 'スープが温かいうちに、どうぞ召し上がってください。',
     exampleId: 'Silakan dinikmati selagi supnya masih dalam keadaan hangat.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-18',
@@ -207,7 +204,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Dibiarkan terus menerus dalam kondisi menyala/terbuka',
     exampleJp: 'テレビをつけっぱなしで寝てしまいました。',
     exampleId: 'Saya tertidur pulas dengan televisi dibiarkan terus menyala begitu saja.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-19',
@@ -218,7 +215,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Tepat begitu ~ langsung seketika itu juga ~',
     exampleJp: '外に出たとたん、激しい雷雨が降り始めました。',
     exampleId: 'Tepat begitu melangkah keluar rumah, petir dan hujan lebat langsung mengguyur.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-20',
@@ -230,12 +227,8 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Tepat di tengah-tengah sedang asyik/fokus melakukan ~',
     exampleJp: '食事の最中に突然電話がかかってきました。',
     exampleId: 'Tepat di tengah-tengah sedang santap makan, mendadak telepon berdering.',
-    level: 'N3',
+    level: 'N3'
   },
-
-  // ==========================================
-  // 2. UNGKAPAN BISNIS & SOSIAL N3 (ビジネス表現)
-  // ==========================================
   {
     id: 'pn3-biz-1',
     category: 'phrases',
@@ -246,7 +239,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Terima kasih banyak atas kerja sama dan bantuan Anda selama ini (salam pembuka bisnis)',
     exampleJp: 'いつも大変お世話になっております。ABC商事の田中です。',
     exampleId: 'Terima kasih atas kerja samanya selama ini. Saya Tanaka dari ABC Trading.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-biz-2',
@@ -258,7 +251,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Sudah lama tidak saling kontak / berkabar (salam bisnis)',
     exampleJp: '大変ご無沙汰しております。お変わりございませんか？',
     exampleId: 'Sudah cukup lama tidak saling bertukar kabar. Apakah Anda sehat selalu?',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-biz-3',
@@ -270,7 +263,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Mohon maaf sebelumnya telah merepotkan Anda, tetapi ~',
     exampleJp: 'お手数をおかけしますが、ご確認のほどよろしくお願いいたします。',
     exampleId: 'Mohon maaf telah merepotkan, mohon kesediaannya untuk memeriksa dokumen tersebut.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-biz-4',
@@ -282,7 +275,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Baik, saya pahami dan laksanakan (jawaban sopan profesional)',
     exampleJp: 'ご指示の件、承知いたしました。直ちに取り掛かります。',
     exampleId: 'Mengenai arahan Anda, baik saya pahami. Saya akan segera melaksanakannya.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-biz-5',
@@ -294,7 +287,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Tolong sampaikan salam hormat saya kepada beliau',
     exampleJp: '山田部長にもどうぞよろしくお伝えください。',
     exampleId: 'Tolong sampaikan juga salam hormat saya kepada Kepala Divisi Yamada.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-biz-6',
@@ -306,7 +299,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Mohon berkenan untuk dipertimbangkan (penutup proposal bisnis)',
     exampleJp: '企画書を添付いたしました。ご検討のほどよろしくお願いいたします。',
     exampleId: 'Saya lampirkan lembar proposal. Mohon kiranya berkenan untuk dipertimbangkan.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-biz-7',
@@ -318,7 +311,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Merupakan suatu kehormatan besar bagi saya dapat berjumpa dengan Anda',
     exampleJp: '本日、社長にお目にかかれて光栄でございます。',
     exampleId: 'Hari ini merupakan suatu kehormatan besar dapat bertemu dengan Bapak Presiden Direktur.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-biz-8',
@@ -330,7 +323,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Sudikah kiranya Anda berkenan menunggu sejenak?',
     exampleJp: '担当者にお繋ぎしますので、少々お待ちいただけますでしょうか。',
     exampleId: 'Saya akan sambungkan ke staf penanggung jawab, sudikah kiranya menunggu sejenak?',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-21',
@@ -342,43 +335,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Tepat begitu / Seketika setelah melakukan ~ langsung terjadi ~',
     exampleJp: '窓を開けたとたんに、冷たい風が入ってきました。',
     exampleId: 'Tepat begitu saya membuka jendela, seketika angin dingin langsung berhembus masuk.',
-    level: 'N3',
-  },
-  {
-    id: 'pn3-gr-22',
-    category: 'phrases',
-    subCategory: 'tata_bahasa_n3',
-    japanese: '〜うちに',
-    reading: '~ uchi ni',
-    furigana: '〜うちに',
-    meaningId: 'Selagi / Mumpung masih dalam keadaan ~ sebelum berubah',
-    exampleJp: 'スープが温かいうちに、早く召し上がってください。',
-    exampleId: 'Mumpung supnya masih hangat, silakan lekas disantap.',
-    level: 'N3',
-  },
-  {
-    id: 'pn3-gr-23',
-    category: 'phrases',
-    subCategory: 'tata_bahasa_n3',
-    japanese: '〜おかげで',
-    reading: '~ okage de',
-    furigana: '〜おかげで',
-    meaningId: 'Berkat ~ (membawa dampak atau keberhasilan positif)',
-    exampleJp: '先生のご指導のおかげで、N3に合格できました！',
-    exampleId: 'Berkat bimbingan dari guru, saya berhasil lulus ujian JLPT N3!',
-    level: 'N3',
-  },
-  {
-    id: 'pn3-gr-24',
-    category: 'phrases',
-    subCategory: 'tata_bahasa_n3',
-    japanese: '〜せいで',
-    reading: '~ sei de',
-    furigana: '〜せいで',
-    meaningId: 'Gara-gara / Akibat buruk dari ~ (menyebabkan hal negatif)',
-    exampleJp: '大雨のせいで、電車のダイヤが乱れて遅刻しました。',
-    exampleId: 'Gara-gara hujan lebat, jadwal kereta kacau dan saya terlambat.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-25',
@@ -390,31 +347,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Cenderung seperti / Bernuansa / Terlihat seperti (kebiasaan)',
     exampleJp: '彼は大人なのに、言動が子どもっぽいです。',
     exampleId: 'Meskipun sudah dewasa, perkataan dan tingkah lakunya kekanak-kanakan.',
-    level: 'N3',
-  },
-  {
-    id: 'pn3-gr-26',
-    category: 'phrases',
-    subCategory: 'tata_bahasa_n3',
-    japanese: '〜気味 (ぎみ)',
-    reading: '~ gimi',
-    furigana: '〜ぎみ',
-    meaningId: 'Agak sedikit cenderung merasa ~ (kondisi fisik/mental)',
-    exampleJp: '最近、仕事が忙しくて風邪気味です。',
-    exampleId: 'Akhir-akhir ini pekerjaan sibuk dan saya merasa agak sedikit mau flu.',
-    level: 'N3',
-  },
-  {
-    id: 'pn3-gr-27',
-    category: 'phrases',
-    subCategory: 'tata_bahasa_n3',
-    japanese: '〜に違いない',
-    reading: '~ ni chigainai',
-    furigana: '〜に ちがいない',
-    meaningId: 'Pasti tidak salah lagi / Yakin seyakin-yakinnya bahwa ~',
-    exampleJp: '毎日10時間勉強しているから、彼女は合格するに違いありません。',
-    exampleId: 'Karena belajar 10 jam setiap hari, dia pasti tidak salah lagi akan lulus.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-28',
@@ -426,7 +359,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Di satu sisi ..., namun di sisi sebaliknya ...',
     exampleJp: '都会の生活は便利な反面、生活費が高くつきます。',
     exampleId: 'Kehidupan di kota besar sangat praktis, namun di sisi lain biaya hidupnya mahal.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-29',
@@ -438,19 +371,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Mulai dari ~ sebagai contoh representatif utama',
     exampleJp: '富士山をはじめとして、日本には素晴らしい山がたくさんあります。',
     exampleId: 'Mulai dari Gunung Fuji, di Jepang terdapat banyak gunung yang menakjubkan.',
-    level: 'N3',
-  },
-  {
-    id: 'pn3-gr-30',
-    category: 'phrases',
-    subCategory: 'tata_bahasa_n3',
-    japanese: '〜たびに',
-    reading: '~ tabi ni',
-    furigana: '〜たびに',
-    meaningId: 'Setiap kali melakukan ~ selalu terjadi hal yang sama',
-    exampleJp: 'この写真を見るたびに、留学時代の楽しい思い出が蘇ります。',
-    exampleId: 'Setiap kali melihat foto ini, kenangan indah masa studi di luar negeri selalu teringat kembali.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-31',
@@ -462,7 +383,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Untuk ukuran / Jika dibandingkan dengan standarnya, ternyata ~',
     exampleJp: 'このレストランは値段が安いわりに、料理がとても美味しいです。',
     exampleId: 'Restoran ini harganya terjangkau, tapi untuk ukuran harganya makanannya sangat lezat.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-32',
@@ -474,7 +395,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Berpura-pura seakan-akan ~ padahal tidak demikian',
     exampleJp: '彼女は本当は知っているのに、知らないふりをしました。',
     exampleId: 'Padahal sebenarnya dia tahu, tetapi dia berpura-pura tidak mengetahuinya.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-33',
@@ -486,7 +407,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Sudah pasti / Tak diragukan lagi kepastiannya',
     exampleJp: '一生懸命頑張ったのだから、うまくいくに決まっています。',
     exampleId: 'Karena sudah berusaha sekuat tenaga, sudah pasti segalanya akan berhasil dengan baik.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-34',
@@ -498,7 +419,7 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Sekalipun / Walaupun seandainya ~ tetap akan ~',
     exampleJp: 'たとえ両親に反対されても、私は夢を諦めません。',
     exampleId: 'Sekalipun seandainya ditentang oleh orang tua, saya tidak akan menyerah meraih mimpi.',
-    level: 'N3',
+    level: 'N3'
   },
   {
     id: 'pn3-gr-35',
@@ -510,6 +431,654 @@ export const phrasesN3Data: CardItem[] = [
     meaningId: 'Melakukan sesuatu sampai tuntas habis sama sekali tanpa sisa',
     exampleJp: '長いマラソンコースを最後まで走り切りました！',
     exampleId: 'Saya berhasil berlari tuntas sampai garis akhir lintasan maraton yang panjang!',
-    level: 'N3',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-100',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜を中心に',
+    reading: '~ o chuushin ni',
+    furigana: '〜を ちゅうしんに',
+    meaningId: 'Berpusat pada ~ / Berfokus utama pada ~',
+    exampleJp: '東京を中心に関東地方で激しい雨が降っています。',
+    exampleId: 'Hujan lebat sedang mengguyur wilayah Kanto dengan Tokyo sebagai pusatnya.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-101',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜を通じて / を通して',
+    reading: '~ o tsuujite / o tooshite',
+    furigana: '〜を つうじて / を とおして',
+    meaningId: 'Melalui perantara ~ / Sepanjang kurun waktu ~',
+    exampleJp: 'ボランティア活動を通じて、たくさんの素晴らしい仲間と出会いました。',
+    exampleId: 'Melalui kegiatan sukarelawan, saya berjumpa dengan banyak rekan yang luar biasa.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-102',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜向け (むけ)',
+    reading: '~ muke',
+    furigana: '〜むけ',
+    meaningId: 'Khusus dirancang atau ditujukan untuk kalangan ~',
+    exampleJp: 'このアニメは子供向けですが、大人にも大人気です。',
+    exampleId: 'Anime ini ditujukan untuk anak-anak, tetapi juga sangat populer di kalangan dewasa.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-103',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜くせに',
+    reading: '~ kuseni',
+    furigana: '〜くせに',
+    meaningId: 'Padahal kenyataannya ~ (ada nada celaan, kritik atau jengkel)',
+    exampleJp: '自分は何もしないくせに、人の悪口ばかり言っている。',
+    exampleId: 'Padahal dirinya sendiri tidak berbuat apa-apa, tapi selalu saja mencela orang lain.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-104',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜かける / かけの',
+    reading: '~ kakeru / kake no',
+    furigana: '〜かける / かけの',
+    meaningId: 'Baru setengah jalan melakukan ~ / Sedang tanggung belum tuntas',
+    exampleJp: '机の上に読みかけの本が置いたままになっています。',
+    exampleId: 'Buku yang baru dibaca setengah jalan dibiarkan begitu saja di atas meja.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-105',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜だらけ',
+    reading: '~ darake',
+    furigana: '〜だらけ',
+    meaningId: 'Penuh berlumuran atau bertaburan hal buruk (lumpur, kesalahan, hutang)',
+    exampleJp: '急いで書いたレポートなので、誤字や間違いだらけです。',
+    exampleId: 'Karena laporan ditulis terburu-buru, isinya penuh dengan salah ketik dan kekeliruan.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-106',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜とおりに / どおりに',
+    reading: '~ toori ni / doori ni',
+    furigana: '〜とおりに / どおりに',
+    meaningId: 'Sesuai persis dengan petunjuk, instruksi atau dugaan semula',
+    exampleJp: '先生が教えてくれたとおりにやったら、うまくできました。',
+    exampleId: 'Ketika saya mempraktikkannya persis seperti instruksi guru, semuanya berjalan lancar.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-107',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜に比べて',
+    reading: '~ ni kurabete',
+    furigana: '〜に くらべて',
+    meaningId: 'Dibandingkan dengan ~',
+    exampleJp: '去年に比べて、今年の冬はそれほど寒くありません。',
+    exampleId: 'Dibandingkan tahun lalu, musim dingin tahun ini tidak begitu menusuk tulang.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-108',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜に加えて',
+    reading: '~ ni kuwaete',
+    furigana: '〜に くわえて',
+    meaningId: 'Ditambah lagi dengan ~ / Selain daripada itu',
+    exampleJp: '激しい雨に加えて強い風も吹き荒れ、外出が困難になりました。',
+    exampleId: 'Ditambah lagi dengan hembusan angin kencang di samping hujan deras, bepergian ke luar menjadi sulit.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-109',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜にこたえて',
+    reading: '~ ni kotaete',
+    furigana: '〜に こたえて',
+    meaningId: 'Menjawab / Memenuhi harapan atau aspirasi masyarakat',
+    exampleJp: 'ファンの熱い要望にこたえて、追加公演が決まりました。',
+    exampleId: 'Memenuhi permintaan hangat para penggemar, konser tambahan resmi diputuskan.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-110',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜に沿って',
+    reading: '~ ni sotte',
+    furigana: '〜に そって',
+    meaningId: 'Berpedoman sesuai alur pedoman atau garis kebijakan',
+    exampleJp: '基本方針に沿って、具体的な作業計画を進めていきましょう。',
+    exampleId: 'Mari kita lanjutkan penyusunan rencana kerja konkret berpedoman pada kebijakan dasar.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-111',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜に従って',
+    reading: '~ ni shitagatte',
+    furigana: '〜に したがって',
+    meaningId: 'Seiring berjalannya waktu ~ / Mematuhi rambu instruksi',
+    exampleJp: '標高が高くなるに従って、気温がどんどん下がっていきます。',
+    exampleId: 'Seiring bertambahnya ketinggian gunung, suhu udara turun semakin dingin.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-112',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜につれて',
+    reading: '~ ni tsurete',
+    furigana: '〜に つれて',
+    meaningId: 'Bersamaan dengan terjadinya perubahan berangsur-angsur',
+    exampleJp: '年を取るにつれて、健康の大切さが身に染みてわかってきました。',
+    exampleId: 'Seiring bertambahnya usia, arti penting kesehatan semakin meresap di dalam diri.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-113',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜とともに',
+    reading: '~ to tomo ni',
+    furigana: '〜と ともに',
+    meaningId: 'Bersama-sama dengan ~ / Seiring perkembangan zaman',
+    exampleJp: 'インターネットの普及とともに、人々の生活様式は劇的に変化しました。',
+    exampleId: 'Seiring merebaknya internet, gaya hidup masyarakat berubah secara dramatis.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-114',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜に伴って',
+    reading: '~ ni tomonatte',
+    furigana: '〜に ともなって',
+    meaningId: 'Menyertai terjadinya suatu peristiwa atau fenomena',
+    exampleJp: '会社の移転に伴って、社員の通勤手当が見直されました。',
+    exampleId: 'Menyertai perpindahan gedung kantor, tunjangan transportasi pegawai ditinjau ulang.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-115',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜おきに',
+    reading: '~ okini',
+    furigana: '〜おきに',
+    meaningId: 'Setiap selang jarak atau waktu interval tertentu',
+    exampleJp: 'この路線バスは平日朝、5分おきに次々と運行しています。',
+    exampleId: 'Bus trayek ini beroperasi silih berganti setiap selang 5 menit pada pagi hari kerja.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-116',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜ぶり',
+    reading: '~ buri',
+    furigana: '〜ぶり',
+    meaningId: 'Setelah sekian lama selang waktu akhirnya ~',
+    exampleJp: '高校の同窓会で、10年ぶりに親友と再会しました。',
+    exampleId: 'Di reuni SMA, saya berjumpa kembali dengan sahabat karib setelah 10 tahun lamanya.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-117',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜途中で / 途中に',
+    reading: '~ tochuu de / tochuu ni',
+    furigana: '〜とちゅうで / とちゅうに',
+    meaningId: 'Di tengah perjalanan atau di sela-sela aktivitas berlangsung',
+    exampleJp: '会社へ行く途中で雨が降ってきたのでコンビニで傘を買いました。',
+    exampleId: 'Karena hujan turun di tengah perjalanan ke kantor, saya membeli payung di minimarket.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-118',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜ばかりに',
+    reading: '~ bakari ni',
+    furigana: '〜ばかりに',
+    meaningId: 'Hanya gara-gara satu hal sepele atau keteledoran kecil, akibatnya fatal',
+    exampleJp: '一言余計なことを言ったばかりに、彼を深く怒らせてしまいました。',
+    exampleId: 'Hanya gara-gara salah ucap satu patah kata berlebih, dia jadi sangat murka.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-119',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜だけに',
+    reading: '~ dake ni',
+    furigana: '〜だけに',
+    meaningId: 'Justru karena alasan istimewa itulah, wajar bila hasilnya ~',
+    exampleJp: '一生懸命準備を重ねてきただけに、合格したときの喜びは格別でした。',
+    exampleId: 'Justru karena persiapannya begitu matang dan giat, kebahagiaan saat lulus terasa tiada tara.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-120',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜からといって',
+    reading: '~ kara to itte',
+    furigana: '〜からと いって',
+    meaningId: 'Hanya karena dikatakan demikian, bukan berarti pasti selalu ~',
+    exampleJp: '日本に住んでいるからといって、誰でも日本語がペラペラになるわけではありません。',
+    exampleId: 'Hanya karena tinggal di Jepang, bukan berarti otomatis semua orang langsung fasih berbahasa Jepang.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-121',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜からには',
+    reading: '~ kara ni wa',
+    furigana: '〜からには',
+    meaningId: 'Berhubung sudah bertekad atau berjanji, maka wajib menyelesaikannya',
+    exampleJp: 'この勝負を引き受けたからには、最後まで全力で戦います。',
+    exampleId: 'Berhubung sudah menyanggupi pertandingan ini, saya akan berjuang sekuat tenaga hingga akhir.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-122',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜以上は',
+    reading: '~ ijou wa',
+    furigana: '〜いじょうは',
+    meaningId: 'Selama / Mengingat status sudah demikian, wajib bertanggung jawab',
+    exampleJp: 'リーダーを引き受けた以上は、チーム全員を全力で導く責任があります。',
+    exampleId: 'Mengingat saya sudah menerima posisi ketua, ada tanggung jawab memimpin seluruh tim sekuat tenaga.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-123',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜上は (うえは)',
+    reading: '~ ue wa',
+    furigana: '〜うえは',
+    meaningId: 'Berhubung keputusan sudah diambil, tiada jalan lain selain maju',
+    exampleJp: '契約書にサインした上は、約束の条件を確実に守らなければなりません。',
+    exampleId: 'Berhubung sudah menandatangani kontrak, syarat-syarat yang dijanjikan wajib dipatuhi.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-124',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜折に (おりに)',
+    reading: '~ ori ni',
+    furigana: '〜おりに',
+    meaningId: 'Pada kesempatan / Pada momen waktu berkunjung (ungkapan sopan)',
+    exampleJp: '日本へ出張でお越しの折には、ぜひ我が社へお立ち寄りください。',
+    exampleId: 'Pada kesempatan kunjungan dinas ke Jepang, silakan mampir ke kantor perusahaan kami.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-125',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜際 (さい)',
+    reading: '~ sai',
+    furigana: '〜さい',
+    meaningId: 'Ketika / Pada saat peristiwa resmi atau instruksi formal',
+    exampleJp: '地震や火災が発生した際は、エレベーターを使わずに階段で避難してください。',
+    exampleId: 'Ketika gempa atau kebakaran terjadi, tolong evakuasi lewat tangga tanpa menggunakan lift.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-126',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜たところ',
+    reading: '~ ta tokoro',
+    furigana: '〜たところ',
+    meaningId: 'Begitu mencoba melakukan sesuatu, ternyata hasilnya terungkap baru diketahui',
+    exampleJp: '病院で診察を受けたところ、幸いにも大した病気ではありませんでした。',
+    exampleId: 'Begitu memeriksakan diri ke dokter di RS, syukurlah ternyata bukan penyakit yang serius.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-127',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜次第 (しだい)',
+    reading: '~ shidai',
+    furigana: '〜しだい',
+    meaningId: 'Segera setelah selesai langsung lanjut / Bergantung pada penentu',
+    exampleJp: '詳しい日程が決まり次第、すぐにご連絡いたします。',
+    exampleId: 'Segera setelah jadwal rincinya ditentukan, kami akan langsung menghubungi Anda.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-128',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜ものだ / ものではない',
+    reading: '~ mono da / mono dewa nai',
+    furigana: '〜ものだ / ものではない',
+    meaningId: 'Memang sudah sewajarnya demikian / Tidak sepatutnya berbuat demikian',
+    exampleJp: '人の好意は素直に受け取るものですよ。',
+    exampleId: 'Kebaikan tulus orang lain itu sewajarnya kita terima dengan lapang dada.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-129',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜ことだ',
+    reading: '~ koto da',
+    furigana: '〜ことだ',
+    meaningId: 'Nasihat bijak: langkah terbaik yang seharusnya dilakukan adalah ~',
+    exampleJp: '日本語を上達させたいなら、毎日少しずつでも声に出して話すことです。',
+    exampleId: 'Kalau ingin mahir bahasa Jepang, langkah terbaik adalah berbicara bersuara setiap hari walau sedikit.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-130',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜べきだ / べきではない',
+    reading: '~ beki da / beki dewa nai',
+    furigana: '〜べきだ / べきではない',
+    meaningId: 'Sepatutnya harus / Secara moral tidak boleh berbuat ~',
+    exampleJp: '若いうちにたくさんのことにチャレンジしておくべきです。',
+    exampleId: 'Selagi masih muda, sepatutnya kita menantang diri dalam berbagai pengalaman baru.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-131',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜ざるを得ない',
+    reading: '~ zaru o enai',
+    furigana: '〜ざるを えない',
+    meaningId: 'Mau tidak mau terpaksa harus melakukan ~ karena situasi tak terelakkan',
+    exampleJp: '台風で電車が全線不通になったため、今日のイベントは中止せざるを得ません。',
+    exampleId: 'Karena taifun membuat seluruh jalur kereta lumpuh, kami mau tidak mau terpaksa membatalkan acara hari ini.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-132',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜っこない',
+    reading: '~ kkonai',
+    furigana: '〜っこない',
+    meaningId: 'Mustahil sekali bisa ~ / Pasti tidak mungkin mampu',
+    exampleJp: 'こんな分厚い専門書を一日で読み切れっこありません。',
+    exampleId: 'Mustahil sekali bisa menuntaskan buku tebal seilmiah ini hanya dalam tempo satu hari.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-133',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜かねる',
+    reading: '~ kaneru',
+    furigana: '〜かねる',
+    meaningId: 'Merasa sulit / Tidak sanggup memenuhi permohonan (bahasa halus bisnis)',
+    exampleJp: 'お客様のご要望には大変恐縮ですが、お応えいたしかねます。',
+    exampleId: 'Kami sangat mohon maaf, namun permohonan Bapak/Ibu sulit untuk kami penuhi.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-134',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜かねない',
+    reading: '~ kanenai',
+    furigana: '〜かねない',
+    meaningId: 'Mengkhawatirkan bisa-bisa berujung bahaya atau celaka besar',
+    exampleJp: 'そんな無茶な運転をしていると、いつか重大な事故を起こしかねませんよ。',
+    exampleId: 'Kalau menyetir ugal-ugalan seperti itu, bisa-bisa suatu saat menimbulkan kecelakaan fatal lho.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-135',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜がたい',
+    reading: '~ gatai',
+    furigana: '〜がたい',
+    meaningId: 'Sulit secara batiniah atau emosional untuk mempercayai / memaafkan',
+    exampleJp: 'いつも誠実な彼が不正を働いたとは、到底信じがたいことです。',
+    exampleId: 'Bahwa dia yang selalu jujur melakukan kecurangan sungguh sangat sulit dipercaya oleh batin.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-136',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜げ',
+    reading: '~ ge',
+    furigana: '〜げ',
+    meaningId: 'Menampakkan raut kesan atau gelagat yang kentara',
+    exampleJp: '彼は何か言いたげな表情でこちらを見つめていました。',
+    exampleId: 'Dia memandangi saya dengan ekspresi raut wajah yang tampak seolah ingin mengatakan sesuatu.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-137',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜がち',
+    reading: '~ gachi',
+    furigana: '〜がち',
+    meaningId: 'Sering kali cenderung mengalami hal negatif atau sakit-sakitan',
+    exampleJp: '一人暮らしを始めると、野菜不足で栄養が偏りがちになります。',
+    exampleId: 'Saat mulai tinggal sendirian, asupan gizi sering kali cenderung timpang karena kurang sayur.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-138',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜ようとする',
+    reading: '~ you to suru',
+    furigana: '〜ようと する',
+    meaningId: 'Hendak berupaya melakukan ~ / Berusaha pada momen itu',
+    exampleJp: '家を出ようとした瞬間に、電話が激しく鳴り響きました。',
+    exampleId: 'Tepat pada saat saya hendak melangkah keluar rumah, telepon mendadak berdering keras.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-139',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜ようとしない',
+    reading: '~ you to shinai',
+    furigana: '〜ようと しない',
+    meaningId: 'Sama sekali tidak menunjukkan kemauan berusaha melakukan sesuatu',
+    exampleJp: '何度注意されても、彼は自分のミスを認めようとしません。',
+    exampleId: 'Berapa kali pun ditegur, dia sama sekali tidak mau mengakui kesalahannya sendiri.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-140',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜ずに',
+    reading: '~ zuni',
+    furigana: '〜ずに',
+    meaningId: 'Tanpa melakukan ~ (bentuk sastra resmi dari -naide)',
+    exampleJp: '昨夜は一睡もせずに、試験の最終復習に追われていました。',
+    exampleId: 'Tadi malam tanpa tidur sekejap pun, saya sibuk mematangkan ulasan akhir bahan ujian.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-141',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜ないことには',
+    reading: '~ nai koto ni wa',
+    furigana: '〜ないことには',
+    meaningId: 'Jika syarat mutlak tersebut belum terpenuhi, maka tidak akan bisa ~',
+    exampleJp: '実際に現場を見てみないことには、正確な判断は下せません。',
+    exampleId: 'Jika belum melihat langsung ke tempat kejadian, keputusan yang akurat tidak dapat dibuat.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-142',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜としても',
+    reading: '~ to shitemo',
+    furigana: '〜としても',
+    meaningId: 'Sekalipun / Seandainya pun asumsi tersebut benar terjadi',
+    exampleJp: 'たとえ今すぐ出発したとしても、最終便の飛行機には間に合わないだろう。',
+    exampleId: 'Sekalipun seandainya kita berangkat sekarang juga, sepertinya tidak akan keburu mengejar penerbangan terakhir.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-143',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜にしても',
+    reading: '~ ni shitemo',
+    furigana: '〜に しても',
+    meaningId: 'Bahkan bagi orang itu pun / Meskipun begitu tetap tidak pantas',
+    exampleJp: 'いくら忙しかったにしても、連絡の一本くらいは入れるべきでした。',
+    exampleId: 'Meskipun sesibuk apa pun, sepatutnya dia memberi kabar barang satu pesan singkat.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-144',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜において / における',
+    reading: '~ ni oite / ni okeru',
+    furigana: '〜に おいて / に おける',
+    meaningId: 'Pada / Di konteks waktu, tempat resmi atau ranah keilmuan',
+    exampleJp: '現代社会において、情報セキュリティの重要性はますます高まっています。',
+    exampleId: 'Dalam tatanan masyarakat modern, signifikansi keamanan data semakin melonjak tinggi.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-145',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜にかけては',
+    reading: '~ ni kakete wa',
+    furigana: '〜に かけては',
+    meaningId: 'Jika menyangkut keahlian khusus atau kemahiran spesifik',
+    exampleJp: '料理の腕前にかけては、クラスの誰にも負けない自信があります。',
+    exampleId: 'Jika menyangkut kemahiran memasak, saya percaya diri tidak akan kalah dari siapa pun di kelas.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-146',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜にわたって',
+    reading: '~ ni watatte',
+    furigana: '〜に わたって',
+    meaningId: 'Membentang melintasi rentang waktu panjang atau wilayah luas',
+    exampleJp: '3日間にわたって開催されたフェスティバルには多くの観光客が訪れました。',
+    exampleId: 'Festival yang berlangsung membentang selama 3 hari itu dihadiri oleh banyak wisatawan.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-147',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜から〜にかけて',
+    reading: '~ kara ~ ni kakete',
+    furigana: '〜から 〜に かけて',
+    meaningId: 'Mulai dari rentang ... sampai dengan rentang ... (waktu/wilayah)',
+    exampleJp: '昨夜から今朝にかけて、関東地方全域で強い雪が降りました。',
+    exampleId: 'Mulai dari tadi malam hingga pagi ini, salju tebal mengguyur seluruh wilayah Kanto.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-148',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜をめぐって',
+    reading: '~ o megutte',
+    furigana: '〜を めぐって',
+    meaningId: 'Berputar seputar perdebatan, sengketa atau perselisihan hangat',
+    exampleJp: '新工場の建設計画をめぐって、住民と企業の間で議論が続いています。',
+    exampleId: 'Seputar rencana pembangunan pabrik baru, diskusi hangat terus bergulir antara warga dan perusahaan.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-149',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜をもとに / をもとにして',
+    reading: '~ o moto ni / o moto ni shite',
+    furigana: '〜を もとに / を もとに して',
+    meaningId: 'Diciptakan berlandaskan inspirasi atau bahan karya nyata',
+    exampleJp: 'この映画は、実際に起きた感動的な実話をもとにして作られました。',
+    exampleId: 'Film ini diproduksi berlandaskan kisah nyata mengharukan yang benar-benar pernah terjadi.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-150',
+    category: 'phrases',
+    subCategory: 'tata_bahasa_n3',
+    japanese: '〜を込めて',
+    reading: '~ o komete',
+    furigana: '〜を こめて',
+    meaningId: 'Dengan segenap curahan perasaan kasih, cinta, atau doa restu',
+    exampleJp: '感謝の気持ちを込めて、先生に手作りのアルバムを贈りました。',
+    exampleId: 'Dengan segenap curahan rasa terima kasih, kami menghadiahkan album buatan tangan kepada guru.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-151',
+    category: 'phrases',
+    subCategory: 'bisnis_keigo',
+    japanese: '恐れ入りますが',
+    reading: 'osoreirimasu ga',
+    furigana: 'おそれいりますが',
+    meaningId: 'Mohon maaf merepotkan, pembuka permohonan sopan bisnis khas Jepang',
+    exampleJp: '恐れ入りますが、お名前とご連絡先をお聞かせいただけますでしょうか。',
+    exampleId: 'Mohon maaf merepotkan, sudilah kiranya Anda berkenan memberitahukan nama dan nomor kontak?',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-152',
+    category: 'phrases',
+    subCategory: 'bisnis_keigo',
+    japanese: 'ご遠慮なくおっしゃってください',
+    reading: 'go-enryo naku osshatte kudasai',
+    furigana: 'ごえんりょなく おっしゃって ください',
+    meaningId: 'Jangan sungkan-sungkan untuk menyampaikan apa pun (ke atasan/klien)',
+    exampleJp: 'ご不明な点や気になることがございましたら、ご遠慮なくおっしゃってください。',
+    exampleId: 'Apabila ada hal yang belum jelas atau perlu dikonfirmasi, jangan sungkan sampaikan kepada kami.',
+    level: 'N3'
+  },
+  {
+    id: 'pn3-ext-153',
+    category: 'phrases',
+    subCategory: 'bisnis_keigo',
+    japanese: 'ご都合はいかがでしょうか',
+    reading: 'go-tsugou wa ikaga deshou ka',
+    furigana: 'ごつごうは いかがでしょうか',
+    meaningId: 'Bagaimana kelonggaran waktu jadwal Bapak/Ibu? (menanyakan waktu sopan)',
+    exampleJp: '来週火曜日の午後2時頃、ご都合はいかがでしょうか。',
+    exampleId: 'Kira-kira hari Selasa minggu depan jam 2 siang, bagaimanakah kelonggaran waktu Anda?',
+    level: 'N3'
   }
 ];

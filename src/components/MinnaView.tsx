@@ -62,9 +62,17 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
     }
   };
 
-  const handleSpeak = (text: string, e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    speakJapanese(text, speechRate);
+  const handleSpeak = (text: string, readingOrEvent?: string | React.MouseEvent, e?: React.MouseEvent) => {
+    let reading: string | undefined;
+    let evt: React.MouseEvent | undefined;
+    if (typeof readingOrEvent === 'string') {
+      reading = readingOrEvent;
+      evt = e;
+    } else if (readingOrEvent && typeof readingOrEvent === 'object' && 'stopPropagation' in readingOrEvent) {
+      evt = readingOrEvent as React.MouseEvent;
+    }
+    evt?.stopPropagation();
+    speakJapanese(text, speechRate, undefined, reading);
   };
 
   return (
@@ -363,7 +371,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                           </p>
                         </div>
                         <button
-                          onClick={(e) => handleSpeak(ex.jp, e)}
+                          onClick={(e) => handleSpeak(ex.jp, ex.reading, e)}
                           title="Dengarkan Pelafalan Audio"
                           className="p-2 rounded-xl bg-slate-100 hover:bg-rose-100 text-slate-600 hover:text-rose-700 transition-colors shrink-0 cursor-pointer"
                         >
@@ -411,7 +419,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                     </p>
                   </div>
                   <button
-                    onClick={(e) => handleSpeak(vocab.jp, e)}
+                    onClick={(e) => handleSpeak(vocab.jp, vocab.reading, e)}
                     className="p-2 rounded-xl bg-white hover:bg-rose-50 text-slate-500 hover:text-rose-600 border border-slate-200/60 shadow-2xs transition-colors shrink-0 cursor-pointer"
                   >
                     <Volume2 className="w-3.5 h-3.5" />
@@ -452,7 +460,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                       </p>
                     </div>
                     <button
-                      onClick={(e) => handleSpeak(line.jp, e)}
+                      onClick={(e) => handleSpeak(line.jp, line.reading, e)}
                       className="p-2 rounded-xl bg-white hover:bg-rose-100 text-slate-600 hover:text-rose-700 border border-slate-200/60 transition-colors shrink-0 cursor-pointer"
                     >
                       <Volume2 className="w-4 h-4" />

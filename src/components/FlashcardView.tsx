@@ -56,9 +56,10 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
   const handleSpeakCurrentCard = useCallback((card: CardItem | null) => {
     if (!card) return;
-    // Prefer clean furigana reading or kanji or character
-    const textToSpeak = card.furigana || card.kanji || card.japanese;
-    soundManager.speak(textToSpeak, speechRate);
+    // Speak kanji or japanese text with explicit reading/furigana
+    const textToSpeak = card.kanji || card.japanese || card.furigana;
+    const reading = card.furigana || card.reading;
+    soundManager.speakJapanese(textToSpeak, speechRate, undefined, reading);
   }, [speechRate]);
 
   // Check if current cards collection has level tags (e.g. N5 / N4 / N3)
@@ -607,7 +608,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
-                        soundManager.speak(currentCard.onyomi!, speechRate);
+                        soundManager.speakJapanese(currentCard.onyomi!, speechRate, undefined, currentCard.onyomi!);
                       }}
                       className="flex items-center gap-1.5 px-2.5 py-1 bg-white hover:bg-rose-50 border border-slate-200/80 hover:border-rose-200 rounded-lg text-slate-700 transition-all cursor-pointer select-none active:scale-95 shadow-2xs"
                       title="Klik untuk mendengarkan bacaan On-yomi (Katakana)"
@@ -622,7 +623,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
-                        soundManager.speak(currentCard.kunyomi!, speechRate);
+                        soundManager.speakJapanese(currentCard.kunyomi!, speechRate, undefined, currentCard.kunyomi!);
                       }}
                       className="flex items-center gap-1.5 px-2.5 py-1 bg-white hover:bg-indigo-50 border border-slate-200/80 hover:border-indigo-200 rounded-lg text-slate-700 transition-all cursor-pointer select-none active:scale-95 shadow-2xs"
                       title="Klik untuk mendengarkan bacaan Kun-yomi (Hiragana)"

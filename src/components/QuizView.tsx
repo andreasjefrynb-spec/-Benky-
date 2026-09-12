@@ -634,7 +634,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
           <div className="my-4 flex flex-col items-center">
             <button
               id="quiz-audio-play-btn"
-              onClick={() => soundManager.speak(currentQ.item.furigana || currentQ.item.kanji || currentQ.item.japanese, speechRate)}
+              onClick={() => soundManager.speakJapanese(currentQ.item.kanji || currentQ.item.japanese, speechRate, undefined, currentQ.item.furigana || currentQ.item.reading)}
               className={`w-20 h-20 rounded-full text-white flex items-center justify-center shadow-lg transition-all cursor-pointer mb-2 select-none ${
                 isPlayingAudio
                   ? 'bg-rose-600 scale-110 ring-4 ring-rose-200 animate-pulse shadow-rose-300'

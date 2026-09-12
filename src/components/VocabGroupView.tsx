@@ -222,8 +222,8 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
     setExpandedGroups({});
   };
 
-  const playWordAudio = (text: string) => {
-    soundManager.speak(text, speechRate);
+  const playWordAudio = (text: string, reading?: string) => {
+    soundManager.speakJapanese(text, speechRate, undefined, reading);
   };
 
   // Group shortcut click
@@ -541,7 +541,7 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                           {/* Card Bottom: Audio Pronounce */}
                           <div className="flex items-center justify-between pt-2">
                             <button
-                              onClick={() => playWordAudio(card.furigana || card.japanese)}
+                              onClick={() => playWordAudio(card.kanji || card.japanese, card.furigana || card.reading)}
                               className="flex items-center gap-1.5 text-xs font-bold text-rose-600 hover:text-rose-700 p-1.5 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer select-none active:scale-95"
                               title="Dengarkan pelafalan bahasa Jepang asli"
                             >

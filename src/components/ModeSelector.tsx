@@ -49,7 +49,7 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
   } else if (isConjugation) {
     chartLabel = 'Simulator & Panduan Bentuk';
     ChartIcon = RefreshCw;
-    chartDesc = '12 bentuk perubahan kata kerja/sifat & panduan golongan';
+    chartDesc = '14 bentuk perubahan kata kerja/sifat & panduan golongan';
   }
 
   const modes: {

@@ -54,7 +54,7 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
     {
       id: 'vocab',
       title: 'Kosakata',
-      sub: '1.400+ N5–N3',
+      sub: '1.500+ N5–N3',
       badge: '語',
       icon: '📖',
     },
@@ -75,7 +75,7 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
     {
       id: 'conjugation',
       title: 'Konjugasi',
-      sub: '12 Bentuk Perubahan',
+      sub: '14 Bentuk, Lagu ~Te & Drill',
       badge: '活',
       icon: '🔄',
     },

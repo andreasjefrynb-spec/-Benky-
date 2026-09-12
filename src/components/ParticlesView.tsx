@@ -121,9 +121,17 @@ export const ParticlesView: React.FC<ParticlesViewProps> = ({ speechRate }) => {
     return matchesGroup && matchesSearch;
   });
 
-  const handleSpeak = (text: string, e?: React.MouseEvent) => {
-    if (e) e.stopPropagation();
-    soundManager.speakJapanese(text, speechRate);
+  const handleSpeak = (text: string, readingOrEvent?: string | React.MouseEvent, e?: React.MouseEvent) => {
+    let reading: string | undefined;
+    let evt: React.MouseEvent | undefined;
+    if (typeof readingOrEvent === 'string') {
+      reading = readingOrEvent;
+      evt = e;
+    } else if (readingOrEvent && typeof readingOrEvent === 'object' && 'stopPropagation' in readingOrEvent) {
+      evt = readingOrEvent as React.MouseEvent;
+    }
+    if (evt) evt.stopPropagation();
+    soundManager.speakJapanese(text, speechRate, undefined, reading);
   };
 
   const handleSelectQuizOption = (opt: string) => {
@@ -339,7 +347,7 @@ export const ParticlesView: React.FC<ParticlesViewProps> = ({ speechRate }) => {
                       <div className="flex items-center gap-2">
                         <button
                           id={`audio-btn-${item.id}`}
-                          onClick={(e) => handleSpeak(item.particle, e)}
+                          onClick={(e) => handleSpeak(item.particle, item.romaji, e)}
                           title="Dengar pelafalan audio"
                           className="p-2.5 rounded-xl bg-rose-50 text-rose-700 hover:bg-rose-100 transition-colors"
                         >
@@ -421,7 +429,7 @@ export const ParticlesView: React.FC<ParticlesViewProps> = ({ speechRate }) => {
 
                                         <button
                                           id={`audio-ex-${item.id}-${idx}-${exIdx}`}
-                                          onClick={() => handleSpeak(ex.jp)}
+                                          onClick={() => handleSpeak(ex.jp, ex.reading)}
                                           title="Dengarkan kalimat ini"
                                           className="p-2 rounded-lg bg-stone-100 hover:bg-rose-50 text-stone-600 hover:text-rose-600 transition-colors shrink-0"
                                         >
@@ -588,7 +596,16 @@ export const ParticlesView: React.FC<ParticlesViewProps> = ({ speechRate }) => {
                 </div>
 
                 <button
-                  onClick={() => handleSpeak(currentQ.sentence.replace('___', ''))}
+                  onClick={() =>
+                    handleSpeak(
+                      isAnswerSubmitted
+                        ? currentQ.sentence.replace('___', currentQ.correct)
+                        : currentQ.sentence.replace('___', ''),
+                      isAnswerSubmitted
+                        ? currentQ.reading.replace('___', currentQ.correct)
+                        : currentQ.reading.replace('___', '')
+                    )
+                  }
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-xs font-medium text-stone-700 mx-auto mt-2"
                 >
                   <Volume2 className="w-3.5 h-3.5" />

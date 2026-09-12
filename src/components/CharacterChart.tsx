@@ -125,7 +125,7 @@ export const CharacterChart: React.FC<CharacterChartProps> = ({
               <div
                 key={item.id}
                 id={`char-card-${item.id}`}
-                onClick={() => soundManager.speak(item.japanese, speechRate)}
+                onClick={() => soundManager.speakJapanese(item.japanese, speechRate, undefined, item.reading)}
                 className={`group relative bg-white p-4 rounded-2xl border transition-all duration-150 flex flex-col justify-between cursor-pointer hover:shadow-md hover:-translate-y-0.5 ${
                   isMastered
                     ? 'border-emerald-200/90 bg-gradient-to-b from-white to-emerald-50/20'

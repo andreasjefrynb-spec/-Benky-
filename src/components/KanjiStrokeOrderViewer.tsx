@@ -50,7 +50,7 @@ export const KanjiStrokeOrderViewer: React.FC<KanjiStrokeOrderViewerProps> = ({
   const [showRulesModal, setShowRulesModal] = useState(false);
   const playTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const cleanChar = kanjiChar.trim().charAt(0) || '一';
+  const cleanChar = (typeof kanjiChar === 'string' ? kanjiChar.trim().charAt(0) : '') || '一';
 
   // Load stroke data for the character
   useEffect(() => {

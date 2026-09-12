@@ -42,6 +42,7 @@ import {
   getStoredCustomCards,
   saveStoredCustomCards,
 } from './utils/storage';
+import { registerReadings } from './utils/audio';
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState<MainCategory>('kanji');
@@ -70,6 +71,12 @@ export default function App() {
     setCustomCards(getStoredCustomCards());
     setProgress(getStoredProgress());
     setStats(getStoredStats());
+    try {
+      const allCards = getAllBuiltInCards();
+      registerReadings(allCards);
+    } catch {
+      // ignore
+    }
   }, []);
 
   // Update progress helper
@@ -250,6 +257,7 @@ export default function App() {
         onOpenAddCustom={() => setIsAddCustomOpen(true)}
         speechRate={speechRate}
         onToggleSpeechRate={handleToggleSpeechRate}
+        onSelectSpeechRate={(rate) => setSpeechRate(rate)}
       />
 
       {/* Main Container */}
@@ -408,9 +416,9 @@ export default function App() {
             日本語 ケラス &copy; {new Date().getFullYear()} &bull; Didesain untuk Pembelajar Bahasa Jepang
           </p>
           <div className="flex items-center gap-3 text-slate-500 font-medium flex-wrap justify-center">
-            <span>Kanji JLPT N5-N3</span>
+            <span>400+ Kanji (N5-N3)</span>
             <span>&bull;</span>
-            <span>1.400+ Kosakata (N5-N3)</span>
+            <span>1.500+ Kosakata (N5-N3)</span>
             <span>&bull;</span>
             <span>Partikel & Konjugasi Lengkap</span>
             <span>&bull;</span>

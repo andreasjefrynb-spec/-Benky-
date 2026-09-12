@@ -45,9 +45,17 @@ export const IrodoriView: React.FC<IrodoriViewProps> = ({ speechRate, onPractice
     }
   };
 
-  const handleSpeak = (text: string, e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    speakJapanese(text, speechRate);
+  const handleSpeak = (text: string, readingOrEvent?: string | React.MouseEvent, e?: React.MouseEvent) => {
+    let reading: string | undefined;
+    let evt: React.MouseEvent | undefined;
+    if (typeof readingOrEvent === 'string') {
+      reading = readingOrEvent;
+      evt = e;
+    } else if (readingOrEvent && typeof readingOrEvent === 'object' && 'stopPropagation' in readingOrEvent) {
+      evt = readingOrEvent as React.MouseEvent;
+    }
+    evt?.stopPropagation();
+    speakJapanese(text, speechRate, undefined, reading);
   };
 
   return (
@@ -261,7 +269,7 @@ export const IrodoriView: React.FC<IrodoriViewProps> = ({ speechRate, onPractice
                 </p>
               </div>
               <button
-                onClick={(e) => handleSpeak(currentTopic.targetExpression, e)}
+                onClick={(e) => handleSpeak(currentTopic.targetExpression, undefined, e)}
                 className="p-2 rounded-xl bg-white hover:bg-emerald-100 text-slate-600 hover:text-emerald-700 border border-slate-200/70 transition-colors shrink-0 cursor-pointer"
               >
                 <Volume2 className="w-4 h-4" />
@@ -294,7 +302,7 @@ export const IrodoriView: React.FC<IrodoriViewProps> = ({ speechRate, onPractice
                     </p>
                   </div>
                   <button
-                    onClick={(e) => handleSpeak(phrase.jp, e)}
+                    onClick={(e) => handleSpeak(phrase.jp, phrase.reading, e)}
                     className="p-2 rounded-xl bg-white hover:bg-emerald-100 text-slate-600 hover:text-emerald-700 border border-slate-200/60 shadow-2xs transition-colors shrink-0 cursor-pointer"
                   >
                     <Volume2 className="w-3.5 h-3.5" />
@@ -344,7 +352,7 @@ export const IrodoriView: React.FC<IrodoriViewProps> = ({ speechRate, onPractice
                       </p>
                     </div>
                     <button
-                      onClick={(e) => handleSpeak(dlg.jp, e)}
+                      onClick={(e) => handleSpeak(dlg.jp, dlg.reading, e)}
                       className="p-2 rounded-xl bg-white hover:bg-emerald-100 text-slate-600 hover:text-emerald-700 border border-slate-200/60 transition-colors shrink-0 cursor-pointer"
                     >
                       <Volume2 className="w-4 h-4" />

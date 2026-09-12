@@ -156,7 +156,7 @@ export function getKanjiUnicodeHex(char: string): string {
  * Mengambil data path goresan dari KanjiVG CDN
  */
 export async function fetchKanjiStrokeData(rawChar: string): Promise<KanjiStrokeData | null> {
-  const char = rawChar.trim().charAt(0);
+  const char = (typeof rawChar === 'string' ? rawChar.trim().charAt(0) : '') || '';
   if (!char) return null;
 
   if (kanjiCache.has(char)) {
