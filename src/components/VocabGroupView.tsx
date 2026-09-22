@@ -734,7 +734,7 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
 
                 return (
                   <div
-                    key={card.id}
+                    key={`${card.id}-${card.japanese}`}
                     className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-2xs hover:border-rose-300 hover:shadow-xs transition-all flex flex-col justify-between gap-3 group relative"
                   >
                     {/* Card Top: Word & Kanji */}
@@ -963,7 +963,7 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
 
                       return (
                         <tr
-                          key={card.id}
+                          key={`${card.id}-${card.japanese}`}
                           className="hover:bg-slate-50/80 transition-colors group"
                         >
                           {/* Japanese Word */}

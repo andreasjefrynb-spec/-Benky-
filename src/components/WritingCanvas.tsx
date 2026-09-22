@@ -780,7 +780,7 @@ export const WritingCanvas: React.FC<WritingCanvasProps> = ({
                   const isCurrent = card.id === selectedCard.id;
                   return (
                     <button
-                      key={card.id}
+                      key={`${card.id}-${card.japanese}`}
                       type="button"
                       onClick={() => setSelectedCard(card)}
                       className={`p-2 rounded-xl text-center border transition-all cursor-pointer relative flex flex-col items-center justify-center ${

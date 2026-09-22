@@ -21,6 +21,7 @@ import { SSWView } from './components/SSWView';
 import { DokkaiView } from './components/DokkaiView';
 import { ChoukaiView } from './components/ChoukaiView';
 import { AdvancedGrammarView } from './components/AdvancedGrammarView';
+import { GlobalSearchModal } from './components/GlobalSearchModal';
 import {
   MainCategory,
   StudyMode,
@@ -72,6 +73,8 @@ export default function App() {
 
   // Modal & Navigation States
   const [isAddCustomOpen, setIsAddCustomOpen] = useState(false);
+  const [isGlobalSearchOpen, setIsGlobalSearchOpen] = useState(false);
+  const [initialSearchCardId, setInitialSearchCardId] = useState<string | undefined>(undefined);
   const [writingTargetCard, setWritingTargetCard] = useState<CardItem | null>(null);
   const [vocabGroupTarget, setVocabGroupTarget] = useState<{
     subCategory: string;
@@ -81,6 +84,56 @@ export default function App() {
     subCategory: string;
     level: LevelFilterOption;
   } | null>(null);
+
+  const handleSelectCardFromSearch = (card: CardItem, category: string) => {
+    // Determine which main category this card belongs to
+    let targetCat: MainCategory = 'vocab';
+    if (card.id.startsWith('h_')) {
+      targetCat = 'hiragana';
+    } else if (card.id.startsWith('k_')) {
+      targetCat = 'katakana';
+    } else if (card.id.startsWith('kanji_')) {
+      targetCat = 'kanji';
+    } else if (card.id.startsWith('grammar_') || card.id.startsWith('p_') || card.subCategory === 'particles') {
+      if (card.subCategory === 'particles') {
+        targetCat = 'particles';
+      } else {
+        targetCat = 'phrases';
+      }
+    } else if (card.id.startsWith('conjugation_') || card.subCategory === 'conjugation') {
+      targetCat = 'conjugation';
+    } else {
+      // It's Minna, Tobira, Quartet, Shin Kanzen, Sou-matome, Try, Irodori, SSW, or custom
+      const sub = card.subCategory || '';
+      if (card.id.startsWith('minna_') || sub.startsWith('bab_')) {
+        targetCat = 'minna';
+      } else if (card.id.startsWith('tobira_') || sub.startsWith('tobira_')) {
+        targetCat = 'tobira';
+      } else if (card.id.startsWith('quartet_') || sub.startsWith('quartet_')) {
+        targetCat = 'quartet';
+      } else if (card.id.startsWith('shinkanzen_') || sub.startsWith('shinkanzen_')) {
+        targetCat = 'shinkanzen';
+      } else if (card.id.startsWith('soumatome_') || sub.startsWith('soumatome_')) {
+        targetCat = 'soumatome';
+      } else if (card.id.startsWith('try_') || sub.startsWith('try_')) {
+        targetCat = 'tryjlpt';
+      } else if (card.id.startsWith('irodori_') || sub.startsWith('irodori_')) {
+        targetCat = 'irodori';
+      } else if (card.id.startsWith('ssw_') || sub.startsWith('ssw_')) {
+        targetCat = 'ssw';
+      } else if (card.id.startsWith('custom_')) {
+        targetCat = 'custom';
+      } else {
+        targetCat = 'vocab';
+      }
+    }
+
+    // Set the category and active mode to flashcard
+    setActiveCategory(targetCat);
+    setStudyMode('flashcard');
+    setVocabGroupTarget({ subCategory: card.subCategory || 'all', level: card.level || 'all' });
+    setInitialSearchCardId(card.id);
+  };
 
   // Initialize data from localStorage on mount
   useEffect(() => {
@@ -284,6 +337,7 @@ export default function App() {
       {/* Top Navigation */}
       <Navbar
         onOpenAddCustom={() => setIsAddCustomOpen(true)}
+        onOpenGlobalSearch={() => setIsGlobalSearchOpen(true)}
         speechRate={speechRate}
         onToggleSpeechRate={handleToggleSpeechRate}
         onSelectSpeechRate={(rate) => setSpeechRate(rate)}
@@ -300,6 +354,7 @@ export default function App() {
               setWritingTargetCard(null);
               setVocabGroupTarget(null);
               setQuizGroupTarget(null);
+              setInitialSearchCardId(undefined);
               if (
                 cat === 'phrases' ||
                 cat === 'minna' ||
@@ -347,7 +402,7 @@ export default function App() {
 
           {activeCategory !== 'dokkai' && activeCategory !== 'choukai' && studyMode === 'flashcard' && (
             <FlashcardView
-              key={`flashcard-${activeCategory}-${vocabGroupTarget?.subCategory || 'all'}-${vocabGroupTarget?.level || 'all'}`}
+              key={`flashcard-${activeCategory}-${vocabGroupTarget?.subCategory || 'all'}-${vocabGroupTarget?.level || 'all'}-${initialSearchCardId || 'none'}`}
               cards={currentCategoryCards}
               progress={progress}
               onUpdateProgress={handleUpdateProgress}
@@ -356,6 +411,7 @@ export default function App() {
               speechRate={speechRate}
               initialSubCategory={vocabGroupTarget?.subCategory || 'all'}
               initialLevel={vocabGroupTarget?.level || 'all'}
+              initialCardId={initialSearchCardId}
             />
           )}
 
@@ -574,6 +630,14 @@ export default function App() {
         customCards={customCards}
         onAddCard={handleAddCustomCard}
         onDeleteCard={handleDeleteCustomCard}
+      />
+
+      <GlobalSearchModal
+        isOpen={isGlobalSearchOpen}
+        onClose={() => setIsGlobalSearchOpen(false)}
+        allCards={allCardsCombined}
+        speechRate={speechRate}
+        onSelectCard={handleSelectCardFromSearch}
       />
     </div>
   );

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, SlidersHorizontal } from 'lucide-react';
+import { Volume2, SlidersHorizontal, Search } from 'lucide-react';
 import { soundManager } from '../utils/audio';
 import { AudioSettingsModal } from './AudioSettingsModal';
 
 interface NavbarProps {
   onOpenAddCustom?: () => void;
+  onOpenGlobalSearch: () => void;
   speechRate: number;
   onToggleSpeechRate: () => void;
   onSelectSpeechRate?: (rate: number) => void;
@@ -12,6 +13,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenAddCustom,
+  onOpenGlobalSearch,
   speechRate,
   onToggleSpeechRate,
   onSelectSpeechRate,
@@ -62,26 +64,28 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Controls */}
           <div className="flex items-center gap-1.5 sm:gap-2">
+            {/* Search Button */}
+            <button
+              onClick={onOpenGlobalSearch}
+              className="flex items-center gap-1.5 min-h-[38px] sm:min-h-[44px] px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-rose-200 bg-rose-50 hover:bg-rose-100 active:bg-rose-200 text-rose-700 transition-all cursor-pointer select-none active:scale-95 shadow-3xs"
+              title="Pencarian Global: Cari kata apapun di seluruh materi"
+              aria-label="Buka pencarian global"
+            >
+              <Search className="w-3.5 h-3.5 text-rose-600 shrink-0" />
+              <span className="text-xs font-black leading-none hidden sm:inline text-rose-700">
+                Cari Kata
+              </span>
+            </button>
+
             {/* Audio Settings Button */}
             <button
               id="audio-settings-btn"
               onClick={() => setIsAudioSettingsOpen(true)}
-              className="flex items-center gap-1.5 min-h-[38px] sm:min-h-[44px] px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-slate-200/90 bg-slate-50 hover:bg-slate-100 active:bg-slate-200 text-slate-700 transition-all cursor-pointer select-none active:scale-95"
+              className="flex items-center justify-center w-[38px] sm:w-[44px] h-[38px] sm:h-[44px] rounded-xl border border-slate-200/90 bg-slate-50 hover:bg-slate-100 active:bg-slate-200 text-slate-700 transition-all cursor-pointer select-none active:scale-95 shrink-0"
               title="Pengaturan Suara: Ubah kecepatan dan suara sistem"
               aria-label="Pengaturan suara pelafalan"
             >
-              <SlidersHorizontal className="w-3.5 h-3.5 text-slate-600 shrink-0" />
-              <div className="text-left flex flex-col justify-center">
-                <span className="text-[10px] font-bold leading-none hidden sm:block text-slate-500">
-                  Suara
-                </span>
-                <span className="text-xs font-black leading-tight flex items-center gap-1 text-slate-800">
-                  <span>Standar</span>
-                  <span className="text-[9px] px-1.5 py-0.2 bg-rose-100 text-rose-700 rounded font-bold font-mono">
-                    {speechRate}x
-                  </span>
-                </span>
-              </div>
+              <Volume2 className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600 shrink-0" />
             </button>
 
             {/* Audio Speed Quick Toggle (Desktop only) */}

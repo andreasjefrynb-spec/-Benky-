@@ -405,6 +405,101 @@ app.post("/api/tts", async (req, res) => {
   }
 });
 
+// Gemini AI Real-time Translator Endpoint
+app.post("/api/translate", async (req, res) => {
+  try {
+    const { text } = req.body;
+    if (!text || typeof text !== "string" || !text.trim()) {
+      return res.status(400).json({ error: "Text is required for translation" });
+    }
+
+    const ai = getAI();
+    if (!ai) {
+      return res.status(503).json({ error: "Gemini API is not configured on the server" });
+    }
+
+    const queryText = text.trim();
+    const promptText = `You are an expert Japanese-Indonesian translator and language teacher.
+Translate the following input: "${queryText}"
+
+If the input is in Indonesian or English, translate it into natural, correct Japanese.
+If the input is in Japanese, translate it into natural, correct Indonesian.
+
+Provide the response in the requested JSON structure.
+- "japanese": the polite/formal/standard form (bentuk sopan/formal, e.g. using です/ます).
+- "reading": the pronunciation entirely in hiragana for the formal form.
+- "romaji": the Romaji transliteration for the formal form.
+- "casualJapanese": the casual/non-formal form (bentuk kasual/akrab, e.g. using plain/dictionary form).
+- "casualReading": the pronunciation entirely in hiragana for the casual form.
+- "casualRomaji": the Romaji transliteration for the casual form.
+- "meaning": the clear meaning in Indonesian.
+- "explanation": a very brief grammatical breakdown in Indonesian (e.g. explaining particles, word roots, and the difference between the formal and casual forms). Keep it concise (max 2 sentences).`;
+
+    const candidateModels = [
+      "gemini-3.5-flash",       // Native container model
+      "gemini-3.8-flash",
+      "gemini-3.1-flash-lite",
+      "gemini-flash-latest",
+      "gemini-3.1-pro-preview"
+    ];
+
+    let response: any = null;
+    let lastError: any = null;
+
+    for (const modelName of candidateModels) {
+      try {
+        response = await ai.models.generateContent({
+          model: modelName,
+          contents: [{ parts: [{ text: promptText }] }],
+          config: {
+            responseMimeType: "application/json",
+            responseSchema: {
+              type: "OBJECT",
+              properties: {
+                japanese: { type: "STRING" },
+                reading: { type: "STRING" },
+                romaji: { type: "STRING" },
+                casualJapanese: { type: "STRING" },
+                casualReading: { type: "STRING" },
+                casualRomaji: { type: "STRING" },
+                meaning: { type: "STRING" },
+                explanation: { type: "STRING" }
+              },
+              required: [
+                "japanese", "reading", "romaji", 
+                "casualJapanese", "casualReading", "casualRomaji", 
+                "meaning", "explanation"
+              ]
+            }
+          }
+        });
+        if (response) {
+          break; // successfully generated response
+        }
+      } catch (err: any) {
+        lastError = err;
+        console.info(`[Model Route Transition] Model ${modelName} transitioned to next candidate channel.`);
+      }
+    }
+
+    if (!response) {
+      const errMsg = lastError?.message || String(lastError || "Semua model terjemahan sedang sibuk");
+      return res.status(500).json({ error: errMsg });
+    }
+
+    const responseText = response.text || response?.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (!responseText) {
+      return res.status(500).json({ error: "No response from translation model" });
+    }
+
+    const parsedJson = JSON.parse(responseText.trim());
+    return res.json(parsedJson);
+  } catch (error: any) {
+    console.error("[Translation Service Error]:", error);
+    return res.status(500).json({ error: error.message || "Translation failed" });
+  }
+});
+
 // Vite middleware and static serving
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {

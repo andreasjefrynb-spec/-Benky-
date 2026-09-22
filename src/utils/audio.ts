@@ -200,6 +200,12 @@ export function normalizeJapanesePronunciation(raw: unknown, explicitReading?: u
     return kanaParenthesisMatch[2].replace(/\s+/g, '').trim();
   }
 
+  // 2b. Pattern: Kana with Kanji/Romaji in parentheses e.g. "なみだ (涙)" or "こえ (声)"
+  const reverseParenthesisMatch = t.match(/^([\u3040-\u309F\u30A0-\u30FF\u30FC\s]+)[\(（]([^\)）]+)[\)）]/);
+  if (reverseParenthesisMatch && reverseParenthesisMatch[1]) {
+    return reverseParenthesisMatch[1].replace(/\s+/g, '').trim();
+  }
+
   // 3. Pattern: Ruby style "漢字（かんじ）" inside text -> extract kana
   t = t.replace(/[\u4E00-\u9FAF]+[\(（]([\u3040-\u309F\u30A0-\u30FF\u30FC]+)[\)）]/g, '$1');
   t = t.replace(/[\u4E00-\u9FAF]+\[([\u3040-\u309F\u30A0-\u30FF\u30FC]+)\]/g, '$1');

@@ -32,6 +32,7 @@ interface FlashcardViewProps {
   speechRate: number;
   initialSubCategory?: string;
   initialLevel?: LevelFilterOption;
+  initialCardId?: string;
 }
 
 export const FlashcardView: React.FC<FlashcardViewProps> = ({
@@ -41,10 +42,12 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
   onPracticeWriting,
   initialSubCategory = 'all',
   initialLevel = 'all',
+  initialCardId,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>(initialSubCategory);
+  const [minnaGroupFilter, setMinnaGroupFilter] = useState<'all' | 'minna1' | 'minna2'>('all');
   const [levelFilter, setLevelFilter] = useState<LevelFilterOption>(initialLevel);
   const [searchQuery, setSearchQuery] = useState('');
   const [shuffledCards, setShuffledCards] = useState<CardItem[]>(cards);
@@ -77,6 +80,63 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
     soundManager.speakJapanese(textToSpeak, speechRate, undefined, reading);
   }, [speechRate]);
 
+  // Unique subcategories in available cards
+  const availableSubCats = Array.from(
+    new Set(cards.map((c) => c.subCategory).filter(Boolean))
+  ) as SubCategory[];
+
+  const hasMinnaShokyuChapters = availableSubCats.some((sub) => {
+    if (sub.startsWith('bab_') && !sub.startsWith('bab_chuukyu_')) {
+      const num = parseInt(sub.replace('bab_', ''), 10);
+      return num >= 1 && num <= 50;
+    }
+    return false;
+  });
+
+  const displayedSubCats = availableSubCats.filter((sub) => {
+    if (minnaGroupFilter === 'all') return true;
+    if (sub.startsWith('bab_') && !sub.startsWith('bab_chuukyu_')) {
+      const num = parseInt(sub.replace('bab_', ''), 10);
+      if (minnaGroupFilter === 'minna1') {
+        return num >= 1 && num <= 25;
+      }
+      if (minnaGroupFilter === 'minna2') {
+        return num >= 26 && num <= 50;
+      }
+    }
+    return false;
+  });
+
+  const groupCardsCount = hasMinnaShokyuChapters && minnaGroupFilter !== 'all'
+    ? cards.filter((card) => {
+        if (card.subCategory && card.subCategory.startsWith('bab_') && !card.subCategory.startsWith('bab_chuukyu_')) {
+          const num = parseInt(card.subCategory.replace('bab_', ''), 10);
+          if (minnaGroupFilter === 'minna1') return num >= 1 && num <= 25;
+          if (minnaGroupFilter === 'minna2') return num >= 26 && num <= 50;
+        }
+        return false;
+      }).length
+    : cards.length;
+
+  // Keep selectedSubCategory in bounds of minnaGroupFilter
+  useEffect(() => {
+    if (!hasMinnaShokyuChapters || selectedSubCategory === 'all') return;
+    
+    if (selectedSubCategory.startsWith('bab_') && !selectedSubCategory.startsWith('bab_chuukyu_')) {
+      const num = parseInt(selectedSubCategory.replace('bab_', ''), 10);
+      if (minnaGroupFilter === 'minna1' && (num < 1 || num > 25)) {
+        setSelectedSubCategory('all');
+        setCurrentIndex(0);
+      } else if (minnaGroupFilter === 'minna2' && (num < 26 || num > 50)) {
+        setSelectedSubCategory('all');
+        setCurrentIndex(0);
+      }
+    } else if (minnaGroupFilter !== 'all') {
+      setSelectedSubCategory('all');
+      setCurrentIndex(0);
+    }
+  }, [minnaGroupFilter, selectedSubCategory, hasMinnaShokyuChapters]);
+
   // Check if current cards collection has level tags (e.g. N5 / N4 / N3 / Native)
   const hasLevelTags = cards.some(
     (c) => c.level === 'N5' || c.level === 'N4' || c.level === 'N3' || c.level === 'Native'
@@ -84,6 +144,21 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
   // Filter cards based on subcategory, level, and search query
   const filteredCards = shuffledCards.filter((card) => {
+    // Minna Group Check
+    if (hasMinnaShokyuChapters && minnaGroupFilter !== 'all') {
+      if (card.subCategory && card.subCategory.startsWith('bab_') && !card.subCategory.startsWith('bab_chuukyu_')) {
+        const num = parseInt(card.subCategory.replace('bab_', ''), 10);
+        if (minnaGroupFilter === 'minna1' && (num < 1 || num > 25)) {
+          return false;
+        }
+        if (minnaGroupFilter === 'minna2' && (num < 26 || num > 50)) {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
+
     // Subcategory check
     if (selectedSubCategory !== 'all' && card.subCategory !== selectedSubCategory) {
       return false;
@@ -116,12 +191,29 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
     return true;
   });
 
-  // Keep cards in sync
+  // Keep cards in sync and jump to initialCardId if provided
   useEffect(() => {
     setShuffledCards(cards);
-    setCurrentIndex(0);
     setIsFlipped(false);
-  }, [cards]);
+    
+    if (initialCardId) {
+      const indexInCards = cards.findIndex(c => c.id === initialCardId);
+      if (indexInCards !== -1) {
+        // Find index of matching card using subcategory and level filters
+        const matchIdx = cards.filter(c => {
+          if (selectedSubCategory !== 'all' && c.subCategory !== selectedSubCategory) return false;
+          if (levelFilter !== 'all' && c.level && c.level !== levelFilter) return false;
+          return true;
+        }).findIndex(c => c.id === initialCardId);
+
+        if (matchIdx !== -1) {
+          setCurrentIndex(matchIdx);
+          return;
+        }
+      }
+    }
+    setCurrentIndex(0);
+  }, [cards, initialCardId]);
 
   // Adjust current index if it exceeds filtered length
   useEffect(() => {
@@ -221,11 +313,6 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleFlip, handleNext, handlePrev]);
-
-  // Unique subcategories in available cards
-  const availableSubCats = Array.from(
-    new Set(cards.map((c) => c.subCategory).filter(Boolean))
-  ) as SubCategory[];
 
   const formatSubCatLabel = (sub: string) => {
     switch (sub) {
@@ -420,11 +507,47 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
             {/* Subcategories Ribbon on Mobile */}
             {availableSubCats.length > 0 && (
-              <div className="flex flex-col gap-2 pt-1 border-t border-slate-100">
+              <div className="flex flex-col gap-2 pt-1 border-t border-slate-100 animate-in fade-in duration-200">
+                {/* Minna Group Tabs Filter on Mobile */}
+                {hasMinnaShokyuChapters && (
+                  <div className="flex items-center gap-1 p-0.5 bg-slate-100 rounded-xl text-[10px] font-extrabold border border-slate-200/60 mb-1 w-full max-w-sm justify-between shadow-3xs">
+                    <button
+                      onClick={() => setMinnaGroupFilter('all')}
+                      className={`flex-1 py-1 rounded-lg text-center transition-all cursor-pointer ${
+                        minnaGroupFilter === 'all'
+                          ? 'bg-white text-slate-800 shadow-2xs font-extrabold'
+                          : 'text-slate-500 hover:text-slate-700'
+                      }`}
+                    >
+                      Semua
+                    </button>
+                    <button
+                      onClick={() => setMinnaGroupFilter('minna1')}
+                      className={`flex-1 py-1 rounded-lg text-center transition-all cursor-pointer ${
+                        minnaGroupFilter === 'minna1'
+                          ? 'bg-white text-slate-800 shadow-2xs font-extrabold'
+                          : 'text-slate-500 hover:text-slate-700'
+                      }`}
+                    >
+                      Mina 1
+                    </button>
+                    <button
+                      onClick={() => setMinnaGroupFilter('minna2')}
+                      className={`flex-1 py-1 rounded-lg text-center transition-all cursor-pointer ${
+                        minnaGroupFilter === 'minna2'
+                          ? 'bg-white text-slate-800 shadow-2xs font-extrabold'
+                          : 'text-slate-500 hover:text-slate-700'
+                      }`}
+                    >
+                      Mina 2
+                    </button>
+                  </div>
+                )}
+
                 <div className="flex items-center justify-between gap-1.5">
                   <span className="text-[11px] font-bold text-slate-500 flex items-center gap-1">
                     <ListFilter className="w-3 h-3 text-rose-600" />
-                    <span>Pilih Bab / Tema ({availableSubCats.length}):</span>
+                    <span>Pilih Bab / Tema ({displayedSubCats.length}):</span>
                   </span>
 
                   {/* Mobile Quick Dropdown */}
@@ -436,8 +559,8 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                     }}
                     className="text-[11px] bg-slate-50 border border-slate-200 text-slate-700 rounded-lg px-2 py-1 font-bold focus:outline-none focus:ring-1 focus:ring-rose-400 max-w-[160px] truncate"
                   >
-                    <option value="all">Semua ({cards.length})</option>
-                    {availableSubCats.map((sub) => {
+                    <option value="all">Semua ({groupCardsCount})</option>
+                    {displayedSubCats.map((sub) => {
                       const count = cards.filter((c) => c.subCategory === sub).length;
                       return (
                         <option key={sub} value={sub}>
@@ -462,7 +585,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                   >
                     Semua
                   </button>
-                  {availableSubCats.map((sub) => (
+                  {displayedSubCats.map((sub) => (
                     <button
                       key={sub}
                       onClick={() => {
@@ -539,11 +662,11 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
           {/* Subcategory Navigation Bar with Arrow Controls & Dropdown */}
           {availableSubCats.length > 0 && (
-            <div className="flex flex-col gap-1.5 bg-slate-50/90 p-2.5 rounded-2xl border border-slate-200/90">
-              <div className="flex items-center justify-between gap-2 px-0.5">
+            <div className="flex flex-col gap-2 bg-slate-50/90 p-3 rounded-2xl border border-slate-200/90 shadow-2xs">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-2 border-b border-slate-200/40">
                 <div className="flex items-center gap-1.5 text-xs text-slate-700 font-bold">
                   <ListFilter className="w-4 h-4 text-rose-600" />
-                  <span>Sub-Kategori / Bab ({availableSubCats.length}):</span>
+                  <span>Pilih Bab / Tema ({displayedSubCats.length}):</span>
                   {selectedSubCategory !== 'all' && (
                     <button
                       onClick={() => {
@@ -558,6 +681,53 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                   )}
                 </div>
 
+                {/* Minna Group Tabs Filter on Desktop */}
+                {hasMinnaShokyuChapters && (
+                  <div className="flex items-center gap-0.5 p-0.5 bg-slate-200/70 rounded-xl text-xs font-bold border border-slate-200/50 self-start md:self-auto shadow-3xs">
+                    <button
+                      onClick={() => setMinnaGroupFilter('all')}
+                      className={`px-3 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
+                        minnaGroupFilter === 'all'
+                          ? 'bg-white text-slate-800 shadow-2xs font-extrabold'
+                          : 'text-slate-500 hover:text-slate-700'
+                      }`}
+                    >
+                      Semua
+                    </button>
+                    <button
+                      onClick={() => setMinnaGroupFilter('minna1')}
+                      className={`px-3 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
+                        minnaGroupFilter === 'minna1'
+                          ? 'bg-white text-slate-800 shadow-2xs font-extrabold'
+                          : 'text-slate-500 hover:text-slate-700'
+                      }`}
+                    >
+                      Minna I (Bab 1-25)
+                    </button>
+                    <button
+                      onClick={() => setMinnaGroupFilter('minna2')}
+                      className={`px-3 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer ${
+                        minnaGroupFilter === 'minna2'
+                          ? 'bg-white text-slate-800 shadow-2xs font-extrabold'
+                          : 'text-slate-500 hover:text-slate-700'
+                      }`}
+                    >
+                      Minna II (Bab 26-50)
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-[11px] text-slate-500 font-semibold">
+                  {minnaGroupFilter === 'minna1' 
+                    ? 'Menampilkan Minna no Nihongo Bagian 1 (Dasar / N5)' 
+                    : minnaGroupFilter === 'minna2' 
+                      ? 'Menampilkan Minna no Nihongo Bagian 2 (Menengah-Bawah / N4)' 
+                      : 'Menampilkan semua kategori bab.'
+                  }
+                </span>
+
                 <div className="flex items-center gap-1.5">
                   {/* Quick Dropdown Picker for 1-click chapter jump */}
                   <select
@@ -569,8 +739,8 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                     className="text-xs bg-white border border-slate-200 text-slate-700 rounded-xl px-2.5 py-1 font-semibold focus:outline-none focus:ring-2 focus:ring-rose-400 cursor-pointer max-w-[210px] truncate shadow-2xs"
                     title="Pilih langsung dari menu drop-down"
                   >
-                    <option value="all">Semua Sub-kategori ({cards.length})</option>
-                    {availableSubCats.map((sub) => {
+                    <option value="all">Semua ({groupCardsCount})</option>
+                    {displayedSubCats.map((sub) => {
                       const count = cards.filter((c) => c.subCategory === sub).length;
                       return (
                         <option key={sub} value={sub}>
@@ -642,7 +812,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 >
                   Semua Sub-kategori
                 </button>
-                {availableSubCats.map((sub) => (
+                {displayedSubCats.map((sub) => (
                   <button
                     key={sub}
                     onClick={() => {
