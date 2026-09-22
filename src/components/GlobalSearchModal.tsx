@@ -277,7 +277,13 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
   const mainLayout = (
     <div className={isInline ? "relative w-full flex flex-col" : "relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[80vh] sm:max-h-[75vh]"}>
       {/* Header / Input */}
-      <div className="p-4 border-b border-slate-100 flex items-center gap-3">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleTranslate();
+        }}
+        className="p-3 sm:p-4 border-b border-slate-100 flex items-center gap-2 sm:gap-3 bg-white"
+      >
         <Search className="w-5 h-5 text-slate-400 shrink-0" />
         <input
           ref={inputRef}
@@ -290,26 +296,37 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
               handleTranslate();
             }
           }}
-          placeholder="Cari kata atau kalimat (Tekan Enter untuk Terjemahan AI)..."
-          className="flex-1 text-slate-800 placeholder-slate-400 bg-transparent text-sm sm:text-base border-none outline-none focus:ring-0 focus:outline-none"
+          placeholder="Cari kata atau kalimat..."
+          className="flex-1 text-slate-800 placeholder-slate-400 bg-transparent text-sm sm:text-base border-none outline-none focus:ring-0 focus:outline-none min-w-0"
         />
         {query && (
           <button
+            type="button"
             onClick={() => setQuery('')}
-            className="p-1 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer"
+            className="p-1.5 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer shrink-0"
+            title="Hapus pencarian"
           >
             <X className="w-4 h-4" />
           </button>
         )}
+        <button
+          type="submit"
+          disabled={!query.trim() || isTranslating}
+          className="px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-700 active:bg-rose-800 disabled:bg-slate-200 disabled:text-slate-400 text-white text-xs sm:text-sm font-bold shadow-xs transition-all cursor-pointer shrink-0 flex items-center gap-1 select-none"
+          title="Terjemahkan dengan AI / Cari"
+        >
+          <span>AI Cari</span>
+        </button>
         {!isInline && (
           <button
+            type="button"
             onClick={onClose}
             className="px-2 py-1 text-xs font-bold text-slate-500 hover:text-slate-800 hover:bg-slate-50 rounded-lg cursor-pointer shrink-0"
           >
             Tutup
           </button>
         )}
-      </div>
+      </form>
 
             {/* Quick Filters Tab */}
             {query.trim().length > 0 && (
