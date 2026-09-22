@@ -11,6 +11,17 @@ const PORT = 3000;
 
 app.use(express.json({ limit: "5mb" }));
 
+// CORS middleware for mobile and cross-origin reliability
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
 // In-memory TTS cache: key -> base64 WAV string
 const ttsCache = new Map<string, string>();
 const MAX_CACHE_SIZE = 2500;
@@ -483,12 +494,20 @@ Provide the response in the requested JSON structure.
     }
 
     if (!response) {
-      console.info("[Translation Service] All Gemini models busy or rate-limited (429). Using robust offline fallback dictionary.");
+      console.info("[Translation Service] Gemini models rate-limited (429). Trying public translation API proxy...");
+      const publicResult = await fetchPublicApiTranslation(queryText);
+      if (publicResult) {
+        return res.json(publicResult);
+      }
       return res.json(getOfflineTranslation(queryText));
     }
 
     const responseText = response.text || response?.candidates?.[0]?.content?.parts?.[0]?.text;
     if (!responseText) {
+      const publicResult = await fetchPublicApiTranslation(queryText);
+      if (publicResult) {
+        return res.json(publicResult);
+      }
       return res.json(getOfflineTranslation(queryText));
     }
 
@@ -496,9 +515,40 @@ Provide the response in the requested JSON structure.
     return res.json(parsedJson);
   } catch (error: any) {
     console.warn("[Translation Service Fallback]:", error?.message || error);
-    return res.json(getOfflineTranslation(req.body?.text || ""));
+    const queryText = req.body?.text || "";
+    const publicResult = await fetchPublicApiTranslation(queryText);
+    if (publicResult) {
+      return res.json(publicResult);
+    }
+    return res.json(getOfflineTranslation(queryText));
   }
 });
+
+async function fetchPublicApiTranslation(queryText: string) {
+  try {
+    const isJapanese = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9faf]/.test(queryText);
+    const langPair = isJapanese ? "ja|id" : "id|ja";
+    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(queryText)}&langpair=${langPair}`;
+    const resp = await fetch(url);
+    const data = await resp.json();
+    if (data && data.responseData && data.responseData.translatedText) {
+      const translated = data.responseData.translatedText;
+      return {
+        japanese: isJapanese ? queryText : translated,
+        reading: translated,
+        romaji: queryText,
+        casualJapanese: isJapanese ? queryText : translated,
+        casualReading: translated,
+        casualRomaji: queryText,
+        meaning: isJapanese ? translated : queryText,
+        explanation: `Terjemahan online via public translation API untuk "${queryText}".`
+      };
+    }
+  } catch (e) {
+    console.warn("Public translation API proxy error:", e);
+  }
+  return null;
+}
 
 function getOfflineTranslation(queryText: string) {
   const q = (queryText || "").toLowerCase().trim();
