@@ -34,51 +34,27 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
   onOpenAddCustom,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [collapsedGroups, setCollapsedGroups] = useState<Record<string, boolean>>({
+    'Tingkat Menengah (N3)': true, // Hidden by default as requested
+  });
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-  const categories: CategoryDef[] = [
-    // --- FITUR UTAMA ---
-    {
-      id: 'search',
-      title: 'Cari & Terjemah AI',
-      sub: 'Kamus Instan & Terjemahan AI 3D',
-      badge: '🔍',
-      icon: '🧠',
-      categoryGroup: 'Fitur Utama',
-    },
+  const toggleGroup = (groupName: string) => {
+    setCollapsedGroups(prev => ({
+      ...prev,
+      [groupName]: !prev[groupName]
+    }));
+  };
 
-    // --- TINGKAT MENENGAH (N3) ---
-    {
-      id: 'phrases',
-      title: 'Tata Bahasa & Pola (N3)',
-      sub: 'Pola Tematik, Nuansa & Drill Ujian',
-      badge: '文',
-      icon: '🏛️',
-      categoryGroup: 'Tingkat Menengah (N3)',
-    },
-    {
-      id: 'dokkai',
-      title: 'Membaca & Wacana (N3)',
-      sub: 'Wacana Budaya, Artikel & Bacaan Menengah',
-      badge: '読',
-      icon: '📰',
-      categoryGroup: 'Tingkat Menengah (N3)',
-    },
-    {
-      id: 'choukai',
-      title: 'Menyimak & Dialog (N3)',
-      sub: 'Percakapan Nyata, Situasi & Respon',
-      badge: '聴',
-      icon: '🎧',
-      categoryGroup: 'Tingkat Menengah (N3)',
-    },
+  const categories: CategoryDef[] = [
+    // --- TINGKAT DASAR (N5 – N4) ---
     {
       id: 'vocab',
       title: 'Kosakata & Idiom (N5–N3)',
       sub: 'Kosakata Tematik & Penutur Asli',
       badge: '語',
       icon: '📖',
-      categoryGroup: 'Tingkat Menengah (N3)',
+      categoryGroup: 'Tingkat Dasar (N5 – N4)',
     },
     {
       id: 'kanji',
@@ -86,10 +62,8 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
       sub: 'Stroke Order & Latihan Menulis',
       badge: '漢',
       icon: '㊗️',
-      categoryGroup: 'Tingkat Menengah (N3)',
+      categoryGroup: 'Tingkat Dasar (N5 – N4)',
     },
-
-    // --- TINGKAT DASAR (N5 – N4) ---
     {
       id: 'minna',
       title: 'Pelajaran Dasar (N5–N4)',
@@ -147,14 +121,30 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
       categoryGroup: 'Tingkat Dasar (N5 – N4)',
     },
 
-    // --- PRIBADI ---
+    // --- TINGKAT MENENGAH (N3) ---
     {
-      id: 'custom',
-      title: 'Kartu Saya',
-      sub: 'Catatan & Flashcard Kustom',
-      badge: '私',
-      icon: '✍️',
-      categoryGroup: 'Pribadi',
+      id: 'phrases',
+      title: 'Tata Bahasa & Pola (N3)',
+      sub: 'Pola Tematik, Nuansa & Drill Ujian',
+      badge: '文',
+      icon: '🏛️',
+      categoryGroup: 'Tingkat Menengah (N3)',
+    },
+    {
+      id: 'dokkai',
+      title: 'Membaca & Wacana (N3)',
+      sub: 'Wacana Budaya, Artikel & Bacaan Menengah',
+      badge: '読',
+      icon: '📰',
+      categoryGroup: 'Tingkat Menengah (N3)',
+    },
+    {
+      id: 'choukai',
+      title: 'Menyimak & Dialog (N3)',
+      sub: 'Percakapan Nyata, Situasi & Respon',
+      badge: '聴',
+      icon: '🎧',
+      categoryGroup: 'Tingkat Menengah (N3)',
     },
   ];
 
@@ -244,20 +234,6 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
 
         {/* Right Side: Toggle Arrow */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          {activeCategory === 'custom' && onOpenAddCustom && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onOpenAddCustom();
-              }}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold shadow-2xs transition-all cursor-pointer select-none shrink-0 active:scale-95"
-              title="Tambah kartu catatan baru"
-            >
-              <PlusCircle className="w-3.5 h-3.5" />
-              <span className="hidden xs:inline">Tambah</span>
-            </button>
-          )}
-
           <div
             className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center transition-all ${
               isOpen
@@ -310,23 +286,6 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0">
-                  {onOpenAddCustom && (
-                    <button
-                      id="add-custom-card-btn"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setIsOpen(false);
-                        onOpenAddCustom();
-                      }}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-700 active:bg-rose-800 text-white text-xs font-bold shadow-xs transition-all cursor-pointer select-none active:scale-95"
-                      title="Tambah kartu catatan kustom buatan sendiri"
-                      aria-label="Tambah kartu catatan buatan sendiri"
-                    >
-                      <PlusCircle className="w-4 h-4 shrink-0" />
-                      <span>+ Tambah Kartu</span>
-                    </button>
-                  )}
-
                   <button
                     onClick={() => setIsOpen(false)}
                     className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center cursor-pointer transition-colors"
@@ -345,122 +304,113 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
                     acc[cat.categoryGroup].push(cat);
                     return acc;
                   }, {})
-                ).map(([groupName, groupCats]) => (
-                  <div key={groupName} className="flex flex-col gap-2">
-                    <div className="flex items-center gap-2 px-1">
-                      <span className={`text-[11px] font-black uppercase tracking-wider ${
-                        groupName.includes('Mahir')
-                          ? 'text-indigo-600'
-                          : groupName.includes('Dasar')
-                          ? 'text-emerald-700'
-                          : 'text-slate-500'
-                      }`}>
-                        {groupName}
-                      </span>
-                      <div className="h-px flex-1 bg-slate-100" />
-                    </div>
+                ).map(([groupName, groupCats]) => {
+                  const isCollapsed = !!collapsedGroups[groupName];
+                  return (
+                    <div key={groupName} className="flex flex-col gap-2">
+                      <div 
+                        onClick={() => toggleGroup(groupName)}
+                        className="flex items-center gap-2 px-1 cursor-pointer select-none group/hdr py-1"
+                      >
+                        <span className={`text-[11px] font-black uppercase tracking-wider ${
+                          groupName.includes('Mahir')
+                            ? 'text-indigo-600'
+                            : groupName.includes('Dasar')
+                            ? 'text-emerald-700'
+                            : 'text-slate-500'
+                        } group-hover/hdr:text-rose-600 transition-colors`}>
+                          {groupName} ({groupCats.length})
+                        </span>
+                        <div className="h-px flex-1 bg-slate-100 group-hover/hdr:bg-rose-200 transition-colors" />
+                        <span className="text-xs font-bold text-slate-400 group-hover/hdr:text-rose-600">
+                          {isCollapsed ? '▼ Buka' : '▲ Tutup'}
+                        </span>
+                      </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
-                      {groupCats.map((cat) => {
-                        const isActive = activeCategory === cat.id;
-                        const count = counts[cat.id] || 0;
+                      {!isCollapsed && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+                          {groupCats.map((cat) => {
+                            const isActive = activeCategory === cat.id;
+                            const count = counts[cat.id] || 0;
 
-                        return (
-                          <button
-                            key={cat.id}
-                            id={`menu-item-${cat.id}`}
-                            onClick={() => handleSelect(cat.id)}
-                            className={`group relative flex items-center gap-3 p-3 rounded-2xl text-left border transition-all duration-150 cursor-pointer select-none active:scale-[0.98] ${
-                              isActive
-                                ? 'bg-rose-600 text-white border-rose-600 shadow-md shadow-rose-200/70 ring-2 ring-rose-300'
-                                : 'bg-white text-slate-700 border-slate-200/90 hover:border-rose-300 hover:bg-rose-50/30'
-                            }`}
-                          >
-                            {/* Kanji Badge */}
-                            <div
-                              className={`w-9 h-9 rounded-xl flex items-center justify-center font-black text-sm shrink-0 transition-colors ${
-                                isActive
-                                  ? 'bg-white/20 text-white'
-                                  : 'bg-rose-50 text-rose-600 group-hover:bg-rose-100'
-                              }`}
-                            >
-                              {cat.badge}
-                            </div>
-
-                            {/* Info */}
-                            <div className="min-w-0 flex-1 pr-6">
-                              <div className="flex items-center gap-1.5">
-                                <span className="text-xs shrink-0">{cat.icon}</span>
-                                <span className="text-xs sm:text-sm font-bold truncate">
-                                  {cat.title}
-                                </span>
-                              </div>
-                              <p
-                                className={`text-[11px] truncate mt-0.5 ${
-                                  isActive ? 'text-rose-100' : 'text-slate-400'
+                            return (
+                              <button
+                                key={cat.id}
+                                id={`menu-item-${cat.id}`}
+                                onClick={() => handleSelect(cat.id)}
+                                className={`group relative flex items-center gap-3 p-3 rounded-2xl text-left border transition-all duration-150 cursor-pointer select-none active:scale-[0.98] ${
+                                  isActive
+                                    ? 'bg-rose-600 text-white border-rose-600 shadow-md shadow-rose-200/70 ring-2 ring-rose-300'
+                                    : 'bg-white text-slate-700 border-slate-200/90 hover:border-rose-300 hover:bg-rose-50/30'
                                 }`}
                               >
-                                {cat.sub}
-                              </p>
-                            </div>
-
-                            {/* Right indicator: checkmark if active, else count */}
-                            <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
-                              {cat.id === 'custom' && onOpenAddCustom && (
-                                <span
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    setIsOpen(false);
-                                    onSelectCategory('custom');
-                                    onOpenAddCustom();
-                                  }}
-                                  className={`px-2 py-0.5 rounded-lg text-[10px] font-bold border transition-colors ${
+                                {/* Kanji Badge */}
+                                <div
+                                  className={`w-9 h-9 rounded-xl flex items-center justify-center font-black text-sm shrink-0 transition-colors ${
                                     isActive
-                                      ? 'bg-white text-rose-700 border-white hover:bg-rose-50'
-                                      : 'bg-rose-50 text-rose-700 border-rose-200 hover:bg-rose-100'
+                                      ? 'bg-white/20 text-white'
+                                      : 'bg-rose-50 text-rose-600 group-hover:bg-rose-100'
                                   }`}
-                                  title="Buat kartu baru sekarang"
                                 >
-                                  + Tambah
-                                </span>
-                              )}
-                              {isActive ? (
-                                <div className="w-5 h-5 rounded-full bg-white/25 flex items-center justify-center text-white">
-                                  <Check className="w-3.5 h-3.5 stroke-[3]" />
+                                  {cat.badge}
                                 </div>
-                              ) : (
-                                <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-500 group-hover:bg-rose-100 group-hover:text-rose-700">
-                                  {count}
-                                </span>
-                              )}
-                            </div>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                ))}
-              </div>
 
-              {/* Bottom Quick Action: Tambah Kartu Catatan Kustom */}
-              {onOpenAddCustom && (
-                <div className="pt-2.5 mt-2.5 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-2">
-                  <div className="flex items-center gap-2 text-xs text-slate-600">
-                    <span className="text-rose-600 font-bold">✍️ Catatan Pribadi:</span>
-                    <span>Ingin membuat flashcard kanji, kosakata, atau pola kalimat sendiri?</span>
-                  </div>
-                  <button
-                    onClick={() => {
-                      setIsOpen(false);
-                      onOpenAddCustom();
-                    }}
-                    className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-bold transition-colors cursor-pointer select-none active:scale-95"
-                  >
-                    <PlusCircle className="w-3.5 h-3.5 text-rose-600" />
-                    <span>+ Buat Kartu Catatan Baru</span>
-                  </button>
-                </div>
-              )}
+                                {/* Info */}
+                                <div className="min-w-0 flex-1 pr-6">
+                                  <div className="flex items-center gap-1.5">
+                                    <span className="text-xs shrink-0">{cat.icon}</span>
+                                    <span className="text-xs sm:text-sm font-bold truncate">
+                                      {cat.title}
+                                    </span>
+                                  </div>
+                                  <p
+                                    className={`text-[11px] truncate mt-0.5 ${
+                                      isActive ? 'text-rose-100' : 'text-slate-400'
+                                    }`}
+                                  >
+                                    {cat.sub}
+                                  </p>
+                                </div>
+
+                                {/* Right indicator: checkmark if active, else count */}
+                                <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
+                                  {cat.id === 'custom' && onOpenAddCustom && (
+                                    <span
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setIsOpen(false);
+                                        onSelectCategory('custom');
+                                        onOpenAddCustom();
+                                      }}
+                                      className={`px-2 py-0.5 rounded-lg text-[10px] font-bold border transition-colors ${
+                                        isActive
+                                          ? 'bg-white text-rose-700 border-white hover:bg-rose-50'
+                                          : 'bg-rose-50 text-rose-700 border-rose-200 hover:bg-rose-100'
+                                      }`}
+                                      title="Buat kartu baru sekarang"
+                                    >
+                                      + Tambah
+                                    </span>
+                                  )}
+                                  {isActive ? (
+                                    <div className="w-5 h-5 rounded-full bg-white/25 flex items-center justify-center text-white">
+                                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                                    </div>
+                                  ) : (
+                                    <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-500 group-hover:bg-rose-100 group-hover:text-rose-700">
+                                      {count}
+                                    </span>
+                                  )}
+                                </div>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
 
               {/* Bottom Quick Help Tip */}
               <div className="pt-2 mt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">

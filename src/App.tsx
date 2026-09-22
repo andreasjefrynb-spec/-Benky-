@@ -62,9 +62,16 @@ import {
 import { registerReadings } from './utils/audio';
 
 export default function App() {
-  const [activeCategory, setActiveCategory] = useState<MainCategory>('search');
+  const [activeCategory, setActiveCategory] = useState<MainCategory>(() => {
+    const saved = localStorage.getItem('nihongo_active_category');
+    return (saved as MainCategory) || 'minna';
+  });
   const [studyMode, setStudyMode] = useState<StudyMode>('flashcard');
   const [speechRate, setSpeechRate] = useState<number>(0.9);
+
+  useEffect(() => {
+    localStorage.setItem('nihongo_active_category', activeCategory);
+  }, [activeCategory]);
 
   // Persistence States
   const [customCards, setCustomCards] = useState<CardItem[]>([]);
