@@ -19,6 +19,7 @@ import {
   XCircle,
   Flame,
   HelpCircle,
+  Layers,
 } from 'lucide-react';
 import {
   verbProfiles,
@@ -30,20 +31,30 @@ import {
   CONJUGATION_DRILL_ITEMS,
   TeFormSongRule,
 } from '../data/conjugationDrillData';
+import {
+  WORD_GROUP_SAMPLES,
+  WordGroupItem,
+} from '../data/wordGroupClassifierData';
 import { VerbConjugationProfile, VerbGroup } from '../types';
 import { soundManager } from '../utils/audio';
+import { vocabData } from '../data/vocabData';
+import { getWordConjugation } from '../utils/japaneseConjugator';
 
 interface ConjugationViewProps {
   speechRate: number;
 }
 
-type ConjugationTab = 'simulator' | 'teSongAndLadder' | 'groupsGuide' | 'drillPractice';
+type ConjugationTab = 'groupsGuide' | 'simulator' | 'teSongAndLadder' | 'drillPractice';
 
 export const ConjugationView: React.FC<ConjugationViewProps> = ({ speechRate }) => {
-  const [activeTab, setActiveTab] = useState<ConjugationTab>('simulator');
+  const [activeTab, setActiveTab] = useState<ConjugationTab>('groupsGuide');
   const [selectedVerbId, setSelectedVerbId] = useState<string>(verbProfiles[0]?.id || 'conj-taberu');
   const [filterGroup, setFilterGroup] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+
+  // Tab 1: Word Group Filter and Search
+  const [groupFilterType, setGroupFilterType] = useState<string>('all');
+  const [groupSearchQuery, setGroupSearchQuery] = useState<string>('');
 
   // Tab 2: Te Song & 5-Vowel Ladder States
   const [activeTeSongId, setActiveTeSongId] = useState<string>('u-tsu-ru');
@@ -59,8 +70,53 @@ export const ConjugationView: React.FC<ConjugationViewProps> = ({ speechRate }) 
   const [drillMaxStreak, setDrillMaxStreak] = useState<number>(0);
   const [drillFinished, setDrillFinished] = useState<boolean>(false);
 
+  // Dynamic profile generator if a card from vocabData is selected
+  const dynamicVocabProfile = useMemo((): VerbConjugationProfile | null => {
+    if (selectedVerbId.startsWith('vocab-')) {
+      const cardId = selectedVerbId.replace('vocab-', '');
+      const card = vocabData.find((c) => c.id === cardId);
+      if (card) {
+        const generated = getWordConjugation(card);
+        const wType = generated.classification.type;
+        const mappedGroup: VerbGroup = wType.startsWith('verb')
+          ? (wType === 'verb_1'
+              ? 'godan'
+              : wType === 'verb_2'
+              ? 'ichidan'
+              : 'fukisoku')
+          : wType === 'adj_i'
+          ? 'i_keiyoushi'
+          : 'na_keiyoushi';
+
+        return {
+          id: selectedVerbId,
+          dictionary: generated.japanese,
+          reading: generated.reading,
+          group: mappedGroup,
+          meaningId: generated.meaningId,
+          level: (card.level as 'N5' | 'N4' | 'N3') || 'N5',
+          isException: generated.isException,
+          exceptionNote: generated.exceptionNote,
+          forms: generated.forms.map((f) => ({
+            formKey: f.formKey,
+            formName: f.formName,
+            japanese: f.japanese,
+            reading: f.reading,
+            meaningId: f.meaningId,
+            exampleJp: f.exampleJp || '',
+            exampleId: f.exampleId || '',
+            ruleExplanation: f.rule,
+          })),
+        };
+      }
+    }
+    return null;
+  }, [selectedVerbId]);
+
   const selectedProfile: VerbConjugationProfile =
-    verbProfiles.find((v) => v.id === selectedVerbId) || verbProfiles[0];
+    dynamicVocabProfile ||
+    verbProfiles.find((v) => v.id === selectedVerbId) ||
+    verbProfiles[0];
 
   const handleSpeak = (text: string, readingOrEvent?: string | React.MouseEvent, e?: React.MouseEvent) => {
     let reading: string | undefined;
@@ -75,9 +131,9 @@ export const ConjugationView: React.FC<ConjugationViewProps> = ({ speechRate }) 
     soundManager.speakJapanese(text, speechRate, undefined, reading);
   };
 
-  // Filter verbs for simulator
+  // Filter verbs for simulator (curated profiles + dynamic search across all vocabData)
   const filteredVerbs = useMemo(() => {
-    return verbProfiles.filter((v) => {
+    const curatedMatches = verbProfiles.filter((v) => {
       const matchesGroup =
         filterGroup === 'all' ||
         (filterGroup === 'traps' ? v.isException : v.group === filterGroup);
@@ -88,7 +144,94 @@ export const ConjugationView: React.FC<ConjugationViewProps> = ({ speechRate }) 
         v.meaningId.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesGroup && matchesSearch;
     });
+
+    if (searchQuery.trim().length >= 1) {
+      const query = searchQuery.toLowerCase().trim();
+      const extraMatches: VerbConjugationProfile[] = [];
+      const curatedDicts = new Set(verbProfiles.map((p) => p.dictionary));
+
+      for (const card of vocabData) {
+        if (curatedDicts.has(card.japanese)) continue;
+        const matchesText =
+          card.japanese.includes(query) ||
+          card.reading.toLowerCase().includes(query) ||
+          card.meaningId.toLowerCase().includes(query);
+
+        if (matchesText) {
+          const generated = getWordConjugation(card);
+          const wType = generated.classification.type;
+          if (wType.startsWith('verb') || wType.startsWith('adj')) {
+            const mappedGroup: VerbGroup = wType.startsWith('verb')
+              ? (wType === 'verb_1'
+                  ? 'godan'
+                  : wType === 'verb_2'
+                  ? 'ichidan'
+                  : 'fukisoku')
+              : wType === 'adj_i'
+              ? 'i_keiyoushi'
+              : 'na_keiyoushi';
+
+            const matchesGroup =
+              filterGroup === 'all' ||
+              (filterGroup === 'traps' ? generated.isException : mappedGroup === filterGroup);
+
+            if (matchesGroup) {
+              extraMatches.push({
+                id: `vocab-${card.id}`,
+                dictionary: generated.japanese,
+                reading: generated.reading,
+                group: mappedGroup,
+                meaningId: generated.meaningId,
+                level: (card.level as 'N5' | 'N4' | 'N3') || 'N5',
+                isException: generated.isException,
+                exceptionNote: generated.exceptionNote,
+                forms: generated.forms.map((f) => ({
+                  formKey: f.formKey,
+                  formName: f.formName,
+                  japanese: f.japanese,
+                  reading: f.reading,
+                  meaningId: f.meaningId,
+                  exampleJp: f.exampleJp || '',
+                  exampleId: f.exampleId || '',
+                  ruleExplanation: f.rule,
+                })),
+              });
+            }
+          }
+        }
+        if (extraMatches.length >= 25) break;
+      }
+      return [...curatedMatches, ...extraMatches];
+    }
+
+    return curatedMatches;
   }, [filterGroup, searchQuery]);
+
+  // Filter words for Word Group Inspector
+  const filteredGroupWords = useMemo(() => {
+    return WORD_GROUP_SAMPLES.filter((item) => {
+      const matchesType =
+        groupFilterType === 'all' ||
+        (groupFilterType === 'traps'
+          ? item.category === 'verb_trap' || item.category === 'adj_trap'
+          : item.groupNumber === groupFilterType ||
+            (groupFilterType === 'verbs' &&
+              (item.groupNumber === 'Golongan 1' ||
+                item.groupNumber === 'Golongan 2' ||
+                item.groupNumber === 'Golongan 3')) ||
+            (groupFilterType === 'adjectives' &&
+              (item.groupNumber === 'Sifat -i' || item.groupNumber === 'Sifat -na')));
+
+      const matchesSearch =
+        groupSearchQuery.trim() === '' ||
+        item.kanji.toLowerCase().includes(groupSearchQuery.toLowerCase()) ||
+        item.reading.toLowerCase().includes(groupSearchQuery.toLowerCase()) ||
+        item.romaji.toLowerCase().includes(groupSearchQuery.toLowerCase()) ||
+        item.meaningId.toLowerCase().includes(groupSearchQuery.toLowerCase());
+
+      return matchesType && matchesSearch;
+    });
+  }, [groupFilterType, groupSearchQuery]);
 
   const getGroupBadge = (group: VerbGroup) => {
     switch (group) {
@@ -295,13 +438,26 @@ export const ConjugationView: React.FC<ConjugationViewProps> = ({ speechRate }) 
         </div>
       </section>
 
-      {/* Main Tab Controls with 4 Rich Sections */}
+      {/* Main Tab Controls with 5 Rich Sections */}
       <div className="bg-white p-1.5 sm:p-2 rounded-2xl border border-slate-200/90 shadow-2xs">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-1.5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1.5">
+          <button
+            id="tab-btn-conj-guide"
+            onClick={() => setActiveTab('groupsGuide')}
+            className={`px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 text-center cursor-pointer ${
+              activeTab === 'groupsGuide'
+                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200/80 ring-2 ring-indigo-400'
+                : 'text-slate-700 hover:bg-slate-100'
+            }`}
+          >
+            <BookOpen className="w-4 h-4 shrink-0 text-indigo-200" />
+            <span className="truncate">Golongan Kata</span>
+          </button>
+
           <button
             id="tab-btn-conj-sim"
             onClick={() => setActiveTab('simulator')}
-            className={`px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-center cursor-pointer ${
+            className={`px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 text-center cursor-pointer ${
               activeTab === 'simulator'
                 ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200/80 ring-2 ring-indigo-400'
                 : 'text-slate-700 hover:bg-slate-100'
@@ -314,40 +470,27 @@ export const ConjugationView: React.FC<ConjugationViewProps> = ({ speechRate }) 
           <button
             id="tab-btn-conj-song"
             onClick={() => setActiveTab('teSongAndLadder')}
-            className={`px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-center cursor-pointer ${
+            className={`px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 text-center cursor-pointer ${
               activeTab === 'teSongAndLadder'
                 ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200/80 ring-2 ring-indigo-400'
                 : 'text-slate-700 hover:bg-slate-100'
             }`}
           >
             <Music className="w-4 h-4 shrink-0 text-amber-500" />
-            <span className="truncate">Lagu ~Te & Tangga 5 Vokal</span>
-          </button>
-
-          <button
-            id="tab-btn-conj-guide"
-            onClick={() => setActiveTab('groupsGuide')}
-            className={`px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-center cursor-pointer ${
-              activeTab === 'groupsGuide'
-                ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200/80 ring-2 ring-indigo-400'
-                : 'text-slate-700 hover:bg-slate-100'
-            }`}
-          >
-            <AlertTriangle className="w-4 h-4 shrink-0 text-rose-500" />
-            <span className="truncate">Panduan Golongan & Jebakan</span>
+            <span className="truncate">Lagu ~Te & 5 Vokal</span>
           </button>
 
           <button
             id="tab-btn-conj-drill"
             onClick={() => setActiveTab('drillPractice')}
-            className={`px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 text-center cursor-pointer ${
+            className={`px-3 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 text-center cursor-pointer col-span-2 sm:col-span-1 ${
               activeTab === 'drillPractice'
                 ? 'bg-indigo-600 text-white shadow-md shadow-indigo-200/80 ring-2 ring-indigo-400'
                 : 'text-slate-700 hover:bg-slate-100'
             }`}
           >
             <Zap className="w-4 h-4 shrink-0 text-yellow-500" />
-            <span className="truncate">Latihan Kilat (Drill)</span>
+            <span className="truncate">Latihan Drill</span>
           </button>
         </div>
       </div>
@@ -822,59 +965,207 @@ export const ConjugationView: React.FC<ConjugationViewProps> = ({ speechRate }) 
       )}
 
       {/* ========================================================================= */}
-      {/* TAB 3: GROUPS GUIDE & TRAP VERBS                                          */}
+      {/* TAB: GROUPS GUIDE & TRAP VERBS (PANDUAN GOLONGAN KATA)                    */}
       {/* ========================================================================= */}
       {activeTab === 'groupsGuide' && (
         <div className="space-y-6">
-          {/* How to classify verbs */}
+          {/* 3-Second Flowchart Header */}
+          <div className="bg-gradient-to-r from-indigo-900 via-slate-900 to-indigo-950 text-white p-5 sm:p-7 rounded-3xl shadow-sm border border-indigo-700/40 space-y-4">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-black border border-indigo-400/30">
+              <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+              <span>Metode 3 Detik</span>
+            </div>
+            <div>
+              <h3 className="text-xl sm:text-2xl font-black text-white font-jp">
+                Diagram Alur 3 Detik: Cara Mengetahui Golongan Kata Kerja
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl leading-relaxed">
+                Bingung cara membedakan Golongan 1, 2, atau 3? Ikuti 3 langkah mudah ini secara berurutan:
+              </p>
+            </div>
+
+            {/* 3 Steps Visual Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-2">
+              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="w-7 h-7 rounded-xl bg-amber-400 text-slate-950 font-black text-xs flex items-center justify-center">
+                    1
+                  </span>
+                  <span className="text-[11px] font-extrabold text-amber-300">Cek Fukisoku</span>
+                </div>
+                <h4 className="text-sm font-black text-white">Apakah kata dasar する atau くる?</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  ➜ <strong>YA:</strong> Otomatis <strong>Golongan 3</strong>! Selesai.<br />
+                  ➜ <strong>BUKAN:</strong> Lanjut ke Langkah 2.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="w-7 h-7 rounded-xl bg-emerald-400 text-slate-950 font-black text-xs flex items-center justify-center">
+                    2
+                  </span>
+                  <span className="text-[11px] font-extrabold text-emerald-300">Cek Akhiran</span>
+                </div>
+                <h4 className="text-sm font-black text-white">Apakah berakhiran ~iru atau ~eru?</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  ➜ <strong>TIDAK</strong> (u, ku, gu, su, tsu, nu, bu, mu, aru, uru, oru): PASTI <strong>Golongan 1</strong>!<br />
+                  ➜ <strong>YA</strong> (~iru / ~eru): Lanjut ke Langkah 3.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="w-7 h-7 rounded-xl bg-rose-400 text-slate-950 font-black text-xs flex items-center justify-center">
+                    3
+                  </span>
+                  <span className="text-[11px] font-extrabold text-rose-300">Cek Jebakan</span>
+                </div>
+                <h4 className="text-sm font-black text-white">Apakah masuk 8 Kata Jebakan?</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  ➜ <strong>YA (Jebakan):</strong> Merupakan <strong>Golongan 1</strong>!<br />
+                  ➜ <strong>BUKAN:</strong> Merupakan <strong>Golongan 2</strong>!
+                </p>
+              </div>
+            </div>
+
+            {/* Mnemonic Banner */}
+            <div className="p-3.5 rounded-2xl bg-amber-500/20 border border-amber-400/30 flex items-start gap-2.5">
+              <Lightbulb className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" />
+              <div className="text-xs text-amber-100 leading-relaxed">
+                <strong>💡 Jembatan Keledai Mengingat 8 Kata Kerja Jebakan:</strong><br />
+                &ldquo;<em><u>Pulang</u> (帰る - kaeru) <u>masuk</u> (入る - hairu) ke rumah, <u>lari</u> (走る - hashiru) <u>potong</u> (切る - kiru) kuku, <u>tahu</u> (知る - shiru) <u>ngobrol</u> (喋る - shaberu) <u>butuh</u> (要る - iru) sabun!</em>&rdquo;
+              </div>
+            </div>
+          </div>
+
+          {/* Interactive Word Group Inspector (Alat Cek & Kamus Golongan Kata) */}
           <div className="bg-white rounded-3xl border border-slate-200/90 shadow-sm p-5 sm:p-7 space-y-4">
-            <h3 className="text-lg sm:text-xl font-black text-slate-900 flex items-center gap-2 font-jp">
-              <BookOpen className="w-5 h-5 text-indigo-600" />
-              <span>Cara Kilat Mengidentifikasi 3 Golongan Kata Kerja</span>
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-600">
-              Setiap kata kerja dalam bahasa Jepang masuk ke salah satu dari 3 kelompok di bawah ini. Golongan menentukan rumus perubahan yang berlaku!
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm pt-2">
-              {/* Golongan 1 */}
-              <div className="p-4 sm:p-5 rounded-2xl border border-indigo-200 bg-indigo-50/50 space-y-2.5 shadow-2xs">
-                <span className="px-3 py-1 rounded-full text-xs font-black bg-indigo-200 text-indigo-900 inline-block border border-indigo-300">
-                  Golongan 1: Godan (五段動詞)
-                </span>
-                <p className="text-slate-700 leading-relaxed">
-                  Semua kata kerja yang berakhiran: <strong>u, ku, gu, su, tsu, nu, bu, mu</strong>, atau <strong>ru</strong> yang vokal sebelum <em>ru</em> <u>BUKAN</u> i atau e (contoh: <em>toru, aruku, nomu, kau, matsu</em>).
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div>
+                <h3 className="text-lg sm:text-xl font-black text-slate-900 flex items-center gap-2 font-jp">
+                  <BookOpen className="w-5 h-5 text-indigo-600" />
+                  <span>Kamus Pengecek Golongan Kata (Inspector)</span>
+                </h3>
+                <p className="text-xs text-slate-500">
+                  Cari atau filter kata kerja & kata sifat untuk memahami alasan penggolongan dan perubahannya.
                 </p>
-                <div className="text-indigo-950 font-bold text-xs bg-white p-2.5 rounded-xl border border-indigo-200">
-                  ✨ Ciri Khas: Akhiran berpindah melalui 5 tangga vokal (A, I, U, E, O).
-                </div>
               </div>
 
-              {/* Golongan 2 */}
-              <div className="p-4 sm:p-5 rounded-2xl border border-emerald-200 bg-emerald-50/50 space-y-2.5 shadow-2xs">
-                <span className="px-3 py-1 rounded-full text-xs font-black bg-emerald-200 text-emerald-900 inline-block border border-emerald-300">
-                  Golongan 2: Ichidan (一段動詞)
-                </span>
-                <p className="text-slate-700 leading-relaxed">
-                  Kata kerja yang berakhiran <strong>-iru</strong> (seperti <em>miru, okiru</em>) atau <strong>-eru</strong> (seperti <em>taberu, neru, oshieru</em>).
-                </p>
-                <div className="text-emerald-950 font-bold text-xs bg-white p-2.5 rounded-xl border border-emerald-200">
-                  ✨ Ciri Khas: Sangat mudah! Cukup potong <strong>ru</strong> lalu tempelkan akhiran baru (masu, nai, te, ta).
-                </div>
+              {/* Search input */}
+              <div className="relative min-w-[220px]">
+                <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                <input
+                  type="text"
+                  placeholder="Cari kanji, romaji, atau arti..."
+                  value={groupSearchQuery}
+                  onChange={(e) => setGroupSearchQuery(e.target.value)}
+                  className="w-full pl-9 pr-3 py-2 text-xs rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500/20"
+                />
               </div>
+            </div>
 
-              {/* Golongan 3 */}
-              <div className="p-4 sm:p-5 rounded-2xl border border-purple-200 bg-purple-50/50 space-y-2.5 shadow-2xs">
-                <span className="px-3 py-1 rounded-full text-xs font-black bg-purple-200 text-purple-900 inline-block border border-purple-300">
-                  Golongan 3: Fukisoku (不規則動詞)
-                </span>
-                <p className="text-slate-700 leading-relaxed">
-                  Hanya ada <strong>2 kata dasar</strong> di seluruh dunia: <strong>する (suru)</strong> dan <strong>くる (kuru)</strong>, beserta kata majemuknya (<em>benkyou suru, motte kuru</em>).
-                </p>
-                <div className="text-purple-950 font-bold text-xs bg-white p-2.5 rounded-xl border border-purple-200">
-                  ✨ Ciri Khas: Bentuk berubah bebas dan harus dihafal spesial (suru ➜ shimasu, kuru ➜ kimasu).
+            {/* Filter Category Chips */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+              {[
+                { id: 'all', label: 'Semua Kata' },
+                { id: 'Golongan 1', label: 'Golongan 1 (Godan)' },
+                { id: 'Golongan 2', label: 'Golongan 2 (Ichidan)' },
+                { id: 'Golongan 3', label: 'Golongan 3 (Fukisoku)' },
+                { id: 'traps', label: '⚠️ Kata Jebakan' },
+                { id: 'Sifat -i', label: 'Kata Sifat -i' },
+                { id: 'Sifat -na', label: 'Kata Sifat -na' },
+              ].map((chip) => (
+                <button
+                  key={chip.id}
+                  onClick={() => setGroupFilterType(chip.id)}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all border cursor-pointer shrink-0 ${
+                    groupFilterType === chip.id
+                      ? 'bg-indigo-600 text-white border-indigo-600 shadow-2xs ring-2 ring-indigo-300'
+                      : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
+                  }`}
+                >
+                  {chip.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Word Grid Display */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-2">
+              {filteredGroupWords.map((item) => (
+                <div
+                  key={item.id}
+                  className="p-4 rounded-2xl border border-slate-200 hover:border-indigo-300 bg-slate-50/40 hover:bg-white transition-all space-y-2.5 shadow-2xs"
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl font-black font-jp text-slate-900">
+                          {item.kanji}
+                        </span>
+                        <span className="text-xs text-slate-500 font-mono">
+                          {item.reading} &bull; {item.romaji}
+                        </span>
+                      </div>
+                      <div className="text-xs font-bold text-indigo-950 mt-0.5">
+                        Arti: {item.meaningId}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      <span className="text-[10px] font-black px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 border border-indigo-200">
+                        {item.categoryLabel}
+                      </span>
+                      <button
+                        onClick={() => handleSpeak(item.kanji, item.reading)}
+                        className="p-1.5 rounded-lg bg-white hover:bg-indigo-50 text-slate-600 hover:text-indigo-700 border border-slate-200 cursor-pointer shadow-2xs"
+                        title="Dengarkan pengucapan"
+                      >
+                        <Volume2 className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Why reason box */}
+                  <div className="p-2.5 rounded-xl bg-white border border-slate-200/90 text-xs text-slate-700 leading-relaxed">
+                    <span className="font-bold text-slate-900">🔍 Kenapa masuk golongan ini? </span>
+                    {item.whyReason}
+                  </div>
+
+                  {/* Quick Form Pills */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-[11px] font-mono">
+                    <div className="p-1.5 rounded-lg bg-blue-50 border border-blue-200/70 text-blue-900">
+                      <span className="text-[9px] block text-blue-600 font-sans font-bold">~masu:</span>
+                      <span className="font-bold">{item.quickChange.masu.split(' ')[0]}</span>
+                    </div>
+                    <div className="p-1.5 rounded-lg bg-emerald-50 border border-emerald-200/70 text-emerald-900">
+                      <span className="text-[9px] block text-emerald-600 font-sans font-bold">~te:</span>
+                      <span className="font-bold">{item.quickChange.te.split(' ')[0]}</span>
+                    </div>
+                    <div className="p-1.5 rounded-lg bg-amber-50 border border-amber-200/70 text-amber-900">
+                      <span className="text-[9px] block text-amber-600 font-sans font-bold">~nai:</span>
+                      <span className="font-bold">{item.quickChange.nai.split(' ')[0]}</span>
+                    </div>
+                    <div className="p-1.5 rounded-lg bg-purple-50 border border-purple-200/70 text-purple-900">
+                      <span className="text-[9px] block text-purple-600 font-sans font-bold">~ta:</span>
+                      <span className="font-bold">{item.quickChange.ta.split(' ')[0]}</span>
+                    </div>
+                  </div>
+
+                  {/* Sample Sentence */}
+                  <div className="pt-1 text-xs text-slate-600 flex items-center justify-between">
+                    <span className="font-jp text-slate-800">
+                      Contoh: <strong>{item.sampleSentenceJp}</strong> ({item.sampleSentenceId})
+                    </span>
+                    <button
+                      onClick={() => handleSpeak(item.sampleSentenceJp)}
+                      className="text-indigo-600 hover:text-indigo-800 p-1 cursor-pointer shrink-0"
+                    >
+                      <Volume2 className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
 

@@ -11,14 +11,23 @@ import { VocabGroupView } from './components/VocabGroupView';
 import { ParticlesView } from './components/ParticlesView';
 import { ConjugationView } from './components/ConjugationView';
 import { MinnaView } from './components/MinnaView';
+import { TobiraView } from './components/TobiraView';
+import { QuartetView } from './components/QuartetView';
+import { ShinKanzenView } from './components/ShinKanzenView';
+import { SouMatomeView } from './components/SouMatomeView';
+import { TryJlptView } from './components/TryJlptView';
 import { IrodoriView } from './components/IrodoriView';
 import { SSWView } from './components/SSWView';
+import { DokkaiView } from './components/DokkaiView';
+import { ChoukaiView } from './components/ChoukaiView';
+import { AdvancedGrammarView } from './components/AdvancedGrammarView';
 import {
   MainCategory,
   StudyMode,
   CardItem,
   UserItemProgress,
   UserStats,
+  LevelFilterOption,
 } from './types';
 import {
   hiraganaData,
@@ -29,8 +38,15 @@ import {
   particlesCardItems,
   conjugationCardItems,
   minnaCardItems,
+  tobiraCardItems,
+  quartetCardItems,
+  shinKanzenCardItems,
+  souMatomeCardItems,
+  tryJlptCardItems,
   irodoriCardItems,
   sswCardItems,
+  dokkaiN1Data,
+  choukaiN1Data,
   getCardsByCategory,
   getAllBuiltInCards,
 } from './data';
@@ -59,11 +75,11 @@ export default function App() {
   const [writingTargetCard, setWritingTargetCard] = useState<CardItem | null>(null);
   const [vocabGroupTarget, setVocabGroupTarget] = useState<{
     subCategory: string;
-    level: 'all' | 'N5' | 'N4' | 'N3';
+    level: LevelFilterOption;
   } | null>(null);
   const [quizGroupTarget, setQuizGroupTarget] = useState<{
     subCategory: string;
-    level: 'all' | 'N5' | 'N4' | 'N3';
+    level: LevelFilterOption;
   } | null>(null);
 
   // Initialize data from localStorage on mount
@@ -207,11 +223,18 @@ export default function App() {
   const categoryCounts: Record<MainCategory, number> = useMemo(() => {
     return {
       minna: minnaCardItems.length,
+      tobira: tobiraCardItems.length,
+      quartet: quartetCardItems.length,
+      shinkanzen: shinKanzenCardItems.length,
+      soumatome: souMatomeCardItems.length,
+      tryjlpt: tryJlptCardItems.length,
       irodori: irodoriCardItems.length,
       ssw: sswCardItems.length,
       kanji: kanjiData.length,
       vocab: vocabData.length,
       phrases: phrasesData.length,
+      dokkai: dokkaiN1Data.length,
+      choukai: choukaiN1Data.length,
       particles: particlesCardItems.length,
       conjugation: conjugationCardItems.length,
       hiragana: hiraganaData.length,
@@ -220,9 +243,15 @@ export default function App() {
     };
   }, [customCards.length]);
 
-  // Show chart option for Minna, Irodori, SSW, Vocabulary Groups, Kana, Particles, and Conjugation
+  // Show chart option for Minna, Phrases/Advanced Grammar, Tobira, Quartet, Shin Kanzen, Sou-matome, Try JLPT, Irodori, SSW, Vocabulary Groups, Kana, Particles, and Conjugation
   const showChartOption =
+    activeCategory === 'phrases' ||
     activeCategory === 'minna' ||
+    activeCategory === 'tobira' ||
+    activeCategory === 'quartet' ||
+    activeCategory === 'shinkanzen' ||
+    activeCategory === 'soumatome' ||
+    activeCategory === 'tryjlpt' ||
     activeCategory === 'irodori' ||
     activeCategory === 'ssw' ||
     activeCategory === 'vocab' ||
@@ -261,7 +290,7 @@ export default function App() {
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-6 py-3.5 sm:py-6 flex flex-col gap-4 sm:gap-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-2.5 sm:px-6 py-2 sm:py-6 flex flex-col gap-2.5 sm:gap-6">
         {/* Category Selector Bar */}
         <section aria-label="Pilihan Kategori Belajar">
           <CategorySelector
@@ -271,27 +300,52 @@ export default function App() {
               setWritingTargetCard(null);
               setVocabGroupTarget(null);
               setQuizGroupTarget(null);
-              if (cat === 'minna' || cat === 'irodori' || cat === 'ssw' || cat === 'particles' || cat === 'conjugation') {
+              if (
+                cat === 'phrases' ||
+                cat === 'minna' ||
+                cat === 'tobira' ||
+                cat === 'quartet' ||
+                cat === 'shinkanzen' ||
+                cat === 'soumatome' ||
+                cat === 'tryjlpt' ||
+                cat === 'irodori' ||
+                cat === 'ssw' ||
+                cat === 'particles' ||
+                cat === 'conjugation' ||
+                cat === 'dokkai' ||
+                cat === 'choukai'
+              ) {
                 setStudyMode('chart');
               }
             }}
             counts={categoryCounts}
+            onOpenAddCustom={() => setIsAddCustomOpen(true)}
           />
         </section>
 
         {/* Mode Selector (Flashcard, Chart/Kelompok, Quiz, Writing) */}
-        <section aria-label="Pilihan Mode Belajar">
-          <ModeSelector
-            currentMode={studyMode}
-            onSelectMode={setStudyMode}
-            showChartOption={showChartOption}
-            activeCategory={activeCategory}
-          />
-        </section>
+        {activeCategory !== 'dokkai' && activeCategory !== 'choukai' && (
+          <section aria-label="Pilihan Mode Belajar">
+            <ModeSelector
+              currentMode={studyMode}
+              onSelectMode={setStudyMode}
+              showChartOption={showChartOption}
+              activeCategory={activeCategory}
+            />
+          </section>
+        )}
 
         {/* Dynamic Study Content View */}
-        <div className="flex-1 py-2">
-          {studyMode === 'flashcard' && (
+        <div className="flex-1 py-0.5 sm:py-2">
+          {activeCategory === 'dokkai' && (
+            <DokkaiView speechRate={speechRate} />
+          )}
+
+          {activeCategory === 'choukai' && (
+            <ChoukaiView speechRate={speechRate} />
+          )}
+
+          {activeCategory !== 'dokkai' && activeCategory !== 'choukai' && studyMode === 'flashcard' && (
             <FlashcardView
               key={`flashcard-${activeCategory}-${vocabGroupTarget?.subCategory || 'all'}-${vocabGroupTarget?.level || 'all'}`}
               cards={currentCategoryCards}
@@ -308,12 +362,84 @@ export default function App() {
           {studyMode === 'chart' && activeCategory === 'minna' && (
             <MinnaView
               speechRate={speechRate}
-              onPracticeLesson={(chapter) => {
-                setVocabGroupTarget({ subCategory: `bab_${chapter}`, level: 'all' });
+              onPracticeLesson={(chapter, part) => {
+                const subCat = part && part.includes('Chuukyuu') ? `bab_chuukyu_${chapter}` : `bab_${chapter}`;
+                setVocabGroupTarget({ subCategory: subCat, level: 'all' });
+                setStudyMode('flashcard');
+              }}
+              onStartQuiz={(chapter, part) => {
+                const subCat = part && part.includes('Chuukyuu') ? `bab_chuukyu_${chapter}` : `bab_${chapter}`;
+                setQuizGroupTarget({ subCategory: subCat, level: 'all' });
+                setStudyMode('quiz');
+              }}
+            />
+          )}
+
+          {studyMode === 'chart' && activeCategory === 'tobira' && (
+            <TobiraView
+              speechRate={speechRate}
+              onPracticeChapter={(chapter) => {
+                setVocabGroupTarget({ subCategory: `tobira_${chapter}`, level: 'all' });
                 setStudyMode('flashcard');
               }}
               onStartQuiz={(chapter) => {
-                setQuizGroupTarget({ subCategory: `bab_${chapter}`, level: 'all' });
+                setQuizGroupTarget({ subCategory: `tobira_${chapter}`, level: 'all' });
+                setStudyMode('quiz');
+              }}
+            />
+          )}
+
+          {studyMode === 'chart' && activeCategory === 'quartet' && (
+            <QuartetView
+              speechRate={speechRate}
+              onPracticeLesson={(volume, lesson) => {
+                setVocabGroupTarget({ subCategory: `quartet_v${volume}_l${lesson}`, level: 'all' });
+                setStudyMode('flashcard');
+              }}
+              onStartQuiz={(volume, lesson) => {
+                setQuizGroupTarget({ subCategory: `quartet_v${volume}_l${lesson}`, level: 'all' });
+                setStudyMode('quiz');
+              }}
+            />
+          )}
+
+          {studyMode === 'chart' && activeCategory === 'shinkanzen' && (
+            <ShinKanzenView
+              speechRate={speechRate}
+              onPracticeSection={(level, id) => {
+                setVocabGroupTarget({ subCategory: `shinkanzen_${level}`, level });
+                setStudyMode('flashcard');
+              }}
+              onStartQuiz={(level, id) => {
+                setQuizGroupTarget({ subCategory: `shinkanzen_${level}`, level });
+                setStudyMode('quiz');
+              }}
+            />
+          )}
+
+          {studyMode === 'chart' && activeCategory === 'soumatome' && (
+            <SouMatomeView
+              speechRate={speechRate}
+              onPracticeDay={(level, week, day) => {
+                setVocabGroupTarget({ subCategory: `soumatome_${level}_w${week}`, level });
+                setStudyMode('flashcard');
+              }}
+              onStartQuiz={(level, week) => {
+                setQuizGroupTarget({ subCategory: `soumatome_${level}_w${week}`, level });
+                setStudyMode('quiz');
+              }}
+            />
+          )}
+
+          {studyMode === 'chart' && activeCategory === 'tryjlpt' && (
+            <TryJlptView
+              speechRate={speechRate}
+              onPracticeLesson={(level, chapter) => {
+                setVocabGroupTarget({ subCategory: `try_${level}_ch${chapter}`, level });
+                setStudyMode('flashcard');
+              }}
+              onStartQuiz={(level, chapter) => {
+                setQuizGroupTarget({ subCategory: `try_${level}_ch${chapter}`, level });
                 setStudyMode('quiz');
               }}
             />
@@ -374,6 +500,20 @@ export default function App() {
             />
           )}
 
+          {studyMode === 'chart' && activeCategory === 'phrases' && (
+            <AdvancedGrammarView
+              speechRate={speechRate}
+              onPracticeGrammar={(level, id) => {
+                setVocabGroupTarget({ subCategory: id, level });
+                setStudyMode('flashcard');
+              }}
+              onStartQuiz={(level, id) => {
+                setQuizGroupTarget({ subCategory: id, level });
+                setStudyMode('quiz');
+              }}
+            />
+          )}
+
           {studyMode === 'chart' && activeCategory === 'particles' && (
             <ParticlesView speechRate={speechRate} />
           )}
@@ -413,14 +553,14 @@ export default function App() {
       <footer className="border-t border-slate-200/80 bg-white py-4 text-center text-xs text-slate-400">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p>
-            日本語 ケラス &copy; {new Date().getFullYear()} &bull; Didesain untuk Pembelajar Bahasa Jepang
+            日本語 ケラス &copy; {new Date().getFullYear()} &bull; Didesain untuk Pembelajar Bahasa Jepang Lengkap (N5–N3)
           </p>
           <div className="flex items-center gap-3 text-slate-500 font-medium flex-wrap justify-center">
-            <span>400+ Kanji (N5-N3)</span>
+            <span>Minna (Shokyu &amp; Chuukyu)</span>
             <span>&bull;</span>
-            <span>1.500+ Kosakata (N5-N3)</span>
+            <span>Tobira &amp; Quartet</span>
             <span>&bull;</span>
-            <span>Partikel & Konjugasi Lengkap</span>
+            <span>Shin Kanzen Master &amp; Sou-matome &amp; TRY! JLPT</span>
             <span>&bull;</span>
             <span>Audio Pelafalan Alami</span>
           </div>

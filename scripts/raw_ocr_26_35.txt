@@ -1,0 +1,678 @@
+BAB 26
+1 みます 見ます、診ます Melihat , memeriksa
+2 さがします 探します Mencari
+3 おくれます（じかんに） 遅れます Terlambat
+4 まにあいます（じかんに） 間に合います Tepat waktu
+5 やります Melakukan, mengerjakan
+6 さんかします（パーティーに） 参加します Turut serta, ikut , berpartisipasi
+7 もうしこみます 申し込みます Mendaftar
+8 つごうがいい 都合がいい Tidak ada halangan
+9 つごうがわるい 都合が悪い Ada halangan
+10 きぶんがいい 気分がいい Kondisi badan / perasaan baik
+11 きぶんがわるい 気分が悪い Tidak enak badan
+12 しんぶんしゃ 新聞社 Perusahaan surat kabar
+13 じゅうどう 柔道 Judo(olahraga tradisional jepang)
+14 うんどうかい 運動会 Pesta olahraga, pertandingan olahraga
+15 ばしょ 場所 Tempat
+16 ボランティア Volunteer, sukarelawan
+17 ～べん ～弁 Logat ~, dialek~
+18 こんど 今度 Berikutnya, lain kali
+19 ずいぶん Cukup (lebih dari perkiraan)
+20 ちょくせつ 直接 Langsung
+21 いつでも Kapanpun
+22 どこでも Dimanapun
+23 だれでも Siapapun
+24 なんでも 何でも Apapun
+25 こんな～ ~seperti ini
+26 そんな～ ~seperti itu
+27 あんな～ Seperti yang di sana
+28 かたづきます（にもつが） 片付きます Dibereskan, dirapikan
+29 ごみ Sampah
+30 だします 出します Membuang (sampah)
+31 もえます 燃えます Dapat dibakar
+32 げつ・すい・きん 月・水・金 Senin, rabu, jumat
+33 おきば 置き場 Tempat pembuangan
+34 よこ 横 Sebelah
+35 びん 瓶 Botol
+36 かん 缶 Kaleng
+37 おゆ お湯 Air panas
+38 ガス Gas
+39 れんらくします 連絡します Menghubungi
+40 こまったなあ 困ったなあ Payah ya, gawat
+41 でんしメール Email
+42 うちゅう 宇宙 Luar angkasa
+43 こわい 怖い Takut
+44 うちゅうせん 宇宙船 Pesawat ruang angkasa
+45 べつの 別の Yang lain
+46 うちゅうひこうし 宇宙飛行士 Astronot
+47 ごみのだしかた ごみの出し方 Cara membuang sampah
+48 ごみしゅうしゅうびのおしらせ ごみ収集日のお知らせ Pemberitahuan hari pembuangan sampah
+49 かねんごみ／もえるごみ 可燃ごみ／燃えるごみ Sampah yang dapat dibakar
+50 しゅうしゅうび 収集日 Hari pengumpulan sampah
+51 かみくず 紙くず Sampah kertas
+52 なまごみ 生ごみ Sampah dapur
+53 ふねんごみ／もえないごみ 不燃ごみ／燃えないごみ Sampah yang tidak dapat dibakar
+54 ガラスせいひん ガラス製品 Barang-barang yang terbuat dari kaca
+55 きんぞくせいだいどころようひん 金属製台所用品 Barang yang dipakai di dapur dan terbuat dari logam
+56 そだいごみ 粗大ごみ Sampah besar
+57 かぐ 家具 Perabot rumah tangga
+58 かていでんかせいひん 家庭電化製品 Barang-barang elektronik rumah tangga
+59 しげんごみ 資源ごみ Sampah yang bisa didaur ulang
+60 あきかん 空き缶 Kaleng bekas
+61 あきびん 空きびん Botol bekas
+62 ふるしんぶん 古新聞 Koran bekas
+63 プラスチックせいひん プラスチック製品 Barang-barang yang terbuat dari plastik
+64 だい３かようび 第3火曜日 Hari selasa minggu ke 3
+
+BAB 27
+1 かいます 飼います Memelihara (binatang)
+2 たてます 建てます Membangun, mendirikan
+3 はしります（を） 走ります Berlari
+4 とります（を） 取ります Mengambil, cuti
+5 みえます（が） 見えます Kelihatan
+6 きこえます（が） 聞こえます Kedengaran
+7 できます Rampung, sudah jadi
+8 ひらきます（を） 開きます Membuka (kursus)
+9 ペット Binatang peliharaan
+10 とり 鳥 Burung
+11 こえ 声 Suara
+12 なみ 波 Ombak
+13 はなび 花火 Kembang api
+14 けしき 景色 Pemandangan
+15 ひるま 昼間 Waktu siang
+16 むかし 昔 Masa lampau, dahulu kala
+17 どうぐ 道具 Perkakas, alat
+18 じどうはんばいき 自動販売機 Mesin penjual otomatis
+19 つうしんはんばい 通信販売 Penjualan memalui pos
+20 クリーニング Pembersihan,pencucian
+21 マンション Kondominium, apartemen
+22 だいどころ 台所 Dapur
+23 ～きょうしつ ～教室 Kursus ~
+24 パーティールーム Tempat/ruang untuk pesta
+25 ～ご ～後 Sesudah, setelah
+26 ～しか Hanya
+27 ほかの Lain
+28 はっきり Dengan jelas
+29 ほとんど Hampir
+30 にちようだいく 日曜大工 Bertukang dihari minggu
+31 ほんだな 本棚 Lemari buku
+32 ゆめ 夢 Mimpi, impian
+33 いつか Suatu saat, suatu hari,kapan-kapan
+34 いえ 家 Rumah
+35 すばらしい Sangat menarik,cemerlang,hebat
+36 こどもたち 子供たち Anak-anak
+37 だいすきな 大好きな Suka sekali
+38 まんが 漫画 Komik,kartun
+39 しゅじんこう 主人公 Peran utama, tokoh utama
+40 かたち 形 Bentuk
+41 ロボット Robot
+42 ふしぎな 不思議な Luar biasa, aneh
+43 ポケット Saku, kantong
+44 たとえば 例えば Misalnya, contohnya
+45 つけます 付けます Menyematkan, memakai,memasang
+46 じゆうに 自由に Dengan bebas
+47 そら 空 Langit
+48 とびます 飛びます Terbang
+49 じぶん 自分 Sendiri
+50 しょうらい 将来 Masa depan
+51 しゃしんや 写真屋 Tempat cuci cetak foto
+52 げんぞう 現像 Cuci film
+53 プリント Cetak
+54 やきまし 焼き増し Cetak tambah
+55 ひきのばし 引き伸ばし Cetak perbesar
+56 ネガ Klise
+57 スライド Slide
+58 サービスサイズ Ukuran servis
+59 パノラマサイズ Ukuran panorama
+60 クリーニングや クリーニング屋 Binatu
+61 ドライクリーニング Dry cleaning
+62 みずあらい 水洗い Mencuci
+63 しみぬき 染み抜き Menghilangkan noda
+64 ぼうすいかこう 防水加工 Tahan air
+65 サイズなおし サイズ直し Perbaikan ukuran
+66 ちぢむ 縮む Menyusut
+67 のびる 伸びる Melebar
+68 コンビニ Minimarket
+69 たくはいびんのうけつけ 宅配便の受付 Jasa pengantaran barang/paket
+70 しゃしんげんぞう 写真現像 Cuci cetak foto
+71 こうきょうりょうきんふりこみ 公共料金振り込み Pembayaran rekening listrik,air ledeng,telpon,tarif jasa-jasa pemerintah dll
+72 コピー Fotocopi
+73 ファックス Faks
+74 はがき、きってのはんばい はがき、切手の販売 Penjualan kartu pos dan perangko
+75 コンサートチケットのはんばい Penjualan tiket konser
+
+BAB 28
+1 うれます（が） 売れます Terjual
+2 おどります 踊ります Menari
+3 かみます Mengunyah, menggigit
+4 えらびます 選びます Memilih
+5 ちがいます 違います Berbeda
+6 かよいます（に） 通います Pulang pergi
+7 メモします Membuat catatan
+8 まじめな Rajin,sungguh-sungguh
+9 ねっしんな 熱心な Tekun
+10 やさしい 優しい Lemah lembut, baik hati
+11 えらい 偉い Hebat
+12 ちょうどいい Pas benar, cocok betul
+13 しゅうかん 週間 kebiasaan
+14 けいけん 経験 Pengalaman
+15 きゅうりょう 給料 Gaji
+16 ボーナス Bonus
+17 ばんぐみ 番組 Acara, program
+18 ドラマ Drama
+19 しょうせつ 小説 Roman,novel
+20 しょうせつか 小説家 Pengarang cerita novel
+21 かしゅ 歌手 Penyanyi
+22 かんりにん 管理人 Pengawas, penjaga
+23 むすこ 息子 Putra (sendiri)
+24 むすこさん 息子さん Putra (orang lain)
+25 むすめ 娘 Putri sendiri
+26 むすめさん 娘さん Putri (orang lain)
+27 じぶん 自分 Sendiri
+28 しょうらい 将来 Masa depan, hari depan
+29 しばらく Sementara,sementara waktu,sebentar
+30 たいてい Biasanya, kebanyakan
+31 それに Dan lagi
+32 それで Jadi,lalu
+33 ちょっとおねがいがある Ada sedikit permintaan
+34 ホームステイ Homestay
+35 かいわ 会話 Percakapan
+36 おしゃべりします Ngobrol
+37 おしらせ お知らせ Pengumuman, pemberitahuan
+38 ひにち 日にち Tanggal
+39 たいいくかん 体育館 Ruang/gedung olahraga
+40 むりょう 無料 Gratis
+41 ちから 力 Kekuatan , tenaga
+42 にんき 人気 Popularitas
+43 かたち 形 Bentuk
+44 いろ 色 Warna
+45 あじ 味 Rasa
+46 ガム Permen karet
+47 しなもの 品物 Barang
+48 ねだん 値段 Harga
+
+BAB 29
+1 あきます（が） 開きます Terbuka
+2 しまります 閉まります Tertutup
+3 つきます Menyala
+4 きえます 消えます Mati,padam
+5 こみます 込みます Ramai, macet
+6 すきます Sepi
+7 こわれます 壊れます Rusak
+8 われます 割れます Pecah
+9 おれます 折れます Patah
+10 やぶれます 破れます Sobek
+11 よごれます 汚れます Menjadi kotor
+12 つきます（が） 付きます Ada
+13 はずれます（が） 外れます Terbuka
+14 とまります（が） 止まります Berhenti
+15 まちがえます 間違えます Berbuat salah, keliru
+16 おとします 落とします Menjatuhkan, kehilangan
+17 かかります（が） 掛かります Terkunci
+18 おさら お皿 Piring
+19 おちゃわん Mangkuk
+20 コップ Gelas
+21 ガラス Kaca
+22 ふくろ 袋 Kantong
+23 さいふ 財布 Dompet
+24 えだ 枝 Cabang, ranting pohon
+25 えきいん 駅員 Pegawai stasiun
+26 このへん この辺 Sekitar sini
+27 ～へん ～辺 Sekitar ~
+28 このくらい Kira-kira sebesar ini
+29 おさきにどうぞ お先にどうぞ Silakan duluan
+30 よかった Syukurlah
+31 わすれもの 忘れ物 Barang yang ketinggalan
+32 ～がわ ～側 Sebelah~
+33 ポケット Saku
+34 あみだな 網棚 Rak (dalam kereta api)
+35 たしか 確か Kalau tidak salah, pasti
+36 じしん 地震 Gempa bumi
+37 かべ 壁 Dinding
+38 はり 針 Jarum
+39 さします 指します Menunjukkan
+40 えきまえ 駅前 Depan stasiun
+41 たおれます 倒れます Jatuh,roboh
+42 にし 西 Barat
+43 ほう 方 Arah
+44 じょうたい 状態 Keadaan
+45 ようす 様子 Penampilan
+46 ふとってる 太ってる Gemuk
+47 やせている Kurus
+48 ふくらんでいる 膨らんでいる Gembung
+49 あながあいている 穴が開いている Berlubang
+50 まがっている 曲がっている Bengkok
+51 ゆがんでいる Mencong
+52 へこんでいる Penyok
+53 ねじれている Berbelit
+54 かけている Pecah pinggirnya
+55 ひびがはいっている Retak
+56 くさっている 腐っている Busuk
+57 かわいている 乾いている Kering
+58 ぬれている Basah
+59 こおっている 凍っている Beku
+
+BAB 30
+1 はります Menempelkan
+2 かけます 掛けます Menggantungkan
+3 かざります 飾ります Menghias,mendekor
+4 ならべます 並べます Menjajarkan, meletakkan (secara teratur)
+5 うえます 植えます Menanam
+6 もどします 戻します Mengembalikan
+7 まとめます Menyusun
+8 かたづけます 片づけます Membereskan
+9 しまいます Memasukkan, menyimpan
+10 きめます 決めます Menentukan
+11 しらせます 知らせます Memberitahukan, mengumumkan
+12 そうだんします 相談します Berunding, membicarakan
+13 よしゅうします 予習します Mempersiapkan pelajaran
+14 ふくしゅうします 復習します Mengulang pelajaran kembali
+15 そのままにします Membiarkan begitu saja
+16 おこさん お子さん Anak (orang lain)
+17 じゅぎょう 授業 Pelajaran di sekolah
+18 こうぎ 講義 Kuliah
+19 ミーティング Rapat, pertemuan
+20 よてい 予定 Acara, rencana
+21 おしらせ お知らせ Pemberitahuan, berita
+22 あんないしょ 案内書 Buku/lembaran panduan
+23 カレンダー Kalender
+24 ポスター Poster
+25 ごみばこ ごみ箱 Tempat sampah
+26 にんぎょう 人形 Boneka
+27 かびん 花瓶 Jambangan, vas bunga
+28 かがみ 鏡 Cermin, kaca
+29 ひきだし 引き出し Laci
+30 げんかん 玄関 Pintu masuk, ruang muka
+31 ろうか 廊下 Lorong, koridor, gang
+32 かべ 壁 Dinding
+33 いけ 池 Kolam
+34 こうばん 交番 Pos polisi
+35 もとのところ 元の所 Tempat semula
+36 まわり 周り Sekitar, keliling
+37 まんなか 真ん中 Di tengah-tengah
+38 すみ 隅 Pojok,sudut
+39 まだ（＋） Masih
+40 ～ほど Kira-kira
+41 よていひょう 予定表 Daftar/rencana
+42 ごくろうさまです ご苦労様です Terima kasih atas jerih payah anda (diucapkan atasan kepada bawahan)
+43 きぼう 希望 Keinginan, permintaan
+44 なにかごきぼうがありますか Apakah ada sesuatu keinginan?
+45 ミュージカル Drama musik
+46 まるい 丸い Bulat
+47 つき 月 Bulan
+48 ちきゅう 地球 Bumi
+49 うれしい Senang, gembira
+50 いやな 嫌な Tidak suka
+51 すると Jadi,lalu
+52 めがさめます 目が覚めます Terbangun
+53 うえから２だんめ 上から2段目 Ke 2 dari atas
+54 おく 奥 Bagian dalam
+55 てまえ 手前 Bagian depan
+56 まえから２れつめ 前から２列目 Baris ke 2 dari depan (barisan orang)
+57 ななめうしろ 斜め後ろ Samping belakang
+58 ななめまえ 斜め前 Samping depan
+59 そば そば Samping,sebelah
+60 いち 位置 Letak , arah
+61 ２ぎょうめ ２行目 Baris ke 2 (buku)
+
+BAB 31
+1 はじまります（が） 始まります Mulai, dimulai
+2 つづけます 続けます Meneruskan, melanjutkan
+3 みつけます 見つけます Menemukan
+4 うけます（を） 受けます Menempuh , mengikuti (ujian)
+5 にゅうがくします（に） 入学します Masuk (universitas)
+6 そつぎょうします（を） 卒業します Lulus (universitas)
+7 しゅっせきします（に） 出席します Menghadiri
+8 きゅうけいします 休憩します Beristirahat, istirahat sebentar
+9 れんきゅう 連休 Hari-hari libur yang berurutan
+10 さくぶん 作文 Karangan
+11 てんらんかい 展覧会 Pameran
+12 けっこんしき 結婚式 Upacara perkawinan
+13 おそうしき お葬式 Upacara kematian
+14 しき 式 Upacara
+15 ほんしゃ 本社 Kantor pusat
+16 してん 支店 Kantor cabang
+17 きょうかい 教会 Gereja
+18 だいがくいん 大学院 Pasca sarjana
+19 どうぶつえん 動物園 Kebun binatang
+20 おんせん 温泉 Sumber air panas, pemandian air panas
+21 おきゃく お客 Tamu, langganan
+22 だれか Seseorang
+23 ～のほう ～の方 (tempat duduk) bagian
+24 ずっと Terus menerus, selamanya
+25 のこります 残ります Tinggal, sisa
+26 つきに 月に Sebulan
+27 ふつうの 普通の Umum, biasa
+28 インターネット Internet
+29 むら 村 Kampung, desa
+30 えいがかん 映画館 Gedung bioskop
+31 そら 空 Langit
+32 とじます 閉じます Menutup, memejamkan
+33 とかい 都会 Kota
+34 こどもたち 子供たち Anak-anak
+35 じゆうに 自由に Dengan bebas
+36 せかいじゅう 世界中 Seluruh dunia
+37 あつまります 集まります Berkumpul
+38 うつくしい 美しい Indah
+39 しぜん 自然 Alam
+40 すばらしさ Kebaikan,kenijakan
+41 きがつきます 気が付きます Menyadari
+42 せんもん 専門 Bidang keilmuan
+43 いがく 医学 Kedokteran
+44 やくがく 薬学 Farmasi
+45 かがく 化学 Kimia
+46 せいかがく 生化学 Biokimia
+47 せいぶつがく 生物学 Biologi
+48 のうがく 農学 Pertanian
+49 ちがく 地学 Geologi
+50 ちりがく 地理学 Geografi
+51 すうがく 数学 Matematika
+52 ぶつりがく 物理学 Fisika
+53 こうがく 工学 Teknik
+54 どぼくこうがく 土木工学 Teknik sipil
+55 でんしこうがく 電子工学 Elektronika
+56 でんきこうがく 電気工学 Teknik listrik
+57 きかいこうがく 機械工学 Teknik mesin
+58 コンピューターこうがく Informatika
+59 いでんしこうがく 遺伝子工学 Genetika
+60 けんちくがく 建築学 Arsitektur
+61 てんもんがく 天文学 Astronomi
+62 かんきょうかがく 環境科学 Ilmu tata lingkungan
+63 せいじがく 政治学 Ilmu politik
+64 こくさいかんけいがく 国際関係学 Hubungan internasional
+65 ほうりつがく 法律学 Hukum
+66 けいざいがく 経済学 Ekonomi
+67 けいえいがく 経営学 Manajemen bisnis
+68 しゃかいがく 社会学 Sosiologi
+69 きょういくがく 教育学 Kependidikan
+70 ぶんがく 文学 Sastra
+71 げんごがく 言語学 Linguistik
+72 しんりがく 心理学 Psikologi
+73 てつがく 哲学 Filsafat
+74 しゅうきょうがく 宗教学 Teologi
+75 げいじゅつ 芸術 Seni
+76 びじゅつ 美術 Seni murni
+77 おんがく 音楽 Seni musik
+78 たいいくがく 体育学 Pendidikan jasmani
+
+BAB 32
+1 うんどうします 運動します Berolahraga
+2 せいこうします 成功します Berhasil
+3 しっぱいします（に） 失敗します Mengalami kegagalan /gagal
+4 ごうかくします（に） 合格します Lulus
+5 もどります 戻ります Kembali
+6 やみます（が） Berhenti (hujan)
+7 はれます 晴れます Menjadi cerah
+8 くもります 曇ります Menjadi mendung
+9 ふきます（が） 吹きます Bertiup(angin)
+10 なおります（が） 治ります Sembuh (dari penyakit)
+11 なおります（が） 直ります Diperbaiki (mesin)
+12 つづきます（が） 続きます Berlanjut (demam)
+13 ひきます（を） Masuk angin
+14 ひやします 冷やします Mendinginkan
+15 しんぱいな 心配な Khawatir
+16 じゅうぶんな 十分な Cukup
+17 おかしい Lucu, aneh
+18 うるさい Berisik, cerewet
+19 やけど（を）します Luka bakar
+20 けが（を）します Luka,cedera
+21 せき（が）でます Batuk
+22 インフルエンザ Influenza
+23 そら 空 Langit
+24 たいよう 太陽 Matahari
+25 ほし 星 Bintang
+26 つき 月 Bulan
+27 かぜ 風 Angin
+28 きた 北 Utara
+29 みなみ 南 Selatan
+30 にし 西 Barat
+31 ひがし 東 Timur
+32 すいどう 水道 Air ledeng
+33 エンジン Mesin,motor
+34 チーム Tim
+35 こんや 今夜 Malam ini
+36 ゆうがた 夕方 Sore
+37 まえ Sebelumnya
+38 おそく 遅く Malam sekali/telat
+39 こんな Seperti ini
+40 そんな Seperti itu
+41 あんな Seperti itu
+42 もしかしたら Kemungkinannya
+43 それはいけませんね Kasihan ya.
+44 げんき 元気 Sehat
+45 い 胃 Lambung
+46 はたらきすぎ 働きすぎ Terlalu banyak bekerja
+47 ストレス Stress
+48 むりをします 無理をします Dipaksakan
+49 ゆっくりします Beristirahat
+50 ほしうらない 星占い Primbon, ramalan zodiak
+51 おうしざ 牡牛座 Bintang taurus
+52 こまります 困ります Mengalami kesulitan
+53 たからくじ 宝くじ Lotre
+54 あたります（が） 当たります Menang (lotre) , nembus (lotre)
+55 けんこう 健康 Kesehatan
+56 れんあい 恋愛 Percintaan
+57 おかねもち お金持ち Orang kaya
+58 てんきよほう 天気予報 Prakiraan cuaca
+59 こうすいかくりつ 降水確率 Kemungkinan hujan
+60 さいこうきおん 最高気温 Suhu tertinggi
+61 さいていきおん 最低気温 Suhu terendah
+62 はれのちくもり 晴れのち曇り Cerah kemudian berawan
+63 くもりところによってあめ 曇り所によって雨 Berawan dan hujan di beberapa tempat
+64 ちほう 地方 Wilayah
+65 にわかあめ／ゆうだち にわか雨／夕立 Hujan mendadak
+66 たいふう 台風 Topan
+67 にじ 虹 Pelangi
+68 しつど 湿度 Kelembaban
+69 むしあつい 蒸し暑い Panas lembab
+70 さわやかな Segar
+71 かみなり 雷 Petir
+
+BAB 33
+1 にげます 逃げます Melarikan diri
+2 さわぎます 騒ぎます Berbuat gaduh, ribut
+3 あきらめます Menerima nasib, putus asa
+4 なげます 投げます Melempar
+5 まもります 守ります Mematuhi
+6 あげます 上げます Menaikkan
+7 さげます 下げます Menurunkan
+8 つたえます 伝えます Menyampaikan
+9 ちゅういします（に） 注意します Memperhatikan
+10 はずします（せきを） 外します Tidak ada (ditempat)
+11 だめな Jangan,tidak boleh,tidak bisa
+12 せき 席 Tempat duduk
+13 ファイト Berjuang
+14 マーク Tanda
+15 ボール Bola
+16 せんたくき 洗濯機 Mesin cuci
+17 ～き ～機 Mesin ～
+18 きそく 規則 Peraturan
+19 しようきんし 使用禁止 Dilarang pakai
+20 たちいりきんし 立入禁止 Dilarang masuk
+21 いりぐち 入口 Pintu masuk
+22 でぐち 出口 Pintu keluar
+23 ひじょうぐち 非常口 Pintu darurat
+24 むりょう 無料 Gratis
+25 ほんじつきゅうぎょう 本日休業 Hari ini tutup
+26 えいぎょうちゅう 営業中 Buka
+27 しようちゅう 使用中 Sedang dipakai
+28 ～ちゅう ～中 Sedang～/dalam ～
+29 どういう～ Apa ～/ bagaimana ～
+30 もう Tidak ～lagi (diikuti dengan bentuk negatif)
+31 あと～ Tinggal ～lagi
+32 ちゅうしゃいはん 駐車違反 Pelanggaran parkir
+33 そりゃあ Hal itu
+34 ～いない ～以内 Dalam ～
+35 けいさつ 警察 Polisi
+36 ばっきん 罰金 Denda
+37 でんぽう 電報 Telegram
+38 ひとびと 人々 Orang-orang
+39 きゅうよう 急用 Urusan/tugas mendadak
+40 うちます（を） 打ちます Mengirim (telegram)
+41 でんぽうだい 電報代 Biaya telegram
+42 できるだけ Sebisa mungkin / sedapat mungkin
+43 みじかく 短く Dengan pendek/singkat
+44 また Dan
+45 たとえば 例えば Misalnya,contohnya
+46 キトク Yang gawat, koma
+47 おもいびょうき 重い病気 Sakit keras/parah
+48 あす 明日 Besok
+49 るす 留守 Tidak ada di rumah
+50 るすばん 留守番 Penjaga rumah (ketika yang punya rumah bepergian)
+51 おいわい お祝い Perayaan
+52 なくなります 亡くなります Meninggal
+53 かなしみ 悲しみ Kesedihan,rasa sedih
+54 りようします 利用します Memakai,menggunakan
+55 ひょうしき 標識 Petunjuk
+56 じゅんびちゅう 準備中 Dalam persiapan
+57 へいてん 閉店 Tutup
+58 ていきゅうび 定休日 Hari libur tetap
+59 けしょうしつ 化粧室 Kamar kecil
+60 きんえんせき 禁煙席 Tempat duduk bebas rokok
+61 よやくせき 予約席 Tempat duduk yang telah dipesan
+62 かきげんきん 火気厳禁 Mudah terbakar, larangan menyalakan api
+63 われものちゅうい 割れ物注意 Barang mudah pecah, hati-hati
+64 うんてんしょしんしゃちゅうい 運転初心者注意 Tanda bagi pengemudi yang baru mendapatkan SIM
+65 こうじちゅう 工事中 Dalam perbaikan
+66 えんそけいひょうはくざいふか 塩素系漂白剤不可 Jangan gunakan pemutih
+67 てあらい 手洗い Cuci dengan tangan
+68 アイロン（ていおん） アイロン（低温） Harus disetrika dalam suhu rendah
+69 ドライクリーニング Hanya untuk di dry cleaning
+
+BAB 34
+1 みがきます（を） 磨きます Menggosok (gigi)
+2 くみたてます 組み立てます Merakit
+3 おります 折ります Melipat,mematahkan
+4 きがつきます（に） 気がつきます Menyadari
+5 つけます Membubuhi
+6 みつかります（が） 見つかります Ketemu,ditemukan
+7 します（を） Memakai (aksesoris)
+8 しつもんします 質問します Bertanya
+9 ほそい 細い Tipis
+10 ふとい 太い Tebal
+11 ぼんおどり 盆踊り Tarian pada festival bon
+12 スポーツクラブ Klub olahraga
+13 かぐ 家具 Perabot rumah tangga
+14 キー Tombol jari, tuts
+15 シートベルト Sabuk pengaman
+16 せつめいしょ 説明書 Lembaran/buku petunjuk
+17 ず 図 Gambar
+18 せん 線 Garis
+19 やじるし 矢印 Tanda panah
+20 くろ 黒 Hitam
+21 しろ 白 Putih
+22 あか 赤 Merah
+23 あお 青 Biru
+24 こん 紺 Biru tua
+25 きいろ 黄色 Kuning
+26 ちゃいろ 茶色 Coklat
+27 しょうゆ Kecap asin jepang
+28 ソース Saus
+29 ～か～ Atau
+30 ゆうべ 昨夜 Tadi malam
+31 さっき Tadi
+32 さどう 茶道 Upacara minum teh
+33 おちゃをたてます お茶をたてます Membuat teh jepang
+34 さきに 先に Terlebih dahulu, duluan
+35 のせます 載せます Menaruh
+36 これでいいですか Ini sudah benarkan ?
+37 にがい 苦い Pahit
+38 おやこどんぶり 親子どんぶり Nasi yang atasanya daging ayam dan telur
+39 ざいりょう 材料 Bahan,material
+40 ～ぶん ～分 Bagian, jatah (untuk kuantitas)
+41 とりにく 鶏肉 Daging ayam
+42 ～グラム Gram
+43 ～こ ～個 ～Buah (benda yang kecil)
+44 たまねぎ Bawang bombai
+45 よんぶんのいち Seperempat, satu per empat
+46 ちょうみりょう 調味料 Bumbu masak
+47 なべ Panci
+48 ひ 火 Api
+49 ひにかけます Meletakkan di atas api
+50 どんぶり Mangkok besar
+51 にる 煮る Merebus
+52 やく 焼く Memanggang, membakar
+53 あげる 揚げる Menggoreng
+54 いためる Menumis
+55 ゆでる Merebus
+56 むす 蒸す Mengukus
+57 たく 炊く Menanak (nasi)
+58 むく Mengupas
+59 きざむ 刻む Mencincang
+60 かきまぜる かき混ぜる Mengaduk
+61 す 酢 Cuka
+62 みそ Miso (tauco jepang)
+63 あぶら 油 Minyak
+64 マヨネーズ Mayones
+65 ケチャップ Saus tomat
+66 からし（マスタード） Mustard
+67 こしょう Merica
+68 とうがらし Cabe merah
+69 わさび Wasabi
+70 しょうが Jahe
+71 カレーこ カレー粉 Tepung kari
+72 だいどころようひん 台所用品 Perabot dapur
+73 やかん Ceret, teko
+74 ふた Tutup gelas,panci,dll
+75 おたま Sendok sayur
+76 まないた まな板 Talenan
+77 ほうちょう 包丁 Pisau dapur
+78 ふきん Kain lap dapur
+79 フライパン Wajan
+80 でんしオープンレンジ Oven microwave
+81 すいはんき 炊飯器 Rice cooker
+82 しゃもじ Sendok nasi
+83 かんきり 缶切り Pembuka kaleng
+84 せんぬき 栓抜き Pembuka botol
+85 ざる Saringan bambu
+86 ポット Termos
+87 ガスだい ガス台 Kompor gas
+88 ながしだい 流し台 Bak untuk cuci piring
+89 かんきせん 換気扇 Kipas ventilasi
+
+BAB 35
+1 さきます（が） 咲きます Mekar (bunga)
+2 かわります（が） 変わります Berubah
+3 こまります 困ります Mengalami kesulitan
+4 つけます 付けます Memberi tanda
+5 ひろいます 拾います Memungut,mengambil
+6 かかります（が） Ada (telpon)
+7 らくな 楽な Mudah,ringan
+8 ただしい 正しい Betul,benar
+9 めずらしい 珍しい Aneh,langka
+10 かた 方 Orang
+11 むこう 向こう Di sebelah sana
+12 しま 島 Pulau
+13 むら 村 Kampung,desa
+14 みなと 港 Pelabuhan
+15 きんじょ 近所 Tetangga
+16 おくじょう 屋上 Atap,lantai puncak
+17 かいがい 海外 Luar negri
+18 やまのぼり 山登り Pendakian gunung
+19 ハイキング Hiking, piknik
+20 きかい 機会 Kesempatan
+21 きょか 許可 Ijin
+22 まる 丸 Lingkaran
+23 そうさ 操作 Pengoperasian
+24 ほうほう 方法 Cara
+25 せつび 設備 Peralatan, fasilitas
+26 カーテン Korden
+27 ひも Tali
+28 ふた Penutup,tutup
+29 は 葉 Daun
+30 きょく 曲 Lagu,musik
+31 たのしみ 楽しみ Kesenangan
+32 もっと Lebih
+33 はじめに 初めに Awal, pertama-tama
+34 これでおわります Kita akhiri sampai di sini
+35 アフリカ Afrika
+36 それなら Kalau begitu
+37 やこうバス 夜行バス Bis malam
+38 りょこうしゃ 旅行社 Agen perjalanan
+39 くわしい 詳しい Terperinci,detail
+40 スキーじょう スキー場 Tempat bermain ski
+41 しゅ 朱 Warna merah terang
+42 まじわります 交わります Bergaul
+43 ことわざ Peribahasa
+44 なかよくします 仲よくします Hidup rukun , hubungannya akrab
+45 ひつような 必要な Perlu

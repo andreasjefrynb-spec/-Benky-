@@ -281,7 +281,7 @@ export function cleanJapaneseText(raw: unknown, reading?: unknown): string {
   return normalizeJapanesePronunciation(rawStr, readingStr);
 }
 
-export type AudioEngine = 'ai' | 'device';
+export type AudioEngine = 'device';
 
 export interface DeviceVoiceInfo {
   voiceURI: string;
@@ -302,49 +302,7 @@ export interface AiVoiceInfo {
   recommended?: boolean;
 }
 
-export const AI_VOICES: AiVoiceInfo[] = [
-  {
-    id: 'Kore',
-    name: 'Kore',
-    jpName: 'コレ',
-    gender: 'Wanita',
-    tone: 'Ramah, Alami & Hangat',
-    description: 'Suara wanita yang ramah dengan intonasi Tokyo sangat natural dan ekspresif.',
-    recommended: true,
-  },
-  {
-    id: 'Zephyr',
-    name: 'Zephyr',
-    jpName: 'ゼファー',
-    gender: 'Wanita',
-    tone: 'Tenang, Elegan & Jelas',
-    description: 'Suara wanita yang tenang dan sopan, cocok untuk menyimak percakapan formal.',
-  },
-  {
-    id: 'Puck',
-    name: 'Puck',
-    jpName: 'パック',
-    gender: 'Netral',
-    tone: 'Ceria, Lincah & Semangat',
-    description: 'Karakter suara berenergi dan ceria, menyenangkan untuk latihan repetisi.',
-  },
-  {
-    id: 'Fenrir',
-    name: 'Fenrir',
-    jpName: 'フェンリル',
-    gender: 'Pria',
-    tone: 'Tegas, Maskulin & Berwibawa',
-    description: 'Suara pria yang jernih dan tegas, pelafalan konsonan dan vokal sangat mantap.',
-  },
-  {
-    id: 'Charon',
-    name: 'Charon',
-    jpName: 'カロン',
-    gender: 'Pria',
-    tone: 'Dewasa, Tenang & Elegan',
-    description: 'Suara pria dewasa dengan timbre dalam dan intonasi stabil.',
-  },
-];
+export const AI_VOICES: AiVoiceInfo[] = [];
 
 class SoundManager {
   private speechSynth: SpeechSynthesis | null = null;
@@ -358,25 +316,13 @@ class SoundManager {
   private engineListeners: Set<() => void> = new Set();
   private isUnlocked = false;
 
-  // AI Speech Engine & Caching
-  private engine: AudioEngine = 'ai';
-  private aiVoice = 'Kore';
+  // Standard Device Voice Engine
+  private engine: AudioEngine = 'device';
   private selectedDeviceVoiceURI: string | null = null;
-  private clientAudioCache = new Map<string, string>();
-  private activeFetchController: AbortController | null = null;
-  private aiCooldownUntil = 0;
 
   constructor() {
     if (typeof window !== 'undefined') {
       try {
-        const savedEngine = localStorage.getItem('nihongo_audio_engine') as AudioEngine | null;
-        if (savedEngine === 'ai' || savedEngine === 'device') {
-          this.engine = savedEngine;
-        }
-        const savedVoice = localStorage.getItem('nihongo_ai_voice');
-        if (savedVoice && AI_VOICES.some((v) => v.id === savedVoice)) {
-          this.aiVoice = savedVoice;
-        }
         const savedDeviceVoice = localStorage.getItem('nihongo_device_voice');
         if (savedDeviceVoice) {
           this.selectedDeviceVoiceURI = savedDeviceVoice;
@@ -527,23 +473,7 @@ class SoundManager {
         }
       }
 
-      // 2. Persona gender matching
-      const isMalePersona = this.aiVoice === 'Fenrir' || this.aiVoice === 'Charon';
-
-      if (isMalePersona) {
-        const maleVoice =
-          jaVoices.find((v) => /keita.*natural|natural.*keita/i.test(v.name)) ||
-          jaVoices.find((v) => /otoya.*enhanced|enhanced.*otoya/i.test(v.name)) ||
-          jaVoices.find((v) => /natural.*male|male.*natural/i.test(v.name)) ||
-          jaVoices.find((v) => /keita|otoya|daichi|ichiro/i.test(v.name)) ||
-          jaVoices.find((v) => /male|man\b/i.test(v.name));
-        if (maleVoice) {
-          this.jaVoice = maleVoice;
-          return;
-        }
-      }
-
-      // 3. Natural / Neural Female Voice Ranking (Studio Human Quality)
+      // Best Natural / Standard Japanese Voice Ranking
       const bestVoice =
         jaVoices.find((v) => /nanami.*natural|natural.*nanami/i.test(v.name)) ||
         jaVoices.find((v) => /kyoko.*enhanced|enhanced.*kyoko/i.test(v.name)) ||
@@ -554,7 +484,6 @@ class SoundManager {
         jaVoices.find((v) => /kyoko/i.test(v.name)) ||
         jaVoices.find((v) => /ayumi|haruka|mayu|sayaka/i.test(v.name)) ||
         jaVoices.find((v) => /google|日本語/i.test(v.name)) ||
-        jaVoices.find((v) => !/otoya|keita|ichiro|daichi|male|man\b/i.test(v.name)) ||
         jaVoices[0];
 
       this.jaVoice = bestVoice || null;
@@ -588,11 +517,11 @@ class SoundManager {
   }
 
   public isAiQuotaCooldown(): boolean {
-    return Date.now() < this.aiCooldownUntil;
+    return false;
   }
 
   public getAiCooldownSeconds(): number {
-    return Math.max(0, Math.ceil((this.aiCooldownUntil - Date.now()) / 1000));
+    return 0;
   }
 
   public getActiveText(): string {
@@ -603,15 +532,6 @@ class SoundManager {
    * Stop any active speech or audio immediately
    */
   public stop() {
-    if (this.activeFetchController) {
-      try {
-        this.activeFetchController.abort();
-      } catch {
-        // ignore
-      }
-      this.activeFetchController = null;
-    }
-
     if (this.currentAudio) {
       try {
         this.currentAudio.pause();
@@ -636,175 +556,31 @@ class SoundManager {
   }
 
   /**
-   * Play high-quality Japanese speech pronunciation.
-   * Default voice is strictly Kore with natural, zero-mispronunciation phonetics.
+   * Play standard Japanese speech pronunciation via native browser Web Speech API.
+   * Instant, reliable, offline-capable, and optimized with phonetic corrections.
    */
   public speak(text: string, rate: number = 0.9, onEnd?: () => void, reading?: string) {
     if (typeof window === 'undefined') return;
 
     this.stop();
 
-    if (!this.aiVoice) {
-      this.aiVoice = 'Kore';
-    }
-
     const cleanText = cleanJapaneseText(text, reading);
     if (!cleanText) return;
 
     this.notifyPlaybackChange(true, cleanText);
 
-    // If AI voice engine is chosen, use conversational speech
-    if (this.engine === 'ai') {
-      this.speakWithAi(cleanText, rate, onEnd, reading);
-      return;
-    }
-
-    // Synchronous native Web Speech execution
+    // Standard native Web Speech execution
     if (this.speechSynth) {
       this.speakWithSpeechSynth(cleanText, rate, onEnd);
       return;
     }
 
-    // Secondary fallback for legacy browsers without speechSynthesis
+    // Secondary fallback for legacy environments without speechSynthesis
     this.speakWithAudioFallback(cleanText, rate, onEnd);
   }
 
   /**
-   * Conversational Gemini AI Speech Engine (strictly using Kore voice)
-   */
-  private async speakWithAi(cleanText: string, rate: number, onEnd?: () => void, reading?: string) {
-    const voice = this.aiVoice || 'Kore';
-    const cacheKey = `${voice}:${cleanText}`;
-
-    // 1. Instant Cache Hit
-    if (this.clientAudioCache.has(cacheKey)) {
-      const cachedUrl = this.clientAudioCache.get(cacheKey)!;
-      this.playAudioUrl(cachedUrl, rate, onEnd);
-      return;
-    }
-
-    // If Gemini TTS is currently on quota cooldown, immediately fallback to Tokyo female voice with zero delay
-    if (Date.now() < this.aiCooldownUntil) {
-      if (this.isCurrentlyPlaying && this.activeSpeakingText === cleanText) {
-        this.speakWithSpeechSynth(cleanText, rate, onEnd);
-      }
-      return;
-    }
-
-    // 2. Fetch from Gemini TTS Server Endpoint
-    const controller = new AbortController();
-    this.activeFetchController = controller;
-
-    // Timeout safety fallback: if network is slow, seamlessly fall back to Kore-tuned SpeechSynth
-    const timeoutId = setTimeout(() => {
-      if (this.activeFetchController === controller) {
-        controller.abort();
-        this.activeFetchController = null;
-        if (this.isCurrentlyPlaying && this.activeSpeakingText === cleanText) {
-          this.speakWithSpeechSynth(cleanText, rate, onEnd);
-        }
-      }
-    }, 4500);
-
-    try {
-      const response = await fetch('/api/tts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: cleanText, reading, voice }),
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-      if (this.activeFetchController === controller) {
-        this.activeFetchController = null;
-      }
-
-      if (!response.ok) {
-        if (response.status === 429) {
-          this.aiCooldownUntil = Date.now() + 45_000; // 45s cooldown
-        }
-        throw new Error(`TTS server error ${response.status}`);
-      }
-
-      const data = await response.json();
-      if (data.audio) {
-        const audioUrl = `data:audio/wav;base64,${data.audio}`;
-        this.clientAudioCache.set(cacheKey, audioUrl);
-
-        // Only play if the user is still waiting for this speech item
-        if (this.isCurrentlyPlaying && this.activeSpeakingText === cleanText) {
-          this.playAudioUrl(audioUrl, rate, onEnd);
-        }
-        return;
-      }
-
-      // If server instructed fallback due to quota or rate limit
-      if (data.fallback) {
-        if (data.quotaExceeded) {
-          const retrySec = typeof data.retryAfter === 'number' ? Math.min(data.retryAfter, 60) : 45;
-          this.aiCooldownUntil = Date.now() + retrySec * 1000;
-        }
-        if (this.isCurrentlyPlaying && this.activeSpeakingText === cleanText) {
-          this.speakWithSpeechSynth(cleanText, rate, onEnd);
-        }
-        return;
-      }
-
-      throw new Error('No audio returned');
-    } catch (err: any) {
-      clearTimeout(timeoutId);
-      if (this.activeFetchController === controller) {
-        this.activeFetchController = null;
-      }
-
-      // If aborted because user clicked another word, do not trigger fallback
-      if (err?.name === 'AbortError') {
-        return;
-      }
-
-      // Fall back seamlessly to Kore-tuned high-fidelity Tokyo female voice
-      if (this.isCurrentlyPlaying && this.activeSpeakingText === cleanText) {
-        this.speakWithSpeechSynth(cleanText, rate, onEnd);
-      }
-    }
-  }
-
-  private playAudioUrl(url: string, rate: number, onEnd?: () => void) {
-    try {
-      const audio = new Audio(url);
-      this.currentAudio = audio;
-      audio.playbackRate = Math.min(Math.max(rate, 0.6), 1.3);
-
-      let finished = false;
-      const finish = () => {
-        if (finished) return;
-        finished = true;
-        if (this.currentAudio === audio) {
-          this.currentAudio = null;
-        }
-        this.notifyPlaybackChange(false, '');
-        onEnd?.();
-      };
-
-      audio.onended = finish;
-      audio.onerror = () => {
-        finish();
-      };
-
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          finish();
-        });
-      }
-    } catch {
-      this.notifyPlaybackChange(false, '');
-      onEnd?.();
-    }
-  }
-
-  /**
-   * Primary Engine: High-fidelity natural Tokyo female voice tuned to Kore's pitch & cadence
+   * Primary Engine: High-fidelity natural Tokyo speech via browser Web Speech API
    */
   private speakWithSpeechSynth(cleanText: string, rate: number, onEnd?: () => void) {
     if (!this.speechSynth) {
@@ -831,25 +607,9 @@ class SoundManager {
         utterance.voice = this.jaVoice;
       }
 
-      const voiceName = (this.jaVoice?.name || '').toLowerCase();
-      const isMale =
-        /male|man\b|otoya|keita|ichiro|daichi|kenji/i.test(voiceName) ||
-        this.aiVoice === 'Fenrir' ||
-        this.aiVoice === 'Charon';
-      const isPuck = this.aiVoice === 'Puck';
-
-      // Natural conversational pitch & cadence tuning (eliminates robotic tone)
-      if (isMale) {
-        utterance.pitch = 0.93; // Deep, calm natural masculine pitch
-        utterance.rate = Math.min(Math.max(rate * 0.94, 0.65), 1.15);
-      } else if (isPuck) {
-        utterance.pitch = 1.05; // Bright and energetic
-        utterance.rate = Math.min(Math.max(rate * 0.98, 0.7), 1.2);
-      } else {
-        utterance.pitch = 1.0; // Reference 1.0 native Tokyo female pitch (no artificial squeak)
-        utterance.rate = Math.min(Math.max(rate * 0.94, 0.65), 1.15);
-      }
-
+      // Natural conversational pitch & cadence tuning
+      utterance.pitch = 1.0;
+      utterance.rate = Math.min(Math.max(rate, 0.6), 1.3);
       utterance.volume = 1.0;
 
       this.currentUtterance = utterance;
@@ -865,7 +625,6 @@ class SoundManager {
 
       utterance.onend = finish;
       utterance.onerror = (e) => {
-        // If speechSynthesis threw an error or is canceled, try fallback audio if text wasn't spoken
         if (e.error !== 'canceled' && e.error !== 'interrupted') {
           try {
             this.speakWithAudioFallback(cleanText, rate, onEnd);
@@ -878,7 +637,7 @@ class SoundManager {
       };
 
       // Safeguard for mobile browsers where onend occasionally fails to fire
-      const estimatedDuration = Math.max(1500, cleanText.length * 450);
+      const estimatedDuration = Math.max(1200, cleanText.length * 400);
       setTimeout(() => {
         if (!hasFinished && this.isCurrentlyPlaying) {
           finish();
@@ -1051,6 +810,19 @@ class SoundManager {
     this.playWrongSound();
   }
 
+  public playClick() {
+    this.playFlipSound();
+  }
+
+  public playCelebration() {
+    const tones = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6 arpeggio
+    tones.forEach((freq, idx) => {
+      setTimeout(() => {
+        this.playTone(freq, 0.2, 'triangle', 0.15);
+      }, idx * 90);
+    });
+  }
+
   /**
    * Plays a musical tone with marimba/bell envelope for song melodies
    */
@@ -1084,33 +856,20 @@ class SoundManager {
   }
 
   public getEngine(): AudioEngine {
-    return this.engine;
+    return 'device';
   }
 
-  public setEngine(engine: AudioEngine) {
-    this.engine = engine;
-    try {
-      localStorage.setItem('nihongo_audio_engine', engine);
-    } catch {
-      // ignore
-    }
+  public setEngine(_engine: AudioEngine) {
+    this.engine = 'device';
     this.notifyEngineChange();
   }
 
   public getAiVoice(): string {
-    return this.aiVoice;
+    return 'Standar';
   }
 
-  public setAiVoice(voice: string) {
-    if (AI_VOICES.some((v) => v.id === voice)) {
-      this.aiVoice = voice;
-      try {
-        localStorage.setItem('nihongo_ai_voice', voice);
-      } catch {
-        // ignore
-      }
-      this.notifyEngineChange();
-    }
+  public setAiVoice(_voice: string) {
+    this.notifyEngineChange();
   }
 
   public onEngineChange(listener: () => void): () => void {
@@ -1128,31 +887,8 @@ class SoundManager {
     });
   }
 
-  /**
-   * Pre-fetches AI voice audio for smoother subsequent interactions
-   */
-  public async prefetchText(text: string) {
-    if (this.engine !== 'ai') return;
-    const cleanText = cleanJapaneseText(text);
-    if (!cleanText) return;
-    const cacheKey = `${this.aiVoice}:${cleanText}`;
-    if (this.clientAudioCache.has(cacheKey)) return;
-
-    try {
-      const response = await fetch('/api/tts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: cleanText, voice: this.aiVoice }),
-      });
-      if (response.ok) {
-        const data = await response.json();
-        if (data.audio) {
-          this.clientAudioCache.set(cacheKey, `data:audio/wav;base64,${data.audio}`);
-        }
-      }
-    } catch {
-      // ignore prefetch errors
-    }
+  public async prefetchText(_text: string) {
+    // No-op for standard Web Speech engine
   }
 }
 

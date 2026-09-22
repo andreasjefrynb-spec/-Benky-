@@ -8,25 +8,147 @@ import { particlesList, particleComparisons, particlesCardItems } from './partic
 import { trapVerbsGodan, verbProfiles, conjugationCardItems } from './conjugationsData';
 import { minnaShokyu1Lessons } from './minnaShokyu1';
 import { minnaShokyu2Lessons } from './minnaShokyu2';
+import { minnaChuukyu1Lessons } from './minnaChuukyu1';
+import { tobiraChapters } from './tobiraData';
+import { quartetLessons } from './quartetData';
+import { shinKanzenData } from './shinKanzenData';
+import { souMatomeWeeks } from './souMatomeData';
+import { tryJlptLessons } from './tryJlptData';
 import { irodoriTopics } from './irodoriData';
 import { sswSectors } from './sswData';
+import { dokkaiN1Data } from './dokkaiN1Data';
+import { choukaiN1Data } from './choukaiN1Data';
+import { ruigigoN1Data } from './ruigigoN1Data';
 import { getWordClassification } from '../utils/wordClassifier';
 import { getHiraganaReading } from '../utils/hiraganaConverter';
 import { getWordNuanceInfo } from '../utils/wordNuances';
+import { getClarifiedMeaning } from '../utils/meaningClarifier';
 
-export const allMinnaLessons = [...minnaShokyu1Lessons, ...minnaShokyu2Lessons];
+/**
+ * Fungsi cerdas untuk memastikan kosakata dalam setiap bab Minna no Nihongo
+ * terlengkapi secara maksimal tanpa ada duplikasi.
+ */
+function deduplicateMinnaVocab(rawVocab: typeof minnaShokyu1Lessons[0]['keyVocab']) {
+  const result: typeof rawVocab = [];
+  const seen = new Map<string, (typeof rawVocab)[0]>();
+
+  for (const item of rawVocab) {
+    const normJp = (item.jp || '').replace(/[（\(].*?[）\)]/g, '').replace(/\[.*?\]/g, '').replace(/\s+/g, '');
+    const normReading = (item.reading || '').replace(/[（\(].*?[）\)]/g, '').replace(/\[.*?\]/g, '').replace(/\s+/g, '').toLowerCase();
+    const key = normReading.length >= 2 ? normReading : normJp;
+
+    if (seen.has(key)) {
+      const existing = seen.get(key)!;
+      if (!existing.kanji && item.kanji) {
+        existing.kanji = item.kanji;
+      }
+      if (!existing.jp.includes('（') && !existing.jp.includes('(') && (item.jp.includes('（') || item.jp.includes('('))) {
+        existing.jp = item.jp;
+      }
+      if (!existing.jp.includes('[') && item.jp.includes('[')) {
+        const bracket = item.jp.match(/\[.*?\]/)?.[0];
+        if (bracket) existing.jp = `${existing.jp} ${bracket}`;
+      }
+      if ((item.id || '').length > (existing.id || '').length && !existing.id.includes('[')) {
+        existing.id = item.id;
+      }
+    } else {
+      const clone = { ...item };
+      seen.set(key, clone);
+      result.push(clone);
+    }
+  }
+
+  return result;
+}
+
+export const allMinnaLessons = [
+  ...minnaShokyu1Lessons,
+  ...minnaShokyu2Lessons,
+  ...minnaChuukyu1Lessons,
+].map(lesson => ({
+  ...lesson,
+  keyVocab: deduplicateMinnaVocab(lesson.keyVocab)
+}));
 
 // Convert curriculum items to CardItem format for flashcard/quiz reuse
 export const minnaCardItems: CardItem[] = allMinnaLessons.flatMap(lesson =>
   lesson.keyVocab.map((v, idx) => ({
-    id: `minna-${lesson.chapter}-${idx}`,
+    id: `minna-${lesson.part.includes('Chuukyuu') ? 'cq1' : 'sh'}-${lesson.chapter}-${idx}`,
     japanese: v.jp,
     reading: v.reading,
     meaningId: v.id,
     category: 'minna' as MainCategory,
-    subCategory: `bab_${lesson.chapter}`,
+    subCategory: lesson.part.includes('Chuukyuu') ? `bab_chuukyu_${lesson.chapter}` : `bab_${lesson.chapter}`,
     level: lesson.level,
     notes: `Bab ${lesson.chapter} (${lesson.part}): ${lesson.title}`
+  }))
+);
+
+export const tobiraCardItems: CardItem[] = tobiraChapters.flatMap(ch =>
+  ch.keyVocab.map((v, idx) => ({
+    id: `tobira-${ch.chapter}-${idx}`,
+    japanese: v.kanji,
+    reading: v.reading,
+    meaningId: v.id,
+    category: 'tobira' as MainCategory,
+    subCategory: `tobira_${ch.chapter}`,
+    level: ch.level,
+    notes: `Tobira ${ch.titleId} [${ch.theme}]`
+  }))
+);
+
+export const quartetCardItems: CardItem[] = quartetLessons.flatMap(lsn =>
+  lsn.grammarPatterns.map((gp, idx) => ({
+    id: `quartet-${lsn.volume}-${lsn.lesson}-${idx}`,
+    japanese: gp.pattern,
+    reading: gp.formula,
+    meaningId: gp.explanation,
+    category: 'quartet' as MainCategory,
+    subCategory: `quartet_v${lsn.volume}_l${lsn.lesson}`,
+    level: lsn.level,
+    notes: `Quartet Vol ${lsn.volume} ${lsn.titleId}`
+  }))
+);
+
+export const shinKanzenCardItems: CardItem[] = shinKanzenData.flatMap(sk =>
+  sk.patternsOrPoints.map((pt, idx) => ({
+    id: `shinkanzen-${sk.id}-${idx}`,
+    japanese: pt.title,
+    reading: pt.formula,
+    meaningId: pt.nuance,
+    category: 'shinkanzen' as MainCategory,
+    subCategory: `shinkanzen_${sk.level}`,
+    level: sk.level,
+    notes: `Shin Kanzen Master ${sk.level}: ${sk.unitTitleId}`
+  }))
+);
+
+export const souMatomeCardItems: CardItem[] = souMatomeWeeks.flatMap(w =>
+  w.days.flatMap(d =>
+    d.targetItems.map((ti, idx) => ({
+      id: `soumatome-${w.id}-${d.dayNumber}-${idx}`,
+      japanese: ti.japanese,
+      reading: ti.reading,
+      meaningId: ti.meaningId,
+      category: 'soumatome' as MainCategory,
+      subCategory: `soumatome_${w.level}_w${w.weekNumber}`,
+      level: w.level,
+      notes: `Nihongo Sou-matome ${w.level} ${w.weekTitleId} - ${d.dayTitle}`
+    }))
+  )
+);
+
+export const tryJlptCardItems: CardItem[] = tryJlptLessons.flatMap(tl =>
+  tl.grammarPoints.map((gp, idx) => ({
+    id: `try-${tl.id}-${idx}`,
+    japanese: gp.pattern,
+    reading: gp.formula,
+    meaningId: gp.meaningId,
+    category: 'tryjlpt' as MainCategory,
+    subCategory: `try_${tl.level}_ch${tl.chapter}`,
+    level: tl.level,
+    notes: `TRY! JLPT ${tl.level} ${tl.chapterTitleId}`
   }))
 );
 
@@ -71,8 +193,17 @@ export {
   conjugationCardItems,
   minnaShokyu1Lessons,
   minnaShokyu2Lessons,
+  minnaChuukyu1Lessons,
+  tobiraChapters,
+  quartetLessons,
+  shinKanzenData,
+  souMatomeWeeks,
+  tryJlptLessons,
   irodoriTopics,
   sswSectors,
+  dokkaiN1Data,
+  choukaiN1Data,
+  ruigigoN1Data,
 };
 
 export function getAllBuiltInCards(): CardItem[] {
@@ -85,6 +216,11 @@ export function getAllBuiltInCards(): CardItem[] {
     ...particlesCardItems,
     ...conjugationCardItems,
     ...minnaCardItems,
+    ...tobiraCardItems,
+    ...quartetCardItems,
+    ...shinKanzenCardItems,
+    ...souMatomeCardItems,
+    ...tryJlptCardItems,
     ...irodoriCardItems,
     ...sswCardItems,
   ];
@@ -96,6 +232,21 @@ export function getCardsByCategory(category: MainCategory, customCards: CardItem
   }
   if (category === 'minna') {
     return minnaCardItems;
+  }
+  if (category === 'tobira') {
+    return tobiraCardItems;
+  }
+  if (category === 'quartet') {
+    return quartetCardItems;
+  }
+  if (category === 'shinkanzen') {
+    return shinKanzenCardItems;
+  }
+  if (category === 'soumatome') {
+    return souMatomeCardItems;
+  }
+  if (category === 'tryjlpt') {
+    return tryJlptCardItems;
   }
   if (category === 'irodori') {
     return irodoriCardItems;
@@ -161,41 +312,52 @@ export function generateQuizQuestions(
     let rawOptionDetails: QuizOptionDetail[] = [];
     let explanation = '';
 
+    const itemClarified = getClarifiedMeaning(item);
+    const itemMeaningDisplay = itemClarified.contextBadge
+      ? `${itemClarified.primaryMeaning} [${itemClarified.contextBadge.text}]`
+      : itemClarified.primaryMeaning;
+
     if (chosenType === 'meaning') {
-      // Prompt Japanese, user picks Indonesian meaning
+      // Prompt Japanese, user picks Indonesian meaning (Diperjelas agar tidak ambigu)
       questionText = `Apa arti dari: ${item.japanese}?`;
       subText = itemHiragana && itemHiragana !== item.japanese
         ? `【 ${itemHiragana} 】 (${item.reading})`
         : `(${item.reading})`;
-      correctAnswer = item.meaningId;
-      rawOptionDetails = allCandidates.map((c) => ({
-        value: c.meaningId,
-        label: c.meaningId,
-        furigana: getHiraganaReading(c),
-        reading: c.reading,
-        meaning: c.meaningId,
-        wordTypeLabel: getWordClassification(c).shortLabel,
-        isCorrect: c.id === item.id,
-      }));
-      explanation = `${item.japanese}【${itemHiragana}】(${item.reading}) [${itemClassification.label}] artinya: "${item.meaningId}". ${itemClassification.grammarHint}`;
+      correctAnswer = itemMeaningDisplay;
+      rawOptionDetails = allCandidates.map((c) => {
+        const cClarified = getClarifiedMeaning(c);
+        const cMeaningDisplay = cClarified.contextBadge
+          ? `${cClarified.primaryMeaning} [${cClarified.contextBadge.text}]`
+          : cClarified.primaryMeaning;
+        return {
+          value: cMeaningDisplay,
+          label: cMeaningDisplay,
+          furigana: getHiraganaReading(c),
+          reading: c.reading,
+          meaning: cMeaningDisplay,
+          wordTypeLabel: getWordClassification(c).shortLabel,
+          isCorrect: c.id === item.id,
+        };
+      });
+      explanation = `${item.japanese}【${itemHiragana}】(${item.reading}) [${itemClassification.label}] artinya: "${itemClarified.primaryMeaning}". ${itemClassification.grammarHint}`;
     } else if (chosenType === 'reading') {
       // Prompt Japanese/Kanji, user picks Romaji/reading
       questionText = `Bagaimana cara membaca: ${item.japanese}?`;
-      subText = `Arti: "${item.meaningId}" • [${itemClassification.shortLabel}]`;
+      subText = `Arti: "${itemClarified.primaryMeaning}" • [${itemClassification.shortLabel}]`;
       correctAnswer = item.reading;
       rawOptionDetails = allCandidates.map((c) => ({
         value: c.reading,
         label: c.reading,
         furigana: getHiraganaReading(c),
         reading: c.reading,
-        meaning: c.meaningId,
+        meaning: getClarifiedMeaning(c).primaryMeaning,
         wordTypeLabel: getWordClassification(c).shortLabel,
         isCorrect: c.id === item.id,
       }));
-      explanation = `Bacaan dari ${item.japanese} adalah "${itemHiragana}" (${item.reading}). [${itemClassification.shortLabel}]: "${item.meaningId}".`;
+      explanation = `Bacaan dari ${item.japanese} adalah "${itemHiragana}" (${item.reading}). [${itemClassification.shortLabel}]: "${itemClarified.primaryMeaning}".`;
     } else if (chosenType === 'reverse') {
       // Prompt Indonesian meaning, user picks Japanese
-      questionText = `Pilihlah bahasa Jepang untuk: "${item.meaningId}"`;
+      questionText = `Pilihlah bahasa Jepang untuk: "${itemMeaningDisplay}"`;
       subText = `Golongan Kata: ${itemClassification.label}`;
       correctAnswer = item.japanese;
       rawOptionDetails = allCandidates.map((c) => ({
@@ -203,11 +365,11 @@ export function generateQuizQuestions(
         label: c.japanese,
         furigana: getHiraganaReading(c),
         reading: c.reading,
-        meaning: c.meaningId,
+        meaning: getClarifiedMeaning(c).primaryMeaning,
         wordTypeLabel: getWordClassification(c).shortLabel,
         isCorrect: c.id === item.id,
       }));
-      explanation = `"${item.meaningId}" dalam bahasa Jepang adalah ${item.japanese}【${itemHiragana}】(${item.reading}). [${itemClassification.label}]. ${itemClassification.grammarHint}`;
+      explanation = `"${itemClarified.primaryMeaning}" dalam bahasa Jepang adalah ${item.japanese}【${itemHiragana}】(${item.reading}). [${itemClassification.label}]. ${itemClassification.grammarHint}`;
     } else {
       // Audio quiz: prompt audio listening
       questionText = `Dengarkan pelafalan audionya, karakter atau kata apakah itu?`;
@@ -218,19 +380,23 @@ export function generateQuizQuestions(
         label: c.japanese,
         furigana: getHiraganaReading(c),
         reading: c.reading,
-        meaning: c.meaningId,
+        meaning: getClarifiedMeaning(c).primaryMeaning,
         wordTypeLabel: getWordClassification(c).shortLabel,
         isCorrect: c.id === item.id,
       }));
-      explanation = `Audio tersebut melafalkan ${item.japanese}【${itemHiragana}】(${item.reading}) [${itemClassification.label}] yang artinya "${item.meaningId}".`;
+      explanation = `Audio tersebut melafalkan ${item.japanese}【${itemHiragana}】(${item.reading}) [${itemClassification.label}] yang artinya "${itemClarified.primaryMeaning}".`;
     }
 
-    // Jika kata ini memiliki pembeda nuansa khusus (seperti Tanjun vs Jimi), tambahkan ke penjelasan kuis
-    const nuanceInfo = getWordNuanceInfo(item);
-    if (nuanceInfo) {
-      explanation += ` • 💡 Beda Nuansa: ${nuanceInfo.nuanceExplanation}`;
-    } else if (item.mnemonic) {
-      explanation += ` • 💡 Tips: ${item.mnemonic}`;
+    // Pembeda Nuansa / Anti-Bingung Tambahan
+    if (itemClarified.contrastPair) {
+      explanation += ` • 💡 Anti-Bingung: Bedakan dengan ${itemClarified.contrastPair.word} (${itemClarified.contrastPair.reading}) — ${itemClarified.contrastPair.difference}`;
+    } else {
+      const nuanceInfo = getWordNuanceInfo(item);
+      if (nuanceInfo) {
+        explanation += ` • 💡 Beda Nuansa: ${nuanceInfo.nuanceExplanation}`;
+      } else if (item.mnemonic) {
+        explanation += ` • 💡 Tips: ${item.mnemonic}`;
+      }
     }
 
     // Deduplicate and Shuffle options

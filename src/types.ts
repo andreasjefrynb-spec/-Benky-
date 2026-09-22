@@ -2,7 +2,14 @@ export type MainCategory =
   | 'kanji'
   | 'vocab'
   | 'phrases'
+  | 'dokkai'
+  | 'choukai'
   | 'minna'
+  | 'tobira'
+  | 'quartet'
+  | 'shinkanzen'
+  | 'soumatome'
+  | 'tryjlpt'
   | 'irodori'
   | 'ssw'
   | 'particles'
@@ -33,6 +40,8 @@ export type SubCategory =
   | 'kanji_aktivitas'
   | 'kanji_sifat'
   | 'kanji_sosial'
+  | 'kanji_abstrak'
+  | 'kanji_hukum'
   // Vocab
   | 'salam'
   | 'angka_waktu'
@@ -40,6 +49,7 @@ export type SubCategory =
   | 'keluarga'
   | 'kata_kerja'
   | 'kata_sifat'
+  | 'kata_sifat_na'
   | 'tempat'
   | 'tempat_kerja'
   | 'benda_rumah'
@@ -52,6 +62,15 @@ export type SubCategory =
   | 'keuangan'
   | 'perasaan'
   | 'keterangan_fukushi'
+  // Vocab Lanjutan & Native Nihonjin
+  | 'yojijukugo'
+  | 'kanyouku'
+  | 'kotowaza'
+  | 'onomatope'
+  | 'bisnis_formal'
+  | 'abstrak_akademik'
+  | 'fukugou_doushi'
+  | 'berita_ekonomi'
   // Phrases
   | 'perkenalan'
   | 'belanja'
@@ -61,6 +80,8 @@ export type SubCategory =
   | 'tata_bahasa_n5'
   | 'tata_bahasa_n4'
   | 'tata_bahasa_n3'
+  | 'fukugou_joshi'
+  | 'ruigigo'
   | 'percakapan_harian'
   | 'bisnis_sopan'
   // Particles
@@ -72,6 +93,13 @@ export type SubCategory =
   // Conjugation
   | 'konjugasi_kata_kerja'
   | 'konjugasi_kata_sifat'
+  // Dokkai & Choukai
+  | 'dokkai_editorial'
+  | 'dokkai_perbandingan'
+  | 'dokkai_informasi'
+  | 'choukai_keigo'
+  | 'choukai_kyokumen'
+  | 'choukai_sokkai'
   // General & dynamic (Bab Minna, Irodori topic, SSW sector)
   | 'all'
   | (string & {});
@@ -95,6 +123,9 @@ export interface CardItem {
   notes?: string;
   isCustom?: boolean;
 }
+
+export type JlptLevel = 'N5' | 'N4' | 'N3';
+export type LevelFilterOption = 'all' | 'N5' | 'N4' | 'N3';
 
 export type MasteryStatus = 'new' | 'learning' | 'mastered';
 
@@ -246,8 +277,8 @@ export interface MinnaDialogueLine {
 
 export interface MinnaLesson {
   chapter: number;
-  level: 'N5' | 'N4';
-  part: 'Shokyu I (N5)' | 'Shokyu II (N4)';
+  level: 'N5' | 'N4' | 'N3';
+  part: 'Shokyu I (N5)' | 'Shokyu II (N4)' | 'Chuukyuu I (N3)';
   title: string;
   theme: string;
   summary: string;
@@ -256,6 +287,12 @@ export interface MinnaLesson {
   dialogue?: {
     title: string;
     lines: MinnaDialogueLine[];
+  };
+  readingPassage?: {
+    titleJp: string;
+    titleId: string;
+    textJp: string;
+    textId: string;
   };
 }
 
@@ -311,6 +348,328 @@ export interface SSWSectorItem {
   safetyProtocol: string;
   vocab: SSWVocabItem[];
   scenarios?: SSWScenarioItem[];
+}
+
+// Dokkai (Membaca Analitis N1 読解)
+export interface DokkaiQuestion {
+  id: string;
+  questionJp: string;
+  questionId: string;
+  options: {
+    label: string;
+    textJp: string;
+    textId: string;
+  }[];
+  correctOption: string;
+  explanationJp: string;
+  explanationId: string;
+  authorMindsetAnalysis: string; // Analisis cara berpikir penulis
+}
+
+export interface DokkaiItem {
+  id: string;
+  type: 'editorial' | 'hikaku' | 'jouhou';
+  titleJp: string;
+  titleId: string;
+  theme: string;
+  recommendedTimeMinutes: number;
+  authorA?: {
+    name: string;
+    role: string;
+    textJp: string;
+    textId: string;
+  };
+  authorB?: {
+    name: string;
+    role: string;
+    textJp: string;
+    textId: string;
+  };
+  passageJp: string;
+  passageId: string;
+  paragraphs?: {
+    jp: string;
+    id: string;
+  }[];
+  keyVocab: {
+    kanji: string;
+    reading: string;
+    meaningId: string;
+  }[];
+  questions: DokkaiQuestion[];
+  readingStrategy: string;
+}
+
+// Choukai (Menyimak Nuansa & Keigo Bisnis N1 聴解)
+export interface ChoukaiQuestion {
+  id: string;
+  questionJp: string;
+  questionId: string;
+  options: {
+    label: string;
+    textJp: string;
+    textId: string;
+  }[];
+  correctOption: string;
+  explanationId: string;
+  kyokumenDistractionAnalysis?: string; // Analisis distraksi / u-turn
+}
+
+export interface ChoukaiItem {
+  id: string;
+  type: 'keigo_bisnis' | 'kyokumen_tenkan' | 'sokkai_outou';
+  titleJp: string;
+  titleId: string;
+  situation: string;
+  speakerRole: string;
+  audioDialogue: {
+    speaker: string;
+    role?: string;
+    jp: string;
+    reading: string;
+    id: string;
+    isKeyDecisionTurn?: boolean; // Poin penentu u-turn keputusan
+  }[];
+  keigoBreakdown?: {
+    term: string;
+    type: 'Sonkeigo' | 'Kenjougo' | 'Teineigo' | 'Bikago';
+    plainEquivalent: string;
+    usageNote: string;
+  }[];
+  questions: ChoukaiQuestion[];
+  listeningStrategy: string;
+}
+
+// Ruigigo (Perbandingan Nuansa Tipis Tata Bahasa N1 類義語)
+export interface RuigigoItem {
+  id: string;
+  coreMeaning: string;
+  patterns: {
+    pattern: string;
+    nuance: string;
+    formality: 'Sangat Formal / Tertulis' | 'Formal Bisnis' | 'Lisan Emosional' | 'Sastra Klasik';
+    constraints: string;
+    exampleJp: string;
+    exampleId: string;
+  }[];
+  distinctionSummary: string;
+}
+
+// ----------------------------------------------------
+// TOBIRA: Gateway to Advanced Japanese (上級へのとびら)
+// ----------------------------------------------------
+export interface TobiraChapter {
+  chapter: number;
+  level: 'N3';
+  titleJp: string;
+  titleRomaji: string;
+  titleId: string;
+  theme: string;
+  culturalNote: {
+    title: string;
+    content: string;
+    icon?: string;
+  };
+  readingPassage: {
+    titleJp: string;
+    reading: string;
+    titleId: string;
+    contentJp: string;
+    contentReading: string;
+    contentId: string;
+  };
+  grammarPatterns: {
+    id: string;
+    pattern: string;
+    formula: string;
+    explanation: string;
+    nuanceNote?: string;
+    examples: {
+      jp: string;
+      reading: string;
+      id: string;
+    }[];
+  }[];
+  keyVocab: {
+    kanji: string;
+    reading: string;
+    id: string;
+    type?: string;
+  }[];
+  dialogue?: {
+    title: string;
+    lines: {
+      speaker: string;
+      jp: string;
+      reading: string;
+      id: string;
+    }[];
+  };
+}
+
+// ----------------------------------------------------
+// QUARTET: Intermediate Japanese Across the 4 Skills (QUARTET Ⅰ・Ⅱ)
+// ----------------------------------------------------
+export interface QuartetLesson {
+  volume: 1;
+  lesson: number;
+  level: 'N3';
+  titleJp: string;
+  titleRomaji: string;
+  titleId: string;
+  theme: string;
+  readingSkill: {
+    title: string;
+    passageJp: string;
+    passageReading: string;
+    passageId: string;
+    strategyTip: string;
+  };
+  writingSkill: {
+    taskName: string;
+    prompt: string;
+    modelEssayJp: string;
+    modelEssayReading: string;
+    modelEssayId: string;
+    usefulConnectors: string[];
+  };
+  speakingSkill: {
+    situation: string;
+    goal: string;
+    dialogue: {
+      speaker: string;
+      jp: string;
+      reading: string;
+      id: string;
+    }[];
+    keyExpressions: string[];
+  };
+  listeningSkill: {
+    situation: string;
+    scriptJp: string;
+    scriptReading: string;
+    scriptId: string;
+    comprehensionCheck: string;
+    correctAnswer: string;
+  };
+  grammarPatterns: {
+    id: string;
+    pattern: string;
+    formula: string;
+    explanation: string;
+    examples: {
+      jp: string;
+      reading: string;
+      id: string;
+    }[];
+  }[];
+}
+
+// ----------------------------------------------------
+// SHIN KANZEN MASTER (新完全マスター N3)
+// ----------------------------------------------------
+export interface ShinKanzenItem {
+  id: string;
+  level: 'N3';
+  section: 'bunpou' | 'dokkai' | 'choukai' | 'goi' | 'kanji';
+  unitTitleJp: string;
+  unitTitleId: string;
+  focusCore: string;
+  explanation: string;
+  patternsOrPoints: {
+    title: string;
+    formula?: string;
+    nuance: string;
+    trapWarning?: string;
+    examples: {
+      jp: string;
+      reading: string;
+      id: string;
+    }[];
+  }[];
+  confusingPairsComparison?: {
+    patternA: string;
+    patternB: string;
+    difference: string;
+    exampleA: string;
+    exampleB: string;
+  };
+  masteryDrill: {
+    questionJp: string;
+    options: string[];
+    correctIndex: number;
+    analysisId: string;
+  }[];
+}
+
+// ----------------------------------------------------
+// NIHONGO SOU-MATOME (日本語総まとめ N3)
+// ----------------------------------------------------
+export interface SouMatomeDayPlan {
+  dayNumber: number; // 1 to 7
+  dayTitle: string;
+  themeJp: string;
+  themeId: string;
+  targetItems: {
+    japanese: string;
+    reading: string;
+    meaningId: string;
+    collocationOrUsage?: string;
+    sampleSentenceJp?: string;
+    sampleSentenceId?: string;
+  }[];
+  dailyMiniTest?: {
+    questionJp: string;
+    options: string[];
+    correctIndex: number;
+    explanation: string;
+  }[];
+}
+
+export interface SouMatomeWeek {
+  id: string;
+  level: 'N3';
+  subject: 'kanji' | 'goi' | 'bunpou' | 'dokkai' | 'choukai';
+  weekNumber: number;
+  weekTitleJp: string;
+  weekTitleId: string;
+  days: SouMatomeDayPlan[];
+}
+
+// ----------------------------------------------------
+// TRY! NIHONGO NOURYOKU SHIKEN (TRY! 日本語能力試験 N3)
+// ----------------------------------------------------
+export interface TryJlptLesson {
+  id: string;
+  level: 'N3';
+  chapter: number;
+  chapterTitleJp: string;
+  chapterTitleId: string;
+  storyScenario: {
+    setting: string;
+    passageJp: string;
+    passageReading: string;
+    passageId: string;
+  };
+  canDoGoal: string;
+  grammarPoints: {
+    number: number;
+    pattern: string;
+    formula: string;
+    meaningId: string;
+    explanation: string;
+    examples: {
+      jp: string;
+      reading: string;
+      id: string;
+    }[];
+  }[];
+  tryExamDrill: {
+    questionJp: string;
+    options: string[];
+    correctIndex: number;
+    explanation: string;
+  }[];
 }
 
 

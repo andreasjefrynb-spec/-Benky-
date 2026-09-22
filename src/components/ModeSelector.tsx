@@ -19,35 +19,48 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
   const isParticles = activeCategory === 'particles';
   const isConjugation = activeCategory === 'conjugation';
   const isMinna = activeCategory === 'minna';
+  const isPhrases = activeCategory === 'phrases';
   const isIrodori = activeCategory === 'irodori';
   const isSSW = activeCategory === 'ssw';
 
   let chartLabel = 'Tabel Karakter';
+  let shortChartLabel = 'Tabel';
   let ChartIcon = Grid3X3;
   let chartDesc = 'Bagan lengkap karakter & audio cepat';
 
-  if (isMinna) {
-    chartLabel = 'Materi Minna Bab 1–50';
+  if (isPhrases) {
+    chartLabel = 'Pusat Tata Bahasa (N3)';
+    shortChartLabel = 'Tata Bahasa';
+    ChartIcon = BookOpen;
+    chartDesc = 'Pola tematik, bedah nuansa mirip, program 6 minggu & drill soal ujian';
+  } else if (isMinna) {
+    chartLabel = 'Pelajaran Dasar Bab 1–50';
+    shortChartLabel = 'Bab 1-50';
     ChartIcon = BookOpen;
     chartDesc = 'Tata bahasa, pola rumus bunkei, kosakata & percakapan Bab 1–50';
   } else if (isIrodori) {
     chartLabel = 'Modul Can-Do Irodori';
+    shortChartLabel = 'Topik';
     ChartIcon = Compass;
     chartDesc = 'Target komunikasi praktis, tips hidup Jepang & simulasi';
   } else if (isSSW) {
     chartLabel = 'Panduan 12 Sektor SSW';
+    shortChartLabel = 'Sektor SSW';
     ChartIcon = Briefcase;
     chartDesc = 'Keahlian ujian, K3, istilah teknis & skenario lapangan';
   } else if (isVocab) {
     chartLabel = 'Kelompok Kosakata';
+    shortChartLabel = 'Kelompok';
     ChartIcon = FolderTree;
     chartDesc = 'Daftar kosakata terkelompok N5, N4 & N3';
   } else if (isParticles) {
     chartLabel = 'Bagan & Materi Partikel';
+    shortChartLabel = 'Partikel';
     ChartIcon = BookOpen;
     chartDesc = 'Panduan partikel, perbandingan は/が/に/で & latihan';
   } else if (isConjugation) {
     chartLabel = 'Simulator & Panduan Bentuk';
+    shortChartLabel = 'Konjugasi';
     ChartIcon = RefreshCw;
     chartDesc = '14 bentuk perubahan kata kerja/sifat & panduan golongan';
   }
@@ -55,6 +68,7 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
   const modes: {
     id: StudyMode;
     label: string;
+    shortLabel: string;
     icon: React.ComponentType<{ className?: string }>;
     description: string;
     enabled: boolean;
@@ -62,6 +76,7 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
     {
       id: 'chart',
       label: chartLabel,
+      shortLabel: shortChartLabel,
       icon: ChartIcon,
       description: chartDesc,
       enabled: showChartOption || isVocab || isParticles || isConjugation || isMinna || isIrodori || isSSW,
@@ -69,6 +84,7 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
     {
       id: 'flashcard',
       label: 'Flashcard SRS',
+      shortLabel: 'Flashcard',
       icon: Layers,
       description: 'Hapalan kartu bolak-balik & interval ingatan',
       enabled: true,
@@ -76,6 +92,7 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
     {
       id: 'quiz',
       label: 'Kuis Latihan',
+      shortLabel: 'Kuis',
       icon: Award,
       description: 'Uji daya ingat & pendengaran audio',
       enabled: true,
@@ -83,6 +100,7 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
     {
       id: 'writing',
       label: 'Latihan Tulis',
+      shortLabel: 'Tulis',
       icon: PenTool,
       description: 'Kanvas menulis karakter dengan jari/mouse',
       enabled: activeCategory === 'kanji' || activeCategory === 'hiragana' || activeCategory === 'katakana',
@@ -90,7 +108,7 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
   ];
 
   return (
-    <div className="bg-slate-100/90 p-1 rounded-2xl border border-slate-200/80 flex items-center gap-1 overflow-x-auto no-scrollbar sm:flex-nowrap shadow-2xs">
+    <div className="bg-slate-100/90 p-1 rounded-2xl border border-slate-200/80 flex items-center gap-1 w-full shadow-2xs">
       {modes
         .filter((m) => m.enabled)
         .map((m) => {
@@ -102,14 +120,15 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
               key={m.id}
               id={`mode-btn-${m.id}`}
               onClick={() => onSelectMode(m.id)}
-              className={`flex-1 shrink-0 sm:shrink min-w-[110px] sm:min-w-0 min-h-[42px] flex items-center justify-center gap-1.5 sm:gap-2 py-2 px-2.5 sm:px-3 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all duration-150 cursor-pointer select-none active:scale-[0.98] ${
+              className={`flex-1 min-w-0 min-h-[38px] sm:min-h-[42px] flex items-center justify-center gap-1 sm:gap-2 py-1.5 sm:py-2 px-1 sm:px-3 rounded-xl font-bold text-xs sm:text-sm transition-all duration-150 cursor-pointer select-none active:scale-[0.98] ${
                 isActive
                   ? 'bg-white text-slate-900 shadow-sm border border-slate-200/80 ring-1 ring-slate-900/5'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
               }`}
             >
-              <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-rose-600' : 'text-slate-500'}`} />
-              <span className="text-center leading-tight truncate">{m.label}</span>
+              <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isActive ? 'text-rose-600' : 'text-slate-500'}`} />
+              <span className="sm:hidden text-[11px] font-extrabold truncate">{m.shortLabel}</span>
+              <span className="hidden sm:inline text-center leading-tight truncate">{m.label}</span>
             </button>
           );
         })}

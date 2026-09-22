@@ -1,6 +1,8 @@
 import { CardItem } from '../types';
 import { phrasesN3Data } from './phrasesN3Data';
 
+export { phrasesN3Data } from './phrasesN3Data';
+
 const phrasesN5N4Data: CardItem[] = [
   // ==========================================
   // 1. PERKENALAN DIRI & SALAM (N5 & N4)
@@ -1491,5 +1493,8 @@ const phrasesN5N4Data: CardItem[] = [
 ];
 
 // Koleksi Frasa, Tata Bahasa & Ungkapan Lengkap JLPT N5, N4 & N3
-export const phrasesData: CardItem[] = [...phrasesN5N4Data, ...phrasesN3Data];
+export const phrasesData: CardItem[] = [
+  ...phrasesN5N4Data,
+  ...phrasesN3Data,
+];
 

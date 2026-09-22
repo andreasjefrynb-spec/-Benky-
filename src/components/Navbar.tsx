@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, PlusCircle, Sparkles, SlidersHorizontal } from 'lucide-react';
+import { Volume2, SlidersHorizontal } from 'lucide-react';
 import { soundManager } from '../utils/audio';
 import { AudioSettingsModal } from './AudioSettingsModal';
 
 interface NavbarProps {
-  onOpenAddCustom: () => void;
+  onOpenAddCustom?: () => void;
   speechRate: number;
   onToggleSpeechRate: () => void;
   onSelectSpeechRate?: (rate: number) => void;
@@ -18,22 +18,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [isAudioSettingsOpen, setIsAudioSettingsOpen] = useState(false);
-  const [engine, setEngine] = useState(soundManager.getEngine());
-  const [aiVoice, setAiVoice] = useState(soundManager.getAiVoice());
 
   useEffect(() => {
     const unsubPlayback = soundManager.onPlaybackChange((playing) => {
       setIsPlayingAudio(playing);
     });
 
-    const unsubEngine = soundManager.onEngineChange(() => {
-      setEngine(soundManager.getEngine());
-      setAiVoice(soundManager.getAiVoice());
-    });
-
     return () => {
       unsubPlayback();
-      unsubEngine();
     };
   }, []);
 
@@ -70,47 +62,33 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Controls */}
           <div className="flex items-center gap-1.5 sm:gap-2">
-            {/* AI Voice & Audio Engine Settings Button */}
+            {/* Audio Settings Button */}
             <button
               id="audio-settings-btn"
               onClick={() => setIsAudioSettingsOpen(true)}
-              className={`flex items-center gap-1.5 min-h-[44px] px-2.5 sm:px-3 py-1.5 rounded-xl border transition-all cursor-pointer select-none active:scale-95 ${
-                engine === 'ai'
-                  ? 'bg-rose-50/70 border-rose-200 text-rose-700 hover:bg-rose-100/70'
-                  : 'bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200'
-              }`}
-              title="Pengaturan Suara: Pilih Karakter AI Gemini atau Suara Perangkat"
-              aria-label="Pengaturan suara pelafalan AI"
+              className="flex items-center gap-1.5 min-h-[38px] sm:min-h-[44px] px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-slate-200/90 bg-slate-50 hover:bg-slate-100 active:bg-slate-200 text-slate-700 transition-all cursor-pointer select-none active:scale-95"
+              title="Pengaturan Suara: Ubah kecepatan dan suara sistem"
+              aria-label="Pengaturan suara pelafalan"
             >
-              {engine === 'ai' ? (
-                <Sparkles className="w-3.5 h-3.5 text-rose-600 shrink-0" />
-              ) : (
-                <SlidersHorizontal className="w-3.5 h-3.5 text-slate-600 shrink-0" />
-              )}
+              <SlidersHorizontal className="w-3.5 h-3.5 text-slate-600 shrink-0" />
               <div className="text-left flex flex-col justify-center">
                 <span className="text-[10px] font-bold leading-none hidden sm:block text-slate-500">
-                  {engine === 'ai' ? 'Suara AI' : 'Sistem'}
+                  Suara
                 </span>
-                <span className="text-xs font-black leading-tight flex items-center gap-1">
-                  {engine === 'ai' ? (
-                    <>
-                      <span>{aiVoice}</span>
-                      <span className="text-[9px] px-1 py-0.2 bg-rose-200/70 text-rose-800 rounded font-bold sm:inline hidden">
-                        AI
-                      </span>
-                    </>
-                  ) : (
-                    'Lokal'
-                  )}
+                <span className="text-xs font-black leading-tight flex items-center gap-1 text-slate-800">
+                  <span>Standar</span>
+                  <span className="text-[9px] px-1.5 py-0.2 bg-rose-100 text-rose-700 rounded font-bold font-mono">
+                    {speechRate}x
+                  </span>
                 </span>
               </div>
             </button>
 
-            {/* Audio Speed Button */}
+            {/* Audio Speed Quick Toggle (Desktop only) */}
             <button
               id="audio-speed-btn"
               onClick={onToggleSpeechRate}
-              className="flex items-center gap-1 min-h-[44px] px-2.5 sm:px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl transition-colors cursor-pointer select-none"
+              className="hidden sm:flex items-center gap-1 min-h-[44px] px-2.5 sm:px-3 py-1.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 active:bg-slate-300 rounded-xl transition-colors cursor-pointer select-none"
               title={`Kecepatan suara: ${speechRate === 0.75 ? 'Lambat (0.75x)' : speechRate === 0.9 ? 'Sedang/Alami (0.9x)' : speechRate === 1.0 ? 'Normal (1.0x)' : 'Cepat (1.1x)'}`}
               aria-label="Ubah kecepatan audio"
             >
@@ -118,16 +96,16 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="font-mono">{speechRate}x</span>
             </button>
 
-            {/* Test Audio Button (Plays Natural AI Conversational Japanese) */}
+            {/* Test Audio Button */}
             <button
               id="audio-test-btn"
               onClick={handleTestAudio}
-              className={`flex min-h-[44px] px-2.5 sm:px-3 py-1.5 rounded-xl transition-all cursor-pointer items-center gap-1.5 text-xs font-bold select-none active:scale-95 ${
+              className={`hidden md:flex min-h-[44px] px-2.5 sm:px-3 py-1.5 rounded-xl transition-all cursor-pointer items-center gap-1.5 text-xs font-bold select-none active:scale-95 ${
                 isPlayingAudio
                   ? 'bg-rose-50 text-rose-600 border border-rose-200 ring-2 ring-rose-100 animate-pulse'
                   : 'text-slate-600 hover:text-rose-600 hover:bg-rose-50 border border-slate-200/80 bg-white'
               }`}
-              title="Tes Suara Bahasa Jepang Alami (Gemini AI Tokyo Accent)"
+              title="Tes Suara Pelafalan Bahasa Jepang (Web Speech)"
               aria-label="Tes suara pelafalan"
             >
               <Volume2
@@ -135,25 +113,13 @@ export const Navbar: React.FC<NavbarProps> = ({
                   isPlayingAudio ? 'text-rose-600 animate-bounce' : 'text-slate-500'
                 }`}
               />
-              <span className="hidden sm:inline">{isPlayingAudio ? 'Memutar...' : 'Tes Suara'}</span>
-            </button>
-
-            {/* Add Custom Flashcard Button */}
-            <button
-              id="add-custom-card-btn"
-              onClick={onOpenAddCustom}
-              className="flex items-center justify-center gap-1.5 min-h-[44px] px-3 sm:px-4 py-1.5 text-xs font-bold text-white bg-rose-600 hover:bg-rose-700 active:bg-rose-800 rounded-xl shadow-xs shadow-rose-200 transition-all cursor-pointer select-none"
-              aria-label="Tambah kartu catatan buatan sendiri"
-            >
-              <PlusCircle className="w-4 h-4 shrink-0" />
-              <span className="hidden sm:inline">Tambah Kartu</span>
-              <span className="sm:hidden text-xs font-extrabold">+ Buat</span>
+              <span>{isPlayingAudio ? 'Memutar...' : 'Tes Suara'}</span>
             </button>
           </div>
         </div>
       </header>
 
-      {/* Audio & AI Voice Settings Modal */}
+      {/* Audio Settings Modal */}
       <AudioSettingsModal
         isOpen={isAudioSettingsOpen}
         onClose={() => setIsAudioSettingsOpen(false)}

@@ -12,8 +12,12 @@ import {
   Sparkles,
   Eye,
   EyeOff,
+  ChevronLeft,
+  ChevronRight,
+  LayoutGrid,
+  ListFilter,
 } from 'lucide-react';
-import { CardItem, QuizQuestion } from '../types';
+import { CardItem, QuizQuestion, LevelFilterOption } from '../types';
 import { generateQuizQuestions } from '../data';
 import { soundManager } from '../utils/audio';
 import { GROUP_METAS } from './VocabGroupView';
@@ -26,7 +30,7 @@ interface QuizViewProps {
   speechRate: number;
   onCompleteQuiz: (correctCount: number, total: number) => void;
   initialSubCategory?: string;
-  initialLevel?: 'all' | 'N5' | 'N4' | 'N3';
+  initialLevel?: LevelFilterOption;
 }
 
 export const QuizView: React.FC<QuizViewProps> = ({
@@ -37,7 +41,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
   initialLevel,
 }) => {
   const [selectedGroup, setSelectedGroup] = useState<string>(initialSubCategory || 'all');
-  const [levelFilter, setLevelFilter] = useState<'all' | 'N5' | 'N4' | 'N3'>(initialLevel || 'all');
+  const [levelFilter, setLevelFilter] = useState<LevelFilterOption>(initialLevel || 'all');
   const [countMode, setCountMode] = useState<'all' | 10 | 25 | 50 | 100>('all');
   const [showHiragana, setShowHiragana] = useState<boolean>(true);
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
@@ -50,6 +54,16 @@ export const QuizView: React.FC<QuizViewProps> = ({
     { question: QuizQuestion; userAnswer: string; isCorrect: boolean }[]
   >([]);
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+  const [isSettingsExpandedOnMobile, setIsSettingsExpandedOnMobile] = useState(false);
+  const [isWrapGroups, setIsWrapGroups] = useState(false);
+  const groupsScrollRef = React.useRef<HTMLDivElement | null>(null);
+
+  const scrollGroups = (direction: 'left' | 'right') => {
+    if (groupsScrollRef.current) {
+      const amount = direction === 'left' ? -250 : 250;
+      groupsScrollRef.current.scrollBy({ left: amount, behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     return soundManager.onPlaybackChange((playing) => {
@@ -82,24 +96,72 @@ export const QuizView: React.FC<QuizViewProps> = ({
     if (map.size === 0) return [];
 
     return Array.from(map.entries())
-      .map(([key, count]) => ({
-        key,
-        count,
-        meta: GROUP_METAS[key] || {
-          id: key,
-          name: key.startsWith('bab_')
-            ? `Bab ${key.replace('bab_', '')}`
-            : key.replace(/_/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase()),
-          kanjiTitle: key.startsWith('bab_') ? `第${key.replace('bab_', '')}課` : '',
-          icon: key.startsWith('bab_') ? '📖' : '📁',
-          desc: key.startsWith('bab_') ? 'Kosakata Minna no Nihongo' : '',
-        },
-      }))
+      .map(([key, count]) => {
+        let name = key.replace(/_/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
+        let kanjiTitle = '';
+        let icon = '📁';
+        let desc = 'Materi Kosakata';
+
+        if (key.startsWith('bab_chuukyu_')) {
+          const num = parseInt(key.replace('bab_chuukyu_', ''), 10);
+          name = `Chuukyu Bab ${num}`;
+          kanjiTitle = `中級 第${num}課`;
+          icon = '📖';
+          desc = 'Minna no Nihongo Chuukyu';
+        } else if (key.startsWith('bab_')) {
+          const num = parseInt(key.replace('bab_', ''), 10);
+          name = num > 50 ? `Chuukyu Bab ${num}` : `Shokyu Bab ${num}`;
+          kanjiTitle = `第${num}課`;
+          icon = '📖';
+          desc = 'Minna no Nihongo';
+        } else if (key.startsWith('tobira_')) {
+          name = `Tobira Bab ${key.replace('tobira_', '')}`;
+          kanjiTitle = `第${key.replace('tobira_', '')}章`;
+          icon = '⛩️';
+          desc = 'Tobira Gateway';
+        } else if (key.startsWith('quartet_v1_l')) {
+          name = `Quartet I Bab ${key.replace('quartet_v1_l', '')}`;
+          kanjiTitle = `第${key.replace('quartet_v1_l', '')}課`;
+          icon = '🎼';
+          desc = 'Quartet Vol 1';
+        } else if (key.startsWith('quartet_v2_l')) {
+          name = `Quartet II Bab ${key.replace('quartet_v2_l', '')}`;
+          kanjiTitle = `第${key.replace('quartet_v2_l', '')}課`;
+          icon = '🎼';
+          desc = 'Quartet Vol 2';
+        } else if (key.startsWith('shinkanzen_')) {
+          name = `Shin Kanzen ${key.replace('shinkanzen_', '').toUpperCase()}`;
+          icon = '🎯';
+          desc = 'Shin Kanzen Master';
+        } else if (key.startsWith('soumatome_')) {
+          name = `Sou-matome ${key.replace('soumatome_', '').replace('_w', ' Mgg ')}`;
+          icon = '📅';
+          desc = 'Nihongo Sou-matome';
+        } else if (key.startsWith('try_')) {
+          name = `TRY! ${key.replace('try_', '').replace('_ch', ' Bab ')}`;
+          icon = '🚀';
+          desc = 'TRY! JLPT Series';
+        }
+
+        return {
+          key,
+          count,
+          meta: GROUP_METAS[key] || {
+            id: key,
+            name,
+            kanjiTitle,
+            icon,
+            desc,
+          },
+        };
+      })
       .sort((a, b) => b.count - a.count);
   }, [cardPool]);
 
-  // Check if cardPool has cards with N5/N4/N3 levels
-  const hasLevelTags = cardPool.some((c) => c.level === 'N5' || c.level === 'N4' || c.level === 'N3');
+  // Check if cardPool has cards with N5/N4/N3/Native levels
+  const hasLevelTags = cardPool.some(
+    (c) => c.level === 'N5' || c.level === 'N4' || c.level === 'N3' || c.level === 'Native'
+  );
 
   // Filter pool based on selected group & level
   const effectivePool = useMemo(() => {
@@ -371,214 +433,417 @@ export const QuizView: React.FC<QuizViewProps> = ({
 
   return (
     <div className="w-full max-w-2xl mx-auto flex flex-col gap-4">
-      {/* VOCABULARY GROUP SELECTOR (When card pool has groups) */}
-      {availableGroups.length > 0 && (
-        <div className="bg-white p-3.5 sm:p-4 rounded-3xl border border-slate-200/90 shadow-2xs flex flex-col gap-2.5">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center border border-rose-100">
-                <Layers className="w-4 h-4" />
-              </div>
-              <div>
-                <h3 className="text-xs sm:text-sm font-black text-slate-900 leading-tight">
-                  Pilih Kelompok Kosakata:
-                </h3>
-                <p className="text-[11px] text-slate-500 hidden sm:block">
-                  Kuis khusus kelompok tema kata tertentu
-                </p>
-              </div>
-            </div>
-            <span className="text-[11px] font-mono font-bold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200/60">
-              {effectivePool.length} kata
+      {/* MOBILE HEADER: Compact Status Bar + Quick Settings Toggle */}
+      <div className="sm:hidden flex flex-col gap-2">
+        <div className="flex items-center justify-between bg-white px-3 py-2 rounded-2xl border border-slate-200/90 shadow-2xs">
+          <div className="text-xs font-bold text-slate-600 flex items-center gap-1.5">
+            <span>Soal <strong className="text-rose-600">{currentIndex + 1}</strong>/{questions.length}</span>
+            <span className="text-slate-300">•</span>
+            <span className="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md font-bold">
+              Benar: {score}
             </span>
           </div>
 
-          {/* Scrollable Group Pills with Emojis & Counts */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1.5 pt-0.5 scrollbar-thin">
+          <div className="flex items-center gap-1.5">
+            {/* Quick Hiragana Switch */}
             <button
               type="button"
-              onClick={() => setSelectedGroup('all')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap transition-all cursor-pointer select-none shrink-0 ${
-                selectedGroup === 'all'
-                  ? 'bg-slate-900 text-white shadow-2xs'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+              onClick={() => setShowHiragana(!showHiragana)}
+              className={`px-2 py-1 text-[11px] font-extrabold rounded-lg border transition-all cursor-pointer flex items-center gap-1 ${
+                showHiragana
+                  ? 'bg-rose-50 text-rose-700 border-rose-300'
+                  : 'bg-slate-100 text-slate-500 border-slate-200'
               }`}
+              title="Toggle Hiragana"
             >
-              <span>🌟 Semua Kelompok</span>
-              <span
-                className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-extrabold ${
-                  selectedGroup === 'all' ? 'bg-white/25 text-white' : 'bg-slate-200 text-slate-600'
-                }`}
-              >
-                {cardPool.length}
-              </span>
+              <span className="font-jp text-xs">あ</span>
+              <span>{showHiragana ? 'ON' : 'OFF'}</span>
             </button>
 
-            {availableGroups.map((g) => {
-              const isSelected = selectedGroup === g.key;
-              return (
-                <button
-                  key={g.key}
-                  type="button"
-                  onClick={() => setSelectedGroup(g.key)}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer select-none shrink-0 ${
-                    isSelected
-                      ? 'bg-rose-600 text-white shadow-2xs ring-2 ring-rose-600/20'
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                  }`}
-                  title={`${g.meta.name}: ${g.meta.desc}`}
-                >
-                  <span>{g.meta.icon}</span>
-                  <span>{g.meta.name}</span>
-                  <span
-                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-extrabold ${
-                      isSelected ? 'bg-white/25 text-white' : 'bg-slate-200 text-slate-600'
-                    }`}
-                  >
-                    {g.count}
-                  </span>
-                </button>
-              );
-            })}
+            {/* Settings Toggle */}
+            <button
+              type="button"
+              onClick={() => setIsSettingsExpandedOnMobile(!isSettingsExpandedOnMobile)}
+              className={`px-2 py-1 text-[11px] font-bold rounded-lg border transition-all cursor-pointer ${
+                isSettingsExpandedOnMobile
+                  ? 'bg-slate-900 text-white border-slate-900'
+                  : 'bg-slate-100 text-slate-600 border-slate-200'
+              }`}
+            >
+              ⚙️ Opsi
+            </button>
+
+            {answersHistory.length >= 3 && (
+              <button
+                onClick={handleEarlyFinish}
+                className="text-[11px] font-bold text-slate-500 bg-slate-50 px-2 py-1 rounded-lg border border-slate-200 cursor-pointer"
+                title="Selesai"
+              >
+                Selesai
+              </button>
+            )}
           </div>
         </div>
-      )}
 
-      {/* Control Bar: Level, Jumlah Kata & Toggle Hiragana */}
-      <div className="flex flex-wrap items-center justify-between gap-3 bg-white p-3.5 sm:px-5 sm:py-3 rounded-2xl border border-slate-200/90 shadow-2xs">
-        <div className="flex flex-wrap items-center gap-2.5">
-          {/* Level Filter (if applicable) */}
-          {hasLevelTags && (
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-bold text-slate-500">Level:</span>
-              <div className="flex items-center bg-slate-100 p-1 rounded-xl">
-                {(['all', 'N5', 'N4', 'N3'] as const).map((lvl) => (
+        {/* Collapsible Mobile Settings */}
+        {isSettingsExpandedOnMobile && (
+          <div className="bg-white p-3 rounded-2xl border border-slate-200 shadow-xs flex flex-col gap-2.5 animate-in fade-in duration-150">
+            {availableGroups.length > 0 && (
+              <div className="flex flex-col gap-1.5">
+                <div className="flex items-center justify-between gap-1.5">
+                  <span className="text-[11px] font-bold text-slate-500 flex items-center gap-1">
+                    <ListFilter className="w-3 h-3 text-rose-600" />
+                    <span>Pilih Kelompok ({availableGroups.length}):</span>
+                  </span>
+
+                  <select
+                    value={selectedGroup}
+                    onChange={(e) => setSelectedGroup(e.target.value)}
+                    className="text-[11px] bg-slate-50 border border-slate-200 text-slate-700 rounded-lg px-2 py-1 font-bold focus:outline-none focus:ring-1 focus:ring-rose-400 max-w-[150px] truncate"
+                  >
+                    <option value="all">Semua ({cardPool.length})</option>
+                    {availableGroups.map((g) => (
+                      <option key={g.key} value={g.key}>
+                        {g.meta.name} ({g.count})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 select-none">
                   <button
-                    key={lvl}
-                    id={`quiz-level-${lvl}`}
-                    onClick={() => setLevelFilter(lvl)}
-                    className={`px-3 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
-                      levelFilter === lvl
-                        ? 'bg-rose-600 text-white shadow-2xs'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                    type="button"
+                    onClick={() => setSelectedGroup('all')}
+                    className={`px-2.5 py-1 rounded-lg text-xs font-bold whitespace-nowrap shrink-0 ${
+                      selectedGroup === 'all'
+                        ? 'bg-slate-900 text-white'
+                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                     }`}
                   >
-                    {lvl === 'all' ? 'Semua' : lvl}
+                    Semua
+                  </button>
+                  {availableGroups.map((g) => (
+                    <button
+                      key={g.key}
+                      type="button"
+                      onClick={() => setSelectedGroup(g.key)}
+                      className={`px-2.5 py-1 rounded-lg text-xs font-bold whitespace-nowrap shrink-0 ${
+                        selectedGroup === g.key
+                          ? 'bg-rose-600 text-white'
+                          : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                      }`}
+                    >
+                      {g.meta.name} ({g.count})
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Level & Count */}
+            <div className="flex items-center justify-between gap-2 pt-2 border-t border-slate-100 flex-wrap">
+              {hasLevelTags && (
+                <div className="flex items-center gap-1">
+                  <span className="text-[11px] font-bold text-slate-400">Level:</span>
+                  {(['all', 'N5', 'N4', 'N3'] as const).map((lvl) => (
+                    <button
+                      key={lvl}
+                      onClick={() => setLevelFilter(lvl)}
+                      className={`px-2 py-0.5 text-xs font-bold rounded-md ${
+                        levelFilter === lvl ? 'bg-rose-600 text-white' : 'bg-slate-100 text-slate-600'
+                      }`}
+                    >
+                      {lvl === 'all' ? 'Semua' : lvl}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              <div className="flex items-center gap-1">
+                <span className="text-[11px] font-bold text-slate-400">Tebak:</span>
+                {(['all', 10, 25] as const).map((cnt) => (
+                  <button
+                    key={cnt}
+                    onClick={() => setCountMode(cnt)}
+                    className={`px-2 py-0.5 text-xs font-bold rounded-md ${
+                      countMode === cnt ? 'bg-rose-600 text-white' : 'bg-slate-100 text-slate-600'
+                    }`}
+                  >
+                    {cnt === 'all' ? 'Semua' : cnt}
                   </button>
                 ))}
               </div>
             </div>
-          )}
-
-          {/* Quiz Count Selector */}
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-bold text-slate-500">Tebak:</span>
-            <div className="flex items-center bg-slate-100 p-1 rounded-xl">
-              <button
-                id="quiz-count-all"
-                onClick={() => setCountMode('all')}
-                className={`px-3 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
-                  countMode === 'all'
-                    ? 'bg-rose-600 text-white shadow-2xs'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                }`}
-                title={`Tebak semua kata dalam kategori ini (${effectivePool.length} kata)`}
-              >
-                Semua ({effectivePool.length} kata)
-              </button>
-
-              {effectivePool.length > 10 && (
-                <button
-                  id="quiz-count-10"
-                  onClick={() => setCountMode(10)}
-                  className={`px-2.5 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
-                    countMode === 10
-                      ? 'bg-rose-600 text-white shadow-2xs'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                  }`}
-                >
-                  10
-                </button>
-              )}
-
-              {effectivePool.length > 25 && (
-                <button
-                  id="quiz-count-25"
-                  onClick={() => setCountMode(25)}
-                  className={`px-2.5 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
-                    countMode === 25
-                      ? 'bg-rose-600 text-white shadow-2xs'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                  }`}
-                >
-                  25
-                </button>
-              )}
-
-              {effectivePool.length > 50 && (
-                <button
-                  id="quiz-count-50"
-                  onClick={() => setCountMode(50)}
-                  className={`px-2.5 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
-                    countMode === 50
-                      ? 'bg-rose-600 text-white shadow-2xs'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                  }`}
-                >
-                  50
-                </button>
-              )}
-            </div>
           </div>
-        </div>
-
-        {/* Toggle Hiragana Switcher */}
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            id="toggle-hiragana-reading"
-            onClick={() => setShowHiragana(!showHiragana)}
-            className={`px-3 py-1.5 text-xs font-extrabold rounded-xl border transition-all cursor-pointer flex items-center gap-1.5 select-none ${
-              showHiragana
-                ? 'bg-rose-50 text-rose-700 border-rose-300 ring-2 ring-rose-500/20 shadow-2xs'
-                : 'bg-slate-100 text-slate-500 border-slate-200 hover:bg-slate-200'
-            }`}
-            title="Tampilkan atau sembunyikan bacaan Hiragana untuk melatih hafalan kanji"
-          >
-            {showHiragana ? <Eye className="w-3.5 h-3.5 text-rose-600" /> : <EyeOff className="w-3.5 h-3.5 text-slate-400" />}
-            <span className="font-jp text-sm font-bold">あ</span>
-            <span>Hiragana: <strong className={showHiragana ? 'text-rose-700' : 'text-slate-600'}>{showHiragana ? 'ON' : 'OFF'}</strong></span>
-          </button>
-        </div>
+        )}
       </div>
 
-      {/* Quiz Progress & Stats Header (Streak Ditiadakan Sesuai Permintaan) */}
-      <div className="flex items-center justify-between bg-white px-5 py-3 rounded-2xl border border-slate-200/90 shadow-xs">
-        <div className="text-xs font-bold text-slate-600 flex items-center gap-1.5">
-          <span>Kata ke-</span>
-          <span className="text-rose-600 font-extrabold text-sm">{currentIndex + 1}</span>
-          <span>dari</span>
-          <span className="font-extrabold text-slate-800">{questions.length}</span>
-        </div>
+      {/* DESKTOP HEADER & CONTROLS (Hidden on Mobile) */}
+      <div className="hidden sm:flex flex-col gap-4">
+        {/* VOCABULARY GROUP SELECTOR (When card pool has groups) */}
+        {availableGroups.length > 0 && (
+          <div className="bg-white p-3.5 sm:p-4 rounded-3xl border border-slate-200/90 shadow-2xs flex flex-col gap-2.5">
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center border border-rose-100">
+                  <Layers className="w-4 h-4" />
+                </div>
+                <div>
+                  <h3 className="text-xs sm:text-sm font-black text-slate-900 leading-tight">
+                    Pilih Kelompok Kosakata:
+                  </h3>
+                  <p className="text-[11px] text-slate-500 hidden sm:block">
+                    Kuis khusus kelompok tema kata tertentu
+                  </p>
+                </div>
+              </div>
 
-        <div className="flex items-center gap-2.5">
-          {/* Menampilkan hanya benar berapa kata dari yang ditebak */}
-          <div className="text-xs font-bold text-slate-700 bg-emerald-50 border border-emerald-200/80 px-3 py-1 rounded-xl">
-            Benar: <span className="text-emerald-700 font-black text-sm">{score}</span>
-            <span className="text-slate-400 font-normal"> / {isAnswered ? currentIndex + 1 : currentIndex} kata ditebak</span>
+              <div className="flex items-center gap-1.5">
+                {/* Quick Dropdown Picker */}
+                <select
+                  value={selectedGroup}
+                  onChange={(e) => setSelectedGroup(e.target.value)}
+                  className="text-xs bg-white border border-slate-200 text-slate-700 rounded-xl px-2.5 py-1 font-semibold focus:outline-none focus:ring-2 focus:ring-rose-400 cursor-pointer max-w-[200px] truncate shadow-2xs"
+                  title="Pilih kelompok dari daftar drop-down"
+                >
+                  <option value="all">🌟 Semua Kelompok ({cardPool.length})</option>
+                  {availableGroups.map((g) => (
+                    <option key={g.key} value={g.key}>
+                      {g.meta.icon} {g.meta.name} ({g.count})
+                    </option>
+                  ))}
+                </select>
+
+                {/* Wrap Toggle */}
+                <button
+                  onClick={() => setIsWrapGroups(!isWrapGroups)}
+                  className={`flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-xl border transition-all cursor-pointer shadow-2xs ${
+                    isWrapGroups
+                      ? 'bg-rose-100 text-rose-800 border-rose-300'
+                      : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100'
+                  }`}
+                  title={isWrapGroups ? 'Mode pita geser' : 'Tampilkan semua kelompok dalam baris'}
+                >
+                  <LayoutGrid className="w-3.5 h-3.5" />
+                  <span>{isWrapGroups ? 'Pita' : 'Grid'}</span>
+                </button>
+
+                {/* Scroll Arrows when not wrapped */}
+                {!isWrapGroups && (
+                  <div className="flex items-center gap-1">
+                    <button
+                      type="button"
+                      onClick={() => scrollGroups('left')}
+                      className="w-7 h-7 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 flex items-center justify-center transition-colors cursor-pointer shadow-2xs"
+                      title="Geser ke kiri"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => scrollGroups('right')}
+                      className="w-7 h-7 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 flex items-center justify-center transition-colors cursor-pointer shadow-2xs"
+                      title="Geser ke kanan"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Group Pills with Emojis & Counts */}
+            <div
+              ref={groupsScrollRef}
+              className={`${
+                isWrapGroups
+                  ? 'flex flex-wrap gap-1.5 max-h-[220px] overflow-y-auto pr-1 py-1'
+                  : 'flex items-center gap-1.5 overflow-x-auto pb-1.5 pt-0.5 scroll-smooth select-none'
+              }`}
+            >
+              <button
+                type="button"
+                onClick={() => setSelectedGroup('all')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap transition-all cursor-pointer select-none shrink-0 ${
+                  selectedGroup === 'all'
+                    ? 'bg-slate-900 text-white shadow-2xs'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                <span>🌟 Semua Kelompok</span>
+                <span
+                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-extrabold ${
+                    selectedGroup === 'all' ? 'bg-white/25 text-white' : 'bg-slate-200 text-slate-600'
+                  }`}
+                >
+                  {cardPool.length}
+                </span>
+              </button>
+
+              {availableGroups.map((g) => {
+                const isSelected = selectedGroup === g.key;
+                return (
+                  <button
+                    key={g.key}
+                    type="button"
+                    onClick={() => setSelectedGroup(g.key)}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer select-none shrink-0 ${
+                      isSelected
+                        ? 'bg-rose-600 text-white shadow-2xs ring-2 ring-rose-600/20'
+                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    }`}
+                    title={`${g.meta.name}: ${g.meta.desc}`}
+                  >
+                    <span>{g.meta.icon}</span>
+                    <span>{g.meta.name}</span>
+                    <span
+                      className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-extrabold ${
+                        isSelected ? 'bg-white/25 text-white' : 'bg-slate-200 text-slate-600'
+                      }`}
+                    >
+                      {g.count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Control Bar: Level, Jumlah Kata & Toggle Hiragana */}
+        <div className="flex flex-wrap items-center justify-between gap-3 bg-white p-3.5 sm:px-5 sm:py-3 rounded-2xl border border-slate-200/90 shadow-2xs">
+          <div className="flex flex-wrap items-center gap-2.5">
+            {/* Level Filter (if applicable) */}
+            {hasLevelTags && (
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-slate-500">Level:</span>
+                <div className="flex items-center bg-slate-100 p-1 rounded-xl">
+                  {(['all', 'N5', 'N4', 'N3'] as const).map((lvl) => (
+                    <button
+                      key={lvl}
+                      id={`quiz-level-${lvl}`}
+                      onClick={() => setLevelFilter(lvl)}
+                      className={`px-3 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
+                        levelFilter === lvl
+                          ? 'bg-rose-600 text-white shadow-2xs'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                      }`}
+                    >
+                      {lvl === 'all' ? 'Semua' : lvl}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Quiz Count Selector */}
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold text-slate-500">Tebak:</span>
+              <div className="flex items-center bg-slate-100 p-1 rounded-xl">
+                <button
+                  id="quiz-count-all"
+                  onClick={() => setCountMode('all')}
+                  className={`px-3 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
+                    countMode === 'all'
+                      ? 'bg-rose-600 text-white shadow-2xs'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                  }`}
+                  title={`Tebak semua kata dalam kategori ini (${effectivePool.length} kata)`}
+                >
+                  Semua ({effectivePool.length} kata)
+                </button>
+
+                {effectivePool.length > 10 && (
+                  <button
+                    id="quiz-count-10"
+                    onClick={() => setCountMode(10)}
+                    className={`px-2.5 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
+                      countMode === 10
+                        ? 'bg-rose-600 text-white shadow-2xs'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                    }`}
+                  >
+                    10
+                  </button>
+                )}
+
+                {effectivePool.length > 25 && (
+                  <button
+                    id="quiz-count-25"
+                    onClick={() => setCountMode(25)}
+                    className={`px-2.5 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
+                      countMode === 25
+                        ? 'bg-rose-600 text-white shadow-2xs'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                    }`}
+                  >
+                    25
+                  </button>
+                )}
+
+                {effectivePool.length > 50 && (
+                  <button
+                    id="quiz-count-50"
+                    onClick={() => setCountMode(50)}
+                    className={`px-2.5 py-1 text-xs font-extrabold rounded-lg transition-all cursor-pointer ${
+                      countMode === 50
+                        ? 'bg-rose-600 text-white shadow-2xs'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                    }`}
+                  >
+                    50
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
 
-          {/* Opsi selesaikan kuis kapan saja untuk melihat perolehan saat ini */}
-          {answersHistory.length >= 3 && questions.length > 10 && (
+          {/* Toggle Hiragana Switcher */}
+          <div className="flex items-center gap-2">
             <button
-              onClick={handleEarlyFinish}
-              className="text-[11px] font-bold text-slate-500 hover:text-rose-700 hover:bg-rose-50 px-2.5 py-1 rounded-lg border border-slate-200 transition-colors cursor-pointer flex items-center gap-1"
-              title="Akhiri kuis sekarang dan lihat perolehan kata yang berhasil ditebak"
+              type="button"
+              id="toggle-hiragana-reading"
+              onClick={() => setShowHiragana(!showHiragana)}
+              className={`px-3 py-1.5 text-xs font-extrabold rounded-xl border transition-all cursor-pointer flex items-center gap-1.5 select-none ${
+                showHiragana
+                  ? 'bg-rose-50 text-rose-700 border-rose-300 ring-2 ring-rose-500/20 shadow-2xs'
+                  : 'bg-slate-100 text-slate-500 border-slate-200 hover:bg-slate-200'
+              }`}
+              title="Tampilkan atau sembunyikan bacaan Hiragana untuk melatih hafalan kanji"
             >
-              <Flag className="w-3 h-3 text-slate-400" />
-              <span>Selesai</span>
+              {showHiragana ? <Eye className="w-3.5 h-3.5 text-rose-600" /> : <EyeOff className="w-3.5 h-3.5 text-slate-400" />}
+              <span className="font-jp text-sm font-bold">あ</span>
+              <span>Hiragana: <strong className={showHiragana ? 'text-rose-700' : 'text-slate-600'}>{showHiragana ? 'ON' : 'OFF'}</strong></span>
             </button>
-          )}
+          </div>
+        </div>
+
+        {/* Quiz Progress & Stats Header (Desktop) */}
+        <div className="flex items-center justify-between bg-white px-5 py-3 rounded-2xl border border-slate-200/90 shadow-xs">
+          <div className="text-xs font-bold text-slate-600 flex items-center gap-1.5">
+            <span>Kata ke-</span>
+            <span className="text-rose-600 font-extrabold text-sm">{currentIndex + 1}</span>
+            <span>dari</span>
+            <span className="font-extrabold text-slate-800">{questions.length}</span>
+          </div>
+
+          <div className="flex items-center gap-2.5">
+            <div className="text-xs font-bold text-slate-700 bg-emerald-50 border border-emerald-200/80 px-3 py-1 rounded-xl">
+              Benar: <span className="text-emerald-700 font-black text-sm">{score}</span>
+              <span className="text-slate-400 font-normal"> / {isAnswered ? currentIndex + 1 : currentIndex} kata ditebak</span>
+            </div>
+
+            {answersHistory.length >= 3 && questions.length > 10 && (
+              <button
+                onClick={handleEarlyFinish}
+                className="text-[11px] font-bold text-slate-500 hover:text-rose-700 hover:bg-rose-50 px-2.5 py-1 rounded-lg border border-slate-200 transition-colors cursor-pointer flex items-center gap-1"
+                title="Akhiri kuis sekarang dan lihat perolehan kata yang berhasil ditebak"
+              >
+                <Flag className="w-3 h-3 text-slate-400" />
+                <span>Selesai</span>
+              </button>
+            )}
+          </div>
         </div>
       </div>
 

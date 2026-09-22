@@ -6,22 +6,26 @@ import { speakJapanese } from '../utils/audio';
 
 interface MinnaViewProps {
   speechRate: number;
-  onPracticeLesson?: (chapter: number) => void;
-  onStartQuiz?: (chapter: number) => void;
+  onPracticeLesson?: (chapter: number, part?: string) => void;
+  onStartQuiz?: (chapter: number, part?: string) => void;
 }
 
+const getLessonKey = (l: MinnaLesson) => `${l.part}-${l.chapter}`;
+
 export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLesson, onStartQuiz }) => {
-  const [selectedChapter, setSelectedChapter] = useState<number>(1);
-  const [filterPart, setFilterPart] = useState<'all' | 'shokyu1' | 'shokyu2'>('all');
+  const [selectedLessonKey, setSelectedLessonKey] = useState<string>(() => getLessonKey(allMinnaLessons[0]));
+  const [filterPart, setFilterPart] = useState<'all' | 'shokyu1' | 'shokyu2' | 'chuukyu1'>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [vocabSearch, setVocabSearch] = useState<string>('');
   const [isMobileListExpanded, setIsMobileListExpanded] = useState<boolean>(false);
   const workspaceRef = useRef<HTMLDivElement | null>(null);
 
   // Filter lessons based on part and search
   const filteredLessons = useMemo(() => {
     return allMinnaLessons.filter((l) => {
-      if (filterPart === 'shokyu1' && l.chapter > 25) return false;
-      if (filterPart === 'shokyu2' && l.chapter <= 25) return false;
+      if (filterPart === 'shokyu1' && (l.chapter > 25 || l.part.includes('Chuukyuu'))) return false;
+      if (filterPart === 'shokyu2' && (l.chapter <= 25 || l.part.includes('Chuukyuu'))) return false;
+      if (filterPart === 'chuukyu1' && l.part !== 'Chuukyuu I (N3)') return false;
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         const matchTitle = l.title.toLowerCase().includes(q);
@@ -40,25 +44,41 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
 
   // Current selected lesson
   const currentLesson: MinnaLesson = useMemo(() => {
-    return allMinnaLessons.find((l) => l.chapter === selectedChapter) || allMinnaLessons[0];
-  }, [selectedChapter]);
+    return allMinnaLessons.find((l) => getLessonKey(l) === selectedLessonKey) || allMinnaLessons[0];
+  }, [selectedLessonKey]);
 
-  const handleSelectChapter = (chapter: number) => {
-    setSelectedChapter(chapter);
+  // Filtered vocabulary in currently selected lesson
+  const filteredKeyVocab = useMemo(() => {
+    if (!vocabSearch.trim() || !currentLesson) return currentLesson?.keyVocab || [];
+    const q = vocabSearch.toLowerCase().trim();
+    return currentLesson.keyVocab.filter(
+      (v) =>
+        v.jp.toLowerCase().includes(q) ||
+        v.reading.toLowerCase().includes(q) ||
+        v.id.toLowerCase().includes(q) ||
+        (v.kanji && v.kanji.includes(q))
+    );
+  }, [currentLesson, vocabSearch]);
+
+  const handleSelectLesson = (lesson: MinnaLesson) => {
+    setSelectedLessonKey(getLessonKey(lesson));
+    setVocabSearch('');
     if (window.innerWidth < 1024 && workspaceRef.current) {
       workspaceRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
+  const currentIndex = allMinnaLessons.findIndex((l) => getLessonKey(l) === selectedLessonKey);
+
   const handlePrevChapter = () => {
-    if (selectedChapter > 1) {
-      handleSelectChapter(selectedChapter - 1);
+    if (currentIndex > 0) {
+      handleSelectLesson(allMinnaLessons[currentIndex - 1]);
     }
   };
 
   const handleNextChapter = () => {
-    if (selectedChapter < 50) {
-      handleSelectChapter(selectedChapter + 1);
+    if (currentIndex < allMinnaLessons.length - 1) {
+      handleSelectLesson(allMinnaLessons[currentIndex + 1]);
     }
   };
 
@@ -82,13 +102,13 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
         <div className="relative z-10 max-w-2xl">
           <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full text-xs font-semibold mb-2">
             <BookOpen className="w-3.5 h-3.5" />
-            <span>Kurikulum Standar Minna no Nihongo (みんなの日本語)</span>
+            <span>Kurikulum Lengkap Minna no Nihongo (みんなの日本語)</span>
           </div>
           <h1 className="text-xl sm:text-3xl font-extrabold tracking-tight">
-            Pelajaran Lengkap Bab 1 – 50
+            Shokyu I, II &amp; Chuukyu I (N5–N3)
           </h1>
           <p className="text-rose-100 text-xs sm:text-sm mt-1 leading-relaxed">
-            Mencakup seluruh tata bahasa penting (Bunkei &amp; Reibun), kosakata terstruktur, pola konjugasi, dan percakapan kontekstual dari Shokyu I (N5) hingga Shokyu II (N4).
+            Mencakup seluruh tata bahasa penting (Bunkei &amp; Reibun), kosakata terstruktur, pola konjugasi, percakapan kontekstual, dan teks bacaan dari Dasar N5, N4, hingga Chuukyu I (N3).
           </p>
         </div>
         <div className="absolute right-[-20px] bottom-[-20px] text-white/10 select-none pointer-events-none text-9xl font-black font-serif">
@@ -100,7 +120,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
       <div className="bg-white p-2.5 sm:p-3 rounded-2xl border border-slate-200/90 shadow-2xs flex items-center justify-between gap-2">
         <button
           onClick={handlePrevChapter}
-          disabled={selectedChapter <= 1}
+          disabled={currentIndex <= 0}
           className="min-h-[40px] px-2.5 sm:px-3 rounded-xl bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed text-xs font-bold text-slate-700 flex items-center gap-1 cursor-pointer select-none transition-colors"
           title="Bab Sebelumnya"
         >
@@ -113,21 +133,27 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
             Lompat ke:
           </span>
           <select
-            value={selectedChapter}
-            onChange={(e) => handleSelectChapter(Number(e.target.value))}
+            value={selectedLessonKey}
+            onChange={(e) => {
+              const found = allMinnaLessons.find((l) => getLessonKey(l) === e.target.value);
+              if (found) handleSelectLesson(found);
+            }}
             className="w-full sm:w-auto bg-rose-50/80 border border-rose-200 text-rose-800 text-xs sm:text-sm font-bold rounded-xl px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-rose-400 cursor-pointer"
           >
-            {allMinnaLessons.map((l) => (
-              <option key={l.chapter} value={l.chapter}>
-                Bab {l.chapter}: {l.title} ({l.level})
-              </option>
-            ))}
+            {allMinnaLessons.map((l) => {
+              const k = getLessonKey(l);
+              return (
+                <option key={k} value={k}>
+                  [{l.part}] Bab {l.chapter}: {l.title} ({l.level})
+                </option>
+              );
+            })}
           </select>
         </div>
 
         <button
           onClick={handleNextChapter}
-          disabled={selectedChapter >= 50}
+          disabled={currentIndex >= allMinnaLessons.length - 1}
           className="min-h-[40px] px-2.5 sm:px-3 rounded-xl bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed text-xs font-bold text-slate-700 flex items-center gap-1 cursor-pointer select-none transition-colors"
           title="Bab Berikutnya"
         >
@@ -139,20 +165,20 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
       {/* Filter and Search Bar */}
       <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
         {/* Part Tabs */}
-        <div className="flex items-center bg-white p-1 rounded-2xl border border-slate-200/90 shadow-2xs overflow-x-auto no-scrollbar">
+        <div className="flex items-center bg-white p-1 rounded-2xl border border-slate-200/90 shadow-2xs overflow-x-auto no-scrollbar gap-1">
           <button
             onClick={() => setFilterPart('all')}
-            className={`flex-1 sm:flex-none px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-colors whitespace-nowrap cursor-pointer ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors whitespace-nowrap cursor-pointer ${
               filterPart === 'all'
                 ? 'bg-rose-600 text-white shadow-xs'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
             }`}
           >
-            Semua (1–50)
+            Semua ({allMinnaLessons.length})
           </button>
           <button
             onClick={() => setFilterPart('shokyu1')}
-            className={`flex-1 sm:flex-none px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-colors whitespace-nowrap cursor-pointer ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors whitespace-nowrap cursor-pointer ${
               filterPart === 'shokyu1'
                 ? 'bg-rose-600 text-white shadow-xs'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
@@ -162,13 +188,23 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
           </button>
           <button
             onClick={() => setFilterPart('shokyu2')}
-            className={`flex-1 sm:flex-none px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition-colors whitespace-nowrap cursor-pointer ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors whitespace-nowrap cursor-pointer ${
               filterPart === 'shokyu2'
                 ? 'bg-rose-600 text-white shadow-xs'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
             }`}
           >
             Shokyu II &bull; N4 (26–50)
+          </button>
+          <button
+            onClick={() => setFilterPart('chuukyu1')}
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors whitespace-nowrap cursor-pointer ${
+              filterPart === 'chuukyu1'
+                ? 'bg-rose-600 text-white shadow-xs'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+            }`}
+          >
+            Chuukyu I &bull; N3 (1–12)
           </button>
         </div>
 
@@ -211,11 +247,12 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
             isMobileListExpanded ? 'max-h-[480px]' : 'max-h-[190px] sm:max-h-[250px] lg:max-h-[720px]'
           }`}>
             {filteredLessons.map((lesson) => {
-              const isSelected = lesson.chapter === currentLesson.chapter;
+              const k = getLessonKey(lesson);
+              const isSelected = k === selectedLessonKey;
               return (
                 <button
-                  key={lesson.chapter}
-                  onClick={() => handleSelectChapter(lesson.chapter)}
+                  key={k}
+                  onClick={() => handleSelectLesson(lesson)}
                   className={`w-full text-left p-2.5 rounded-2xl transition-all cursor-pointer flex items-start gap-2.5 border ${
                     isSelected
                       ? 'bg-rose-50/80 border-rose-300 text-slate-900 shadow-xs'
@@ -232,13 +269,17 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center justify-between gap-1">
                       <span className="text-xs font-bold truncate">
-                        Bab {lesson.chapter}
+                        {lesson.part.includes('Chuukyuu') ? 'Chuukyu ' : ''}Bab {lesson.chapter}
                       </span>
                       <span
                         className={`text-[9px] font-extrabold px-1.5 py-0.2 rounded-md ${
                           lesson.level === 'N5'
                             ? 'bg-emerald-100 text-emerald-700'
-                            : 'bg-indigo-100 text-indigo-700'
+                            : lesson.level === 'N4'
+                            ? 'bg-indigo-100 text-indigo-700'
+                            : lesson.level === 'N3'
+                            ? 'bg-amber-100 text-amber-700'
+                            : 'bg-purple-100 text-purple-700'
                         }`}
                       >
                         {lesson.level}
@@ -266,7 +307,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
             <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
               <div className="flex items-center gap-2">
                 <span className="bg-rose-600 text-white text-xs font-extrabold px-3 py-1 rounded-xl shadow-xs">
-                  Bab {currentLesson.chapter}
+                  {currentLesson.part.includes('Chuukyuu') ? 'Chuukyu ' : ''}Bab {currentLesson.chapter}
                 </span>
                 <span className="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded-xl">
                   {currentLesson.part}
@@ -275,7 +316,11 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                   className={`text-xs font-extrabold px-2.5 py-1 rounded-xl ${
                     currentLesson.level === 'N5'
                       ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                      : 'bg-indigo-50 text-indigo-700 border border-indigo-200'
+                      : currentLesson.level === 'N4'
+                      ? 'bg-indigo-50 text-indigo-700 border border-indigo-200'
+                      : currentLesson.level === 'N3'
+                      ? 'bg-amber-50 text-amber-700 border border-amber-200'
+                      : 'bg-purple-50 text-purple-700 border border-purple-200'
                   }`}
                 >
                   Target JLPT {currentLesson.level}
@@ -285,7 +330,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
               <div className="flex items-center gap-2">
                 {onPracticeLesson && (
                   <button
-                    onClick={() => onPracticeLesson(currentLesson.chapter)}
+                    onClick={() => onPracticeLesson(currentLesson.chapter, currentLesson.part)}
                     className="inline-flex items-center gap-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200/80 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
                   >
                     <Layers className="w-3.5 h-3.5" />
@@ -294,7 +339,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                 )}
                 {onStartQuiz && (
                   <button
-                    onClick={() => onStartQuiz(currentLesson.chapter)}
+                    onClick={() => onStartQuiz(currentLesson.chapter, currentLesson.part)}
                     className="inline-flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200/80 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
                   >
                     <HelpCircle className="w-3.5 h-3.5" />
@@ -387,46 +432,68 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
 
           {/* Section 2: Key Vocabulary (Kotoba) */}
           <div className="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-6 shadow-2xs flex flex-col gap-4">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-rose-600" />
                 <h3 className="text-base font-extrabold text-slate-900">
-                  Kosakata Kunci Bab {currentLesson.chapter} (言葉 Kotoba)
+                  Kosakata Bab {currentLesson.chapter} (言葉 Kotoba)
                 </h3>
+                <span className="text-xs font-semibold text-slate-400">
+                  ({vocabSearch ? `${filteredKeyVocab.length} dari ` : ''}{currentLesson.keyVocab.length} Kata)
+                </span>
               </div>
-              <span className="text-xs font-semibold text-slate-400">
-                {currentLesson.keyVocab.length} Kata
-              </span>
+              <div className="relative w-full sm:w-64">
+                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                <input
+                  type="text"
+                  placeholder="Cari kata / arti di bab ini..."
+                  value={vocabSearch}
+                  onChange={(e) => setVocabSearch(e.target.value)}
+                  className="w-full bg-slate-50 border border-slate-200 text-xs rounded-xl pl-8 pr-3 py-1.5 focus:outline-hidden focus:ring-2 focus:ring-rose-400 text-slate-800 placeholder-slate-400"
+                />
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {currentLesson.keyVocab.map((vocab, vIdx) => (
-                <div
-                  key={vIdx}
-                  className="p-3 bg-slate-50/70 hover:bg-white hover:shadow-xs rounded-2xl border border-slate-200/80 transition-all flex items-center justify-between gap-2.5"
+            {filteredKeyVocab.length === 0 ? (
+              <div className="text-center py-8 text-slate-500 text-xs bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+                Tidak ada kosakata yang cocok dengan kata kunci &quot;{vocabSearch}&quot;.
+                <button
+                  onClick={() => setVocabSearch('')}
+                  className="block mx-auto mt-2 text-rose-600 font-bold hover:underline cursor-pointer"
                 >
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-base font-extrabold text-slate-900 font-japanese">
-                        {vocab.jp}
-                      </span>
-                      <span className="text-xs text-rose-600 font-semibold truncate">
-                        {vocab.reading}
-                      </span>
-                    </div>
-                    <p className="text-xs text-slate-600 mt-0.5 font-medium line-clamp-1" title={vocab.id}>
-                      {vocab.id}
-                    </p>
-                  </div>
-                  <button
-                    onClick={(e) => handleSpeak(vocab.jp, vocab.reading, e)}
-                    className="p-2 rounded-xl bg-white hover:bg-rose-50 text-slate-500 hover:text-rose-600 border border-slate-200/60 shadow-2xs transition-colors shrink-0 cursor-pointer"
+                  Reset Pencarian
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[600px] overflow-y-auto pr-1">
+                {filteredKeyVocab.map((vocab, vIdx) => (
+                  <div
+                    key={vIdx}
+                    className="p-3 bg-slate-50/70 hover:bg-white hover:shadow-xs rounded-2xl border border-slate-200/80 transition-all flex items-center justify-between gap-2.5"
                   >
-                    <Volume2 className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              ))}
-            </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-base font-extrabold text-slate-900 font-japanese">
+                          {vocab.jp}
+                        </span>
+                        <span className="text-xs text-rose-600 font-semibold truncate">
+                          {vocab.reading}
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-600 mt-0.5 font-medium line-clamp-1" title={vocab.id}>
+                        {vocab.id}
+                      </p>
+                    </div>
+                    <button
+                      onClick={(e) => handleSpeak(vocab.jp, vocab.reading, e)}
+                      className="p-2 rounded-xl bg-white hover:bg-rose-50 text-slate-500 hover:text-rose-600 border border-slate-200/60 shadow-2xs transition-colors shrink-0 cursor-pointer"
+                    >
+                      <Volume2 className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Section 3: Situational Dialogue (Kaiwa) if present */}
