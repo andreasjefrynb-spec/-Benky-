@@ -62,7 +62,7 @@ import {
 import { registerReadings } from './utils/audio';
 
 export default function App() {
-  const [activeCategory, setActiveCategory] = useState<MainCategory>('kanji');
+  const [activeCategory, setActiveCategory] = useState<MainCategory>('search');
   const [studyMode, setStudyMode] = useState<StudyMode>('flashcard');
   const [speechRate, setSpeechRate] = useState<number>(0.9);
 
@@ -275,6 +275,7 @@ export default function App() {
   // Counts for categories
   const categoryCounts: Record<MainCategory, number> = useMemo(() => {
     return {
+      search: 0,
       minna: minnaCardItems.length,
       tobira: tobiraCardItems.length,
       quartet: quartetCardItems.length,
@@ -337,7 +338,7 @@ export default function App() {
       {/* Top Navigation */}
       <Navbar
         onOpenAddCustom={() => setIsAddCustomOpen(true)}
-        onOpenGlobalSearch={() => setIsGlobalSearchOpen(true)}
+        onOpenGlobalSearch={() => setActiveCategory('search')}
         speechRate={speechRate}
         onToggleSpeechRate={handleToggleSpeechRate}
         onSelectSpeechRate={(rate) => setSpeechRate(rate)}
@@ -379,7 +380,7 @@ export default function App() {
         </section>
 
         {/* Mode Selector (Flashcard, Chart/Kelompok, Quiz, Writing) */}
-        {activeCategory !== 'dokkai' && activeCategory !== 'choukai' && (
+        {activeCategory !== 'dokkai' && activeCategory !== 'choukai' && activeCategory !== 'search' && (
           <section aria-label="Pilihan Mode Belajar">
             <ModeSelector
               currentMode={studyMode}
@@ -392,6 +393,15 @@ export default function App() {
 
         {/* Dynamic Study Content View */}
         <div className="flex-1 py-0.5 sm:py-2">
+          {activeCategory === 'search' && (
+            <GlobalSearchModal
+              isInline={true}
+              allCards={allCardsCombined}
+              speechRate={speechRate}
+              onSelectCard={handleSelectCardFromSearch}
+            />
+          )}
+
           {activeCategory === 'dokkai' && (
             <DokkaiView speechRate={speechRate} />
           )}

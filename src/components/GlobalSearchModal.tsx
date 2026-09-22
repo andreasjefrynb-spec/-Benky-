@@ -6,16 +6,18 @@ import { soundManager } from '../utils/audio';
 import { getClarifiedMeaning } from '../utils/meaningClarifier';
 
 interface GlobalSearchModalProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen?: boolean;
+  onClose?: () => void;
+  isInline?: boolean;
   allCards: CardItem[];
   speechRate: number;
   onSelectCard?: (card: CardItem, category: string) => void;
 }
 
 export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
-  isOpen,
-  onClose,
+  isOpen = false,
+  onClose = () => {},
+  isInline = false,
   allCards,
   speechRate,
   onSelectCard,
@@ -25,6 +27,26 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
   const [playingId, setPlayingId] = useState<string | null>(null);
   const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
+
+  // States to allow user to toggle/dismiss guide card and database search list
+  const [showSearchGuide, setShowSearchGuide] = useState(() => {
+    const saved = localStorage.getItem('nihongo_show_search_guide');
+    return saved !== 'false';
+  });
+  const [showDatabaseResults, setShowDatabaseResults] = useState(() => {
+    const saved = localStorage.getItem('nihongo_show_database_results');
+    return saved !== 'false';
+  });
+
+  const handleToggleSearchGuide = (val: boolean) => {
+    setShowSearchGuide(val);
+    localStorage.setItem('nihongo_show_search_guide', String(val));
+  };
+
+  const handleToggleDatabaseResults = (val: boolean) => {
+    setShowDatabaseResults(val);
+    localStorage.setItem('nihongo_show_database_results', String(val));
+  };
 
   // AI Translation States
   const [translationResult, setTranslationResult] = useState<{
@@ -41,6 +63,31 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
   const [translationError, setTranslationError] = useState<string | null>(null);
   const [lastTranslatedQuery, setLastTranslatedQuery] = useState('');
   const [playingType, setPlayingType] = useState<'formal' | 'casual' | null>(null);
+  const [loadingStep, setLoadingStep] = useState(0);
+
+  const LOADING_STEPS = [
+    "Menerima input kalimat...",
+    "Menghubungi server Google Gemini...",
+    "Menganalisis tata bahasa...",
+    "Menerjemahkan ke bahasa Jepang...",
+    "Menyusun bentuk sopan (です/ます)...",
+    "Menyusun bentuk kasual (akrab)...",
+    "Membuat audio pengucapan otomatis...",
+    "Menyelesaikan hasil terjemahan..."
+  ];
+
+  useEffect(() => {
+    let timer: any;
+    if (isTranslating) {
+      setLoadingStep(0);
+      timer = setInterval(() => {
+        setLoadingStep((prev) => (prev < LOADING_STEPS.length - 1 ? prev + 1 : prev));
+      }, 450);
+    } else {
+      setLoadingStep(0);
+    }
+    return () => clearInterval(timer);
+  }, [isTranslating]);
 
   // Clear translation on empty query
   useEffect(() => {
@@ -53,6 +100,12 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
 
   // Reset translation on opening/closing modal
   useEffect(() => {
+    if (isInline) {
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 150);
+      return;
+    }
     if (isOpen) {
       setTimeout(() => {
         inputRef.current?.focus();
@@ -64,7 +117,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
       setTranslationError(null);
       setLastTranslatedQuery('');
     }
-  }, [isOpen]);
+  }, [isOpen, isInline]);
 
   // Handle Translate Trigger
   const handleTranslate = async () => {
@@ -221,59 +274,42 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
     }
   }, [visibleResults]);
 
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center pt-10 sm:pt-20 px-3 sm:px-4 pb-4">
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs cursor-pointer"
-          />
-
-          {/* Search Box */}
-          <motion.div
-            initial={{ scale: 0.95, opacity: 0, y: -20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.95, opacity: 0, y: -20 }}
-            transition={{ type: 'spring', duration: 0.3 }}
-            className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[80vh] sm:max-h-[75vh]"
+  const mainLayout = (
+    <div className={isInline ? "relative w-full flex flex-col" : "relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[80vh] sm:max-h-[75vh]"}>
+      {/* Header / Input */}
+      <div className="p-4 border-b border-slate-100 flex items-center gap-3">
+        <Search className="w-5 h-5 text-slate-400 shrink-0" />
+        <input
+          ref={inputRef}
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              handleTranslate();
+            }
+          }}
+          placeholder="Cari kata atau kalimat (Tekan Enter untuk Terjemahan AI)..."
+          className="flex-1 text-slate-800 placeholder-slate-400 bg-transparent text-sm sm:text-base border-none outline-none focus:ring-0 focus:outline-none"
+        />
+        {query && (
+          <button
+            onClick={() => setQuery('')}
+            className="p-1 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer"
           >
-            {/* Header / Input */}
-            <div className="p-4 border-b border-slate-100 flex items-center gap-3">
-              <Search className="w-5 h-5 text-slate-400 shrink-0" />
-              <input
-                ref={inputRef}
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') {
-                    e.preventDefault();
-                    handleTranslate();
-                  }
-                }}
-                placeholder="Cari kata atau kalimat (Tekan Enter untuk Terjemahan AI)..."
-                className="flex-1 text-slate-800 placeholder-slate-400 bg-transparent text-sm sm:text-base border-none outline-none focus:ring-0 focus:outline-none"
-              />
-              {query && (
-                <button
-                  onClick={() => setQuery('')}
-                  className="p-1 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 cursor-pointer"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              )}
-              <button
-                onClick={onClose}
-                className="px-2 py-1 text-xs font-bold text-slate-500 hover:text-slate-800 hover:bg-slate-50 rounded-lg cursor-pointer shrink-0"
-              >
-                Tutup
-              </button>
-            </div>
+            <X className="w-4 h-4" />
+          </button>
+        )}
+        {!isInline && (
+          <button
+            onClick={onClose}
+            className="px-2 py-1 text-xs font-bold text-slate-500 hover:text-slate-800 hover:bg-slate-50 rounded-lg cursor-pointer shrink-0"
+          >
+            Tutup
+          </button>
+        )}
+      </div>
 
             {/* Quick Filters Tab */}
             {query.trim().length > 0 && (
@@ -293,10 +329,10 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                       setActiveTab(tab.id);
                       setExpandedCardId(null);
                     }}
-                    className={`px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+                    className={`px-3 py-1 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer border-b-[4px] active:border-b-[1px] active:translate-y-[3px] ${
                       activeTab === tab.id
-                        ? 'bg-rose-600 text-white shadow-2xs'
-                        : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-100'
+                        ? 'bg-rose-600 text-white border-rose-600 border-b-rose-800 shadow-2xs'
+                        : 'bg-white text-slate-600 border-slate-200 border-b-slate-300 hover:bg-slate-50'
                     }`}
                   >
                     {tab.label}
@@ -308,30 +344,68 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
             {/* Search Results Area */}
             <div className="flex-1 overflow-y-auto p-3 sm:p-4 min-h-[180px] bg-white no-scrollbar">
               {!query.trim() ? (
-                <div className="flex flex-col items-center justify-center py-10 text-center">
-                  <div className="w-14 h-14 bg-rose-50 text-rose-500 rounded-full flex items-center justify-center mb-3">
-                    <BookOpen className="w-6 h-6" />
+                showSearchGuide ? (
+                  <div className="flex flex-col items-center justify-center py-10 text-center relative border border-slate-100 rounded-2xl bg-slate-50/30 p-4">
+                    <button
+                      onClick={() => handleToggleSearchGuide(false)}
+                      className="absolute top-2 right-2 px-2 py-1 text-[10px] font-bold text-slate-400 hover:text-rose-600 hover:bg-rose-50 border border-slate-100 rounded-lg cursor-pointer transition-colors"
+                      title="Sembunyikan panduan ini"
+                    >
+                      Sembunyikan
+                    </button>
+                    <div className="w-14 h-14 bg-rose-50 text-rose-500 rounded-full flex items-center justify-center mb-3">
+                      <BookOpen className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-sm font-bold text-slate-800">Cari Apapun Instan</h3>
+                    <p className="text-xs text-slate-400 max-w-sm mt-1 px-4 leading-relaxed">
+                      Ketik kata dalam bahasa Jepang (romaji, hiragana, katakana, kanji) atau artinya dalam bahasa Indonesia untuk mencari di seluruh materi {allCards.length.toLocaleString()}+ item secara instan.
+                    </p>
                   </div>
-                  <h3 className="text-sm font-bold text-slate-800">Cari Apapun Instan</h3>
-                  <p className="text-xs text-slate-400 max-w-sm mt-1 px-4">
-                    Ketik kata dalam bahasa Jepang (romaji, hiragana, katakana, kanji) atau artinya dalam bahasa Indonesia untuk mencari di seluruh materi {allCards.length.toLocaleString()}+ item secara instan.
-                  </p>
-                </div>
+                ) : (
+                  <div className="flex flex-col items-center justify-center py-16 text-center">
+                    <p className="text-xs text-slate-400 font-medium">
+                      Siap mencari kosakata atau menerjemahkan kalimat...
+                    </p>
+                    <button
+                      onClick={() => handleToggleSearchGuide(true)}
+                      className="mt-2 text-[10px] font-black text-rose-600 hover:text-rose-700 bg-rose-50 border border-rose-150 px-2 py-1 rounded-lg cursor-pointer hover:bg-rose-100 transition-all select-none active:scale-95"
+                    >
+                      Tampilkan Panduan Pencarian
+                    </button>
+                  </div>
+                )
               ) : (
                 <div className="flex flex-col gap-4">
                   {/* AI Translation Widget Section */}
                   {isTranslating ? (
-                    <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 animate-pulse text-left relative shadow-2xs">
+                    <div className="bg-rose-50/10 border border-rose-200/40 rounded-2xl p-4 text-left shadow-2xs relative overflow-hidden">
+                      {/* Top Header */}
                       <div className="flex items-center justify-between gap-2 mb-3">
-                        <div className="flex items-center gap-2">
-                          <span className="px-2 py-0.5 text-[9px] font-extrabold bg-slate-200 text-slate-400 rounded uppercase">AI Terjemahan</span>
-                          <div className="w-24 h-3 bg-slate-200 rounded" />
+                        <div className="flex items-center gap-1.5">
+                          <span className="px-1.5 py-0.5 text-[8px] font-extrabold bg-rose-600 text-white rounded uppercase tracking-wider">AI Terjemahan</span>
+                          <span className="text-[10px] text-slate-400 font-bold animate-pulse">Sedang Memproses...</span>
                         </div>
-                        <div className="w-8 h-8 bg-slate-200 rounded-xl" />
+                        {/* 3D-styled mini loader spinner */}
+                        <div className="w-5 h-5 border-2 border-rose-600/20 border-t-rose-600 rounded-full animate-spin shrink-0" />
                       </div>
-                      <div className="w-3/4 h-6 bg-slate-200 rounded mb-2" />
-                      <div className="w-1/2 h-4 bg-slate-200 rounded mb-1.5" />
-                      <div className="w-5/6 h-3 bg-slate-100 rounded mt-3" />
+
+                      {/* Active Status step */}
+                      <p className="text-xs font-black text-slate-800 animate-pulse min-h-[18px] mb-2">
+                        {LOADING_STEPS[loadingStep]}
+                      </p>
+
+                      {/* Cool Progress Bar */}
+                      <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden border border-slate-200/50">
+                        <div 
+                          className="h-full bg-rose-600 rounded-full transition-all duration-300 ease-out"
+                          style={{ width: `${Math.min(98, Math.round(((loadingStep + 1) / LOADING_STEPS.length) * 100))}%` }}
+                        />
+                      </div>
+
+                      <div className="flex items-center justify-between mt-1.5 text-[9px] text-slate-400 font-bold">
+                        <span>Langkah {loadingStep + 1} dari {LOADING_STEPS.length}</span>
+                        <span>{Math.min(98, Math.round(((loadingStep + 1) / LOADING_STEPS.length) * 100))}%</span>
+                      </div>
                     </div>
                   ) : translationError ? (
                     <div className="bg-red-50/50 border border-red-100 rounded-2xl p-3.5 text-left flex items-start gap-2.5">
@@ -377,10 +451,10 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                           
                           <button
                             onClick={(e) => handleSpeakText(e, translationResult.japanese, translationResult.reading, 'formal')}
-                            className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all cursor-pointer shrink-0 ${
+                            className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all cursor-pointer shrink-0 border-b-[3px] active:border-b-[1px] active:translate-y-[2px] ${
                               playingType === 'formal'
-                                ? 'bg-rose-600 text-white ring-2 ring-rose-100'
-                                : 'bg-slate-50 text-slate-500 hover:bg-rose-50 hover:text-rose-600 border border-slate-200'
+                                ? 'bg-rose-600 text-white border-rose-600 border-b-rose-800'
+                                : 'bg-slate-50 text-slate-500 hover:bg-rose-50 hover:text-rose-600 border-slate-200 border-b-slate-300'
                             }`}
                             title="Dengarkan pelafalan bentuk sopan"
                           >
@@ -407,10 +481,10 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                           
                           <button
                             onClick={(e) => handleSpeakText(e, translationResult.casualJapanese, translationResult.casualReading, 'casual')}
-                            className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all cursor-pointer shrink-0 ${
+                            className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all cursor-pointer shrink-0 border-b-[3px] active:border-b-[1px] active:translate-y-[2px] ${
                               playingType === 'casual'
-                                ? 'bg-blue-600 text-white ring-2 ring-blue-100'
-                                : 'bg-slate-50 text-slate-500 hover:bg-blue-50 hover:text-blue-600 border border-slate-200'
+                                ? 'bg-blue-600 text-white border-blue-600 border-b-blue-800'
+                                : 'bg-slate-50 text-slate-500 hover:bg-blue-50 hover:text-blue-600 border-slate-200 border-b-slate-300'
                             }`}
                             title="Dengarkan pelafalan bentuk kasual"
                           >
@@ -429,7 +503,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                   ) : (
                     <div className="bg-slate-50 border border-slate-200/70 rounded-2xl p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-left">
                       <div className="flex items-start gap-2.5">
-                        <span className="p-1.5 bg-rose-100 text-rose-600 rounded-xl font-bold text-[10px] tracking-wider uppercase shrink-0 mt-0.5">AI</span>
+                        <span className="p-1.5 bg-rose-100 text-rose-600 rounded-xl font-bold text-[10px] tracking-wider uppercase shrink-0 mt-0.5 shadow-3xs">AI</span>
                         <div>
                           <h4 className="text-xs font-black text-slate-800">Mau terjemahan lengkap dari AI?</h4>
                           <p className="text-[11px] text-slate-500 mt-0.5">
@@ -439,7 +513,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                       </div>
                       <button
                         onClick={handleTranslate}
-                        className="self-end sm:self-center px-4 py-1.5 bg-slate-800 hover:bg-slate-900 active:bg-black text-white text-[11px] font-bold rounded-xl cursor-pointer transition-colors shadow-3xs shrink-0 font-sans"
+                        className="self-end sm:self-center px-4 py-2 bg-rose-600 hover:bg-rose-500 text-white text-[11px] font-black rounded-xl cursor-pointer transition-all border-b-[4px] border-rose-800 active:border-b-[1px] active:translate-y-[3px] shadow-sm font-sans shrink-0"
                       >
                         Terjemahkan
                       </button>
@@ -457,10 +531,30 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                         Tetapi Anda bisa melihat hasil terjemahan AI di atas untuk mencari tahu artinya!
                       </p>
                     </div>
+                  ) : !showDatabaseResults ? (
+                    <div className="pt-2 border-t border-slate-100 flex flex-col gap-2">
+                      <button
+                        onClick={() => handleToggleDatabaseResults(true)}
+                        className="w-full py-2.5 px-4 bg-slate-50 hover:bg-slate-100 border border-slate-200/80 rounded-2xl flex items-center justify-between text-xs font-bold text-slate-600 transition-all cursor-pointer active:scale-99"
+                      >
+                        <span className="flex items-center gap-2 text-[11px] sm:text-xs">
+                          📁 Tampilkan {filteredResults.length} Kosakata Database Terkait
+                        </span>
+                        <span className="text-[10px] text-rose-600 font-extrabold uppercase bg-rose-50 border border-rose-150 px-2 py-0.5 rounded-lg">Buka</span>
+                      </button>
+                    </div>
                   ) : (
                     <div className="flex flex-col gap-1.5 pt-2 border-t border-slate-100">
                       <div className="text-[10px] text-slate-400 font-bold px-1.5 pb-1 flex justify-between items-center">
-                        <span>KOSAKATA DATABASE COCOK ({visibleResults.length} DARI {filteredResults.length})</span>
+                        <span className="flex items-center gap-2">
+                          KOSAKATA DATABASE COCOK ({visibleResults.length} DARI {filteredResults.length})
+                          <button
+                            onClick={() => handleToggleDatabaseResults(false)}
+                            className="text-[10px] text-rose-600 font-black hover:underline cursor-pointer normal-case ml-2"
+                          >
+                            [ Sembunyikan ]
+                          </button>
+                        </span>
                         {filteredResults.length > 100 && (
                           <span className="text-rose-600">Saring kata kunci untuk hasil lebih akurat</span>
                         )}
@@ -609,6 +703,35 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
                 </div>
               )}
             </div>
+    </div>
+  );
+
+  if (isInline) {
+    return mainLayout;
+  }
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-50 flex items-start justify-center pt-10 sm:pt-20 px-3 sm:px-4 pb-4">
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs cursor-pointer"
+          />
+
+          {/* Search Box Wrapper */}
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0, y: -20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.95, opacity: 0, y: -20 }}
+            transition={{ type: 'spring', duration: 0.3 }}
+            className="w-full max-w-2xl"
+          >
+            {mainLayout}
           </motion.div>
         </div>
       )}

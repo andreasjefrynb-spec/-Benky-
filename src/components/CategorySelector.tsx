@@ -37,6 +37,16 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   const categories: CategoryDef[] = [
+    // --- FITUR UTAMA ---
+    {
+      id: 'search',
+      title: 'Cari & Terjemah AI',
+      sub: 'Kamus Instan & Terjemahan AI 3D',
+      badge: '🔍',
+      icon: '🧠',
+      categoryGroup: 'Fitur Utama',
+    },
+
     // --- TINGKAT MENENGAH (N3) ---
     {
       id: 'phrases',
@@ -232,7 +242,7 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
           </div>
         </div>
 
-        {/* Right Side: Item Count & Toggle Arrow */}
+        {/* Right Side: Toggle Arrow */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           {activeCategory === 'custom' && onOpenAddCustom && (
             <button
@@ -247,10 +257,6 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
               <span className="hidden xs:inline">Tambah</span>
             </button>
           )}
-
-          <span className="text-[11px] sm:text-xs font-bold font-mono px-2 sm:px-2.5 py-1 rounded-xl bg-slate-100 text-slate-600 border border-slate-200">
-            {counts[activeCategory] || 0} materi
-          </span>
 
           <div
             className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center transition-all ${

@@ -1,4 +1,5 @@
 export type MainCategory = 
+  | 'search'
   | 'kanji'
   | 'vocab'
   | 'phrases'
