@@ -129,24 +129,53 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
     setLastTranslatedQuery(trimmed);
 
     try {
-      const response = await fetch('/api/translate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ text: trimmed }),
-      });
+      let data: any = null;
+      try {
+        const response = await fetch('/api/translate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ text: trimmed }),
+        });
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.error || 'Gagal melakukan terjemahan');
+        if (response.ok) {
+          data = await response.json();
+        }
+      } catch {
+        // Server API not reachable (e.g., static GitHub Pages deployment)
       }
 
-      const data = await response.json();
+      // If server API failed or returned fallback/error, try direct public client-side translation API (MyMemory)
+      if (!data || data.explanation?.includes("Mode offline") || data.explanation?.includes("Diproses secara lokal")) {
+        const isJapanese = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9faf]/.test(trimmed);
+        const langPair = isJapanese ? "ja|id" : "id|ja";
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(trimmed)}&langpair=${langPair}`;
+        const pubResp = await fetch(url);
+        const pubData = await pubResp.json();
+        if (pubData && pubData.responseData && pubData.responseData.translatedText) {
+          const translated = pubData.responseData.translatedText;
+          data = {
+            japanese: isJapanese ? trimmed : translated,
+            reading: translated,
+            romaji: trimmed,
+            casualJapanese: isJapanese ? trimmed : translated,
+            casualReading: translated,
+            casualRomaji: trimmed,
+            meaning: isJapanese ? translated : trimmed,
+            explanation: `Terjemahan online instan untuk "${trimmed}".`
+          };
+        }
+      }
+
+      if (!data) {
+        throw new Error("Gagal melakukan terjemahan");
+      }
+
       setTranslationResult(data);
     } catch (err: any) {
-      console.warn("Network or API error, using client-side instant fallback:", err);
-      // Client-side fallback dictionary/generator for mobile reliability
+      console.warn("API/Network error, checking local dictionary fallback:", err);
+      // Client-side fallback dictionary for offline/error state
       const lowerQ = trimmed.toLowerCase();
       const localDict: Record<string, any> = {
         "sisir": { japanese: "櫛", reading: "くし", romaji: "kushi", casualJapanese: "櫛", casualReading: "くし", casualRomaji: "kushi", meaning: "Sisir (alat rambut)", explanation: "Kata benda bahasa Jepang untuk sisir rambut." },
@@ -163,15 +192,17 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
       if (localDict[lowerQ]) {
         setTranslationResult(localDict[lowerQ]);
       } else {
+        // Dynamic translation simulation helper when offline/unreachable
+        const isJa = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9faf]/.test(trimmed);
         setTranslationResult({
-          japanese: `${trimmed} (日本語)`,
+          japanese: isJa ? trimmed : `[${trimmed}]`,
           reading: trimmed,
           romaji: trimmed,
-          casualJapanese: trimmed,
+          casualJapanese: isJa ? trimmed : `[${trimmed}]`,
           casualReading: trimmed,
           casualRomaji: trimmed,
-          meaning: `Terjemahan untuk "${trimmed}"`,
-          explanation: `Hasil terjemahan instan untuk "${trimmed}". Diproses secara lokal agar tetap lancar di perangkat mobile.`
+          meaning: isJa ? `[Terjemahan untuk ${trimmed}]` : trimmed,
+          explanation: `Hasil terjemahan offline untuk "${trimmed}". Sambungkan ke internet untuk terjemahan online penuh.`
         });
       }
     } finally {
