@@ -1,7 +1,7 @@
 /**
  * Modul Klasifikasi Golongan Kata Bahasa Jepang (品詞分類 / Hinshi Bunrui)
  * Mendeteksi secara spesifik & teliti:
- * - Kata Benda (名詞 / Meishi) - termasuk perabotan seperti 机/tsukue, makanan, alat, dll.
+ * - Kata Benda (名詞 / Meishi) - termasuk sayur/makanan (白菜/はくさい/hakusai, 野菜/やさい), perabotan (机/tsukue), alat, dll.
  * - Satuan Bilangan / Penghitung (助数詞 / Joshuushi) & Kata Tanya Bilangan
  * - Kata Sifat -i (い形容詞) vs Kata Sifat -na (な形容詞)
  * - Kata Kerja Golongan 1 (五段), Golongan 2 (一段), Golongan 3 (不規則: する/くる)
@@ -93,6 +93,7 @@ const NA_ADJECTIVES_ENDING_IN_I = new Set([
   '綺麗', 'きれい', 'キレイ', 'kirei',
   '有名', 'ゆうめい', 'yuumei',
   '嫌い', 'きらい', 'kirai',
+  '大嫌い', 'だいきらい', 'daikirai',
   '幸い', 'さいわい', 'saiwai',
   '得意', 'とくい', 'tokui',
   '曖昧', 'あいまい', 'aimai',
@@ -108,6 +109,7 @@ const KNOWN_NA_ADJECTIVES = new Set([
   '元気', 'げんき', 'genki',
   '暇', 'ひま', 'hima',
   '好き', 'すき', 'suki',
+  '大好き', 'だいすき', 'daisuki',
   '簡単', 'かんたん', 'kantan',
   '大変', 'たいへん', 'taihen',
   '上手', 'じょうず', 'jouzu',
@@ -150,6 +152,7 @@ const KNOWN_NA_ADJECTIVES = new Set([
   '地味', 'じみ', 'jimi',
   '愉快', 'ゆかい', 'yukai',
   '快適', 'かいてき', 'kaiteki',
+  '快適な',
   '迷惑', 'めいわく', 'meiwaku',
   '邪魔', 'じゃま', 'jama',
   '残念', 'ざんねん', 'zannen',
@@ -165,7 +168,7 @@ const KNOWN_NA_ADJECTIVES = new Set([
   'ハンサム', 'hansamu',
 ]);
 
-// Daftar kata sifat-i populer
+// Daftar kata sifat-i populer & terverifikasi (Kanji, Kana, Romaji)
 const KNOWN_I_ADJECTIVES = new Set([
   '大きい', 'おおきい', 'ookii',
   '小さい', 'ちいさい', 'chiisai',
@@ -175,6 +178,7 @@ const KNOWN_I_ADJECTIVES = new Set([
   '悪い', 'わるい', 'warui',
   '暑い', 'あつい', 'atsui',
   '熱い',
+  '厚い',
   '寒い', 'さむい', 'samui',
   '冷たい', 'つめたい', 'tsumetai',
   '難しい', 'むずかしい', 'muzukashii',
@@ -187,10 +191,14 @@ const KNOWN_I_ADJECTIVES = new Set([
   '美味しい', 'おいしい', 'oishii',
   '忙しい', 'いそがしい', 'isogashii',
   '楽しい', 'たのしい', 'tanoshii',
+  '嬉しい', 'うれしい', 'ureshii',
+  '悲しい', 'かなしい', 'kanashii',
   '白い', 'しろい', 'shiroi',
   '黒い', 'くろい', 'kuroi',
   '赤い', 'あかい', 'akai',
   '青い', 'あおい', 'aoi',
+  '黄色い', 'きいろい', 'kiiroi',
+  '茶色い', 'ちゃいろい', 'chairoi',
   '近い', 'ちかい', 'chikai',
   '遠い', 'とおい', 'tooi',
   '速い', 'はやい', 'hayai',
@@ -202,6 +210,9 @@ const KNOWN_I_ADJECTIVES = new Set([
   '暖かい',
   '甘い', 'あまい', 'amai',
   '辛い', 'からい', 'karai',
+  '塩辛い', 'しおからい', 'shiokarai',
+  '苦い', 'にがい', 'nigai',
+  '酸っぱい', 'すっぱい', 'suppai',
   '重い', 'おもい', 'omoi',
   '軽い', 'かるい', 'karui',
   '広い', 'ひろい', 'hiroi',
@@ -219,6 +230,58 @@ const KNOWN_I_ADJECTIVES = new Set([
   '恥ずかしい', 'はずかしい', 'hazukashii',
   '羨ましい', 'うらやましい', 'urayamashii',
   '懐かしい', 'なつかしい', 'natsukashii',
+  '汚い', 'きたない', 'kitanai',
+  '浅い', 'あさい', 'asai',
+  '深い', 'ふかい', 'fukai',
+  '涼しい', 'すずしい', 'suzushii',
+  '激しい', 'はげしい', 'hageshii',
+  '濃い', 'こい', 'koi',
+  '薄い', 'うすい', 'usui',
+  '細い', 'ほそい', 'hosoi',
+  '太い', 'ふとい', 'futoi',
+  '珍しい', 'めずらしい', 'mezurashii',
+  '痒い', 'かゆい', 'kayui',
+  '眩しい', 'まぶしい', 'mabushii',
+  '短い', 'みじかい', 'mijikai',
+  '硬い', 'かたい', 'katai',
+  '固い',
+  '柔らかい', 'やわらかい', 'yawarakai',
+  '粗い', 'あらい', 'arai',
+  '素晴らしい', 'すばらしい', 'subarashii',
+  '細かい', 'こまかい', 'komakai',
+  '美しい', 'うつくしい', 'utsukushii',
+  '臭い', 'くさい', 'kusai',
+  '若い', 'わかい', 'wakai',
+  '詳しい', 'くわしい', 'kuwashii',
+  '正しい', 'ただしい', 'tadashii',
+  '賢い', 'かしこい', 'kashikoi',
+  '酷い', 'ひどい', 'hidoi',
+  '長い', 'ながい', 'nagai',
+  '欲しい', 'ほしい', 'hoshii',
+  '大人しい', 'おとなしい', 'otonashii',
+  '恐ろしい', 'おそろしい', 'osoroshii',
+  '惜しい', 'おしい', 'oshii',
+  '格好いい', 'かっこいい', 'kakkoii',
+  'つまらない', 'tsumaranai',
+  'くだらない', 'kudaranai',
+  'もったいない', 'mottainai',
+  '香ばしい', 'こうばしい', 'koubashii',
+  '親しい', 'したしい', 'shitashii',
+  'ぬるい', 'nurui',
+  'まずい', '不味い', 'mazui',
+  '偉い', 'えらい', 'erai',
+  '厳しい', 'きびしい', 'kibishii',
+  '可愛い', 'かわいい', 'kawaii',
+  '可笑しい', 'おかしい', 'okashii',
+  '弱い', 'よわい', 'yowai',
+  '強い', 'つよい', 'tsuyoi',
+  '怖い', 'こわい', 'kowai',
+  '丸い', 'まるい', 'marui',
+  '幼い', 'おさない', 'osanai',
+  '鋭い', 'するどい', 'surudoi',
+  '鈍い', 'にぶい', 'nibui',
+  '頼もしい', 'たのもしい', 'tanomoshii',
+  '図々しい', 'ずうずうしい', 'zuuzuushii',
 ]);
 
 // Kata kerja jebakan: Terlihat seperti Golongan 2 (-iru / -eru) tetapi sebenarnya GOLONGAN 1 (五段 / Godan)
@@ -309,6 +372,8 @@ const SPECIAL_ICHIDAN_MASU_STEMS = new Set([
   '感じます', 'かんじます', 'kanjimasu',
   '閉じます', 'とじます', 'tojimasu',
   '似ます', 'にます', 'nimasu',
+  '煮ます',
+  '過ぎます', 'すぎます', 'sugimasu',
 ]);
 
 // Kata keterangan umum (副詞 / Fukushi)
@@ -385,14 +450,40 @@ const KNOWN_EXPRESSIONS = new Set([
   '大丈夫', 'だいじょうぶ',
   '失礼します', 'しつれいします',
   '失礼しました', 'しつれいしました',
+  'あ、いけない',
+  '拝啓', 'はいけい', 'haikei',
+  '敬具', 'けいぐ', 'keigu',
 ]);
 
 // KATA BENDA (Nomina / Meishi) yang sangat umum & penting agar tidak pernah salah diklasifikasi
+// Terutama kata yang berakhiran huruf -i / -ai / -ei / -ui / -oi (seperti はくさい / sawi)
 const KNOWN_NOUN_WORDS = new Set([
-  // Perabot & Perlengkapan Rumah/Kantor
+  // Sayuran, Makanan & Minuman
+  'はくさい', '白菜', 'hakusai', // Sawi putih (KATA BENDA!)
+  'やさい', '野菜', 'yasai',     // Sayuran (KATA BENDA!)
+  '米', 'こめ', 'kome',
+  'ご飯', 'ごはん', 'gohan',
+  'パン', 'pan',
+  '肉', 'にく', 'niku',
+  '魚', 'さかな', 'sakana',
+  '卵', 'たまご', 'tamago',
+  '果物', 'くだもの', 'kudamono',
+  'きゅうり', 'kyuuri',
+  '胡椒', 'こしょう', 'koshou',
+  'バター', 'bataa',
+  'チョコレート', 'chokoreeto',
+  'コーヒー', 'koohii',
+  'お茶', 'おちゃ', 'ocha',
+  '水', 'みず', 'mizu',
+  '牛乳', 'ぎゅうにゅう', 'gyuunyuu',
+  '西瓜', 'すいか', 'suika',
+  '水筒', 'すいとう', 'suitou',
+  '水泳', 'すいえい', 'suiei',
+
+  // Perabot, Fasilitas & Perlengkapan Rumah/Kantor
   '机', 'つくえ', 'tsukue', // Meja (KATA BENDA!)
   '椅子', 'いす', 'isu',     // Kursi (KATA BENDA!)
-  'テーブル', 'teeburu',      // Meja makan
+  'テーブル', 'teeburu',
   'ベッド', 'beddo',
   'ドア', 'doa',
   '窓', 'まど', 'mado',
@@ -405,13 +496,20 @@ const KNOWN_NOUN_WORDS = new Set([
   'パソコン', 'pasokon',
   'エアコン', 'eakon',
   '冷蔵庫', 'れいぞうこ', 'reizouko',
-  '洗濯機', 'せんたくき', 'sentakuki', // Mesin cuci
-  '掃除機', 'そうじき', 'soujiki',     // Mesin penyedot debu
-  '受付', 'うけつけ', 'uketsuke',     // Meja resepsionis
-  'エンジン', 'enjin',                // Mesin kendaraan
-  'メロディー', 'merodii',            // Melodi
+  '洗濯機', 'せんたくき', 'sentakuki',
+  '掃除機', 'そうじき', 'soujiki',
+  '受付', 'うけつけ', 'uketsuke',
+  'エンジン', 'enjin',
+  'メロディー', 'merodii',
+  'ガス台', 'ガスだい', 'gasudai', // Kompor gas
+  'バス停', 'バスてい', 'basutei', // Halte bis
+  'トイレ', 'お手洗い', 'おてあらい', 'tearai', // Toilet / Cuci tangan
+  '手洗い', 'てあらい',
 
-  // Benda Sehari-hari, Pakaian & Makanan
+  // Benda Sehari-hari, Pakaian, Aksesori & Dokumen
+  '時計', 'とけい', 'tokei',
+  '携帯', 'けいたい', 'keitai',
+  '財布', 'さいふ', 'saifu',
   '本', 'ほん', 'hon',
   '辞書', 'じしょ', 'jisho',
   '雑誌', 'ざっし', 'zasshi',
@@ -424,10 +522,8 @@ const KNOWN_NOUN_WORDS = new Set([
   'ボールペン', 'boorupen',
   'シャープペンシル', 'shaapopenshiru',
   '鍵', 'かぎ', 'kagi',
-  '時計', 'とけい', 'tokei',
   '傘', 'かさ', 'kasa',
   '鞄', 'かばん', 'kaban',
-  '財布', 'さいふ', 'saifu',
   '靴', 'くつ', 'kutsu',
   '靴下', 'くつした', 'kutsushita',
   'シャツ', 'shatsu',
@@ -435,35 +531,55 @@ const KNOWN_NOUN_WORDS = new Set([
   'ネクタイ', 'nekutai',
   '服', 'ふく', 'fuku',
   '眼鏡', 'めがね', 'megane',
-  'チョコレート', 'chokoreeto',
-  'コーヒー', 'koohii',
-  'お茶', 'おちゃ', 'ocha',
-  '水', 'みず', 'mizu',
-  '牛乳', 'ぎゅうにゅう', 'gyuunyuu',
-  'ご飯', 'ごはん', 'gohan',
-  'パン', 'pan',
-  '肉', 'にく', 'niku',
-  '魚', 'さかな', 'sakana',
-  '卵', 'たまご', 'tamago',
-  '野菜', 'やさい', 'yasai',
-  '果物', 'くだもの', 'kudamono',
-  '米', 'こめ', 'kome',       // Beras
-  '熊', 'くま', 'kuma',       // Beruang
-  '胡椒', 'こしょう', 'koshou', // Merica
-  'きゅうり', 'kyuuri',       // Mentimun
-  'バター', 'bataa',          // Mentega
+  '種類', 'しゅるい', 'shurui',
+  '書類', 'しょるい', 'shorui',
+  '切符', 'きっぷ', 'kippu',
+  'チケット', 'chiketto',
+  '救命胴衣', 'きゅうめいどうい',
 
-  // Warna sebagai kata benda
-  '赤', 'あか', 'aka',
-  '青', 'あお', 'ao',
-  '白', 'しろ', 'shiro',
-  '黒', 'くろ', 'kuro',
-  '緑', 'みどり', 'midori',
-  '黄色', 'きいろ', 'kiiro',
-  '茶色', 'ちゃいろ', 'chairo',
-  'ピンク', 'pinku',
-  'オレンジ', 'orenji',
-  '紫', 'むらさき', 'murasaki',
+  // Konsep, Hubungan Sosial, Acara & Komunikasi (Berakhiran -i)
+  '姉妹', 'しまい', 'shimai',       // Saudara perempuan (KATA BENDA!)
+  '兄弟', 'きょうだい', 'kyoudai',   // Saudara (KATA BENDA!)
+  '海外', 'かいがい', 'kaigai',     // Luar negeri (KATA BENDA!)
+  '大会', 'たいかい', 'taikai',     // Turnamen / pertemuan besar (KATA BENDA!)
+  '二次会', 'にじかい', 'nijikai',   // Pesta ronde kedua (KATA BENDA!)
+  '試合', 'しあい', 'shiai',         // Pertandingan (KATA BENDA!)
+  'お見合い', 'おみあい', 'omiai',   // Pertemuan perjodohan (KATA BENDA!)
+  'お見舞い', 'おみまい', 'omimai',   // Besuk orang sakit (KATA BENDA!)
+  '間違い', 'まちがい', 'machigai', // Kesalahan (KATA BENDA!)
+  '関係', 'かんけい', 'kankei',     // Hubungan (KATA BENDA!)
+  '年齢', 'ねんれい', 'nenrei',     // Umur (KATA BENDA!)
+  '具合', 'ぐあい', 'guai',         // Kondisi/keadaan (KATA BENDA!)
+  'におい', '匂い', '臭い', 'nioi',  // Bau / aroma (KATA BENDA!)
+  '大勢', 'おおぜい', 'oozei',       // Banyak orang (KATA BENDA!)
+  '芸', 'げい', 'gei',               // Seni / keahlian (KATA BENDA!)
+  '愛', 'あい', 'ai',               // Cinta (KATA BENDA!)
+  '会', 'かい', 'kai',
+  '世界', 'せかい', 'sekai',
+  '時代', 'じだい', 'jidai',
+  '機械', 'きかい', 'kikai',
+  '機会', 'kikai',
+  '未来', 'みらい', 'mirai',
+  '案内', 'あんない', 'annai',
+  '問題', 'もんだい', 'mondai',
+  '宿題', 'しゅくだい', 'shukudai',
+  '話題', 'わだい', 'wadai',
+  '後悔', 'こうかい', 'koukai',
+  '反省', 'はんせい', 'hansei',
+  '賛成', 'さんせい', 'sansei',
+  '反対', 'はんたい', 'hantai',
+  '丁寧体', 'ていねいたい', 'teineitai',
+  '共生', 'きょうせい', 'kyousei',
+  '朝礼', 'ちょうれい', 'chourei',
+  '注意', 'ちゅうい', 'chuui',
+  '足元注意', 'あしもとちゅうい',
+  '販売', 'はんばい', 'hanbai',
+  '向かい', 'むかい', 'mukai',
+  'お礼', 'おれい', 'orei',
+  '違い', 'ちがい', 'chigai',
+  '手伝い', 'てつだい', 'tetsudai',
+  'お祝い', 'おいわい', 'oiwai',
+  '熊', 'くま', 'kuma',
 
   // Penominalan & Besaran (~sa)
   '重さ', 'おもさ', 'omosa',
@@ -512,9 +628,9 @@ export function getWordClassification(item: CardItem): WordClassification {
   const meaning = (item.meaningId || '').toLowerCase();
 
   // Bersihkan teks bahasa Jepang dari tanda kurung kanji/partikel seperti (机), （を）, (〜分)
-  const cleanJp = jp.replace(/[（\(].*?[）\)]/g, '').trim();
-  const cleanFuri = furi.replace(/[（\(].*?[）\)]/g, '').trim();
-  const cleanReading = reading.replace(/[（\(].*?[）\)]/g, '').trim();
+  const cleanJp = jp.replace(/[（\(].*?[）\)]/g, '').replace(/\[.*?\]/g, '').trim();
+  const cleanFuri = furi.replace(/[（\(].*?[）\)]/g, '').replace(/\[.*?\]/g, '').trim();
+  const cleanReading = reading.replace(/[（\(].*?[）\)]/g, '').replace(/\[.*?\]/g, '').trim();
 
   // 1. Kategori Aksara Dasar & Simbol
   if (item.category === 'hiragana' || item.category === 'katakana') {
@@ -553,65 +669,28 @@ export function getWordClassification(item: CardItem): WordClassification {
     };
   }
 
-  // 2. Subkategori KATA BENDA Eksplisit -> Pasti Kata Benda (名詞)!
-  // Mencegah semua nomina rumah tangga, tempat, makanan, dsb tertukar dengan verba
-  if (NOUN_SUBCATEGORIES.has(subCat)) {
-    return createNounInfo();
-  }
+  // 2. Satuan Bilangan / Penghitung (助数詞) & Kata Tanya Bilangan
+  const isGrammarPattern =
+    cleanJp.endsWith('ます') ||
+    cleanJp.endsWith('ない') ||
+    cleanJp.endsWith('です') ||
+    cleanJp.endsWith('こと') ||
+    cleanJp.includes('て') ||
+    cleanJp.includes('た') ||
+    cleanJp.includes('申') ||
+    cleanJp.length > 7;
 
-  // Kata serapan Katakana murni (seperti クラス/kelas, グラス/gelas, バス/bus, ホテル/hotel, ジュース/jus)
-  // yang tidak berakhiran する/suru adalah KATA BENDA (Nomina / Meishi)
-  const isPureKatakana = /^[\u30A0-\u30FF\u30FC\s・]+$/.test(cleanJp);
-  if (isPureKatakana && !cleanJp.endsWith('する') && !cleanReading.endsWith('suru')) {
-    return createNounInfo();
-  }
-
-  // 3. Cek Kata Benda Spesifik dari Kamus Terverifikasi (seperti 机/meja, 椅子/kursi, 米/beras, dll.)
   if (
-    KNOWN_NOUN_WORDS.has(cleanJp) ||
-    KNOWN_NOUN_WORDS.has(jp) ||
-    KNOWN_NOUN_WORDS.has(cleanReading) ||
-    KNOWN_NOUN_WORDS.has(reading)
-  ) {
-    return createNounInfo();
-  }
-
-  // 4. Satuan Bilangan / Penghitung (助数詞) & Kata Tanya Bilangan
-  if (
-    cleanJp.startsWith('～') ||
-    cleanJp.startsWith('〜') ||
-    cleanJp.startsWith('何') ||
-    cleanFuri.startsWith('なん') ||
-    cleanReading.startsWith('nan') ||
-    cleanReading.startsWith('~')
+    !isGrammarPattern &&
+    (cleanJp.startsWith('～') ||
+      cleanJp.startsWith('〜') ||
+      cleanReading.startsWith('~') ||
+      (cleanJp.startsWith('何') && (cleanJp.length <= 4 || cleanFuri.startsWith('なん') || cleanReading.startsWith('nan'))))
   ) {
     return createCounterNounInfo();
   }
 
-  // 5. Cek Petunjuk Eksplisit dari Notes
-  if (notes.includes('gol. 1') || notes.includes('golongan 1') || notes.includes('godan')) {
-    return createVerb1Info();
-  }
-  if (notes.includes('gol. 2') || notes.includes('golongan 2') || notes.includes('ichidan')) {
-    return createVerb2Info();
-  }
-  if (
-    notes.includes('gol. 3') ||
-    notes.includes('golongan 3') ||
-    notes.includes('fukisoku') ||
-    notes.includes('suru') ||
-    notes.includes('kuru')
-  ) {
-    return createVerb3Info();
-  }
-  if (notes.includes('sifat-i') || notes.includes('i-adj') || notes.includes('kata sifat i')) {
-    return createAdjIInfo();
-  }
-  if (notes.includes('sifat-na') || notes.includes('na-adj') || notes.includes('kata sifat na') || notes.includes('[na]')) {
-    return createAdjNaInfo();
-  }
-
-  // 6. Ungkapan & Salam (挨拶・表現 / Aisatsu・Hyougen)
+  // 3. Ungkapan & Salam (挨拶・表現 / Aisatsu・Hyougen)
   if (
     item.category === 'phrases' ||
     item.category === 'irodori' ||
@@ -630,73 +709,9 @@ export function getWordClassification(item: CardItem): WordClassification {
     return createPhraseInfo();
   }
 
-  // 7. Kata Sambung (接続詞 / Setsuzokushi)
-  if (
-    KNOWN_CONJUNCTIONS.has(cleanJp) ||
-    KNOWN_CONJUNCTIONS.has(cleanFuri) ||
-    subCat.includes('sambung') ||
-    notes.includes('setsuzoku')
-  ) {
-    return createConjunctionInfo();
-  }
-
-  // 8. Kata Keterangan (副詞 / Fukushi)
-  if (
-    subCat === 'keterangan_fukushi' ||
-    subCat.includes('fukushi') ||
-    notes.includes('fukushi') ||
-    KNOWN_ADVERBS.has(cleanJp) ||
-    KNOWN_ADVERBS.has(cleanFuri) ||
-    KNOWN_ADVERBS.has(cleanReading)
-  ) {
-    return createAdverbInfo();
-  }
-
-  // 9. Kata Sifat (形容詞 / Keiyoushi)
-  const isExplicitAdj =
-    ADJ_SUBCATEGORIES.has(subCat) ||
-    notes.includes('keiyoushi') ||
-    meaning.includes('(kata sifat)') ||
-    meaning.includes('kata sifat') ||
-    jp.includes('[な]') ||
-    jp.includes('（な）') ||
-    jp.includes('(な)');
-
-  if (isExplicitAdj) {
-    if (NA_ADJECTIVES_ENDING_IN_I.has(cleanJp) || NA_ADJECTIVES_ENDING_IN_I.has(cleanFuri)) {
-      return createAdjNaInfo();
-    }
-    if (KNOWN_NA_ADJECTIVES.has(cleanJp) || KNOWN_NA_ADJECTIVES.has(cleanFuri)) {
-      return createAdjNaInfo();
-    }
-    if (cleanJp.endsWith('い') || cleanFuri.endsWith('い') || cleanReading.endsWith('i')) {
-      return createAdjIInfo();
-    }
-    return createAdjNaInfo();
-  }
-
-  if (
-    NA_ADJECTIVES_ENDING_IN_I.has(cleanJp) ||
-    NA_ADJECTIVES_ENDING_IN_I.has(cleanFuri) ||
-    KNOWN_NA_ADJECTIVES.has(cleanJp) ||
-    KNOWN_NA_ADJECTIVES.has(cleanFuri)
-  ) {
-    return createAdjNaInfo();
-  }
-
-  if (
-    KNOWN_I_ADJECTIVES.has(cleanJp) ||
-    KNOWN_I_ADJECTIVES.has(cleanFuri) ||
-    KNOWN_I_ADJECTIVES.has(cleanReading)
-  ) {
-    return createAdjIInfo();
-  }
-
-  // 10. Klasifikasi KATA KERJA (動詞 / Doushi)
-  // Aturan teliti: Kata kerja HANYA diklasifikasikan jika berakhiran ~ます atau memiliki akhiran verba Jepang yang sah!
-  // Kata benda seperti "meja", "merah", "beras", "mentega" TIDAK AKAN PERNAH salah masuk ke sini.
+  // 4. KATA KERJA BENTUK ~ます (動詞 ます形)
+  // Aturan utama: Kata berakhiran ~ます adalah Kata Kerja (kecuali salam tetap di atas).
   const isMasuVerb = cleanJp.endsWith('ます') || cleanReading.endsWith('masu');
-
   if (isMasuVerb) {
     // Golongan 3: 不規則 (shimasu / kimasu)
     if (
@@ -736,7 +751,52 @@ export function getWordClassification(item: CardItem): WordClassification {
     return createVerb1Info();
   }
 
-  // Verba bentuk kamus (辞書形 / Jishokei)
+  // 5. Cek Petunjuk Eksplisit dari Notes / Mnemonic
+  if (notes.includes('gol. 1') || notes.includes('golongan 1') || notes.includes('godan')) {
+    return createVerb1Info();
+  }
+  if (notes.includes('gol. 2') || notes.includes('golongan 2') || notes.includes('ichidan')) {
+    return createVerb2Info();
+  }
+  if (
+    notes.includes('gol. 3') ||
+    notes.includes('golongan 3') ||
+    notes.includes('fukisoku') ||
+    notes.includes('suru') ||
+    notes.includes('kuru')
+  ) {
+    return createVerb3Info();
+  }
+  if (notes.includes('sifat-i') || notes.includes('i-adj') || notes.includes('kata sifat i')) {
+    return createAdjIInfo();
+  }
+  if (notes.includes('sifat-na') || notes.includes('na-adj') || notes.includes('kata sifat na') || notes.includes('[na]')) {
+    return createAdjNaInfo();
+  }
+
+  // 6. Kata Sambung (接続詞 / Setsuzokushi)
+  if (
+    KNOWN_CONJUNCTIONS.has(cleanJp) ||
+    KNOWN_CONJUNCTIONS.has(cleanFuri) ||
+    subCat.includes('sambung') ||
+    notes.includes('setsuzoku')
+  ) {
+    return createConjunctionInfo();
+  }
+
+  // 7. Kata Keterangan (副詞 / Fukushi)
+  if (
+    subCat === 'keterangan_fukushi' ||
+    subCat.includes('fukushi') ||
+    notes.includes('fukushi') ||
+    KNOWN_ADVERBS.has(cleanJp) ||
+    KNOWN_ADVERBS.has(cleanFuri) ||
+    KNOWN_ADVERBS.has(cleanReading)
+  ) {
+    return createAdverbInfo();
+  }
+
+  // 8. Kata Kerja Bentuk Kamus (辞書形 / Jishokei)
   const isVerbSub = VERB_SUBCATEGORIES.has(subCat);
   const isKnownCuratedVerb = KNOWN_CURATED_VERBS.has(cleanJp) || KNOWN_CURATED_VERBS.has(cleanReading);
   const endsWithSuru = cleanJp.endsWith('する') || cleanReading.endsWith('suru') || cleanJp.endsWith('為る');
@@ -771,17 +831,74 @@ export function getWordClassification(item: CardItem): WordClassification {
     return createVerb1Info();
   }
 
-  // 11. Cek kata sifat-i umum yang belum terdeteksi (berakhiran huruf い dan bukan kata benda)
+  // 9. Kata Sifat -na (形容動詞 / Keiyoudoushi)
+  const isExplicitNaAdj =
+    jp.includes('[な]') ||
+    jp.includes('（な）') ||
+    jp.includes('(な)') ||
+    reading.includes('(na)') ||
+    reading.includes('[na]') ||
+    reading.endsWith(' na');
+
   if (
-    (cleanJp.endsWith('い') || cleanReading.endsWith('i')) &&
-    !KNOWN_NOUN_WORDS.has(cleanJp) &&
-    cleanJp.length >= 2 &&
-    (/[あ-ん]い$/.test(cleanJp) || /[aiueo]i$/.test(cleanReading)) &&
-    (meaning.includes('sifat') || meaning.includes('yang ') || cleanJp.length <= 4)
+    isExplicitNaAdj ||
+    NA_ADJECTIVES_ENDING_IN_I.has(cleanJp) ||
+    NA_ADJECTIVES_ENDING_IN_I.has(cleanFuri) ||
+    KNOWN_NA_ADJECTIVES.has(cleanJp) ||
+    KNOWN_NA_ADJECTIVES.has(cleanFuri)
   ) {
-    // Pengecualian kata benda berakhiran i (misal tokei, keitai, mirai)
-    if (!['時計', 'とけい', '携帯', 'けいたい', '未来', 'みらい', '機械', 'きかい'].includes(cleanJp)) {
+    return createAdjNaInfo();
+  }
+
+  // 10. KATA BENDA SPESIFIK & NOMINA TERVERIFIKASI
+  // Pastikan nomina seperti 白菜/はくさい/sawi, 野菜/やさい, 姉妹, 海外, 関係, 大会, ガス台, 間違い, におい
+  // SELALU diklasifikasikan sebagai KATA BENDA dan tidak pernah salah menjadi kata sifat!
+  if (
+    KNOWN_NOUN_WORDS.has(cleanJp) ||
+    KNOWN_NOUN_WORDS.has(jp) ||
+    KNOWN_NOUN_WORDS.has(cleanReading) ||
+    KNOWN_NOUN_WORDS.has(reading)
+  ) {
+    return createNounInfo();
+  }
+
+  // Jika kata majemuk dengan tanda pemisah (misal: トイレ / お手洗い)
+  if (cleanJp.includes('/') || cleanJp.includes('・') || cleanJp.includes('、')) {
+    const tokens = cleanJp.split(/[\/・、]/).map((t) => t.trim());
+    if (tokens.some((t) => KNOWN_NOUN_WORDS.has(t))) {
+      return createNounInfo();
+    }
+  }
+
+  // Kata serapan Katakana murni (seperti クラス, グラス, バス, ホテル, ジュース)
+  const isPureKatakana = /^[\u30A0-\u30FF\u30FC\s・]+$/.test(cleanJp);
+  if (isPureKatakana && !cleanJp.endsWith('する') && !cleanReading.endsWith('suru')) {
+    return createNounInfo();
+  }
+
+  // Subkategori KATA BENDA eksplisit
+  if (NOUN_SUBCATEGORIES.has(subCat)) {
+    return createNounInfo();
+  }
+
+  // 11. Kata Sifat -i (い形容詞 / Keiyoushi)
+  // Syarat mutlak:
+  // 1) TIDAK BOLEH berakhiran huruf Kanji (seperti 白菜, 海外, 姉妹, 関係, 拝啓, 具合, 賛成, 大会) karena kata sifat-i wajib memiliki okurigana hiragana い di akhir.
+  // 2) Terdaftar di KNOWN_I_ADJECTIVES atau subCategory kata_sifat/adjective.
+  const endsInKanji = /[\u4E00-\u9FAF]$/.test(cleanJp);
+  if (!endsInKanji) {
+    if (
+      KNOWN_I_ADJECTIVES.has(cleanJp) ||
+      KNOWN_I_ADJECTIVES.has(cleanFuri) ||
+      KNOWN_I_ADJECTIVES.has(cleanReading)
+    ) {
       return createAdjIInfo();
+    }
+
+    if (ADJ_SUBCATEGORIES.has(subCat) && (cleanJp.endsWith('い') || cleanReading.endsWith('i'))) {
+      if (!NA_ADJECTIVES_ENDING_IN_I.has(cleanJp) && !KNOWN_NA_ADJECTIVES.has(cleanJp)) {
+        return createAdjIInfo();
+      }
     }
   }
 
@@ -818,11 +935,23 @@ function createPhraseInfo(): WordClassification {
   return {
     type: 'phrase',
     label: 'Ungkapan & Salam (挨拶・表現)',
-    shortLabel: 'Ungkapan / Salam',
+    shortLabel: 'Ungkapan & Salam',
     kanjiLabel: '表現',
-    badgeClass: 'bg-cyan-50 text-cyan-700 border-cyan-200/80',
+    badgeClass: 'bg-pink-50 text-pink-700 border-pink-200/80',
     icon: '💬',
-    grammarHint: 'Frasa sapaan atau percakapan praktis sehari-hari.',
+    grammarHint: 'Salam, etika percakapan sehari-hari, atau ungkapan tetap.',
+  };
+}
+
+function createAdverbInfo(): WordClassification {
+  return {
+    type: 'adverb',
+    label: 'Kata Keterangan (副詞 / Fukushi)',
+    shortLabel: 'Kata Keterangan',
+    kanjiLabel: '副詞',
+    badgeClass: 'bg-cyan-50 text-cyan-700 border-cyan-200/80',
+    icon: '✨',
+    grammarHint: 'Menjelaskan intensitas, frekuensi, atau cara suatu tindakan.',
   };
 }
 
@@ -834,19 +963,7 @@ function createConjunctionInfo(): WordClassification {
     kanjiLabel: '接続詞',
     badgeClass: 'bg-teal-50 text-teal-700 border-teal-200/80',
     icon: '🔗',
-    grammarHint: 'Menghubungkan dua klausa, kalimat, atau frasa.',
-  };
-}
-
-function createAdverbInfo(): WordClassification {
-  return {
-    type: 'adverb',
-    label: 'Kata Keterangan (副詞 / Fukushi)',
-    shortLabel: 'Kata Keterangan',
-    kanjiLabel: '副詞',
-    badgeClass: 'bg-pink-50 text-pink-700 border-pink-200/80',
-    icon: '🧭',
-    grammarHint: 'Menjelaskan kata kerja, kata sifat, atau tingkat intensitas.',
+    grammarHint: 'Menghubungkan dua klausa, kalimat, atau alur penalaran.',
   };
 }
 
@@ -856,7 +973,7 @@ function createAdjIInfo(): WordClassification {
     label: 'Kata Sifat -i (い形容詞)',
     shortLabel: 'Kata Sifat -i',
     kanjiLabel: 'い形容詞',
-    badgeClass: 'bg-amber-50 text-amber-800 border-amber-300 font-extrabold',
+    badgeClass: 'bg-amber-50 text-amber-800 border-amber-300',
     icon: '✨',
     grammarHint: 'Berakhiran ~i. Negatif: buang i + kunai (暑い -> 暑くない). Lampau: ~katta.',
   };
@@ -868,9 +985,9 @@ function createAdjNaInfo(): WordClassification {
     label: 'Kata Sifat -na (な形容詞)',
     shortLabel: 'Kata Sifat -na',
     kanjiLabel: 'な形容詞',
-    badgeClass: 'bg-purple-50 text-purple-800 border-purple-300 font-extrabold',
-    icon: '🌸',
-    grammarHint: 'Memerlukan "na" sebelum kata benda (静かな町). Negatif: ~ja arimasen / dewa nai.',
+    badgeClass: 'bg-lime-50 text-lime-800 border-lime-300',
+    icon: '🏷️',
+    grammarHint: 'Membutuhkan ~na saat menerangkan benda (静かな部屋). Negatif: ~dewa arimasen / ja nai.',
   };
 }
 
@@ -878,11 +995,11 @@ function createVerb1Info(): WordClassification {
   return {
     type: 'verb_1',
     label: 'Kata Kerja Gol. 1 (五段 / Godan)',
-    shortLabel: 'Kata Kerja Gol. 1',
+    shortLabel: 'Kata Kerja (Gol. 1)',
     kanjiLabel: '五段動詞',
-    badgeClass: 'bg-blue-50 text-blue-800 border-blue-300 font-extrabold',
+    badgeClass: 'bg-blue-50 text-blue-700 border-blue-200/80 font-bold',
     icon: '⚡',
-    grammarHint: 'Golongan 1 (5 vokal): akhiran vokal ~u berganti ~i saat ditambah -masu (行く -> 行きます).',
+    grammarHint: 'Berakhiran vokal i sebelum ~masu (ikimasu, nomimasu). Perubahan te/ta memakai pola i, chi, ri -> tte.',
   };
 }
 
@@ -890,11 +1007,11 @@ function createVerb2Info(): WordClassification {
   return {
     type: 'verb_2',
     label: 'Kata Kerja Gol. 2 (一段 / Ichidan)',
-    shortLabel: 'Kata Kerja Gol. 2',
+    shortLabel: 'Kata Kerja (Gol. 2)',
     kanjiLabel: '一段動詞',
-    badgeClass: 'bg-sky-50 text-sky-800 border-sky-300 font-extrabold',
-    icon: '🌊',
-    grammarHint: 'Golongan 2 (akhiran ~iru/~eru): cukup buang "ru" dan tambah -masu (食べる -> 食べます).',
+    badgeClass: 'bg-indigo-50 text-indigo-700 border-indigo-200/80 font-bold',
+    icon: '⚡',
+    grammarHint: 'Berakhiran vokal e sebelum ~masu (tabemasu, nemasu) atau verba spesial i-dan (mimasu, okimasu). Cukup buang masu + te/ta.',
   };
 }
 
@@ -902,10 +1019,10 @@ function createVerb3Info(): WordClassification {
   return {
     type: 'verb_3',
     label: 'Kata Kerja Gol. 3 (不規則 / Fukisoku)',
-    shortLabel: 'Kata Kerja Gol. 3',
+    shortLabel: 'Kata Kerja (Gol. 3)',
     kanjiLabel: '不規則動詞',
-    badgeClass: 'bg-indigo-50 text-indigo-800 border-indigo-300 font-extrabold',
-    icon: '🌀',
-    grammarHint: 'Golongan 3 (Tidak Beraturan): hanya "kuru" (datang) dan "suru" (melakukan) serta bentuk gabungannya.',
+    badgeClass: 'bg-purple-50 text-purple-700 border-purple-200/80 font-bold',
+    icon: '⚡',
+    grammarHint: 'Kata kerja tidak beraturan: Shimasu (suru) dan Kimasu (kuru).',
   };
 }

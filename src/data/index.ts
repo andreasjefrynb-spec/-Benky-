@@ -124,7 +124,7 @@ export const shinKanzenCardItems: CardItem[] = shinKanzenData.flatMap(sk =>
   sk.patternsOrPoints.map((pt, idx) => ({
     id: `shinkanzen-${sk.id}-${idx}`,
     japanese: pt.title,
-    reading: pt.formula,
+    reading: pt.formula || pt.title,
     meaningId: pt.nuance,
     category: 'shinkanzen' as MainCategory,
     subCategory: `shinkanzen_${sk.level}`,

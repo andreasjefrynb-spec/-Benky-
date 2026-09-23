@@ -16,7 +16,7 @@
   {
     "id": "voc-c-0002",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "〜かい",
     "kanji": "地下",
     "reading": "~kai (~gai)",
@@ -30,7 +30,7 @@
   {
     "id": "voc-c-0003",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "〜さん",
     "kanji": "",
     "reading": "~san",
@@ -44,7 +44,7 @@
   {
     "id": "voc-c-0004",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "〜じ",
     "kanji": "今",
     "reading": "~ji",
@@ -58,7 +58,7 @@
   {
     "id": "voc-c-0005",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "〜だい",
     "kanji": "人",
     "reading": "~dai",
@@ -72,7 +72,7 @@
   {
     "id": "voc-c-0006",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "〜にん",
     "kanji": "人",
     "reading": "~nin",
@@ -86,7 +86,7 @@
   {
     "id": "voc-c-0007",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "〜ふん",
     "kanji": "時",
     "reading": "~fun / ~pun",
@@ -100,7 +100,7 @@
   {
     "id": "voc-c-0008",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "〜まい",
     "kanji": "台",
     "reading": "~mai",
@@ -114,7 +114,7 @@
   {
     "id": "voc-c-0009",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "〜メートル",
     "kanji": "",
     "reading": "~meetoru",
@@ -198,7 +198,7 @@
   {
     "id": "voc-c-0015",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あいます",
     "kanji": "合います",
     "reading": "aimasu",
@@ -226,7 +226,7 @@
   {
     "id": "voc-c-0017",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あおい",
     "kanji": "青い",
     "reading": "aoi",
@@ -254,7 +254,7 @@
   {
     "id": "voc-c-0019",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あかい",
     "kanji": "赤い",
     "reading": "akai",
@@ -282,7 +282,7 @@
   {
     "id": "voc-c-0021",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あかるい",
     "kanji": "明るい",
     "reading": "akarui",
@@ -296,7 +296,7 @@
   {
     "id": "voc-c-0022",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あがります",
     "kanji": "上がります",
     "reading": "agarimasu (ga)",
@@ -352,7 +352,7 @@
   {
     "id": "voc-c-0026",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あきます",
     "kanji": "開きます",
     "reading": "akimasu (ga)",
@@ -366,7 +366,7 @@
   {
     "id": "voc-c-0027",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あきらめます",
     "kanji": "",
     "reading": "akiramemasu",
@@ -380,7 +380,7 @@
   {
     "id": "voc-c-0028",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あけます",
     "kanji": "開けます",
     "reading": "akemasu",
@@ -394,7 +394,7 @@
   {
     "id": "voc-c-0029",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あげます",
     "kanji": "上げます",
     "reading": "agemasu",
@@ -506,7 +506,7 @@
   {
     "id": "voc-c-0037",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あじがします",
     "kanji": "味がします",
     "reading": "ajigashimasu",
@@ -534,7 +534,7 @@
   {
     "id": "voc-c-0039",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あずかります",
     "kanji": "預かります",
     "reading": "azukarimasu",
@@ -590,7 +590,7 @@
   {
     "id": "voc-c-0043",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あそびます",
     "kanji": "遊びます",
     "reading": "asobimasu",
@@ -604,7 +604,7 @@
   {
     "id": "voc-c-0044",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あたたかい",
     "kanji": "暖かい、温かい",
     "reading": "atatakai",
@@ -632,7 +632,7 @@
   {
     "id": "voc-c-0046",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あたまがいたい",
     "kanji": "頭が痛い",
     "reading": "atamagaitai",
@@ -646,7 +646,7 @@
   {
     "id": "voc-c-0047",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あたらしい",
     "kanji": "新しい",
     "reading": "atarashii",
@@ -660,7 +660,7 @@
   {
     "id": "voc-c-0048",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あたります",
     "kanji": "当たります",
     "reading": "atarimasu (ga)",
@@ -702,7 +702,7 @@
   {
     "id": "voc-c-0051",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あつい",
     "kanji": "厚い",
     "reading": "atsui",
@@ -716,7 +716,7 @@
   {
     "id": "voc-c-0052",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あつまります",
     "kanji": "集まります",
     "reading": "atsumarimasu",
@@ -730,7 +730,7 @@
   {
     "id": "voc-c-0053",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あつめます",
     "kanji": "集めます",
     "reading": "atsumemasu",
@@ -926,7 +926,7 @@
   {
     "id": "voc-c-0067",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あびます",
     "kanji": "浴びます",
     "reading": "abimasu",
@@ -968,7 +968,7 @@
   {
     "id": "voc-c-0070",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あまい",
     "kanji": "甘い",
     "reading": "amai",
@@ -1038,7 +1038,7 @@
   {
     "id": "voc-c-0075",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あやまります",
     "kanji": "謝ります",
     "reading": "ayamarimasu",
@@ -1052,7 +1052,7 @@
   {
     "id": "voc-c-0076",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あらいます",
     "kanji": "洗います",
     "reading": "araimasu",
@@ -1080,7 +1080,7 @@
   {
     "id": "voc-c-0078",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あります",
     "kanji": "",
     "reading": "arimasu",
@@ -1108,7 +1108,7 @@
   {
     "id": "voc-c-0080",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あるきます",
     "kanji": "歩きます",
     "reading": "arukimasu",
@@ -1206,7 +1206,7 @@
   {
     "id": "voc-c-0087",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あんしんします",
     "kanji": "安心します",
     "reading": "anshin shimasu",
@@ -1262,7 +1262,7 @@
   {
     "id": "voc-c-0091",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あんないします",
     "kanji": "案内します",
     "reading": "annai shimasu",
@@ -1318,7 +1318,7 @@
   {
     "id": "voc-c-0095",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "いい",
     "kanji": "",
     "reading": "ii (yoi)",
@@ -1430,7 +1430,7 @@
   {
     "id": "voc-c-0103",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いいます",
     "kanji": "言います",
     "reading": "iimasu",
@@ -1472,7 +1472,7 @@
   {
     "id": "voc-c-0106",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いかします",
     "kanji": "生かします",
     "reading": "ikashimasu",
@@ -1500,7 +1500,7 @@
   {
     "id": "voc-c-0108",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いきます",
     "kanji": "行きます",
     "reading": "ikimasu",
@@ -1640,7 +1640,7 @@
   {
     "id": "voc-c-0118",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いじめます",
     "kanji": "",
     "reading": "ijimemasu",
@@ -1696,7 +1696,7 @@
   {
     "id": "voc-c-0122",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "いそがしい",
     "kanji": "忙しい",
     "reading": "isogashii",
@@ -1710,7 +1710,7 @@
   {
     "id": "voc-c-0123",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いそぎます",
     "kanji": "急ぎます",
     "reading": "isogimasu",
@@ -1724,7 +1724,7 @@
   {
     "id": "voc-c-0124",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "いたい",
     "kanji": "痛い",
     "reading": "itai",
@@ -1738,7 +1738,7 @@
   {
     "id": "voc-c-0125",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いたします",
     "kanji": "",
     "reading": "itashimasu",
@@ -2158,7 +2158,7 @@
   {
     "id": "voc-c-0155",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "います",
     "kanji": "",
     "reading": "imasu",
@@ -2284,7 +2284,7 @@
   {
     "id": "voc-c-0164",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いやがります",
     "kanji": "嫌がります",
     "reading": "iyagarimasu",
@@ -2368,7 +2368,7 @@
   {
     "id": "voc-c-0170",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いらっしゃいます",
     "kanji": "",
     "reading": "irasshaimasu",
@@ -2410,7 +2410,7 @@
   {
     "id": "voc-c-0173",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いります",
     "kanji": "要ります",
     "reading": "irimasu",
@@ -2424,7 +2424,7 @@
   {
     "id": "voc-c-0174",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いれます",
     "kanji": "入れます",
     "reading": "iremasu",
@@ -2550,7 +2550,7 @@
   {
     "id": "voc-c-0183",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うえます",
     "kanji": "植えます",
     "reading": "uemasu",
@@ -2564,7 +2564,7 @@
   {
     "id": "voc-c-0184",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うかがいます",
     "kanji": "伺います",
     "reading": "ukagaimasu",
@@ -2592,7 +2592,7 @@
   {
     "id": "voc-c-0186",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うけます",
     "kanji": "見つけます",
     "reading": "ukemasu",
@@ -2606,7 +2606,7 @@
   {
     "id": "voc-c-0187",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うごかします",
     "kanji": "動かします",
     "reading": "ugokashimasu",
@@ -2620,7 +2620,7 @@
   {
     "id": "voc-c-0188",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うごきます",
     "kanji": "動きます",
     "reading": "ugokimasu",
@@ -2648,7 +2648,7 @@
   {
     "id": "voc-c-0190",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "うすい",
     "kanji": "薄い",
     "reading": "usui",
@@ -2704,7 +2704,7 @@
   {
     "id": "voc-c-0194",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うたいます",
     "kanji": "歌います",
     "reading": "utaimasu",
@@ -2732,7 +2732,7 @@
   {
     "id": "voc-c-0196",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うちます",
     "kanji": "打ちます",
     "reading": "uchimasu (o)",
@@ -2830,7 +2830,7 @@
   {
     "id": "voc-c-0203",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "うつくしい",
     "kanji": "美しい",
     "reading": "utsukushii",
@@ -2900,7 +2900,7 @@
   {
     "id": "voc-c-0208",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うまく いきます",
     "kanji": "",
     "reading": "umaku ikimasu",
@@ -2914,7 +2914,7 @@
   {
     "id": "voc-c-0209",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うまれます",
     "kanji": "生まれます",
     "reading": "umaremasu",
@@ -2956,7 +2956,7 @@
   {
     "id": "voc-c-0212",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うめたてます",
     "kanji": "埋め立てます",
     "reading": "umetatemasu",
@@ -3012,7 +3012,7 @@
   {
     "id": "voc-c-0216",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うります",
     "kanji": "売ります",
     "reading": "urimasu",
@@ -3054,7 +3054,7 @@
   {
     "id": "voc-c-0219",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うれます",
     "kanji": "踊ります",
     "reading": "uremasu",
@@ -3082,7 +3082,7 @@
   {
     "id": "voc-c-0221",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うわさします",
     "kanji": "",
     "reading": "uwasashimasu",
@@ -3110,7 +3110,7 @@
   {
     "id": "voc-c-0223",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うんてんします",
     "kanji": "運転します",
     "reading": "unten shimasu",
@@ -3166,7 +3166,7 @@
   {
     "id": "voc-c-0227",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うんどうします",
     "kanji": "運動します",
     "reading": "undou shimasu",
@@ -3474,7 +3474,7 @@
   {
     "id": "voc-c-0249",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "えらい",
     "kanji": "偉い",
     "reading": "erai",
@@ -3488,7 +3488,7 @@
   {
     "id": "voc-c-0250",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "えらびます",
     "kanji": "選びます",
     "reading": "erabimasu",
@@ -3530,7 +3530,7 @@
   {
     "id": "voc-c-0253",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "えんぎがわるい",
     "kanji": "縁起が悪い",
     "reading": "engigawarui",
@@ -3642,7 +3642,7 @@
   {
     "id": "voc-c-0261",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "おいしい",
     "kanji": "",
     "reading": "oishii",
@@ -3670,7 +3670,7 @@
   {
     "id": "voc-c-0263",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "おいわい",
     "kanji": "お祝い",
     "reading": "oiwai",
@@ -3684,7 +3684,7 @@
   {
     "id": "voc-c-0264",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おいわいします",
     "kanji": "お祝い",
     "reading": "oiwai (o) shimasu",
@@ -3740,7 +3740,7 @@
   {
     "id": "voc-c-0268",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "おおい",
     "kanji": "多い",
     "reading": "ooi",
@@ -3754,7 +3754,7 @@
   {
     "id": "voc-c-0269",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "おおきい",
     "kanji": "大きい",
     "reading": "ookii",
@@ -3992,7 +3992,7 @@
   {
     "id": "voc-c-0286",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おきます",
     "kanji": "置きます",
     "reading": "okimasu",
@@ -4090,7 +4090,7 @@
   {
     "id": "voc-c-0293",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おくります",
     "kanji": "送ります",
     "reading": "okurimasu",
@@ -4104,7 +4104,7 @@
   {
     "id": "voc-c-0294",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おくりものします",
     "kanji": "領収書",
     "reading": "okurimono (o) shimasu",
@@ -4118,7 +4118,7 @@
   {
     "id": "voc-c-0295",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おくれます",
     "kanji": "探します",
     "reading": "okuremasu",
@@ -4188,7 +4188,7 @@
   {
     "id": "voc-c-0300",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おこします",
     "kanji": "起こします",
     "reading": "okoshimasu",
@@ -4202,7 +4202,7 @@
   {
     "id": "voc-c-0301",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おこないます",
     "kanji": "行います",
     "reading": "okonaimasu",
@@ -4230,7 +4230,7 @@
   {
     "id": "voc-c-0303",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おさきにしつれいします",
     "kanji": "お先に失礼します",
     "reading": "osakinishitsureishimasu",
@@ -4300,7 +4300,7 @@
   {
     "id": "voc-c-0308",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おしえます",
     "kanji": "教えます",
     "reading": "oshiemasu",
@@ -4314,7 +4314,7 @@
   {
     "id": "voc-c-0309",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おします",
     "kanji": "押します",
     "reading": "oshimasu (o)",
@@ -4328,7 +4328,7 @@
   {
     "id": "voc-c-0310",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おしゃべりします",
     "kanji": "",
     "reading": "oshaberishimasu",
@@ -4468,7 +4468,7 @@
   {
     "id": "voc-c-0320",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "おそい",
     "kanji": "遅い",
     "reading": "osoi",
@@ -4566,7 +4566,7 @@
   {
     "id": "voc-c-0327",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おちます",
     "kanji": "落ちます",
     "reading": "ochimasu (ga)",
@@ -4608,7 +4608,7 @@
   {
     "id": "voc-c-0330",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おちゃをたてます",
     "kanji": "お茶をたてます",
     "reading": "ochaotatemasu",
@@ -4636,7 +4636,7 @@
   {
     "id": "voc-c-0332",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おっしゃいます",
     "kanji": "",
     "reading": "osshaimasu",
@@ -4832,7 +4832,7 @@
   {
     "id": "voc-c-0346",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おとがします",
     "kanji": "音がします",
     "reading": "otogashimasu",
@@ -4888,7 +4888,7 @@
   {
     "id": "voc-c-0350",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おとします",
     "kanji": "落とします",
     "reading": "otoshimasu",
@@ -4972,7 +4972,7 @@
   {
     "id": "voc-c-0356",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おどります",
     "kanji": "踊ります",
     "reading": "odorimasu",
@@ -5028,7 +5028,7 @@
   {
     "id": "voc-c-0360",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おなかがすきます",
     "kanji": "",
     "reading": "onakagasukimasu",
@@ -5294,7 +5294,7 @@
   {
     "id": "voc-c-0379",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おぼえます",
     "kanji": "覚えます",
     "reading": "oboemasu",
@@ -5350,7 +5350,7 @@
   {
     "id": "voc-c-0383",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "おみあい",
     "kanji": "お見合い",
     "reading": "omiai",
@@ -5364,7 +5364,7 @@
   {
     "id": "voc-c-0384",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "おみまい",
     "kanji": "お見舞い",
     "reading": "omimai",
@@ -5406,7 +5406,7 @@
   {
     "id": "voc-c-0387",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おめにかかります",
     "kanji": "お目にかかります",
     "reading": "ome ni kakarimasu",
@@ -5420,7 +5420,7 @@
   {
     "id": "voc-c-0388",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "おもい",
     "kanji": "重い",
     "reading": "omoi",
@@ -5434,7 +5434,7 @@
   {
     "id": "voc-c-0389",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おもいだします",
     "kanji": "思い出します",
     "reading": "omoidashimasu",
@@ -5462,7 +5462,7 @@
   {
     "id": "voc-c-0391",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おもいます",
     "kanji": "思います",
     "reading": "omoimasu",
@@ -5490,7 +5490,7 @@
   {
     "id": "voc-c-0393",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "おもしろい",
     "kanji": "",
     "reading": "omoshiroi",
@@ -5616,7 +5616,7 @@
   {
     "id": "voc-c-0402",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "およぎます",
     "kanji": "泳ぎます",
     "reading": "oyogimasu",
@@ -5658,7 +5658,7 @@
   {
     "id": "voc-c-0405",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おります",
     "kanji": "折ります",
     "reading": "orimasu",
@@ -5686,7 +5686,7 @@
   {
     "id": "voc-c-0407",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おれます",
     "kanji": "折れます",
     "reading": "oremasu",
@@ -5700,7 +5700,7 @@
   {
     "id": "voc-c-0408",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おろします",
     "kanji": "下ろします",
     "reading": "oroshimasu",
@@ -5728,7 +5728,7 @@
   {
     "id": "voc-c-0410",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おわります",
     "kanji": "終わります",
     "reading": "owarimasu",
@@ -6316,7 +6316,7 @@
   {
     "id": "voc-c-0452",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かいます",
     "kanji": "飼います",
     "reading": "kaimasu",
@@ -6330,7 +6330,7 @@
   {
     "id": "voc-c-0453",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かいものします",
     "kanji": "買い物します",
     "reading": "kaimono shimasu",
@@ -6372,7 +6372,7 @@
   {
     "id": "voc-c-0456",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かえします",
     "kanji": "返します",
     "reading": "kaeshimasu",
@@ -6386,7 +6386,7 @@
   {
     "id": "voc-c-0457",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かえってきます",
     "kanji": "帰って来ます",
     "reading": "kaette kimasu",
@@ -6400,7 +6400,7 @@
   {
     "id": "voc-c-0458",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かえます",
     "kanji": "換えます",
     "reading": "kaemasu",
@@ -6428,7 +6428,7 @@
   {
     "id": "voc-c-0460",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かえります",
     "kanji": "帰ります",
     "reading": "kaerimasu",
@@ -6484,7 +6484,7 @@
   {
     "id": "voc-c-0464",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かかります",
     "kanji": "掛かります",
     "reading": "kakarimasu (ga)",
@@ -6568,7 +6568,7 @@
   {
     "id": "voc-c-0470",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かきます",
     "kanji": "書きます",
     "reading": "kakimasu",
@@ -6624,7 +6624,7 @@
   {
     "id": "voc-c-0474",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かくにんします",
     "kanji": "確認します",
     "reading": "kakuninshimasu",
@@ -6666,7 +6666,7 @@
   {
     "id": "voc-c-0477",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かけます",
     "kanji": "掛けます",
     "reading": "kakemasu",
@@ -6708,7 +6708,7 @@
   {
     "id": "voc-c-0480",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かざります",
     "kanji": "飾ります",
     "reading": "kazarimasu",
@@ -6750,7 +6750,7 @@
   {
     "id": "voc-c-0483",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かします",
     "kanji": "貸します",
     "reading": "kashimasu",
@@ -6806,7 +6806,7 @@
   {
     "id": "voc-c-0487",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かぞえます",
     "kanji": "数えます",
     "reading": "kazoemasu",
@@ -6848,7 +6848,7 @@
   {
     "id": "voc-c-0490",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "かたい",
     "kanji": "硬い",
     "reading": "katai",
@@ -6876,7 +6876,7 @@
   {
     "id": "voc-c-0492",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かたがこります",
     "kanji": "肩が凝ります",
     "reading": "katagakorimasu",
@@ -6904,7 +6904,7 @@
   {
     "id": "voc-c-0494",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かたづきます",
     "kanji": "片付きます",
     "reading": "katazukimasu (nimotsuga)",
@@ -6918,7 +6918,7 @@
   {
     "id": "voc-c-0495",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かたづけます",
     "kanji": "片づけます",
     "reading": "katazukemasu",
@@ -6960,7 +6960,7 @@
   {
     "id": "voc-c-0498",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かちます",
     "kanji": "勝ちます",
     "reading": "kachimasu",
@@ -7058,7 +7058,7 @@
   {
     "id": "voc-c-0505",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かないます",
     "kanji": "",
     "reading": "kanaimasu (ga)",
@@ -7226,7 +7226,7 @@
   {
     "id": "voc-c-0517",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かぶります",
     "kanji": "",
     "reading": "kaburimasu",
@@ -7324,7 +7324,7 @@
   {
     "id": "voc-c-0524",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かみます",
     "kanji": "",
     "reading": "kamimasu",
@@ -7380,7 +7380,7 @@
   {
     "id": "voc-c-0528",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かよいます",
     "kanji": "選びます",
     "reading": "kayoimasu",
@@ -7408,7 +7408,7 @@
   {
     "id": "voc-c-0530",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "からい",
     "kanji": "辛い",
     "reading": "karai",
@@ -7506,7 +7506,7 @@
   {
     "id": "voc-c-0537",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かります",
     "kanji": "借ります",
     "reading": "karimasu",
@@ -7520,7 +7520,7 @@
   {
     "id": "voc-c-0538",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "かるい",
     "kanji": "軽い",
     "reading": "karui",
@@ -7562,7 +7562,7 @@
   {
     "id": "voc-c-0541",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "かわいい",
     "kanji": "",
     "reading": "kawaii",
@@ -7590,7 +7590,7 @@
   {
     "id": "voc-c-0543",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かわきます",
     "kanji": "乾きます",
     "reading": "kawakimasu",
@@ -7604,7 +7604,7 @@
   {
     "id": "voc-c-0544",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かわります",
     "kanji": "困ります",
     "reading": "kawarimasu",
@@ -7618,7 +7618,7 @@
   {
     "id": "voc-c-0545",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かわりをします",
     "kanji": "代わりをします",
     "reading": "kawarioshimasu",
@@ -7646,7 +7646,7 @@
   {
     "id": "voc-c-0547",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かんがえます",
     "kanji": "考えます",
     "reading": "kangaemasu",
@@ -7758,7 +7758,7 @@
   {
     "id": "voc-c-0555",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かんしゃします",
     "kanji": "感謝します",
     "reading": "kanshashimasu",
@@ -7954,7 +7954,7 @@
   {
     "id": "voc-c-0569",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "がっかりします",
     "kanji": "",
     "reading": "gakkari shimasu",
@@ -8038,7 +8038,7 @@
   {
     "id": "voc-c-0575",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "がんばります",
     "kanji": "頑張ります",
     "reading": "ganbarimasu",
@@ -8080,7 +8080,7 @@
   {
     "id": "voc-c-0578",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きいろい",
     "kanji": "",
     "reading": "kiiroi",
@@ -8094,7 +8094,7 @@
   {
     "id": "voc-c-0579",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きえます",
     "kanji": "消えます",
     "reading": "kiemasu",
@@ -8136,7 +8136,7 @@
   {
     "id": "voc-c-0582",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きがつきます",
     "kanji": "気がつきます",
     "reading": "kigatsukimasu",
@@ -8150,7 +8150,7 @@
   {
     "id": "voc-c-0583",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きがつよい",
     "kanji": "気が強い",
     "reading": "kigatsuyoi",
@@ -8164,7 +8164,7 @@
   {
     "id": "voc-c-0584",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きがながい",
     "kanji": "気が長い",
     "reading": "kiganagai",
@@ -8178,7 +8178,7 @@
   {
     "id": "voc-c-0585",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きがみじかい",
     "kanji": "気が短い",
     "reading": "kigamijikai",
@@ -8192,7 +8192,7 @@
   {
     "id": "voc-c-0586",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きがよわい",
     "kanji": "気が弱い",
     "reading": "kigayowai",
@@ -8206,7 +8206,7 @@
   {
     "id": "voc-c-0587",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ききます",
     "kanji": "聞きます",
     "reading": "kikimasu",
@@ -8262,7 +8262,7 @@
   {
     "id": "voc-c-0591",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きこえます",
     "kanji": "聞こえます",
     "reading": "kikoemasu",
@@ -8416,7 +8416,7 @@
   {
     "id": "voc-c-0602",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きたない",
     "kanji": "汚い",
     "reading": "kitanai",
@@ -8556,7 +8556,7 @@
   {
     "id": "voc-c-0612",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きびしい",
     "kanji": "厳しい",
     "reading": "kibishii",
@@ -8598,7 +8598,7 @@
   {
     "id": "voc-c-0615",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きぶんがわるい",
     "kanji": "気分が悪い",
     "reading": "kibungawarui",
@@ -8626,7 +8626,7 @@
   {
     "id": "voc-c-0617",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きます",
     "kanji": "来ます",
     "reading": "kimasu",
@@ -8654,7 +8654,7 @@
   {
     "id": "voc-c-0619",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きめます",
     "kanji": "決めます",
     "reading": "kimemasu",
@@ -8696,7 +8696,7 @@
   {
     "id": "voc-c-0622",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きもちがわるい",
     "kanji": "気持ちが悪い",
     "reading": "kimochigawarui",
@@ -8738,7 +8738,7 @@
   {
     "id": "voc-c-0625",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きゅうけいします",
     "kanji": "休憩します",
     "reading": "kyuukei shimasu",
@@ -8906,7 +8906,7 @@
   {
     "id": "voc-c-0637",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きょうそうします",
     "kanji": "競走します",
     "reading": "kyousoushimasu",
@@ -8948,7 +8948,7 @@
   {
     "id": "voc-c-0640",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きょうりょくします",
     "kanji": "協力します",
     "reading": "kyouryokushimasu",
@@ -9046,7 +9046,7 @@
   {
     "id": "voc-c-0647",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きります",
     "kanji": "切ります",
     "reading": "kirimasu (o)",
@@ -9102,7 +9102,7 @@
   {
     "id": "voc-c-0651",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きれます",
     "kanji": "切れます",
     "reading": "kiremasu (ga)",
@@ -9116,7 +9116,7 @@
   {
     "id": "voc-c-0652",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きをつけます",
     "kanji": "気をつけます",
     "reading": "ki o tsukemasu",
@@ -9214,7 +9214,7 @@
   {
     "id": "voc-c-0659",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きんちょうします",
     "kanji": "緊張します",
     "reading": "kinchoushimasu",
@@ -9452,7 +9452,7 @@
   {
     "id": "voc-c-0676",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "くださいます",
     "kanji": "",
     "reading": "kudasaimasu",
@@ -9536,7 +9536,7 @@
   {
     "id": "voc-c-0682",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "くみたてます",
     "kanji": "組み立てます",
     "reading": "kumitatemasu",
@@ -9578,7 +9578,7 @@
   {
     "id": "voc-c-0685",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "くもります",
     "kanji": "曇ります",
     "reading": "kumorimasu",
@@ -9592,7 +9592,7 @@
   {
     "id": "voc-c-0686",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "くらい",
     "kanji": "暗い",
     "reading": "kurai",
@@ -9606,7 +9606,7 @@
   {
     "id": "voc-c-0687",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "くらします",
     "kanji": "暮らします",
     "reading": "kurashimasu",
@@ -9620,7 +9620,7 @@
   {
     "id": "voc-c-0688",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "くらべます",
     "kanji": "比べます",
     "reading": "kurabemasu (to)",
@@ -9648,7 +9648,7 @@
   {
     "id": "voc-c-0690",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "くれます",
     "kanji": "",
     "reading": "kuremasu",
@@ -9690,7 +9690,7 @@
   {
     "id": "voc-c-0693",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "くろい",
     "kanji": "黒い",
     "reading": "kuroi",
@@ -9872,7 +9872,7 @@
   {
     "id": "voc-c-0706",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けいさんします",
     "kanji": "計算します",
     "reading": "keisan shimasu",
@@ -9956,7 +9956,7 @@
   {
     "id": "voc-c-0712",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けがします",
     "kanji": "",
     "reading": "kega (o) shimasu",
@@ -9970,7 +9970,7 @@
   {
     "id": "voc-c-0713",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けがをします",
     "kanji": "",
     "reading": "kegaoshimasu",
@@ -10012,7 +10012,7 @@
   {
     "id": "voc-c-0716",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けします",
     "kanji": "消します",
     "reading": "keshimasu",
@@ -10040,7 +10040,7 @@
   {
     "id": "voc-c-0718",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けしょうします",
     "kanji": "調べ",
     "reading": "keshou (o) shimasu",
@@ -10138,7 +10138,7 @@
   {
     "id": "voc-c-0725",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "けっこんいわい",
     "kanji": "結婚祝い",
     "reading": "kekkoniwai",
@@ -10166,7 +10166,7 @@
   {
     "id": "voc-c-0727",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けっこんします",
     "kanji": "結婚します",
     "reading": "kekkon shimasu",
@@ -10222,7 +10222,7 @@
   {
     "id": "voc-c-0731",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けんかします",
     "kanji": "",
     "reading": "kenkashimasu",
@@ -10236,7 +10236,7 @@
   {
     "id": "voc-c-0732",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けんがくします",
     "kanji": "見学します",
     "reading": "kengakushimasu",
@@ -10264,7 +10264,7 @@
   {
     "id": "voc-c-0734",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けんきゅうします",
     "kanji": "研究します",
     "reading": "kenkyuu shimasu",
@@ -10474,7 +10474,7 @@
   {
     "id": "voc-c-0749",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "げりをします",
     "kanji": "下痢をします",
     "reading": "gerioshimasu",
@@ -10600,7 +10600,7 @@
   {
     "id": "voc-c-0758",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "こい",
     "kanji": "濃い",
     "reading": "koi",
@@ -10880,7 +10880,7 @@
   {
     "id": "voc-c-0778",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "こえがします",
     "kanji": "声がします",
     "reading": "koegashimasu",
@@ -11118,7 +11118,7 @@
   {
     "id": "voc-c-0795",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "こたえます",
     "kanji": "答えます",
     "reading": "kotaemasu (ni)",
@@ -11146,7 +11146,7 @@
   {
     "id": "voc-c-0797",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "こちらこそよろしくおねがいします",
     "kanji": "",
     "reading": "kochirakosoyoroshikuonegaishimasu",
@@ -11566,7 +11566,7 @@
   {
     "id": "voc-c-0827",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "こまります",
     "kanji": "困ります",
     "reading": "komarimasu",
@@ -11580,7 +11580,7 @@
   {
     "id": "voc-c-0828",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "こみます",
     "kanji": "込みます",
     "reading": "komimasu",
@@ -11636,7 +11636,7 @@
   {
     "id": "voc-c-0832",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "これからおせわになります",
     "kanji": "これからお世話になります",
     "reading": "korekaraosewaninarimasu",
@@ -11664,7 +11664,7 @@
   {
     "id": "voc-c-0834",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "これでおねがいします",
     "kanji": "これでお願いします",
     "reading": "koredeonegaishimasu",
@@ -11678,7 +11678,7 @@
   {
     "id": "voc-c-0835",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "これでおわります",
     "kanji": "",
     "reading": "koredeowarimasu",
@@ -11790,7 +11790,7 @@
   {
     "id": "voc-c-0843",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "こわい",
     "kanji": "怖い",
     "reading": "kowai",
@@ -11804,7 +11804,7 @@
   {
     "id": "voc-c-0844",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "こわします",
     "kanji": "壊します",
     "reading": "kowashimasu",
@@ -11818,7 +11818,7 @@
   {
     "id": "voc-c-0845",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "こわれます",
     "kanji": "壊れます",
     "reading": "kowaremasu",
@@ -11972,7 +11972,7 @@
   {
     "id": "voc-c-0856",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "こんやくします",
     "kanji": "婚約します",
     "reading": "konyakushimasu",
@@ -11986,7 +11986,7 @@
   {
     "id": "voc-c-0857",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ごうかくします",
     "kanji": "合格します",
     "reading": "goukakushimasu (ni)",
@@ -12056,7 +12056,7 @@
   {
     "id": "voc-c-0862",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ございます",
     "kanji": "",
     "reading": "gozaimasu",
@@ -12126,7 +12126,7 @@
   {
     "id": "voc-c-0867",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ごちそうします",
     "kanji": "",
     "reading": "gochisou shimasu",
@@ -12252,7 +12252,7 @@
   {
     "id": "voc-c-0876",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ごらんになります",
     "kanji": "ご覧になります",
     "reading": "goran ni narimasu",
@@ -12392,7 +12392,7 @@
   {
     "id": "voc-c-0886",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さいこんします",
     "kanji": "再婚します",
     "reading": "saikonshimasu",
@@ -12532,7 +12532,7 @@
   {
     "id": "voc-c-0896",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さがします",
     "kanji": "探します",
     "reading": "sagashimasu",
@@ -12546,7 +12546,7 @@
   {
     "id": "voc-c-0897",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さがります",
     "kanji": "下がります",
     "reading": "sagarimasu (ga)",
@@ -12574,7 +12574,7 @@
   {
     "id": "voc-c-0899",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さきます",
     "kanji": "咲きます",
     "reading": "sakimasu (ga)",
@@ -12644,7 +12644,7 @@
   {
     "id": "voc-c-0904",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さげます",
     "kanji": "下げます",
     "reading": "sagemasu",
@@ -12672,7 +12672,7 @@
   {
     "id": "voc-c-0906",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さします",
     "kanji": "指します",
     "reading": "sashimasu",
@@ -12700,7 +12700,7 @@
   {
     "id": "voc-c-0908",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さそいます",
     "kanji": "誘います",
     "reading": "sasoimasu",
@@ -12812,7 +12812,7 @@
   {
     "id": "voc-c-0916",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "さびしい",
     "kanji": "寂しい",
     "reading": "sabishii",
@@ -12826,7 +12826,7 @@
   {
     "id": "voc-c-0917",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "さむい",
     "kanji": "寒い",
     "reading": "samui",
@@ -12840,7 +12840,7 @@
   {
     "id": "voc-c-0918",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さむけがします",
     "kanji": "寒気がします",
     "reading": "samukegashimasu",
@@ -12910,7 +12910,7 @@
   {
     "id": "voc-c-0923",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さわぎます",
     "kanji": "騒ぎます",
     "reading": "sawagimasu",
@@ -12938,7 +12938,7 @@
   {
     "id": "voc-c-0925",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さわります",
     "kanji": "触ります",
     "reading": "sawarimasu",
@@ -12966,7 +12966,7 @@
   {
     "id": "voc-c-0927",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さんかします",
     "kanji": "参加します",
     "reading": "sankashimasu (paatiini)",
@@ -13008,7 +13008,7 @@
   {
     "id": "voc-c-0930",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さんぽします",
     "kanji": "散歩します",
     "reading": "sanpo shimasu",
@@ -13092,7 +13092,7 @@
   {
     "id": "voc-c-0936",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ざんぎょうします",
     "kanji": "残業します",
     "reading": "zangyou shimasu",
@@ -13218,7 +13218,7 @@
   {
     "id": "voc-c-0945",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しかります",
     "kanji": "",
     "reading": "shikarimasu",
@@ -13400,7 +13400,7 @@
   {
     "id": "voc-c-0958",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しっぱいします",
     "kanji": "成功します",
     "reading": "shippai shimasu",
@@ -13442,7 +13442,7 @@
   {
     "id": "voc-c-0961",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しつもんします",
     "kanji": "質問します",
     "reading": "shitsumonshimasu",
@@ -13456,7 +13456,7 @@
   {
     "id": "voc-c-0962",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しつれいいたします",
     "kanji": "失礼いたします",
     "reading": "shitsureiitashimasu",
@@ -13470,7 +13470,7 @@
   {
     "id": "voc-c-0963",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しつれいします",
     "kanji": "失礼します",
     "reading": "shitsureishimasu",
@@ -13498,7 +13498,7 @@
   {
     "id": "voc-c-0965",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "していらっしゃいます",
     "kanji": "",
     "reading": "shiteirasshaimasu",
@@ -13554,7 +13554,7 @@
   {
     "id": "voc-c-0969",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しにます",
     "kanji": "死にます",
     "reading": "shinimasu",
@@ -13624,7 +13624,7 @@
   {
     "id": "voc-c-0974",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しまいます",
     "kanji": "",
     "reading": "shimaimasu",
@@ -13638,7 +13638,7 @@
   {
     "id": "voc-c-0975",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "します",
     "kanji": "",
     "reading": "shimasu (o)",
@@ -13652,7 +13652,7 @@
   {
     "id": "voc-c-0976",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しまります",
     "kanji": "閉まります",
     "reading": "shimarimasu",
@@ -13680,7 +13680,7 @@
   {
     "id": "voc-c-0978",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しめます",
     "kanji": "閉めます",
     "reading": "shimemasu",
@@ -13890,7 +13890,7 @@
   {
     "id": "voc-c-0993",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しゅうしょくします",
     "kanji": "就職します",
     "reading": "shuushokushimasu",
@@ -13960,7 +13960,7 @@
   {
     "id": "voc-c-0998",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しゅうりします",
     "kanji": "修理します",
     "reading": "shuuri shimasu",
@@ -14044,7 +14044,7 @@
   {
     "id": "voc-c-1004",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "しゅっさんいわい",
     "kanji": "出産祝い",
     "reading": "shussaniwai",
@@ -14058,7 +14058,7 @@
   {
     "id": "voc-c-1005",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しゅっせきします",
     "kanji": "休憩します",
     "reading": "shusseki shimasu",
@@ -14072,7 +14072,7 @@
   {
     "id": "voc-c-1006",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しゅっちょうします",
     "kanji": "出張します",
     "reading": "shucchou shimasu",
@@ -14086,7 +14086,7 @@
   {
     "id": "voc-c-1007",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しゅっぱつします",
     "kanji": "出発します",
     "reading": "shuppatsu shimasu",
@@ -14128,7 +14128,7 @@
   {
     "id": "voc-c-1010",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しょうかいします",
     "kanji": "紹介します",
     "reading": "shoukai shimasu",
@@ -14240,7 +14240,7 @@
   {
     "id": "voc-c-1018",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しょうたいします",
     "kanji": "招待します",
     "reading": "shoutai shimasu",
@@ -14338,7 +14338,7 @@
   {
     "id": "voc-c-1025",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しょくじします",
     "kanji": "食事します",
     "reading": "shokuji shimasu",
@@ -14506,7 +14506,7 @@
   {
     "id": "voc-c-1037",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しらせます",
     "kanji": "知らせます",
     "reading": "shirasemasu",
@@ -14534,7 +14534,7 @@
   {
     "id": "voc-c-1039",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しらべます",
     "kanji": "調べます",
     "reading": "shirabemasu",
@@ -14548,7 +14548,7 @@
   {
     "id": "voc-c-1040",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しりあいます",
     "kanji": "知合います",
     "reading": "shiriaimasu",
@@ -14562,7 +14562,7 @@
   {
     "id": "voc-c-1041",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しります",
     "kanji": "知ります",
     "reading": "shirimasu",
@@ -14604,7 +14604,7 @@
   {
     "id": "voc-c-1044",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "しろい",
     "kanji": "白い",
     "reading": "shiroi",
@@ -14688,7 +14688,7 @@
   {
     "id": "voc-c-1050",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しんじます",
     "kanji": "信じます",
     "reading": "shinjimasu",
@@ -14730,7 +14730,7 @@
   {
     "id": "voc-c-1053",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しんせつにします",
     "kanji": "親切にします",
     "reading": "shinsetsu ni shimasu",
@@ -14772,7 +14772,7 @@
   {
     "id": "voc-c-1056",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しんぱいします",
     "kanji": "心配します",
     "reading": "shinpai shimasu",
@@ -14870,7 +14870,7 @@
   {
     "id": "voc-c-1063",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "じかんがたちます",
     "kanji": "時間がたちます",
     "reading": "jikangatachimasu",
@@ -15262,7 +15262,7 @@
   {
     "id": "voc-c-1091",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "じゅしょうします",
     "kanji": "受賞します",
     "reading": "jushoushimasu",
@@ -15556,7 +15556,7 @@
   {
     "id": "voc-c-1112",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "すいます",
     "kanji": "吸います",
     "reading": "suimasu",
@@ -15654,7 +15654,7 @@
   {
     "id": "voc-c-1119",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "すきます",
     "kanji": "",
     "reading": "sukimasu",
@@ -15668,7 +15668,7 @@
   {
     "id": "voc-c-1120",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "すぎます",
     "kanji": "過ぎます",
     "reading": "sugimasu (７jio)",
@@ -15682,7 +15682,7 @@
   {
     "id": "voc-c-1121",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "すくない",
     "kanji": "少ない",
     "reading": "sukunai",
@@ -15766,7 +15766,7 @@
   {
     "id": "voc-c-1127",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "すごします",
     "kanji": "過ごします",
     "reading": "sugoshimasu",
@@ -15794,7 +15794,7 @@
   {
     "id": "voc-c-1129",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "すずしい",
     "kanji": "涼しい",
     "reading": "suzushii",
@@ -15864,7 +15864,7 @@
   {
     "id": "voc-c-1134",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "すてます",
     "kanji": "捨てます",
     "reading": "sutemasu",
@@ -15934,7 +15934,7 @@
   {
     "id": "voc-c-1139",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "すべります",
     "kanji": "滑ります",
     "reading": "suberimasu",
@@ -15962,7 +15962,7 @@
   {
     "id": "voc-c-1141",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "すみます",
     "kanji": "住みます",
     "reading": "sumimasu",
@@ -16046,7 +16046,7 @@
   {
     "id": "voc-c-1147",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "すわります",
     "kanji": "座ります",
     "reading": "suwarimasu",
@@ -16158,7 +16158,7 @@
   {
     "id": "voc-c-1155",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "せいこうします",
     "kanji": "成功します",
     "reading": "seikou shimasu",
@@ -16340,7 +16340,7 @@
   {
     "id": "voc-c-1168",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "せいようかします",
     "kanji": "西洋化します",
     "reading": "seiyoukashimasu",
@@ -16354,7 +16354,7 @@
   {
     "id": "voc-c-1169",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "せいりします",
     "kanji": "整理します",
     "reading": "seirishimasu",
@@ -16424,7 +16424,7 @@
   {
     "id": "voc-c-1174",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "せきがでます",
     "kanji": "せきが出ます",
     "reading": "sekigademasu",
@@ -16438,7 +16438,7 @@
   {
     "id": "voc-c-1175",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "せきでます",
     "kanji": "空",
     "reading": "seki (ga) demasu",
@@ -16494,7 +16494,7 @@
   {
     "id": "voc-c-1179",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "せっけいします",
     "kanji": "設計します",
     "reading": "sekkeishimasu",
@@ -16536,7 +16536,7 @@
   {
     "id": "voc-c-1182",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "せつめいします",
     "kanji": "説明します",
     "reading": "setsumei shimasu",
@@ -16564,7 +16564,7 @@
   {
     "id": "voc-c-1184",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "せまい",
     "kanji": "狭い",
     "reading": "semai",
@@ -16578,7 +16578,7 @@
   {
     "id": "voc-c-1185",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "せわをします",
     "kanji": "世話をします",
     "reading": "sewaoshimasu",
@@ -16690,7 +16690,7 @@
   {
     "id": "voc-c-1193",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "せんたくします",
     "kanji": "洗濯します",
     "reading": "sentaku shimasu",
@@ -16914,7 +16914,7 @@
   {
     "id": "voc-c-1209",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "そうじします",
     "kanji": "掃除します",
     "reading": "souji shimasu",
@@ -16928,7 +16928,7 @@
   {
     "id": "voc-c-1210",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "そうたいします",
     "kanji": "早退します",
     "reading": "soutaishimasu",
@@ -16942,7 +16942,7 @@
   {
     "id": "voc-c-1211",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "そうだんします",
     "kanji": "相談します",
     "reading": "soudanshimasu",
@@ -17026,7 +17026,7 @@
   {
     "id": "voc-c-1217",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "そだてます",
     "kanji": "育てます",
     "reading": "sodatemasu",
@@ -17082,7 +17082,7 @@
   {
     "id": "voc-c-1221",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "そつぎょういわい",
     "kanji": "卒業祝い",
     "reading": "sotsugyouiwai",
@@ -17096,7 +17096,7 @@
   {
     "id": "voc-c-1222",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "そつぎょうします",
     "kanji": "卒業します",
     "reading": "sotsugyoushimasu (o)",
@@ -17194,7 +17194,7 @@
   {
     "id": "voc-c-1229",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "そのままにします",
     "kanji": "",
     "reading": "sonomamanishimasu",
@@ -17488,7 +17488,7 @@
   {
     "id": "voc-c-1250",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "そろそろしつれいします",
     "kanji": "そろそろ失礼します",
     "reading": "sorosoroshitsureishimasu",
@@ -17614,7 +17614,7 @@
   {
     "id": "voc-c-1259",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ぞんじます",
     "kanji": "存じます",
     "reading": "zonjimasu",
@@ -17684,7 +17684,7 @@
   {
     "id": "voc-c-1264",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たいいんします",
     "kanji": "退院します",
     "reading": "taiin shimasu",
@@ -17852,7 +17852,7 @@
   {
     "id": "voc-c-1276",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たおれます",
     "kanji": "倒れます",
     "reading": "taoremasu",
@@ -17866,7 +17866,7 @@
   {
     "id": "voc-c-1277",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "たかい",
     "kanji": "高い",
     "reading": "takai",
@@ -18006,7 +18006,7 @@
   {
     "id": "voc-c-1287",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たしかめます",
     "kanji": "確かめます",
     "reading": "tashikamemasu",
@@ -18034,7 +18034,7 @@
   {
     "id": "voc-c-1289",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たすかります",
     "kanji": "助かります",
     "reading": "tasukarimasu",
@@ -18048,7 +18048,7 @@
   {
     "id": "voc-c-1290",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たすけます",
     "kanji": "助けます",
     "reading": "tasukemasu",
@@ -18132,7 +18132,7 @@
   {
     "id": "voc-c-1296",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たちます",
     "kanji": "立ちます",
     "reading": "tachimasu",
@@ -18202,7 +18202,7 @@
   {
     "id": "voc-c-1301",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たてます",
     "kanji": "建てます",
     "reading": "tatemasu",
@@ -18272,7 +18272,7 @@
   {
     "id": "voc-c-1306",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "たのしい",
     "kanji": "楽しい",
     "reading": "tanoshii",
@@ -18314,7 +18314,7 @@
   {
     "id": "voc-c-1309",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たのしみにしています",
     "kanji": "",
     "reading": "tanoshiminishiteimasu",
@@ -18328,7 +18328,7 @@
   {
     "id": "voc-c-1310",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たのしみます",
     "kanji": "楽しみます",
     "reading": "tanoshimimasu",
@@ -18342,7 +18342,7 @@
   {
     "id": "voc-c-1311",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たのみます",
     "kanji": "頼みます",
     "reading": "tanomimasu",
@@ -18412,7 +18412,7 @@
   {
     "id": "voc-c-1316",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たべます",
     "kanji": "食べます",
     "reading": "tabemasu",
@@ -18510,7 +18510,7 @@
   {
     "id": "voc-c-1323",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たります",
     "kanji": "足ります",
     "reading": "tarimasu",
@@ -18776,7 +18776,7 @@
   {
     "id": "voc-c-1342",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "だします",
     "kanji": "出します",
     "reading": "dashimasu",
@@ -18916,7 +18916,7 @@
   {
     "id": "voc-c-1352",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ちいさい",
     "kanji": "小さい",
     "reading": "chiisai",
@@ -18958,7 +18958,7 @@
   {
     "id": "voc-c-1355",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ちかい",
     "kanji": "近い",
     "reading": "chikai",
@@ -19014,7 +19014,7 @@
   {
     "id": "voc-c-1359",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ちがいます",
     "kanji": "違います",
     "reading": "chigaimasu",
@@ -19042,7 +19042,7 @@
   {
     "id": "voc-c-1361",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ちがでます",
     "kanji": "血が出ます",
     "reading": "chigademasu",
@@ -19070,7 +19070,7 @@
   {
     "id": "voc-c-1363",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ちこくします",
     "kanji": "遅刻します",
     "reading": "chikoku shimasu",
@@ -19238,7 +19238,7 @@
   {
     "id": "voc-c-1375",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ちゅういします",
     "kanji": "注意します",
     "reading": "chuuishimasu (ni)",
@@ -19420,7 +19420,7 @@
   {
     "id": "voc-c-1388",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ちょうせつします",
     "kanji": "調節します",
     "reading": "chousetsu shimasu",
@@ -19532,7 +19532,7 @@
   {
     "id": "voc-c-1396",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ちょきんします",
     "kanji": "貯金します",
     "reading": "chokin shimasu",
@@ -19770,7 +19770,7 @@
   {
     "id": "voc-c-1413",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つかいます",
     "kanji": "使います",
     "reading": "tsukaimasu",
@@ -19798,7 +19798,7 @@
   {
     "id": "voc-c-1415",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つかれます",
     "kanji": "疲れます",
     "reading": "tsukaremasu",
@@ -19840,7 +19840,7 @@
   {
     "id": "voc-c-1418",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つきます",
     "kanji": "付きます",
     "reading": "tsukimasu",
@@ -19910,7 +19910,7 @@
   {
     "id": "voc-c-1423",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つくります",
     "kanji": "作ります",
     "reading": "tsukurimasu",
@@ -19924,7 +19924,7 @@
   {
     "id": "voc-c-1424",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つけます",
     "kanji": "付けます",
     "reading": "tsukemasu",
@@ -19994,7 +19994,7 @@
   {
     "id": "voc-c-1429",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "つごうがわるい",
     "kanji": "都合が悪い",
     "reading": "tsugougawarui",
@@ -20008,7 +20008,7 @@
   {
     "id": "voc-c-1430",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つたえます",
     "kanji": "伝えます",
     "reading": "tsutaemasu",
@@ -20022,7 +20022,7 @@
   {
     "id": "voc-c-1431",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つつみます",
     "kanji": "包みます",
     "reading": "tsutsumimasu",
@@ -20036,7 +20036,7 @@
   {
     "id": "voc-c-1432",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つづきます",
     "kanji": "続きます",
     "reading": "tsuzukimasu (ga)",
@@ -20050,7 +20050,7 @@
   {
     "id": "voc-c-1433",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つづけます",
     "kanji": "続けます",
     "reading": "tsuzukemasu",
@@ -20064,7 +20064,7 @@
   {
     "id": "voc-c-1434",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つとめます",
     "kanji": "努めます",
     "reading": "tsutomemasu (ni)",
@@ -20120,7 +20120,7 @@
   {
     "id": "voc-c-1438",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つみます",
     "kanji": "積みます",
     "reading": "tsumimasu",
@@ -20134,7 +20134,7 @@
   {
     "id": "voc-c-1439",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "つめたい",
     "kanji": "冷たい",
     "reading": "tsumetai",
@@ -20148,7 +20148,7 @@
   {
     "id": "voc-c-1440",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "つよい",
     "kanji": "強い",
     "reading": "tsuyoi",
@@ -20190,7 +20190,7 @@
   {
     "id": "voc-c-1443",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つれていきます",
     "kanji": "連れて行きます",
     "reading": "tsurete ikimasu",
@@ -20204,7 +20204,7 @@
   {
     "id": "voc-c-1444",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つれてきます",
     "kanji": "連れて来ます",
     "reading": "tsurete kimasu",
@@ -20358,7 +20358,7 @@
   {
     "id": "voc-c-1455",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "てつだいます",
     "kanji": "手伝います",
     "reading": "tetsudaimasu",
@@ -20372,7 +20372,7 @@
   {
     "id": "voc-c-1456",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "てにいれます",
     "kanji": "手に入れます",
     "reading": "teniiremasu",
@@ -20386,7 +20386,7 @@
   {
     "id": "voc-c-1457",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "てにはいります",
     "kanji": "手に入ります",
     "reading": "tenihairimasu (ga)",
@@ -20610,7 +20610,7 @@
   {
     "id": "voc-c-1473",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "でかけます",
     "kanji": "出かけます",
     "reading": "dekakemasu",
@@ -20624,7 +20624,7 @@
   {
     "id": "voc-c-1474",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "できます",
     "kanji": "",
     "reading": "dekimasu",
@@ -20708,7 +20708,7 @@
   {
     "id": "voc-c-1480",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "でます",
     "kanji": "出ます",
     "reading": "demasu (ni)",
@@ -20946,7 +20946,7 @@
   {
     "id": "voc-c-1497",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "でんわします",
     "kanji": "電話します",
     "reading": "denwashimasu",
@@ -21058,7 +21058,7 @@
   {
     "id": "voc-c-1505",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とうちゃくします",
     "kanji": "到着します",
     "reading": "touchaku shimasu",
@@ -21128,7 +21128,7 @@
   {
     "id": "voc-c-1510",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "とおい",
     "kanji": "遠い",
     "reading": "tooi",
@@ -21184,7 +21184,7 @@
   {
     "id": "voc-c-1514",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とおります",
     "kanji": "通ります",
     "reading": "toorimasu (o)",
@@ -21310,7 +21310,7 @@
   {
     "id": "voc-c-1523",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とじます",
     "kanji": "閉じます",
     "reading": "tojimasu",
@@ -21436,7 +21436,7 @@
   {
     "id": "voc-c-1532",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とどきます",
     "kanji": "届きます",
     "reading": "todokimasu (ga)",
@@ -21450,7 +21450,7 @@
   {
     "id": "voc-c-1533",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とどけます",
     "kanji": "届けます",
     "reading": "todokemasu",
@@ -21492,7 +21492,7 @@
   {
     "id": "voc-c-1536",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とびます",
     "kanji": "飛びます",
     "reading": "tobimasu",
@@ -21520,7 +21520,7 @@
   {
     "id": "voc-c-1538",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とまります",
     "kanji": "泊まります",
     "reading": "tomarimasu",
@@ -21548,7 +21548,7 @@
   {
     "id": "voc-c-1540",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とめます",
     "kanji": "止めます",
     "reading": "tomemasu",
@@ -21590,7 +21590,7 @@
   {
     "id": "voc-c-1543",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とらえます",
     "kanji": "",
     "reading": "toraemasu",
@@ -21618,7 +21618,7 @@
   {
     "id": "voc-c-1545",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とりかえます",
     "kanji": "取り替えます",
     "reading": "torikaemasu",
@@ -21646,7 +21646,7 @@
   {
     "id": "voc-c-1547",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とります",
     "kanji": "",
     "reading": "torimasu",
@@ -21660,7 +21660,7 @@
   {
     "id": "voc-c-1548",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とれます",
     "kanji": "",
     "reading": "toremasu (ga)",
@@ -21842,7 +21842,7 @@
   {
     "id": "voc-c-1561",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "どうぞよろしくおねがいします",
     "kanji": "どうぞよろしくお願します",
     "reading": "douzoyoroshikuonegaishimasu",
@@ -22262,7 +22262,7 @@
   {
     "id": "voc-c-1591",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "なおします",
     "kanji": "直します",
     "reading": "naoshimasu",
@@ -22276,7 +22276,7 @@
   {
     "id": "voc-c-1592",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "なおります",
     "kanji": "治ります",
     "reading": "naorimasu (ga)",
@@ -22346,7 +22346,7 @@
   {
     "id": "voc-c-1597",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "なかよくします",
     "kanji": "仲よくします",
     "reading": "nakayokushimasu",
@@ -22360,7 +22360,7 @@
   {
     "id": "voc-c-1598",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ながい",
     "kanji": "長い",
     "reading": "nagai",
@@ -22374,7 +22374,7 @@
   {
     "id": "voc-c-1599",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ながいきします",
     "kanji": "長生きします",
     "reading": "nagaikishimasu",
@@ -22416,7 +22416,7 @@
   {
     "id": "voc-c-1602",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "なきます",
     "kanji": "泣きます",
     "reading": "nakimasu",
@@ -22430,7 +22430,7 @@
   {
     "id": "voc-c-1603",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "なくします",
     "kanji": "",
     "reading": "nakushimasu",
@@ -22444,7 +22444,7 @@
   {
     "id": "voc-c-1604",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "なくなります",
     "kanji": "亡くなります",
     "reading": "nakunarimasu",
@@ -22458,7 +22458,7 @@
   {
     "id": "voc-c-1605",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "なげます",
     "kanji": "投げます",
     "reading": "nagemasu",
@@ -22486,7 +22486,7 @@
   {
     "id": "voc-c-1607",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "なさいます",
     "kanji": "",
     "reading": "nasaimasu",
@@ -22766,7 +22766,7 @@
   {
     "id": "voc-c-1627",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ならいます",
     "kanji": "習います",
     "reading": "naraimasu",
@@ -22780,7 +22780,7 @@
   {
     "id": "voc-c-1628",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ならびます",
     "kanji": "並びます",
     "reading": "narabimasu",
@@ -22794,7 +22794,7 @@
   {
     "id": "voc-c-1629",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ならべます",
     "kanji": "並べます",
     "reading": "narabemasu",
@@ -22808,7 +22808,7 @@
   {
     "id": "voc-c-1630",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "なります",
     "kanji": "鳴ります",
     "reading": "narimasu",
@@ -22850,7 +22850,7 @@
   {
     "id": "voc-c-1633",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "なれます",
     "kanji": "硬い / 固い",
     "reading": "naremasu",
@@ -23046,7 +23046,7 @@
   {
     "id": "voc-c-1647",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "においがします",
     "kanji": "",
     "reading": "nioigashimasu",
@@ -23060,7 +23060,7 @@
   {
     "id": "voc-c-1648",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "にがい",
     "kanji": "苦い",
     "reading": "nigai",
@@ -23116,7 +23116,7 @@
   {
     "id": "voc-c-1652",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "にげます",
     "kanji": "逃げます",
     "reading": "nigemasu",
@@ -23242,7 +23242,7 @@
   {
     "id": "voc-c-1661",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "にています",
     "kanji": "似ています",
     "reading": "niteimasu",
@@ -23298,7 +23298,7 @@
   {
     "id": "voc-c-1665",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "にゅういんします",
     "kanji": "入院します",
     "reading": "nyuuin shimasu",
@@ -23326,7 +23326,7 @@
   {
     "id": "voc-c-1667",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "にゅうがくいわい",
     "kanji": "入学祝い",
     "reading": "nyuugakuiwai",
@@ -23340,7 +23340,7 @@
   {
     "id": "voc-c-1668",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "にゅうがくします",
     "kanji": "入学します",
     "reading": "nyuugakushimasu (ni)",
@@ -23368,7 +23368,7 @@
   {
     "id": "voc-c-1670",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "にゅうりょくします",
     "kanji": "入力します",
     "reading": "nyuuryokushimasu",
@@ -23480,7 +23480,7 @@
   {
     "id": "voc-c-1678",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ぬぎます",
     "kanji": "脱ぎます",
     "reading": "nugimasu",
@@ -23494,7 +23494,7 @@
   {
     "id": "voc-c-1679",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ぬすみます",
     "kanji": "盗みます",
     "reading": "nusumimasu",
@@ -23550,7 +23550,7 @@
   {
     "id": "voc-c-1683",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ぬれます",
     "kanji": "",
     "reading": "nuremasu",
@@ -23690,7 +23690,7 @@
   {
     "id": "voc-c-1693",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ねつがあります",
     "kanji": "熱があります",
     "reading": "netsugaarimasu",
@@ -23704,7 +23704,7 @@
   {
     "id": "voc-c-1694",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ねます",
     "kanji": "寝ます",
     "reading": "nemasu",
@@ -23718,7 +23718,7 @@
   {
     "id": "voc-c-1695",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ねむい",
     "kanji": "眠い",
     "reading": "nemui",
@@ -23746,7 +23746,7 @@
   {
     "id": "voc-c-1697",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ねむります",
     "kanji": "眠ります",
     "reading": "nemurimasu",
@@ -23858,7 +23858,7 @@
   {
     "id": "voc-c-1705",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "のこります",
     "kanji": "残ります",
     "reading": "nokorimasu",
@@ -23886,7 +23886,7 @@
   {
     "id": "voc-c-1707",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "のせます",
     "kanji": "載せます",
     "reading": "nosemasu",
@@ -23914,7 +23914,7 @@
   {
     "id": "voc-c-1709",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "のどがかわきます",
     "kanji": "",
     "reading": "nodogakawakimasu",
@@ -23956,7 +23956,7 @@
   {
     "id": "voc-c-1712",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "のぼります",
     "kanji": "登ります",
     "reading": "noborimasu",
@@ -23984,7 +23984,7 @@
   {
     "id": "voc-c-1714",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "のみます",
     "kanji": "飲みます",
     "reading": "nomimasu",
@@ -24026,7 +24026,7 @@
   {
     "id": "voc-c-1717",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "のりかえます",
     "kanji": "乗り換えます",
     "reading": "norikaemasu",
@@ -24054,7 +24054,7 @@
   {
     "id": "voc-c-1719",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "のります",
     "kanji": "乗ります",
     "reading": "norimasu",
@@ -24138,7 +24138,7 @@
   {
     "id": "voc-c-1725",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はいけんします",
     "kanji": "拝見します",
     "reading": "haikenshimasu",
@@ -24194,7 +24194,7 @@
   {
     "id": "voc-c-1729",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はいります",
     "kanji": "入ります",
     "reading": "hairimasu",
@@ -24236,7 +24236,7 @@
   {
     "id": "voc-c-1732",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はかります",
     "kanji": "測ります / 量ります",
     "reading": "hakarimasu",
@@ -24250,7 +24250,7 @@
   {
     "id": "voc-c-1733",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "はがいたい",
     "kanji": "歯が痛い",
     "reading": "hagaitai",
@@ -24292,7 +24292,7 @@
   {
     "id": "voc-c-1736",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はきけがします",
     "kanji": "吐き気がします",
     "reading": "hakikegashimasu",
@@ -24306,7 +24306,7 @@
   {
     "id": "voc-c-1737",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はきます",
     "kanji": "",
     "reading": "hakimasu",
@@ -24362,7 +24362,7 @@
   {
     "id": "voc-c-1741",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はこびます",
     "kanji": "運びます",
     "reading": "hakobimasu",
@@ -24446,7 +24446,7 @@
   {
     "id": "voc-c-1747",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はしります",
     "kanji": "走ります",
     "reading": "hashirimasu",
@@ -24474,7 +24474,7 @@
   {
     "id": "voc-c-1749",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はじまります",
     "kanji": "続けます",
     "reading": "hajimarimasu",
@@ -24544,7 +24544,7 @@
   {
     "id": "voc-c-1754",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はじめます",
     "kanji": "始めます",
     "reading": "hajimemasu",
@@ -24572,7 +24572,7 @@
   {
     "id": "voc-c-1756",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はずします",
     "kanji": "外します",
     "reading": "hazushimasu (sekio)",
@@ -24586,7 +24586,7 @@
   {
     "id": "voc-c-1757",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はずれます",
     "kanji": "外れます",
     "reading": "hazuremasu (ga)",
@@ -24614,7 +24614,7 @@
   {
     "id": "voc-c-1759",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はたらきます",
     "kanji": "働きます",
     "reading": "hatarakimasu",
@@ -24642,7 +24642,7 @@
   {
     "id": "voc-c-1761",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はっけんします",
     "kanji": "発見します",
     "reading": "hakkenshimasu",
@@ -24698,7 +24698,7 @@
   {
     "id": "voc-c-1765",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はつめいします",
     "kanji": "発明します",
     "reading": "hatsumeishimasu",
@@ -24754,7 +24754,7 @@
   {
     "id": "voc-c-1769",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はなします",
     "kanji": "話します",
     "reading": "hanashimasu",
@@ -24796,7 +24796,7 @@
   {
     "id": "voc-c-1772",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はなみずがでます",
     "kanji": "鼻水が出ます",
     "reading": "hanamizugademasu",
@@ -24866,7 +24866,7 @@
   {
     "id": "voc-c-1777",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "はやい",
     "kanji": "早い / 速い",
     "reading": "hayai",
@@ -24908,7 +24908,7 @@
   {
     "id": "voc-c-1780",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はらいます",
     "kanji": "払います",
     "reading": "haraimasu",
@@ -24950,7 +24950,7 @@
   {
     "id": "voc-c-1783",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はります",
     "kanji": "",
     "reading": "harimasu",
@@ -24992,7 +24992,7 @@
   {
     "id": "voc-c-1786",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はれます",
     "kanji": "晴れます",
     "reading": "haremasu",
@@ -25272,7 +25272,7 @@
   {
     "id": "voc-c-1806",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ひえます",
     "kanji": "冷えます",
     "reading": "hiemasu",
@@ -25342,7 +25342,7 @@
   {
     "id": "voc-c-1811",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ひきます",
     "kanji": "",
     "reading": "hikimasu (o)",
@@ -25370,7 +25370,7 @@
   {
     "id": "voc-c-1813",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ひくい",
     "kanji": "低い",
     "reading": "hikui",
@@ -25664,7 +25664,7 @@
   {
     "id": "voc-c-1834",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ひにかけます",
     "kanji": "",
     "reading": "hinikakemasu",
@@ -25776,7 +25776,7 @@
   {
     "id": "voc-c-1842",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ひやします",
     "kanji": "冷やします",
     "reading": "hiyashimasu",
@@ -25832,7 +25832,7 @@
   {
     "id": "voc-c-1846",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ひらきます",
     "kanji": "開きます",
     "reading": "hirakimasu (o)",
@@ -25902,7 +25902,7 @@
   {
     "id": "voc-c-1851",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ひろい",
     "kanji": "広い",
     "reading": "hiroi",
@@ -25916,7 +25916,7 @@
   {
     "id": "voc-c-1852",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ひろいます",
     "kanji": "拾います",
     "reading": "hiroimasu",
@@ -25972,7 +25972,7 @@
   {
     "id": "voc-c-1856",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "びっくりします",
     "kanji": "",
     "reading": "bikkuri shimasu",
@@ -26112,7 +26112,7 @@
   {
     "id": "voc-c-1866",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ふえます",
     "kanji": "増えます",
     "reading": "fuemasu (ga)",
@@ -26126,7 +26126,7 @@
   {
     "id": "voc-c-1867",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ふきます",
     "kanji": "吹きます",
     "reading": "fukimasu (ga)",
@@ -26182,7 +26182,7 @@
   {
     "id": "voc-c-1871",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ふくしゅうします",
     "kanji": "復習します",
     "reading": "fukushuu shimasu",
@@ -26364,7 +26364,7 @@
   {
     "id": "voc-c-1884",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ふつかよい",
     "kanji": "二日酔い",
     "reading": "futsukayoi",
@@ -26378,7 +26378,7 @@
   {
     "id": "voc-c-1885",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ふとい",
     "kanji": "太い",
     "reading": "futoi",
@@ -26406,7 +26406,7 @@
   {
     "id": "voc-c-1887",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ふとります",
     "kanji": "太ります",
     "reading": "futorimasu",
@@ -26518,7 +26518,7 @@
   {
     "id": "voc-c-1895",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ふみます",
     "kanji": "踏みます",
     "reading": "fumimasu",
@@ -26546,7 +26546,7 @@
   {
     "id": "voc-c-1897",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ふります",
     "kanji": "降ります",
     "reading": "furimasu",
@@ -26588,7 +26588,7 @@
   {
     "id": "voc-c-1900",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ふるい",
     "kanji": "古い",
     "reading": "furui",
@@ -26686,7 +26686,7 @@
   {
     "id": "voc-c-1907",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ぶつかります",
     "kanji": "",
     "reading": "butsukarimasu",
@@ -26966,7 +26966,7 @@
   {
     "id": "voc-c-1927",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "へります",
     "kanji": "減ります",
     "reading": "herimasu (ga)",
@@ -27064,7 +27064,7 @@
   {
     "id": "voc-c-1934",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "べんきょうします",
     "kanji": "勉強します",
     "reading": "benkyou shimasu",
@@ -27092,7 +27092,7 @@
   {
     "id": "voc-c-1936",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "べんぴをします",
     "kanji": "便秘をします",
     "reading": "benpioshimasu",
@@ -27190,7 +27190,7 @@
   {
     "id": "voc-c-1943",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ほうそうします",
     "kanji": "放送します",
     "reading": "housoushimasu",
@@ -27344,7 +27344,7 @@
   {
     "id": "voc-c-1954",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ほしうらない",
     "kanji": "星占い",
     "reading": "hoshiuranai",
@@ -27372,7 +27372,7 @@
   {
     "id": "voc-c-1956",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ほそい",
     "kanji": "細い",
     "reading": "hosoi",
@@ -27442,7 +27442,7 @@
   {
     "id": "voc-c-1961",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ほめます",
     "kanji": "褒めます",
     "reading": "homemasu",
@@ -27456,7 +27456,7 @@
   {
     "id": "voc-c-1962",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ほります",
     "kanji": "彫ります",
     "reading": "horimasu",
@@ -27568,7 +27568,7 @@
   {
     "id": "voc-c-1970",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ほんやくします",
     "kanji": "翻訳します",
     "reading": "honyakushimasu",
@@ -27764,7 +27764,7 @@
   {
     "id": "voc-c-1984",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "まいります",
     "kanji": "参ります",
     "reading": "mairimasu",
@@ -27820,7 +27820,7 @@
   {
     "id": "voc-c-1988",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "まがります",
     "kanji": "曲がります",
     "reading": "magarimasu",
@@ -27848,7 +27848,7 @@
   {
     "id": "voc-c-1990",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "まけます",
     "kanji": "負けます",
     "reading": "makemasu",
@@ -27932,7 +27932,7 @@
   {
     "id": "voc-c-1996",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "まじわります",
     "kanji": "交わります",
     "reading": "majiwarimasu",
@@ -27988,7 +27988,7 @@
   {
     "id": "voc-c-2000",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "まぜます",
     "kanji": "混ぜます",
     "reading": "mazemasu",
@@ -28030,7 +28030,7 @@
   {
     "id": "voc-c-2003",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "またこんどおねがいします",
     "kanji": "また今度お願いします",
     "reading": "matakondoonegaishimasu",
@@ -28100,7 +28100,7 @@
   {
     "id": "voc-c-2008",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "まちがえます",
     "kanji": "間違えます",
     "reading": "machigaemasu",
@@ -28114,7 +28114,7 @@
   {
     "id": "voc-c-2009",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "まちます",
     "kanji": "待ちます",
     "reading": "machimasu",
@@ -28184,7 +28184,7 @@
   {
     "id": "voc-c-2014",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "まとめます",
     "kanji": "",
     "reading": "matomemasu",
@@ -28240,7 +28240,7 @@
   {
     "id": "voc-c-2018",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "まにあいます",
     "kanji": "間に合います",
     "reading": "maniaimasu (jikanni)",
@@ -28268,7 +28268,7 @@
   {
     "id": "voc-c-2020",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "まもります",
     "kanji": "守ります",
     "reading": "mamorimasu",
@@ -28296,7 +28296,7 @@
   {
     "id": "voc-c-2022",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "まるい",
     "kanji": "丸い",
     "reading": "marui",
@@ -28324,7 +28324,7 @@
   {
     "id": "voc-c-2024",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "まわします",
     "kanji": "回します",
     "reading": "mawashimasu",
@@ -28408,7 +28408,7 @@
   {
     "id": "voc-c-2030",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "みえます",
     "kanji": "見えます",
     "reading": "miemasu",
@@ -28436,7 +28436,7 @@
   {
     "id": "voc-c-2032",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "みがきます",
     "kanji": "組み立てます",
     "reading": "migakimasu",
@@ -28464,7 +28464,7 @@
   {
     "id": "voc-c-2034",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "みじかい",
     "kanji": "短い",
     "reading": "mijikai",
@@ -28506,7 +28506,7 @@
   {
     "id": "voc-c-2037",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "みずあらい",
     "kanji": "水洗い",
     "reading": "mizuarai",
@@ -28562,7 +28562,7 @@
   {
     "id": "voc-c-2041",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "みせます",
     "kanji": "見せます",
     "reading": "misemasu",
@@ -28660,7 +28660,7 @@
   {
     "id": "voc-c-2048",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "みつかります",
     "kanji": "見つかります",
     "reading": "mitsukarimasu (ga)",
@@ -28674,7 +28674,7 @@
   {
     "id": "voc-c-2049",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "みつけます",
     "kanji": "見つけます",
     "reading": "mitsukemasu",
@@ -28758,7 +28758,7 @@
   {
     "id": "voc-c-2055",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "みます",
     "kanji": "見ます / 診ます",
     "reading": "mimasu",
@@ -28842,7 +28842,7 @@
   {
     "id": "voc-c-2061",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "むかいます",
     "kanji": "向かいます",
     "reading": "mukaimasu",
@@ -28856,7 +28856,7 @@
   {
     "id": "voc-c-2062",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "むかえます",
     "kanji": "迎えます",
     "reading": "mukaemasu",
@@ -28940,7 +28940,7 @@
   {
     "id": "voc-c-2068",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "むしあつい",
     "kanji": "蒸し暑い",
     "reading": "mushiatsui",
@@ -29038,7 +29038,7 @@
   {
     "id": "voc-c-2075",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "むずかしい",
     "kanji": "難しい",
     "reading": "muzukashii",
@@ -29150,7 +29150,7 @@
   {
     "id": "voc-c-2083",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "むりをします",
     "kanji": "無理をします",
     "reading": "murioshimasu",
@@ -29206,7 +29206,7 @@
   {
     "id": "voc-c-2087",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "めいわくをかけます",
     "kanji": "迷惑をかけます",
     "reading": "meiwakuokakemasu",
@@ -29220,7 +29220,7 @@
   {
     "id": "voc-c-2088",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "めがさめます",
     "kanji": "目が覚めます",
     "reading": "megasamemasu",
@@ -29262,7 +29262,7 @@
   {
     "id": "voc-c-2091",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "めしあがります",
     "kanji": "召し上がります",
     "reading": "meshiagarimasu",
@@ -29304,7 +29304,7 @@
   {
     "id": "voc-c-2094",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "めまいがします",
     "kanji": "",
     "reading": "memaigashimasu",
@@ -29374,7 +29374,7 @@
   {
     "id": "voc-c-2099",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "もうしこみます",
     "kanji": "申し込みます",
     "reading": "moushikomimasu",
@@ -29388,7 +29388,7 @@
   {
     "id": "voc-c-2100",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "もうします",
     "kanji": "申します",
     "reading": "moushimasu",
@@ -29472,7 +29472,7 @@
   {
     "id": "voc-c-2106",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "もえます",
     "kanji": "燃えます",
     "reading": "moemasu",
@@ -29570,7 +29570,7 @@
   {
     "id": "voc-c-2113",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "もちます",
     "kanji": "持ちます",
     "reading": "mochimasu",
@@ -29598,7 +29598,7 @@
   {
     "id": "voc-c-2115",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "もっていきます",
     "kanji": "持って行きます",
     "reading": "motte ikimasu",
@@ -29612,7 +29612,7 @@
   {
     "id": "voc-c-2116",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "もってきます",
     "kanji": "持って来ます",
     "reading": "motte kimasu",
@@ -29668,7 +29668,7 @@
   {
     "id": "voc-c-2120",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "もどします",
     "kanji": "戻します",
     "reading": "modoshimasu",
@@ -29682,7 +29682,7 @@
   {
     "id": "voc-c-2121",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "もどります",
     "kanji": "戻ります",
     "reading": "modorimasu",
@@ -29780,7 +29780,7 @@
   {
     "id": "voc-c-2128",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "もらいます",
     "kanji": "",
     "reading": "moraimasu",
@@ -29892,7 +29892,7 @@
   {
     "id": "voc-c-2136",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "やきます",
     "kanji": "焼きます",
     "reading": "yakimasu",
@@ -29976,7 +29976,7 @@
   {
     "id": "voc-c-2142",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "やくにたちます",
     "kanji": "役に立ちます",
     "reading": "yaku ni tachimasu",
@@ -29990,7 +29990,7 @@
   {
     "id": "voc-c-2143",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "やけどします",
     "kanji": "",
     "reading": "yakedo (o) shimasu",
@@ -30004,7 +30004,7 @@
   {
     "id": "voc-c-2144",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "やけどをします",
     "kanji": "",
     "reading": "yakedooshimasu",
@@ -30018,7 +30018,7 @@
   {
     "id": "voc-c-2145",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "やけます",
     "kanji": "死にます",
     "reading": "yakemasu",
@@ -30074,7 +30074,7 @@
   {
     "id": "voc-c-2149",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "やさしい",
     "kanji": "優しい",
     "reading": "yasashii",
@@ -30102,7 +30102,7 @@
   {
     "id": "voc-c-2151",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "やすい",
     "kanji": "安い",
     "reading": "yasui",
@@ -30130,7 +30130,7 @@
   {
     "id": "voc-c-2153",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "やすみます",
     "kanji": "休みます",
     "reading": "yasumimasu",
@@ -30158,7 +30158,7 @@
   {
     "id": "voc-c-2155",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "やせます",
     "kanji": "",
     "reading": "yasemasu",
@@ -30228,7 +30228,7 @@
   {
     "id": "voc-c-2160",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "やぶれます",
     "kanji": "破れます",
     "reading": "yaburemasu",
@@ -30298,7 +30298,7 @@
   {
     "id": "voc-c-2165",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "やみます",
     "kanji": "晴れます",
     "reading": "yamimasu",
@@ -30312,7 +30312,7 @@
   {
     "id": "voc-c-2166",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "やめます",
     "kanji": "動きます",
     "reading": "yamemasu",
@@ -30340,7 +30340,7 @@
   {
     "id": "voc-c-2168",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "やります",
     "kanji": "",
     "reading": "yarimasu",
@@ -30382,7 +30382,7 @@
   {
     "id": "voc-c-2171",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "やわらかい",
     "kanji": "軟らかい",
     "reading": "yawarakai",
@@ -30438,7 +30438,7 @@
   {
     "id": "voc-c-2175",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ゆうしょうします",
     "kanji": "優勝します",
     "reading": "yuushoushimasu",
@@ -30592,7 +30592,7 @@
   {
     "id": "voc-c-2186",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ゆしゅつします",
     "kanji": "輸出します",
     "reading": "yushutsushimasu",
@@ -30620,7 +30620,7 @@
   {
     "id": "voc-c-2188",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ゆっくりします",
     "kanji": "",
     "reading": "yukkurishimasu",
@@ -30648,7 +30648,7 @@
   {
     "id": "voc-c-2190",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ゆにゅうします",
     "kanji": "輸入します",
     "reading": "yunyuushimasu",
@@ -30704,7 +30704,7 @@
   {
     "id": "voc-c-2194",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "よいます",
     "kanji": "酔います",
     "reading": "yoimasu",
@@ -30718,7 +30718,7 @@
   {
     "id": "voc-c-2195",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "よういします",
     "kanji": "用意します",
     "reading": "youi shimasu",
@@ -30928,7 +30928,7 @@
   {
     "id": "voc-c-2210",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "よごします",
     "kanji": "汚します",
     "reading": "yogoshimasu",
@@ -30942,7 +30942,7 @@
   {
     "id": "voc-c-2211",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "よごれます",
     "kanji": "汚れます",
     "reading": "yogoremasu",
@@ -30956,7 +30956,7 @@
   {
     "id": "voc-c-2212",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "よしゅうします",
     "kanji": "予習します",
     "reading": "yoshuu shimasu",
@@ -31026,7 +31026,7 @@
   {
     "id": "voc-c-2217",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "よびます",
     "kanji": "呼びます",
     "reading": "yobimasu",
@@ -31068,7 +31068,7 @@
   {
     "id": "voc-c-2220",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "よみます",
     "kanji": "読みます",
     "reading": "yomimasu",
@@ -31082,7 +31082,7 @@
   {
     "id": "voc-c-2221",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "よやくします",
     "kanji": "予約します",
     "reading": "yoyaku shimasu",
@@ -31110,7 +31110,7 @@
   {
     "id": "voc-c-2223",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "よります",
     "kanji": "寄ります",
     "reading": "yorimasu (ni)",
@@ -31166,7 +31166,7 @@
   {
     "id": "voc-c-2227",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "よわい",
     "kanji": "弱い",
     "reading": "yowai",
@@ -31264,7 +31264,7 @@
   {
     "id": "voc-c-2234",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "りこんします",
     "kanji": "離婚します",
     "reading": "rikonshimasu",
@@ -31320,7 +31320,7 @@
   {
     "id": "voc-c-2238",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "りゅうがくします",
     "kanji": "留学します",
     "reading": "ryuugaku shimasu",
@@ -31488,7 +31488,7 @@
   {
     "id": "voc-c-2250",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "りようします",
     "kanji": "利用します",
     "reading": "riyoushimasu",
@@ -31656,7 +31656,7 @@
   {
     "id": "voc-c-2262",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "れんらくします",
     "kanji": "連絡します",
     "reading": "renraku shimasu",
@@ -31726,7 +31726,7 @@
   {
     "id": "voc-c-2267",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "わかい",
     "kanji": "若い",
     "reading": "wakai",
@@ -31740,7 +31740,7 @@
   {
     "id": "voc-c-2268",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "わかします",
     "kanji": "沸かします",
     "reading": "wakashimasu",
@@ -31768,7 +31768,7 @@
   {
     "id": "voc-c-2270",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "わかります",
     "kanji": "分かります",
     "reading": "wakarimasu",
@@ -31782,7 +31782,7 @@
   {
     "id": "voc-c-2271",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "わかれます",
     "kanji": "別れます",
     "reading": "wakaremasu",
@@ -31922,7 +31922,7 @@
   {
     "id": "voc-c-2281",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "わすれます",
     "kanji": "忘れます",
     "reading": "wasuremasu",
@@ -32174,7 +32174,7 @@
   {
     "id": "voc-c-2299",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "わたします",
     "kanji": "渡します",
     "reading": "watashimasu",
@@ -32188,7 +32188,7 @@
   {
     "id": "voc-c-2300",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "わたります",
     "kanji": "渡ります",
     "reading": "watarimasu",
@@ -32202,7 +32202,7 @@
   {
     "id": "voc-c-2301",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "わらいます",
     "kanji": "笑います",
     "reading": "waraimasu",
@@ -32230,7 +32230,7 @@
   {
     "id": "voc-c-2303",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "わるい",
     "kanji": "悪い",
     "reading": "warui",
@@ -32244,7 +32244,7 @@
   {
     "id": "voc-c-2304",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "われます",
     "kanji": "割れます",
     "reading": "waremasu",
@@ -33308,7 +33308,7 @@
   {
     "id": "voc-c-2380",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "キャンセルします",
     "kanji": "",
     "reading": "kyanseru shimasu",
@@ -33756,7 +33756,7 @@
   {
     "id": "voc-c-2412",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "コピーします",
     "kanji": "",
     "reading": "kopiishimasu",
@@ -34932,7 +34932,7 @@
   {
     "id": "voc-c-2496",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "セットします",
     "kanji": "",
     "reading": "settoshimasu",
@@ -35212,7 +35212,7 @@
   {
     "id": "voc-c-2516",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "チャレンジします",
     "kanji": "",
     "reading": "charenjishimasu",
@@ -35520,7 +35520,7 @@
   {
     "id": "voc-c-2538",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "トイレ / お手洗い",
     "kanji": "お手洗い",
     "reading": "toire / otearai",
@@ -37774,7 +37774,7 @@
   {
     "id": "voc-c-2699",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "メモします",
     "kanji": "",
     "reading": "memoshimasu",
@@ -57766,7 +57766,7 @@
   {
     "id": "voc-c-4127",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "～でいらっしゃいます",
     "kanji": "",
     "reading": "~deirasshaimasu",
@@ -57780,7 +57780,7 @@
   {
     "id": "voc-c-4128",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "～でございます",
     "kanji": "",
     "reading": "~degozaimasu",
@@ -57794,7 +57794,7 @@
   {
     "id": "voc-c-4129",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "～といいます",
     "kanji": "",
     "reading": "~toiimasu",
@@ -57822,7 +57822,7 @@
   {
     "id": "voc-c-4131",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "～ともうします",
     "kanji": "",
     "reading": "~tomoushimasu",
