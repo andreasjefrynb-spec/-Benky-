@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, SlidersHorizontal, Search } from 'lucide-react';
+import { Volume2, SlidersHorizontal, Search, Home } from 'lucide-react';
 import { soundManager } from '../utils/audio';
 import { AudioSettingsModal } from './AudioSettingsModal';
 
@@ -9,6 +9,8 @@ interface NavbarProps {
   speechRate: number;
   onToggleSpeechRate: () => void;
   onSelectSpeechRate?: (rate: number) => void;
+  onGoHome?: () => void;
+  isHomeActive?: boolean;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -17,6 +19,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   speechRate,
   onToggleSpeechRate,
   onSelectSpeechRate,
+  onGoHome,
+  isHomeActive = false,
 }) => {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [isAudioSettingsOpen, setIsAudioSettingsOpen] = useState(false);
@@ -47,32 +51,55 @@ export const Navbar: React.FC<NavbarProps> = ({
     <>
       <header className="sticky top-0 z-40 bg-white border-b border-slate-200/90 shadow-xs">
         <div className="max-w-6xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2">
-          {/* Brand Logo & Name */}
-          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-rose-500 to-red-600 text-white flex items-center justify-center font-bold text-xl sm:text-2xl shadow-md shadow-rose-200/60 shrink-0 select-none">
+          {/* Brand Logo & Name (Clickable to Go Home) */}
+          <button
+            onClick={onGoHome}
+            className="flex items-center gap-2.5 sm:gap-3 shrink-0 text-left cursor-pointer group focus:outline-hidden"
+            title="Kembali ke Beranda Utama"
+          >
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-rose-500 to-red-600 text-white flex items-center justify-center font-bold text-xl sm:text-2xl shadow-md shadow-rose-200/60 shrink-0 select-none group-hover:scale-105 transition-transform">
               日
             </div>
             <div>
-              <h1 className="text-lg sm:text-2xl md:text-3xl font-black text-slate-900 font-jp tracking-wide leading-none">
-                日本語 ケラス
+              <h1 className="text-base sm:text-2xl md:text-3xl font-black text-slate-900 group-hover:text-rose-600 transition-colors font-jp tracking-wide leading-none">
+                日本語クラス
               </h1>
               <p className="text-[10px] sm:text-xs font-semibold text-rose-600/90 leading-tight hidden sm:block mt-0.5">
-                Minna Bab 1–50 &bull; Irodori &bull; SSW Tokutei Ginou &bull; JLPT
+                Persiapan Lulus JFT-Basic (A2) &bull; SSW Tokutei Ginou &bull; JLPT N5–N1
               </p>
             </div>
-          </div>
+          </button>
 
           {/* Controls */}
           <div className="flex items-center gap-1.5 sm:gap-2">
+            {/* Home Button */}
+            {onGoHome && (
+              <button
+                onClick={onGoHome}
+                className={`flex items-center gap-1.5 min-h-[38px] sm:min-h-[44px] px-2.5 sm:px-3 py-1.5 rounded-xl border transition-all cursor-pointer select-none active:scale-95 shadow-3xs ${
+                  isHomeActive
+                    ? 'border-rose-300 bg-rose-500 text-white font-black'
+                    : 'border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold'
+                }`}
+                title="Buka Beranda Utama"
+                aria-label="Kembali ke beranda"
+              >
+                <Home className="w-4 h-4 shrink-0" />
+                <span className="text-xs leading-none hidden xs:inline">
+                  Beranda
+                </span>
+              </button>
+            )}
+
             {/* Search Button */}
             <button
               onClick={onOpenGlobalSearch}
-              className="flex items-center gap-1.5 min-h-[38px] sm:min-h-[44px] px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-rose-200 bg-rose-50 hover:bg-rose-100 active:bg-rose-200 text-rose-700 transition-all cursor-pointer select-none active:scale-95 shadow-3xs"
+              className="flex items-center gap-1.5 min-h-[38px] sm:min-h-[44px] px-2.5 sm:px-3.5 py-1.5 rounded-xl border border-rose-200 bg-rose-50/80 hover:bg-rose-100 active:bg-rose-200 text-rose-700 transition-all cursor-pointer select-none active:scale-95 shadow-3xs"
               title="Pencarian Global: Cari kata apapun di seluruh materi"
-              aria-label="Buka pencarian global"
+              aria-label="Buka pencarian kata & terjemahan"
             >
-              <Search className="w-3.5 h-3.5 text-rose-600 shrink-0" />
-              <span className="text-xs font-black leading-none hidden sm:inline text-rose-700">
+              <Search className="w-4 h-4 text-rose-600 shrink-0" />
+              <span className="text-xs font-black leading-none text-rose-700">
                 Cari Kata
               </span>
             </button>

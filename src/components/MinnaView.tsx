@@ -98,39 +98,45 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
   return (
     <div className="w-full flex flex-col gap-5 sm:gap-6">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-rose-700 via-rose-600 to-amber-600 rounded-3xl p-5 sm:p-7 text-white shadow-lg relative overflow-hidden">
+      <div className="bg-gradient-to-r from-rose-700 via-rose-600 to-amber-600 rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-white shadow-md relative overflow-hidden">
         <div className="relative z-10 max-w-2xl">
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-xs px-3 py-1 rounded-full text-xs font-semibold mb-2">
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>Kurikulum Lengkap Minna no Nihongo (みんなの日本語)</span>
+          <div className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-xs px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-semibold mb-2">
+            <BookOpen className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+            <span>Kurikulum Utama Minna no Nihongo (みんなの日本語)</span>
           </div>
-          <h1 className="text-xl sm:text-3xl font-extrabold tracking-tight">
+          <h1 className="text-lg sm:text-2xl md:text-3xl font-black tracking-tight">
             Shokyu I, II &amp; Chuukyu I (N5–N3)
           </h1>
-          <p className="text-rose-100 text-xs sm:text-sm mt-1 leading-relaxed">
-            Mencakup seluruh tata bahasa penting (Bunkei &amp; Reibun), kosakata terstruktur, pola konjugasi, percakapan kontekstual, dan teks bacaan dari Dasar N5, N4, hingga Chuukyu I (N3).
+          <p className="text-rose-100 text-xs sm:text-sm mt-1 leading-relaxed line-clamp-2 sm:line-clamp-none">
+            Tata bahasa Bunkei &amp; Reibun, kosakata terstruktur, pola konjugasi, dan percakapan kontekstual Bab 1–50.
           </p>
+
+          <div className="mt-3 flex flex-wrap items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold text-white/90">
+            <span className="bg-white/15 px-2 py-0.5 rounded-lg backdrop-blur-xs">📚 50 Bab Utama + 12 Chuukyu</span>
+            <span className="bg-white/15 px-2 py-0.5 rounded-lg backdrop-blur-xs">🎯 N5 &bull; N4 &bull; N3</span>
+            <span className="bg-white/15 px-2 py-0.5 rounded-lg backdrop-blur-xs">🔊 Audio Suara Asli</span>
+          </div>
         </div>
-        <div className="absolute right-[-20px] bottom-[-20px] text-white/10 select-none pointer-events-none text-9xl font-black font-serif">
+        <div className="absolute right-[-15px] bottom-[-20px] text-white/10 select-none pointer-events-none text-8xl sm:text-9xl font-black font-serif">
           日
         </div>
       </div>
 
       {/* Quick Chapter Switcher for Mobile & PC */}
-      <div className="bg-white p-2.5 sm:p-3 rounded-2xl border border-slate-200/90 shadow-2xs flex items-center justify-between gap-2">
+      <div className="bg-white p-2 sm:p-2.5 rounded-2xl border border-slate-200/90 shadow-2xs flex items-center justify-between gap-1.5 sm:gap-2">
         <button
           onClick={handlePrevChapter}
           disabled={currentIndex <= 0}
-          className="min-h-[40px] px-2.5 sm:px-3 rounded-xl bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed text-xs font-bold text-slate-700 flex items-center gap-1 cursor-pointer select-none transition-colors"
+          className="min-h-[38px] px-2.5 sm:px-3 rounded-xl bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed text-xs font-bold text-slate-700 flex items-center gap-1 cursor-pointer select-none transition-colors"
           title="Bab Sebelumnya"
         >
           <ChevronLeft className="w-4 h-4" />
           <span className="hidden sm:inline">Sebelumnya</span>
         </button>
 
-        <div className="flex items-center gap-2 flex-1 justify-center max-w-md">
+        <div className="flex items-center gap-1.5 sm:gap-2 flex-1 justify-center max-w-md min-w-0">
           <span className="text-xs font-extrabold text-slate-500 whitespace-nowrap hidden min-[480px]:inline">
-            Lompat ke:
+            Bab:
           </span>
           <select
             value={selectedLessonKey}
@@ -138,7 +144,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
               const found = allMinnaLessons.find((l) => getLessonKey(l) === e.target.value);
               if (found) handleSelectLesson(found);
             }}
-            className="w-full sm:w-auto bg-rose-50/80 border border-rose-200 text-rose-800 text-xs sm:text-sm font-bold rounded-xl px-3 py-2 focus:outline-hidden focus:ring-2 focus:ring-rose-400 cursor-pointer"
+            className="w-full sm:w-auto bg-rose-50/90 border border-rose-200 text-rose-900 text-xs sm:text-sm font-bold rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 focus:outline-hidden focus:ring-2 focus:ring-rose-400 cursor-pointer truncate"
           >
             {allMinnaLessons.map((l) => {
               const k = getLessonKey(l);
@@ -154,7 +160,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
         <button
           onClick={handleNextChapter}
           disabled={currentIndex >= allMinnaLessons.length - 1}
-          className="min-h-[40px] px-2.5 sm:px-3 rounded-xl bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed text-xs font-bold text-slate-700 flex items-center gap-1 cursor-pointer select-none transition-colors"
+          className="min-h-[38px] px-2.5 sm:px-3 rounded-xl bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed text-xs font-bold text-slate-700 flex items-center gap-1 cursor-pointer select-none transition-colors"
           title="Bab Berikutnya"
         >
           <span className="hidden sm:inline">Berikutnya</span>

@@ -569,7 +569,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "にほんご (日本語)",
         "reading": "nihongo",
-        "id": "Bahasa jepang",
+        "id": "Bahasa Jepang",
         "kanji": "日本語"
       },
       {
@@ -2203,7 +2203,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "おちゃ (お茶)",
         "reading": "ocha",
-        "id": "Teh jepang / teh hijau",
+        "id": "Teh Jepang / teh hijau",
         "kanji": "お茶"
       },
       {
@@ -3756,7 +3756,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "かぶき (歌舞伎)",
         "reading": "kabuki",
-        "id": "Kabuki (drama tradisional jepang)",
+        "id": "Kabuki (drama tradisional Jepang)",
         "kanji": "歌舞伎"
       },
       {
@@ -3904,7 +3904,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "えんか (演歌)",
         "reading": "enka",
-        "id": "Lagu tradisional jepang populer",
+        "id": "Lagu tradisional Jepang populer",
         "kanji": "演歌"
       },
       {
@@ -4818,22 +4818,22 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "うどん",
         "reading": "udon",
-        "id": "Mie jepang ukuran besar"
+        "id": "Mie Jepang ukuran besar"
       },
       {
         "jp": "そば",
         "reading": "soba",
-        "id": "Mie jepang warna abu-abu"
+        "id": "Mie Jepang warna abu-abu"
       },
       {
         "jp": "ラーメン",
         "reading": "raamen",
-        "id": "Mie jepang ukuran biasa"
+        "id": "Mie Jepang ukuran biasa"
       },
       {
         "jp": "やきそば (焼きそば)",
         "reading": "yakisoba",
-        "id": "Mie goreng jepang",
+        "id": "Mie goreng Jepang",
         "kanji": "焼きそば"
       },
       {
@@ -7786,13 +7786,13 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "しょどう (書道)",
         "reading": "shodou",
-        "id": "Seni menulis huruf jepang",
+        "id": "Seni menulis huruf Jepang",
         "kanji": "書道"
       },
       {
         "jp": "かぶき (歌舞伎)",
         "reading": "kabuki",
-        "id": "Kabuki (Drama tradisional jepang)",
+        "id": "Kabuki (Drama tradisional Jepang)",
         "kanji": "歌舞伎"
       },
       {
@@ -7804,25 +7804,25 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "ぶんらく (文楽)",
         "reading": "bunraku",
-        "id": "Bunraku (Wayang golek tradisional jepang)",
+        "id": "Bunraku (Wayang golek tradisional Jepang)",
         "kanji": "文楽"
       },
       {
         "jp": "じゅうどう (柔道)",
         "reading": "juudou",
-        "id": "Judo (Olahraga tradisional jepang)",
+        "id": "Judo (Olahraga tradisional Jepang)",
         "kanji": "柔道"
       },
       {
         "jp": "けんどう (剣道)",
         "reading": "kendou",
-        "id": "Kendo (Olahraga tradisional jepang)",
+        "id": "Kendo (Olahraga tradisional Jepang)",
         "kanji": "剣道"
       },
       {
         "jp": "からて (空手)",
         "reading": "karate",
-        "id": "Karate (olahraga beladiri jepang)",
+        "id": "Karate (olahraga beladiri Jepang)",
         "kanji": "空手"
       },
       {
@@ -7834,7 +7834,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "いご・しょうぎ (囲碁・将棋)",
         "reading": "igo/shougi",
-        "id": "Catur jepang",
+        "id": "Catur Jepang",
         "kanji": "囲碁・将棋"
       },
       {
@@ -8687,19 +8687,19 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "わしつ (和室)",
         "reading": "washitsu",
-        "id": "Kamar ala jepang",
+        "id": "Kamar ala Jepang",
         "kanji": "和室"
       },
       {
         "jp": "おしいれ (押し入れ)",
         "reading": "oshiire",
-        "id": "Lemari dinding ala jepang",
+        "id": "Lemari dinding ala Jepang",
         "kanji": "押し入れ"
       },
       {
         "jp": "ふとん (布団)",
         "reading": "futon",
-        "id": "Selimut dan kasur berisi kapas ala jepang",
+        "id": "Selimut dan kasur berisi kapas ala Jepang",
         "kanji": "布団"
       },
       {
@@ -8788,17 +8788,17 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "ぞうり",
         "reading": "zouri",
-        "id": "Sandal tradisional jepang"
+        "id": "Sandal tradisional Jepang"
       },
       {
         "jp": "たび",
         "reading": "tabi",
-        "id": "Kaos kaki tradisional jepang"
+        "id": "Kaos kaki tradisional Jepang"
       },
       {
         "jp": "おび (帯)",
         "reading": "obi",
-        "id": "Ikat pinggang tradisional jepang",
+        "id": "Ikat pinggang tradisional Jepang",
         "kanji": "帯"
       }
     ]

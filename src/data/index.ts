@@ -43,7 +43,10 @@ function deduplicateMinnaVocab(rawVocab: typeof minnaShokyu1Lessons[0]['keyVocab
         existing.kanji = item.kanji;
       }
       if (!existing.jp.includes('（') && !existing.jp.includes('(') && (item.jp.includes('（') || item.jp.includes('('))) {
-        existing.jp = item.jp;
+        // Do not overwrite with bare particle notation like （を） or （が）
+        if (!/[（\(][をがにでの][\)）]/.test(item.jp)) {
+          existing.jp = item.jp;
+        }
       }
       if (!existing.jp.includes('[') && item.jp.includes('[')) {
         const bracket = item.jp.match(/\[.*?\]/)?.[0];
@@ -73,16 +76,22 @@ export const allMinnaLessons = [
 
 // Convert curriculum items to CardItem format for flashcard/quiz reuse
 export const minnaCardItems: CardItem[] = allMinnaLessons.flatMap(lesson =>
-  lesson.keyVocab.map((v, idx) => ({
-    id: `minna-${lesson.part.includes('Chuukyuu') ? 'cq1' : 'sh'}-${lesson.chapter}-${idx}`,
-    japanese: v.jp,
-    reading: v.reading,
-    meaningId: v.id,
-    category: 'minna' as MainCategory,
-    subCategory: lesson.part.includes('Chuukyuu') ? `bab_chuukyu_${lesson.chapter}` : `bab_${lesson.chapter}`,
-    level: lesson.level,
-    notes: `Bab ${lesson.chapter} (${lesson.part}): ${lesson.title}`
-  }))
+  lesson.keyVocab.map((v, idx) => {
+    // Clean bare parenthesized particle artifacts like （を）, （が）, （に） for crystal clear display
+    const cleanJp = v.jp.replace(/[（\(][をがにでの][\)）]/g, '').trim();
+    const cleanReading = v.reading ? v.reading.replace(/\s*[（\(][a-zA-Z\s]*[\)）]/gi, '').trim() : v.reading;
+
+    return {
+      id: `minna-${lesson.part.includes('Chuukyuu') ? 'cq1' : 'sh'}-${lesson.chapter}-${idx}`,
+      japanese: cleanJp || v.jp,
+      reading: cleanReading || v.reading,
+      meaningId: v.id,
+      category: 'minna' as MainCategory,
+      subCategory: lesson.part.includes('Chuukyuu') ? `bab_chuukyu_${lesson.chapter}` : `bab_${lesson.chapter}`,
+      level: lesson.level,
+      notes: `Bab ${lesson.chapter} (${lesson.part}): ${lesson.title}`
+    };
+  })
 );
 
 export const tobiraCardItems: CardItem[] = tobiraChapters.flatMap(ch =>
@@ -227,6 +236,9 @@ export function getAllBuiltInCards(): CardItem[] {
 }
 
 export function getCardsByCategory(category: MainCategory, customCards: CardItem[] = []): CardItem[] {
+  if (category === 'home') {
+    return [];
+  }
   if (category === 'custom') {
     return customCards;
   }

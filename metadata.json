@@ -1,6 +1,6 @@
 {
   "name": "日本語 ケラス",
-  "description": "Aplikasi belajar bahasa Jepang lengkap N5–N3: Minna no Nihongo (Shokyu I-II & Chuukyu I), Tobira Gateway to Advanced Japanese (N3), Quartet I, Shin Kanzen Master N3, Nihongo Sou-matome N3, TRY! JLPT N3, Irodori, SSW Tokutei Ginou, Latihan Menulis Kanji, Flashcards SRS & Audio Alami.",
+  "description": "Aplikasi belajar bahasa Jepang lengkap persiapan lulus JFT-Basic A2, SSW Tokutei Ginou, dan JLPT N5–N1: Minna no Nihongo (Bab 1–50), TRY! JLPT N3, Shin Kanzen Master N3, Nihongo Sou-matome N3, Tobira, Quartet, Irodori, Dokkai & Choukai N1.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

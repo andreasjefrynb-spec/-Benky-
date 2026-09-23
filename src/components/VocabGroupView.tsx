@@ -247,7 +247,7 @@ export const GROUP_METAS: Record<string, GroupMeta> = {
     name: 'Abstrak & Opini Kritis',
     kanjiTitle: '抽象概念・論説',
     icon: '🧠',
-    desc: 'Kosa kata tematik wacana, opini publik & diskusi',
+    desc: 'Kosakata tematik wacana, opini publik & diskusi',
     cluster: 'tingkat_mahir_native',
     color: 'from-purple-600/10 to-indigo-600/10 border-purple-300 text-purple-900',
   },

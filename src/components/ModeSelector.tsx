@@ -108,7 +108,7 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
   ];
 
   return (
-    <div className="bg-slate-100/90 p-1 rounded-2xl border border-slate-200/80 flex items-center gap-1 w-full shadow-2xs">
+    <div className="bg-slate-200/50 p-1 rounded-2xl border border-slate-200/90 flex items-center gap-1 w-full shadow-2xs">
       {modes
         .filter((m) => m.enabled)
         .map((m) => {
@@ -122,7 +122,7 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
               onClick={() => onSelectMode(m.id)}
               className={`flex-1 min-w-0 min-h-[38px] sm:min-h-[42px] flex items-center justify-center gap-1 sm:gap-2 py-1.5 sm:py-2 px-1 sm:px-3 rounded-xl font-bold text-xs sm:text-sm transition-all duration-150 cursor-pointer select-none active:scale-[0.98] ${
                 isActive
-                  ? 'bg-white text-slate-900 shadow-sm border border-slate-200/80 ring-1 ring-slate-900/5'
+                  ? 'bg-white text-rose-700 shadow-sm border border-slate-200/90 ring-1 ring-slate-900/5 font-black'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
               }`}
             >

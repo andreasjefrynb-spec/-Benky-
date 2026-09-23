@@ -17,7 +17,6 @@ import {
   ArrowRight,
   CheckCircle2,
   XCircle,
-  Flame,
   HelpCircle,
   Layers,
 } from 'lucide-react';
@@ -1282,14 +1281,10 @@ export const ConjugationView: React.FC<ConjugationViewProps> = ({ speechRate }) 
                 </p>
               </div>
 
-              {/* Scores & Streak Badges */}
+              {/* Scores Badges */}
               <div className="flex items-center gap-3">
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-50 border border-orange-200 text-orange-800 text-xs font-bold">
-                  <Flame className="w-4 h-4 text-orange-500 shrink-0" />
-                  <span>Streak: <strong>{drillStreak}</strong></span>
-                </div>
                 <div className="px-3 py-1.5 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs font-bold">
-                  Skor: <strong>{drillScore}</strong> / {CONJUGATION_DRILL_ITEMS.length}
+                  Jawaban Benar: <strong>{drillScore}</strong> / {CONJUGATION_DRILL_ITEMS.length}
                 </div>
               </div>
             </div>
@@ -1433,15 +1428,15 @@ export const ConjugationView: React.FC<ConjugationViewProps> = ({ speechRate }) 
 
                 <div className="grid grid-cols-2 gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-200">
                   <div>
-                    <span className="text-xs text-slate-500 font-bold block">Skor Akhir</span>
-                    <span className="text-2xl font-black text-indigo-600">
+                    <span className="text-xs text-slate-500 font-bold block">Jawaban Benar</span>
+                    <span className="text-2xl font-black text-emerald-600">
                       {drillScore} / {CONJUGATION_DRILL_ITEMS.length}
                     </span>
                   </div>
                   <div>
-                    <span className="text-xs text-slate-500 font-bold block">Max Streak</span>
-                    <span className="text-2xl font-black text-orange-500">
-                      {drillMaxStreak} 🔥
+                    <span className="text-xs text-slate-500 font-bold block">Akurasi</span>
+                    <span className="text-2xl font-black text-indigo-600">
+                      {Math.round((drillScore / CONJUGATION_DRILL_ITEMS.length) * 100)}%
                     </span>
                   </div>
                 </div>

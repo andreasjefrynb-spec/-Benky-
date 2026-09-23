@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MainCategory } from '../types';
+import { RoadmapModal } from './RoadmapModal';
 import {
   ChevronDown,
   ChevronUp,
@@ -9,6 +10,11 @@ import {
   X,
   Compass,
   PlusCircle,
+  GraduationCap,
+  Award,
+  BookCheck,
+  CheckCircle2,
+  HelpCircle,
 } from 'lucide-react';
 
 interface CategorySelectorProps {
@@ -16,6 +22,8 @@ interface CategorySelectorProps {
   onSelectCategory: (cat: MainCategory) => void;
   counts: Record<MainCategory, number>;
   onOpenAddCustom?: () => void;
+  isRoadmapOpen?: boolean;
+  setIsRoadmapOpen?: (open: boolean) => void;
 }
 
 interface CategoryDef {
@@ -24,7 +32,7 @@ interface CategoryDef {
   sub: string;
   badge: string;
   icon: string;
-  categoryGroup?: string;
+  categoryGroup: string;
 }
 
 export const CategorySelector: React.FC<CategorySelectorProps> = ({
@@ -32,11 +40,14 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
   onSelectCategory,
   counts,
   onOpenAddCustom,
+  isRoadmapOpen,
+  setIsRoadmapOpen,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [collapsedGroups, setCollapsedGroups] = useState<Record<string, boolean>>({
-    'Tingkat Menengah (N3)': true, // Hidden by default as requested
-  });
+  const [internalRoadmapModal, setInternalRoadmapModal] = useState<boolean>(false);
+  const showRoadmapModal = isRoadmapOpen !== undefined ? isRoadmapOpen : internalRoadmapModal;
+  const setShowRoadmapModal = setIsRoadmapOpen || setInternalRoadmapModal;
+  const [collapsedGroups, setCollapsedGroups] = useState<Record<string, boolean>>({});
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   const toggleGroup = (groupName: string) => {
@@ -47,104 +58,166 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
   };
 
   const categories: CategoryDef[] = [
-    // --- TINGKAT DASAR (N5 – N4) ---
+    // --- 0. BERANDA BELAJAR ---
     {
-      id: 'vocab',
-      title: 'Kosakata & Idiom (N5–N3)',
-      sub: 'Kosakata Tematik & Penutur Asli',
-      badge: '語',
-      icon: '📖',
-      categoryGroup: 'Tingkat Dasar (N5 – N4)',
+      id: 'home',
+      title: 'Beranda Belajar (Portal Utama)',
+      sub: 'Dashboard Santai, Inspirasi Hari Ini & Jalur Kelulusan',
+      badge: '本',
+      icon: '⛩️',
+      categoryGroup: '0. Beranda Utama',
     },
-    {
-      id: 'kanji',
-      title: 'Kanji (N5–N3)',
-      sub: 'Stroke Order & Latihan Menulis',
-      badge: '漢',
-      icon: '㊗️',
-      categoryGroup: 'Tingkat Dasar (N5 – N4)',
-    },
-    {
-      id: 'minna',
-      title: 'Pelajaran Dasar (N5–N4)',
-      sub: '50 Bab Utama Shokyu & Latihan',
-      badge: '初',
-      icon: '🔰',
-      categoryGroup: 'Tingkat Dasar (N5 – N4)',
-    },
-    {
-      id: 'hiragana',
-      title: 'Hiragana',
-      sub: '46 Karakter Dasar & Variasi',
-      badge: 'あ',
-      icon: '🌸',
-      categoryGroup: 'Tingkat Dasar (N5 – N4)',
-    },
-    {
-      id: 'katakana',
-      title: 'Katakana',
-      sub: '46 Kata Serapan & Variasi',
-      badge: 'ア',
-      icon: '⚡',
-      categoryGroup: 'Tingkat Dasar (N5 – N4)',
-    },
-    {
-      id: 'particles',
-      title: 'Partikel Dasar',
-      sub: 'Tata Bahasa 助詞 (20 Partikel)',
-      badge: '助',
-      icon: '📎',
-      categoryGroup: 'Tingkat Dasar (N5 – N4)',
-    },
-    {
-      id: 'conjugation',
-      title: 'Konjugasi Kata Kerja',
-      sub: '14 Bentuk, Lagu ~Te & Drill',
-      badge: '活',
-      icon: '🔄',
-      categoryGroup: 'Tingkat Dasar (N5 – N4)',
-    },
+
+    // --- 1. LULUS JFT-BASIC & KERJA JEPANG (SSW TOKUTEI GINOU) ---
     {
       id: 'irodori',
-      title: 'Praktis Can-Do (A1–A2)',
-      sub: 'Percakapan Situasi Nyata',
+      title: 'Praktis Can-Do JFT (A1–A2)',
+      sub: 'Situasi Percakapan Nyata di Jepang & Standar Ujian JFT-Basic',
       badge: '彩',
       icon: '🎨',
-      categoryGroup: 'Tingkat Dasar (N5 – N4)',
+      categoryGroup: '1. Persiapan JFT-Basic (A2) & Kerja Jepang (SSW)',
     },
     {
       id: 'ssw',
-      title: 'Materi Kerja SSW',
-      sub: '12 Sektor Tokutei Ginou',
+      title: 'Materi Kerja SSW Tokutei Ginou',
+      sub: '12 Sektor Kerja Resmi: Kaigo, Gaishoku, Manufaktur, Konstruksi, dll.',
       badge: '技',
       icon: '👷',
-      categoryGroup: 'Tingkat Dasar (N5 – N4)',
+      categoryGroup: '1. Persiapan JFT-Basic (A2) & Kerja Jepang (SSW)',
     },
 
-    // --- TINGKAT MENENGAH (N3) ---
+    // --- 2. FONDASI JLPT N5 – N4 & MINNA NO NIHONGO ---
+    {
+      id: 'minna',
+      title: 'Kurikulum Minna no Nihongo',
+      sub: 'Bab 1–50 Shokyu + Chuukyu, Pola Kalimat & Latihan',
+      badge: '初',
+      icon: '🔰',
+      categoryGroup: '2. Fondasi JLPT N5 – N4 & Pelajaran Dasar',
+    },
+    {
+      id: 'vocab',
+      title: 'Kosakata & Idiom (N5–N3)',
+      sub: 'Kosakata Tematik, Nuansa & Penutur Asli',
+      badge: '語',
+      icon: '📖',
+      categoryGroup: '2. Fondasi JLPT N5 – N4 & Pelajaran Dasar',
+    },
+    {
+      id: 'kanji',
+      title: 'Kanji (N5–N3) & Stroke Order',
+      sub: 'Animasi Coretan, Mnemonic & Latihan Menulis',
+      badge: '漢',
+      icon: '㊗️',
+      categoryGroup: '2. Fondasi JLPT N5 – N4 & Pelajaran Dasar',
+    },
+    {
+      id: 'particles',
+      title: 'Partikel Tata Bahasa 助詞',
+      sub: '20 Partikel Kunci Ujian: は, が, を, に, で, と, へ, dll.',
+      badge: '助',
+      icon: '📎',
+      categoryGroup: '2. Fondasi JLPT N5 – N4 & Pelajaran Dasar',
+    },
+    {
+      id: 'conjugation',
+      title: 'Konjugasi Kata Kerja & Sifat',
+      sub: '14 Bentuk: ~Te, Kamus, ~Nai, ~Ta, Masu, Ba, Maksud, dll.',
+      badge: '活',
+      icon: '🔄',
+      categoryGroup: '2. Fondasi JLPT N5 – N4 & Pelajaran Dasar',
+    },
+    {
+      id: 'hiragana',
+      title: 'Huruf Hiragana',
+      sub: '46 Karakter Dasar, Dakuon & Yoon',
+      badge: 'あ',
+      icon: '🌸',
+      categoryGroup: '2. Fondasi JLPT N5 – N4 & Pelajaran Dasar',
+    },
+    {
+      id: 'katakana',
+      title: 'Huruf Katakana',
+      sub: '46 Huruf Serapan Kata Asing & Aturan Baca',
+      badge: 'ア',
+      icon: '⚡',
+      categoryGroup: '2. Fondasi JLPT N5 – N4 & Pelajaran Dasar',
+    },
+    {
+      id: 'search',
+      title: 'Cari Kata & Terjemahan AI',
+      sub: 'Kamus Instan & Mesin Terjemahan Suara Cepat',
+      badge: '索',
+      icon: '🔍',
+      categoryGroup: '2. Fondasi JLPT N5 – N4 & Pelajaran Dasar',
+    },
+
+    // --- 3. SPESIALIS LULUS UJIAN JLPT N3 (BUKU RESMI & DRILL) ---
+    {
+      id: 'tryjlpt',
+      title: 'TRY! JLPT N3 Tata Bahasa',
+      sub: 'Pola Ujian Resmi, Cerita Kontekstual & Soal Drill',
+      badge: '試',
+      icon: '🎯',
+      categoryGroup: '3. Spesialis Lulus Ujian JLPT N3',
+    },
+    {
+      id: 'soumatome',
+      title: 'Nihongo Sou-matome N3',
+      sub: 'Target 6 Minggu Lulus Bunpou, Kanji & Kosakata',
+      badge: '総',
+      icon: '📅',
+      categoryGroup: '3. Spesialis Lulus Ujian JLPT N3',
+    },
+    {
+      id: 'shinkanzen',
+      title: 'Shin Kanzen Master N3',
+      sub: 'Bank Soal Jebakan, Perbedaan Nuansa & Analisis Presisi',
+      badge: '完',
+      icon: '🏆',
+      categoryGroup: '3. Spesialis Lulus Ujian JLPT N3',
+    },
     {
       id: 'phrases',
-      title: 'Tata Bahasa & Pola (N3)',
-      sub: 'Pola Tematik, Nuansa & Drill Ujian',
+      title: 'Tata Bahasa & Pola Kalimat N3',
+      sub: 'Pola Tematik, Nuansa, Perbedaan & Drill Ujian',
       badge: '文',
       icon: '🏛️',
-      categoryGroup: 'Tingkat Menengah (N3)',
+      categoryGroup: '3. Spesialis Lulus Ujian JLPT N3',
+    },
+
+    // --- 4. TINGKAT LANJUT JLPT N3 – N1 (TOBIRA, QUARTET, DOKKAI, CHOUKAI) ---
+    {
+      id: 'tobira',
+      title: 'Tobira: Gateway to Advanced (N3–N2)',
+      sub: 'Bahasa Otentik, Budaya & Teks Wacana Menengah Menuju Mahir',
+      badge: '扉',
+      icon: '🚪',
+      categoryGroup: '4. Tingkat Lanjut JLPT N3 – N1',
+    },
+    {
+      id: 'quartet',
+      title: 'Quartet Intermediate (N3–N2)',
+      sub: 'Integrasi 4 Keterampilan: Membaca, Menulis, Menyimak, Berbicara',
+      badge: '四',
+      icon: '🎻',
+      categoryGroup: '4. Tingkat Lanjut JLPT N3 – N1',
     },
     {
       id: 'dokkai',
-      title: 'Membaca & Wacana (N3)',
-      sub: 'Wacana Budaya, Artikel & Bacaan Menengah',
+      title: 'Membaca & Wacana Dokkai (N1–N3)',
+      sub: 'Editorial Berita Asahi, Analisis Argumen & Pemahaman Logika',
       badge: '読',
       icon: '📰',
-      categoryGroup: 'Tingkat Menengah (N3)',
+      categoryGroup: '4. Tingkat Lanjut JLPT N3 – N1',
     },
     {
       id: 'choukai',
-      title: 'Menyimak & Dialog (N3)',
-      sub: 'Percakapan Nyata, Situasi & Respon',
+      title: 'Menyimak & Listening Choukai (N1–N3)',
+      sub: 'Respon Cepat (Sokkai Outou), Dialog Nyata & Pengumuman',
       badge: '聴',
       icon: '🎧',
-      categoryGroup: 'Tingkat Menengah (N3)',
+      categoryGroup: '4. Tingkat Lanjut JLPT N3 – N1',
     },
   ];
 
@@ -175,6 +248,26 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
     onSelectCategory(id);
     setIsOpen(false);
   };
+
+  const featuredQuickCategories: { id: MainCategory; shortTitle: string; icon: string }[] = [
+    { id: 'home', shortTitle: 'Beranda', icon: '⛩️' },
+    { id: 'minna', shortTitle: 'Bab 1–50 (Minna)', icon: '🔰' },
+    { id: 'irodori', shortTitle: 'JFT A1-A2 Can-Do', icon: '🎨' },
+    { id: 'ssw', shortTitle: 'SSW Kerja Jepang', icon: '👷' },
+    { id: 'tryjlpt', shortTitle: 'TRY! JLPT N3', icon: '🎯' },
+    { id: 'soumatome', shortTitle: 'Sou-matome N3', icon: '📅' },
+    { id: 'shinkanzen', shortTitle: 'Shin Kanzen N3', icon: '🏆' },
+    { id: 'tobira', shortTitle: 'Tobira (N3-N2)', icon: '🚪' },
+    { id: 'quartet', shortTitle: 'Quartet (N3-N2)', icon: '🎻' },
+    { id: 'vocab', shortTitle: 'Kosakata (N5–N3)', icon: '📖' },
+    { id: 'kanji', shortTitle: 'Kanji (N5–N3)', icon: '㊗️' },
+    { id: 'phrases', shortTitle: 'Tata Bahasa N3', icon: '🏛️' },
+    { id: 'particles', shortTitle: 'Partikel', icon: '📎' },
+    { id: 'conjugation', shortTitle: 'Konjugasi', icon: '🔄' },
+    { id: 'dokkai', shortTitle: 'Dokkai N1-N3', icon: '📰' },
+    { id: 'choukai', shortTitle: 'Choukai N1-N3', icon: '🎧' },
+    { id: 'search', shortTitle: 'Cari & Terjemah', icon: '🔍' },
+  ];
 
   return (
     <div ref={dropdownRef} className="w-full relative select-none">
@@ -250,6 +343,27 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
         </div>
       </div>
 
+      {/* Quick Category Chips Strip */}
+      <div className="mt-2.5 flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 select-none -mx-0.5 px-0.5">
+        {featuredQuickCategories.map((cat) => {
+          const isActive = activeCategory === cat.id;
+          return (
+            <button
+              key={cat.id}
+              onClick={() => onSelectCategory(cat.id)}
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap flex items-center gap-1.5 transition-all cursor-pointer shrink-0 active:scale-95 ${
+                isActive
+                  ? 'bg-rose-600 text-white shadow-xs scale-[1.02]'
+                  : 'bg-white text-slate-700 hover:bg-rose-50/50 hover:text-rose-600 border border-slate-200/90 shadow-3xs'
+              }`}
+            >
+              <span>{cat.icon}</span>
+              <span>{cat.shortTitle}</span>
+            </button>
+          );
+        })}
+      </div>
+
       {/* ========================================================================= */}
       {/* MENU PELAJARAN (TERSEMBUNYI - HANYA MUNCUL SAAT TOMBOL DIKETUK)          */}
       {/* ========================================================================= */}
@@ -280,12 +394,21 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
                       Mau Belajar Apa Hari Ini?
                     </h4>
                     <p className="text-[11px] text-slate-500 truncate hidden xs:block">
-                      Pilih salah satu menu pelajaran di bawah untuk mulai belajar
+                      Pilih materi di bawah atau cek panduan roadmap kelulusan
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 shrink-0">
+                <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                  <button
+                    onClick={() => setShowRoadmapModal(true)}
+                    className="px-2.5 py-1 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
+                    title="Buka panduan urutan belajar agar lulus ujian JFT & JLPT"
+                  >
+                    <GraduationCap className="w-3.5 h-3.5 text-amber-600" />
+                    <span className="hidden sm:inline">Roadmap Lulus JFT &amp; JLPT</span>
+                    <span className="sm:hidden">Roadmap</span>
+                  </button>
                   <button
                     onClick={() => setIsOpen(false)}
                     className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center cursor-pointer transition-colors"
@@ -331,7 +454,7 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
                           {groupCats.map((cat) => {
                             const isActive = activeCategory === cat.id;
-                            const count = counts[cat.id] || 0;
+                            const count = cat.id === 'search' ? 'Cari' : (counts[cat.id] || 0);
 
                             return (
                               <button
@@ -415,12 +538,30 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
               {/* Bottom Quick Help Tip */}
               <div className="pt-2 mt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
                 <span>💡 Tip: Menu akan otomatis tertutup setelah memilih materi pelajaran.</span>
-                <span className="font-mono text-[10px] text-slate-500 font-semibold">{categories.length} Modul Lengkap (N5–N3)</span>
+                <button
+                  onClick={() => setShowRoadmapModal(true)}
+                  className="font-bold text-[11px] text-rose-600 hover:text-rose-700 underline cursor-pointer"
+                >
+                  Panduan Lulus JFT &amp; JLPT &rarr;
+                </button>
               </div>
             </motion.div>
           </>
         )}
       </AnimatePresence>
+
+      {/* ========================================================================= */}
+      {/* MODAL PANDUAN ROADMAP KELULUSAN JFT & JLPT                                 */}
+      {/* ========================================================================= */}
+      <RoadmapModal
+        isOpen={showRoadmapModal}
+        onClose={() => setShowRoadmapModal(false)}
+        onSelectCategory={(cat) => {
+          setShowRoadmapModal(false);
+          setIsOpen(false);
+          onSelectCategory(cat);
+        }}
+      />
     </div>
   );
 };

@@ -22,6 +22,8 @@ import { DokkaiView } from './components/DokkaiView';
 import { ChoukaiView } from './components/ChoukaiView';
 import { AdvancedGrammarView } from './components/AdvancedGrammarView';
 import { GlobalSearchModal } from './components/GlobalSearchModal';
+import { HomePortalView } from './components/HomePortalView';
+import { RoadmapModal } from './components/RoadmapModal';
 import {
   MainCategory,
   StudyMode,
@@ -64,14 +66,26 @@ import { registerReadings } from './utils/audio';
 export default function App() {
   const [activeCategory, setActiveCategory] = useState<MainCategory>(() => {
     const saved = localStorage.getItem('nihongo_active_category');
-    return (saved as MainCategory) || 'minna';
+    return (saved as MainCategory) || 'home';
   });
-  const [studyMode, setStudyMode] = useState<StudyMode>('flashcard');
+  const [studyMode, setStudyMode] = useState<StudyMode>(() => {
+    const savedMode = localStorage.getItem('nihongo_study_mode');
+    if (savedMode) return savedMode as StudyMode;
+    return 'chart';
+  });
   const [speechRate, setSpeechRate] = useState<number>(0.9);
+  const [isRoadmapModalOpen, setIsRoadmapModalOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('nihongo_active_category', activeCategory);
+    if (activeCategory !== 'home' && activeCategory !== 'search') {
+      localStorage.setItem('nihongo_last_active_category', activeCategory);
+    }
   }, [activeCategory]);
+
+  useEffect(() => {
+    localStorage.setItem('nihongo_study_mode', studyMode);
+  }, [studyMode]);
 
   // Persistence States
   const [customCards, setCustomCards] = useState<CardItem[]>([]);
@@ -282,7 +296,8 @@ export default function App() {
   // Counts for categories
   const categoryCounts: Record<MainCategory, number> = useMemo(() => {
     return {
-      search: 0,
+      home: 0,
+      search: allCardsCombined.length,
       minna: minnaCardItems.length,
       tobira: tobiraCardItems.length,
       quartet: quartetCardItems.length,
@@ -302,7 +317,7 @@ export default function App() {
       katakana: katakanaData.length,
       custom: customCards.length,
     };
-  }, [customCards.length]);
+  }, [allCardsCombined.length, customCards.length]);
 
   // Show chart option for Minna, Phrases/Advanced Grammar, Tobira, Quartet, Shin Kanzen, Sou-matome, Try JLPT, Irodori, SSW, Vocabulary Groups, Kana, Particles, and Conjugation
   const showChartOption =
@@ -349,45 +364,53 @@ export default function App() {
         speechRate={speechRate}
         onToggleSpeechRate={handleToggleSpeechRate}
         onSelectSpeechRate={(rate) => setSpeechRate(rate)}
+        onGoHome={() => setActiveCategory('home')}
+        isHomeActive={activeCategory === 'home'}
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-2.5 sm:px-6 py-2 sm:py-6 flex flex-col gap-2.5 sm:gap-6">
-        {/* Category Selector Bar */}
-        <section aria-label="Pilihan Kategori Belajar">
-          <CategorySelector
-            activeCategory={activeCategory}
-            onSelectCategory={(cat) => {
-              setActiveCategory(cat);
-              setWritingTargetCard(null);
-              setVocabGroupTarget(null);
-              setQuizGroupTarget(null);
-              setInitialSearchCardId(undefined);
-              if (
-                cat === 'phrases' ||
-                cat === 'minna' ||
-                cat === 'tobira' ||
-                cat === 'quartet' ||
-                cat === 'shinkanzen' ||
-                cat === 'soumatome' ||
-                cat === 'tryjlpt' ||
-                cat === 'irodori' ||
-                cat === 'ssw' ||
-                cat === 'particles' ||
-                cat === 'conjugation' ||
-                cat === 'dokkai' ||
-                cat === 'choukai'
-              ) {
-                setStudyMode('chart');
-              }
-            }}
-            counts={categoryCounts}
-            onOpenAddCustom={() => setIsAddCustomOpen(true)}
-          />
-        </section>
+      <main className="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-6 py-3 sm:py-6 flex flex-col gap-3.5 sm:gap-6">
+        {/* Category Selector Bar - Only shown when inside lessons */}
+        {activeCategory !== 'home' && (
+          <section aria-label="Pilihan Kategori Belajar">
+            <CategorySelector
+              activeCategory={activeCategory}
+              onSelectCategory={(cat) => {
+                setActiveCategory(cat);
+                setWritingTargetCard(null);
+                setVocabGroupTarget(null);
+                setQuizGroupTarget(null);
+                setInitialSearchCardId(undefined);
+                if (
+                  cat === 'phrases' ||
+                  cat === 'minna' ||
+                  cat === 'tobira' ||
+                  cat === 'quartet' ||
+                  cat === 'shinkanzen' ||
+                  cat === 'soumatome' ||
+                  cat === 'tryjlpt' ||
+                  cat === 'irodori' ||
+                  cat === 'ssw' ||
+                  cat === 'particles' ||
+                  cat === 'conjugation' ||
+                  cat === 'dokkai' ||
+                  cat === 'choukai'
+                ) {
+                  setStudyMode('chart');
+                } else if (cat !== 'home') {
+                  setStudyMode('flashcard');
+                }
+              }}
+              counts={categoryCounts}
+              onOpenAddCustom={() => setIsAddCustomOpen(true)}
+              isRoadmapOpen={isRoadmapModalOpen}
+              setIsRoadmapOpen={setIsRoadmapModalOpen}
+            />
+          </section>
+        )}
 
-        {/* Mode Selector (Flashcard, Chart/Kelompok, Quiz, Writing) */}
-        {activeCategory !== 'dokkai' && activeCategory !== 'choukai' && activeCategory !== 'search' && (
+        {/* Mode Selector (Flashcard, Chart/Kelompok, Quiz, Writing) - Hidden on Home & Fullscreen views */}
+        {activeCategory !== 'home' && activeCategory !== 'dokkai' && activeCategory !== 'choukai' && activeCategory !== 'search' && (
           <section aria-label="Pilihan Mode Belajar">
             <ModeSelector
               currentMode={studyMode}
@@ -399,7 +422,50 @@ export default function App() {
         )}
 
         {/* Dynamic Study Content View */}
-        <div className="flex-1 py-0.5 sm:py-2">
+        <div className="flex-1 py-1 sm:py-2">
+          {activeCategory === 'home' && (
+            <HomePortalView
+              onSelectCategory={(cat) => {
+                setActiveCategory(cat);
+                setWritingTargetCard(null);
+                setVocabGroupTarget(null);
+                setQuizGroupTarget(null);
+                setInitialSearchCardId(undefined);
+                if (
+                  cat === 'phrases' ||
+                  cat === 'minna' ||
+                  cat === 'tobira' ||
+                  cat === 'quartet' ||
+                  cat === 'shinkanzen' ||
+                  cat === 'soumatome' ||
+                  cat === 'tryjlpt' ||
+                  cat === 'irodori' ||
+                  cat === 'ssw' ||
+                  cat === 'particles' ||
+                  cat === 'conjugation' ||
+                  cat === 'dokkai' ||
+                  cat === 'choukai'
+                ) {
+                  setStudyMode('chart');
+                } else {
+                  setStudyMode('flashcard');
+                }
+              }}
+              onStartPractice={(cat, mode, subCat) => {
+                setActiveCategory(cat);
+                setStudyMode(mode);
+                if (subCat) {
+                  setVocabGroupTarget({ subCategory: subCat, level: 'all' });
+                }
+              }}
+              speechRate={speechRate}
+              stats={stats}
+              onOpenGlobalSearch={() => setActiveCategory('search')}
+              onOpenRoadmapModal={() => setIsRoadmapModalOpen(true)}
+              onPracticeWriting={handlePracticeWriting}
+            />
+          )}
+
           {activeCategory === 'search' && (
             <GlobalSearchModal
               isInline={true}
@@ -655,6 +721,34 @@ export default function App() {
         allCards={allCardsCombined}
         speechRate={speechRate}
         onSelectCard={handleSelectCardFromSearch}
+      />
+
+      <RoadmapModal
+        isOpen={isRoadmapModalOpen}
+        onClose={() => setIsRoadmapModalOpen(false)}
+        onSelectCategory={(cat) => {
+          setIsRoadmapModalOpen(false);
+          setActiveCategory(cat);
+          if (
+            cat === 'phrases' ||
+            cat === 'minna' ||
+            cat === 'tobira' ||
+            cat === 'quartet' ||
+            cat === 'shinkanzen' ||
+            cat === 'soumatome' ||
+            cat === 'tryjlpt' ||
+            cat === 'irodori' ||
+            cat === 'ssw' ||
+            cat === 'particles' ||
+            cat === 'conjugation' ||
+            cat === 'dokkai' ||
+            cat === 'choukai'
+          ) {
+            setStudyMode('chart');
+          } else if (cat !== 'home') {
+            setStudyMode('flashcard');
+          }
+        }}
       />
     </div>
   );

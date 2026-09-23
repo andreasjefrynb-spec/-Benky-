@@ -172,7 +172,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "じゅうどう (柔道)",
         "reading": "juudou",
-        "id": "Judo(olahraga tradisional jepang)",
+        "id": "Judo(olahraga tradisional Jepang)",
         "kanji": "柔道"
       },
       {
@@ -3836,7 +3836,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "しょうゆ",
         "reading": "shouyu",
-        "id": "Kecap asin jepang"
+        "id": "Kecap asin Jepang"
       },
       {
         "jp": "ソース",
@@ -3868,7 +3868,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "おちゃをたてます (お茶をたてます)",
         "reading": "ochaotatemasu",
-        "id": "Membuat teh jepang",
+        "id": "Membuat teh Jepang",
         "kanji": "お茶をたてます"
       },
       {
@@ -4032,7 +4032,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "みそ",
         "reading": "miso",
-        "id": "Miso (tauco jepang)"
+        "id": "Miso (tauco Jepang)"
       },
       {
         "jp": "あぶら (油)",
@@ -5737,7 +5737,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "ねんちゅうぎょうじ (年中行事)",
         "reading": "nenchuugyouji",
-        "id": "Acara tahunan di jepang",
+        "id": "Acara tahunan di Jepang",
         "kanji": "年中行事"
       },
       {
@@ -8072,7 +8072,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "わしょく (和食)",
         "reading": "washoku",
-        "id": "Makanan jepang",
+        "id": "Makanan Jepang",
         "kanji": "和食"
       },
       {
@@ -10012,7 +10012,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "りょかん (旅館)",
         "reading": "ryokan",
-        "id": "Penginapan ala jepang",
+        "id": "Penginapan ala Jepang",
         "kanji": "旅館"
       },
       {

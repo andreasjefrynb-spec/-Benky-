@@ -568,6 +568,30 @@ const DETAILED_CLARIFICATIONS: Record<string, MeaningClarification> = {
     clarificationNote: 'Berlaku universal untuk melepas semua jenis pakaian dan alas kaki.',
     usageHint: '玄関で靴を脱いでください (Tolong lepas sepatu di pintu masuk).',
   },
+  'かける': {
+    primaryMeaning: 'Mengenakan / Memakai (khusus kacamata: disangkutkan ke telinga/hidung)',
+    contextBadge: { text: 'Kacamata (Transitif)', variant: 'transitive' },
+    particleHint: '眼鏡（めがね）を かける / かけます',
+    clarificationNote: 'Kata kerja Golongan 2 (Ichidan). Khusus untuk kacamata (megane). Tanda [を] menandai objek kacamata.',
+    contrastPair: {
+      word: '被る (かぶる)',
+      reading: 'kaburu',
+      difference: 'Memakai penutup kepala (topi, helm). Kakeru khusus kacamata.',
+    },
+    usageHint: '眼鏡をかけます (Memakai kacamata) / 電話をかけます (Menelepon).',
+  },
+  'かけます': {
+    primaryMeaning: 'Mengenakan / Memakai (khusus kacamata: 眼鏡をかけます)',
+    contextBadge: { text: 'Kacamata (Transitif)', variant: 'transitive' },
+    particleHint: '眼鏡（めがね）を かけます',
+    clarificationNote: 'Kata kerja Golongan 2 (Ichidan, bentuk ~masu dari かける). Selalu dipasangkan dengan partikel を untuk objek kacamata (めがねをかけます).',
+    contrastPair: {
+      word: '着ます / かぶります',
+      reading: 'kimasu / kaburimasu',
+      difference: 'Baju atasan (kimasu), topi (kaburimasu), celana (hakimasu), kacamata (kakemasu).',
+    },
+    usageHint: '眼鏡をかけます (Memakai kacamata).',
+  },
 
   // === MEMBERI & MENERIMA (AGERU, KURERU, MORAU) ===
   'あげる': {
@@ -926,17 +950,21 @@ export function getClarifiedMeaning(item: CardItem): MeaningClarification {
   const jp = (item.japanese || item.kanji || '').trim();
   const kj = (item.kanji || '').trim();
   const rawMeaning = item.meaningId || '';
+  const baseJp = jp.replace(/\[.*?\]/g, '').replace(/[（\(].*?[）\)]/g, '').trim();
 
   // 1. Cek kamus disambiguasi presisi
   if (DETAILED_CLARIFICATIONS[jp]) {
     return DETAILED_CLARIFICATIONS[jp];
+  }
+  if (baseJp && DETAILED_CLARIFICATIONS[baseJp]) {
+    return DETAILED_CLARIFICATIONS[baseJp];
   }
   if (kj && DETAILED_CLARIFICATIONS[kj]) {
     return DETAILED_CLARIFICATIONS[kj];
   }
 
   // Cek jika berakhiran "な" (kata sifat-na)
-  const strippedNa = jp.replace(/な$/, '').trim();
+  const strippedNa = baseJp.replace(/な$/, '').trim();
   if (DETAILED_CLARIFICATIONS[strippedNa]) {
     return DETAILED_CLARIFICATIONS[strippedNa];
   }

@@ -245,12 +245,12 @@ export const phrasesN3Data: CardItem[] = [
     id: 'pn3-biz-2',
     category: 'phrases',
     subCategory: 'bisnis_sopan',
-    japanese: 'ご無沙汰しております',
-    reading: 'gobusata shite orimasu',
-    furigana: 'ごぶさた して おります',
-    meaningId: 'Sudah lama tidak saling kontak / berkabar (salam bisnis)',
-    exampleJp: '大変ご無沙汰しております。お変わりございませんか？',
-    exampleId: 'Sudah cukup lama tidak saling bertukar kabar. Apakah Anda sehat selalu?',
+    japanese: '何卒よろしくお願い申し上げます',
+    reading: 'nanitozo yoroshiku onegai moushiagemasu',
+    furigana: 'なにとぞ よろしく おねがい もうしあげます',
+    meaningId: 'Dengan tulus kami mohon bantuan & kerja sama Anda (penutup surat/email bisnis)',
+    exampleJp: '今後とも何卒よろしくお願い申し上げます。',
+    exampleId: 'Untuk ke depannya pun, kami dengan tulus memohon bimbingan dan kerja sama Anda.',
     level: 'N3'
   },
   {

@@ -531,17 +531,17 @@ async function fetchPublicApiTranslation(queryText: string) {
     const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(queryText)}&langpair=${langPair}`;
     const resp = await fetch(url);
     const data = await resp.json();
-    if (data && data.responseData && data.responseData.translatedText) {
-      const translated = data.responseData.translatedText;
+    if (data && data.responseData && data.responseData.translatedText && !data.responseData.translatedText.includes("MYMEMORY WARNING")) {
+      const translated = data.responseData.translatedText.trim();
       return {
         japanese: isJapanese ? queryText : translated,
-        reading: translated,
-        romaji: queryText,
+        reading: isJapanese ? queryText : translated,
+        romaji: isJapanese ? queryText : translated,
         casualJapanese: isJapanese ? queryText : translated,
-        casualReading: translated,
-        casualRomaji: queryText,
+        casualReading: isJapanese ? queryText : translated,
+        casualRomaji: isJapanese ? queryText : translated,
         meaning: isJapanese ? translated : queryText,
-        explanation: `Terjemahan online via public translation API untuk "${queryText}".`
+        explanation: `Terjemahan online presisi untuk "${queryText}".`
       };
     }
   } catch (e) {
@@ -552,6 +552,60 @@ async function fetchPublicApiTranslation(queryText: string) {
 
 function getOfflineTranslation(queryText: string) {
   const q = (queryText || "").toLowerCase().trim();
+
+  // Pattern matching for phrases
+  if (q.includes("tidak bisa") && (q.includes("hp") || q.includes("smartphone") || q.includes("ponsel"))) {
+    return {
+      japanese: "スマホで翻訳ができません",
+      reading: "すまほでほんやくができません",
+      romaji: "Sumaho de hon'yaku ga dekimasen",
+      casualJapanese: "スマホで翻訳できない",
+      casualReading: "すまほでほんやくできない",
+      casualRomaji: "Sumaho de hon'yaku dekinai",
+      meaning: "Terjemahan tidak bisa di ponsel / HP",
+      explanation: "Menggunakan partikel で (de) untuk alat/media, dan bentuk potensial negatif できません (dekimasen) dari kata kerja できる (bisa)."
+    };
+  }
+
+  if (q.includes("terjemahan") || q.includes("menerjemahkan")) {
+    return {
+      japanese: "翻訳します",
+      reading: "ほんやくします",
+      romaji: "Hon'yaku shimasu",
+      casualJapanese: "翻訳する",
+      casualReading: "ほんやくする",
+      casualRomaji: "Hon'yaku suru",
+      meaning: "Menerjemahkan / Terjemahan",
+      explanation: "Kata benda 翻訳 (hon'yaku) digabung dengan kata kerja する (suru) untuk aktivitas menerjemahkan."
+    };
+  }
+
+  if (q === "tidak bisa") {
+    return {
+      japanese: "できません",
+      reading: "できません",
+      romaji: "Dekimasen",
+      casualJapanese: "できない",
+      casualReading: "できない",
+      casualRomaji: "Dekinai",
+      meaning: "Tidak bisa / Tidak mampu",
+      explanation: "Bentuk potensial negatif dari kata kerja できます (dapat/bisa)."
+    };
+  }
+
+  if (q === "bisa") {
+    return {
+      japanese: "できます",
+      reading: "できます",
+      romaji: "Dekimasu",
+      casualJapanese: "できる",
+      casualReading: "できる",
+      casualRomaji: "Dekiru",
+      meaning: "Bisa / Mampu",
+      explanation: "Bentuk potensial positif (Ichidan) untuk kemampuan."
+    };
+  }
+
   const dict: Record<string, any> = {
     "sisir": {
       "japanese": "櫛",
@@ -652,21 +706,60 @@ function getOfflineTranslation(queryText: string) {
       "casualRomaji": "ohayou",
       "meaning": "Selamat pagi",
       "explanation": "Salam pagi hari."
+    },
+    "selamat malam": {
+      "japanese": "こんばんは",
+      "reading": "こんばんは",
+      "romaji": "konbanwa",
+      "casualJapanese": "こんばんは",
+      "casualReading": "こんばんは",
+      "casualRomaji": "konbanwa",
+      "meaning": "Selamat malam",
+      "explanation": "Salam di malam hari."
+    },
+    "maaf": {
+      "japanese": "すみません",
+      "reading": "すみません",
+      "romaji": "sumimasen",
+      "casualJapanese": "ごめんね",
+      "casualReading": "ごめんね",
+      "casualRomaji": "gomen ne",
+      "meaning": "Maaf / Permisi",
+      "explanation": "Ungkapan permohonan maaf atau memanggil seseorang."
+    },
+    "mobil": {
+      "japanese": "車",
+      "reading": "くるま",
+      "romaji": "kuruma",
+      "casualJapanese": "車",
+      "casualReading": "くるま",
+      "casualRomaji": "kuruma",
+      "meaning": "Mobil",
+      "explanation": "Kata benda untuk mobil."
+    },
+    "kereta": {
+      "japanese": "電車",
+      "reading": "でんしゃ",
+      "romaji": "densha",
+      "casualJapanese": "電車",
+      "casualReading": "でんしゃ",
+      "casualRomaji": "densha",
+      "meaning": "Kereta",
+      "explanation": "Kata benda untuk kereta listrik."
     }
   };
 
   if (dict[q]) return dict[q];
 
-  // Smart fallback generator for any query
   return {
-    "japanese": `${queryText} (日本語)`,
+    "japanese": queryText,
     "reading": queryText,
     "romaji": queryText,
     "casualJapanese": queryText,
     "casualReading": queryText,
     "casualRomaji": queryText,
     "meaning": `Terjemahan untuk "${queryText}"`,
-    "explanation": `Hasil instan untuk "${queryText}". Terjemahan dan analisis kosakata diproses secara lokal karena kuota API online sedang padat.`
+    "explanation": `Hasil instan untuk "${queryText}". Silakan gunakan kata kunci spesifik untuk penjelasan tata bahasa mendalam.`
   };
 }
 
