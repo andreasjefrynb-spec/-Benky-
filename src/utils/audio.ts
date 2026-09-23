@@ -186,39 +186,69 @@ export function normalizeJapanesePronunciation(raw: unknown, explicitReading?: u
 
   if (!rawStr && !readingStr) return '';
 
-  // 1. If an explicit reading is provided (e.g. from flashcard or vocab data), prioritize it
+  // 1. If explicit reading contains clean Japanese Kana (and rawStr is not a compound phrase with brackets), prioritize it
   const pureReading = cleanReading(readingStr);
-  if (pureReading) {
+  if (
+    pureReading &&
+    !rawStr.includes('（') &&
+    !rawStr.includes('(') &&
+    !rawStr.includes('[') &&
+    !rawStr.includes(' ') &&
+    !rawStr.includes('　')
+  ) {
     return pureReading;
   }
 
   let t = rawStr.trim();
 
-  // 2. Pattern: Kanji with reading in parentheses e.g. "一人 (ひとり / hitori)" or "食べる (たべる)"
-  const kanaParenthesisMatch = t.match(/^([^\(（]+)[\(（]([\u3040-\u309F\u30A0-\u30FF\u30FC\s]+)\s*[\/|、]?[a-zA-Z\s\-']*[）\)]/);
-  if (kanaParenthesisMatch && kanaParenthesisMatch[2]) {
-    return kanaParenthesisMatch[2].replace(/\s+/g, '').trim();
-  }
+  // 2. Strip Latin/Romaji/Indonesian in brackets/parentheses e.g. "(kasa)", "(transitive)", "(lotre)", "(noun)"
+  t = t.replace(/[\(（][^\)）]*[a-zA-Z][^\)）]*[\)）]/g, ' ');
+  t = t.replace(/\[[^\]]*[a-zA-Z][^\]]*\]/g, ' ');
 
-  // 2b. Pattern: Kana with Kanji/Romaji in parentheses e.g. "なみだ (涙)" or "こえ (声)"
-  const reverseParenthesisMatch = t.match(/^([\u3040-\u309F\u30A0-\u30FF\u30FC\s]+)[\(（]([^\)）]+)[\)）]/);
-  if (reverseParenthesisMatch && reverseParenthesisMatch[1]) {
-    return reverseParenthesisMatch[1].replace(/\s+/g, '').trim();
-  }
+  // 3. Collocations vs Alternative Readings in Japanese brackets:
+  // A) Bracket at beginning e.g. （お）酒, （ご）家族, （荷物が）届きます, （バスに）乗ります, （〜を）見ます
+  t = t.replace(/^[\(（\[]([^\(（\[\)）\]]+)[\)）\]]\s*(.+)$/, (match, prefix, rest) => {
+    return prefix.replace(/[〜~]/g, '') + rest;
+  });
 
-  // 3. Pattern: Ruby style "漢字（かんじ）" inside text -> extract kana
-  t = t.replace(/[\u4E00-\u9FAF]+[\(（]([\u3040-\u309F\u30A0-\u30FF\u30FC]+)[\)）]/g, '$1');
-  t = t.replace(/[\u4E00-\u9FAF]+\[([\u3040-\u309F\u30A0-\u30FF\u30FC]+)\]/g, '$1');
+  // B) Bracket at end or middle e.g. 傘（をさします）, 電話をかけます（友達に）, あびます [シャワーを〜]
+  t = t.replace(/([^（\(\[]+)[\(（\[]([^\(（\[\)）\]]+)[\)）\]]/g, (match, before, inside) => {
+    const trimmedBefore = before.trim();
+    const trimmedInside = inside.trim();
 
-  // 4. Strip romaji in parentheses e.g. "あさ (asa)"
-  t = t.replace(/[\(（][^）\)]*[a-zA-Z/][^）\)]*[\)）]/g, ' ');
+    // Check if inside is a collocation / particle phrase / contextual noun / grammatical extension
+    const isCollocation =
+      !trimmedBefore.endsWith(trimmedInside.slice(-1)) &&
+      (trimmedInside.includes('〜') ||
+        trimmedInside.includes('~') ||
+        (/^[をにがでへとからまで]/.test(trimmedInside) &&
+          (trimmedInside.endsWith('ます') ||
+            trimmedInside.endsWith('する') ||
+            trimmedInside.endsWith('ない') ||
+            trimmedInside.endsWith('た') ||
+            trimmedInside.endsWith('て'))) ||
+        (/[をにがでへとからまで]$/.test(trimmedInside) && trimmedInside.length >= 3) ||
+        (trimmedInside.endsWith('ます') && !trimmedBefore.endsWith('ます') && !/[うくぐすつぬぶむる]$/.test(trimmedBefore)));
 
-  // 5. Remove wave dashes, middle dots, brackets
+    if (isCollocation) {
+      const cleanInside = trimmedInside.replace(/[〜~]/g, '');
+      if (/^[をにがでへとからまでは]/.test(cleanInside)) {
+        return trimmedBefore + cleanInside;
+      }
+      return trimmedBefore + ' ' + cleanInside;
+    }
+
+    // Otherwise it is an alternative script (Kanji/Kana duplicate reading like 部屋(へや) or あそびます(遊びます))
+    return trimmedBefore;
+  });
+
+  // 4. Remove remaining stray bracket symbols
+  t = t.replace(/[「」『』【】〔〕〈〉《》\"'\`\[\]()（）]/g, ' ');
+
+  // 5. Clean wave dashes, dots, separators
   t = t.replace(/[〜~]/g, '');
-  t = t.replace(/・/g, '');
-  t = t.replace(/[「」『』【】〔〕〈〉《》\"']/g, ' ');
-  t = t.replace(/[\(（]([^\)）]*)[\)）]/g, ' $1 ');
-  t = t.replace(/\[(.*?)\]/g, ' $1 ');
+  t = t.replace(/・/g, ' ');
+  t = t.replace(/[\/／]/g, '、');
 
   // 6. Apply phonetic disambiguation dictionary
   for (const [pattern, replacement] of PHONETIC_CORRECTIONS) {
@@ -226,7 +256,7 @@ export function normalizeJapanesePronunciation(raw: unknown, explicitReading?: u
   }
 
   // 7. Remove stray latin letters, symbols, punctuation
-  t = t.replace(/[a-zA-Z_\-\/\\:;*#@+=]/g, ' ');
+  t = t.replace(/[a-zA-Z_\-#@+=]/g, ' ');
 
   // 8. Collapse whitespace
   t = t.replace(/\s+/g, ' ').trim();
@@ -237,7 +267,7 @@ export function normalizeJapanesePronunciation(raw: unknown, explicitReading?: u
     if (jpChars && jpChars.length > 0) {
       return jpChars.join(' ');
     }
-    return rawStr.trim().replace(/[〜~\[\]()]/g, '');
+    return rawStr.trim().replace(/[〜~\[\]()（）]/g, '');
   }
 
   return t;
