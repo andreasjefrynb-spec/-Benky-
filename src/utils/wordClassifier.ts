@@ -101,6 +101,7 @@ const NA_ADJECTIVES_ENDING_IN_I = new Set([
 
 // Daftar kata sifat-na populer
 const KNOWN_NA_ADJECTIVES = new Set([
+  'いろいろ', '色々', 'iroiro',
   '静か', 'しずか', 'shizuka',
   '賑やか', 'にぎやか', 'nigiyaka',
   '便利', 'べんり', 'benri',
@@ -166,10 +167,55 @@ const KNOWN_NA_ADJECTIVES = new Set([
   '勝手', 'かって', 'katte',
   '楽', 'らく', 'raku',
   'ハンサム', 'hansamu',
+  '変', 'へん', 'hen',
+  '清潔', 'せいけつ', 'seiketsu',
+  '不潔', 'ふけつ', 'fuketsu',
+  '公平', 'こうへい', 'kouhei',
+  '不公平', 'ふこうへい', 'fukouhei',
+  '有利', 'ゆうり', 'yuuri',
+  '不利', 'ふり', 'furi',
+  '深刻', 'しんこく', 'shinkoku',
+  '身近', 'みぢか', 'みじか', 'midjika', 'mijika',
+  '健全', 'けんぜん', 'kenzen',
+  '貴重', 'きちょう', 'kichou',
+  '有望', 'ゆうぼう', 'yuubou',
+  '気軽', 'きがる', 'kigaru',
+  '神経質', 'しんけいしつ', 'shinkeishitsu', 'しんけいしつな', 'shinkeishitsuna',
+  '鮮やか', 'あざやか', 'azayaka',
+  '見事', 'みごと', 'migoto',
+  '粗末', 'そまつ', 'somatsu',
+  '駄目', 'だめ', 'dame',
+  '結構', 'けっこう', 'kekkou',
+  '微妙', 'びみょう', 'bimyou',
+  '平ら', 'たいら', 'taira',
+  '幸せ', 'しあわせ', 'shiawase',
+  '不自然', 'ふしぜん', 'fushizen',
+  '自然', 'しぜん', 'shizen',
+  'のんき', '呑気', 'nonki',
+  '滑らか', 'なめらか', 'nameraka',
+  '淑やか', 'しとやか', 'shitoyaka',
+  '密か', 'ひそか', 'hisoka',
+  '長閑', 'のどか', 'nodoka',
+  '優雅', 'ゆうが', 'yuuga',
+  '魅力的', 'みりょくてき', 'miryokuteki',
+  '基本的', 'きほんてき', 'kihonteki',
+  '具体的', 'ぐたいてき', 'gutaiteki',
+  '抽象的', 'ちゅうしょうてき', 'chuushouteki',
+  '積極的', 'せっきょくてき', 'sekkyokuteki',
+  '消極的', 'しょうきょくてき', 'shoukyokuteki',
+  '一般的', 'いっぱんてき', 'ippanteki',
+  '個人的', 'こじんてき', 'kojinteki',
+  '経済的', 'けいざいてき', 'keizaiteki',
+  '効果的', 'こうかてき', 'koukateki',
+  '対照的', 'たいしょうてき', 'taishouteki',
+  '伝統的', 'でんとうてき', 'dentouteki',
+  '大丈夫', 'だいじょうぶ', 'daijoubu',
+  '大丈夫な', 'daijoubuna',
 ]);
 
 // Daftar kata sifat-i populer & terverifikasi (Kanji, Kana, Romaji)
 const KNOWN_I_ADJECTIVES = new Set([
+  'うまい', '美味い', '旨い', 'umai',
   '大きい', 'おおきい', 'ookii',
   '小さい', 'ちいさい', 'chiisai',
   '新しい', 'あたらしい', 'atarashii',
@@ -248,6 +294,7 @@ const KNOWN_I_ADJECTIVES = new Set([
   '柔らかい', 'やわらかい', 'yawarakai',
   '粗い', 'あらい', 'arai',
   '素晴らしい', 'すばらしい', 'subarashii',
+  'すごい', '凄い', 'sugoi',
   '細かい', 'こまかい', 'komakai',
   '美しい', 'うつくしい', 'utsukushii',
   '臭い', 'くさい', 'kusai',
@@ -379,6 +426,8 @@ const SPECIAL_ICHIDAN_MASU_STEMS = new Set([
 // Kata keterangan umum (副詞 / Fukushi)
 const KNOWN_ADVERBS = new Set([
   'だんだん', 'dandan',
+  'どんどん', 'dondon',
+  'ますます', 'masumasu',
   'ゆっくり', 'yukkuri',
   'とても', 'totemo',
   'たくさん', 'takusan',
@@ -394,8 +443,8 @@ const KNOWN_ADVERBS = new Set([
   'たぶん', 'tabun',
   'きっと', 'kitto',
   'ぜひ', 'zehi',
-  'はじめに', 'hajimeni',
-  'さいごに', 'saigoni',
+  'はじめに', '初めに', 'hajimeni',
+  'さいごに', '最後に', 'saigoni',
   'まず', 'mazu',
   'そろそろ', 'sorosoro',
   'いっしょに', '一緒に', 'isshoni',
@@ -416,6 +465,49 @@ const KNOWN_ADVERBS = new Set([
   '何回も', 'なんかいも', 'nankaimo',
   'あわてて', '慌てて', 'awatete',
   'めったに', 'mettani',
+  '急に', 'きゅうに', 'kyuuni', 'kyuu ni',
+  '一度も', 'いちども', 'ichidomo', 'ichido mo',
+  'とうとう', 'toutou',
+  'やっと', 'yatto',
+  'ついに', 'tsuini',
+  'かなり', 'kanari',
+  'ずっと', 'zutto',
+  'もっと', 'motto',
+  '必ず', 'かならず', 'kanarazu',
+  '絶対に', 'ぜったいに', 'zettai ni', 'zettaini',
+  'ぴったり', 'pittari',
+  'しっかり', 'shikkari',
+  'すっきり', 'sukkiri',
+  'うっかり', 'ukkari',
+  'がっかり', 'gakkari',
+  'びっくり', 'bikkuri',
+  'いよいよ', 'iyoiyo',
+  'しばしば', 'shibashiba',
+  'たびたび', 'tabitabi',
+  'たまたま', 'tamatama',
+  'ほとんど', 'hotondo',
+  '全く', 'まったく', 'mattaku',
+  'やはり', 'やっぱり', 'yahari', 'yappari',
+  '早速', 'さっそく', 'sassoku',
+  '突然', 'とつぜん', 'totsuzen',
+  'さっき', 'sakki',
+  '今にも', 'いまにも', 'imanimo',
+  '間もなく', 'まもなく', 'mamonaku',
+  'もうすぐ', 'mousugu',
+  '普段', 'ふだん', 'fudan',
+  '普通', 'ふつう', 'futsuu',
+  '決して', 'けっして', 'kesshite',
+  'どうぞ', 'douzo',
+  'どうか', 'douka',
+  'どうも', 'doumo',
+  'なぜ', 'naze',
+  'どうして', 'doushite',
+  'なんで', 'nande',
+  'いかが', 'ikaga',
+  'どう', 'dou',
+  'いくら', 'ikura',
+  'いくつ', 'ikutsu',
+  'どのくらい', 'どれくらい', 'donokurai', 'dorekurai',
 ]);
 
 // Kata sambung umum (接続詞 / Setsuzokushi)
@@ -453,6 +545,16 @@ const KNOWN_EXPRESSIONS = new Set([
   'あ、いけない',
   '拝啓', 'はいけい', 'haikei',
   '敬具', 'けいぐ', 'keigu',
+  'そうですね', 'soudesune',
+  'そうですか', 'soudesuka',
+  'しつれいですが', '失礼ですが', 'shitsureidesuga',
+  'おでかけですか', 'お出かけですか', 'odekakedesuka',
+  'ごくろうさまです', 'ご苦労様です', 'gokurousamadesu',
+  'ひさしぶりですね', '久しぶりですね', 'hisashiburidesune',
+  'いいえ、まだまだです', 'iie, madamadadesu',
+  'いじょうです', '以上です', 'ijoudesu',
+  'おなかがいっぱいです', 'onakagaippaidesu',
+  'おめでとうございます', 'omedetougozaimasu',
 ]);
 
 // KATA BENDA (Nomina / Meishi) yang sangat umum & penting agar tidak pernah salah diklasifikasi
@@ -588,6 +690,39 @@ const KNOWN_NOUN_WORDS = new Set([
   '広さ', 'ひろさ', 'hirosa',
   '深さ', 'ふかさ', 'fukasa',
   '今度', 'こんど', 'kondo',
+
+  // Kata Serapan Katakana / Nomina Populer yang Berakhiran ~masu / ~su
+  'クリスマス', 'くりすます', 'kurisumasu', 'Natal', 'natal',
+  'クリスマスイブ', 'kurisumasuibu',
+  'パジャマ', 'pajama',
+  'トーマス', 'toomasu',
+  'ガスマスク', 'gasumasuku',
+  'ビジネスマナー', 'bijinesumanaa',
+  'マス', 'masu',
+  'テニス', 'tenisu',
+  'バス', 'basu',
+  'ガラス', 'garasu',
+  'クラス', 'kurasu',
+  'ストレス', 'sutoresu',
+  'ボーナス', 'boonasu',
+
+  // Nomina / Kanji Waktu & Alam yang Sering Menjadi Homofon Verba (Fuku, Yoru, Oku, Haru, Aki, dll)
+  '夜', 'よる', 'yoru',
+  '昼', 'ひる', 'hiru',
+  '朝', 'あさ', 'asa',
+  '億', 'おく', 'oku',
+  '春', 'はる', 'haru',
+  '夏', 'なつ', 'natsu',
+  '秋', 'あき', 'aki',
+  '冬', 'ふゆ', 'fuyu',
+  '絵', 'え', 'e',
+  '花', 'はな', 'hana',
+  '川', 'かわ', 'kawa',
+  '草', 'くさ', 'kusa',
+  '海', 'うみ', 'umi',
+  '山', 'やま', 'yama',
+  '雨', 'あめ', 'ame',
+  '雪', 'ゆき', 'yuki',
 ]);
 
 // Populasikan nomina dari vocab1000 secara otomatis
@@ -710,8 +845,19 @@ export function getWordClassification(item: CardItem): WordClassification {
   }
 
   // 4. KATA KERJA BENTUK ~ます (動詞 ます形)
-  // Aturan utama: Kata berakhiran ~ます adalah Kata Kerja (kecuali salam tetap di atas).
-  const isMasuVerb = cleanJp.endsWith('ます') || cleanReading.endsWith('masu');
+  // Aturan utama: Kata berakhiran ~ます adalah Kata Kerja (kecuali kata benda / serapan katakana seperti クリスマス).
+  const isKatakanaWord = /^[ァ-ヴー\s]+$/.test(cleanJp);
+  const isKnownNoun =
+    KNOWN_NOUN_WORDS.has(cleanJp) ||
+    KNOWN_NOUN_WORDS.has(cleanReading) ||
+    KNOWN_NOUN_WORDS.has(cleanFuri) ||
+    NOUN_SUBCATEGORIES.has(subCat);
+
+  const isMasuVerb =
+    !isKnownNoun &&
+    !isKatakanaWord &&
+    (cleanJp.endsWith('ます') || (cleanReading.endsWith('masu') && !cleanJp.endsWith('マス')));
+
   if (isMasuVerb) {
     // Golongan 3: 不規則 (shimasu / kimasu)
     if (
@@ -797,10 +943,33 @@ export function getWordClassification(item: CardItem): WordClassification {
   }
 
   // 8. Kata Kerja Bentuk Kamus (辞書形 / Jishokei)
+  const isKatakanaPure = /^[\u30A0-\u30FF\u30FC\s・]+$/.test(cleanJp);
+  const isExplicitNounWord =
+    KNOWN_NOUN_WORDS.has(cleanJp) ||
+    KNOWN_NOUN_WORDS.has(cleanFuri) ||
+    KNOWN_NOUN_WORDS.has(cleanReading) ||
+    NOUN_SUBCATEGORIES.has(subCat) ||
+    (isKatakanaPure && !cleanJp.endsWith('する') && !cleanReading.endsWith('suru'));
+
   const isVerbSub = VERB_SUBCATEGORIES.has(subCat);
-  const isKnownCuratedVerb = KNOWN_CURATED_VERBS.has(cleanJp) || KNOWN_CURATED_VERBS.has(cleanReading);
-  const endsWithSuru = cleanJp.endsWith('する') || cleanReading.endsWith('suru') || cleanJp.endsWith('為る');
-  const isKuru = cleanJp === 'くる' || cleanJp === '来る' || cleanReading === 'kuru';
+  const isKnownCuratedVerb =
+    !isExplicitNounWord &&
+    (KNOWN_CURATED_VERBS.has(cleanJp) ||
+      (isVerbSub && KNOWN_CURATED_VERBS.has(cleanReading)) ||
+      (!NOUN_SUBCATEGORIES.has(subCat) &&
+        KNOWN_CURATED_VERBS.has(cleanReading) &&
+        (cleanJp.endsWith('る') ||
+          cleanJp.endsWith('く') ||
+          cleanJp.endsWith('ぐ') ||
+          cleanJp.endsWith('す') ||
+          cleanJp.endsWith('つ') ||
+          cleanJp.endsWith('ぬ') ||
+          cleanJp.endsWith('ぶ') ||
+          cleanJp.endsWith('む') ||
+          cleanJp.endsWith('う'))));
+
+  const endsWithSuru = !isExplicitNounWord && (cleanJp.endsWith('する') || cleanReading.endsWith('suru') || cleanJp.endsWith('為る'));
+  const isKuru = !isExplicitNounWord && (cleanJp === 'くる' || cleanJp === '来る' || cleanReading === 'kuru');
 
   if (isVerbSub || isKnownCuratedVerb || endsWithSuru || isKuru) {
     // Golongan 3: 不規則 (suru, kuru)
@@ -838,19 +1007,58 @@ export function getWordClassification(item: CardItem): WordClassification {
     jp.includes('(な)') ||
     reading.includes('(na)') ||
     reading.includes('[na]') ||
-    reading.endsWith(' na');
+    reading.endsWith(' na') ||
+    notes.includes('[na]') ||
+    notes.includes('kata sifat na') ||
+    notes.includes('na-adj');
 
-  if (
+  const stemJp = cleanJp.replace(/(ですね|でした|です|だ|な|よ|ね|ですか|ですが)$/, '').trim();
+  const stemFuri = cleanFuri.replace(/(ですね|でした|です|だ|な|よ|ね|ですか|ですが)$/, '').trim();
+  const stemReading = cleanReading.replace(/(desune|deshita|desuka|desuga|desu|da|na|yo|ne)$/, '').trim();
+
+  const isNaAdj =
     isExplicitNaAdj ||
+    cleanJp.endsWith('的') ||
+    cleanReading.endsWith('teki') ||
     NA_ADJECTIVES_ENDING_IN_I.has(cleanJp) ||
     NA_ADJECTIVES_ENDING_IN_I.has(cleanFuri) ||
+    NA_ADJECTIVES_ENDING_IN_I.has(cleanReading) ||
     KNOWN_NA_ADJECTIVES.has(cleanJp) ||
-    KNOWN_NA_ADJECTIVES.has(cleanFuri)
-  ) {
+    KNOWN_NA_ADJECTIVES.has(cleanFuri) ||
+    KNOWN_NA_ADJECTIVES.has(cleanReading) ||
+    (stemJp.length >= 2 && (KNOWN_NA_ADJECTIVES.has(stemJp) || NA_ADJECTIVES_ENDING_IN_I.has(stemJp))) ||
+    (stemFuri.length >= 2 && (KNOWN_NA_ADJECTIVES.has(stemFuri) || NA_ADJECTIVES_ENDING_IN_I.has(stemFuri))) ||
+    (stemReading.length >= 2 && (KNOWN_NA_ADJECTIVES.has(stemReading) || NA_ADJECTIVES_ENDING_IN_I.has(stemReading)));
+
+  if (isNaAdj) {
     return createAdjNaInfo();
   }
 
-  // 10. KATA BENDA SPESIFIK & NOMINA TERVERIFIKASI
+  // 10. Kata Sifat -i (い形容詞 / Keiyoushi)
+  // Syarat mutlak:
+  // 1) TIDAK BOLEH berakhiran huruf Kanji (seperti 白菜, 海外, 姉妹, 関係, 拝啓, 具合, 賛成, 大会) karena kata sifat-i wajib memiliki okurigana hiragana い di akhir.
+  // 2) Terdaftar di KNOWN_I_ADJECTIVES atau subCategory kata_sifat/adjective.
+  const endsInKanji = /[\u4E00-\u9FAF]$/.test(cleanJp);
+  if (!endsInKanji) {
+    if (
+      KNOWN_I_ADJECTIVES.has(cleanJp) ||
+      KNOWN_I_ADJECTIVES.has(cleanFuri) ||
+      KNOWN_I_ADJECTIVES.has(cleanReading) ||
+      (stemJp.length >= 1 && KNOWN_I_ADJECTIVES.has(stemJp)) ||
+      (stemFuri.length >= 1 && KNOWN_I_ADJECTIVES.has(stemFuri)) ||
+      (stemReading.length >= 1 && KNOWN_I_ADJECTIVES.has(stemReading))
+    ) {
+      return createAdjIInfo();
+    }
+
+    if (ADJ_SUBCATEGORIES.has(subCat) && (cleanJp.endsWith('い') || cleanReading.endsWith('i'))) {
+      if (!NA_ADJECTIVES_ENDING_IN_I.has(cleanJp) && !KNOWN_NA_ADJECTIVES.has(cleanJp)) {
+        return createAdjIInfo();
+      }
+    }
+  }
+
+  // 11. KATA BENDA SPESIFIK & NOMINA TERVERIFIKASI
   // Pastikan nomina seperti 白菜/はくさい/sawi, 野菜/やさい, 姉妹, 海外, 関係, 大会, ガス台, 間違い, におい
   // SELALU diklasifikasikan sebagai KATA BENDA dan tidak pernah salah menjadi kata sifat!
   if (
@@ -879,27 +1087,6 @@ export function getWordClassification(item: CardItem): WordClassification {
   // Subkategori KATA BENDA eksplisit
   if (NOUN_SUBCATEGORIES.has(subCat)) {
     return createNounInfo();
-  }
-
-  // 11. Kata Sifat -i (い形容詞 / Keiyoushi)
-  // Syarat mutlak:
-  // 1) TIDAK BOLEH berakhiran huruf Kanji (seperti 白菜, 海外, 姉妹, 関係, 拝啓, 具合, 賛成, 大会) karena kata sifat-i wajib memiliki okurigana hiragana い di akhir.
-  // 2) Terdaftar di KNOWN_I_ADJECTIVES atau subCategory kata_sifat/adjective.
-  const endsInKanji = /[\u4E00-\u9FAF]$/.test(cleanJp);
-  if (!endsInKanji) {
-    if (
-      KNOWN_I_ADJECTIVES.has(cleanJp) ||
-      KNOWN_I_ADJECTIVES.has(cleanFuri) ||
-      KNOWN_I_ADJECTIVES.has(cleanReading)
-    ) {
-      return createAdjIInfo();
-    }
-
-    if (ADJ_SUBCATEGORIES.has(subCat) && (cleanJp.endsWith('い') || cleanReading.endsWith('i'))) {
-      if (!NA_ADJECTIVES_ENDING_IN_I.has(cleanJp) && !KNOWN_NA_ADJECTIVES.has(cleanJp)) {
-        return createAdjIInfo();
-      }
-    }
   }
 
   // 12. Default Final yang Aman: KATA BENDA (名詞 / Meishi)

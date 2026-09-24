@@ -1253,6 +1253,21 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 </div>
               )}
 
+              {/* Grammar / Usage Notes */}
+              {currentCard.notes && (
+                <div className="w-full max-w-md bg-indigo-50/80 border border-indigo-200/80 p-2.5 rounded-xl text-left flex items-start gap-2">
+                  <BookOpen className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" />
+                  <div className="flex-1">
+                    <span className="text-[10px] font-extrabold text-indigo-700 uppercase tracking-wide block">
+                      Catatan Tata Bahasa / Penggunaan
+                    </span>
+                    <p className="text-xs text-indigo-950 leading-relaxed font-medium mt-0.5">
+                      {currentCard.notes}
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {/* Example sentence */}
               {currentCard.exampleJp && (
                 <div 
