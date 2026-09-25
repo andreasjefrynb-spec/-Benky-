@@ -280,8 +280,8 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
         onClick={() => setIsOpen((prev) => !prev)}
         className={`w-full p-2.5 sm:p-3.5 rounded-2xl sm:rounded-3xl border-2 transition-all duration-200 cursor-pointer flex items-center justify-between gap-3 shadow-2xs ${
           isOpen
-            ? 'bg-rose-50/70 border-rose-500 ring-2 ring-rose-200/70'
-            : 'bg-white border-slate-200/90 hover:border-rose-300 hover:bg-slate-50/60'
+            ? 'bg-rose-50/70 dark:bg-rose-950/40 border-rose-500 ring-2 ring-rose-200/70 dark:ring-rose-900/50'
+            : 'bg-white dark:bg-slate-900 border-slate-200/90 dark:border-slate-800 hover:border-rose-300 dark:hover:border-rose-700 hover:bg-slate-50/60 dark:hover:bg-slate-800/60'
         }`}
         role="button"
         tabIndex={0}
@@ -295,7 +295,7 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
             className={`w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl flex items-center justify-center font-black text-sm sm:text-base shrink-0 transition-colors shadow-2xs ${
               isOpen
                 ? 'bg-rose-600 text-white'
-                : 'bg-rose-50 text-rose-600 border border-rose-200'
+                : 'bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-900/50'
             }`}
           >
             {currentCategory.badge}
@@ -303,22 +303,22 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
 
           <div className="min-w-0 flex flex-col">
             <div className="flex items-center gap-1.5">
-              <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-rose-600 flex items-center gap-1">
+              <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-rose-600 dark:text-rose-400 flex items-center gap-1">
                 <Compass className="w-3 h-3 text-rose-500" />
                 <span>Mau Belajar Apa</span>
               </span>
-              <span className="text-slate-300 hidden sm:inline">&bull;</span>
-              <span className="text-[10px] sm:text-xs font-medium text-slate-400 hidden sm:inline">
+              <span className="text-slate-300 dark:text-slate-600 hidden sm:inline">&bull;</span>
+              <span className="text-[10px] sm:text-xs font-medium text-slate-400 dark:text-slate-400 hidden sm:inline">
                 Klik untuk ganti pelajaran
               </span>
             </div>
 
             {/* Currently Active Lesson Name */}
             <div className="flex items-center gap-2 mt-0.5">
-              <span className="text-sm sm:text-base font-extrabold text-slate-900 truncate">
+              <span className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white truncate">
                 {currentCategory.icon} {currentCategory.title}
               </span>
-              <span className="text-[10px] sm:text-xs text-slate-500 font-medium truncate hidden md:inline">
+              <span className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium truncate hidden md:inline">
                 ({currentCategory.sub})
               </span>
             </div>
@@ -331,7 +331,7 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
             className={`w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center transition-all ${
               isOpen
                 ? 'bg-rose-600 text-white'
-                : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
             }`}
           >
             {isOpen ? (
@@ -354,7 +354,7 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
               className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap flex items-center gap-1.5 transition-all cursor-pointer shrink-0 active:scale-95 ${
                 isActive
                   ? 'bg-rose-600 text-white shadow-xs scale-[1.02]'
-                  : 'bg-white text-slate-700 hover:bg-rose-50/50 hover:text-rose-600 border border-slate-200/90 shadow-3xs'
+                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-rose-50/50 dark:hover:bg-slate-800 hover:text-rose-600 dark:hover:text-rose-400 border border-slate-200/90 dark:border-slate-800 shadow-3xs'
               }`}
             >
               <span>{cat.icon}</span>
@@ -381,19 +381,19 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.98 }}
               transition={{ duration: 0.18, ease: 'easeOut' }}
-              className="absolute left-0 right-0 top-full mt-2 z-50 bg-white rounded-3xl border-2 border-slate-200 shadow-2xl overflow-hidden p-3.5 sm:p-5 max-h-[80vh] sm:max-h-[600px] flex flex-col"
+              className="absolute left-0 right-0 top-full mt-2 z-50 bg-white dark:bg-slate-900 rounded-3xl border-2 border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden p-3.5 sm:p-5 max-h-[80vh] sm:max-h-[600px] flex flex-col"
             >
               {/* Menu Header inside Dropdown */}
-              <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100 gap-2">
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100 dark:border-slate-800 gap-2">
                 <div className="flex items-center gap-2 min-w-0">
-                  <div className="w-7 h-7 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-xs shrink-0">
+                  <div className="w-7 h-7 rounded-lg bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 flex items-center justify-center font-bold text-xs shrink-0">
                     <Sparkles className="w-4 h-4" />
                   </div>
                   <div className="min-w-0">
-                    <h4 className="text-sm sm:text-base font-black text-slate-900 truncate">
+                    <h4 className="text-sm sm:text-base font-black text-slate-900 dark:text-white truncate">
                       Mau Belajar Apa Hari Ini?
                     </h4>
-                    <p className="text-[11px] text-slate-500 truncate hidden xs:block">
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate hidden xs:block">
                       Pilih materi di bawah atau cek panduan roadmap kelulusan
                     </p>
                   </div>
@@ -402,16 +402,16 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
                 <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
                   <button
                     onClick={() => setShowRoadmapModal(true)}
-                    className="px-2.5 py-1 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
+                    className="px-2.5 py-1 rounded-xl bg-amber-50 dark:bg-amber-950/60 hover:bg-amber-100 dark:hover:bg-amber-900/60 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
                     title="Buka panduan urutan belajar agar lulus ujian JFT & JLPT"
                   >
-                    <GraduationCap className="w-3.5 h-3.5 text-amber-600" />
+                    <GraduationCap className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
                     <span className="hidden sm:inline">Roadmap Lulus JFT &amp; JLPT</span>
                     <span className="sm:hidden">Roadmap</span>
                   </button>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center cursor-pointer transition-colors"
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-300 flex items-center justify-center cursor-pointer transition-colors"
                     title="Tutup Menu"
                   >
                     <X className="w-4 h-4" />

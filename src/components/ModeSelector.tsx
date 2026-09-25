@@ -108,7 +108,7 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
   ];
 
   return (
-    <div className="bg-slate-200/50 p-1 rounded-2xl border border-slate-200/90 flex items-center gap-1 w-full shadow-2xs">
+    <div className="bg-slate-200/60 dark:bg-slate-900 p-1 rounded-2xl border border-slate-200/90 dark:border-slate-800 flex items-center gap-1 w-full shadow-2xs">
       {modes
         .filter((m) => m.enabled)
         .map((m) => {
@@ -122,11 +122,11 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({
               onClick={() => onSelectMode(m.id)}
               className={`flex-1 min-w-0 min-h-[38px] sm:min-h-[42px] flex items-center justify-center gap-1 sm:gap-2 py-1.5 sm:py-2 px-1 sm:px-3 rounded-xl font-bold text-xs sm:text-sm transition-all duration-150 cursor-pointer select-none active:scale-[0.98] ${
                 isActive
-                  ? 'bg-white text-rose-700 shadow-sm border border-slate-200/90 ring-1 ring-slate-900/5 font-black'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                  ? 'bg-white dark:bg-slate-800 text-rose-700 dark:text-rose-400 shadow-sm border border-slate-200/90 dark:border-slate-700 ring-1 ring-slate-900/5 font-black'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-white/60 dark:hover:bg-slate-800/60'
               }`}
             >
-              <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isActive ? 'text-rose-600' : 'text-slate-500'}`} />
+              <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${isActive ? 'text-rose-600 dark:text-rose-400' : 'text-slate-500 dark:text-slate-400'}`} />
               <span className="sm:hidden text-[11px] font-extrabold truncate">{m.shortLabel}</span>
               <span className="hidden sm:inline text-center leading-tight truncate">{m.label}</span>
             </button>

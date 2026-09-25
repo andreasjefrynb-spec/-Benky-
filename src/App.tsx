@@ -75,6 +75,28 @@ export default function App() {
   });
   const [speechRate, setSpeechRate] = useState<number>(0.9);
   const [isRoadmapModalOpen, setIsRoadmapModalOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    const saved = localStorage.getItem('nihongo_night_mode');
+    if (saved !== null) {
+      return saved === 'true';
+    }
+    return typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('nihongo_night_mode', String(isDarkMode));
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      document.body.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  const handleToggleDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
+  };
 
   useEffect(() => {
     localStorage.setItem('nihongo_active_category', activeCategory);
@@ -356,7 +378,7 @@ export default function App() {
   }, [activeCategory, studyMode]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#faf9f6] text-slate-800 selection:bg-rose-500 selection:text-white">
+    <div className={`min-h-screen flex flex-col ${isDarkMode ? 'dark bg-slate-950 text-slate-100' : 'bg-[#faf9f6] text-slate-800'} selection:bg-rose-500 selection:text-white transition-colors duration-200`}>
       {/* Top Navigation */}
       <Navbar
         onOpenAddCustom={() => setIsAddCustomOpen(true)}
@@ -366,6 +388,8 @@ export default function App() {
         onSelectSpeechRate={(rate) => setSpeechRate(rate)}
         onGoHome={() => setActiveCategory('home')}
         isHomeActive={activeCategory === 'home'}
+        isDarkMode={isDarkMode}
+        onToggleDarkMode={handleToggleDarkMode}
       />
 
       {/* Main Container */}

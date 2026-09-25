@@ -423,7 +423,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
         <div className="sm:hidden flex items-center justify-between gap-1.5 mb-2">
           {/* Level Filter (if cards have N5/N4/N3 tags) */}
           {hasLevelTags ? (
-            <div className="flex items-center bg-white border border-slate-200/90 rounded-xl p-0.5 text-xs font-semibold shadow-2xs">
+            <div className="flex items-center bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-xl p-0.5 text-xs font-semibold shadow-2xs">
               {(['all', 'N5', 'N4', 'N3'] as const).map((lvl) => (
                 <button
                   key={lvl}
@@ -434,7 +434,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                   className={`px-2 py-1 rounded-lg transition-all cursor-pointer text-[11px] ${
                     levelFilter === lvl
                       ? 'bg-rose-600 text-white font-bold shadow-2xs'
-                      : 'text-slate-600 hover:text-slate-900'
+                      : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
                   {lvl === 'all' ? 'Semua' : lvl}
@@ -442,7 +442,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
               ))}
             </div>
           ) : (
-            <div className="text-[11px] font-bold text-slate-500 bg-white border border-slate-200/80 px-2.5 py-1 rounded-xl">
+            <div className="text-[11px] font-bold text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 px-2.5 py-1 rounded-xl">
               {filteredCards.length} Kartu
             </div>
           )}
@@ -451,10 +451,10 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
           <div className="flex items-center gap-1.5">
             <button
               onClick={handleShuffle}
-              className="flex items-center gap-1 px-2.5 py-1.5 text-slate-600 bg-white border border-slate-200/90 rounded-xl text-xs font-semibold shadow-2xs cursor-pointer active:scale-95"
+              className="flex items-center gap-1 px-2.5 py-1.5 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-xl text-xs font-semibold shadow-2xs cursor-pointer active:scale-95"
               title="Acak urutan kartu"
             >
-              <Shuffle className="w-3 h-3 text-slate-500" />
+              <Shuffle className="w-3 h-3 text-slate-500 dark:text-slate-400" />
               <span className="text-[11px]">Acak</span>
             </button>
 
@@ -462,8 +462,8 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
               onClick={() => setIsFilterExpandedOnMobile(!isFilterExpandedOnMobile)}
               className={`flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-semibold border transition-all cursor-pointer active:scale-95 shadow-2xs ${
                 isFilterExpandedOnMobile || searchQuery || selectedSubCategory !== 'all'
-                  ? 'bg-rose-50 text-rose-700 border-rose-200'
-                  : 'bg-white text-slate-600 border-slate-200/90'
+                  ? 'bg-rose-50 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800'
+                  : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border-slate-200/90 dark:border-slate-800'
               }`}
               title="Buka pencarian & filter tema"
             >
@@ -874,20 +874,20 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
           onClick={handleCardClick}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
-          className="relative w-full h-full cursor-pointer transform-style-3d duration-500 rounded-3xl shadow-lg border border-slate-200/90"
+          className="relative w-full h-full cursor-pointer transform-style-3d duration-500 rounded-3xl shadow-lg border border-slate-200/90 dark:border-slate-800"
           animate={{ rotateY: isFlipped ? 180 : 0 }}
           transition={{ duration: 0.45, ease: 'easeOut' }}
         >
           {/* FRONT OF CARD */}
           <div
-            className={`absolute inset-0 w-full h-full rounded-3xl p-4 sm:p-7 flex flex-col justify-between backface-hidden bg-gradient-to-b from-white to-[#fffaf8] ${
+            className={`absolute inset-0 w-full h-full rounded-3xl p-4 sm:p-7 flex flex-col justify-between backface-hidden bg-gradient-to-b from-white to-[#fffaf8] dark:from-slate-900 dark:to-slate-950 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-lg ${
               isFlipped ? 'pointer-events-none' : ''
             }`}
           >
             {/* Top Toolbar */}
             <div className="flex items-center justify-between shrink-0 gap-2">
               <div className="flex items-center gap-1.5 flex-wrap min-w-0">
-                <span className="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-rose-50 text-rose-600 border border-rose-100 uppercase tracking-wider shrink-0">
+                <span className="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-300 border border-rose-100 dark:border-rose-900/60 uppercase tracking-wider shrink-0">
                   {currentCard.level || currentCard.category}
                 </span>
                 {(() => {
@@ -908,8 +908,8 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                   onClick={() => handleSpeakCurrentCard(currentCard)}
                   className={`p-2.5 rounded-full transition-all shadow-xs cursor-pointer select-none ${
                     isPlayingAudio
-                      ? 'bg-rose-500 text-white scale-110 ring-4 ring-rose-200 animate-pulse'
-                      : 'bg-rose-50 text-rose-600 hover:bg-rose-100 hover:scale-105 active:scale-95'
+                      ? 'bg-rose-500 text-white scale-110 ring-4 ring-rose-200 dark:ring-rose-900 animate-pulse'
+                      : 'bg-rose-50 dark:bg-slate-800 text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-slate-700 hover:scale-105 active:scale-95 border border-transparent dark:border-slate-700'
                   }`}
                   title="Putar Audio Pelafalan Asli"
                   aria-label="Putar audio"
@@ -925,7 +925,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 key={currentCard.id}
                 initial={{ scale: 0.85, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                className={`font-jp font-black text-slate-900 tracking-normal drop-shadow-xs max-w-full break-words leading-tight ${
+                className={`font-jp font-black text-slate-900 dark:text-white tracking-normal drop-shadow-xs max-w-full break-words leading-tight ${
                   currentCard.japanese.length <= 2
                     ? 'text-5xl sm:text-7xl lg:text-8xl'
                     : currentCard.japanese.length <= 4
@@ -943,7 +943,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
               </motion.div>
 
               {currentCard.furigana && (
-                <p className="mt-2 text-sm sm:text-base font-semibold text-rose-600 font-jp">
+                <p className="mt-2 text-sm sm:text-base font-semibold text-rose-600 dark:text-rose-400 font-jp">
                   {currentCard.furigana}
                 </p>
               )}
@@ -955,17 +955,17 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                     e.stopPropagation();
                     setStrokeModalCard(currentCard);
                   }}
-                  className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200/80 hover:bg-rose-100 cursor-pointer transition-all active:scale-95 shadow-2xs select-none"
+                  className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-rose-50 dark:bg-slate-800 text-rose-700 dark:text-rose-300 border border-rose-200/80 dark:border-slate-700 hover:bg-rose-100 dark:hover:bg-slate-700 cursor-pointer transition-all active:scale-95 shadow-2xs select-none"
                   title="Lihat urutan goresan & langkah tulis (Hitsujun)"
                 >
-                  <PenTool className="w-3.5 h-3.5 text-rose-600" />
+                  <PenTool className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />
                   <span>{currentCard.strokes ? `${currentCard.strokes} Goresan` : 'Langkah Tulis'} &bull; 筆順</span>
                 </button>
               )}
             </div>
 
             {/* Bottom Hint */}
-            <div className="flex items-center justify-center gap-2 text-xs font-medium text-slate-400 pt-2 border-t border-slate-100 shrink-0">
+            <div className="flex items-center justify-center gap-2 text-xs font-medium text-slate-400 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800 shrink-0">
               <RotateCw className="w-3.5 h-3.5 text-rose-400 animate-spin-slow" />
               <span>Ketuk untuk membalik kartu (atau tekan Spasi)</span>
             </div>
@@ -973,14 +973,14 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
           {/* BACK OF CARD */}
           <div
-            className={`absolute inset-0 w-full h-full rounded-3xl p-4 sm:p-7 flex flex-col justify-between backface-hidden rotate-y-180 bg-white border-2 border-rose-200/80 shadow-xl ${
+            className={`absolute inset-0 w-full h-full rounded-3xl p-4 sm:p-7 flex flex-col justify-between backface-hidden rotate-y-180 bg-white dark:bg-slate-900 border-2 border-rose-200/80 dark:border-slate-700 shadow-xl ${
               !isFlipped ? 'pointer-events-none' : ''
             }`}
           >
             {/* Top Toolbar */}
             <div className="flex items-center justify-between shrink-0 gap-2">
               <div className="flex items-center gap-1.5 flex-wrap min-w-0">
-                <span className="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-rose-50 text-rose-600 border border-rose-100 uppercase tracking-wider shrink-0">
+                <span className="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-300 border border-rose-100 dark:border-rose-900/60 uppercase tracking-wider shrink-0">
                   {currentCard.level || currentCard.category}
                 </span>
                 {(() => {
@@ -1000,8 +1000,8 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                   onClick={() => handleSpeakCurrentCard(currentCard)}
                   className={`p-2.5 rounded-full transition-all shadow-xs cursor-pointer select-none ${
                     isPlayingAudio
-                      ? 'bg-rose-500 text-white scale-110 ring-4 ring-rose-200 animate-pulse'
-                      : 'bg-rose-50 text-rose-600 hover:bg-rose-100 hover:scale-105 active:scale-95'
+                      ? 'bg-rose-500 text-white scale-110 ring-4 ring-rose-200 dark:ring-rose-900 animate-pulse'
+                      : 'bg-rose-50 dark:bg-slate-800 text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-slate-700 hover:scale-105 active:scale-95 border border-transparent dark:border-slate-700'
                   }`}
                   title="Dengarkan kembali pelafalan utama"
                   aria-label="Putar ulang audio"
@@ -1014,9 +1014,9 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
             {/* Center Content: Meaning & Details (Full Width & Gracefully Scrollable) */}
             <div className="flex-1 min-h-0 w-full flex flex-col items-center text-center px-1 sm:px-2 space-y-2.5 overflow-y-auto my-1.5 custom-scrollbar">
               {/* Japanese Word & Reading Header (Never squeezed into vertical column) */}
-              <div className="w-full flex flex-col items-center text-center pb-2 border-b border-slate-100 shrink-0">
+              <div className="w-full flex flex-col items-center text-center pb-2 border-b border-slate-100 dark:border-slate-800 shrink-0">
                 <div
-                  className={`font-jp font-black text-rose-600 leading-snug break-words max-w-full tracking-normal ${
+                  className={`font-jp font-black text-rose-600 dark:text-rose-400 leading-snug break-words max-w-full tracking-normal ${
                     currentCard.japanese.length <= 4
                       ? 'text-2xl sm:text-3xl md:text-4xl'
                       : currentCard.japanese.length <= 10
@@ -1030,11 +1030,11 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 </div>
 
                 <div className="flex items-center justify-center gap-1.5 mt-1 flex-wrap">
-                  <span className="text-xs sm:text-sm font-bold text-slate-700 bg-slate-100 px-2.5 py-0.5 rounded-lg border border-slate-200/70 max-w-full break-all">
+                  <span className="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 rounded-lg border border-slate-200/70 dark:border-slate-700 max-w-full break-all">
                     {currentCard.reading}
                   </span>
                   {currentCard.furigana && currentCard.furigana !== currentCard.reading && (
-                    <span className="text-xs text-rose-500 font-jp font-semibold">
+                    <span className="text-xs text-rose-500 dark:text-rose-400 font-jp font-semibold">
                       {currentCard.furigana}
                     </span>
                   )}
@@ -1047,17 +1047,17 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 return (
                   <div className="w-full max-w-md flex flex-col items-center">
                     <div className="flex items-center justify-center gap-1.5 flex-wrap mb-1">
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                      <span className="text-[10px] font-bold text-slate-400 dark:text-slate-400 uppercase tracking-wider">
                         Arti Presisi
                       </span>
                       {clarified.contextBadge && (
                         <span
                           className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold border shadow-2xs ${
                             clarified.contextBadge.variant === 'intransitive'
-                              ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                              ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800'
                               : clarified.contextBadge.variant === 'transitive'
-                              ? 'bg-sky-50 text-sky-800 border-sky-200'
-                              : 'bg-amber-50 text-amber-800 border-amber-200'
+                              ? 'bg-sky-50 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300 border-sky-200 dark:border-sky-800'
+                              : 'bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-800'
                           }`}
                         >
                           {clarified.contextBadge.text}
@@ -1066,7 +1066,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                     </div>
 
                     <h4
-                      className={`font-extrabold text-slate-900 mt-0.5 leading-snug ${
+                      className={`font-extrabold text-slate-900 dark:text-white mt-0.5 leading-snug ${
                         clarified.primaryMeaning.length > 50
                           ? 'text-base sm:text-lg'
                           : clarified.primaryMeaning.length > 25
@@ -1079,12 +1079,12 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
                     {/* Secondary Meanings if any */}
                     {clarified.secondaryMeanings && clarified.secondaryMeanings.length > 0 && (
-                      <div className="flex items-center gap-1.5 flex-wrap justify-center mt-1.5 text-[11px] text-slate-600">
-                        <span className="text-slate-400 font-semibold text-[10px]">Makna lain:</span>
+                      <div className="flex items-center gap-1.5 flex-wrap justify-center mt-1.5 text-[11px] text-slate-600 dark:text-slate-300">
+                        <span className="text-slate-400 dark:text-slate-400 font-semibold text-[10px]">Makna lain:</span>
                         {clarified.secondaryMeanings.map((alt, altIdx) => (
                           <span
                             key={altIdx}
-                            className="bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-semibold text-[10px]"
+                            className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-2 py-0.5 rounded-md font-semibold text-[10px] border border-transparent dark:border-slate-700"
                           >
                             {alt}
                           </span>
@@ -1094,22 +1094,22 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
                     {/* Particle Hint */}
                     {clarified.particleHint && (
-                      <div className="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-indigo-50/80 border border-indigo-100 text-indigo-900 text-[11px] font-bold">
-                        <span className="text-indigo-500 font-mono text-[10px]">Partikel:</span>
+                      <div className="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-indigo-50/80 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800 text-indigo-900 dark:text-indigo-200 text-[11px] font-bold">
+                        <span className="text-indigo-500 dark:text-indigo-400 font-mono text-[10px]">Partikel:</span>
                         <span className="font-jp">{clarified.particleHint}</span>
                       </div>
                     )}
 
                     {/* Anti-Bingung: Pasangan Pembanding / Kontras Langsung */}
                     {clarified.contrastPair && (
-                      <div className="w-full mt-2.5 bg-amber-50/90 border border-amber-200/90 p-2.5 rounded-xl text-left shadow-2xs">
-                        <div className="flex items-center gap-1.5 text-amber-900 font-extrabold text-[11px] mb-0.5">
+                      <div className="w-full mt-2.5 bg-amber-50/90 dark:bg-amber-950/40 border border-amber-200/90 dark:border-amber-800/60 p-2.5 rounded-xl text-left shadow-2xs">
+                        <div className="flex items-center gap-1.5 text-amber-900 dark:text-amber-300 font-extrabold text-[11px] mb-0.5">
                           <span>💡 Anti-Bingung: Bedakan dengan</span>
-                          <span className="font-jp font-black text-amber-950 px-1.5 py-0.5 bg-amber-100/90 rounded border border-amber-200">
+                          <span className="font-jp font-black text-amber-950 dark:text-amber-100 px-1.5 py-0.5 bg-amber-100/90 dark:bg-amber-900/60 rounded border border-amber-200 dark:border-amber-700">
                             {clarified.contrastPair.word} ({clarified.contrastPair.reading})
                           </span>
                         </div>
-                        <p className="text-[11px] text-amber-900 font-medium leading-relaxed">
+                        <p className="text-[11px] text-amber-900 dark:text-amber-200 font-medium leading-relaxed">
                           {clarified.contrastPair.difference}
                         </p>
                       </div>
@@ -1157,26 +1157,26 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 const nuance = getWordNuanceInfo(currentCard);
                 if (!nuance) return null;
                 return (
-                  <div className="w-full max-w-md bg-amber-50/90 border border-amber-200/90 p-3 rounded-2xl text-left shadow-2xs">
-                    <div className="flex items-center gap-1.5 text-amber-900 font-extrabold text-xs mb-1">
+                  <div className="w-full max-w-md bg-amber-50/90 dark:bg-amber-950/40 border border-amber-200/90 dark:border-amber-800/60 p-3 rounded-2xl text-left shadow-2xs">
+                    <div className="flex items-center gap-1.5 text-amber-900 dark:text-amber-300 font-extrabold text-xs mb-1">
                       <Lightbulb className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                       <span>Pembeda Nuansa: {nuance.japanese} (語彙の使い分け)</span>
                     </div>
-                    <p className="text-xs font-semibold text-amber-950 leading-relaxed mb-1.5">
+                    <p className="text-xs font-semibold text-amber-950 dark:text-amber-200 leading-relaxed mb-1.5">
                       {nuance.nuanceExplanation}
                     </p>
-                    <div className="bg-white/85 rounded-xl p-2 border border-amber-200/60 text-[11px] space-y-1">
-                      <div className="text-slate-700">
-                        <strong className="text-amber-900">Konteks Pemakaian:</strong> {nuance.contextUsage}
+                    <div className="bg-white/85 dark:bg-slate-900/90 rounded-xl p-2 border border-amber-200/60 dark:border-amber-800/60 text-[11px] space-y-1">
+                      <div className="text-slate-700 dark:text-slate-200">
+                        <strong className="text-amber-900 dark:text-amber-300">Konteks Pemakaian:</strong> {nuance.contextUsage}
                       </div>
                       {nuance.contrastedWith && nuance.contrastedWith.length > 0 && (
-                        <div className="pt-1 border-t border-amber-100">
-                          <span className="text-[10px] font-extrabold uppercase text-slate-400 block mb-0.5">
+                        <div className="pt-1 border-t border-amber-100 dark:border-slate-800">
+                          <span className="text-[10px] font-extrabold uppercase text-slate-400 dark:text-slate-400 block mb-0.5">
                             Bandingkan dengan:
                           </span>
                           {nuance.contrastedWith.map((c, cIdx) => (
-                            <div key={cIdx} className="text-slate-700 flex items-start gap-1">
-                              <span className="font-jp font-bold text-amber-800 shrink-0">• {c.kanji} ({c.reading}):</span>
+                            <div key={cIdx} className="text-slate-700 dark:text-slate-200 flex items-start gap-1">
+                              <span className="font-jp font-bold text-amber-800 dark:text-amber-400 shrink-0">• {c.kanji} ({c.reading}):</span>
                               <span>{c.nuance}</span>
                             </div>
                           ))}
@@ -1189,7 +1189,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
               {/* Onyomi & Kunyomi with Audio if Kanji */}
               {(currentCard.onyomi || currentCard.kunyomi) && (
-                <div className="flex flex-wrap justify-center gap-2 text-xs font-medium text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-200/60 w-full max-w-md">
+                <div className="flex flex-wrap justify-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl border border-slate-200/60 dark:border-slate-700 w-full max-w-md">
                   {currentCard.onyomi && (
                     <button
                       type="button"
@@ -1197,10 +1197,10 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                         e.stopPropagation();
                         soundManager.speakJapanese(currentCard.onyomi!, speechRate, undefined, currentCard.onyomi!);
                       }}
-                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white hover:bg-rose-50 border border-slate-200/80 hover:border-rose-200 rounded-lg text-slate-700 transition-all cursor-pointer select-none active:scale-95 shadow-2xs"
+                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white dark:bg-slate-800 hover:bg-rose-50 dark:hover:bg-slate-700 border border-slate-200/80 dark:border-slate-700 hover:border-rose-200 rounded-lg text-slate-700 dark:text-slate-200 transition-all cursor-pointer select-none active:scale-95 shadow-2xs"
                       title="Klik untuk mendengarkan bacaan On-yomi (Katakana)"
                     >
-                      <span className="text-rose-600 font-extrabold">On:</span>
+                      <span className="text-rose-600 dark:text-rose-400 font-extrabold">On:</span>
                       <span className="font-semibold">{currentCard.onyomi}</span>
                       <Volume2 className="w-3.5 h-3.5 text-rose-500 shrink-0" />
                     </button>
@@ -1212,10 +1212,10 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                         e.stopPropagation();
                         soundManager.speakJapanese(currentCard.kunyomi!, speechRate, undefined, currentCard.kunyomi!);
                       }}
-                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white hover:bg-indigo-50 border border-slate-200/80 hover:border-indigo-200 rounded-lg text-slate-700 transition-all cursor-pointer select-none active:scale-95 shadow-2xs"
+                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-slate-700 border border-slate-200/80 dark:border-slate-700 hover:border-indigo-200 rounded-lg text-slate-700 dark:text-slate-200 transition-all cursor-pointer select-none active:scale-95 shadow-2xs"
                       title="Klik untuk mendengarkan bacaan Kun-yomi (Hiragana)"
                     >
-                      <span className="text-indigo-600 font-extrabold">Kun:</span>
+                      <span className="text-indigo-600 dark:text-indigo-400 font-extrabold">Kun:</span>
                       <span className="font-semibold">{currentCard.kunyomi}</span>
                       <Volume2 className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
                     </button>
@@ -1227,11 +1227,11 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                         e.stopPropagation();
                         setStrokeModalCard(currentCard);
                       }}
-                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white hover:bg-rose-50 border border-slate-200/80 hover:border-rose-200 rounded-lg text-slate-700 transition-all cursor-pointer select-none active:scale-95 shadow-2xs"
+                      className="flex items-center gap-1.5 px-2.5 py-1 bg-white dark:bg-slate-800 hover:bg-rose-50 dark:hover:bg-slate-700 border border-slate-200/80 dark:border-slate-700 hover:border-rose-200 rounded-lg text-slate-700 dark:text-slate-200 transition-all cursor-pointer select-none active:scale-95 shadow-2xs"
                       title="Lihat urutan coretan langkah demi langkah (Hitsujun)"
                     >
                       <PenTool className="w-3.5 h-3.5 text-rose-500 shrink-0" />
-                      <span className="text-rose-600 font-extrabold">Urutan Coretan</span>
+                      <span className="text-rose-600 dark:text-rose-400 font-extrabold">Urutan Coretan</span>
                     </button>
                   )}
                 </div>
@@ -1239,13 +1239,13 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
               {/* Mnemonic Hint */}
               {currentCard.mnemonic && (
-                <div className="w-full max-w-md bg-amber-50/90 border border-amber-200/80 p-2.5 rounded-xl text-left flex items-start gap-2">
+                <div className="w-full max-w-md bg-amber-50/90 dark:bg-amber-950/40 border border-amber-200/80 dark:border-amber-800/60 p-2.5 rounded-xl text-left flex items-start gap-2">
                   <Lightbulb className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                   <div>
-                    <span className="text-[10px] font-extrabold text-amber-700 uppercase tracking-wide block">
+                    <span className="text-[10px] font-extrabold text-amber-700 dark:text-amber-400 uppercase tracking-wide block">
                       Tips Mengingat (Mnemonic)
                     </span>
-                    <p className="text-xs text-amber-900 leading-relaxed font-medium">
+                    <p className="text-xs text-amber-900 dark:text-amber-200 leading-relaxed font-medium">
                       {currentCard.mnemonic}
                     </p>
                   </div>
@@ -1254,24 +1254,22 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
               {/* Grammar / Usage Notes */}
               {currentCard.notes && (
-                <div className="w-full max-w-md bg-indigo-50/80 border border-indigo-200/80 p-2.5 rounded-xl text-left flex items-start gap-2">
+                <div className="w-full max-w-md bg-indigo-50/80 dark:bg-indigo-950/40 border border-indigo-200/80 dark:border-indigo-800/60 p-2.5 rounded-xl text-left flex items-start gap-2">
                   <BookOpen className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" />
                   <div className="flex-1">
-                    <span className="text-[10px] font-extrabold text-indigo-700 uppercase tracking-wide block">
+                    <span className="text-[10px] font-extrabold text-indigo-700 dark:text-indigo-400 uppercase tracking-wide block">
                       Catatan Tata Bahasa / Penggunaan
                     </span>
-                    <p className="text-xs text-indigo-950 leading-relaxed font-medium mt-0.5">
+                    <p className="text-xs text-indigo-950 dark:text-indigo-200 leading-relaxed font-medium mt-0.5">
                       {currentCard.notes}
                     </p>
                   </div>
                 </div>
               )}
-
-              {/* Example sentence - removed per user request */}
             </div>
 
             {/* Bottom Hint */}
-            <div className="flex items-center justify-center gap-2 text-xs font-medium text-slate-400 pt-2 border-t border-slate-100 shrink-0">
+            <div className="flex items-center justify-center gap-2 text-xs font-medium text-slate-400 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800 shrink-0">
               <RotateCw className="w-3.5 h-3.5 text-slate-400" />
               <span>Ketuk untuk kembali ke sisi depan</span>
             </div>
@@ -1285,7 +1283,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
           id="btn-prev-card"
           onClick={handlePrev}
           disabled={filteredCards.length <= 1}
-          className="flex-1 min-h-[44px] sm:min-h-[52px] py-2.5 sm:py-3 px-2 sm:px-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed font-bold text-xs sm:text-sm flex items-center justify-center gap-1 sm:gap-2 shadow-xs active:scale-95 transition-all cursor-pointer select-none"
+          className="flex-1 min-h-[44px] sm:min-h-[52px] py-2.5 sm:py-3 px-2 sm:px-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/80 disabled:opacity-40 disabled:cursor-not-allowed font-bold text-xs sm:text-sm flex items-center justify-center gap-1 sm:gap-2 shadow-xs active:scale-95 transition-all cursor-pointer select-none"
           title="Kartu Sebelumnya (Panah Kiri / Geser Kanan)"
         >
           <ChevronLeft className="w-4 h-4 shrink-0" />
@@ -1296,19 +1294,19 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
         <button
           id="btn-flip-card"
           onClick={handleFlip}
-          className="flex-1 min-h-[44px] sm:min-h-[52px] py-2.5 sm:py-3 px-3 sm:px-6 rounded-2xl bg-slate-900 hover:bg-slate-800 active:bg-slate-950 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 sm:gap-2 shadow-md active:scale-95 transition-all cursor-pointer select-none"
+          className="flex-1 min-h-[44px] sm:min-h-[52px] py-2.5 sm:py-3 px-3 sm:px-6 rounded-2xl bg-slate-900 dark:bg-rose-600 hover:bg-slate-800 dark:hover:bg-rose-700 active:bg-slate-950 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 sm:gap-2 shadow-md active:scale-95 transition-all cursor-pointer select-none"
           title="Balik Kartu (Spasi / Ketuk Kartu)"
         >
           <RotateCw className="w-4 h-4 shrink-0" />
           <span>Balik Kartu</span>
-          <span className="text-[11px] text-slate-400 font-normal hidden sm:inline">[Spasi]</span>
+          <span className="text-[11px] text-slate-300 font-normal hidden sm:inline">[Spasi]</span>
         </button>
 
         <button
           id="btn-next-card"
           onClick={handleNext}
           disabled={filteredCards.length <= 1}
-          className="flex-1 min-h-[44px] sm:min-h-[52px] py-2.5 sm:py-3 px-2 sm:px-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed font-bold text-xs sm:text-sm flex items-center justify-center gap-1 sm:gap-2 shadow-xs active:scale-95 transition-all cursor-pointer select-none"
+          className="flex-1 min-h-[44px] sm:min-h-[52px] py-2.5 sm:py-3 px-2 sm:px-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/80 disabled:opacity-40 disabled:cursor-not-allowed font-bold text-xs sm:text-sm flex items-center justify-center gap-1 sm:gap-2 shadow-xs active:scale-95 transition-all cursor-pointer select-none"
           title="Kartu Berikutnya (Panah Kanan / Geser Kiri)"
         >
           <span>Berikutnya</span>

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer utilities {
   .perspective-1000 {
     perspective: 1000px;
@@ -16,9 +18,12 @@
 }
 
 html {
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 4.5rem;
   max-width: 100%;
-  overflow-x: hidden;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
@@ -26,13 +31,19 @@ body {
   background-color: #faf9f6;
   color: #1e293b;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   overscroll-behavior-x: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body.dark {
+  background-color: #0b1120;
+  color: #f1f5f9;
 }
 
 #root {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .font-jp {
@@ -65,4 +76,69 @@ body {
 .custom-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: #e2e8f0 transparent;
+}
+
+/* Dark mode scrollbar */
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+.dark .custom-scrollbar {
+  scrollbar-color: #334155 transparent;
+}
+
+/* Specific high-contrast dark theme styling */
+.dark .bg-\[\#faf9f6\] {
+  background-color: #0b1120 !important;
+}
+
+/* Header in dark mode */
+.dark header {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  border-color: #1e293b !important;
+}
+
+/* Flashcard Front & Back Specific Dark Theme (Guaranteed High Contrast) */
+.dark #flashcard-element > div:first-child {
+  background: linear-gradient(180deg, #131d33 0%, #0c1424 100%) !important;
+  border: 1px solid #1e293b !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7) !important;
+}
+
+.dark #flashcard-element > div:first-child .text-slate-900 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.dark #flashcard-element > div:last-child {
+  background-color: #0f172a !important;
+  border: 2px solid #293548 !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7) !important;
+}
+
+.dark #flashcard-element > div:last-child .text-slate-900 {
+  color: #ffffff !important;
+}
+
+.dark #flashcard-element > div:last-child .text-slate-800 {
+  color: #f8fafc !important;
+}
+
+.dark #flashcard-element > div:last-child .text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+.dark #flashcard-element > div:last-child .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+/* Input, select, modal text field colors in dark mode */
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark select,
+.dark textarea {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border-color: #334155;
 }
