@@ -437,208 +437,74 @@ function conjugateVerb(
   // ==========================================
   const isKuruVerb =
     classification.type === 'verb_3' &&
-    (dec.kanji === '来る' ||
-      dec.kanji === '来ます' ||
-      dec.kana === 'くる' ||
-      dec.kana === 'きます' ||
-      dec.romaji === 'kuru' ||
-      dec.romaji === 'kimasu');
+    (dec.kanji.endsWith('来る') ||
+      dec.kanji.endsWith('来ます') ||
+      dec.kana.endsWith('くる') ||
+      dec.kana.endsWith('きます') ||
+      dec.romaji.endsWith('kuru') ||
+      dec.romaji.endsWith('kimasu'));
 
   if (isKuruVerb) {
-    forms.push(
-      {
-        formKey: 'jisho',
-        formName: 'Bentuk Kamus (Jisho-kei)',
-        categoryGroup: 'dasar_kasual',
-        categoryGroupName: 'Bentuk Dasar & Kasual',
-        japanese: '来る (くる)',
-        reading: 'くる',
-        romaji: 'kuru',
-        meaningId: 'Datang (Kasual/Sekarang)',
-        rule: 'Bentuk dasar kamus tidak beraturan.',
-      },
-      {
-        formKey: 'masu',
-        formName: 'Bentuk Sopan (+)',
-        categoryGroup: 'sopan',
-        categoryGroupName: 'Bentuk Sopan (Masu)',
-        japanese: '来ます (きます)',
-        reading: 'きます',
-        romaji: 'kimasu',
-        meaningId: 'Datang (Sopan)',
-        rule: 'Kanji 来 dibaca "ki" + ます -> きます (kimasu).',
-      },
-      {
-        formKey: 'masen',
-        formName: 'Bentuk Sopan Negatif (-)',
-        categoryGroup: 'sopan',
-        categoryGroupName: 'Bentuk Sopan (Masu)',
-        japanese: '来ません (きません)',
-        reading: 'きません',
-        romaji: 'kimasen',
-        meaningId: 'Tidak datang (Sopan)',
-        rule: 'Dibaca "ki" + ません -> きません (kimasen).',
-      },
-      {
-        formKey: 'mashita',
-        formName: 'Bentuk Sopan Lampau (+)',
-        categoryGroup: 'sopan',
-        categoryGroupName: 'Bentuk Sopan (Masu)',
-        japanese: '来ました (きました)',
-        reading: 'きました',
-        romaji: 'kimashita',
-        meaningId: 'Sudah datang (Sopan)',
-        rule: 'Dibaca "ki" + ました -> きました (kimashita).',
-      },
-      {
-        formKey: 'masendeshita',
-        formName: 'Bentuk Sopan Lampau Negatif (-)',
-        categoryGroup: 'sopan',
-        categoryGroupName: 'Bentuk Sopan (Masu)',
-        japanese: '来ませんでした (きませんでした)',
-        reading: 'きませんでした',
-        romaji: 'kimasendeshita',
-        meaningId: 'Tidak / Belum datang (Lampau Sopan)',
-        rule: 'Dibaca "ki" + ませんでした (kimasendeshita).',
-      },
-      {
-        formKey: 'te',
-        formName: 'Bentuk ~Te (Sambung / Mohon)',
-        categoryGroup: 'sambung_syarat',
-        categoryGroupName: 'Bentuk Sambung & Syarat',
-        japanese: '来て (きて)',
-        reading: 'きて',
-        romaji: 'kite',
-        meaningId: 'Datanglah / Silakan datang / dan...',
-        rule: 'Kanji 来 dibaca "ki" + て -> きて (kite).',
-      },
-      {
-        formKey: 'nai',
-        formName: 'Bentuk Kasual Negatif (~Nai)',
-        categoryGroup: 'dasar_kasual',
-        categoryGroupName: 'Bentuk Dasar & Kasual',
-        japanese: '来ない (こない)',
-        reading: 'こない',
-        romaji: 'konai',
-        meaningId: 'Tidak datang (Kasual)',
-        rule: 'Hati-hati! Bunyi kanji 来 berubah menjadi "ko" + ない -> こない (konai).',
-      },
-      {
-        formKey: 'ta',
-        formName: 'Bentuk Kasual Lampau (~Ta)',
-        categoryGroup: 'dasar_kasual',
-        categoryGroupName: 'Bentuk Dasar & Kasual',
-        japanese: '来た (きた)',
-        reading: 'きた',
-        romaji: 'kita',
-        meaningId: 'Sudah datang (Kasual)',
-        rule: 'Dibaca "ki" + た -> きた (kita).',
-      },
-      {
-        formKey: 'nakatta',
-        formName: 'Bentuk Kasual Lampau Negatif',
-        categoryGroup: 'dasar_kasual',
-        categoryGroupName: 'Bentuk Dasar & Kasual',
-        japanese: '来なかった (こなかった)',
-        reading: 'こなかった',
-        romaji: 'konakatta',
-        meaningId: 'Tadi tidak datang (Kasual)',
-        rule: 'Dibaca "ko" + なかった -> こなかった (konakatta).',
-      },
-      {
-        formKey: 'ba',
-        formName: 'Bentuk Syarat (~Ba)',
-        categoryGroup: 'sambung_syarat',
-        categoryGroupName: 'Bentuk Sambung & Syarat',
-        japanese: '来れば (くれば)',
-        reading: 'くれば',
-        romaji: 'kureba',
-        meaningId: 'Jika datang / Kalau datang',
-        rule: 'Dibaca "ku" + れば -> くれば (kureba).',
-      },
-      {
-        formKey: 'tara',
-        formName: 'Bentuk Pengandaian (~Tara)',
-        categoryGroup: 'sambung_syarat',
-        categoryGroupName: 'Bentuk Sambung & Syarat',
-        japanese: '来たら (きたら)',
-        reading: 'きたら',
-        romaji: 'kitara',
-        meaningId: 'Kalau sudah datang / Seandainya datang...',
-        rule: 'Bentuk ~ta (きた) + ら -> きたら (kitara).',
-      },
-      {
-        formKey: 'volitional',
-        formName: 'Bentuk Ajakan (~You / Mari)',
-        categoryGroup: 'turunan_lanjutan',
-        categoryGroupName: 'Bentuk Lanjutan & Ragam Fungsi',
-        japanese: '来よう (こよう)',
-        reading: 'こよう',
-        romaji: 'koyou',
-        meaningId: 'Ayo datang / Mari datang',
-        rule: 'Dibaca "ko" + よう -> こよう (koyou).',
-      },
-      {
-        formKey: 'potential',
-        formName: 'Bentuk Potensial (Bisa / Sanggup)',
-        categoryGroup: 'turunan_lanjutan',
-        categoryGroupName: 'Bentuk Lanjutan & Ragam Fungsi',
-        japanese: '来られる (こられる)',
-        reading: 'こられる',
-        romaji: 'korareru',
-        meaningId: 'Bisa datang / Sanggup hadir',
-        rule: 'Dibaca "ko" + られる -> こられる (korareru).',
-      },
-      {
-        formKey: 'passive',
-        formName: 'Bentuk Pasif (Di- / Didatangi)',
-        categoryGroup: 'turunan_lanjutan',
-        categoryGroupName: 'Bentuk Lanjutan & Ragam Fungsi',
-        japanese: '来られる (こられる)',
-        reading: 'こられる',
-        romaji: 'korareru',
-        meaningId: 'Didatangi (Pasif)',
-        rule: 'Bentuk pasif sama dengan potensial: こられる (korareru).',
-      },
-      {
-        formKey: 'causative',
-        formName: 'Bentuk Kausatif (Menyuruh Datang)',
-        categoryGroup: 'turunan_lanjutan',
-        categoryGroupName: 'Bentuk Lanjutan & Ragam Fungsi',
-        japanese: '来させる (こさせる)',
-        reading: 'こさせる',
-        romaji: 'kosaseru',
-        meaningId: 'Menyuruh datang / Mempersilakan hadir',
-        rule: 'Dibaca "ko" + させる -> こさせる (kosaseru).',
-      },
-      {
-        formKey: 'imperative',
-        formName: 'Bentuk Perintah (Kasual / Tegas)',
-        categoryGroup: 'turunan_lanjutan',
-        categoryGroupName: 'Bentuk Lanjutan & Ragam Fungsi',
-        japanese: '来い (こい)',
-        reading: 'こい',
-        romaji: 'koi',
-        meaningId: 'Kemarilah! (Perintah tegas)',
-        rule: 'Dibaca "ko" + い -> こい (koi).',
-      }
-    );
+    const kanjiPrefix = dec.kanji.replace(/(来る|来ます|くる|きます)$/, '');
+    const kanaPrefix = dec.kana.replace(/(来る|来ます|くる|きます)$/, '');
+
+    const createKuruForm = (
+      suffixKanji: string,
+      suffixKana: string,
+      meaningText: string,
+      ruleText: string,
+      formKey: string,
+      formName: string,
+      categoryGroup: 'sopan' | 'dasar_kasual' | 'sambung_syarat' | 'turunan_lanjutan',
+      categoryGroupName: string
+    ) => {
+      const fullKanji = `${kanjiPrefix}${suffixKanji}`;
+      const fullKana = `${kanaPrefix}${suffixKana}`;
+      forms.push({
+        formKey,
+        formName,
+        categoryGroup,
+        categoryGroupName,
+        japanese: formatJp(fullKanji, fullKana),
+        reading: fullKana,
+        romaji: kanaToRomaji(fullKana),
+        meaningId: meaningText,
+        rule: ruleText,
+      });
+    };
+
+    createKuruForm('来る', 'くる', `${baseMeaning} (Kasual/Sekarang)`, 'Bentuk dasar kamus tidak beraturan.', 'jisho', 'Bentuk Kamus (Jisho-kei)', 'dasar_kasual', 'Bentuk Dasar & Kasual');
+    createKuruForm('来ます', 'きます', `${baseMeaning} (Sopan)`, 'Dibaca "ki" + ます -> きます (kimasu).', 'masu', 'Bentuk Sopan (+)', 'sopan', 'Bentuk Sopan (Masu)');
+    createKuruForm('来ません', 'きません', `Tidak ${baseMeaning.toLowerCase()} (Sopan)`, 'Dibaca "ki" + ません -> きません (kimasen).', 'masen', 'Bentuk Sopan Negatif (-)', 'sopan', 'Bentuk Sopan (Masu)');
+    createKuruForm('来ました', 'きました', `Sudah ${baseMeaning.toLowerCase()} (Sopan)`, 'Dibaca "ki" + ました -> きました (kimashita).', 'mashita', 'Bentuk Sopan Lampau (+)', 'sopan', 'Bentuk Sopan (Masu)');
+    createKuruForm('来ませんでした', 'きませんでした', `Tidak / Belum ${baseMeaning.toLowerCase()} (Lampau Sopan)`, 'Dibaca "ki" + ませんでした (kimasendeshita).', 'masendeshita', 'Bentuk Sopan Lampau Negatif (-)', 'sopan', 'Bentuk Sopan (Masu)');
+    createKuruForm('来て', 'きて', `${baseMeaning}lah / Silakan ${baseMeaning.toLowerCase()} / dan...`, 'Kanji 来 dibaca "ki" + て -> きて (kite).', 'te', 'Bentuk ~Te (Sambung / Mohon)', 'sambung_syarat', 'Bentuk Sambung & Syarat');
+    createKuruForm('来ない', 'こない', `Tidak ${baseMeaning.toLowerCase()} (Kasual)`, 'Hati-hati! Bunyi kanji 来 berubah menjadi "ko" + ない -> こない (konai).', 'nai', 'Bentuk Kasual Negatif (~Nai)', 'dasar_kasual', 'Bentuk Dasar & Kasual');
+    createKuruForm('来た', 'きた', `Sudah ${baseMeaning.toLowerCase()} (Kasual)`, 'Dibaca "ki" + た -> きた (kita).', 'ta', 'Bentuk Kasual Lampau (~Ta)', 'dasar_kasual', 'Bentuk Dasar & Kasual');
+    createKuruForm('来なかった', 'こなかった', `Tadi tidak ${baseMeaning.toLowerCase()} (Kasual)`, 'Dibaca "ko" + なかった -> こなかった (konakatta).', 'nakatta', 'Bentuk Kasual Lampau Negatif', 'dasar_kasual', 'Bentuk Dasar & Kasual');
+    createKuruForm('来れば', 'くれば', `Jika / Seandainya ${baseMeaning.toLowerCase()}`, 'Dibaca "ku" + れば -> くれば (kureba).', 'ba', 'Bentuk Syarat (~Ba)', 'sambung_syarat', 'Bentuk Sambung & Syarat');
+    createKuruForm('来たら', 'きたら', `Kalau sudah ${baseMeaning.toLowerCase()} / Seandainya...`, 'Bentuk ~ta + ら -> きたら (kitara).', 'tara', 'Bentuk Pengandaian (~Tara)', 'sambung_syarat', 'Bentuk Sambung & Syarat');
+    createKuruForm('来よう', 'こよう', `Ayo / Mari ${baseMeaning.toLowerCase()}`, 'Dibaca "ko" + よう -> こよう (koyou).', 'volitional', 'Bentuk Ajakan (~You / Mari)', 'turunan_lanjutan', 'Bentuk Lanjutan & Ragam Fungsi');
+    createKuruForm('来られる', 'こられる', `Bisa / Sanggup ${baseMeaning.toLowerCase()}`, 'Dibaca "ko" + られる -> こられる (korareru).', 'potential', 'Bentuk Potensial (Bisa / Sanggup)', 'turunan_lanjutan', 'Bentuk Lanjutan & Ragam Fungsi');
+    createKuruForm('来られる', 'こられる', `Didatangi (Pasif)`, 'Bentuk pasif sama dengan potensial: こられる (korareru).', 'passive', 'Bentuk Pasif (Di- / Dikenai)', 'turunan_lanjutan', 'Bentuk Lanjutan & Ragam Fungsi');
+    createKuruForm('来させる', 'こさせる', `Menyuruh ${baseMeaning.toLowerCase()}`, 'Dibaca "ko" + させる -> こさせる (kosaseru).', 'causative', 'Bentuk Kausatif (Menyuruh / Membiarkan)', 'turunan_lanjutan', 'Bentuk Lanjutan & Ragam Fungsi');
+    createKuruForm('来い', 'こい', `${baseMeaning}lah! (Perintah tegas)`, 'Dibaca "ko" + い -> こい (koi).', 'imperative', 'Bentuk Perintah (Kasual / Tegas)', 'turunan_lanjutan', 'Bentuk Lanjutan & Ragam Fungsi');
 
     return {
       id: item.id,
       originalCard: item,
-      japanese: '来る (くる)',
-      kanji: '来る',
-      reading: 'くる',
-      furigana: 'くる',
+      japanese: formatJp(`${kanjiPrefix}来る`, `${kanaPrefix}くる`),
+      kanji: kanjiPrefix !== kanaPrefix ? `${kanjiPrefix}来る` : undefined,
+      reading: `${kanaPrefix}くる`,
+      furigana: item.furigana || `${kanaPrefix}くる`,
       meaningId: item.meaningId,
       classification,
-      groupLabel: 'Golongan 3 (不規則 Fukisoku: くる)',
+      groupLabel: kanjiPrefix ? 'Golongan 3 (不規則 Fukisoku: 〜くる)' : 'Golongan 3 (不規則 Fukisoku: くる)',
       quickForms: {
-        masu: '来ます (kimasu)',
-        te: '来て (kite)',
-        nai: '来ない (konai)',
-        ta: '来た (kita)',
+        masu: formatJp(`${kanjiPrefix}来ます`, `${kanaPrefix}きます`),
+        te: formatJp(`${kanjiPrefix}来て`, `${kanaPrefix}きて`),
+        nai: formatJp(`${kanjiPrefix}来ない`, `${kanaPrefix}こない`),
+        ta: formatJp(`${kanjiPrefix}来た`, `${kanaPrefix}きた`),
       },
       forms,
     };

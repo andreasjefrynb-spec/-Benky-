@@ -867,8 +867,8 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
         />
       </div>
 
-      {/* 3D FLASHCARD CONTAINER */}
-      <div className="w-full min-h-[350px] h-[360px] sm:h-[410px] md:h-[430px] perspective-1000 select-none mb-3 sm:mb-5">
+      {/* 3D FLASHCARD CONTAINER - Optimized for Mobile (HP) & PC */}
+      <div className="w-full min-h-[380px] h-[390px] sm:h-[430px] md:h-[460px] perspective-1000 select-none mb-3 sm:mb-5">
         <motion.div
           id="flashcard-element"
           onClick={handleCardClick}
@@ -1123,8 +1123,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 const wordClass = getWordClassification(currentCard);
                 const isConjugatable =
                   wordClass.type.startsWith('verb') ||
-                  wordClass.type.startsWith('adj') ||
-                  wordClass.type === 'noun';
+                  wordClass.type.startsWith('adj');
 
                 return (
                   <div className={`w-full max-w-md p-2.5 rounded-xl border text-xs text-left shadow-2xs ${wordClass.badgeClass}`}>
@@ -1268,32 +1267,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 </div>
               )}
 
-              {/* Example sentence */}
-              {currentCard.exampleJp && (
-                <div 
-                  className="w-full max-w-md bg-slate-50 border border-slate-200/80 p-2.5 rounded-xl text-left cursor-pointer hover:bg-rose-50/40 transition-colors"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    soundManager.speak(currentCard.exampleJp!, speechRate);
-                  }}
-                  title="Klik untuk mendengarkan contoh kalimat"
-                >
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-[10px] font-extrabold text-slate-500 uppercase tracking-wide flex items-center gap-1">
-                      <Sparkles className="w-3 h-3 text-rose-500" /> Contoh Pemakaian
-                    </span>
-                    <Volume2 className="w-3.5 h-3.5 text-rose-500" />
-                  </div>
-                  <p className="text-xs sm:text-sm font-jp font-bold text-slate-800">
-                    {currentCard.exampleJp}
-                  </p>
-                  {currentCard.exampleId && (
-                    <p className="text-[11px] text-slate-600 mt-0.5">
-                      {currentCard.exampleId}
-                    </p>
-                  )}
-                </div>
-              )}
+              {/* Example sentence - removed per user request */}
             </div>
 
             {/* Bottom Hint */}

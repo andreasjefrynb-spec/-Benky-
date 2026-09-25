@@ -2,7 +2,7 @@
   {
     "id": "voc-c-0001",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "IMCで 働いています。",
     "kanji": "IMCで 働いています。",
     "reading": "IMC de hataraite imasu.",
@@ -142,7 +142,7 @@
   {
     "id": "voc-c-0011",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "あ、いけない",
     "kanji": "",
     "reading": "a, ikenai",
@@ -576,7 +576,7 @@
   {
     "id": "voc-c-0042",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "あそこで 新聞を 読んでいる 人は 誰ですか。",
     "kanji": "あそこで 新聞を 読んでいる 人は 誰ですか。",
     "reading": "Asoko de shinbun o yonde iru hito wa dare desu ka.",
@@ -758,7 +758,7 @@
   {
     "id": "voc-c-0055",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "あとで",
     "kanji": "",
     "reading": "atode",
@@ -786,7 +786,7 @@
   {
     "id": "voc-c-0057",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あながあいている",
     "kanji": "穴が開いている",
     "reading": "anagaaiteiru",
@@ -814,7 +814,7 @@
   {
     "id": "voc-c-0059",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "あなをあける",
     "kanji": "穴をあける",
     "reading": "anaoakeru",
@@ -898,7 +898,7 @@
   {
     "id": "voc-c-0065",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "あの方は どなたですか。",
     "kanji": "あの方は どなたですか。",
     "reading": "Ano kata wa donata desu ka.",
@@ -940,7 +940,7 @@
   {
     "id": "voc-c-0068",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あぶない",
     "kanji": "危ない",
     "reading": "abunai",
@@ -1010,7 +1010,7 @@
   {
     "id": "voc-c-0073",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あみだな",
     "kanji": "網棚",
     "reading": "amidana",
@@ -1150,7 +1150,7 @@
   {
     "id": "voc-c-0083",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "あれは 車です。",
     "kanji": "あれは 車です。",
     "reading": "Are wa kuruma desu.",
@@ -1164,7 +1164,7 @@
   {
     "id": "voc-c-0084",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "あれ？",
     "kanji": "",
     "reading": "are？",
@@ -1178,7 +1178,7 @@
   {
     "id": "voc-c-0085",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "あわてて",
     "kanji": "慌てて",
     "reading": "awatete",
@@ -1220,7 +1220,7 @@
   {
     "id": "voc-c-0088",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あんぜん",
     "kanji": "安全",
     "reading": "anzen",
@@ -1234,7 +1234,7 @@
   {
     "id": "voc-c-0089",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あんぜんな",
     "kanji": "安全な",
     "reading": "anzenna",
@@ -1248,7 +1248,7 @@
   {
     "id": "voc-c-0090",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "あんな",
     "kanji": "",
     "reading": "anna",
@@ -1360,7 +1360,7 @@
   {
     "id": "voc-c-0098",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "いいえ、まだまだです",
     "kanji": "",
     "reading": "iie, madamadadesu",
@@ -1374,7 +1374,7 @@
   {
     "id": "voc-c-0099",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "いいことですね",
     "kanji": "",
     "reading": "iikotodesune",
@@ -1388,7 +1388,7 @@
   {
     "id": "voc-c-0100",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "いいてんきですね",
     "kanji": "いい天気ですね",
     "reading": "iitenkidesune",
@@ -1402,7 +1402,7 @@
   {
     "id": "voc-c-0101",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "いいですね",
     "kanji": "",
     "reading": "iidesune",
@@ -1416,7 +1416,7 @@
   {
     "id": "voc-c-0102",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "いいですよ",
     "kanji": "",
     "reading": "iidesuyo",
@@ -1514,7 +1514,7 @@
   {
     "id": "voc-c-0109",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "いくつ",
     "kanji": "",
     "reading": "ikutsu",
@@ -1528,7 +1528,7 @@
   {
     "id": "voc-c-0110",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "いくら",
     "kanji": "",
     "reading": "ikura",
@@ -1570,7 +1570,7 @@
   {
     "id": "voc-c-0113",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "いけばな",
     "kanji": "生け花",
     "reading": "ikebana",
@@ -1654,7 +1654,7 @@
   {
     "id": "voc-c-0119",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "いじょうです",
     "kanji": "以上です",
     "reading": "ijoudesu",
@@ -1668,7 +1668,7 @@
   {
     "id": "voc-c-0120",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "いじわるな",
     "kanji": "意地悪な",
     "reading": "ijiwaruna",
@@ -1780,7 +1780,7 @@
   {
     "id": "voc-c-0128",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いためる",
     "kanji": "",
     "reading": "itameru",
@@ -1850,7 +1850,7 @@
   {
     "id": "voc-c-0133",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "いちども",
     "kanji": "一度も",
     "reading": "ichido mo",
@@ -1906,7 +1906,7 @@
   {
     "id": "voc-c-0137",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "いっしょうけんめい",
     "kanji": "一生懸命",
     "reading": "isshoukenmei",
@@ -1920,7 +1920,7 @@
   {
     "id": "voc-c-0138",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "いっしょに",
     "kanji": "",
     "reading": "isshoni",
@@ -1934,7 +1934,7 @@
   {
     "id": "voc-c-0139",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "いっしょに 京都へ 行きませんか。",
     "kanji": "いっしょに 京都へ 行きませんか。",
     "reading": "Issho ni Kyouto e ikimasen ka.",
@@ -1948,7 +1948,7 @@
   {
     "id": "voc-c-0140",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "いっしょにいかがですか",
     "kanji": "",
     "reading": "isshoniikagadesuka",
@@ -1990,7 +1990,7 @@
   {
     "id": "voc-c-0143",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いっぴきもいません",
     "kanji": "一匹もいません",
     "reading": "ippikimoimasen",
@@ -2144,7 +2144,7 @@
   {
     "id": "voc-c-0154",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "いまいいでしょうか",
     "kanji": "",
     "reading": "imaiideshouka",
@@ -2200,7 +2200,7 @@
   {
     "id": "voc-c-0158",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "いまにも",
     "kanji": "今にも",
     "reading": "imanimo",
@@ -2270,7 +2270,7 @@
   {
     "id": "voc-c-0163",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "いや",
     "kanji": "世話をします",
     "reading": "iya [na]",
@@ -2298,7 +2298,7 @@
   {
     "id": "voc-c-0165",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "いやな",
     "kanji": "嫌な",
     "reading": "iyana",
@@ -2340,7 +2340,7 @@
   {
     "id": "voc-c-0168",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "いらいらする",
     "kanji": "",
     "reading": "irairasuru",
@@ -2354,7 +2354,7 @@
   {
     "id": "voc-c-0169",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "いらっしゃい",
     "kanji": "",
     "reading": "irasshai",
@@ -2382,7 +2382,7 @@
   {
     "id": "voc-c-0171",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "いらっしゃいませ",
     "kanji": "",
     "reading": "irasshaimase",
@@ -2452,7 +2452,7 @@
   {
     "id": "voc-c-0176",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "いろいろ",
     "kanji": "男の人",
     "reading": "iroiro [na]",
@@ -2466,7 +2466,7 @@
   {
     "id": "voc-c-0177",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "いろいろおせわになりました",
     "kanji": "いろいろお世話になりました",
     "reading": "iroiroosewaninarimashita",
@@ -2802,7 +2802,7 @@
   {
     "id": "voc-c-0201",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うっとりする",
     "kanji": "",
     "reading": "uttorisuru",
@@ -2816,7 +2816,7 @@
   {
     "id": "voc-c-0202",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うつ",
     "kanji": "撃つ",
     "reading": "utsu",
@@ -2886,7 +2886,7 @@
   {
     "id": "voc-c-0207",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "うまい",
     "kanji": "",
     "reading": "umai",
@@ -2984,7 +2984,7 @@
   {
     "id": "voc-c-0214",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "うらやましい",
     "kanji": "",
     "reading": "urayamashii",
@@ -3040,7 +3040,7 @@
   {
     "id": "voc-c-0218",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "うれしい",
     "kanji": "",
     "reading": "ureshii",
@@ -3180,7 +3180,7 @@
   {
     "id": "voc-c-0228",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "うんどうする",
     "kanji": "",
     "reading": "undousuru",
@@ -3250,7 +3250,7 @@
   {
     "id": "voc-c-0233",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "えいぎょうちゅう",
     "kanji": "営業中",
     "reading": "eigyouchuu",
@@ -3292,7 +3292,7 @@
   {
     "id": "voc-c-0236",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "えいようのバランスをかんがえてたべる",
     "kanji": "",
     "reading": "eiyounobaransuokangaetetaberu",
@@ -3544,7 +3544,7 @@
   {
     "id": "voc-c-0254",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "えんそけいひょうはくざいふか",
     "kanji": "塩素系漂白剤不可",
     "reading": "ensokeihyouhakuzaifuka",
@@ -3908,7 +3908,7 @@
   {
     "id": "voc-c-0280",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "おかしい",
     "kanji": "",
     "reading": "okashii",
@@ -4034,7 +4034,7 @@
   {
     "id": "voc-c-0289",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おく",
     "kanji": "奥",
     "reading": "oku",
@@ -4132,7 +4132,7 @@
   {
     "id": "voc-c-0296",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "おげんきでいらっしゃいますか",
     "kanji": "",
     "reading": "ogenkideirasshaimasuka",
@@ -4146,7 +4146,7 @@
   {
     "id": "voc-c-0297",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "おげんきですか",
     "kanji": "お元気ですか",
     "reading": "ogenkidesuka",
@@ -4426,7 +4426,7 @@
   {
     "id": "voc-c-0317",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "おじいさん／おじいちゃん",
     "kanji": "",
     "reading": "ojiisan/ojiichan",
@@ -4454,7 +4454,7 @@
   {
     "id": "voc-c-0319",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おす",
     "kanji": "押す",
     "reading": "osu",
@@ -4552,7 +4552,7 @@
   {
     "id": "voc-c-0326",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "おだいじに",
     "kanji": "お大事に",
     "reading": "odaijini",
@@ -4622,7 +4622,7 @@
   {
     "id": "voc-c-0331",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "おちゅうげん／おせいぼ",
     "kanji": "出産祝い",
     "reading": "ochuugen/oseibo",
@@ -4678,7 +4678,7 @@
   {
     "id": "voc-c-0335",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "おっと／しゅじん",
     "kanji": "ご主人",
     "reading": "otto/shujin",
@@ -4692,7 +4692,7 @@
   {
     "id": "voc-c-0336",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "おつかれさまでした",
     "kanji": "お疲れさまでした",
     "reading": "otsukaresamadeshita",
@@ -4762,7 +4762,7 @@
   {
     "id": "voc-c-0341",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "おでかけですか",
     "kanji": "お出かけですか",
     "reading": "odekakedesuka",
@@ -4958,7 +4958,7 @@
   {
     "id": "voc-c-0355",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "おとなしい",
     "kanji": "",
     "reading": "otonashii",
@@ -5014,7 +5014,7 @@
   {
     "id": "voc-c-0359",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "おなかがいっぱいです",
     "kanji": "",
     "reading": "onakagaippaidesu",
@@ -5168,7 +5168,7 @@
   {
     "id": "voc-c-0370",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "おばあさん／おばあちゃん",
     "kanji": "",
     "reading": "obaasan/obaachan",
@@ -5322,7 +5322,7 @@
   {
     "id": "voc-c-0381",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おまたせしました",
     "kanji": "お待たせしました",
     "reading": "omataseshimashita",
@@ -5504,7 +5504,7 @@
   {
     "id": "voc-c-0394",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "おもちです",
     "kanji": "お持ちです",
     "reading": "omochidesu",
@@ -5630,7 +5630,7 @@
   {
     "id": "voc-c-0403",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "およぐ",
     "kanji": "泳ぐ",
     "reading": "oyogu",
@@ -5672,7 +5672,7 @@
   {
     "id": "voc-c-0406",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "おれい",
     "kanji": "お礼",
     "reading": "orei",
@@ -5826,7 +5826,7 @@
   {
     "id": "voc-c-0417",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "お国は どちらですか。",
     "kanji": "お国は どちらですか。",
     "reading": "Okuni wa dochira desu ka.",
@@ -5938,7 +5938,7 @@
   {
     "id": "voc-c-0425",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "お皿が 割れています。",
     "kanji": "お皿が 割れています。",
     "reading": "Osara ga warete imasu.",
@@ -6064,7 +6064,7 @@
   {
     "id": "voc-c-0434",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "お金が あったら、旅行したいです。",
     "kanji": "お金が あったら、旅行したいです。",
     "reading": "Okane ga attara, ryokou shitai desu.",
@@ -6582,7 +6582,7 @@
   {
     "id": "voc-c-0471",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かきまぜる",
     "kanji": "かき混ぜる",
     "reading": "kakimazeru",
@@ -6736,7 +6736,7 @@
   {
     "id": "voc-c-0482",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "かしてください",
     "kanji": "貸してください",
     "reading": "kashitekudasai",
@@ -6862,7 +6862,7 @@
   {
     "id": "voc-c-0491",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "かたかな",
     "kanji": "",
     "reading": "katakana",
@@ -6946,7 +6946,7 @@
   {
     "id": "voc-c-0497",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "かちきな",
     "kanji": "勝気な",
     "reading": "kachikina",
@@ -6988,7 +6988,7 @@
   {
     "id": "voc-c-0500",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "かっぱつな",
     "kanji": "活発な",
     "reading": "kappatsuna",
@@ -7016,7 +7016,7 @@
   {
     "id": "voc-c-0502",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "かていでんかせいひん",
     "kanji": "家庭電化製品",
     "reading": "kateidenkaseihin",
@@ -7072,7 +7072,7 @@
   {
     "id": "voc-c-0506",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "かなしい",
     "kanji": "悲しい",
     "reading": "kanashii",
@@ -7128,7 +7128,7 @@
   {
     "id": "voc-c-0510",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "かなり",
     "kanji": "",
     "reading": "kanari",
@@ -7156,7 +7156,7 @@
   {
     "id": "voc-c-0512",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "かねんごみ／もえるごみ",
     "kanji": "可燃ごみ／燃えるごみ",
     "reading": "kanengomi/moerugomi",
@@ -7268,7 +7268,7 @@
   {
     "id": "voc-c-0520",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かまいません",
     "kanji": "",
     "reading": "kamaimasen",
@@ -7338,7 +7338,7 @@
   {
     "id": "voc-c-0525",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "かむ",
     "kanji": "",
     "reading": "kamu",
@@ -7366,7 +7366,7 @@
   {
     "id": "voc-c-0527",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "かゆい",
     "kanji": "",
     "reading": "kayui",
@@ -7786,7 +7786,7 @@
   {
     "id": "voc-c-0557",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "かんたん",
     "kanji": "簡単",
     "reading": "kantan [na]",
@@ -7814,7 +7814,7 @@
   {
     "id": "voc-c-0559",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "かんぱい",
     "kanji": "乾杯",
     "reading": "kanpai",
@@ -7870,7 +7870,7 @@
   {
     "id": "voc-c-0563",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "がいしょくがおおい",
     "kanji": "",
     "reading": "gaishokugaooi",
@@ -7982,7 +7982,7 @@
   {
     "id": "voc-c-0571",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "がびょう／おしピン",
     "kanji": "留める",
     "reading": "gabyou/oshipin",
@@ -7996,7 +7996,7 @@
   {
     "id": "voc-c-0572",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "がまんする",
     "kanji": "我慢する",
     "reading": "gamansuru",
@@ -8010,7 +8010,7 @@
   {
     "id": "voc-c-0573",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "がんこな",
     "kanji": "頑固な",
     "reading": "gankona",
@@ -8220,7 +8220,7 @@
   {
     "id": "voc-c-0588",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きけん",
     "kanji": "安全",
     "reading": "kiken [na]",
@@ -8234,7 +8234,7 @@
   {
     "id": "voc-c-0589",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きけんな",
     "kanji": "危険な",
     "reading": "kikenna",
@@ -8276,7 +8276,7 @@
   {
     "id": "voc-c-0592",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きざむ",
     "kanji": "刻む",
     "reading": "kizamu",
@@ -8360,7 +8360,7 @@
   {
     "id": "voc-c-0598",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きそくただしいせいかつをする",
     "kanji": "",
     "reading": "kisokutadashiiseikatsuosuru",
@@ -8388,7 +8388,7 @@
   {
     "id": "voc-c-0600",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きたえる",
     "kanji": "鍛える",
     "reading": "kitaeru",
@@ -8430,7 +8430,7 @@
   {
     "id": "voc-c-0603",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "きちんと",
     "kanji": "",
     "reading": "kichinto",
@@ -8528,7 +8528,7 @@
   {
     "id": "voc-c-0610",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "きのう 勉強しました。",
     "kanji": "きのう 勉強しました。",
     "reading": "Kinou benkyou shimashita.",
@@ -8682,7 +8682,7 @@
   {
     "id": "voc-c-0621",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きもちがいい",
     "kanji": "気持ちがいい",
     "reading": "kimochigaii",
@@ -8766,7 +8766,7 @@
   {
     "id": "voc-c-0627",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "きゅうに",
     "kanji": "急に",
     "reading": "kyuuni",
@@ -9032,7 +9032,7 @@
   {
     "id": "voc-c-0646",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きらい",
     "kanji": "好き",
     "reading": "kirai [na]",
@@ -9074,7 +9074,7 @@
   {
     "id": "voc-c-0649",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "きる",
     "kanji": "切る",
     "reading": "kiru",
@@ -9088,7 +9088,7 @@
   {
     "id": "voc-c-0650",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "きれい",
     "kanji": "",
     "reading": "kirei (na)",
@@ -9410,7 +9410,7 @@
   {
     "id": "voc-c-0673",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "くぎをうつ",
     "kanji": "くぎを打つ",
     "reading": "kugioutsu",
@@ -9564,7 +9564,7 @@
   {
     "id": "voc-c-0684",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "くもりところによってあめ",
     "kanji": "曇り所によって雨",
     "reading": "kumoritokoroniyotteame",
@@ -9704,7 +9704,7 @@
   {
     "id": "voc-c-0694",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "くわしい",
     "kanji": "詳しい",
     "reading": "kuwashii",
@@ -9732,7 +9732,7 @@
   {
     "id": "voc-c-0696",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "ぐうぐう",
     "kanji": "寝る",
     "reading": "guuguu (neru)",
@@ -9774,7 +9774,7 @@
   {
     "id": "voc-c-0699",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "けいぐ",
     "kanji": "敬具",
     "reading": "keigu",
@@ -9802,7 +9802,7 @@
   {
     "id": "voc-c-0701",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けいけんをする",
     "kanji": "経験をする",
     "reading": "keikenosuru",
@@ -9886,7 +9886,7 @@
   {
     "id": "voc-c-0707",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けいさんする",
     "kanji": "計算する",
     "reading": "keisansuru",
@@ -10082,7 +10082,7 @@
   {
     "id": "voc-c-0721",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けす",
     "kanji": "消す",
     "reading": "kesu",
@@ -10096,7 +10096,7 @@
   {
     "id": "voc-c-0722",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "けずる",
     "kanji": "削る",
     "reading": "kezuru",
@@ -10124,7 +10124,7 @@
   {
     "id": "voc-c-0724",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "けっこうです",
     "kanji": "そろそろ失礼します",
     "reading": "(iie) kekkoudesu",
@@ -10194,7 +10194,7 @@
   {
     "id": "voc-c-0729",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ける",
     "kanji": "",
     "reading": "keru",
@@ -10306,7 +10306,7 @@
   {
     "id": "voc-c-0737",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "けんこうしだんをうける",
     "kanji": "",
     "reading": "kenkoushidanoukeru",
@@ -10516,7 +10516,7 @@
   {
     "id": "voc-c-0752",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "げんき",
     "kanji": "元気",
     "reading": "genki",
@@ -10530,7 +10530,7 @@
   {
     "id": "voc-c-0753",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "げんき )",
     "kanji": "新設（な）",
     "reading": "genki (na)",
@@ -10572,7 +10572,7 @@
   {
     "id": "voc-c-0756",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "げんぞう",
     "kanji": "現像",
     "reading": "genzou",
@@ -10908,7 +10908,7 @@
   {
     "id": "voc-c-0780",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "こくさいかんけいがく",
     "kanji": "国際関係学",
     "reading": "kokusaikankeigaku",
@@ -10950,7 +10950,7 @@
   {
     "id": "voc-c-0783",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ここから 富士山が 見えます。",
     "kanji": "ここから 富士山が 見えます。",
     "reading": "Koko kara Fujisan ga miemasu.",
@@ -10964,7 +10964,7 @@
   {
     "id": "voc-c-0784",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ここで たばこを 吸っては いけません。",
     "kanji": "ここで たばこを 吸っては いけません。",
     "reading": "Koko de tabako o sutte wa ikemasen.",
@@ -10978,7 +10978,7 @@
   {
     "id": "voc-c-0785",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ここで 写真を 撮らないで ください。",
     "kanji": "ここで 写真を 撮らないで ください。",
     "reading": "Koko de shashin o toranaide kudasai.",
@@ -10992,7 +10992,7 @@
   {
     "id": "voc-c-0786",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ここに 名前を 書いてください。",
     "kanji": "ここに 名前を 書いてください。",
     "reading": "Koko ni namae o kaite kudasai.",
@@ -11006,7 +11006,7 @@
   {
     "id": "voc-c-0787",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ここに 座っても いいですか。",
     "kanji": "ここに 座っても いいですか。",
     "reading": "Koko ni suwatte mo ii desu ka.",
@@ -11048,7 +11048,7 @@
   {
     "id": "voc-c-0790",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ここは 食堂です。",
     "kanji": "ここは 食堂です。",
     "reading": "Koko wa shokudou desu.",
@@ -11160,7 +11160,7 @@
   {
     "id": "voc-c-0798",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "こちらに お名前を お書き ください。",
     "kanji": "こちらに お名前を お書き ください。",
     "reading": "Kochira ni onamae o okaki kudasai.",
@@ -11314,7 +11314,7 @@
   {
     "id": "voc-c-0809",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "この はさみは 花を 切るのに 使います。",
     "kanji": "この はさみは 花を 切るのに 使います。",
     "reading": "Kono hasami wa hana o kiru no ni tsukaimasu.",
@@ -11328,7 +11328,7 @@
   {
     "id": "voc-c-0810",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "この ケーキは 美味しそうです。",
     "kanji": "この ケーキは 美味しそうです。",
     "reading": "Kono keeki wa oishisou desu.",
@@ -11342,7 +11342,7 @@
   {
     "id": "voc-c-0811",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "この ズボンを はいて みても いいですか。",
     "kanji": "この ズボンを はいて みても いいですか。",
     "reading": "Kono zubon o haite mite mo ii desu ka.",
@@ -11356,7 +11356,7 @@
   {
     "id": "voc-c-0812",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "この ボタンを 押すと、お釣りが出ます。",
     "kanji": "この ボタンを 押すと、お釣りが出ます。",
     "reading": "Kono botan o osu to, otsuri ga demasu.",
@@ -11370,7 +11370,7 @@
   {
     "id": "voc-c-0813",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "この 問題は 難しすぎます。",
     "kanji": "この 問題は 難しすぎます。",
     "reading": "Kono mondai wa muzukashisugimasu.",
@@ -11384,7 +11384,7 @@
   {
     "id": "voc-c-0814",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "この 店は 美味しいし、安いし、いつも 来ています。",
     "kanji": "この 店は 美味しいし、安いし、いつも 来ています。",
     "reading": "Kono mise wa oishii shi, yasui shi, itsumo kite imasu.",
@@ -11398,7 +11398,7 @@
   {
     "id": "voc-c-0815",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "この 薬は 苦くなくて、飲みやすいです。",
     "kanji": "この 薬は 苦くなくて、飲みやすいです。",
     "reading": "Kono kusuri wa nigakunakute, nomiyasui desu.",
@@ -11412,7 +11412,7 @@
   {
     "id": "voc-c-0816",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "このくらい",
     "kanji": "",
     "reading": "konokurai",
@@ -11454,7 +11454,7 @@
   {
     "id": "voc-c-0819",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "この本は わたしのです。",
     "kanji": "この本は わたしのです。",
     "reading": "Kono hon wa watashi no desu.",
@@ -11468,7 +11468,7 @@
   {
     "id": "voc-c-0820",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "この町は 静かじゃありません。",
     "kanji": "この町は 静かじゃありません。",
     "reading": "Kono machi wa shizuka ja arimasen.",
@@ -11482,7 +11482,7 @@
   {
     "id": "voc-c-0821",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "この靴は いくらですか。",
     "kanji": "教室",
     "reading": "Kono kutsu wa ikura desu ka.",
@@ -11524,7 +11524,7 @@
   {
     "id": "voc-c-0824",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "こまかい",
     "kanji": "細かい",
     "reading": "komakai",
@@ -11538,7 +11538,7 @@
   {
     "id": "voc-c-0825",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "こまかいおかね",
     "kanji": "細かいお金",
     "reading": "komakaiokane",
@@ -11692,7 +11692,7 @@
   {
     "id": "voc-c-0836",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "これでよろしいでしょうか",
     "kanji": "",
     "reading": "koredeyoroshiideshouka",
@@ -11706,7 +11706,7 @@
   {
     "id": "voc-c-0837",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "これは ミラーさんが 住んでいる 家です。",
     "kanji": "これは ミラーさんが 住んでいる 家です。",
     "reading": "Kore wa Miraa-san ga sunde iru ie desu.",
@@ -11720,7 +11720,7 @@
   {
     "id": "voc-c-0838",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "これは 辞書です。",
     "kanji": "これは 辞書です。",
     "reading": "Kore wa jisho desu.",
@@ -11762,7 +11762,7 @@
   {
     "id": "voc-c-0841",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ころす",
     "kanji": "殺す",
     "reading": "korosu",
@@ -11776,7 +11776,7 @@
   {
     "id": "voc-c-0842",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ころぶ",
     "kanji": "転ぶ",
     "reading": "korobu",
@@ -11888,7 +11888,7 @@
   {
     "id": "voc-c-0850",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "こんな",
     "kanji": "",
     "reading": "konna",
@@ -12000,7 +12000,7 @@
   {
     "id": "voc-c-0858",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ごうかな",
     "kanji": "豪華な",
     "reading": "goukana",
@@ -12028,7 +12028,7 @@
   {
     "id": "voc-c-0860",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ごくろうさまです",
     "kanji": "ご苦労様です",
     "reading": "gokurousamadesu",
@@ -12098,7 +12098,7 @@
   {
     "id": "voc-c-0865",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ごぞんじです",
     "kanji": "ご存じです",
     "reading": "gozonji desu",
@@ -12336,7 +12336,7 @@
   {
     "id": "voc-c-0882",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ご飯を 食べます。",
     "kanji": "ご飯を 食べます。",
     "reading": "Gohan o tabemasu.",
@@ -12406,7 +12406,7 @@
   {
     "id": "voc-c-0887",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "さいごに",
     "kanji": "最後に",
     "reading": "saigoni",
@@ -12448,7 +12448,7 @@
   {
     "id": "voc-c-0890",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "さいにゅうこくビザ",
     "kanji": "再入国ビザ",
     "reading": "sainyuukokubiza",
@@ -12490,7 +12490,7 @@
   {
     "id": "voc-c-0893",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さかだちする",
     "kanji": "逆立ちする",
     "reading": "sakadachisuru",
@@ -12686,7 +12686,7 @@
   {
     "id": "voc-c-0907",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さす",
     "kanji": "刺す",
     "reading": "sasu",
@@ -12728,7 +12728,7 @@
   {
     "id": "voc-c-0910",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "さっき",
     "kanji": "",
     "reading": "sakki",
@@ -12924,7 +12924,7 @@
   {
     "id": "voc-c-0924",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "さわやかな",
     "kanji": "",
     "reading": "sawayakana",
@@ -12980,7 +12980,7 @@
   {
     "id": "voc-c-0928",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "さんかする",
     "kanji": "参加する",
     "reading": "sankasuru",
@@ -13120,7 +13120,7 @@
   {
     "id": "voc-c-0938",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ざんねんです",
     "kanji": "残念です",
     "reading": "zannendesu",
@@ -13162,7 +13162,7 @@
   {
     "id": "voc-c-0941",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "しあわせな",
     "kanji": "幸せな",
     "reading": "shiawasena",
@@ -13246,7 +13246,7 @@
   {
     "id": "voc-c-0947",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しくしく",
     "kanji": "泣く",
     "reading": "shikushiku (naku)",
@@ -13302,7 +13302,7 @@
   {
     "id": "voc-c-0951",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "しずか",
     "kanji": "",
     "reading": "shizuka [na]",
@@ -13316,7 +13316,7 @@
   {
     "id": "voc-c-0952",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "しずか )",
     "kanji": "静香（な）",
     "reading": "shizuka (na)",
@@ -13330,7 +13330,7 @@
   {
     "id": "voc-c-0953",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "しぜん",
     "kanji": "自然",
     "reading": "shizen",
@@ -13414,7 +13414,7 @@
   {
     "id": "voc-c-0959",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しつける",
     "kanji": "",
     "reading": "shitsukeru",
@@ -13484,7 +13484,7 @@
   {
     "id": "voc-c-0964",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "しつれいですが",
     "kanji": "失礼ですが",
     "reading": "shitsureidesuga",
@@ -13750,7 +13750,7 @@
   {
     "id": "voc-c-0983",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しゃしんげんぞう",
     "kanji": "写真現像",
     "reading": "shashingenzou",
@@ -13792,7 +13792,7 @@
   {
     "id": "voc-c-0986",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しゃどう",
     "kanji": "車道",
     "reading": "shadou",
@@ -14254,7 +14254,7 @@
   {
     "id": "voc-c-1019",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "しょうとつする",
     "kanji": "衝突する",
     "reading": "shoutotsusuru",
@@ -14408,7 +14408,7 @@
   {
     "id": "voc-c-1030",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "しょくよくがありません",
     "kanji": "食欲がありません",
     "reading": "shokuyokugaarimasen",
@@ -14632,7 +14632,7 @@
   {
     "id": "voc-c-1046",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "しんけいしつな",
     "kanji": "神経質な",
     "reading": "shinkeishitsuna",
@@ -14702,7 +14702,7 @@
   {
     "id": "voc-c-1051",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "しんせつ",
     "kanji": "",
     "reading": "shinsetsu [na]",
@@ -14716,7 +14716,7 @@
   {
     "id": "voc-c-1052",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "しんせつ )",
     "kanji": "有名（な）",
     "reading": "shinsetsu (na)",
@@ -14786,7 +14786,7 @@
   {
     "id": "voc-c-1057",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "しんぱいな",
     "kanji": "心配な",
     "reading": "shinpaina",
@@ -15150,7 +15150,7 @@
   {
     "id": "voc-c-1083",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "じゃまな",
     "kanji": "邪魔な",
     "reading": "jamana",
@@ -15192,7 +15192,7 @@
   {
     "id": "voc-c-1086",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "じゅうぶんな",
     "kanji": "十分な",
     "reading": "juubunna",
@@ -15332,7 +15332,7 @@
   {
     "id": "voc-c-1096",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "じゆうに",
     "kanji": "自由に",
     "reading": "jiyuuni",
@@ -15374,7 +15374,7 @@
   {
     "id": "voc-c-1099",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "じょうず",
     "kanji": "嫌い",
     "reading": "jouzu [na]",
@@ -15388,7 +15388,7 @@
   {
     "id": "voc-c-1100",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "じょうずに",
     "kanji": "上手に",
     "reading": "jouzuni",
@@ -15416,7 +15416,7 @@
   {
     "id": "voc-c-1102",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "じょうぶな",
     "kanji": "丈夫な",
     "reading": "joubuna",
@@ -15612,7 +15612,7 @@
   {
     "id": "voc-c-1116",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "すき",
     "kanji": "好き",
     "reading": "suki [na]",
@@ -15626,7 +15626,7 @@
   {
     "id": "voc-c-1117",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "すききらいがある",
     "kanji": "",
     "reading": "sukikiraigaaru",
@@ -15696,7 +15696,7 @@
   {
     "id": "voc-c-1122",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "すぐ",
     "kanji": "",
     "reading": "sugu",
@@ -15724,7 +15724,7 @@
   {
     "id": "voc-c-1124",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "すこし",
     "kanji": "少し",
     "reading": "sukoshi",
@@ -15738,7 +15738,7 @@
   {
     "id": "voc-c-1125",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "すごい",
     "kanji": "",
     "reading": "sugoi",
@@ -15752,7 +15752,7 @@
   {
     "id": "voc-c-1126",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "すごいですね",
     "kanji": "",
     "reading": "sugoidesune",
@@ -15836,7 +15836,7 @@
   {
     "id": "voc-c-1132",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "すてき",
     "kanji": "",
     "reading": "suteki (na)",
@@ -15850,7 +15850,7 @@
   {
     "id": "voc-c-1133",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "すてきですね",
     "kanji": "",
     "reading": "sutekidesune",
@@ -15878,7 +15878,7 @@
   {
     "id": "voc-c-1135",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "すなおな",
     "kanji": "素直な",
     "reading": "sunaona",
@@ -15906,7 +15906,7 @@
   {
     "id": "voc-c-1137",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "すばらしい",
     "kanji": "",
     "reading": "subarashii",
@@ -16088,7 +16088,7 @@
   {
     "id": "voc-c-1150",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "ずっと",
     "kanji": "",
     "reading": "zutto",
@@ -16130,7 +16130,7 @@
   {
     "id": "voc-c-1153",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "せいかく",
     "kanji": "性格",
     "reading": "seikaku",
@@ -16228,7 +16228,7 @@
   {
     "id": "voc-c-1160",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "せいじつな",
     "kanji": "誠実な",
     "reading": "seijitsuna",
@@ -16452,7 +16452,7 @@
   {
     "id": "voc-c-1176",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "せきにんをもつ",
     "kanji": "責任を持つ",
     "reading": "sekininomotsu",
@@ -16774,7 +16774,7 @@
   {
     "id": "voc-c-1199",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "せんをひく",
     "kanji": "線を引く",
     "reading": "senohiku",
@@ -16788,7 +16788,7 @@
   {
     "id": "voc-c-1200",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "ぜったいに",
     "kanji": "絶対に",
     "reading": "zettaini",
@@ -16816,7 +16816,7 @@
   {
     "id": "voc-c-1202",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "ぜんぜん",
     "kanji": "全然",
     "reading": "zenzen",
@@ -16956,7 +16956,7 @@
   {
     "id": "voc-c-1212",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "そうですか",
     "kanji": "",
     "reading": "soudesuka",
@@ -16970,7 +16970,7 @@
   {
     "id": "voc-c-1213",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "そうですね",
     "kanji": "",
     "reading": "soudesune",
@@ -17138,7 +17138,7 @@
   {
     "id": "voc-c-1225",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "そなえる",
     "kanji": "備える",
     "reading": "sonaeru",
@@ -17306,7 +17306,7 @@
   {
     "id": "voc-c-1237",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "そる",
     "kanji": "",
     "reading": "soru",
@@ -17418,7 +17418,7 @@
   {
     "id": "voc-c-1245",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "それは わたしの 傘です。",
     "kanji": "それは わたしの 傘です。",
     "reading": "Sore wa watashi no kasa desu.",
@@ -17432,7 +17432,7 @@
   {
     "id": "voc-c-1246",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "それはいけませんね",
     "kanji": "",
     "reading": "sorehaikemasenne",
@@ -17446,7 +17446,7 @@
   {
     "id": "voc-c-1247",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "それはおもしろいですね",
     "kanji": "",
     "reading": "sorehaomoshiroidesune",
@@ -17530,7 +17530,7 @@
   {
     "id": "voc-c-1253",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "そんな",
     "kanji": "",
     "reading": "sonna",
@@ -17586,7 +17586,7 @@
   {
     "id": "voc-c-1257",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ぞうとうのしゅうかん",
     "kanji": "贈答の習慣",
     "reading": "zoutounoshuukan",
@@ -17740,7 +17740,7 @@
   {
     "id": "voc-c-1268",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "たいせき／ようせき",
     "kanji": "体積／容積",
     "reading": "taiseki/youseki",
@@ -17754,7 +17754,7 @@
   {
     "id": "voc-c-1269",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "たいせつ",
     "kanji": "病気",
     "reading": "taisetsu [na]",
@@ -17768,7 +17768,7 @@
   {
     "id": "voc-c-1270",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "たいせつな",
     "kanji": "大切な",
     "reading": "taisetsuna",
@@ -17782,7 +17782,7 @@
   {
     "id": "voc-c-1271",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "たいてい",
     "kanji": "",
     "reading": "taitei",
@@ -17810,7 +17810,7 @@
   {
     "id": "voc-c-1273",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "たいへん",
     "kanji": "散歩します",
     "reading": "taihen [na]",
@@ -17824,7 +17824,7 @@
   {
     "id": "voc-c-1274",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "たいへんですね",
     "kanji": "大変ですね",
     "reading": "taihendesune",
@@ -17908,7 +17908,7 @@
   {
     "id": "voc-c-1280",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たく",
     "kanji": "炊く",
     "reading": "taku",
@@ -17950,7 +17950,7 @@
   {
     "id": "voc-c-1283",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "たくはいびんのうけつけ",
     "kanji": "宅配便の受付",
     "reading": "takuhaibinnouketsuke",
@@ -17964,7 +17964,7 @@
   {
     "id": "voc-c-1284",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たくわえる",
     "kanji": "貯える",
     "reading": "takuwaeru",
@@ -18020,7 +18020,7 @@
   {
     "id": "voc-c-1288",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たす",
     "kanji": "",
     "reading": "tasu",
@@ -18062,7 +18062,7 @@
   {
     "id": "voc-c-1291",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たすける",
     "kanji": "助ける",
     "reading": "tasukeru",
@@ -18076,7 +18076,7 @@
   {
     "id": "voc-c-1292",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "たたく",
     "kanji": "",
     "reading": "tataku",
@@ -18104,7 +18104,7 @@
   {
     "id": "voc-c-1294",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ただしい",
     "kanji": "正しい",
     "reading": "tadashii",
@@ -18146,7 +18146,7 @@
   {
     "id": "voc-c-1297",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "たっきゅう／ピンポン",
     "kanji": "卓球",
     "reading": "takkyuu/pinpon",
@@ -18174,7 +18174,7 @@
   {
     "id": "voc-c-1299",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "たった今 昼ご飯を 食べた ところです。",
     "kanji": "たった今 昼ご飯を 食べた ところです。",
     "reading": "Tatta ima hirugohan o tabeta tokoro desu.",
@@ -18230,7 +18230,7 @@
   {
     "id": "voc-c-1303",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "たとえば",
     "kanji": "例えば",
     "reading": "tatoeba",
@@ -18286,7 +18286,7 @@
   {
     "id": "voc-c-1307",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "たのしく",
     "kanji": "楽しく",
     "reading": "tanoshiku",
@@ -18650,7 +18650,7 @@
   {
     "id": "voc-c-1333",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "だいじょうぶ",
     "kanji": "大切",
     "reading": "daijoubu [na]",
@@ -18664,7 +18664,7 @@
   {
     "id": "voc-c-1334",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "だいじょうぶな",
     "kanji": "大丈夫な",
     "reading": "daijoubuna",
@@ -18678,7 +18678,7 @@
   {
     "id": "voc-c-1335",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "だいすきな",
     "kanji": "大好きな",
     "reading": "daisukina",
@@ -18692,7 +18692,7 @@
   {
     "id": "voc-c-1336",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "だいたい",
     "kanji": "",
     "reading": "daitai",
@@ -18790,7 +18790,7 @@
   {
     "id": "voc-c-1343",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "だめですか",
     "kanji": "",
     "reading": "damedesuka",
@@ -18804,7 +18804,7 @@
   {
     "id": "voc-c-1344",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "だめな",
     "kanji": "",
     "reading": "damena",
@@ -19154,7 +19154,7 @@
   {
     "id": "voc-c-1369",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ちぢむ",
     "kanji": "縮む",
     "reading": "chijimu",
@@ -19210,7 +19210,7 @@
   {
     "id": "voc-c-1373",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ちゃいろい",
     "kanji": "",
     "reading": "chairoi",
@@ -19588,7 +19588,7 @@
   {
     "id": "voc-c-1400",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ちょっと たばこを 買って 来ます。",
     "kanji": "ちょっと たばこを 買って 来ます。",
     "reading": "Chotto tabako o katte kimasu.",
@@ -19602,7 +19602,7 @@
   {
     "id": "voc-c-1401",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ちょっと 休みましょう。",
     "kanji": "食べます",
     "reading": "Chotto yasumimashou.",
@@ -19616,7 +19616,7 @@
   {
     "id": "voc-c-1402",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ちょっと 休もう。",
     "kanji": "ちょっと 休もう。",
     "reading": "Chotto yasumou.",
@@ -19630,7 +19630,7 @@
   {
     "id": "voc-c-1403",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ちょっと 待ってください。",
     "kanji": "ちょっと 待ってください。",
     "reading": "Chotto matte kudasai.",
@@ -19644,7 +19644,7 @@
   {
     "id": "voc-c-1404",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ちょっとおねがいがある",
     "kanji": "",
     "reading": "chottoonegaigaaru",
@@ -19658,7 +19658,7 @@
   {
     "id": "voc-c-1405",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "ちょっとも",
     "kanji": "",
     "reading": "chottomo",
@@ -19686,7 +19686,7 @@
   {
     "id": "voc-c-1407",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ちんぼつする",
     "kanji": "沈没する",
     "reading": "chinbotsusuru",
@@ -19714,7 +19714,7 @@
   {
     "id": "voc-c-1409",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ついとつする",
     "kanji": "追突する",
     "reading": "tsuitotsusuru",
@@ -19728,7 +19728,7 @@
   {
     "id": "voc-c-1410",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ついらくする",
     "kanji": "墜落する",
     "reading": "tsuirakusuru",
@@ -19756,7 +19756,7 @@
   {
     "id": "voc-c-1412",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "つうちょうきにゅう",
     "kanji": "通帳記入",
     "reading": "tsuuchoukinyuu",
@@ -19784,7 +19784,7 @@
   {
     "id": "voc-c-1414",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つかれました",
     "kanji": "疲れました",
     "reading": "tsukaremashita",
@@ -20106,7 +20106,7 @@
   {
     "id": "voc-c-1437",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "つま／かない",
     "kanji": "奥さん",
     "reading": "tsuma/kanai",
@@ -20176,7 +20176,7 @@
   {
     "id": "voc-c-1442",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "つるつる",
     "kanji": "",
     "reading": "tsurutsuru (shiteiru)",
@@ -20288,7 +20288,7 @@
   {
     "id": "voc-c-1450",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ていねいな",
     "kanji": "丁寧な",
     "reading": "teineina",
@@ -20316,7 +20316,7 @@
   {
     "id": "voc-c-1452",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "てきとうな",
     "kanji": "適当な",
     "reading": "tekitouna",
@@ -20498,7 +20498,7 @@
   {
     "id": "voc-c-1465",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "てんけんする",
     "kanji": "点検する",
     "reading": "tenkensuru",
@@ -20834,7 +20834,7 @@
   {
     "id": "voc-c-1489",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "でんしオープンレンジ",
     "kanji": "",
     "reading": "denshioopunrenji",
@@ -20974,7 +20974,7 @@
   {
     "id": "voc-c-1499",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "でんわばんごうあんない",
     "kanji": "電話番号案内",
     "reading": "denwabangouannai",
@@ -21030,7 +21030,7 @@
   {
     "id": "voc-c-1503",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "とうきょうスカイツリー",
     "kanji": "",
     "reading": "toukyousukaitsurii",
@@ -21212,7 +21212,7 @@
   {
     "id": "voc-c-1516",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "ときどき",
     "kanji": "時々",
     "reading": "tokidoki",
@@ -21226,7 +21226,7 @@
   {
     "id": "voc-c-1517",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "とくに",
     "kanji": "特に",
     "reading": "tokuni",
@@ -21240,7 +21240,7 @@
   {
     "id": "voc-c-1518",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "とくべつな",
     "kanji": "特別な",
     "reading": "tokubetsuna",
@@ -21324,7 +21324,7 @@
   {
     "id": "voc-c-1524",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とじる",
     "kanji": "",
     "reading": "tojiru",
@@ -21394,7 +21394,7 @@
   {
     "id": "voc-c-1529",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "とても",
     "kanji": "",
     "reading": "totemo",
@@ -21562,7 +21562,7 @@
   {
     "id": "voc-c-1541",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "とめる",
     "kanji": "留める",
     "reading": "tomeru",
@@ -21674,7 +21674,7 @@
   {
     "id": "voc-c-1549",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "どう",
     "kanji": "",
     "reading": "dou",
@@ -21688,7 +21688,7 @@
   {
     "id": "voc-c-1550",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "どういうふうになさいますか",
     "kanji": "",
     "reading": "douiufuuninasaimasuka",
@@ -21744,7 +21744,7 @@
   {
     "id": "voc-c-1554",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "どうして",
     "kanji": "",
     "reading": "doushite",
@@ -21758,7 +21758,7 @@
   {
     "id": "voc-c-1555",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "どうして 遅れたんですか。バスが 来なかったんです。",
     "kanji": "どうして 遅れたんですか。バスが 来なかったんです。",
     "reading": "Doushite okureta n desu ka. Basu ga konakatta n desu.",
@@ -21786,7 +21786,7 @@
   {
     "id": "voc-c-1557",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "どうぞ",
     "kanji": "",
     "reading": "douzo",
@@ -21800,7 +21800,7 @@
   {
     "id": "voc-c-1558",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "どうぞおあがりください",
     "kanji": "",
     "reading": "douzooagarikudasai",
@@ -21856,7 +21856,7 @@
   {
     "id": "voc-c-1562",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "どうでしょうか",
     "kanji": "",
     "reading": "doudeshouka",
@@ -21870,7 +21870,7 @@
   {
     "id": "voc-c-1563",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "どうなさいますか",
     "kanji": "",
     "reading": "dounasaimasuka",
@@ -21912,7 +21912,7 @@
   {
     "id": "voc-c-1566",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "どうも",
     "kanji": "",
     "reading": "doumo",
@@ -21926,7 +21926,7 @@
   {
     "id": "voc-c-1567",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "どうもありがとうございます",
     "kanji": "",
     "reading": "doumoarigatougozaimasu",
@@ -21940,7 +21940,7 @@
   {
     "id": "voc-c-1568",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "どうもすみません",
     "kanji": "",
     "reading": "doumosumimasen",
@@ -21954,7 +21954,7 @@
   {
     "id": "voc-c-1569",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "どうやって",
     "kanji": "",
     "reading": "douyatte",
@@ -21996,7 +21996,7 @@
   {
     "id": "voc-c-1572",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "どきどきする",
     "kanji": "",
     "reading": "dokidokisuru",
@@ -22080,7 +22080,7 @@
   {
     "id": "voc-c-1578",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "どちらさまでしょうか",
     "kanji": "",
     "reading": "dochirasamadeshouka",
@@ -22136,7 +22136,7 @@
   {
     "id": "voc-c-1582",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "どのくらい",
     "kanji": "",
     "reading": "dono kurai",
@@ -22472,7 +22472,7 @@
   {
     "id": "voc-c-1606",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "なげる",
     "kanji": "投げる",
     "reading": "nageru",
@@ -22542,7 +22542,7 @@
   {
     "id": "voc-c-1611",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "なぜ",
     "kanji": "",
     "reading": "naze",
@@ -22570,7 +22570,7 @@
   {
     "id": "voc-c-1613",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "なつかしい",
     "kanji": "懐かしい",
     "reading": "natsukashii",
@@ -22654,7 +22654,7 @@
   {
     "id": "voc-c-1619",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "なにかごきぼうがありますか",
     "kanji": "",
     "reading": "nanikagokibougaarimasuka",
@@ -22878,7 +22878,7 @@
   {
     "id": "voc-c-1635",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "なんかいも",
     "kanji": "何回も",
     "reading": "nankaimo",
@@ -23074,7 +23074,7 @@
   {
     "id": "voc-c-1649",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "にぎやか",
     "kanji": "",
     "reading": "nigiyaka (na)",
@@ -23200,7 +23200,7 @@
   {
     "id": "voc-c-1658",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "にちようだいく",
     "kanji": "日曜大工",
     "reading": "nichiyoudaiku",
@@ -23354,7 +23354,7 @@
   {
     "id": "voc-c-1669",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "にゅうこくかんりきょく",
     "kanji": "入国管理局",
     "reading": "nyuukokukanrikyoku",
@@ -23382,7 +23382,7 @@
   {
     "id": "voc-c-1671",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "にる",
     "kanji": "煮る",
     "reading": "niru",
@@ -23410,7 +23410,7 @@
   {
     "id": "voc-c-1673",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "にわかあめ／ゆうだち",
     "kanji": "地方",
     "reading": "niwakaame/yuudachi",
@@ -23508,7 +23508,7 @@
   {
     "id": "voc-c-1680",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ぬすむ",
     "kanji": "盗む",
     "reading": "nusumu",
@@ -23592,7 +23592,7 @@
   {
     "id": "voc-c-1686",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ねじれている",
     "kanji": "",
     "reading": "nejireteiru",
@@ -23606,7 +23606,7 @@
   {
     "id": "voc-c-1687",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ねじをしめる",
     "kanji": "ねじを締める",
     "reading": "nejioshimeru",
@@ -23648,7 +23648,7 @@
   {
     "id": "voc-c-1690",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ねっしん",
     "kanji": "熱心",
     "reading": "nesshin [na]",
@@ -23662,7 +23662,7 @@
   {
     "id": "voc-c-1691",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ねっしんな",
     "kanji": "熱心な",
     "reading": "nesshinna",
@@ -23928,7 +23928,7 @@
   {
     "id": "voc-c-1710",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "のばす",
     "kanji": "伸ばす",
     "reading": "nobasu",
@@ -23942,7 +23942,7 @@
   {
     "id": "voc-c-1711",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "のびる",
     "kanji": "伸びる",
     "reading": "nobiru",
@@ -23970,7 +23970,7 @@
   {
     "id": "voc-c-1713",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "のぼる",
     "kanji": "登る",
     "reading": "noboru",
@@ -24124,7 +24124,7 @@
   {
     "id": "voc-c-1724",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "はいけい",
     "kanji": "拝啓",
     "reading": "haikei",
@@ -24208,7 +24208,7 @@
   {
     "id": "voc-c-1730",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はう",
     "kanji": "",
     "reading": "hau",
@@ -24278,7 +24278,7 @@
   {
     "id": "voc-c-1735",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "はがき、きってのはんばい",
     "kanji": "はがき、切手の販売",
     "reading": "hagaki, kittenohanbai",
@@ -24376,7 +24376,7 @@
   {
     "id": "voc-c-1742",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はこぶ",
     "kanji": "運ぶ",
     "reading": "hakobu",
@@ -24404,7 +24404,7 @@
   {
     "id": "voc-c-1744",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はさむ",
     "kanji": "",
     "reading": "hasamu",
@@ -24432,7 +24432,7 @@
   {
     "id": "voc-c-1746",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "はしで 食べます。",
     "kanji": "はしで 食べます。",
     "reading": "Hashi de tabemasu.",
@@ -24460,7 +24460,7 @@
   {
     "id": "voc-c-1748",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はしる",
     "kanji": "走る",
     "reading": "hashiru",
@@ -24516,7 +24516,7 @@
   {
     "id": "voc-c-1752",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "はじめに",
     "kanji": "初めに",
     "reading": "hajimeni",
@@ -24530,7 +24530,7 @@
   {
     "id": "voc-c-1753",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "はじめまして",
     "kanji": "",
     "reading": "hajimemashite",
@@ -24558,7 +24558,7 @@
   {
     "id": "voc-c-1755",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "はずかしい",
     "kanji": "恥ずかしい",
     "reading": "hazukashii",
@@ -24824,7 +24824,7 @@
   {
     "id": "voc-c-1774",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はねる",
     "kanji": "",
     "reading": "haneru",
@@ -24880,7 +24880,7 @@
   {
     "id": "voc-c-1778",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "はやく",
     "kanji": "早く／速く",
     "reading": "hayaku",
@@ -24894,7 +24894,7 @@
   {
     "id": "voc-c-1779",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はやね、はやおきをする",
     "kanji": "",
     "reading": "hayane, hayaokiosuru",
@@ -24922,7 +24922,7 @@
   {
     "id": "voc-c-1781",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はらはらする",
     "kanji": "",
     "reading": "haraharasuru",
@@ -24964,7 +24964,7 @@
   {
     "id": "voc-c-1784",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "はる",
     "kanji": "",
     "reading": "haru",
@@ -25118,7 +25118,7 @@
   {
     "id": "voc-c-1795",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ばくはつする",
     "kanji": "爆発する",
     "reading": "bakuhatsusuru",
@@ -25244,7 +25244,7 @@
   {
     "id": "voc-c-1804",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ぱくぱく",
     "kanji": "食べる",
     "reading": "pakupaku (taberu)",
@@ -25356,7 +25356,7 @@
   {
     "id": "voc-c-1812",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ひく",
     "kanji": "",
     "reading": "hiku",
@@ -25412,7 +25412,7 @@
   {
     "id": "voc-c-1816",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ひさしぶりですね",
     "kanji": "久しぶりですね",
     "reading": "hisashiburidesune",
@@ -25496,7 +25496,7 @@
   {
     "id": "voc-c-1822",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ひつような",
     "kanji": "必要な",
     "reading": "hitsuyouna",
@@ -25524,7 +25524,7 @@
   {
     "id": "voc-c-1824",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ひとことよろしいでしょうか",
     "kanji": "",
     "reading": "hitokotoyoroshiideshouka",
@@ -25594,7 +25594,7 @@
   {
     "id": "voc-c-1829",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "ひとりで",
     "kanji": "一人で",
     "reading": "hitori de",
@@ -25608,7 +25608,7 @@
   {
     "id": "voc-c-1830",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ひどい",
     "kanji": "",
     "reading": "hidoi",
@@ -25636,7 +25636,7 @@
   {
     "id": "voc-c-1832",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ひなんする",
     "kanji": "避難する",
     "reading": "hinansuru",
@@ -25692,7 +25692,7 @@
   {
     "id": "voc-c-1836",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ひびがはいっている",
     "kanji": "",
     "reading": "hibigahaitteiru",
@@ -25706,7 +25706,7 @@
   {
     "id": "voc-c-1837",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ひま",
     "kanji": "大きい",
     "reading": "hima [na]",
@@ -25720,7 +25720,7 @@
   {
     "id": "voc-c-1838",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ひま )",
     "kanji": "元気（な）",
     "reading": "hima (na)",
@@ -25734,7 +25734,7 @@
   {
     "id": "voc-c-1839",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ひまな",
     "kanji": "暇な",
     "reading": "himana",
@@ -25818,7 +25818,7 @@
   {
     "id": "voc-c-1845",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ひらがな",
     "kanji": "",
     "reading": "hiragana",
@@ -26154,7 +26154,7 @@
   {
     "id": "voc-c-1869",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ふく",
     "kanji": "服",
     "reading": "fuku",
@@ -26168,7 +26168,7 @@
   {
     "id": "voc-c-1870",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ふくざつな",
     "kanji": "複雑な",
     "reading": "fukuzatsuna",
@@ -26196,7 +26196,7 @@
   {
     "id": "voc-c-1872",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ふくむ",
     "kanji": "含む",
     "reading": "fukumu",
@@ -26238,7 +26238,7 @@
   {
     "id": "voc-c-1875",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ふしぎな",
     "kanji": "不思議な",
     "reading": "fushigina",
@@ -26322,7 +26322,7 @@
   {
     "id": "voc-c-1881",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "ふつう",
     "kanji": "普通",
     "reading": "futsuu",
@@ -26462,7 +26462,7 @@
   {
     "id": "voc-c-1891",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ふねんごみ／もえないごみ",
     "kanji": "生ごみ",
     "reading": "funengomi/moenaigomi",
@@ -26476,7 +26476,7 @@
   {
     "id": "voc-c-1892",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ふべん",
     "kanji": "不便",
     "reading": "fuben [na]",
@@ -26490,7 +26490,7 @@
   {
     "id": "voc-c-1893",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ふべんな",
     "kanji": "不便な",
     "reading": "fubenna",
@@ -26560,7 +26560,7 @@
   {
     "id": "voc-c-1898",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ふりむく",
     "kanji": "振り向く",
     "reading": "furimuku",
@@ -26574,7 +26574,7 @@
   {
     "id": "voc-c-1899",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ふる",
     "kanji": "振る",
     "reading": "furu",
@@ -26840,7 +26840,7 @@
   {
     "id": "voc-c-1918",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "へいきんじゅみょう",
     "kanji": "平均寿命",
     "reading": "heikinjumyou",
@@ -26868,7 +26868,7 @@
   {
     "id": "voc-c-1920",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "へいほうキロメートル",
     "kanji": "",
     "reading": "heihoukiromeetoru",
@@ -26882,7 +26882,7 @@
   {
     "id": "voc-c-1921",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "へいほうセンチメートル",
     "kanji": "平方",
     "reading": "heihousenchimeetoru",
@@ -26896,7 +26896,7 @@
   {
     "id": "voc-c-1922",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "へいほうメートル",
     "kanji": "",
     "reading": "heihoumeetoru",
@@ -26938,7 +26938,7 @@
   {
     "id": "voc-c-1925",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "へた",
     "kanji": "上手",
     "reading": "heta [na]",
@@ -26994,7 +26994,7 @@
   {
     "id": "voc-c-1929",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "へんな",
     "kanji": "変な",
     "reading": "henna",
@@ -27036,7 +27036,7 @@
   {
     "id": "voc-c-1932",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "べつべつに",
     "kanji": "別々に",
     "reading": "betsubetsuni",
@@ -27106,7 +27106,7 @@
   {
     "id": "voc-c-1937",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "べんり",
     "kanji": "便利（な）",
     "reading": "benri [na]",
@@ -27120,7 +27120,7 @@
   {
     "id": "voc-c-1938",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "べんり )",
     "kanji": "暇（な）",
     "reading": "benri (na)",
@@ -27330,7 +27330,7 @@
   {
     "id": "voc-c-1953",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ほしい",
     "kanji": "欲しい",
     "reading": "hoshii",
@@ -27722,7 +27722,7 @@
   {
     "id": "voc-c-1981",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "まいとし／まいねん",
     "kanji": "毎月",
     "reading": "maitoshi/mainen",
@@ -27862,7 +27862,7 @@
   {
     "id": "voc-c-1991",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "まげる",
     "kanji": "曲げる",
     "reading": "mageru",
@@ -27904,7 +27904,7 @@
   {
     "id": "voc-c-1994",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "まじめ",
     "kanji": "熱心",
     "reading": "majime [na]",
@@ -27918,7 +27918,7 @@
   {
     "id": "voc-c-1995",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "まじめな",
     "kanji": "",
     "reading": "majimena",
@@ -27960,7 +27960,7 @@
   {
     "id": "voc-c-1998",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "まず",
     "kanji": "",
     "reading": "mazu",
@@ -28128,7 +28128,7 @@
   {
     "id": "voc-c-2010",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "まっしろな",
     "kanji": "真っ白な",
     "reading": "masshirona",
@@ -28478,7 +28478,7 @@
   {
     "id": "voc-c-2035",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "みじかく",
     "kanji": "短く",
     "reading": "mijikaku",
@@ -28786,7 +28786,7 @@
   {
     "id": "voc-c-2057",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "みんな",
     "kanji": "",
     "reading": "minna",
@@ -28800,7 +28800,7 @@
   {
     "id": "voc-c-2058",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "みんなで",
     "kanji": "",
     "reading": "minnade",
@@ -28912,7 +28912,7 @@
   {
     "id": "voc-c-2066",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "むく",
     "kanji": "",
     "reading": "muku",
@@ -28968,7 +28968,7 @@
   {
     "id": "voc-c-2070",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "むす",
     "kanji": "蒸す",
     "reading": "musu",
@@ -29052,7 +29052,7 @@
   {
     "id": "voc-c-2076",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "むだ",
     "kanji": "留学します",
     "reading": "muda [na]",
@@ -29066,7 +29066,7 @@
   {
     "id": "voc-c-2077",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "むだな",
     "kanji": "",
     "reading": "mudana",
@@ -29122,7 +29122,7 @@
   {
     "id": "voc-c-2081",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "むりな",
     "kanji": "無理な",
     "reading": "murina",
@@ -29276,7 +29276,7 @@
   {
     "id": "voc-c-2092",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "めずらしい",
     "kanji": "珍しい",
     "reading": "mezurashii",
@@ -29318,7 +29318,7 @@
   {
     "id": "voc-c-2095",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "めんせき",
     "kanji": "面積",
     "reading": "menseki",
@@ -29346,7 +29346,7 @@
   {
     "id": "voc-c-2097",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "もう 荷物を 送りましたか。はい、もう 送りました。",
     "kanji": "もう 荷物を 送りましたか。はい、もう 送りました。",
     "reading": "Mou nimotsu o okurimashita ka. Hai, mou okurimashita.",
@@ -29402,7 +29402,7 @@
   {
     "id": "voc-c-2101",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "もうしわけありません",
     "kanji": "申し訳ありません",
     "reading": "moushiwakearimasen",
@@ -29486,7 +29486,7 @@
   {
     "id": "voc-c-2107",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "もくてき",
     "kanji": "目的",
     "reading": "mokuteki",
@@ -29514,7 +29514,7 @@
   {
     "id": "voc-c-2109",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "もぐる",
     "kanji": "",
     "reading": "moguru",
@@ -29556,7 +29556,7 @@
   {
     "id": "voc-c-2112",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "もちあげる",
     "kanji": "持ち上げる",
     "reading": "mochiageru",
@@ -29584,7 +29584,7 @@
   {
     "id": "voc-c-2114",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "もちろん",
     "kanji": "",
     "reading": "mochiron",
@@ -29626,7 +29626,7 @@
   {
     "id": "voc-c-2117",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "keterangan_fukushi",
     "japanese": "もっと",
     "kanji": "",
     "reading": "motto",
@@ -29920,7 +29920,7 @@
   {
     "id": "voc-c-2138",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "やく",
     "kanji": "焼く",
     "reading": "yaku",
@@ -30410,7 +30410,7 @@
   {
     "id": "voc-c-2173",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ゆうかいする",
     "kanji": "誘拐する",
     "reading": "yuukaisuru",
@@ -30508,7 +30508,7 @@
   {
     "id": "voc-c-2180",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ゆうべ お酒を 飲みすぎました。",
     "kanji": "ゆうべ お酒を 飲みすぎました。",
     "reading": "Yuube osake o nomisugimashita.",
@@ -30522,7 +30522,7 @@
   {
     "id": "voc-c-2181",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ゆうめい",
     "kanji": "有名（な）",
     "reading": "yuumei [na]",
@@ -30536,7 +30536,7 @@
   {
     "id": "voc-c-2182",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ゆうめい )",
     "kanji": "有名（な）",
     "reading": "yuumei (na)",
@@ -30550,7 +30550,7 @@
   {
     "id": "voc-c-2183",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ゆがんでいる",
     "kanji": "",
     "reading": "yugandeiru",
@@ -30634,7 +30634,7 @@
   {
     "id": "voc-c-2189",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ゆでる",
     "kanji": "",
     "reading": "yuderu",
@@ -30690,7 +30690,7 @@
   {
     "id": "voc-c-2193",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ゆるめる",
     "kanji": "緩める",
     "reading": "yurumeru",
@@ -30886,7 +30886,7 @@
   {
     "id": "voc-c-2207",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "よくインスタントしょくひんをたべる",
     "kanji": "",
     "reading": "yokuinsutantoshokuhinotaberu",
@@ -31040,7 +31040,7 @@
   {
     "id": "voc-c-2218",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "よふかしをする",
     "kanji": "",
     "reading": "yofukashiosuru",
@@ -31124,7 +31124,7 @@
   {
     "id": "voc-c-2224",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "よる",
     "kanji": "夜",
     "reading": "yoru",
@@ -31236,7 +31236,7 @@
   {
     "id": "voc-c-2232",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "らくな",
     "kanji": "楽な",
     "reading": "rakuna",
@@ -31292,7 +31292,7 @@
   {
     "id": "voc-c-2236",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "りっぽうメートル",
     "kanji": "",
     "reading": "rippoumeetoru",
@@ -31516,7 +31516,7 @@
   {
     "id": "voc-c-2252",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "りんごを ３つ 買いました。",
     "kanji": "りんごを ３つ 買いました。",
     "reading": "Ringo o mittsu kaimashita.",
@@ -31712,7 +31712,7 @@
   {
     "id": "voc-c-2266",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わあ、すごいひとですね",
     "kanji": "",
     "reading": "waa, sugoihitodesune",
@@ -31754,7 +31754,7 @@
   {
     "id": "voc-c-2269",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "わかりました",
     "kanji": "分かりました",
     "reading": "wakarimashita",
@@ -31796,7 +31796,7 @@
   {
     "id": "voc-c-2272",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "わがままな",
     "kanji": "",
     "reading": "wagamamana",
@@ -31824,7 +31824,7 @@
   {
     "id": "voc-c-2274",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "わくわくする",
     "kanji": "",
     "reading": "wakuwakusuru",
@@ -31838,7 +31838,7 @@
   {
     "id": "voc-c-2275",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "わける",
     "kanji": "",
     "reading": "wakeru",
@@ -31978,7 +31978,7 @@
   {
     "id": "voc-c-2285",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしが 言う とおりに、書いて ください。",
     "kanji": "わたしが 言う とおりに、書いて ください。",
     "reading": "Watashi ga iu toori ni, kaite kudasai.",
@@ -32006,7 +32006,7 @@
   {
     "id": "voc-c-2287",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしの 趣味は 写真を 撮ることです。",
     "kanji": "わたしの 趣味は 写真を 撮ることです。",
     "reading": "Watashi no shumi wa shashin o toru koto desu.",
@@ -32020,7 +32020,7 @@
   {
     "id": "voc-c-2288",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしは IMCの 社員です。",
     "kanji": "私",
     "reading": "Watashi wa IMC no shain desu.",
@@ -32034,7 +32034,7 @@
   {
     "id": "voc-c-2289",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしは マイク・ミラーです。",
     "kanji": "わたしは マイク・ミラーです。",
     "reading": "Watashi wa Maiku Miraa desu.",
@@ -32048,7 +32048,7 @@
   {
     "id": "voc-c-2290",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしは 京都へ 行きます。",
     "kanji": "わたしは 京都へ 行きます。",
     "reading": "Watashi wa Kyouto e ikimasu.",
@@ -32062,7 +32062,7 @@
   {
     "id": "voc-c-2291",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしは 先生に 褒められました。",
     "kanji": "わたしは 先生に 褒められました。",
     "reading": "Watashi wa sensei ni homeraremashita.",
@@ -32076,7 +32076,7 @@
   {
     "id": "voc-c-2292",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしは 山田さんの 荷物を 持って あげました。",
     "kanji": "わたしは 山田さんの 荷物を 持って あげました。",
     "reading": "Watashi wa Yamada-san no nimotsu o motte agemashita.",
@@ -32090,7 +32090,7 @@
   {
     "id": "voc-c-2293",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしは 新しい 車が 欲しいです。",
     "kanji": "わたしは 新しい 車が 欲しいです。",
     "reading": "Watashi wa atarashii kuruma ga hoshii desu.",
@@ -32104,7 +32104,7 @@
   {
     "id": "voc-c-2294",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしは 日本料理が 好きです。",
     "kanji": "わたしは 日本料理が 好きです。",
     "reading": "Watashi wa Nihon ryouri ga suki desu.",
@@ -32118,7 +32118,7 @@
   {
     "id": "voc-c-2295",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしは 木村さんに 花を あげました。",
     "kanji": "わたしは 木村さんに 花を あげました。",
     "reading": "Watashi wa Kimura-san ni hana o agemashita.",
@@ -32132,7 +32132,7 @@
   {
     "id": "voc-c-2296",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしは 漢字が 読めます。",
     "kanji": "わたしは 漢字が 読めます。",
     "reading": "Watashi wa kanji ga yomemasu.",
@@ -32146,7 +32146,7 @@
   {
     "id": "voc-c-2297",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしは 社長に ご馳走して いただきました。",
     "kanji": "わたしは 社長に ご馳走して いただきました。",
     "reading": "Watashi wa shachou ni gochisou shite itadakimashita.",
@@ -32160,7 +32160,7 @@
   {
     "id": "voc-c-2298",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "わたしは 鈴木さんに 日本語を 教えて もらいました。",
     "kanji": "わたしは 鈴木さんに 日本語を 教えて もらいました。",
     "reading": "Watashi wa Suzuki-san ni Nihongo o oshiete moraimashita.",
@@ -32216,7 +32216,7 @@
   {
     "id": "voc-c-2302",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "わる",
     "kanji": "",
     "reading": "waru",
@@ -33000,7 +33000,7 @@
   {
     "id": "voc-c-2358",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "カレンダーに 今月の 予定が 書いて あります。",
     "kanji": "カレンダーに 今月の 予定が 書いて あります。",
     "reading": "Karendaa ni kongetsu no yotei ga kaite arimasu.",
@@ -33098,7 +33098,7 @@
   {
     "id": "voc-c-2365",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "カードで 払うことが できます。",
     "kanji": "カードで 払うことが できます。",
     "reading": "Kaado de harau koto ga dekimasu.",
@@ -33560,7 +33560,7 @@
   {
     "id": "voc-c-2398",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "グプタさんも 会社員です。",
     "kanji": "グプタさんも 会社員です。",
     "reading": "Guputa-san mo kaishain desu.",
@@ -33812,7 +33812,7 @@
   {
     "id": "voc-c-2416",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "コンサートチケットのはんばい",
     "kanji": "",
     "reading": "konsaatochikettonohanbai",
@@ -33868,7 +33868,7 @@
   {
     "id": "voc-c-2420",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "コンピューターこうがく",
     "kanji": "",
     "reading": "konpyuutaakougaku",
@@ -33938,7 +33938,7 @@
   {
     "id": "voc-c-2425",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "コーヒーを 飲む？ ううん、飲まない。",
     "kanji": "コーヒーを 飲む？ ううん、飲まない。",
     "reading": "Koohii o nomu? Uun, nomanai.",
@@ -34134,7 +34134,7 @@
   {
     "id": "voc-c-2439",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "サントスさんは ブラジル人です。",
     "kanji": "サントスさんは ブラジル人です。",
     "reading": "Santosu-san wa Burajiru-jin desu.",
@@ -34148,7 +34148,7 @@
   {
     "id": "voc-c-2440",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "サントスさんは 学生じゃありません。",
     "kanji": "サントスさんは 学生じゃありません。",
     "reading": "Santosu-san wa gakusei ja arimasen.",
@@ -35366,7 +35366,7 @@
   {
     "id": "voc-c-2527",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "テニスを 見るのは 面白いです。",
     "kanji": "テニスを 見るのは 面白いです。",
     "reading": "Tenisu o miru no wa omoshiroi desu.",
@@ -35464,7 +35464,7 @@
   {
     "id": "voc-c-2534",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "デパートへ 買い物に 行きます。",
     "kanji": "デパートへ 買い物に 行きます。",
     "reading": "Depaato e kaimono ni ikimasu.",
@@ -35534,7 +35534,7 @@
   {
     "id": "voc-c-2539",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "トイレは あそこです。",
     "kanji": "トイレは あそこです。",
     "reading": "Toire wa asoko desu.",
@@ -35814,7 +35814,7 @@
   {
     "id": "voc-c-2559",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ニュースを 聞いて、びっくりしました。",
     "kanji": "ニュースを 聞いて、びっくりしました。",
     "reading": "Nyuusu o kiite, bikkuri shimashita.",
@@ -35940,7 +35940,7 @@
   {
     "id": "voc-c-2568",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ハイジャックする",
     "kanji": "",
     "reading": "haijakkusuru",
@@ -36010,7 +36010,7 @@
   {
     "id": "voc-c-2573",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "ハンサム",
     "kanji": "",
     "reading": "hansaム (na)",
@@ -36178,7 +36178,7 @@
   {
     "id": "voc-c-2585",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "バレリーナ",
     "kanji": "",
     "reading": "bareriina",
@@ -36234,7 +36234,7 @@
   {
     "id": "voc-c-2589",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "パスポートを なくして しまいました。",
     "kanji": "パスポートを なくして しまいました。",
     "reading": "Pasupooto o nakushite shimaimashita.",
@@ -36248,7 +36248,7 @@
   {
     "id": "voc-c-2590",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "パスポートを 見せなければ なりません。",
     "kanji": "パスポートを 見せなければ なりません。",
     "reading": "Pasupooto o misenakereba narimasen.",
@@ -36696,7 +36696,7 @@
   {
     "id": "voc-c-2622",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ファイト",
     "kanji": "",
     "reading": "faito",
@@ -36724,7 +36724,7 @@
   {
     "id": "voc-c-2624",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "ファイルする",
     "kanji": "",
     "reading": "fairusuru",
@@ -37256,7 +37256,7 @@
   {
     "id": "voc-c-2662",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ボタンが 外れそうです。",
     "kanji": "ボタンが 外れそうです。",
     "reading": "Botan ga hazuresou desu.",
@@ -37424,7 +37424,7 @@
   {
     "id": "voc-c-2674",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "マイク・ミラーと 申します。アメリカから 参りました。",
     "kanji": "マイク・ミラーと 申します。アメリカから 参りました。",
     "reading": "Maiku Miraa to moushimasu. Amerika kara mairimashita.",
@@ -37508,7 +37508,7 @@
   {
     "id": "voc-c-2680",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "マリアさんは カラオケが 上手です。",
     "kanji": "マリアさんは カラオケが 上手です。",
     "reading": "Maria-san wa karaoke ga jouzu desu.",
@@ -37620,7 +37620,7 @@
   {
     "id": "voc-c-2688",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ミラーさんは 今 電話を かけています。",
     "kanji": "ミラーさんは 今 電話を かけています。",
     "reading": "Miraa-san wa ima denwa o kakete imasu.",
@@ -37634,7 +37634,7 @@
   {
     "id": "voc-c-2689",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ミラーさんは 会社員ですか。",
     "kanji": "ミラーさんは 会社員ですか。",
     "reading": "Miraa-san wa kaishain desu ka.",
@@ -37648,7 +37648,7 @@
   {
     "id": "voc-c-2690",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ミラーさんは 来月 国へ 帰る そうです。",
     "kanji": "ミラーさんは 来月 国へ 帰る そうです。",
     "reading": "Miraa-san wa raigetsu kuni e kaeru sou desu.",
@@ -37662,7 +37662,7 @@
   {
     "id": "voc-c-2691",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ミラーさんは 漢字を 読むことが できます。",
     "kanji": "ミラーさんは 漢字を 読むことが できます。",
     "reading": "Miraa-san wa kanji o yomu koto ga dekimasu.",
@@ -37676,7 +37676,7 @@
   {
     "id": "voc-c-2692",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "ミラーさんは 若くて、親切です。",
     "kanji": "ミラーさんは 若くて、親切です。",
     "reading": "Miraa-san wa wakakute, shinsetsu desu.",
@@ -38096,7 +38096,7 @@
   {
     "id": "voc-c-2722",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "レストランで 昼ご飯を 食べます。",
     "kanji": "レストランで 昼ご飯を 食べます。",
     "reading": "Resutoran de hirugohan o tabemasu.",
@@ -38390,7 +38390,7 @@
   {
     "id": "voc-c-2743",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "一人で 暮らすのは 大変です。",
     "kanji": "一人で 暮らすのは 大変です。",
     "reading": "Hitori de kurasu no wa taihen desu.",
@@ -38404,7 +38404,7 @@
   {
     "id": "voc-c-2744",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "一人で 病院へ 行けますか。",
     "kanji": "一人で 病院へ 行けますか。",
     "reading": "Hitori de byouin e ikemasu ka.",
@@ -38418,7 +38418,7 @@
   {
     "id": "voc-c-2745",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "一人で 行きます。",
     "kanji": "行きます",
     "reading": "Hitori de ikimasu.",
@@ -38516,7 +38516,7 @@
   {
     "id": "voc-c-2752",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "一生懸命 勉強したのに、試験に 落ちました。",
     "kanji": "一生懸命 勉強したのに、試験に 落ちました。",
     "reading": "Isshoukenmei benkyou shita noni, shiken ni ochimashita.",
@@ -39202,7 +39202,7 @@
   {
     "id": "voc-c-2801",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "事務所は どちらですか。",
     "kanji": "事務所は どちらですか。",
     "reading": "Jimusho wa dochira desu ka.",
@@ -39468,7 +39468,7 @@
   {
     "id": "voc-c-2820",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "今 レポートを 書いている ところです。",
     "kanji": "今 レポートを 書いている ところです。",
     "reading": "Ima repooto o kaite iru tokoro desu.",
@@ -39482,7 +39482,7 @@
   {
     "id": "voc-c-2821",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "今 暇？ うん、暇だよ。",
     "kanji": "今 暇？ うん、暇だよ。",
     "reading": "Ima hima? Un, hima da yo.",
@@ -39496,7 +39496,7 @@
   {
     "id": "voc-c-2822",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "今 雨が 降っています。",
     "kanji": "今 雨が 降っています。",
     "reading": "Ima ame ga futte imasu.",
@@ -39510,7 +39510,7 @@
   {
     "id": "voc-c-2823",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "今 ４時５分です。",
     "kanji": "今 ４時５分です。",
     "reading": "Ima yo-ji go-fun desu.",
@@ -39524,7 +39524,7 @@
   {
     "id": "voc-c-2824",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "今から 会議が 始まる ところです。",
     "kanji": "今から 会議が 始まる ところです。",
     "reading": "Ima kara kaigi ga hajimaru tokoro desu.",
@@ -39538,7 +39538,7 @@
   {
     "id": "voc-c-2825",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "今にも 雨が 降りそうです。",
     "kanji": "今にも 雨が 降りそうです。",
     "reading": "Ima ni mo ame ga furisou desu.",
@@ -39580,7 +39580,7 @@
   {
     "id": "voc-c-2828",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "今日の スケジュールを ご案内 いたします。",
     "kanji": "今日の スケジュールを ご案内 いたします。",
     "reading": "Kyou no sukejuuru o goannai itashimasu.",
@@ -39636,7 +39636,7 @@
   {
     "id": "voc-c-2832",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "仕事が 終わった あとで、飲みに行きます。",
     "kanji": "仕事が 終わった あとで、飲みに行きます。",
     "reading": "Shigoto ga owatta ato de, nomi ni ikimasu.",
@@ -39692,7 +39692,7 @@
   {
     "id": "voc-c-2836",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "休みの 日は 掃除したり、洗濯したり します。",
     "kanji": "休みの 日は 掃除したり、洗濯したり します。",
     "reading": "Yasumi no hi wa souji shitari, sentaku shitari shimasu.",
@@ -39776,7 +39776,7 @@
   {
     "id": "voc-c-2842",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "会議が 何時に 始まるか、知っていますか。",
     "kanji": "会議が 何時に 始まるか、知っていますか。",
     "reading": "Kaigi ga nan-ji ni hajimaru ka, shitte imasu ka.",
@@ -39916,7 +39916,7 @@
   {
     "id": "voc-c-2852",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "佐藤さんは わたしに 傘を 貸して くれました。",
     "kanji": "佐藤さんは わたしに 傘を 貸して くれました。",
     "reading": "Satou-san wa watashi ni kasa o kashite kuremashita.",
@@ -39958,7 +39958,7 @@
   {
     "id": "voc-c-2855",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "何を 召し上がりますか。",
     "kanji": "何を 召し上がりますか。",
     "reading": "Nani o meshiagarimasu ka.",
@@ -40014,7 +40014,7 @@
   {
     "id": "voc-c-2859",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "使ったら、元の 所に 戻して おいて ください。",
     "kanji": "使ったら、元の 所に 戻して おいて ください。",
     "reading": "Tsukattara, moto no tokoro ni modoshite oite kudasai.",
@@ -40224,7 +40224,7 @@
   {
     "id": "voc-c-2874",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "傘を 貸しましょうか。",
     "kanji": "傘を 貸しましょうか。",
     "reading": "Kasa o kashimashou ka.",
@@ -40238,7 +40238,7 @@
   {
     "id": "voc-c-2875",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "働きながら、大学に 通っています。",
     "kanji": "働きながら、大学に 通っています。",
     "reading": "Hatarakinagara, daigaku ni kayotte imasu.",
@@ -40266,7 +40266,7 @@
   {
     "id": "voc-c-2877",
     "category": "vocab",
-    "subCategory": "angka_waktu",
+    "subCategory": "kata_kerja",
     "japanese": "億",
     "kanji": "億",
     "reading": "oku",
@@ -40308,7 +40308,7 @@
   {
     "id": "voc-c-2880",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "元気になりました。",
     "kanji": "登ります",
     "reading": "Genki ni narimashita.",
@@ -40378,7 +40378,7 @@
   {
     "id": "voc-c-2885",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "先月 この 会社に 入った ばかりです。",
     "kanji": "先月 この 会社に 入った ばかりです。",
     "reading": "Sengetsu kono kaisha ni haitta bakari desu.",
@@ -40630,7 +40630,7 @@
   {
     "id": "voc-c-2903",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "公園に 犬が います。",
     "kanji": "公園に 犬が います。",
     "reading": "Kouen ni inu ga imasu.",
@@ -40686,7 +40686,7 @@
   {
     "id": "voc-c-2907",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "写真を 撮っても いいですか。",
     "kanji": "写真を 撮っても いいですか。",
     "reading": "Shashin o totte mo ii desu ka.",
@@ -40742,7 +40742,7 @@
   {
     "id": "voc-c-2911",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "冷たい 水を 飲みました。",
     "kanji": "冷たい 水を 飲みました。",
     "reading": "Tsumetai mizu o nomimashita.",
@@ -40882,7 +40882,7 @@
   {
     "id": "voc-c-2921",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "出張は １週間の 予定です。",
     "kanji": "出張は １週間の 予定です。",
     "reading": "Shucchou wa isshuukan no yotei desu.",
@@ -40952,7 +40952,7 @@
   {
     "id": "voc-c-2926",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "切手を ２枚 貼りました。",
     "kanji": "切手を ２枚 貼りました。",
     "reading": "Kitte o ni-mai harimashita.",
@@ -41064,7 +41064,7 @@
   {
     "id": "voc-c-2934",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "刺身が 食べられるように なりました。",
     "kanji": "刺身が 食べられるように なりました。",
     "reading": "Sashimi ga taberareru you ni narimashita.",
@@ -41736,7 +41736,7 @@
   {
     "id": "voc-c-2982",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "友達と 映画を 見る 約束が あります。",
     "kanji": "友達と 映画を 見る 約束が あります。",
     "reading": "Tomodachi to eiga o miru yakusoku ga arimasu.",
@@ -42058,7 +42058,7 @@
   {
     "id": "voc-c-3005",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "右へ 曲がると、郵便局が あります。",
     "kanji": "右へ 曲がると、郵便局が あります。",
     "reading": "Migi e magaru to, yuubinkyoku ga arimasu.",
@@ -42478,7 +42478,7 @@
   {
     "id": "voc-c-3035",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "図書館で 本を 借りる とき、カードが 要ります。",
     "kanji": "図書館で 本を 借りる とき、カードが 要ります。",
     "reading": "Toshokan de hon o kariru toki, kaado ga irimasu.",
@@ -42492,7 +42492,7 @@
   {
     "id": "voc-c-3036",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "図書館へ 本を 借りに 行きます。",
     "kanji": "図書館へ 本を 借りに 行きます。",
     "reading": "Toshokan e hon o kari ni ikimasu.",
@@ -42548,7 +42548,7 @@
   {
     "id": "voc-c-3040",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "国へ 帰ったら、会社を 作ろうと 思っています。",
     "kanji": "国へ 帰ったら、会社を 作ろうと 思っています。",
     "reading": "Kuni e kaettara, kaisha o tsukurou to omotte imasu.",
@@ -42562,7 +42562,7 @@
   {
     "id": "voc-c-3041",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "国へ 帰ってから、父の 会社で 働きます。",
     "kanji": "国へ 帰ってから、父の 会社で 働きます。",
     "reading": "Kuni e kaette kara, chichi no kaisha de hatarakimasu.",
@@ -42800,7 +42800,7 @@
   {
     "id": "voc-c-3058",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "壁に カレンダーが 掛けて あります。",
     "kanji": "壁に カレンダーが 掛けて あります。",
     "reading": "Kabe ni karendaa ga kakete arimasu.",
@@ -42968,7 +42968,7 @@
   {
     "id": "voc-c-3070",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "外に 人が たくさん 集まっています。事故が あった ようです。",
     "kanji": "外に 人が たくさん 集まっています。事故が あった ようです。",
     "reading": "Soto ni hito ga takusan atsumatte imasu. Jiko ga atta you desu.",
@@ -42996,7 +42996,7 @@
   {
     "id": "voc-c-3072",
     "category": "vocab",
-    "subCategory": "angka_waktu",
+    "subCategory": "kata_kerja",
     "japanese": "夜",
     "kanji": "夜",
     "reading": "yoru",
@@ -43234,7 +43234,7 @@
   {
     "id": "voc-c-3089",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "天気予報に よると、明日は 寒くなる そうです。",
     "kanji": "天気予報に よると、明日は 寒くなる そうです。",
     "reading": "Tenki yohou ni yoru to, ashita wa samuku naru sou desu.",
@@ -43374,7 +43374,7 @@
   {
     "id": "voc-c-3099",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "奈良は 静かで、きれいな 町です。",
     "kanji": "奈良は 静かで、きれいな 町です。",
     "reading": "Nara wa shizuka de, kirei na machi desu.",
@@ -43388,7 +43388,7 @@
   {
     "id": "voc-c-3100",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "奈良は 静かな 町です。",
     "kanji": "奈良は 静かな 町です。",
     "reading": "Nara wa shizuka na machi desu.",
@@ -43612,7 +43612,7 @@
   {
     "id": "voc-c-3116",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "子供の とき、よく 川で 泳ぎました。",
     "kanji": "子供の とき、よく 川で 泳ぎました。",
     "reading": "Kodomo no toki, yoku kawa de oyogimashita.",
@@ -43710,7 +43710,7 @@
   {
     "id": "voc-c-3123",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "安ければ、買います。",
     "kanji": "安ければ、買います。",
     "reading": "Yasukereba, kaimasu.",
@@ -43878,7 +43878,7 @@
   {
     "id": "voc-c-3135",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "家族と 日本へ 来ました。",
     "kanji": "家族と 日本へ 来ました。",
     "reading": "Kazoku to Nihon e kimashita.",
@@ -43892,7 +43892,7 @@
   {
     "id": "voc-c-3136",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "家族に 会えなくて、寂しいです。",
     "kanji": "家族に 会えなくて、寂しいです。",
     "reading": "Kazoku ni aenakute, sabishii desu.",
@@ -43906,7 +43906,7 @@
   {
     "id": "voc-c-3137",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "家族の ために、一生懸命 働きます。",
     "kanji": "家族の ために、一生懸命 働きます。",
     "reading": "Kazoku no tame ni, isshoukenmei hatarakimasu.",
@@ -43934,7 +43934,7 @@
   {
     "id": "voc-c-3139",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "宿題を 全部 やって しまいました。",
     "kanji": "宿題を 全部 やって しまいました。",
     "reading": "Shukudai o zenbu yatte shimaimashita.",
@@ -43990,7 +43990,7 @@
   {
     "id": "voc-c-3143",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "富士山に 登った ことが ありますか。",
     "kanji": "富士山に 登った ことが ありますか。",
     "reading": "Fujisan ni nobotta koto ga arimasu ka.",
@@ -44004,7 +44004,7 @@
   {
     "id": "voc-c-3144",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "富士山は 高いです。",
     "kanji": "富士山は 高いです。",
     "reading": "Fujisan wa takai desu.",
@@ -44032,7 +44032,7 @@
   {
     "id": "voc-c-3146",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "寒く なりました。",
     "kanji": "寒く なりました。",
     "reading": "Samuku narimashita.",
@@ -44060,7 +44060,7 @@
   {
     "id": "voc-c-3148",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "寝る 前に、日記を 書きます。",
     "kanji": "寝る 前に、日記を 書きます。",
     "reading": "Neru mae ni, nikki o kakimasu.",
@@ -44116,7 +44116,7 @@
   {
     "id": "voc-c-3152",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "寿司を食べたいです。",
     "kanji": "寿司を食べたいです。",
     "reading": "Sushi o (ga) tabetai desu.",
@@ -44172,7 +44172,7 @@
   {
     "id": "voc-c-3156",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "将来 自分の 店を 持つ ために、貯金しています。",
     "kanji": "将来 自分の 店を 持つ ために、貯金しています。",
     "reading": "Shourai jibun no mise o motsu tame ni, chokin shite imasu.",
@@ -44256,7 +44256,7 @@
   {
     "id": "voc-c-3162",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "少々 お待ち ください。",
     "kanji": "少々 お待ち ください。",
     "reading": "Shoushou omachi kudasai.",
@@ -44438,7 +44438,7 @@
   {
     "id": "voc-c-3175",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "山田さんに プレゼントを もらいました。",
     "kanji": "山田さんに プレゼントを もらいました。",
     "reading": "Yamada-san ni purezento o moraimashita.",
@@ -44564,7 +44564,7 @@
   {
     "id": "voc-c-3184",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "市役所の 電話番号を 知っていますか。いいえ、知りません。",
     "kanji": "市役所の 電話番号を 知っていますか。いいえ、知りません。",
     "reading": "Shiyakusho no denwa bangou o shitte imasu ka. Iie, shirimasen.",
@@ -45166,7 +45166,7 @@
   {
     "id": "voc-c-3227",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "忘れないように、メモして おきます。",
     "kanji": "忘れないように、メモして おきます。",
     "reading": "Wasurenai you ni, memo shite okimasu.",
@@ -46538,7 +46538,7 @@
   {
     "id": "voc-c-3325",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "新幹線は 飛行機より 安いです。",
     "kanji": "新幹線は 飛行機より 安いです。",
     "reading": "Shinkansen wa hikouki yori yasui desu.",
@@ -46566,7 +46566,7 @@
   {
     "id": "voc-c-3327",
     "category": "vocab",
-    "subCategory": "makanan",
+    "subCategory": "kata_sifat",
     "japanese": "新鮮",
     "kanji": "新鮮",
     "reading": "shinsen",
@@ -46622,7 +46622,7 @@
   {
     "id": "voc-c-3331",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "旅行の 前に、ホテルを 予約して おきます。",
     "kanji": "旅行の 前に、ホテルを 予約して おきます。",
     "reading": "Ryokou no mae ni, hoteru o yoyaku shite okimasu.",
@@ -46636,7 +46636,7 @@
   {
     "id": "voc-c-3332",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "旅行は 楽しかったです。",
     "kanji": "旅行は 楽しかったです。",
     "reading": "Ryokou wa tanoshikatta desu.",
@@ -46692,7 +46692,7 @@
   {
     "id": "voc-c-3336",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "日本の食べ物は 美味しいですが、高いです。",
     "kanji": "日本の食べ物は 美味しいですが、高いです。",
     "reading": "Nihon no tabemono wa oishii desu ga, takai desu.",
@@ -46706,7 +46706,7 @@
   {
     "id": "voc-c-3337",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "日本は 物価が 高いと 思います。",
     "kanji": "日本は 物価が 高いと 思います。",
     "reading": "Nihon wa bukka ga takai to omoimasu.",
@@ -46720,7 +46720,7 @@
   {
     "id": "voc-c-3338",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "日本へ 来ました。",
     "kanji": "日本へ 来ました。",
     "reading": "Nihon e kimashita.",
@@ -46734,7 +46734,7 @@
   {
     "id": "voc-c-3339",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "日本へ 行きたいです。",
     "kanji": "日本へ 行きたいです。",
     "reading": "Nihon e ikitai desu.",
@@ -46748,7 +46748,7 @@
   {
     "id": "voc-c-3340",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "日本語が 上手ですね。たくさん 練習したんです。",
     "kanji": "日本語が 上手ですね。たくさん 練習したんです。",
     "reading": "Nihongo ga jouzu desu ne. Takusan renshuu shita n desu.",
@@ -46762,7 +46762,7 @@
   {
     "id": "voc-c-3341",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "日本語が 少し わかります。",
     "kanji": "日本語が 少し わかります。",
     "reading": "Nihongo ga sukoshi wakarimasu.",
@@ -46776,7 +46776,7 @@
   {
     "id": "voc-c-3342",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "日本語が 話せるように、毎日 練習しています。",
     "kanji": "日本語が 話せるように、毎日 練習しています。",
     "reading": "Nihongo ga hanaseru you ni, mainichi renshuu shite imasu.",
@@ -46790,7 +46790,7 @@
   {
     "id": "voc-c-3343",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "日本語で レポートを 書きます。",
     "kanji": "日本語で レポートを 書きます。",
     "reading": "Nihongo de repooto o kakimasu.",
@@ -46860,7 +46860,7 @@
   {
     "id": "voc-c-3348",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "明日 来なくても いいです。",
     "kanji": "明日 来なくても いいです。",
     "reading": "Ashita konakute mo ii desu.",
@@ -46874,7 +46874,7 @@
   {
     "id": "voc-c-3349",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "明日 東京へ 行く？ うん、行く。",
     "kanji": "明日 東京へ 行く？ うん、行く。",
     "reading": "Ashita Toukyou e iku? Un, iku.",
@@ -46888,7 +46888,7 @@
   {
     "id": "voc-c-3350",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "明日 雨が 降ると 思います。",
     "kanji": "明日 雨が 降ると 思います。",
     "reading": "Ashita ame ga furu to omoimasu.",
@@ -46902,7 +46902,7 @@
   {
     "id": "voc-c-3351",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "明日 １０時に そちらへ 伺います。",
     "kanji": "明日 １０時に そちらへ 伺います。",
     "reading": "Ashita juu-ji ni sochira e伺います(ukagaimasu).",
@@ -46916,7 +46916,7 @@
   {
     "id": "voc-c-3352",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "明日は 雨が 降るでしょう。",
     "kanji": "明日は 雨が 降るでしょう。",
     "reading": "Ashita wa ame ga furu deshou.",
@@ -47000,7 +47000,7 @@
   {
     "id": "voc-c-3358",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "春に なれば、桜が 咲きます。",
     "kanji": "春に なれば、桜が 咲きます。",
     "reading": "Haru ni nareba, sakura ga sakimasu.",
@@ -47028,7 +47028,7 @@
   {
     "id": "voc-c-3360",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "昨日 買った 本は 面白かったです。",
     "kanji": "昨日 買った 本は 面白かったです。",
     "reading": "Kinou katta hon wa omoshirokatta desu.",
@@ -47042,7 +47042,7 @@
   {
     "id": "voc-c-3361",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "昨日は 寒かったです。",
     "kanji": "昨日は 寒かったです。",
     "reading": "Kinou wa samukatta desu.",
@@ -47056,7 +47056,7 @@
   {
     "id": "voc-c-3362",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "昨日は 雨でした。",
     "kanji": "昨日は 雨でした。",
     "reading": "Kinou wa ame deshita.",
@@ -47084,7 +47084,7 @@
   {
     "id": "voc-c-3364",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "昼ご飯 / 昼食",
     "kanji": "昼ご飯",
     "reading": "hirugohan / chuushoku",
@@ -47168,7 +47168,7 @@
   {
     "id": "voc-c-3370",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "時間が ありませんから、タクシーで 行きます。",
     "kanji": "時間が ありませんから、タクシーで 行きます。",
     "reading": "Jikan ga arimasen kara, takushii de ikimasu.",
@@ -47182,7 +47182,7 @@
   {
     "id": "voc-c-3371",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "時間が ない とき、朝ご飯を 食べません。",
     "kanji": "時間が ない とき、朝ご飯を 食べません。",
     "reading": "Jikan ga nai toki, asagohan o tabemasen.",
@@ -47196,7 +47196,7 @@
   {
     "id": "voc-c-3372",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "時間に 遅れる 場合は、連絡して ください。",
     "kanji": "時間に 遅れる 場合は、連絡して ください。",
     "reading": "Jikan ni okureru baai wa, renraku shite kudasai.",
@@ -47210,7 +47210,7 @@
   {
     "id": "voc-c-3373",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "晩ご飯 / 夕食",
     "kanji": "晩ご飯",
     "reading": "bangohan / yuushoku",
@@ -47224,7 +47224,7 @@
   {
     "id": "voc-c-3374",
     "category": "vocab",
-    "subCategory": "kata_sifat",
+    "subCategory": "keterangan_fukushi",
     "japanese": "普通",
     "kanji": "普通",
     "reading": "futsuu",
@@ -47476,7 +47476,7 @@
   {
     "id": "voc-c-3392",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "kata_kerja",
     "japanese": "服",
     "kanji": "服",
     "reading": "fuku",
@@ -47504,7 +47504,7 @@
   {
     "id": "voc-c-3394",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "朝 ジョギングを して、シャワーを 浴びて、会社へ 行きます。",
     "kanji": "朝 ジョギングを して、シャワーを 浴びて、会社へ 行きます。",
     "reading": "Asa jogingu o shite, shawaa o abite, kaisha e ikimasu.",
@@ -47532,7 +47532,7 @@
   {
     "id": "voc-c-3396",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "朝ご飯を 食べる 時間が ありません。",
     "kanji": "朝ご飯を 食べる 時間が ありません。",
     "reading": "Asagohan o taberu jikan ga arimasen.",
@@ -47672,7 +47672,7 @@
   {
     "id": "voc-c-3406",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "机の 上に 本が あります。",
     "kanji": "机の 上に 本が あります。",
     "reading": "Tsukue no ue ni hon ga arimasu.",
@@ -47742,7 +47742,7 @@
   {
     "id": "voc-c-3411",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "来週 会議が あると 言いました。",
     "kanji": "来週 会議が あると 言いました。",
     "reading": "Raishuu kaigi ga aru to iimashita.",
@@ -47770,7 +47770,7 @@
   {
     "id": "voc-c-3413",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "東京から 大阪まで 新幹線で ２時間半 かかります。",
     "kanji": "東京から 大阪まで 新幹線で ２時間半 かかります。",
     "reading": "Toukyou kara Oosaka made shinkansen de ni-jikan han kakarimasu.",
@@ -47784,7 +47784,7 @@
   {
     "id": "voc-c-3414",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "東京に 住んでいます。",
     "kanji": "東京に 住んでいます。",
     "reading": "Toukyou ni sunde imasu.",
@@ -47798,7 +47798,7 @@
   {
     "id": "voc-c-3415",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "東京は 道が 狭くて、歩きにくいです。",
     "kanji": "東京は 道が 狭くて、歩きにくいです。",
     "reading": "Toukyou wa michi ga semakute, arukinikui desu.",
@@ -48232,7 +48232,7 @@
   {
     "id": "voc-c-3446",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "歩いて 帰ります。",
     "kanji": "歩いて 帰ります。",
     "reading": "Aruite kaerimasu.",
@@ -48414,7 +48414,7 @@
   {
     "id": "voc-c-3459",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "母は 子供に 部屋を 掃除させました。",
     "kanji": "母は 子供に 部屋を 掃除させました。",
     "reading": "Haha wa kodomo ni heya o souji sasemashita.",
@@ -48498,7 +48498,7 @@
   {
     "id": "voc-c-3465",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "毎朝 運動した ほうがいいです。",
     "kanji": "毎朝 運動した ほうがいいです。",
     "reading": "Maiasa undou shita hou ga ii desu.",
@@ -48512,7 +48512,7 @@
   {
     "id": "voc-c-3466",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "毎朝 ６時に 起きます。",
     "kanji": "毎朝 ６時に 起きます。",
     "reading": "Maiasa roku-ji ni okimasu.",
@@ -48582,7 +48582,7 @@
   {
     "id": "voc-c-3471",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "気分が 悪いので、早く 帰らせて いただけませんか。",
     "kanji": "気分が 悪いので、早く 帰らせて いただけませんか。",
     "reading": "Kibun ga warui node, hayaku kaerasete itadakemasen ka.",
@@ -48596,7 +48596,7 @@
   {
     "id": "voc-c-3472",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "気分が 悪いので、早退しても いいですか。",
     "kanji": "気分が 悪いので、早退しても いいですか。",
     "reading": "Kibun ga warui node, soutai shite mo ii desu ka.",
@@ -48652,7 +48652,7 @@
   {
     "id": "voc-c-3476",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "水を 飲みます。",
     "kanji": "水を 飲みます。",
     "reading": "Mizu o nomimasu.",
@@ -48960,7 +48960,7 @@
   {
     "id": "voc-c-3498",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "泥棒に 財布を 盗まれました。",
     "kanji": "泥棒に 財布を 盗まれました。",
     "reading": "Dorobou ni saifu o nusumaremashita.",
@@ -49338,7 +49338,7 @@
   {
     "id": "voc-c-3525",
     "category": "vocab",
-    "subCategory": "kata_sifat",
+    "subCategory": "kata_kerja",
     "japanese": "清潔",
     "kanji": "清潔",
     "reading": "seiketsu",
@@ -49492,7 +49492,7 @@
   {
     "id": "voc-c-3536",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "温泉なら、草津が いいですよ。",
     "kanji": "温泉なら、草津が いいですよ。",
     "reading": "Onsen nara, Kusatsu ga ii desu yo.",
@@ -49688,7 +49688,7 @@
   {
     "id": "voc-c-3550",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "火事の 場合は、エレベーターを 使わないで ください。",
     "kanji": "火事の 場合は、エレベーターを 使わないで ください。",
     "reading": "Kaji no baai wa, erebeetaa o tsukawanaide kudasai.",
@@ -49954,7 +49954,7 @@
   {
     "id": "voc-c-3569",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "熱が ありますから、お風呂に 入らない ほうがいいです。",
     "kanji": "熱が ありますから、お風呂に 入らない ほうがいいです。",
     "reading": "Netsu ga arimasu kara, ofuro ni hairanai hou ga ii desu.",
@@ -50374,7 +50374,7 @@
   {
     "id": "voc-c-3599",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "生け花を 習いたいんですが、いい 先生を 紹介して くださいませんか。",
     "kanji": "生け花を 習いたいんですが、いい 先生を 紹介して くださいませんか。",
     "reading": "Ikebana o naraitai n desu ga, ii sensei o shoukai shite kudasaimasen ka.",
@@ -50430,7 +50430,7 @@
   {
     "id": "voc-c-3603",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "田中さんは 今日 来る はずです。",
     "kanji": "田中さんは 今日 来る はずです。",
     "reading": "Tanaka-san wa kyou kuru hazu desu.",
@@ -50878,7 +50878,7 @@
   {
     "id": "voc-c-3635",
     "category": "vocab",
-    "subCategory": "profesi_sekolah",
+    "subCategory": "kata_sifat",
     "japanese": "目的",
     "kanji": "目的",
     "reading": "mokuteki",
@@ -51326,7 +51326,7 @@
   {
     "id": "voc-c-3667",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "社長は もう お帰りに なりました。",
     "kanji": "社長は もう お帰りに なりました。",
     "reading": "Shachou wa mou okaeri ni narimashita.",
@@ -51578,7 +51578,7 @@
   {
     "id": "voc-c-3685",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "窓が 開いています。",
     "kanji": "窓が 開いています。",
     "reading": "Mado ga aite imasu.",
@@ -51872,7 +51872,7 @@
   {
     "id": "voc-c-3706",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "約束したのに、彼は 来ませんでした。",
     "kanji": "約束したのに、彼は 来ませんでした。",
     "reading": "Yakusoku shita noni, kare wa kimasen deshita.",
@@ -51886,7 +51886,7 @@
   {
     "id": "voc-c-3707",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "約束の 時間に 間に合わないかも しれません。",
     "kanji": "約束の 時間に 間に合わないかも しれません。",
     "reading": "Yakusoku no jikan ni maniawanai kamo shiremasen.",
@@ -52950,7 +52950,7 @@
   {
     "id": "voc-c-3783",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "荷物を お持ち しましょうか。",
     "kanji": "荷物を お持ち しましょうか。",
     "reading": "Nimotsu o omochi shimashou ka.",
@@ -52964,7 +52964,7 @@
   {
     "id": "voc-c-3784",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "荷物を 持ちましょうか。",
     "kanji": "荷物を 持ちましょうか。",
     "reading": "Nimotsu o mochimashou ka.",
@@ -53076,7 +53076,7 @@
   {
     "id": "voc-c-3792",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "薬を 飲まなければ なりません。",
     "kanji": "薬を 飲まなければ なりません。",
     "reading": "Kusuri o nomanakereba narimasen.",
@@ -53594,7 +53594,7 @@
   {
     "id": "voc-c-3829",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "触るな！",
     "kanji": "触るな！",
     "reading": "Sawaru na!",
@@ -53818,7 +53818,7 @@
   {
     "id": "voc-c-3845",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "説明書の とおりに、組み立てました。",
     "kanji": "説明書の とおりに、組み立てました。",
     "reading": "Setsumeisho no toori ni, kumitatemashita.",
@@ -54532,7 +54532,7 @@
   {
     "id": "voc-c-3896",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "車が あります。",
     "kanji": "車が あります。",
     "reading": "Kuruma ga arimasu.",
@@ -54770,7 +54770,7 @@
   {
     "id": "voc-c-3913",
     "category": "vocab",
-    "subCategory": "kata_sifat",
+    "subCategory": "kata_kerja",
     "japanese": "退屈",
     "kanji": "退屈",
     "reading": "taikutsu",
@@ -54854,7 +54854,7 @@
   {
     "id": "voc-c-3919",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "逃げろ！",
     "kanji": "逃げろ！",
     "reading": "Nigero!",
@@ -54994,7 +54994,7 @@
   {
     "id": "voc-c-3929",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "週末は 海へ 行こうと 思っています。",
     "kanji": "週末は 海へ 行こうと 思っています。",
     "reading": "Shuumatsu wa umi e ikou to omotte imasu.",
@@ -55316,7 +55316,7 @@
   {
     "id": "voc-c-3952",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "部屋に 机が あります。",
     "kanji": "部屋に 机が あります。",
     "reading": "Heya ni tsukue ga arimasu.",
@@ -55344,7 +55344,7 @@
   {
     "id": "voc-c-3954",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "部長に 叱られました。",
     "kanji": "部長に 叱られました。",
     "reading": "Buchou ni shikararemashita.",
@@ -55358,7 +55358,7 @@
   {
     "id": "voc-c-3955",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "部長の 奥さんが お茶を 教えて くださいました。",
     "kanji": "部長の 奥さんが お茶を 教えて くださいました。",
     "reading": "Buchou no okusan ga ocha o oshiete kudasaimashita.",
@@ -55372,7 +55372,7 @@
   {
     "id": "voc-c-3956",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "部長は 山田さんを 大阪へ 出張させました。",
     "kanji": "部長は 山田さんを 大阪へ 出張させました。",
     "reading": "Buchou wa Yamada-san o Oosaka e shucchou sasemashita.",
@@ -55624,7 +55624,7 @@
   {
     "id": "voc-c-3974",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "銀行は ９時から ３時までです。",
     "kanji": "銀行は ９時から ３時までです。",
     "reading": "Ginkou wa ku-ji kara san-ji made desu.",
@@ -55680,7 +55680,7 @@
   {
     "id": "voc-c-3978",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "鍵を 掛けるのを 忘れました。",
     "kanji": "鍵を 掛けるのを 忘れました。",
     "reading": "Kagi o kakeru no o wasuremashita.",
@@ -55834,7 +55834,7 @@
   {
     "id": "voc-c-3989",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "間違いが ないかどうか、確かめて ください。",
     "kanji": "間違いが ないかどうか、確かめて ください。",
     "reading": "Machigai ga nai ka dou ka, tashikamete kudasai.",
@@ -55932,7 +55932,7 @@
   {
     "id": "voc-c-3996",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "隣の 部屋から 声が 聞こえます。",
     "kanji": "隣の 部屋から 声が 聞こえます。",
     "reading": "Tonari no heya kara koe ga kikoemasu.",
@@ -56030,7 +56030,7 @@
   {
     "id": "voc-c-4003",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "雨が 降ったら、出かけません。",
     "kanji": "雨が 降ったら、出かけません。",
     "reading": "Ame ga futtara, dekakemasen.",
@@ -56044,7 +56044,7 @@
   {
     "id": "voc-c-4004",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "雨が 降っても、サッカーを します。",
     "kanji": "雨が 降っても、サッカーを します。",
     "reading": "Ame ga futte mo, sakkaa o shimasu.",
@@ -56058,7 +56058,7 @@
   {
     "id": "voc-c-4005",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "雨の 日は 事故が 起きやすいです。",
     "kanji": "雨の 日は 事故が 起きやすいです。",
     "reading": "Ame no hi wa jiko ga okiyasui desu.",
@@ -56156,7 +56156,7 @@
   {
     "id": "voc-c-4012",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "電気が ついています。",
     "kanji": "電気が ついています。",
     "reading": "Denki ga tsuite imasu.",
@@ -56226,7 +56226,7 @@
   {
     "id": "voc-c-4017",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "電車で 行きます。",
     "kanji": "電車で 行きます。",
     "reading": "Densha de ikimasu.",
@@ -56240,7 +56240,7 @@
   {
     "id": "voc-c-4018",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "電車で 足を 踏まれました。",
     "kanji": "電車で 足を 踏まれました。",
     "reading": "Densha de ashi o fumaremashita.",
@@ -56394,7 +56394,7 @@
   {
     "id": "voc-c-4029",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "音楽を 聞きながら、勉強します。",
     "kanji": "音楽を 聞きながら、勉強します。",
     "reading": "Ongaku o kikinagara, benkyou shimasu.",
@@ -56632,7 +56632,7 @@
   {
     "id": "voc-c-4046",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "食事の 前に、手を 洗います。",
     "kanji": "食事の 前に、手を 洗います。",
     "reading": "Shokuji no mae ni, te o araimasu.",
@@ -56716,7 +56716,7 @@
   {
     "id": "voc-c-4052",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "馬に 乗った ことが あります。",
     "kanji": "馬に 乗った ことが あります。",
     "reading": "Uma ni notta koto ga arimasu.",
@@ -56744,7 +56744,7 @@
   {
     "id": "voc-c-4054",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "駅に 着いたら、電話して ください。",
     "kanji": "駅に 着いたら、電話して ください。",
     "reading": "Eki ni tsuitara, denwa shite kudasai.",
@@ -56758,7 +56758,7 @@
   {
     "id": "voc-c-4055",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "駅の 前に ポストが あります。",
     "kanji": "駅の 前に ポストが あります。",
     "reading": "Eki no mae ni posuto ga arimasu.",
@@ -56828,7 +56828,7 @@
   {
     "id": "voc-c-4060",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "高くても、この パソコンを 買いたいです。",
     "kanji": "高くても、この パソコンを 買いたいです。",
     "reading": "Takakute mo, kono pasokon o kaitai desu.",
@@ -56912,7 +56912,7 @@
   {
     "id": "voc-c-4066",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_kerja",
     "japanese": "鳴く",
     "kanji": "鳴く",
     "reading": "naku",
@@ -57066,7 +57066,7 @@
   {
     "id": "voc-c-4077",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "１か月に ２回 映画を 見ます。",
     "kanji": "１か月に ２回 映画を 見ます。",
     "reading": "Ikkagetsu ni ni-kai eiga o mimasu.",
@@ -57080,7 +57080,7 @@
   {
     "id": "voc-c-4078",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "１年で いつが 一番 寒いですか。２月が 一番 寒いです。",
     "kanji": "１年で いつが 一番 寒いですか。２月が 一番 寒いです。",
     "reading": "Ichi-nen de itsu ga ichiban samui desu ka. Ni-gatsu ga ichiban samui desu.",
@@ -57192,7 +57192,7 @@
   {
     "id": "voc-c-4086",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_sifat",
     "japanese": "～いない",
     "kanji": "～以内",
     "reading": "~inai",
@@ -57276,7 +57276,7 @@
   {
     "id": "voc-c-4092",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "～からきました",
     "kanji": "～から来ました",
     "reading": "~karakimashita",
@@ -57696,7 +57696,7 @@
   {
     "id": "voc-c-4122",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "～ちゃく",
     "kanji": "～発",
     "reading": "~chaku",
@@ -57738,7 +57738,7 @@
   {
     "id": "voc-c-4125",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "～ちょっと。。。。",
     "kanji": "",
     "reading": "~chotto。。。。",
@@ -58018,7 +58018,7 @@
   {
     "id": "voc-c-4145",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "kata_kerja",
     "japanese": "～はつ",
     "kanji": "時刻表",
     "reading": "~hatsu",
@@ -58088,7 +58088,7 @@
   {
     "id": "voc-c-4150",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "～ふん／ぶん",
     "kanji": "～時",
     "reading": "~fun/bun",
@@ -58200,7 +58200,7 @@
   {
     "id": "voc-c-4158",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "～みたいにしてください",
     "kanji": "",
     "reading": "~mitainishitekudasai",
@@ -58228,7 +58228,7 @@
   {
     "id": "voc-c-4160",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "salam",
     "japanese": "～もういっぱいいかがですか",
     "kanji": "",
     "reading": "~mouippaiikagadesuka",

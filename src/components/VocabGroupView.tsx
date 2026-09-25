@@ -98,6 +98,15 @@ export const GROUP_METAS: Record<string, GroupMeta> = {
     cluster: 'tata_bahasa',
     color: 'from-amber-500/10 to-orange-500/10 border-amber-200 text-amber-800',
   },
+  kata_benda: {
+    id: 'kata_benda',
+    name: 'Kata Benda Pokok',
+    kanjiTitle: '名詞 (Meishi)',
+    icon: '📦',
+    desc: 'Benda umum, peralatan, konsep & nomina penting',
+    cluster: 'kehidupan',
+    color: 'from-slate-500/10 to-zinc-500/10 border-slate-300 text-slate-800',
+  },
   keterangan_fukushi: {
     id: 'keterangan_fukushi',
     name: 'Kata Keterangan',
@@ -271,15 +280,32 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
   const [onlyClarified, setOnlyClarified] = useState<boolean>(false);
   const [selectedConjugationCard, setSelectedConjugationCard] = useState<CardItem | null>(null);
 
-  // Group cards by subCategory
+  // Group cards by subCategory with smart classification fallback
   const allGroupedMap = useMemo(() => {
     const map: Record<string, CardItem[]> = {};
+    const definedKeys = new Set(Object.keys(GROUP_METAS));
+
     cards.forEach((card) => {
-      const sub = card.subCategory || 'lainnya';
-      if (!map[sub]) {
-        map[sub] = [];
+      let targetSub = card.subCategory || 'kata_benda';
+
+      // Smart classification check if miscategorized or unmapped
+      const cls = getWordClassification(card);
+      if (cls.type.startsWith('verb') && targetSub !== 'kata_kerja') {
+        targetSub = 'kata_kerja';
+      } else if ((cls.type === 'adj_i' || cls.type === 'adj_na') && targetSub !== 'kata_sifat') {
+        targetSub = 'kata_sifat';
+      } else if (cls.type === 'adverb' && targetSub !== 'keterangan_fukushi') {
+        targetSub = 'keterangan_fukushi';
+      } else if (cls.type === 'phrase' && (targetSub === 'kata_benda' || !definedKeys.has(targetSub))) {
+        targetSub = 'salam';
+      } else if (!definedKeys.has(targetSub)) {
+        targetSub = 'kata_benda';
       }
-      map[sub].push(card);
+
+      if (!map[targetSub]) {
+        map[targetSub] = [];
+      }
+      map[targetSub].push(card);
     });
     return map;
   }, [cards]);
@@ -425,8 +451,10 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
           <div className="space-y-6">
             {GROUP_CLUSTERS.map((cluster) => {
               const clusterGroups = groupsList.filter(
-                (g) => g.meta.cluster === cluster.id
+                (g) => g.meta.cluster === cluster.id && g.totalCount > 0
               );
+
+              if (clusterGroups.length === 0) return null;
 
               return (
                 <div key={cluster.id} className="space-y-3">
@@ -568,11 +596,13 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                   className="text-xs font-bold bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-slate-700 focus:outline-hidden cursor-pointer"
                 >
                   <option value="all">📚 Semua Kelompok ({cards.length})</option>
-                  {groupsList.map((g) => (
-                    <option key={g.key} value={g.key}>
-                      {g.meta.icon} {g.meta.name} ({g.totalCount})
-                    </option>
-                  ))}
+                  {groupsList
+                    .filter((g) => g.totalCount > 0)
+                    .map((g) => (
+                      <option key={g.key} value={g.key}>
+                        {g.meta.icon} {g.meta.name} ({g.totalCount})
+                      </option>
+                    ))}
                 </select>
 
                 {/* Practice Buttons */}
