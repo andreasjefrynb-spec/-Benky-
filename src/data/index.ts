@@ -299,21 +299,52 @@ export function generateQuizQuestions(
     const types: ('meaning' | 'reading' | 'reverse' | 'audio')[] = ['meaning', 'reading', 'reverse', 'audio'];
     const chosenType = types[index % types.length];
 
-    // Pick 3 random distinct distractors from activePool or fallbackPool
+    const itemClarified = getClarifiedMeaning(item);
+    const itemMeaningDisplay = itemClarified.contextBadge
+      ? `${itemClarified.primaryMeaning} [${itemClarified.contextBadge.text}]`
+      : itemClarified.primaryMeaning;
+    const itemClassification = getWordClassification(item);
+    const itemHiragana = getHiraganaReading(item);
+
+    // Pick 3 random distinct distractors from activePool or fallbackPool with NO duplicate meaning, reading, or word
     const candidateSource = activePool.length >= 4 ? activePool : fallbackPool;
     const distractors: CardItem[] = [];
     let attempts = 0;
-    while (distractors.length < 3 && attempts < 50 && candidateSource.length > distractors.length + 1) {
+    while (distractors.length < 3 && attempts < 150 && candidateSource.length > distractors.length + 1) {
       attempts++;
       const randIdx = Math.floor(Math.random() * candidateSource.length);
       const candidate = candidateSource[randIdx];
-      if (candidate.id !== item.id && !distractors.some(d => d.id === candidate.id)) {
-        distractors.push(candidate);
-      }
-    }
+      if (candidate.id === item.id) continue;
+      if (distractors.some(d => d.id === candidate.id)) continue;
 
-    const itemClassification = getWordClassification(item);
-    const itemHiragana = getHiraganaReading(item);
+      const candClarified = getClarifiedMeaning(candidate);
+      const candMeaningDisplay = candClarified.contextBadge
+        ? `${candClarified.primaryMeaning} [${candClarified.contextBadge.text}]`
+        : candClarified.primaryMeaning;
+
+      // Distractor must not share meaning, reading, or text with item
+      if (candMeaningDisplay.toLowerCase() === itemMeaningDisplay.toLowerCase()) continue;
+      if (candClarified.primaryMeaning.toLowerCase() === itemClarified.primaryMeaning.toLowerCase()) continue;
+      if (candidate.japanese.trim() === item.japanese.trim()) continue;
+      if (candidate.reading.trim().toLowerCase() === item.reading.trim().toLowerCase()) continue;
+
+      // Distractor must not collide with other already selected distractors
+      const collidesWithDistractors = distractors.some(d => {
+        const dClarified = getClarifiedMeaning(d);
+        const dMeaning = dClarified.contextBadge
+          ? `${dClarified.primaryMeaning} [${dClarified.contextBadge.text}]`
+          : dClarified.primaryMeaning;
+        return (
+          dMeaning.toLowerCase() === candMeaningDisplay.toLowerCase() ||
+          dClarified.primaryMeaning.toLowerCase() === candClarified.primaryMeaning.toLowerCase() ||
+          d.japanese.trim() === candidate.japanese.trim() ||
+          d.reading.trim().toLowerCase() === candidate.reading.trim().toLowerCase()
+        );
+      });
+      if (collidesWithDistractors) continue;
+
+      distractors.push(candidate);
+    }
 
     // Candidates: target item first, followed by distractors
     const allCandidates = [item, ...distractors];
@@ -323,11 +354,6 @@ export function generateQuizQuestions(
     let correctAnswer = '';
     let rawOptionDetails: QuizOptionDetail[] = [];
     let explanation = '';
-
-    const itemClarified = getClarifiedMeaning(item);
-    const itemMeaningDisplay = itemClarified.contextBadge
-      ? `${itemClarified.primaryMeaning} [${itemClarified.contextBadge.text}]`
-      : itemClarified.primaryMeaning;
 
     if (chosenType === 'meaning') {
       // Prompt Japanese, user picks Indonesian meaning (Diperjelas agar tidak ambigu)

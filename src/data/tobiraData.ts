@@ -23,7 +23,7 @@ export const tobiraChapters: TobiraChapter[] = [
     },
     grammarPatterns: [
       {
-        id: 'tb1-1',
+        id: "Tb1-1",
         pattern: '〜をはじめ（として） (~ o hajime toshite)',
         formula: 'Kata Benda + をはじめ（として）',
         explanation: 'Menyebutkan satu contoh representatif utama di awal, lalu mencakup contoh-contoh lainnya dalam kategori yang sama ("mulai dari... hingga...").',
@@ -32,12 +32,12 @@ export const tobiraChapters: TobiraChapter[] = [
           {
             jp: '富士山をはじめ、日本には美しい山がたくさんあります。',
             reading: 'Fujisan o hajime, Nihon ni wa utsukushii yama ga takusan arimasu.',
-            id: 'Mulai dari Gunung Fuji, di Jepang terdapat banyak gunung yang indah.'
+            id: "Mulai dari Gunung Fuji, di Jepang terdapat banyak gunung yang indah."
           }
         ]
       },
       {
-        id: 'tb1-2',
+        id: "Tb1-2",
         pattern: '〜にとって (~ ni totte)',
         formula: 'Kata Benda (Orang/Organisasi) + にとって',
         explanation: 'Dilihat dari sudut pandang atau posisi seseorang saat memberikan evaluasi nilai ("bagi / untuk").',
@@ -45,12 +45,12 @@ export const tobiraChapters: TobiraChapter[] = [
           {
             jp: '水は人間にとって欠かせないものです。',
             reading: 'Mizu wa ningen ni totte kakasenai mono desu.',
-            id: 'Air adalah hal yang sangat esensial bagi manusia.'
+            id: "Air adalah hal yang sangat esensial bagi manusia."
           }
         ]
       },
       {
-        id: 'tb1-3',
+        id: "Tb1-3",
         pattern: '〜わりに（は） (~ wari ni wa)',
         formula: 'Bentuk Biasa / KB + の + わりに（は）',
         explanation: 'Menunjukkan hasil yang berbeda dari ekspektasi wajar yang biasanya melekat pada standar tersebut ("padahal... / untuk ukuran...").',
@@ -58,18 +58,18 @@ export const tobiraChapters: TobiraChapter[] = [
           {
             jp: 'このレストランは値段のわりにおいしい。',
             reading: 'Kono resutoran wa nedan no wari ni oishii.',
-            id: 'Restoran ini makanannya enak untuk ukuran harganya yang terjangkau.'
+            id: "Restoran ini makanannya enak untuk ukuran harganya yang terjangkau."
           }
         ]
       }
     ],
     keyVocab: [
-      { kanji: '日本列島', reading: 'nihon rettou', id: 'kepulauan Jepang', type: 'Kata Benda' },
-      { kanji: '南北', reading: 'nanboku', id: 'selatan dan utara', type: 'Kata Benda' },
-      { kanji: '気候', reading: 'kikou', id: 'iklim cuaca', type: 'Kata Benda' },
-      { kanji: '豪雪', reading: 'gousetsu', id: 'salju sangat lebat', type: 'Kata Benda' },
-      { kanji: '温暖な', reading: 'ondan na', id: 'hangat dan sejuk bersahabat', type: 'Kata Sifat-na' },
-      { kanji: '風土', reading: 'fuudo', id: 'kondisi alam dan budaya lokal', type: 'Kata Benda' }
+      { kanji: '日本列島', reading: 'nihon rettou', id: "Kepulauan Jepang", type: 'Kata Benda' },
+      { kanji: '南北', reading: 'nanboku', id: "Selatan dan utara", type: 'Kata Benda' },
+      { kanji: '気候', reading: 'kikou', id: "Iklim cuaca", type: 'Kata Benda' },
+      { kanji: '豪雪', reading: 'gousetsu', id: "Salju sangat lebat", type: 'Kata Benda' },
+      { kanji: '温暖な', reading: 'ondan na', id: "Hangat dan sejuk bersahabat", type: 'Kata Sifat-na' },
+      { kanji: '風土', reading: 'fuudo', id: "Kondisi alam dan budaya lokal", type: 'Kata Benda' }
     ]
   },
   {
@@ -94,7 +94,7 @@ export const tobiraChapters: TobiraChapter[] = [
     },
     grammarPatterns: [
       {
-        id: 'tb2-1',
+        id: "Tb2-1",
         pattern: '〜によって (~ ni yotte) [Perbedaan Kasus]',
         formula: 'Kata Benda + によって（異なる/違う）',
         explanation: 'Menyatakan bahwa sesuatu berbeda-beda bergantung pada faktor tertentu ("tergantung pada...").',
@@ -102,12 +102,12 @@ export const tobiraChapters: TobiraChapter[] = [
           {
             jp: '人によって考え方が違うのは自然なことだ。',
             reading: 'Hito ni yotte kangaekata ga chigau no wa shizen na koto da.',
-            id: 'Berbedanya cara berpikir bergantung masing-masing orang adalah hal yang wajar.'
+            id: "Berbedanya cara berpikir bergantung masing-masing orang adalah hal yang wajar."
           }
         ]
       },
       {
-        id: 'tb2-2',
+        id: "Tb2-2",
         pattern: '〜を中心に（して） (~ o chuushin ni shite)',
         formula: 'Kata Benda + を中心に',
         explanation: 'Menempatkan seseorang atau suatu lokasi/topik sebagai titik fokus poros utama.',
@@ -115,16 +115,16 @@ export const tobiraChapters: TobiraChapter[] = [
           {
             jp: '若者を中心にして、SNSの利用が広がっている。',
             reading: 'Wakamono o chuushin ni shite, SNS no riyou ga hirogatte iru.',
-            id: 'Dengan berpusat pada kaum muda, penggunaan medsos kian menyebar luas.'
+            id: "Dengan berpusat pada kaum muda, penggunaan medsos kian menyebar luas."
           }
         ]
       }
     ],
     keyVocab: [
-      { kanji: '丁寧体', reading: 'teineitai', id: 'ragam bahasa sopan (Desu/Masu)', type: 'Kata Benda' },
-      { kanji: '初対面', reading: 'shotaimen', id: 'pertemuan pertama kali', type: 'Kata Benda' },
-      { kanji: '使い分け', reading: 'tsukaiwake', id: 'pemilahan penggunaan secara tepat', type: 'Kata Benda' },
-      { kanji: '親しい', reading: 'shitashii', id: 'akrab / karib', type: 'Kata Sifat-i' }
+      { kanji: '丁寧体', reading: 'teineitai', id: "Ragam bahasa sopan (Desu/Masu)", type: 'Kata Benda' },
+      { kanji: '初対面', reading: 'shotaimen', id: "Pertemuan pertama kali", type: 'Kata Benda' },
+      { kanji: '使い分け', reading: 'tsukaiwake', id: "Pemilahan penggunaan secara tepat", type: 'Kata Benda' },
+      { kanji: '親しい', reading: 'shitashii', id: "Akrab / karib", type: 'Kata Sifat-i' }
     ]
   },
   {
@@ -149,7 +149,7 @@ export const tobiraChapters: TobiraChapter[] = [
     },
     grammarPatterns: [
       {
-        id: 'tb3-1',
+        id: "Tb3-1",
         pattern: '〜にとどまらず (~ ni todomarazu)',
         formula: 'Kata Benda / Bentuk Biasa + にとどまらず',
         explanation: 'Tidak hanya terbatas pada cakupan sempit tersebut, melainkan meluas hingga aspek yang lebih besar.',
@@ -157,16 +157,16 @@ export const tobiraChapters: TobiraChapter[] = [
           {
             jp: 'アニメの人気は日本国内にとどまらず、世界中に広がっている。',
             reading: 'Anime no ninki wa Nihon kokunai ni todomarazu, sekaijuu ni hirogatte iru.',
-            id: 'Kepopuleran anime tidak hanya terbatas di dalam negeri Jepang, melainkan merambah ke seluruh penjuru dunia.'
+            id: "Kepopuleran anime tidak hanya terbatas di dalam negeri Jepang, melainkan merambah ke seluruh penjuru dunia."
           }
         ]
       }
     ],
     keyVocab: [
-      { kanji: '共生', reading: 'kyousei', id: 'simbiosis / hidup berdampingan', type: 'Kata Benda' },
-      { kanji: '自動化', reading: 'jidouka', id: 'otomatisasi mesin', type: 'Kata Benda' },
-      { kanji: '介護', reading: 'kaigo', id: 'perawatan lansia / keperawatan', type: 'Kata Benda' },
-      { kanji: '実用化', reading: 'jitsuyouka', id: 'implementasi praktis ke dunia nyata', type: 'Kata Benda' }
+      { kanji: '共生', reading: 'kyousei', id: "Simbiosis / hidup berdampingan", type: 'Kata Benda' },
+      { kanji: '自動化', reading: 'jidouka', id: "Otomatisasi mesin", type: 'Kata Benda' },
+      { kanji: '介護', reading: 'kaigo', id: "Perawatan lansia / keperawatan", type: 'Kata Benda' },
+      { kanji: '実用化', reading: 'jitsuyouka', id: "Implementasi praktis ke dunia nyata", type: 'Kata Benda' }
     ]
   },
   {
@@ -191,7 +191,7 @@ export const tobiraChapters: TobiraChapter[] = [
     },
     grammarPatterns: [
       {
-        id: 'tb4-1',
+        id: "Tb4-1",
         pattern: '〜だけでなく〜も (~ dake de naku ~ mo)',
         formula: 'Bentuk Biasa / KB + だけでなく ... も',
         explanation: 'Bukan hanya A saja, melainkan B juga.',
@@ -199,16 +199,16 @@ export const tobiraChapters: TobiraChapter[] = [
           {
             jp: '日本語の勉強は文法だけでなく、文化を理解することも重要だ。',
             reading: 'Nihongo no benkyou wa bunpou dake de naku, bunka o rikai suru koto mo juuyou da.',
-            id: 'Belajar bahasa Jepang bukan hanya tata bahasa saja, melainkan memahami budayanya juga penting.'
+            id: "Belajar bahasa Jepang bukan hanya tata bahasa saja, melainkan memahami budayanya juga penting."
           }
         ]
       }
     ],
     keyVocab: [
-      { kanji: '武道', reading: 'budou', id: 'seni bela diri tradisional', type: 'Kata Benda' },
-      { kanji: '礼節', reading: 'reisetsu', id: 'etiket tata krama / kesopanan', type: 'Kata Benda' },
-      { kanji: '鍛錬', reading: 'tanren', id: 'penempaan mental dan fisik', type: 'Kata Benda' },
-      { kanji: '敬う', reading: 'uyamau', id: 'menaruh rasa hormat mendalam', type: 'Kata Kerja I' }
+      { kanji: '武道', reading: 'budou', id: "Seni bela diri tradisional", type: 'Kata Benda' },
+      { kanji: '礼節', reading: 'reisetsu', id: "Etiket tata krama / kesopanan", type: 'Kata Benda' },
+      { kanji: '鍛錬', reading: 'tanren', id: "Penempaan mental dan fisik", type: 'Kata Benda' },
+      { kanji: '敬う', reading: 'uyamau', id: "Menaruh rasa hormat mendalam", type: 'Kata Kerja I' }
     ]
   }
 ];

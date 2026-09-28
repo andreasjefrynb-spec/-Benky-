@@ -1,0 +1,5568 @@
+[
+  {
+    "meaning": "Berbahaya",
+    "count": 4,
+    "cards": [
+      {
+        "id": "voc-c-0068",
+        "japanese": "あぶない",
+        "reading": "abunai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-0588",
+        "japanese": "きけん",
+        "reading": "kiken [na]",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-0589",
+        "japanese": "きけんな",
+        "reading": "kikenna",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-2972",
+        "japanese": "危ない",
+        "reading": "abunai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Rumah",
+    "count": 4,
+    "cards": [
+      {
+        "id": "voc-c-0104",
+        "japanese": "いえ",
+        "reading": "ie",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0195",
+        "japanese": "うち",
+        "reading": "uchi (ie)",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0324",
+        "japanese": "おたく",
+        "reading": "otaku",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3131",
+        "japanese": "家",
+        "reading": "ie / uchi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Orang tua",
+    "count": 4,
+    "cards": [
+      {
+        "id": "voc-c-0351",
+        "japanese": "おとしより",
+        "reading": "otoshiyori",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2243",
+        "japanese": "りょうしん",
+        "reading": "ryoushin",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2264",
+        "japanese": "ろうじん",
+        "reading": "roujin",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2780",
+        "japanese": "両親",
+        "reading": "ryoushin",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Polisi",
+    "count": 4,
+    "cards": [
+      {
+        "id": "voc-c-0698",
+        "japanese": "けいかん",
+        "reading": "keikan",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0702",
+        "japanese": "けいさつ",
+        "reading": "keisatsu",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0703",
+        "japanese": "けいさつかん",
+        "reading": "keisatsukan",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3854",
+        "japanese": "警察官 / お巡りさん",
+        "reading": "keisatsukan / omawarisan",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Cukup",
+    "count": 4,
+    "cards": [
+      {
+        "id": "voc-c-0724",
+        "japanese": "けっこうです",
+        "reading": "(iie) kekkoudesu",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-1086",
+        "japanese": "じゅうぶんな",
+        "reading": "juubunna",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-1323",
+        "japanese": "たります",
+        "reading": "tarimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3889",
+        "japanese": "足りる",
+        "reading": "tariru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Makan siang",
+    "count": 4,
+    "cards": [
+      {
+        "id": "voc-c-1848",
+        "japanese": "ひるごはん",
+        "reading": "hirugohan",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2710",
+        "japanese": "ランチ",
+        "reading": "ranchi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3364",
+        "japanese": "昼ご飯 / 昼食",
+        "reading": "hirugohan / chuushoku",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3365",
+        "japanese": "昼食",
+        "reading": "chuushoku",
+        "level": "N4",
+        "subCategory": "makanan"
+      }
+    ]
+  },
+  {
+    "meaning": "Kaki",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-0034",
+        "japanese": "あし",
+        "reading": "ashi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3887",
+        "japanese": "足",
+        "reading": "ashi",
+        "level": "N5",
+        "subCategory": "tubuh_kesehatan"
+      },
+      {
+        "id": "voc-c-3888",
+        "japanese": "足 / 脚",
+        "reading": "ashi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Mencuci",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-0076",
+        "japanese": "あらいます",
+        "reading": "araimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2037",
+        "japanese": "みずあらい",
+        "reading": "mizuarai",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3504",
+        "japanese": "洗う",
+        "reading": "arau",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Berolahraga",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-0227",
+        "japanese": "うんどうします",
+        "reading": "undou shimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-0228",
+        "japanese": "うんどうする",
+        "reading": "undousuru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3938",
+        "japanese": "運動する",
+        "reading": "undou suru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Besar",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-0269",
+        "japanese": "おおきい",
+        "reading": "ookii",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-0271",
+        "japanese": "おおきな～",
+        "reading": "ookina~",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3074",
+        "japanese": "大きい",
+        "reading": "ookii",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Berenang",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-0402",
+        "japanese": "およぎます",
+        "reading": "oyogimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-0403",
+        "japanese": "およぐ",
+        "reading": "oyogu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3503",
+        "japanese": "泳ぐ",
+        "reading": "oyogu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Orang",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-0489",
+        "japanese": "かた",
+        "reading": "kata",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1823",
+        "japanese": "ひと",
+        "reading": "hito",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2816",
+        "japanese": "人",
+        "reading": "hito",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Kuning",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-0577",
+        "japanese": "きいろ",
+        "reading": "kiiro",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0578",
+        "japanese": "きいろい",
+        "reading": "kiiroi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-4073",
+        "japanese": "黄色 / 黄色い",
+        "reading": "kiiro / kiiroi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Kotor",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-0602",
+        "japanese": "きたない",
+        "reading": "kitanai",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3481",
+        "japanese": "汚い",
+        "reading": "kitanai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3483",
+        "japanese": "汚れる",
+        "reading": "yogoreru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Mobil",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-0689",
+        "japanese": "くるま",
+        "reading": "kuruma",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1073",
+        "japanese": "じどうしゃ",
+        "reading": "jidousha",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3895",
+        "japanese": "車 / 自動車",
+        "reading": "kuruma / jidousha",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Kota",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-0939",
+        "japanese": "し",
+        "reading": "shi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1515",
+        "japanese": "とかい",
+        "reading": "tokai",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2005",
+        "japanese": "まち",
+        "reading": "machi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Sedikit",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1121",
+        "japanese": "すくない",
+        "reading": "sukunai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-1124",
+        "japanese": "すこし",
+        "reading": "sukoshi",
+        "level": "N5",
+        "subCategory": "keterangan_fukushi"
+      },
+      {
+        "id": "voc-c-3164",
+        "japanese": "少ない",
+        "reading": "sukunai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Batuk",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1174",
+        "japanese": "せきがでます",
+        "reading": "sekigademasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-1175",
+        "japanese": "せきでます",
+        "reading": "seki (ga) demasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3019",
+        "japanese": "咳",
+        "reading": "seki",
+        "level": "N5",
+        "subCategory": "tubuh_kesehatan"
+      }
+    ]
+  },
+  {
+    "meaning": "Kecil",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1352",
+        "japanese": "ちいさい",
+        "reading": "chiisai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-1353",
+        "japanese": "ちいさな～",
+        "reading": "chiisana~",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3159",
+        "japanese": "小さい",
+        "reading": "chiisai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Dekat",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1355",
+        "japanese": "ちかい",
+        "reading": "chikai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-1356",
+        "japanese": "ちかく",
+        "reading": "chikaku",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3905",
+        "japanese": "近い",
+        "reading": "chikai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Tetapi",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1481",
+        "japanese": "でも",
+        "reading": "demo",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4097",
+        "japanese": "～が～",
+        "reading": "~ga~",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4102",
+        "japanese": "～けど",
+        "reading": "~kedo",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Melempar",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1605",
+        "japanese": "なげます",
+        "reading": "nagemasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-1606",
+        "japanese": "なげる",
+        "reading": "nageru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3273",
+        "japanese": "投げる",
+        "reading": "nageru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Mencuri",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1679",
+        "japanese": "ぬすみます",
+        "reading": "nusumimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-1680",
+        "japanese": "ぬすむ",
+        "reading": "nusumu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3633",
+        "japanese": "盗む",
+        "reading": "nusumu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Tidur",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1694",
+        "japanese": "ねます",
+        "reading": "nemasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-1697",
+        "japanese": "ねむります",
+        "reading": "nemurimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3147",
+        "japanese": "寝る",
+        "reading": "neru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Berlari",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1747",
+        "japanese": "はしります",
+        "reading": "hashirimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-1748",
+        "japanese": "はしる",
+        "reading": "hashiru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3884",
+        "japanese": "走る",
+        "reading": "hashiru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Bekerja",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1759",
+        "japanese": "はたらきます",
+        "reading": "hatarakimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2833",
+        "japanese": "仕事する",
+        "reading": "shigoto suru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2876",
+        "japanese": "働く",
+        "reading": "hataraku",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Menemukan",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1761",
+        "japanese": "はっけんします",
+        "reading": "hakkenshimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2049",
+        "japanese": "みつけます",
+        "reading": "mitsukemasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3810",
+        "japanese": "見つける",
+        "reading": "mitsukeru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Malam",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1799",
+        "japanese": "ばん",
+        "reading": "ban (yoru)",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2224",
+        "japanese": "よる",
+        "reading": "yoru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3073",
+        "japanese": "夜 / 晩",
+        "reading": "yoru / ban",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Makan malam",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1802",
+        "japanese": "ばんごはん",
+        "reading": "bangohan",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3067",
+        "japanese": "夕食",
+        "reading": "yuushoku",
+        "level": "N4",
+        "subCategory": "makanan"
+      },
+      {
+        "id": "voc-c-3373",
+        "japanese": "晩ご飯 / 夕食",
+        "reading": "bangohan / yuushoku",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Luas",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-1851",
+        "japanese": "ひろい",
+        "reading": "hiroi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-2095",
+        "japanese": "めんせき",
+        "reading": "menseki",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3190",
+        "japanese": "広い",
+        "reading": "hiroi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Apel",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-2251",
+        "japanese": "りんご",
+        "reading": "ringo",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2714",
+        "japanese": "リンゴ",
+        "reading": "ringo",
+        "level": "N5",
+        "subCategory": "makanan"
+      },
+      {
+        "id": "voc-c-3417",
+        "japanese": "林檎 / リンゴ",
+        "reading": "ringo",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Celana panjang",
+    "count": 3,
+    "cards": [
+      {
+        "id": "voc-c-2493",
+        "japanese": "ズボン",
+        "reading": "zubon",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2494",
+        "japanese": "ズボン / パンツ",
+        "reading": "zubon / pantsu",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      },
+      {
+        "id": "voc-c-2601",
+        "japanese": "パンツ",
+        "reading": "pantsu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Biru",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0016",
+        "japanese": "あお",
+        "reading": "ao",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0017",
+        "japanese": "あおい",
+        "reading": "aoi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Merah",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0018",
+        "japanese": "あか",
+        "reading": "aka",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0019",
+        "japanese": "あかい",
+        "reading": "akai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Terbuka",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0026",
+        "japanese": "あきます",
+        "reading": "akimasu (ga)",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-1757",
+        "japanese": "はずれます",
+        "reading": "hazuremasu (ga)",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Besok",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0035",
+        "japanese": "あした",
+        "reading": "ashita",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0038",
+        "japanese": "あす",
+        "reading": "asu",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Rasa",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0036",
+        "japanese": "あじ",
+        "reading": "aji",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3015",
+        "japanese": "味",
+        "reading": "aji",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Disana",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0041",
+        "japanese": "あそこ",
+        "reading": "asoko",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0049",
+        "japanese": "あちら",
+        "reading": "achira",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Hangat",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0044",
+        "japanese": "あたたかい",
+        "reading": "atatakai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3532",
+        "japanese": "温かい / 暖かい",
+        "reading": "atatakai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Kepala",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0045",
+        "japanese": "あたま",
+        "reading": "atama",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4034",
+        "japanese": "頭",
+        "reading": "atama",
+        "level": "N5",
+        "subCategory": "tubuh_kesehatan"
+      }
+    ]
+  },
+  {
+    "meaning": "Baru",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0047",
+        "japanese": "あたらしい",
+        "reading": "atarashii",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3323",
+        "japanese": "新しい",
+        "reading": "atarashii",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Tebal",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0051",
+        "japanese": "あつい",
+        "reading": "atsui",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-1885",
+        "japanese": "ふとい",
+        "reading": "futoi",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Manis",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0070",
+        "japanese": "あまい",
+        "reading": "amai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3597",
+        "japanese": "甘い",
+        "reading": "amai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Hujan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0074",
+        "japanese": "あめ",
+        "reading": "ame",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4002",
+        "japanese": "雨",
+        "reading": "ame",
+        "level": "N5",
+        "subCategory": "alam_hewan"
+      }
+    ]
+  },
+  {
+    "meaning": "Berjalan kaki",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0080",
+        "japanese": "あるきます",
+        "reading": "arukimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3447",
+        "japanese": "歩く",
+        "reading": "aruku",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Aman",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0089",
+        "japanese": "あんぜんな",
+        "reading": "anzenna",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3124",
+        "japanese": "安全",
+        "reading": "anzen",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Seperti itu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0090",
+        "japanese": "あんな",
+        "reading": "anna",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-1253",
+        "japanese": "そんな",
+        "reading": "sonna",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Bagus / Baik",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0096",
+        "japanese": "いい / 良い",
+        "reading": "ii / yoi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3773",
+        "japanese": "良い / いい",
+        "reading": "ii / yoi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Pergi",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0108",
+        "japanese": "いきます",
+        "reading": "ikimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3802",
+        "japanese": "行く",
+        "reading": "iku",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Seni merangkai bunga",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0113",
+        "japanese": "いけばな",
+        "reading": "ikebana",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-0504",
+        "japanese": "かどう",
+        "reading": "kadou",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Kursi",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0121",
+        "japanese": "いす",
+        "reading": "isu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3428",
+        "japanese": "椅子",
+        "reading": "isu",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Sibuk",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0122",
+        "japanese": "いそがしい",
+        "reading": "isogashii",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3229",
+        "japanese": "忙しい",
+        "reading": "isogashii",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Menumis",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0128",
+        "japanese": "いためる",
+        "reading": "itameru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3555",
+        "japanese": "炒める",
+        "reading": "itameru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Sekarang",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0153",
+        "japanese": "いま",
+        "reading": "ima",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0156",
+        "japanese": "いまでは",
+        "reading": "imadeha",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Sekarangpun",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0157",
+        "japanese": "いまでも",
+        "reading": "imademo",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0158",
+        "japanese": "いまにも",
+        "reading": "imanimo",
+        "level": "N4",
+        "subCategory": "keterangan_fukushi"
+      }
+    ]
+  },
+  {
+    "meaning": "Adik perempuan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0161",
+        "japanese": "いもうと",
+        "reading": "imouto",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3107",
+        "japanese": "妹",
+        "reading": "imouto",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Selamat datang",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0169",
+        "japanese": "いらっしゃい",
+        "reading": "irasshai",
+        "level": "N5",
+        "subCategory": "salam"
+      },
+      {
+        "id": "voc-c-0171",
+        "japanese": "いらっしゃいませ",
+        "reading": "irasshaimase",
+        "level": "N5",
+        "subCategory": "salam"
+      }
+    ]
+  },
+  {
+    "meaning": "Tipis",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0190",
+        "japanese": "うすい",
+        "reading": "usui",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-1956",
+        "japanese": "ほそい",
+        "reading": "hosoi",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Menjual",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0216",
+        "japanese": "うります",
+        "reading": "urimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3061",
+        "japanese": "売る",
+        "reading": "uru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Senang, gembira",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0218",
+        "japanese": "うれしい",
+        "reading": "ureshii",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-1306",
+        "japanese": "たのしい",
+        "reading": "tanoshii",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Memilih",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0250",
+        "japanese": "えらびます",
+        "reading": "erabimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3947",
+        "japanese": "選ぶ",
+        "reading": "erabu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Lingkaran",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0251",
+        "japanese": "えん )",
+        "reading": "en (maru)",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2021",
+        "japanese": "まる",
+        "reading": "maru",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Perayaan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0263",
+        "japanese": "おいわい",
+        "reading": "oiwai",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-2012",
+        "japanese": "まつり",
+        "reading": "matsuri",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Negara",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0292",
+        "japanese": "おくに",
+        "reading": "okuni",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0681",
+        "japanese": "くに",
+        "reading": "kuni",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Mengirim",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0293",
+        "japanese": "おくります",
+        "reading": "okurimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3917",
+        "japanese": "送る",
+        "reading": "okuru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Tahun baru",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0311",
+        "japanese": "おしょうがつ",
+        "reading": "oshougatsu",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0574",
+        "japanese": "がんじつ",
+        "reading": "ganjitsu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Kakek",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0316",
+        "japanese": "おじいさん / おじいちゃん",
+        "reading": "ojiisan",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0317",
+        "japanese": "おじいさん／おじいちゃん",
+        "reading": "ojiisan/ojiichan",
+        "level": "N5",
+        "subCategory": "salam"
+      }
+    ]
+  },
+  {
+    "meaning": "Jatuh",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0327",
+        "japanese": "おちます",
+        "reading": "ochimasu (ga)",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-0842",
+        "japanese": "ころぶ",
+        "reading": "korobu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Suami",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0334",
+        "japanese": "おっと",
+        "reading": "otto",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0335",
+        "japanese": "おっと／しゅじん",
+        "reading": "otto/shujin",
+        "level": "N5",
+        "subCategory": "salam"
+      }
+    ]
+  },
+  {
+    "meaning": "Adik laki-laki",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0344",
+        "japanese": "おとうと",
+        "reading": "otouto",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3207",
+        "japanese": "弟",
+        "reading": "otouto",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Terdengar suara",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0346",
+        "japanese": "おとがします",
+        "reading": "otogashimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-0778",
+        "japanese": "こえがします",
+        "reading": "koegashimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Anak laki-laki",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0347",
+        "japanese": "おとこのこ",
+        "reading": "otoko no ko",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3609",
+        "japanese": "男の子",
+        "reading": "otokonoko",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Kemarin lusa",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0352",
+        "japanese": "おととい",
+        "reading": "ototoi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2748",
+        "japanese": "一昨日",
+        "reading": "ototoi",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Orang dewasa",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0354",
+        "japanese": "おとな",
+        "reading": "otona",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3076",
+        "japanese": "大人",
+        "reading": "otona",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Menari",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0356",
+        "japanese": "おどります",
+        "reading": "odorimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3890",
+        "japanese": "踊る",
+        "reading": "odoru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Perut",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0357",
+        "japanese": "おなか",
+        "reading": "onaka",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0426",
+        "japanese": "お腹",
+        "reading": "onaka",
+        "level": "N5",
+        "subCategory": "tubuh_kesehatan"
+      }
+    ]
+  },
+  {
+    "meaning": "Kakak laki-laki (orang lain)",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0363",
+        "japanese": "おにいさん",
+        "reading": "oniisan",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0416",
+        "japanese": "お兄さん",
+        "reading": "oniisan",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Kakak perempuan (orang lain)",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0365",
+        "japanese": "おねえさん",
+        "reading": "oneesan",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0418",
+        "japanese": "お姉さん",
+        "reading": "oneesan",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Nenek",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0369",
+        "japanese": "おばあさん / おばあちゃん",
+        "reading": "obaasan",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0370",
+        "japanese": "おばあさん／おばあちゃん",
+        "reading": "obaasan/obaachan",
+        "level": "N5",
+        "subCategory": "salam"
+      }
+    ]
+  },
+  {
+    "meaning": "Kamar mandi",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0377",
+        "japanese": "おふろ",
+        "reading": "ofuro",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1903",
+        "japanese": "ふろば",
+        "reading": "furoba",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Berat",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0388",
+        "japanese": "おもい",
+        "reading": "omoi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3965",
+        "japanese": "重い",
+        "reading": "omoi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Anak perempuan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0414",
+        "japanese": "おんなのこ",
+        "reading": "onna no ko",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3104",
+        "japanese": "女の子",
+        "reading": "onnanoko",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Jawaban",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0451",
+        "japanese": "かいとう",
+        "reading": "kaitou",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0794",
+        "japanese": "こたえ",
+        "reading": "kotae",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Berbelanja",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0453",
+        "japanese": "かいものします",
+        "reading": "kaimono shimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3867",
+        "japanese": "買い物する",
+        "reading": "kaimono suru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Mengembalikan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0456",
+        "japanese": "かえします",
+        "reading": "kaeshimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3908",
+        "japanese": "返す",
+        "reading": "kaesu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Pulang",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0460",
+        "japanese": "かえります",
+        "reading": "kaerimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3186",
+        "japanese": "帰る",
+        "reading": "kaeru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Memastikan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0473",
+        "japanese": "かくにん",
+        "reading": "kakunin",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0474",
+        "japanese": "かくにんします",
+        "reading": "kakuninshimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Payung",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0479",
+        "japanese": "かさ",
+        "reading": "kasa",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2873",
+        "japanese": "傘",
+        "reading": "kasa",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Meminjamkan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0483",
+        "japanese": "かします",
+        "reading": "kashimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3869",
+        "japanese": "貸す",
+        "reading": "kasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Keluarga",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0488",
+        "japanese": "かぞく",
+        "reading": "kazoku",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3134",
+        "japanese": "家族",
+        "reading": "kazoku",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Menang",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0498",
+        "japanese": "かちます",
+        "reading": "kachimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2948",
+        "japanese": "勝つ",
+        "reading": "katsu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Sedih",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0506",
+        "japanese": "かなしい",
+        "reading": "kanashii",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3250",
+        "japanese": "悲しい",
+        "reading": "kanashii",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Tas",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0514",
+        "japanese": "かばん",
+        "reading": "kaban",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2581",
+        "japanese": "バッグ",
+        "reading": "baggu",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Kertas",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0521",
+        "japanese": "かみ",
+        "reading": "kami",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3711",
+        "japanese": "紙",
+        "reading": "kami",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Gatal",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0527",
+        "japanese": "かゆい",
+        "reading": "kayui",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3622",
+        "japanese": "痒い",
+        "reading": "kayui",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Meminjam",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0537",
+        "japanese": "かります",
+        "reading": "karimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2868",
+        "japanese": "借りる",
+        "reading": "kariru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Ringan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0538",
+        "japanese": "かるい",
+        "reading": "karui",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3898",
+        "japanese": "軽い",
+        "reading": "karui",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Memikirkan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0547",
+        "japanese": "かんがえます",
+        "reading": "kangaemasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3750",
+        "japanese": "考える",
+        "reading": "kangaeru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Sekolah",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0570",
+        "japanese": "がっこう",
+        "reading": "gakkou",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3118",
+        "japanese": "学校",
+        "reading": "gakkou",
+        "level": "N5",
+        "subCategory": "tempat"
+      }
+    ]
+  },
+  {
+    "meaning": "Kemarin",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0609",
+        "japanese": "きのう",
+        "reading": "kinou",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3359",
+        "japanese": "昨日",
+        "reading": "kinou",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Datang",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0617",
+        "japanese": "きます",
+        "reading": "kimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3407",
+        "japanese": "来る",
+        "reading": "kuru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Hari ini",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0631",
+        "japanese": "きょう",
+        "reading": "kyou",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2827",
+        "japanese": "今日",
+        "reading": "kyou",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Gereja",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0634",
+        "japanese": "きょうかい",
+        "reading": "kyoukai",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3312",
+        "japanese": "教会",
+        "reading": "kyoukai",
+        "level": "N4",
+        "subCategory": "tempat"
+      }
+    ]
+  },
+  {
+    "meaning": "Saudara kandung",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0638",
+        "japanese": "きょうだい",
+        "reading": "kyoudai",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2882",
+        "japanese": "兄弟",
+        "reading": "kyoudai",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Tahun lalu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0644",
+        "japanese": "きょねん",
+        "reading": "kyonen",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2978",
+        "japanese": "去年",
+        "reading": "kyonen",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Memotong",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0649",
+        "japanese": "きる",
+        "reading": "kiru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2923",
+        "japanese": "切る",
+        "reading": "kiru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Daging sapi",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0667",
+        "japanese": "ぎゅうにく",
+        "reading": "gyuuniku",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3581",
+        "japanese": "牛肉",
+        "reading": "gyuuniku",
+        "level": "N5",
+        "subCategory": "makanan"
+      }
+    ]
+  },
+  {
+    "meaning": "Buah-buahan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0677",
+        "japanese": "くだもの",
+        "reading": "kudamono",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3418",
+        "japanese": "果物",
+        "reading": "kudamono",
+        "level": "N5",
+        "subCategory": "makanan"
+      }
+    ]
+  },
+  {
+    "meaning": "Mulut",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0678",
+        "japanese": "くち",
+        "reading": "kuchi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2992",
+        "japanese": "口",
+        "reading": "kuchi",
+        "level": "N5",
+        "subCategory": "tubuh_kesehatan"
+      }
+    ]
+  },
+  {
+    "meaning": "Sepatu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0679",
+        "japanese": "くつ",
+        "reading": "kutsu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4025",
+        "japanese": "靴",
+        "reading": "kutsu",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Mendung",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0683",
+        "japanese": "くもり",
+        "reading": "kumori",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0685",
+        "japanese": "くもります",
+        "reading": "kumorimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Hidup",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0687",
+        "japanese": "くらします",
+        "reading": "kurashimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3598",
+        "japanese": "生きる",
+        "reading": "ikiru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Hitam",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0692",
+        "japanese": "くろ",
+        "reading": "kuro",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0693",
+        "japanese": "くろい",
+        "reading": "kuroi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Keadaan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0695",
+        "japanese": "ぐあい",
+        "reading": "guai",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1101",
+        "japanese": "じょうたい",
+        "reading": "joutai",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Menghitung",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0707",
+        "japanese": "けいさんする",
+        "reading": "keisansuru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3832",
+        "japanese": "計算する",
+        "reading": "keisan suru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Ekonomi",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0708",
+        "japanese": "けいざい",
+        "reading": "keizai",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0709",
+        "japanese": "けいざいがく",
+        "reading": "keizaigaku",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Penghapus karet",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0720",
+        "japanese": "けしゴム",
+        "reading": "keshiゴム",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3519",
+        "japanese": "消しゴム",
+        "reading": "keshigomu",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Menikah",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0727",
+        "japanese": "けっこんします",
+        "reading": "kekkon shimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3724",
+        "japanese": "結婚する",
+        "reading": "kekkon suru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Menendang",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0729",
+        "japanese": "ける",
+        "reading": "keru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3893",
+        "japanese": "蹴る",
+        "reading": "keru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Prefektur",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0730",
+        "japanese": "けん",
+        "reading": "ken",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1531",
+        "japanese": "とどうふけん",
+        "reading": "todoufuken",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Kartu asuransi kesehatan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0738",
+        "japanese": "けんこうほけんしょう",
+        "reading": "kenkouhokenshou",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1951",
+        "japanese": "ほけんしょう",
+        "reading": "hokenshou",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Sehat",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0752",
+        "japanese": "げんき",
+        "reading": "genki",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-0753",
+        "japanese": "げんき )",
+        "reading": "genki (na)",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Pos udara",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0764",
+        "japanese": "こうくうびん",
+        "reading": "koukuubin",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2334",
+        "japanese": "エアメール",
+        "reading": "eameeru",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Tahun ini",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0802",
+        "japanese": "ことし",
+        "reading": "kotoshi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2826",
+        "japanese": "今年",
+        "reading": "kotoshi",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Anak-anak",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0806",
+        "japanese": "こどもたち",
+        "reading": "kodomotachi",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3115",
+        "japanese": "子供",
+        "reading": "kodomo",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Akhir-akhir ini",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0817",
+        "japanese": "このごろ",
+        "reading": "konogoro",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0884",
+        "japanese": "さいきん",
+        "reading": "saikin",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Rusak",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0845",
+        "japanese": "こわれます",
+        "reading": "kowaremasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3060",
+        "japanese": "壊れる",
+        "reading": "kowareru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Bulan ini",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0847",
+        "japanese": "こんげつ",
+        "reading": "kongetsu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2829",
+        "japanese": "今月",
+        "reading": "kongetsu",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Minggu ini",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0848",
+        "japanese": "こんしゅう",
+        "reading": "konshuu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2830",
+        "japanese": "今週",
+        "reading": "konshuu",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Malam ini",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0853",
+        "japanese": "こんばん",
+        "reading": "konban",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-0855",
+        "japanese": "こんや",
+        "reading": "konya",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Sampah",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0871",
+        "japanese": "ごみ",
+        "reading": "gomi",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2428",
+        "japanese": "ゴミ",
+        "reading": "gomi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Tempat sampah",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0874",
+        "japanese": "ごみばこ",
+        "reading": "gomibako",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2429",
+        "japanese": "ゴミ箱",
+        "reading": "gomibako",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Ikan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0894",
+        "japanese": "さかな",
+        "reading": "sakana",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4064",
+        "japanese": "魚",
+        "reading": "sakana",
+        "level": "N5",
+        "subCategory": "makanan"
+      }
+    ]
+  },
+  {
+    "meaning": "Mencari",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0896",
+        "japanese": "さがします",
+        "reading": "sagashimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3299",
+        "japanese": "探す",
+        "reading": "sagasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Mekar (bunga)",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0899",
+        "japanese": "さきます",
+        "reading": "sakimasu (ga)",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3018",
+        "japanese": "咲く",
+        "reading": "saku",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Mengajak",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0908",
+        "japanese": "さそいます",
+        "reading": "sasoimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3842",
+        "japanese": "誘う",
+        "reading": "sasou",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Kesepian",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0916",
+        "japanese": "さびしい",
+        "reading": "sabishii",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3140",
+        "japanese": "寂しい",
+        "reading": "sabishii",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Menyentuh",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0925",
+        "japanese": "さわります",
+        "reading": "sawarimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3828",
+        "japanese": "触る",
+        "reading": "sawaru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Jalan-jalan santai",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0930",
+        "japanese": "さんぽします",
+        "reading": "sanpo shimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3316",
+        "japanese": "散歩する",
+        "reading": "sanpo suru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Majalah",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0933",
+        "japanese": "ざっし",
+        "reading": "zasshi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4000",
+        "japanese": "雑誌",
+        "reading": "zasshi",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Memarahi",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0945",
+        "japanese": "しかります",
+        "reading": "shikarimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3003",
+        "japanese": "叱る",
+        "reading": "shikaru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Ujian",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0948",
+        "japanese": "しけん",
+        "reading": "shiken",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2524",
+        "japanese": "テスト",
+        "reading": "tesuto",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Permisi",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0963",
+        "japanese": "しつれいします",
+        "reading": "shitsureishimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-0964",
+        "japanese": "しつれいですが",
+        "reading": "shitsureidesuga",
+        "level": "N5",
+        "subCategory": "salam"
+      }
+    ]
+  },
+  {
+    "meaning": "Mendapat pekerjaan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0993",
+        "japanese": "しゅうしょくします",
+        "reading": "shuushokushimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3165",
+        "japanese": "就職する",
+        "reading": "shuushoku suru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Hari libur nasional",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-0999",
+        "japanese": "しゅくさいじつ",
+        "reading": "shukusaijitsu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3671",
+        "japanese": "祝日",
+        "reading": "shukujitsu",
+        "level": "N4",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Perdana menteri",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1001",
+        "japanese": "しゅしょう",
+        "reading": "shushou",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1002",
+        "japanese": "しゅしょう )",
+        "reading": "shushou (naikakusouridaijin)",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Memperkenalkan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1010",
+        "japanese": "しょうかいします",
+        "reading": "shoukai shimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3716",
+        "japanese": "紹介する",
+        "reading": "shoukai suru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Makanan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1027",
+        "japanese": "しょくひん",
+        "reading": "shokuhin",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1317",
+        "japanese": "たべもの",
+        "reading": "tabemono",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Putih",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1043",
+        "japanese": "しろ",
+        "reading": "shiro",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1044",
+        "japanese": "しろい",
+        "reading": "shiroi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Khawatir",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1057",
+        "japanese": "しんぱいな",
+        "reading": "shinpaina",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3224",
+        "japanese": "心配する",
+        "reading": "shinpai suru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Kalau begitu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1080",
+        "japanese": "じゃ",
+        "reading": "ja",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1243",
+        "japanese": "それなら",
+        "reading": "sorenara",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Persiapan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1094",
+        "japanese": "じゅんび",
+        "reading": "junbi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1224",
+        "japanese": "そなえ",
+        "reading": "sonae",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Penggaris",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1098",
+        "japanese": "じょうぎ",
+        "reading": "jougi",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2123",
+        "japanese": "ものさし",
+        "reading": "monosashi",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Penampilan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1115",
+        "japanese": "すがた",
+        "reading": "sugata",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2199",
+        "japanese": "ようす",
+        "reading": "yousu",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Sejuk",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1129",
+        "japanese": "すずしい",
+        "reading": "suzushii",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3521",
+        "japanese": "涼しい",
+        "reading": "suzushii",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Membuang",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1134",
+        "japanese": "すてます",
+        "reading": "sutemasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3293",
+        "japanese": "捨てる",
+        "reading": "suteru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Jadi,lalu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1146",
+        "japanese": "すると",
+        "reading": "suruto",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1240",
+        "japanese": "それで",
+        "reading": "sorede",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Duduk",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1147",
+        "japanese": "すわります",
+        "reading": "suwarimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3195",
+        "japanese": "座る",
+        "reading": "suwaru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Seluruh dunia",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1171",
+        "japanese": "せかいじゅう",
+        "reading": "sekaijuu",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1172",
+        "japanese": "せかいてきに",
+        "reading": "sekaitekini",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Menjelaskan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1182",
+        "japanese": "せつめいします",
+        "reading": "setsumei shimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3844",
+        "japanese": "説明する",
+        "reading": "setsumei suru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Sempit",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1184",
+        "japanese": "せまい",
+        "reading": "semai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3586",
+        "japanese": "狭い",
+        "reading": "semai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Bulan lalu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1187",
+        "japanese": "せんげつ",
+        "reading": "sengetsu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2884",
+        "japanese": "先月",
+        "reading": "sengetsu",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Minggu lalu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1188",
+        "japanese": "せんしゅう",
+        "reading": "senshuu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2888",
+        "japanese": "先週",
+        "reading": "senshuu",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Mesin cuci",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1192",
+        "japanese": "せんたくき",
+        "reading": "sentakuki",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3507",
+        "japanese": "洗濯機",
+        "reading": "sentakuki",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Mencuci pakaian",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1193",
+        "japanese": "せんたくします",
+        "reading": "sentaku shimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3506",
+        "japanese": "洗濯する",
+        "reading": "sentaku suru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Semuanya",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1203",
+        "japanese": "ぜんぶ",
+        "reading": "zenbu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1204",
+        "japanese": "ぜんぶで",
+        "reading": "zenbude",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Disitu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1214",
+        "japanese": "そこ",
+        "reading": "soko",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1218",
+        "japanese": "そちら",
+        "reading": "sochira",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Nenek (sendiri)",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1234",
+        "japanese": "そぼ",
+        "reading": "sobo",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3669",
+        "japanese": "祖母",
+        "reading": "sobo",
+        "level": "N5",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Kedutaan besar",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1267",
+        "japanese": "たいしかん",
+        "reading": "taishikan",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3079",
+        "japanese": "大使館",
+        "reading": "taishikan",
+        "level": "N4",
+        "subCategory": "tempat"
+      }
+    ]
+  },
+  {
+    "meaning": "Menolong",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1290",
+        "japanese": "たすけます",
+        "reading": "tasukemasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-1795",
+        "japanese": "ばくはつする",
+        "reading": "bakuhatsusuru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Berdiri",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1296",
+        "japanese": "たちます",
+        "reading": "tachimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3689",
+        "japanese": "立つ",
+        "reading": "tatsu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Lemari",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1304",
+        "japanese": "たな",
+        "reading": "tana",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1326",
+        "japanese": "たんす",
+        "reading": "tansu",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Makan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1316",
+        "japanese": "たべます",
+        "reading": "tabemasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-4044",
+        "japanese": "食べる",
+        "reading": "taberu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Universitas",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1330",
+        "japanese": "だいがく",
+        "reading": "daigaku",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3084",
+        "japanese": "大学",
+        "reading": "daigaku",
+        "level": "N5",
+        "subCategory": "tempat"
+      }
+    ]
+  },
+  {
+    "meaning": "Dapur",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1338",
+        "japanese": "だいどころ",
+        "reading": "daidokoro",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3001",
+        "japanese": "台所 / キッチン",
+        "reading": "daidokoro / kicchin",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Membatalkan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1379",
+        "japanese": "ちゅうし",
+        "reading": "chuushi",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2380",
+        "japanese": "キャンセルします",
+        "reading": "kyanseru shimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Menabung uang",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1396",
+        "japanese": "ちょきんします",
+        "reading": "chokin shimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3866",
+        "japanese": "貯金する",
+        "reading": "chokin suru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Bulan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1416",
+        "japanese": "つき",
+        "reading": "tsuki",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4095",
+        "japanese": "～がつ",
+        "reading": "~gatsu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Melanjutkan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1433",
+        "japanese": "つづけます",
+        "reading": "tsuzukemasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3731",
+        "japanese": "続ける",
+        "reading": "tsuzukeru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Istri",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1435",
+        "japanese": "つま",
+        "reading": "tsuma",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1437",
+        "japanese": "つま／かない",
+        "reading": "tsuma/kanai",
+        "level": "N5",
+        "subCategory": "salam"
+      }
+    ]
+  },
+  {
+    "meaning": "Kuat",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1440",
+        "japanese": "つよい",
+        "reading": "tsuyoi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3209",
+        "japanese": "強い",
+        "reading": "tsuyoi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Tangan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1445",
+        "japanese": "て",
+        "reading": "te",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3266",
+        "japanese": "手",
+        "reading": "te",
+        "level": "N5",
+        "subCategory": "tubuh_kesehatan"
+      }
+    ]
+  },
+  {
+    "meaning": "Membantu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1455",
+        "japanese": "てつだいます",
+        "reading": "tetsudaimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3267",
+        "japanese": "手伝う",
+        "reading": "tetsudau",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Email",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1490",
+        "japanese": "でんしメール",
+        "reading": "denshimeeru",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2703",
+        "japanese": "メール",
+        "reading": "meeru",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Telepon",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1496",
+        "japanese": "でんわ",
+        "reading": "denwa",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4013",
+        "japanese": "電話",
+        "reading": "denwa",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Menelepon",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1497",
+        "japanese": "でんわします",
+        "reading": "denwashimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-4014",
+        "japanese": "電話する",
+        "reading": "denwa suru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Jauh",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1510",
+        "japanese": "とおい",
+        "reading": "tooi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3942",
+        "japanese": "遠い",
+        "reading": "tooi",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Jalan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1513",
+        "japanese": "とおり",
+        "reading": "toori",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1570",
+        "japanese": "どうろ",
+        "reading": "douro",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Terbang",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1536",
+        "japanese": "とびます",
+        "reading": "tobimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-1537",
+        "japanese": "とぶ",
+        "reading": "tobu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Teman",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1542",
+        "japanese": "ともだち",
+        "reading": "tomodachi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2176",
+        "japanese": "ゆうじん",
+        "reading": "yuujin",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Daging ayam",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1546",
+        "japanese": "とりにく",
+        "reading": "toriniku",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4069",
+        "japanese": "鶏肉",
+        "reading": "toriniku",
+        "level": "N5",
+        "subCategory": "makanan"
+      }
+    ]
+  },
+  {
+    "meaning": "Kebun binatang",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1565",
+        "japanese": "どうぶつえん",
+        "reading": "doubutsuen",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2947",
+        "japanese": "動物園",
+        "reading": "doubutsuen",
+        "level": "N4",
+        "subCategory": "tempat"
+      }
+    ]
+  },
+  {
+    "meaning": "Memperbaiki",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1591",
+        "japanese": "なおします",
+        "reading": "naoshimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2865",
+        "japanese": "修理する",
+        "reading": "shuuri suru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Sembuh (dari penyakit)",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1592",
+        "japanese": "なおります",
+        "reading": "naorimasu (ga)",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3492",
+        "japanese": "治る",
+        "reading": "naoru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Panjang",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1598",
+        "japanese": "ながい",
+        "reading": "nagai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3981",
+        "japanese": "長い",
+        "reading": "nagai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Menangis",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1602",
+        "japanese": "なきます",
+        "reading": "nakimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3497",
+        "japanese": "泣く",
+        "reading": "naku",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Apa",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1617",
+        "japanese": "なに",
+        "reading": "nani",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1634",
+        "japanese": "なん",
+        "reading": "nan",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Pahit",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1648",
+        "japanese": "にがい",
+        "reading": "nigai",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3776",
+        "japanese": "苦い",
+        "reading": "nigai",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Daging",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1650",
+        "japanese": "にく",
+        "reading": "niku",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3753",
+        "japanese": "肉",
+        "reading": "niku",
+        "level": "N5",
+        "subCategory": "makanan"
+      }
+    ]
+  },
+  {
+    "meaning": "Kantor imigrasi",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1666",
+        "japanese": "にゅうかん",
+        "reading": "nyuukan",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1669",
+        "japanese": "にゅうこくかんりきょく",
+        "reading": "nyuukokukanrikyoku",
+        "level": "N5",
+        "subCategory": "salam"
+      }
+    ]
+  },
+  {
+    "meaning": "Memasukkan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1670",
+        "japanese": "にゅうりょくします",
+        "reading": "nyuuryokushimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2891",
+        "japanese": "入れる",
+        "reading": "ireru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Merebus",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1671",
+        "japanese": "にる",
+        "reading": "niru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2189",
+        "japanese": "ゆでる",
+        "reading": "yuderu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Basah",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1682",
+        "japanese": "ぬれている",
+        "reading": "nureteiru",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1683",
+        "japanese": "ぬれます",
+        "reading": "nuremasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Mengantuk",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1695",
+        "japanese": "ねむい",
+        "reading": "nemui",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3642",
+        "japanese": "眠い",
+        "reading": "nemui",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Tenggorokan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1708",
+        "japanese": "のど",
+        "reading": "nodo",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3022",
+        "japanese": "喉",
+        "reading": "nodo",
+        "level": "N5",
+        "subCategory": "tubuh_kesehatan"
+      }
+    ]
+  },
+  {
+    "meaning": "Minum",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1714",
+        "japanese": "のみます",
+        "reading": "nomimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-4048",
+        "japanese": "飲む",
+        "reading": "nomu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Naik (kendaraan)",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1719",
+        "japanese": "のります",
+        "reading": "norimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2791",
+        "japanese": "乗る",
+        "reading": "noru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Masuk",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1729",
+        "japanese": "はいります",
+        "reading": "hairimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2890",
+        "japanese": "入る",
+        "reading": "hairu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Malu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1755",
+        "japanese": "はずかしい",
+        "reading": "hazukashii",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3245",
+        "japanese": "恥ずかしい",
+        "reading": "hazukashii",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Berbicara",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1769",
+        "japanese": "はなします",
+        "reading": "hanashimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3840",
+        "japanese": "話す",
+        "reading": "hanasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Menempelkan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1783",
+        "japanese": "はります",
+        "reading": "harimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-1784",
+        "japanese": "はる",
+        "reading": "haru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Nomer",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1801",
+        "japanese": "ばんごう",
+        "reading": "bangou",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4147",
+        "japanese": "～ばん",
+        "reading": "~ban",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Rendah",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1813",
+        "japanese": "ひくい",
+        "reading": "hikui",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-2849",
+        "japanese": "低い",
+        "reading": "hikui",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Pintu darurat evakuasi",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1817",
+        "japanese": "ひじょうぐち",
+        "reading": "hijouguchi",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4022",
+        "japanese": "非常口",
+        "reading": "hijouguchi",
+        "level": "N4",
+        "subCategory": "tempat"
+      }
+    ]
+  },
+  {
+    "meaning": "Pindah rumah",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1821",
+        "japanese": "ひっこし",
+        "reading": "hikkoshi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3206",
+        "japanese": "引っ越す",
+        "reading": "hikkosu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Mendinginkan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1842",
+        "japanese": "ひやします",
+        "reading": "hiyashimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2912",
+        "japanese": "冷やす",
+        "reading": "hiyasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Rumah sakit",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1858",
+        "japanese": "びょういん",
+        "reading": "byouin",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3620",
+        "japanese": "病院",
+        "reading": "byouin",
+        "level": "N5",
+        "subCategory": "tubuh_kesehatan"
+      }
+    ]
+  },
+  {
+    "meaning": "Tidak praktis",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1893",
+        "japanese": "ふべんな",
+        "reading": "fubenna",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-2771",
+        "japanese": "不便",
+        "reading": "fuben",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Menginjak",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1895",
+        "japanese": "ふみます",
+        "reading": "fumimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3891",
+        "japanese": "踏む",
+        "reading": "fumu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Daging babi",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1904",
+        "japanese": "ぶたにく",
+        "reading": "butaniku",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3862",
+        "japanese": "豚肉",
+        "reading": "butaniku",
+        "level": "N5",
+        "subCategory": "makanan"
+      }
+    ]
+  },
+  {
+    "meaning": "Belajar",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1934",
+        "japanese": "べんきょうします",
+        "reading": "benkyou shimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2945",
+        "japanese": "勉強する",
+        "reading": "benkyou suru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Praktis",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1937",
+        "japanese": "べんり",
+        "reading": "benri [na]",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-1938",
+        "japanese": "べんり )",
+        "reading": "benri (na)",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Hukum",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1946",
+        "japanese": "ほうりつ",
+        "reading": "houritsu",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-1947",
+        "japanese": "ほうりつがく",
+        "reading": "houritsugaku",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Memuji",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1961",
+        "japanese": "ほめます",
+        "reading": "homemasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3805",
+        "japanese": "褒める",
+        "reading": "homeru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Buku",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1963",
+        "japanese": "ほん",
+        "reading": "hon",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3403",
+        "japanese": "本",
+        "reading": "hon",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Setiap pagi",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1978",
+        "japanese": "まいあさ",
+        "reading": "maiasa",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3464",
+        "japanese": "毎朝",
+        "reading": "maiasa",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Setiap minggu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1979",
+        "japanese": "まいしゅう",
+        "reading": "maishuu",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3467",
+        "japanese": "毎週",
+        "reading": "maishuu",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Setiap bulan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1980",
+        "japanese": "まいつき",
+        "reading": "maitsuki",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3463",
+        "japanese": "毎月",
+        "reading": "maitsuki",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Setiap tahun",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1981",
+        "japanese": "まいとし／まいねん",
+        "reading": "maitoshi/mainen",
+        "level": "N4",
+        "subCategory": "salam"
+      },
+      {
+        "id": "voc-c-3460",
+        "japanese": "毎年",
+        "reading": "maitoshi",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Setiap hari",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1982",
+        "japanese": "まいにち",
+        "reading": "mainichi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3461",
+        "japanese": "毎日",
+        "reading": "mainichi",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Setiap malam",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1983",
+        "japanese": "まいばん",
+        "reading": "maiban",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3462",
+        "japanese": "毎晩",
+        "reading": "maiban",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Kalah",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-1990",
+        "japanese": "まけます",
+        "reading": "makemasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3864",
+        "japanese": "負ける",
+        "reading": "makeru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Dan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2001",
+        "japanese": "また",
+        "reading": "mata",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-4132",
+        "japanese": "～と～",
+        "reading": "~to~",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Menunggu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2009",
+        "japanese": "まちます",
+        "reading": "machimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3215",
+        "japanese": "待つ",
+        "reading": "matsu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Jendela",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2015",
+        "japanese": "まど",
+        "reading": "mado",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3684",
+        "japanese": "窓",
+        "reading": "mado",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Hijau",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2050",
+        "japanese": "みどり",
+        "reading": "midori",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3734",
+        "japanese": "緑 / グリーン",
+        "reading": "midori",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Telinga",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2056",
+        "japanese": "みみ",
+        "reading": "mimi",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3751",
+        "japanese": "耳",
+        "reading": "mimi",
+        "level": "N5",
+        "subCategory": "tubuh_kesehatan"
+      }
+    ]
+  },
+  {
+    "meaning": "Mata",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2084",
+        "japanese": "め",
+        "reading": "me",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3634",
+        "japanese": "目",
+        "reading": "me",
+        "level": "N5",
+        "subCategory": "tubuh_kesehatan"
+      }
+    ]
+  },
+  {
+    "meaning": "Kacamata",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2089",
+        "japanese": "めがね",
+        "reading": "megane",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3645",
+        "japanese": "眼鏡",
+        "reading": "megane",
+        "level": "N5",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Sayuran",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2147",
+        "japanese": "やさい",
+        "reading": "yasai",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3967",
+        "japanese": "野菜",
+        "reading": "yasai",
+        "level": "N5",
+        "subCategory": "makanan"
+      }
+    ]
+  },
+  {
+    "meaning": "Murah",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2151",
+        "japanese": "やすい",
+        "reading": "yasui",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3122",
+        "japanese": "安い",
+        "reading": "yasui",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Beristirahat",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2153",
+        "japanese": "やすみます",
+        "reading": "yasumimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-2188",
+        "japanese": "ゆっくりします",
+        "reading": "yukkurishimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Gunung",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2161",
+        "japanese": "やま",
+        "reading": "yama",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3174",
+        "japanese": "山",
+        "reading": "yama",
+        "level": "N5",
+        "subCategory": "alam_hewan"
+      }
+    ]
+  },
+  {
+    "meaning": "Terkenal",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2181",
+        "japanese": "ゆうめい",
+        "reading": "yuumei [na]",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-2182",
+        "japanese": "ゆうめい )",
+        "reading": "yuumei (na)",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Mengekspor",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2186",
+        "japanese": "ゆしゅつします",
+        "reading": "yushutsushimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3900",
+        "japanese": "輸出する",
+        "reading": "yushutsu suru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Mengimpor",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2190",
+        "japanese": "ゆにゅうします",
+        "reading": "yunyuushimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3899",
+        "japanese": "輸入する",
+        "reading": "yunyuu suru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Mengotori",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2210",
+        "japanese": "よごします",
+        "reading": "yogoshimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3482",
+        "japanese": "汚す",
+        "reading": "yogosu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Memanggil",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2217",
+        "japanese": "よびます",
+        "reading": "yobimasu",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3017",
+        "japanese": "呼ぶ",
+        "reading": "yobu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Membaca",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2220",
+        "japanese": "よみます",
+        "reading": "yomimasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3846",
+        "japanese": "読む",
+        "reading": "yomu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Lemah",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2227",
+        "japanese": "よわい",
+        "reading": "yowai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-3208",
+        "japanese": "弱い",
+        "reading": "yowai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Bulan depan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2229",
+        "japanese": "らいげつ",
+        "reading": "raigetsu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3409",
+        "japanese": "来月",
+        "reading": "raigetsu",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Minggu depan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2230",
+        "japanese": "らいしゅう",
+        "reading": "raishuu",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3410",
+        "japanese": "来週",
+        "reading": "raishuu",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Tahun depan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2231",
+        "japanese": "らいねん",
+        "reading": "rainen",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-3408",
+        "japanese": "来年",
+        "reading": "rainen",
+        "level": "N5",
+        "subCategory": "angka_waktu"
+      }
+    ]
+  },
+  {
+    "meaning": "Lupa",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2281",
+        "japanese": "わすれます",
+        "reading": "wasuremasu",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3228",
+        "japanese": "忘れる",
+        "reading": "wasureru",
+        "level": "N5",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Bagi",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2302",
+        "japanese": "わる",
+        "reading": "waru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-4135",
+        "japanese": "～にとって",
+        "reading": "~nitotte",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Kartu",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2356",
+        "japanese": "カルタ",
+        "reading": "karuta",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2364",
+        "japanese": "カード",
+        "reading": "kaado",
+        "level": "N5",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Tempat bermain ski",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2404",
+        "japanese": "ゲレンデ",
+        "reading": "gerende",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      },
+      {
+        "id": "voc-c-2469",
+        "japanese": "スキーじょう",
+        "reading": "sukiijou",
+        "level": "N4",
+        "subCategory": "kata_benda"
+      }
+    ]
+  },
+  {
+    "meaning": "Toilet / Kamar kecil",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2537",
+        "japanese": "トイレ",
+        "reading": "toire",
+        "level": "N5",
+        "subCategory": "tempat"
+      },
+      {
+        "id": "voc-c-2538",
+        "japanese": "トイレ / お手洗い",
+        "reading": "toire / otearai",
+        "level": "N5",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Sederhana karena tidak rumit / simpel (urusan otak, cara kerja, struktur, sifat polos)",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-2967",
+        "japanese": "単純",
+        "reading": "tanjun (na)",
+        "level": "N4",
+        "subCategory": "kata_sifat"
+      },
+      {
+        "id": "voc-c-2968",
+        "japanese": "単純な",
+        "reading": "tanjun na",
+        "level": "N3",
+        "subCategory": "kata_sifat"
+      }
+    ]
+  },
+  {
+    "meaning": "Penggaris mistar",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-3128",
+        "japanese": "定規",
+        "reading": "jougi",
+        "level": "N4",
+        "subCategory": "benda_rumah"
+      },
+      {
+        "id": "voc-c-3129",
+        "japanese": "定規 / 物差し",
+        "reading": "jougi",
+        "level": "N4",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Menukar / Mengganti",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-3301",
+        "japanese": "換える",
+        "reading": "kaeru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      },
+      {
+        "id": "voc-c-3388",
+        "japanese": "替える",
+        "reading": "kaeru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Karpet permadani lantai",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-3727",
+        "japanese": "絨毯",
+        "reading": "juutan",
+        "level": "N4",
+        "subCategory": "benda_rumah"
+      },
+      {
+        "id": "voc-c-3728",
+        "japanese": "絨毯 / カーペット",
+        "reading": "juutan",
+        "level": "N4",
+        "subCategory": "benda_rumah"
+      }
+    ]
+  },
+  {
+    "meaning": "Bayi mungil",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-3882",
+        "japanese": "赤ちゃん",
+        "reading": "akachan",
+        "level": "N5",
+        "subCategory": "keluarga"
+      },
+      {
+        "id": "voc-c-3883",
+        "japanese": "赤ん坊",
+        "reading": "akanbou",
+        "level": "N4",
+        "subCategory": "keluarga"
+      }
+    ]
+  },
+  {
+    "meaning": "Keluar dari rumah sakit",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-3915",
+        "japanese": "退院",
+        "reading": "tai'in",
+        "level": "N4",
+        "subCategory": "tubuh_kesehatan"
+      },
+      {
+        "id": "voc-c-3916",
+        "japanese": "退院する",
+        "reading": "taiin suru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  },
+  {
+    "meaning": "Memancing ikan",
+    "count": 2,
+    "cards": [
+      {
+        "id": "voc-c-3970",
+        "japanese": "釣り",
+        "reading": "tsuri",
+        "level": "N4",
+        "subCategory": "profesi_sekolah"
+      },
+      {
+        "id": "voc-c-3971",
+        "japanese": "釣る",
+        "reading": "tsuru",
+        "level": "N4",
+        "subCategory": "kata_kerja"
+      }
+    ]
+  }
+]

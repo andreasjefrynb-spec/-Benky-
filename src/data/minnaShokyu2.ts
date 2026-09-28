@@ -67,7 +67,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "やります",
         "reading": "yarimasu",
-        "id": "Melakukan / berbuat / Melakukan, mengerjakan"
+        "id": "Melakukan / Berbuat / Mengerjakan"
       },
       {
         "jp": "ひろいます (拾います)",
@@ -101,7 +101,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "ボランティア",
         "reading": "borantia",
-        "id": "Relawan / volunteer / Volunteer, sukarelawan"
+        "id": "Relawan / Sukarelawan / Volunteer"
       },
       {
         "jp": "べん (弁)",
@@ -510,7 +510,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "たてます (建てます)",
         "reading": "tatemasu",
-        "id": "Mendirikan / membangun / Membangun, mendirikan",
+        "id": "Mendirikan / Membangun",
         "kanji": "建てます"
       },
       {
@@ -1000,7 +1000,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "かみます",
         "reading": "kamimasu",
-        "id": "Mengunyah / menggigit / Mengunyah, menggigit"
+        "id": "Mengunyah / Menggigit"
       },
       {
         "jp": "えらびます (選びます)",
@@ -1049,7 +1049,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "ちから (力)",
         "reading": "chikara",
-        "id": "Tenaga / kekuatan / Kekuatan , tenaga",
+        "id": "Tenaga / Kekuatan",
         "kanji": "力"
       },
       {
@@ -1096,7 +1096,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "しゅうかん (週間)",
         "reading": "shuukan",
-        "id": "kebiasaan",
+        "id": "Kebiasaan",
         "kanji": "週間"
       },
       {
@@ -1392,7 +1392,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "まちがえます (間違えます)",
         "reading": "machigaemasu",
-        "id": "Melakukan kesalahan / keliru / Berbuat salah, keliru",
+        "id": "Melakukan kesalahan / Keliru / Berbuat salah",
         "kanji": "間違えます"
       },
       {
@@ -1785,13 +1785,13 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "かざります (飾ります)",
         "reading": "kazarimasu",
-        "id": "Menghias / memajang / Menghias,mendekor",
+        "id": "Menghias / Memajang / Mendekor",
         "kanji": "飾ります"
       },
       {
         "jp": "ならべます (並べます)",
         "reading": "narabemasu",
-        "id": "Menjajarkan / menata berbaris / Menjajarkan, meletakkan (secara teratur)",
+        "id": "Menjajarkan / Menata berbaris / Meletakkan teratur",
         "kanji": "並べます"
       },
       {
@@ -3232,7 +3232,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "あきらめます",
         "reading": "akiramemasu",
-        "id": "Menyerah / putus asa / Menerima nasib, putus asa"
+        "id": "Menyerah / Putus asa / Menerima nasib"
       },
       {
         "jp": "なげます (投げます)",
@@ -4253,7 +4253,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "ただしい (正しい)",
         "reading": "tadashii",
-        "id": "Benar / tepat / Betul,benar",
+        "id": "Benar / Tepat / Betul",
         "kanji": "正しい"
       },
       {
@@ -4922,7 +4922,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "ふくむ (含む)",
         "reading": "fukumu",
-        "id": "mengandung",
+        "id": "Mengandung",
         "kanji": "含む"
       },
       {
@@ -5404,13 +5404,13 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "たすける (助ける)",
         "reading": "tasukeru",
-        "id": "Meledak",
+        "id": "Menolong / Menyelamatkan",
         "kanji": "助ける"
       },
       {
         "jp": "ばくはつする (爆発する)",
         "reading": "bakuhatsusuru",
-        "id": "Menolong",
+        "id": "Meledak / Meletus",
         "kanji": "爆発する"
       },
       {
@@ -5471,7 +5471,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "はこびます (運びます)",
         "reading": "hakobimasu",
-        "id": "Mengangkut / memindahkan barang / Membawa, mengangkut",
+        "id": "Mengangkut / Memindahkan barang / Membawa",
         "kanji": "運びます"
       },
       {
@@ -8634,7 +8634,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "れんらくさき (連絡先)",
         "reading": "renrakusaki",
-        "id": "alamat yang bisa dihubungi",
+        "id": "Alamat yang bisa dihubungi",
         "kanji": "連絡先"
       },
       {
@@ -9673,7 +9673,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "じゅく (塾)",
         "reading": "juku",
-        "id": "Bimbel / les privat luar sekolah / Les, kursus, bimbel",
+        "id": "Bimbel / Les privat / Kursus luar sekolah",
         "kanji": "塾"
       },
       {
@@ -9776,7 +9776,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "スピード",
         "reading": "supiido",
-        "id": "kecepatan"
+        "id": "Kecepatan"
       },
       {
         "jp": "きょうそうします (競走します)",
@@ -9932,7 +9932,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "いらっしゃいます",
         "reading": "irasshaimasu",
-        "id": "Pergi / datang / ada (Sonkeigo) / Ada,pergi,datang (bentuk hormat います、いきます、きます)"
+        "id": "Pergi / Datang / Ada (Bentuk hormat / Sonkeigo)"
       },
       {
         "jp": "おっしゃいます",
@@ -9947,7 +9947,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "めしあがります (召し上がります)",
         "reading": "meshiagarimasu",
-        "id": "Makan / minum (Sonkeigo) / Makan,minum (bentuk hormat たべます、のみます)",
+        "id": "Makan / Minum (Bentuk hormat / Sonkeigo)",
         "kanji": "召し上がります"
       },
       {
@@ -10232,7 +10232,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "まいります (参ります)",
         "reading": "mairimasu",
-        "id": "Pergi / datang (Kenjougo) / Pergi,datang (bentuk merendah いきます、きます)",
+        "id": "Pergi / Datang (Bentuk merendah / Kenjougo)",
         "kanji": "参ります"
       },
       {
@@ -10243,7 +10243,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "いただきます",
         "reading": "itadakimasu",
-        "id": "Makan / minum / menerima (Kenjougo) / Makan,minum,menerima (bentuk merendah たべます、のみます、もらいます)"
+        "id": "Makan / Minum / Menerima (Bentuk merendah / Kenjougo)"
       },
       {
         "jp": "もうします (申します)",
@@ -10271,7 +10271,7 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "うかがいます (伺います)",
         "reading": "ukagaimasu",
-        "id": "Bertanya / berkunjung ke rumah (Kenjougo) / Bertanya,mendengar,mengunjungi (bentuk merendah ききます、いきます)",
+        "id": "Bertanya / Mendengar / Berkunjung (Bentuk merendah / Kenjougo)",
         "kanji": "伺います"
       },
       {
