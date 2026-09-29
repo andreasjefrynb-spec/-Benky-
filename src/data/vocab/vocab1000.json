@@ -17532,5 +17532,395 @@
     "exampleJp": "雨で外に出られず一日中退屈でした。",
     "exampleId": "Bosan sepanjang hari karena hujan tidak bisa keluar rumah.",
     "level": "N4"
+  },
+  {
+    "id": "voc-lang-french",
+    "japanese": "フランス語",
+    "kanji": "フランス語",
+    "reading": "furansugo",
+    "meaningId": "Bahasa Prancis",
+    "category": "vocab",
+    "subCategory": "profesi_sekolah",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-lang-german",
+    "japanese": "ドイツ語",
+    "kanji": "ドイツ語",
+    "reading": "doitsugo",
+    "meaningId": "Bahasa Jerman",
+    "category": "vocab",
+    "subCategory": "profesi_sekolah",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-lang-spanish",
+    "japanese": "スペイン語",
+    "kanji": "スペイン語",
+    "reading": "supeingo",
+    "meaningId": "Bahasa Spanyol",
+    "category": "vocab",
+    "subCategory": "profesi_sekolah",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-lang-italian",
+    "japanese": "イタリア語",
+    "kanji": "イタリア語",
+    "reading": "itariago",
+    "meaningId": "Bahasa Italia",
+    "category": "vocab",
+    "subCategory": "profesi_sekolah",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-lang-russian",
+    "japanese": "ロシア語",
+    "kanji": "ロシア語",
+    "reading": "roshiago",
+    "meaningId": "Bahasa Rusia",
+    "category": "vocab",
+    "subCategory": "profesi_sekolah",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-lang-chinese",
+    "japanese": "中国語",
+    "kanji": "中国語",
+    "reading": "chuugokugo",
+    "meaningId": "Bahasa Mandarin / China",
+    "category": "vocab",
+    "subCategory": "profesi_sekolah",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-lang-korean",
+    "japanese": "韓国語",
+    "kanji": "韓国語",
+    "reading": "kankokugo",
+    "meaningId": "Bahasa Korea",
+    "category": "vocab",
+    "subCategory": "profesi_sekolah",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-lang-arabic",
+    "japanese": "アラビア語",
+    "kanji": "アラビア語",
+    "reading": "arabiago",
+    "meaningId": "Bahasa Arab",
+    "category": "vocab",
+    "subCategory": "profesi_sekolah",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-lang-thai",
+    "japanese": "タイ語",
+    "kanji": "タイ語",
+    "reading": "taigo",
+    "meaningId": "Bahasa Thailand",
+    "category": "vocab",
+    "subCategory": "profesi_sekolah",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-lang-vietnamese",
+    "japanese": "ベトナム語",
+    "kanji": "ベトナム語",
+    "reading": "betonamugo",
+    "meaningId": "Bahasa Vietnam",
+    "category": "vocab",
+    "subCategory": "profesi_sekolah",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-lang-portuguese",
+    "japanese": "ポルトガル語",
+    "kanji": "ポルトガル語",
+    "reading": "porutogarugo",
+    "meaningId": "Bahasa Portugis",
+    "category": "vocab",
+    "subCategory": "profesi_sekolah",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-japanese",
+    "japanese": "日本人",
+    "kanji": "日本人",
+    "reading": "nihonjin",
+    "meaningId": "Orang Jepang",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-chinese",
+    "japanese": "中国人",
+    "kanji": "中国人",
+    "reading": "chuugokujin",
+    "meaningId": "Orang China / Tiongkok",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-korean",
+    "japanese": "韓国人",
+    "kanji": "韓国人",
+    "reading": "kankokujin",
+    "meaningId": "Orang Korea",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-french",
+    "japanese": "フランス人",
+    "kanji": "フランス人",
+    "reading": "furansujin",
+    "meaningId": "Orang Prancis",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-german",
+    "japanese": "ドイツ人",
+    "kanji": "ドイツ人",
+    "reading": "doitsujin",
+    "meaningId": "Orang Jerman",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-italian",
+    "japanese": "イタリア人",
+    "kanji": "イタリア人",
+    "reading": "itariajin",
+    "meaningId": "Orang Italia",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-spanish",
+    "japanese": "スペイン人",
+    "kanji": "スペイン人",
+    "reading": "supeinjin",
+    "meaningId": "Orang Spanyol",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-brazilian",
+    "japanese": "ブラジル人",
+    "kanji": "ブラジル人",
+    "reading": "burajirujin",
+    "meaningId": "Orang Brasil",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-russian",
+    "japanese": "ロシア人",
+    "kanji": "ロシア人",
+    "reading": "roshiajin",
+    "meaningId": "Orang Rusia",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-thai",
+    "japanese": "タイ人",
+    "kanji": "タイ人",
+    "reading": "taijin",
+    "meaningId": "Orang Thailand",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-vietnamese",
+    "japanese": "ベトナム人",
+    "kanji": "ベトナム人",
+    "reading": "betonamujin",
+    "meaningId": "Orang Vietnam",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-filipino",
+    "japanese": "フィリピン人",
+    "kanji": "フィリピン人",
+    "reading": "firipinjin",
+    "meaningId": "Orang Filipina",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-person-australian",
+    "japanese": "オーストラリア人",
+    "kanji": "オーストラリア人",
+    "reading": "oosutorariajin",
+    "meaningId": "Orang Australia",
+    "category": "vocab",
+    "subCategory": "keluarga",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-america",
+    "japanese": "アメリカ",
+    "kanji": "",
+    "reading": "amerika",
+    "meaningId": "Amerika (Negara Amerika Serikat)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-uk",
+    "japanese": "イギリス",
+    "kanji": "",
+    "reading": "igirisu",
+    "meaningId": "Inggris (Negara Inggris / Britania)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-italy",
+    "japanese": "イタリア",
+    "kanji": "",
+    "reading": "itaria",
+    "meaningId": "Italia (Negara Italia)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-india",
+    "japanese": "インド",
+    "kanji": "",
+    "reading": "indo",
+    "meaningId": "India (Negara India)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-indonesia",
+    "japanese": "インドネシア",
+    "kanji": "",
+    "reading": "indoneshia",
+    "meaningId": "Indonesia (Negara Indonesia)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-australia",
+    "japanese": "オーストラリア",
+    "kanji": "",
+    "reading": "oosutoraria",
+    "meaningId": "Australia (Negara Australia)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-singapore",
+    "japanese": "シンガポール",
+    "kanji": "",
+    "reading": "shingapooru",
+    "meaningId": "Singapura (Negara Singapura)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-spain",
+    "japanese": "スペイン",
+    "kanji": "",
+    "reading": "supein",
+    "meaningId": "Spanyol (Negara Spanyol)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-germany",
+    "japanese": "ドイツ",
+    "kanji": "",
+    "reading": "doitsu",
+    "meaningId": "Jerman (Negara Jerman)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-france",
+    "japanese": "フランス",
+    "kanji": "",
+    "reading": "furansu",
+    "meaningId": "Prancis (Negara Prancis)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-mexico",
+    "japanese": "メキシコ",
+    "kanji": "",
+    "reading": "mekishiko",
+    "meaningId": "Meksiko (Negara Meksiko)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-swiss",
+    "japanese": "スイス",
+    "kanji": "",
+    "reading": "suisu",
+    "meaningId": "Swiss (Negara Swiss)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-japan",
+    "japanese": "日本",
+    "kanji": "日本",
+    "reading": "nihon / nippon",
+    "meaningId": "Jepang (Negara Jepang)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-china",
+    "japanese": "中国",
+    "kanji": "中国",
+    "reading": "chuugoku",
+    "meaningId": "China / Tiongkok (Negara China)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
+  },
+  {
+    "id": "voc-country-korea",
+    "japanese": "韓国",
+    "kanji": "韓国",
+    "reading": "kankoku",
+    "meaningId": "Korea (Negara Korea Selatan)",
+    "category": "vocab",
+    "subCategory": "tempat",
+    "jlptLevel": "N5"
   }
 ]

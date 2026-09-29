@@ -944,7 +944,10 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 {currentCard.japanese}
               </motion.div>
 
-              {currentCard.furigana && (
+              {currentCard.furigana &&
+                currentCard.furigana !== currentCard.japanese &&
+                currentCard.furigana !== currentCard.reading &&
+                /[\u4E00-\u9FAF]/.test(currentCard.japanese) && (
                 <p className="mt-2 text-sm sm:text-base font-semibold text-rose-600 dark:text-rose-400 font-jp">
                   {currentCard.furigana}
                 </p>
