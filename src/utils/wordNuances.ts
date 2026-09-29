@@ -482,6 +482,50 @@ export const WORD_NUANCE_REGISTRY: Record<string, NuanceDetail> = {
     exampleJp: '先生の説明を聞いて、意味がよく分かりました。',
     exampleId: 'Setelah mendengarkan penjelasan guru, saya sangat mengerti artinya.',
   },
+  'お大事に': {
+    japanese: 'お大事に',
+    kanji: 'お大事に',
+    reading: 'odaijini',
+    furigana: 'おだいじに',
+    simplifiedMeaning: 'Semoga lekas sembuh / Jaga kesehatan',
+    nuanceExplanation: 'Diucapkan secara khusus kepada orang yang sedang sakit, terluka, masuk angin, atau saat berpamitan kepada pasien di rumah sakit/klinik (berasal dari 大事 = hal penting/berharga, bermakna rawat tubuh Anda dengan baik).',
+    contextUsage: 'Menjenguk orang sakit, berpamitan di rumah sakit/dokter, kepada rekan kerja yang sedang demam/flu',
+    contrastedWith: [
+      {
+        word: '気をつけて (お気をつけて)',
+        kanji: '気をつけて',
+        reading: 'ki o tsukete',
+        nuance: 'Hati-hati di jalan / berhati-hatilah (bukan untuk orang sakit).',
+      },
+      {
+        word: '行ってらっしゃい',
+        kanji: '行ってらっしゃい',
+        reading: 'itterasshai',
+        nuance: 'Selamat jalan / selamat beraktivitas (diucapkan saat melepas orang pergi).',
+      },
+    ],
+    exampleJp: '風邪ですか。どうぞお大事に。',
+    exampleId: 'Apakah Anda masuk angin? Semoga lekas sembuh ya.',
+  },
+  'おだいじに': {
+    japanese: 'おだいじに',
+    kanji: 'お大事に',
+    reading: 'odaijini',
+    furigana: 'おだいじに',
+    simplifiedMeaning: 'Semoga lekas sembuh / Jaga kesehatan',
+    nuanceExplanation: 'Diucapkan secara khusus kepada orang yang sedang sakit, terluka, masuk angin, atau saat berpamitan kepada pasien di rumah sakit/klinik.',
+    contextUsage: 'Menjenguk orang sakit, berpamitan di rumah sakit/dokter, kepada rekan kerja yang sedang demam/flu',
+    contrastedWith: [
+      {
+        word: '気をつけて',
+        kanji: '気をつけて',
+        reading: 'ki o tsukete',
+        nuance: 'Hati-hati di jalan / berhati-hatilah (bukan untuk orang sakit).',
+      },
+    ],
+    exampleJp: '風邪ですか。どうぞお大事に。',
+    exampleId: 'Apakah Anda masuk angin? Semoga lekas sembuh ya.',
+  },
 };
 
 /**
@@ -501,8 +545,19 @@ export function getWordNuanceInfo(word: {
   if (WORD_NUANCE_REGISTRY[kj]) return WORD_NUANCE_REGISTRY[kj];
   if (WORD_NUANCE_REGISTRY[rd]) return WORD_NUANCE_REGISTRY[rd];
 
+  // Bersihkan tanda kurung seperti "おだいじに (お大事に)"
+  const cleanJp = jp.replace(/[（\(].*?[）\)]/g, '').trim();
+  const cleanKj = kj.replace(/[（\(].*?[）\)]/g, '').trim();
+  if (cleanJp && WORD_NUANCE_REGISTRY[cleanJp]) return WORD_NUANCE_REGISTRY[cleanJp];
+  if (cleanKj && WORD_NUANCE_REGISTRY[cleanKj]) return WORD_NUANCE_REGISTRY[cleanKj];
+
+  const inParenMatch = jp.match(/[（\(](.*?)[）\)]/);
+  if (inParenMatch && inParenMatch[1] && WORD_NUANCE_REGISTRY[inParenMatch[1].trim()]) {
+    return WORD_NUANCE_REGISTRY[inParenMatch[1].trim()];
+  }
+
   // Cek bentuk dasar jika berakhiran "な"
-  const strippedJp = jp.replace(/[（(]な[）)]|な$/, '').trim();
+  const strippedJp = cleanJp.replace(/[（(]な[）)]|な$/, '').trim();
   if (WORD_NUANCE_REGISTRY[strippedJp]) return WORD_NUANCE_REGISTRY[strippedJp];
 
   return null;
