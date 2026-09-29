@@ -17,6 +17,9 @@ export type WordClassType =
   | 'verb_1'
   | 'verb_2'
   | 'verb_3'
+  | 'numeral'
+  | 'time_adverb'
+  | 'counter'
   | 'noun'
   | 'adverb'
   | 'conjunction'
@@ -42,6 +45,7 @@ export interface WordClassification {
 }
 
 // Subkategori yang pasti merupakan KATA BENDA (Nomina / 名詞)
+// CATATAN: Tanggal/kalender, angka, dan keterangan waktu TIDAK dimasukkan ke kata benda
 const NOUN_SUBCATEGORIES = new Set([
   'benda_rumah',
   'makanan',
@@ -50,8 +54,6 @@ const NOUN_SUBCATEGORIES = new Set([
   'tubuh_kesehatan',
   'anggota_tubuh',
   'orang_profesi',
-  'angka_waktu',
-  'waktu_kalender',
   'tempat',
   'masyarakat_tempat',
   'arah_posisi',
@@ -62,8 +64,6 @@ const NOUN_SUBCATEGORIES = new Set([
   'profesi_sekolah',
   'sekolah_kantor',
   'kata_benda',
-  'kanji_angka',
-  'kanji_waktu',
   'kanji_alam',
   'kanji_manusia',
   'kanji_arah',
@@ -1023,7 +1023,7 @@ const KNOWN_NOUN_WORDS = new Set([
   '雪', 'ゆき', 'yuki',
 ]);
 
-// Populasikan nomina dari vocab1000 secara otomatis (hanya yang bukan kata kerja/kata sifat)
+// Populasikan nomina dari vocab1000 secara otomatis (hanya yang bukan kata kerja/kata sifat/angka waktu)
 vocab1000
   .filter(
     (v) =>
@@ -1031,6 +1031,7 @@ vocab1000
       v.subCategory !== 'kata_sifat' &&
       v.subCategory !== 'keterangan_fukushi' &&
       v.subCategory !== 'salam' &&
+      v.subCategory !== 'angka_waktu' &&
       !/(直す|乗る|進める|する|ます|ました)$/.test(v.japanese || '') &&
       !/^(me[mnlrng]?[a-z]+|ber[a-z]+)\b/i.test((v.meaningId || '').toLowerCase())
   )
@@ -1050,6 +1051,146 @@ vocab1000
     if (v.kanji) KNOWN_CURATED_VERBS.add(v.kanji.replace(/[\s\(\)（）]/g, ''));
     if (v.reading) KNOWN_CURATED_VERBS.add(v.reading.toLowerCase().replace(/[\s\(\)（）]/g, ''));
   });
+
+// ----------------------------------------------------
+// HIMPUNAN KATA BILANGAN TINGKAT / URUTAN & TANGGAL (数詞・日付)
+// ----------------------------------------------------
+const KNOWN_DATE_ORDINAL_WORDS = new Set([
+  'ついたち', '一日', 'tsuitachi', '1日',
+  'ふつか', '二日', 'futsuka', '2日',
+  'みっか', '三日', 'mikka', '3日',
+  'よっか', '四日', 'yokka', '4日',
+  'いつか', '五日', 'itsuka', '5日',
+  'むいか', '六日', 'muika', '6日',
+  'なのか', '七日', 'nanoka', '7日',
+  'ようか', '八日', 'youka', '8日',
+  'ここのか', '九日', 'kokonoka', '9日',
+  'とおか', '十日', 'tooka', '10日',
+  'じゅういちにち', '十一日', '11日',
+  'じゅうににち', '十二日', '12日',
+  'じゅうさんにち', '十三日', '13日',
+  'じゅうよっか', '十四日', 'juuyokka', '14日',
+  'じゅうごにち', '十五日', '15日',
+  'じゅうろくにち', '十六日', '16日',
+  'じゅうしちにち', 'じゅうななにち', '十七日', '17日',
+  'じゅうはちにち', '十八日', '18日',
+  'じゅうくにち', 'じゅうきゅうにち', '十九日', '19日',
+  'はつか', '二十日', 'hatsuka', '20日',
+  'にじゅういちにち', '二十一日', '21日',
+  'にじゅうににち', '二十二日', '22日',
+  'にじゅうさんにち', '二十三日', '23日',
+  'にじゅうよっか', '二十四日', 'nijuuyokka', '24日',
+  'にじゅうごにち', '二十五日', '25日',
+  'にじゅうろくにち', '二十六日', '26日',
+  'にじゅうしちにち', 'にじゅうななにち', '二十七日', '27日',
+  'にじゅうはちにち', '二十八日', '28日',
+  'にじゅうくにち', 'にじゅうきゅうにち', '二十九日', '29日',
+  'さんじゅうにち', '三十日', '30日',
+  'さんじゅういちにち', '三十一日', '31日',
+  'なんにち', '何日', 'nannichi',
+  'がんじつ', '元日', 'ganjitsu',
+  'ばんめ', '番目', 'banme',
+  'いちばんめ', '一番目', '一番', 'いちばん',
+  'にばんめ', '二番目', '二番', 'にばん',
+  'さんばんめ', '三番目', '三番', 'さんばん',
+]);
+
+// ----------------------------------------------------
+// HIMPUNAN KATA BILANGAN POKOK (数詞 / SUUSHI)
+// ----------------------------------------------------
+const KNOWN_NUMERAL_WORDS = new Set([
+  'ゼロ', 'れい', '零', 'zero', 'rei',
+  'いち', '一', 'ichi',
+  'に', '二', 'ni',
+  'さん', '三', 'san',
+  'よん', 'し', '四', 'yon', 'shi',
+  'ご', '五', 'go',
+  'ろく', '六', 'roku',
+  'なな', 'しち', '七', 'nana', 'shichi',
+  'はち', '八', 'hachi',
+  'きゅう', 'く', '九', 'kyuu', 'ku',
+  'じゅう', '十', 'juu',
+  'ひゃく', '百', 'hyaku',
+  'せん', '千', 'sen',
+  'まん', '万', 'man',
+  'おく', '億', 'oku',
+  'ちょう', '兆', 'chou',
+  'ひとつ', '一つ', 'hitotsu',
+  'ふたつ', '二つ', 'futatsu',
+  'みっつ', '三つ', 'mittsu',
+  'よっつ', '四つ', 'yottsu',
+  'いつつ', '五つ', 'itsutsu',
+  'むっつ', '六つ', 'muttsu',
+  'ななつ', '七つ', 'nanatsu',
+  'やっつ', '八つ', 'yattsu',
+  'ここのつ', '九つ', 'kokonotsu',
+  'とお', '十', 'too',
+  'いくつ', 'ikutsu',
+  'ひとり', '一人', 'hitori',
+  'ふたり', '二人', 'futari',
+  'さんにん', '三人', 'sannin',
+  'よにん', '四人', 'yonin',
+  'ごにん', '五人', 'gonin',
+  'ろくにん', '六人', 'rokunin',
+  'ななにん', '七人', 'nananin',
+  'はちにん', '八人', 'hachinin',
+  'きゅうにん', '九人', 'kyuunin',
+  'じゅうにん', '十人', 'juunin',
+  'なんにん', '何人', 'nannin',
+  'いくら', 'ikura',
+]);
+
+// ----------------------------------------------------
+// HIMPUNAN KETERANGAN WAKTU (時相名詞・副詞 / TEMPORAL)
+// ----------------------------------------------------
+const KNOWN_TEMPORAL_WORDS = new Set([
+  'きょう', '今日', 'kyou',
+  'あした', '明日', 'ashita',
+  'あす', 'asu',
+  'あさって', '明後日', 'asatte',
+  'きのう', '昨日', 'kinou',
+  'おととい', '一昨日', 'ototoi',
+  'けさ', '今朝', 'kesa',
+  'こんばん', '今晩', 'konban',
+  'ゆうがた', '夕方', 'yuugata',
+  'ひるま', '昼間', 'hiruma',
+  'まいにち', '毎日', 'mainichi',
+  'まいあさ', '毎朝', 'maiasa',
+  'まいばん', '毎晩', 'maiban',
+  'まいしゅう', '毎週', 'maishuu',
+  'まいつき', '毎月', 'maitsuki',
+  'まいとし', 'まいねん', '毎年', 'maitoshi', 'mainen',
+  'こんしゅう', '今週', 'konshuu',
+  'らいしゅう', '来週', 'raishuu',
+  'せんしゅう', '先週', 'senshuu',
+  'さらいしゅう', '再来週', 'saraishuu',
+  'せんせんしゅう', '先々週', 'sensenshuu',
+  'こんげつ', '今月', 'kongetsu',
+  'らいげつ', '来月', 'raigetsu',
+  'せんげつ', '先月', 'sengetsu',
+  'さらいげつ', '再来月', 'saraigetsu',
+  'せんせんげつ', '先々月', 'sensengetsu',
+  'ことし', '今年', 'kotoshi',
+  'らいねん', '来年', 'rainen',
+  'きょねん', '去年', 'kyonen',
+  'さらいねん', '再来年', 'sarainen',
+  'おととし', '一昨年', 'ototoshi',
+  'いま', '今', 'ima',
+  'いまごろ', '今頃', 'imagoro',
+  'いまでは', 'imadewa',
+  'いつ', 'itsu',
+  'いつか', 'itsuka',
+  'いつでも', 'itsudemo',
+  'さっき', 'sakki',
+  'このごろ', 'konogoro',
+  'さいきん', '最近', 'saikin',
+  'もうすぐ', 'mousugu',
+  'そろそろ', 'sorosoro',
+  'これから', 'korekara',
+  'あとで', '後で', 'atode',
+  'しょうらい', '将来', 'shourai',
+  'むかし', '昔', 'mukashi',
+]);
 
 /**
  * Klasifikasikan jenis/golongan kata dari suatu CardItem secara teliti & akurat.
@@ -1104,7 +1245,48 @@ export function getWordClassification(item: CardItem): WordClassification {
     };
   }
 
-  // 2. Satuan Bilangan / Penghitung (助数詞) & Kata Tanya Bilangan
+  // 2. KATA BILANGAN TINGKAT / URUTAN & TANGGAL (数詞・日付)
+  // Termasuk ついたち (一日), ふつか (二日), 1日, 2日, 〜番目, dsb.
+  const isDateOrOrdinal =
+    KNOWN_DATE_ORDINAL_WORDS.has(cleanJp) ||
+    KNOWN_DATE_ORDINAL_WORDS.has(cleanFuri) ||
+    KNOWN_DATE_ORDINAL_WORDS.has(cleanReading) ||
+    /^(\d+|[一二三四五六七八九十百]+)日$/.test(cleanJp) ||
+    /^(\d+|[一二三四五六七八九十百]+)番目?$/.test(cleanJp) ||
+    /^(tanggal\s*\d+|hari ke-\d+|hari pertama tahun baru)/i.test(meaning) ||
+    (meaning.includes('tanggal') && (subCat === 'angka_waktu' || subCat.includes('waktu')));
+
+  if (isDateOrOrdinal) {
+    return createDateOrdinalInfo();
+  }
+
+  // 3. KATA BILANGAN POKOK / NUMERALIA (数詞 / SUUSHI)
+  // Termasuk いち, に, さん, ひとつ, ふたつ, ひとり, ふたり, dsb.
+  const isNumeralWord =
+    KNOWN_NUMERAL_WORDS.has(cleanJp) ||
+    KNOWN_NUMERAL_WORDS.has(cleanFuri) ||
+    KNOWN_NUMERAL_WORDS.has(cleanReading) ||
+    /^[\d０-９]+$/.test(cleanJp) ||
+    (subCat === 'kanji_angka' && !cleanJp.includes('年') && !cleanJp.includes('月')) ||
+    (/^(angka|nomor|jumlah|bilangan|nominal)\b/i.test(meaning) && !cleanJp.includes('電話'));
+
+  if (isNumeralWord) {
+    return createNumeralInfo();
+  }
+
+  // 4. KETERANGAN WAKTU (時相名詞・副詞 / TEMPORAL)
+  // Termasuk 今日, 明日, 昨日, 毎日, 今, 来週, 先月, 今年, dsb.
+  const isTemporalWord =
+    KNOWN_TEMPORAL_WORDS.has(cleanJp) ||
+    KNOWN_TEMPORAL_WORDS.has(cleanFuri) ||
+    KNOWN_TEMPORAL_WORDS.has(cleanReading) ||
+    /^(besok|kemarin|lusa|hari ini|tadi pagi|malam ini|siang ini|setiap hari|setiap pagi|setiap malam|setiap minggu|setiap bulan|setiap tahun|minggu ini|minggu depan|minggu lalu|bulan ini|bulan depan|bulan lalu|tahun ini|tahun depan|tahun lalu|sekarang|suatu hari|kapan-kapan|kapan)\b/i.test(meaning);
+
+  if (isTemporalWord) {
+    return createTemporalInfo();
+  }
+
+  // 5. Satuan Bilangan / Penghitung (助数詞) & Kata Tanya Bilangan
   const isQuestionCounter =
     cleanJp.startsWith('何') &&
     /^(何時|何分|何秒|何日|何月|何年|何人|何枚|何台|何冊|何本|何個|何回|何階|何歳|何才|何匹|何杯|何度|何番|何号|何軒|何機|何件|何足|何着|何通|何曲)$/.test(cleanJp);
@@ -1534,6 +1716,42 @@ export function getWordClassification(item: CardItem): WordClassification {
 }
 
 // Helper factory functions
+function createDateOrdinalInfo(): WordClassification {
+  return {
+    type: 'numeral',
+    label: 'Kata Bilangan Urutan / Tanggal (数詞 / 日付)',
+    shortLabel: 'Bilangan / Tanggal',
+    kanjiLabel: '数詞・日付',
+    badgeClass: 'bg-amber-50 dark:bg-amber-950/70 text-amber-900 dark:text-amber-300 border-amber-300 dark:border-amber-700/80 font-bold',
+    icon: '📅',
+    grammarHint: 'Kata bilangan (numeralia) tingkat/urutan yang berfungsi sebagai penanda tanggal / keterangan waktu (bukan nomina benda biasa).',
+  };
+}
+
+function createNumeralInfo(): WordClassification {
+  return {
+    type: 'numeral',
+    label: 'Kata Bilangan (数詞 / Suushi)',
+    shortLabel: 'Kata Bilangan',
+    kanjiLabel: '数詞',
+    badgeClass: 'bg-amber-50 dark:bg-amber-950/70 text-amber-900 dark:text-amber-300 border-amber-300 dark:border-amber-700/80 font-bold',
+    icon: '🔢',
+    grammarHint: 'Kata bilangan (numeralia) penunjuk kuantitas atau nominal.',
+  };
+}
+
+function createTemporalInfo(): WordClassification {
+  return {
+    type: 'time_adverb',
+    label: 'Keterangan Waktu (時相名詞・副詞)',
+    shortLabel: 'Keterangan Waktu',
+    kanjiLabel: '時相詞',
+    badgeClass: 'bg-cyan-50 dark:bg-cyan-950/70 text-cyan-900 dark:text-cyan-300 border-cyan-300 dark:border-cyan-700/80 font-bold',
+    icon: '⏱️',
+    grammarHint: 'Kata penunjuk waktu (temporal noun/adverb) yang berfungsi sebagai keterangan waktu tanpa partikel に (misal: 今日, 明日, 毎日).',
+  };
+}
+
 function createNounInfo(): WordClassification {
   return {
     type: 'noun',
@@ -1548,11 +1766,11 @@ function createNounInfo(): WordClassification {
 
 function createCounterNounInfo(): WordClassification {
   return {
-    type: 'noun',
+    type: 'counter',
     label: 'Satuan Bilangan (助数詞 / Joshuushi)',
-    shortLabel: 'Satuan / Bilangan',
+    shortLabel: 'Satuan / Penghitung',
     kanjiLabel: '助数詞',
-    badgeClass: 'bg-amber-50 dark:bg-amber-950/70 text-amber-800 dark:text-amber-300 border-amber-200/80 dark:border-amber-800/80 font-bold',
+    badgeClass: 'bg-amber-50 dark:bg-amber-950/70 text-amber-900 dark:text-amber-300 border-amber-300 dark:border-amber-700/80 font-bold',
     icon: '🔢',
     grammarHint: 'Penghitung satuan waktu (jam/menit), orang, barang, urutan, dsb.',
   };

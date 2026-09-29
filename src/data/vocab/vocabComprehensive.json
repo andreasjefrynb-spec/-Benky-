@@ -450,7 +450,7 @@
   {
     "id": "voc-c-0033",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "あさって",
     "kanji": "明後日",
     "reading": "asatte",
@@ -478,7 +478,7 @@
   {
     "id": "voc-c-0035",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "あした",
     "kanji": "明日",
     "reading": "ashita",
@@ -520,7 +520,7 @@
   {
     "id": "voc-c-0038",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "あす",
     "kanji": "明日",
     "reading": "asu",
@@ -1570,7 +1570,7 @@
   {
     "id": "voc-c-0113",
     "category": "vocab",
-    "subCategory": "kata_sifat",
+    "subCategory": "kata_benda",
     "japanese": "いけばな",
     "kanji": "生け花",
     "reading": "ikebana",
@@ -1794,7 +1794,7 @@
   {
     "id": "voc-c-0129",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "いち",
     "kanji": "位置",
     "reading": "ichi",
@@ -2018,7 +2018,7 @@
   {
     "id": "voc-c-0145",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "いつ",
     "kanji": "",
     "reading": "itsu",
@@ -2032,7 +2032,7 @@
   {
     "id": "voc-c-0146",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "いつか",
     "kanji": "",
     "reading": "itsuka",
@@ -2046,7 +2046,7 @@
   {
     "id": "voc-c-0147",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "いつつ",
     "kanji": "",
     "reading": "itsutsu",
@@ -2060,7 +2060,7 @@
   {
     "id": "voc-c-0148",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "いつでも",
     "kanji": "",
     "reading": "itsudemo",
@@ -2130,7 +2130,7 @@
   {
     "id": "voc-c-0153",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "いま",
     "kanji": "今",
     "reading": "ima",
@@ -2172,7 +2172,7 @@
   {
     "id": "voc-c-0156",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "いまでは",
     "kanji": "今では",
     "reading": "imadeha",
@@ -4916,7 +4916,7 @@
   {
     "id": "voc-c-0352",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "おととい",
     "kanji": "一昨日",
     "reading": "ototoi",
@@ -8024,7 +8024,7 @@
   {
     "id": "voc-c-0574",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "がんじつ",
     "kanji": "元日",
     "reading": "ganjitsu",
@@ -8514,7 +8514,7 @@
   {
     "id": "voc-c-0609",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "きのう",
     "kanji": "昨日",
     "reading": "kinou",
@@ -8822,7 +8822,7 @@
   {
     "id": "voc-c-0631",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "きょう",
     "kanji": "今日",
     "reading": "kyou",
@@ -9004,7 +9004,7 @@
   {
     "id": "voc-c-0644",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "きょねん",
     "kanji": "去年",
     "reading": "kyonen",
@@ -9984,7 +9984,7 @@
   {
     "id": "voc-c-0714",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "けさ",
     "kanji": "今朝",
     "reading": "kesa",
@@ -11020,7 +11020,7 @@
   {
     "id": "voc-c-0788",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ここのか",
     "kanji": "九日",
     "reading": "kokonoka",
@@ -11034,7 +11034,7 @@
   {
     "id": "voc-c-0789",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ここのつ",
     "kanji": "",
     "reading": "kokonotsu",
@@ -11216,7 +11216,7 @@
   {
     "id": "voc-c-0802",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ことし",
     "kanji": "今年",
     "reading": "kotoshi",
@@ -11846,7 +11846,7 @@
   {
     "id": "voc-c-0847",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "こんげつ",
     "kanji": "今月",
     "reading": "kongetsu",
@@ -11860,7 +11860,7 @@
   {
     "id": "voc-c-0848",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "こんしゅう",
     "kanji": "今週",
     "reading": "konshuu",
@@ -11930,7 +11930,7 @@
   {
     "id": "voc-c-0853",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "こんばん",
     "kanji": "今晩",
     "reading": "konban",
@@ -11958,7 +11958,7 @@
   {
     "id": "voc-c-0855",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "こんや",
     "kanji": "今夜",
     "reading": "konya",
@@ -15220,7 +15220,7 @@
   {
     "id": "voc-c-1088",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "じゅうよっか",
     "kanji": "十四日",
     "reading": "juuyokka",
@@ -16592,7 +16592,7 @@
   {
     "id": "voc-c-1186",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "せん",
     "kanji": "線",
     "reading": "sen",
@@ -16606,7 +16606,7 @@
   {
     "id": "voc-c-1187",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "せんげつ",
     "kanji": "先月",
     "reading": "sengetsu",
@@ -16620,7 +16620,7 @@
   {
     "id": "voc-c-1188",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "せんしゅう",
     "kanji": "先週",
     "reading": "senshuu",
@@ -19700,7 +19700,7 @@
   {
     "id": "voc-c-1408",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ついたち",
     "kanji": "一日",
     "reading": "tsuitachi",
@@ -20428,7 +20428,7 @@
   {
     "id": "voc-c-1460",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "てん",
     "kanji": "点",
     "reading": "ten",
@@ -21114,7 +21114,7 @@
   {
     "id": "voc-c-1509",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "とお",
     "kanji": "",
     "reading": "too",
@@ -21142,7 +21142,7 @@
   {
     "id": "voc-c-1511",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "とおか",
     "kanji": "十日",
     "reading": "tooka",
@@ -22584,7 +22584,7 @@
   {
     "id": "voc-c-1614",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ななつ",
     "kanji": "",
     "reading": "nanatsu",
@@ -22668,7 +22668,7 @@
   {
     "id": "voc-c-1620",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "なのか",
     "kanji": "七日",
     "reading": "nanoka",
@@ -22892,7 +22892,7 @@
   {
     "id": "voc-c-1636",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "なんがい",
     "kanji": "何階",
     "reading": "nangai",
@@ -22906,7 +22906,7 @@
   {
     "id": "voc-c-1637",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "なんがつ",
     "kanji": "何月",
     "reading": "nangatsu",
@@ -22920,7 +22920,7 @@
   {
     "id": "voc-c-1638",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "なんさい",
     "kanji": "何歳",
     "reading": "nansai",
@@ -22948,7 +22948,7 @@
   {
     "id": "voc-c-1640",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "なんにち",
     "kanji": "何日",
     "reading": "nannichi",
@@ -22962,7 +22962,7 @@
   {
     "id": "voc-c-1641",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "なんねん",
     "kanji": "何年",
     "reading": "nannen",
@@ -22990,7 +22990,7 @@
   {
     "id": "voc-c-1643",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "なんぷん",
     "kanji": "何分",
     "reading": "nanpun",
@@ -23018,7 +23018,7 @@
   {
     "id": "voc-c-1645",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "なんんじ",
     "kanji": "何時",
     "reading": "nannji",
@@ -23186,7 +23186,7 @@
   {
     "id": "voc-c-1657",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "にじゅうよっか",
     "kanji": "二十四日",
     "reading": "nijuuyokka",
@@ -24684,7 +24684,7 @@
   {
     "id": "voc-c-1764",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "はつか",
     "kanji": "二十日",
     "reading": "hatsuka",
@@ -25202,7 +25202,7 @@
   {
     "id": "voc-c-1801",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ばんごう",
     "kanji": "番号",
     "reading": "bangou",
@@ -25538,7 +25538,7 @@
   {
     "id": "voc-c-1825",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ひとつ",
     "kanji": "",
     "reading": "hitotsu",
@@ -25580,7 +25580,7 @@
   {
     "id": "voc-c-1828",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ひとり",
     "kanji": "",
     "reading": "hitori",
@@ -25762,7 +25762,7 @@
   {
     "id": "voc-c-1841",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ひゃく",
     "kanji": "百",
     "reading": "hyaku",
@@ -25986,7 +25986,7 @@
   {
     "id": "voc-c-1857",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "びょう",
     "kanji": "秒",
     "reading": "byou",
@@ -26294,7 +26294,7 @@
   {
     "id": "voc-c-1879",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ふたつ",
     "kanji": "",
     "reading": "futatsu",
@@ -26308,7 +26308,7 @@
   {
     "id": "voc-c-1880",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ふたり",
     "kanji": "",
     "reading": "futari",
@@ -26350,7 +26350,7 @@
   {
     "id": "voc-c-1883",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ふつか",
     "kanji": "二日",
     "reading": "futsuka",
@@ -27680,7 +27680,7 @@
   {
     "id": "voc-c-1978",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "まいあさ",
     "kanji": "毎朝",
     "reading": "maiasa",
@@ -27736,7 +27736,7 @@
   {
     "id": "voc-c-1982",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "まいにち",
     "kanji": "毎日",
     "reading": "mainichi",
@@ -27750,7 +27750,7 @@
   {
     "id": "voc-c-1983",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "まいばん",
     "kanji": "毎晩",
     "reading": "maiban",
@@ -28352,7 +28352,7 @@
   {
     "id": "voc-c-2026",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "まん",
     "kanji": "万",
     "reading": "man",
@@ -28618,7 +28618,7 @@
   {
     "id": "voc-c-2045",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "みっか",
     "kanji": "三日",
     "reading": "mikka",
@@ -28632,7 +28632,7 @@
   {
     "id": "voc-c-2046",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "みっつ",
     "kanji": "",
     "reading": "mittsu",
@@ -28828,7 +28828,7 @@
   {
     "id": "voc-c-2060",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "むいか",
     "kanji": "六日",
     "reading": "muika",
@@ -29080,7 +29080,7 @@
   {
     "id": "voc-c-2078",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "むっつ",
     "kanji": "",
     "reading": "muttsu",
@@ -30186,7 +30186,7 @@
   {
     "id": "voc-c-2157",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "やっつ",
     "kanji": "",
     "reading": "yattsu",
@@ -30494,7 +30494,7 @@
   {
     "id": "voc-c-2179",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ゆうべ",
     "kanji": "昨夜",
     "reading": "yuube",
@@ -30732,7 +30732,7 @@
   {
     "id": "voc-c-2196",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "ようか",
     "kanji": "八日",
     "reading": "youka",
@@ -30970,7 +30970,7 @@
   {
     "id": "voc-c-2213",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "よっか",
     "kanji": "四日",
     "reading": "yokka",
@@ -30984,7 +30984,7 @@
   {
     "id": "voc-c-2214",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "よっつ",
     "kanji": "",
     "reading": "yottsu",
@@ -31194,7 +31194,7 @@
   {
     "id": "voc-c-2229",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "らいげつ",
     "kanji": "来月",
     "reading": "raigetsu",
@@ -31208,7 +31208,7 @@
   {
     "id": "voc-c-2230",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "らいしゅう",
     "kanji": "来週",
     "reading": "raishuu",
@@ -31222,7 +31222,7 @@
   {
     "id": "voc-c-2231",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "らいねん",
     "kanji": "来年",
     "reading": "rainen",
@@ -57136,7 +57136,7 @@
   {
     "id": "voc-c-4082",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～い",
     "kanji": "～位",
     "reading": "~i",
@@ -57150,7 +57150,7 @@
   {
     "id": "voc-c-4083",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～いか",
     "kanji": "～以上",
     "reading": "~ika",
@@ -57164,7 +57164,7 @@
   {
     "id": "voc-c-4084",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～いかがですか",
     "kanji": "",
     "reading": "~ikagadesuka",
@@ -57178,7 +57178,7 @@
   {
     "id": "voc-c-4085",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～いじょう",
     "kanji": "～以上",
     "reading": "~ijou",
@@ -57206,7 +57206,7 @@
   {
     "id": "voc-c-4087",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～えん",
     "kanji": "～階",
     "reading": "~en",
@@ -57220,7 +57220,7 @@
   {
     "id": "voc-c-4088",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～かい",
     "kanji": "～枚",
     "reading": "~kai",
@@ -57234,7 +57234,7 @@
   {
     "id": "voc-c-4089",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～かげつ",
     "kanji": "～週間",
     "reading": "~kagetsu",
@@ -57248,7 +57248,7 @@
   {
     "id": "voc-c-4090",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～かた",
     "kanji": "読み方",
     "reading": "~kata",
@@ -57262,7 +57262,7 @@
   {
     "id": "voc-c-4091",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～から",
     "kanji": "",
     "reading": "~kara",
@@ -57290,7 +57290,7 @@
   {
     "id": "voc-c-4093",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～かん",
     "kanji": "自由に",
     "reading": "~kan",
@@ -57304,7 +57304,7 @@
   {
     "id": "voc-c-4094",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～か～",
     "kanji": "",
     "reading": "~ka~",
@@ -57318,7 +57318,7 @@
   {
     "id": "voc-c-4095",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～がつ",
     "kanji": "～月",
     "reading": "~gatsu",
@@ -57332,7 +57332,7 @@
   {
     "id": "voc-c-4096",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～がわ",
     "kanji": "忘れ物",
     "reading": "~gawa",
@@ -57346,7 +57346,7 @@
   {
     "id": "voc-c-4097",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～が～",
     "kanji": "",
     "reading": "~ga~",
@@ -57360,7 +57360,7 @@
   {
     "id": "voc-c-4098",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～き",
     "kanji": "洗濯機",
     "reading": "~ki",
@@ -57374,7 +57374,7 @@
   {
     "id": "voc-c-4099",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～きょうしつ",
     "kanji": "台所",
     "reading": "~kyoushitsu",
@@ -57388,7 +57388,7 @@
   {
     "id": "voc-c-4100",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～くん",
     "kanji": "終わり",
     "reading": "~kun",
@@ -57402,7 +57402,7 @@
   {
     "id": "voc-c-4101",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ぐらい",
     "kanji": "",
     "reading": "~gurai",
@@ -57416,7 +57416,7 @@
   {
     "id": "voc-c-4102",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～けど",
     "kanji": "",
     "reading": "~kedo",
@@ -57430,7 +57430,7 @@
   {
     "id": "voc-c-4103",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～こ",
     "kanji": "～個",
     "reading": "~ko",
@@ -57444,7 +57444,7 @@
   {
     "id": "voc-c-4104",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ご",
     "kanji": "～後",
     "reading": "~go",
@@ -57458,7 +57458,7 @@
   {
     "id": "voc-c-4105",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ごう",
     "kanji": "～便",
     "reading": "~gou",
@@ -57472,7 +57472,7 @@
   {
     "id": "voc-c-4106",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ごうしつ",
     "kanji": "～号室",
     "reading": "~goushitsu",
@@ -57486,7 +57486,7 @@
   {
     "id": "voc-c-4107",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ごろ",
     "kanji": "",
     "reading": "~goro",
@@ -57500,7 +57500,7 @@
   {
     "id": "voc-c-4108",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～さい",
     "kanji": "～歳",
     "reading": "~sai",
@@ -57514,7 +57514,7 @@
   {
     "id": "voc-c-4109",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～さつ",
     "kanji": "整理します",
     "reading": "~satsu",
@@ -57528,7 +57528,7 @@
   {
     "id": "voc-c-4110",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～さま",
     "kanji": "貿易",
     "reading": "~sama",
@@ -57542,7 +57542,7 @@
   {
     "id": "voc-c-4111",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～しか",
     "kanji": "",
     "reading": "~shika",
@@ -57556,7 +57556,7 @@
   {
     "id": "voc-c-4112",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～しゅうかん",
     "kanji": "～時間",
     "reading": "~shuukan",
@@ -57570,7 +57570,7 @@
   {
     "id": "voc-c-4113",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～じ",
     "kanji": "～時",
     "reading": "~ji",
@@ -57584,7 +57584,7 @@
   {
     "id": "voc-c-4114",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～じかん",
     "kanji": "～時間",
     "reading": "~jikan",
@@ -57598,7 +57598,7 @@
   {
     "id": "voc-c-4115",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～じゅう",
     "kanji": "世界中",
     "reading": "~juu",
@@ -57612,7 +57612,7 @@
   {
     "id": "voc-c-4116",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～じん",
     "kanji": "～人",
     "reading": "~jin",
@@ -57626,7 +57626,7 @@
   {
     "id": "voc-c-4117",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ずつ",
     "kanji": "",
     "reading": "~zutsu",
@@ -57640,7 +57640,7 @@
   {
     "id": "voc-c-4118",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～せい",
     "kanji": "電源",
     "reading": "~sei",
@@ -57654,7 +57654,7 @@
   {
     "id": "voc-c-4119",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～せいき",
     "kanji": "歴史",
     "reading": "~seiki",
@@ -57668,7 +57668,7 @@
   {
     "id": "voc-c-4120",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～だい",
     "kanji": "電話代",
     "reading": "~dai",
@@ -57682,7 +57682,7 @@
   {
     "id": "voc-c-4121",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～だけ",
     "kanji": "",
     "reading": "~dake",
@@ -57710,7 +57710,7 @@
   {
     "id": "voc-c-4123",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ちゃん",
     "kanji": "",
     "reading": "~chan",
@@ -57724,7 +57724,7 @@
   {
     "id": "voc-c-4124",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ちゅう",
     "kanji": "営業中",
     "reading": "~chuu",
@@ -57752,7 +57752,7 @@
   {
     "id": "voc-c-4126",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～てん",
     "kanji": "大好きな",
     "reading": "~ten",
@@ -57808,7 +57808,7 @@
   {
     "id": "voc-c-4130",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～とか～とか",
     "kanji": "",
     "reading": "~toka~toka",
@@ -57836,7 +57836,7 @@
   {
     "id": "voc-c-4132",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～と～",
     "kanji": "",
     "reading": "~to~",
@@ -57850,7 +57850,7 @@
   {
     "id": "voc-c-4133",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～にち",
     "kanji": "二十四日",
     "reading": "~nichi",
@@ -57864,7 +57864,7 @@
   {
     "id": "voc-c-4134",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～について",
     "kanji": "",
     "reading": "~nitsuite",
@@ -57878,7 +57878,7 @@
   {
     "id": "voc-c-4135",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～にとって",
     "kanji": "",
     "reading": "~nitotte",
@@ -57892,7 +57892,7 @@
   {
     "id": "voc-c-4136",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～によって",
     "kanji": "",
     "reading": "~niyotte",
@@ -57906,7 +57906,7 @@
   {
     "id": "voc-c-4137",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～によると",
     "kanji": "",
     "reading": "~niyoruto",
@@ -57920,7 +57920,7 @@
   {
     "id": "voc-c-4138",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～にん",
     "kanji": "～人",
     "reading": "~nin",
@@ -57934,7 +57934,7 @@
   {
     "id": "voc-c-4139",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ねん",
     "kanji": "来年",
     "reading": "~nen",
@@ -57948,7 +57948,7 @@
   {
     "id": "voc-c-4140",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ねん～くみ",
     "kanji": "遠慮なく",
     "reading": "~nen~kumi",
@@ -57962,7 +57962,7 @@
   {
     "id": "voc-c-4141",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～のかわりに",
     "kanji": "～の代わりに",
     "reading": "~nokawarini",
@@ -57976,7 +57976,7 @@
   {
     "id": "voc-c-4142",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～のところ",
     "kanji": "～の所",
     "reading": "~notokoro",
@@ -57990,7 +57990,7 @@
   {
     "id": "voc-c-4143",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～のほう",
     "kanji": "～の方",
     "reading": "~nohou",
@@ -58004,7 +58004,7 @@
   {
     "id": "voc-c-4144",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～はい、ばい、ぱい",
     "kanji": "～杯",
     "reading": "~hai, bai, pai",
@@ -58032,7 +58032,7 @@
   {
     "id": "voc-c-4146",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ばい",
     "kanji": "量",
     "reading": "~bai",
@@ -58046,7 +58046,7 @@
   {
     "id": "voc-c-4147",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ばん",
     "kanji": "～番",
     "reading": "~ban",
@@ -58060,7 +58060,7 @@
   {
     "id": "voc-c-4148",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ばんせん",
     "kanji": "～番線",
     "reading": "~bansen",
@@ -58074,7 +58074,7 @@
   {
     "id": "voc-c-4149",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～びん",
     "kanji": "大きさ",
     "reading": "~bin",
@@ -58102,7 +58102,7 @@
   {
     "id": "voc-c-4151",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ぶん",
     "kanji": "材料",
     "reading": "~bun",
@@ -58116,7 +58116,7 @@
   {
     "id": "voc-c-4152",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～へん",
     "kanji": "この辺",
     "reading": "~hen",
@@ -58130,7 +58130,7 @@
   {
     "id": "voc-c-4153",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～べん",
     "kanji": "運動会",
     "reading": "~ben",
@@ -58144,7 +58144,7 @@
   {
     "id": "voc-c-4154",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ほど",
     "kanji": "",
     "reading": "~hodo",
@@ -58158,7 +58158,7 @@
   {
     "id": "voc-c-4155",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ほん、ぼん、ぽん",
     "kanji": "～本",
     "reading": "~hon, bon, pon",
@@ -58172,7 +58172,7 @@
   {
     "id": "voc-c-4156",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～まい",
     "kanji": "～台",
     "reading": "~mai",
@@ -58186,7 +58186,7 @@
   {
     "id": "voc-c-4157",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～まで",
     "kanji": "",
     "reading": "~made",
@@ -58214,7 +58214,7 @@
   {
     "id": "voc-c-4159",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～め",
     "kanji": "何回も",
     "reading": "~me",
@@ -58242,7 +58242,7 @@
   {
     "id": "voc-c-4161",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～や",
     "kanji": "喫茶店",
     "reading": "~ya",
@@ -58256,7 +58256,7 @@
   {
     "id": "voc-c-4162",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～をください",
     "kanji": "",
     "reading": "~okudasai",
@@ -58270,7 +58270,7 @@
   {
     "id": "voc-c-4163",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～キロ",
     "kanji": "",
     "reading": "~kiro",
@@ -58284,7 +58284,7 @@
   {
     "id": "voc-c-4164",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～グラム",
     "kanji": "",
     "reading": "~guramu",
@@ -58298,7 +58298,7 @@
   {
     "id": "voc-c-4165",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～センチ",
     "kanji": "",
     "reading": "~senchi",
@@ -58312,7 +58312,7 @@
   {
     "id": "voc-c-4166",
     "category": "vocab",
-    "subCategory": "kata_benda",
+    "subCategory": "angka_waktu",
     "japanese": "～ミリ",
     "kanji": "",
     "reading": "~miri",

@@ -296,6 +296,8 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
         targetSub = 'kata_sifat';
       } else if (cls.type === 'adverb' && targetSub !== 'keterangan_fukushi') {
         targetSub = 'keterangan_fukushi';
+      } else if ((cls.type === 'numeral' || cls.type === 'time_adverb' || cls.type === 'counter') && targetSub === 'kata_benda') {
+        targetSub = 'angka_waktu';
       } else if (cls.type === 'phrase' && (targetSub === 'kata_benda' || !definedKeys.has(targetSub))) {
         targetSub = 'salam';
       } else if (!definedKeys.has(targetSub)) {
