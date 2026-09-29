@@ -846,9 +846,7 @@ export const QuizView: React.FC<QuizViewProps> = ({
         {/* Type, Group, and Level Badges */}
         <div className="flex items-center justify-center gap-2 mb-4 flex-wrap">
           <span className="inline-block px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-rose-50 text-rose-600 border border-rose-100">
-            {currentQ.type === 'meaning' && 'Tebak Arti Indonesia'}
-            {currentQ.type === 'reading' && 'Tebak Cara Baca Romaji'}
-            {currentQ.type === 'reverse' && 'Tebak Karakter Jepang'}
+            {currentQ.type === 'meaning' ? 'Tebak Arti Indonesia' : 'Tebak Bahasa Jepang'}
           </span>
 
           {/* SPESIFIK GOLONGAN KATA: Kata Sifat -i / -na, Kata Kerja Gol 1, 2, 3, dsb */}

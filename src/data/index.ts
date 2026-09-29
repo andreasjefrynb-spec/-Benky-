@@ -295,8 +295,8 @@ export function generateQuizQuestions(
   const selected = shuffled.slice(0, targetCount);
 
   return selected.map((item, index) => {
-    // Choose question type: meaning, reading, or reverse (kuis audio dihilangkan sesuai permintaan pengguna)
-    const types: ('meaning' | 'reading' | 'reverse')[] = ['meaning', 'reading', 'reverse'];
+    // Choose question type: meaning (Tebak Arti Indonesia) atau reverse (Tebak Karakter/Bahasa Jepang)
+    const types: ('meaning' | 'reverse')[] = ['meaning', 'reverse'];
     const chosenType = types[index % types.length];
 
     const itemClarified = getClarifiedMeaning(item);
@@ -358,11 +358,10 @@ export function generateQuizQuestions(
     const isKana = item.category === 'hiragana' || item.category === 'katakana';
 
     if (chosenType === 'meaning') {
-      // Prompt Japanese, user picks Indonesian meaning (Bebas bocoran jawaban)
+      // 1. Prompt Japanese, user picks Indonesian meaning (Tebak Arti Indonesia)
       questionText = isKana
         ? `Huruf apakah ini dan bagaimana bunyinya: ${item.japanese}?`
         : `Apa arti dari: ${item.japanese}?`;
-      // JANGAN bocorkan bacaan atau furigana di subText sebelum dijawab!
       subText = isKana
         ? `[Huruf ${item.category === 'katakana' ? 'Katakana' : 'Hiragana'}]`
         : itemClassification.shortLabel
@@ -385,26 +384,8 @@ export function generateQuizQuestions(
         };
       });
       explanation = `${item.japanese}【${itemHiragana}】(${item.reading}) [${itemClassification.label}] artinya: "${itemClarified.primaryMeaning}". ${itemClassification.grammarHint}`;
-    } else if (chosenType === 'reading') {
-      // Prompt Japanese/Kanji, user picks Romaji/reading
-      questionText = `Bagaimana cara membaca: ${item.japanese}?`;
-      // Untuk kana, jangan bocorkan arti yang mengandung suku katanya
-      subText = isKana
-        ? `[Huruf ${item.category === 'katakana' ? 'Katakana' : 'Hiragana'}]`
-        : `Arti: "${itemClarified.primaryMeaning}" • [${itemClassification.shortLabel}]`;
-      correctAnswer = item.reading;
-      rawOptionDetails = allCandidates.map((c) => ({
-        value: c.reading,
-        label: c.reading,
-        furigana: getHiraganaReading(c),
-        reading: c.reading,
-        meaning: getClarifiedMeaning(c).primaryMeaning,
-        wordTypeLabel: getWordClassification(c).shortLabel,
-        isCorrect: c.id === item.id,
-      }));
-      explanation = `Bacaan dari ${item.japanese} adalah "${itemHiragana}" (${item.reading}). [${itemClassification.shortLabel}]: "${itemClarified.primaryMeaning}".`;
     } else {
-      // Prompt Indonesian meaning, user picks Japanese (reverse)
+      // 2. Prompt Indonesian meaning, user picks Japanese (Tebak Karakter / Kata Jepang)
       questionText = `Pilihlah bahasa Jepang untuk: "${itemMeaningDisplay}"`;
       subText = `Golongan Kata: ${itemClassification.label}`;
       correctAnswer = item.japanese;
