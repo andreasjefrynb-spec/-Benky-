@@ -22,7 +22,7 @@ import { generateQuizQuestions } from '../data';
 import { soundManager } from '../utils/audio';
 import { GROUP_METAS } from './VocabGroupView';
 import { getWordClassification } from '../utils/wordClassifier';
-import { getHiraganaReading, containsJapanese } from '../utils/hiraganaConverter';
+import { getHiraganaReading, containsJapanese, containsKanji } from '../utils/hiraganaConverter';
 import { getWordNuanceInfo } from '../utils/wordNuances';
 
 interface QuizViewProps {
@@ -197,13 +197,6 @@ export const QuizView: React.FC<QuizViewProps> = ({
     setScore(0);
     setIsFinished(false);
     setAnswersHistory([]);
-
-    // If first question is audio, play it
-    if (qList[0]?.type === 'audio') {
-      setTimeout(() => {
-        soundManager.speak(qList[0].item.furigana || qList[0].item.kanji || qList[0].item.japanese, speechRate);
-      }, 300);
-    }
   };
 
   useEffect(() => {
@@ -211,13 +204,6 @@ export const QuizView: React.FC<QuizViewProps> = ({
   }, [effectivePool, countMode]);
 
   const currentQ = questions[currentIndex];
-
-  // Auto-play audio when question is of type 'audio'
-  useEffect(() => {
-    if (currentQ?.type === 'audio' && !isAnswered) {
-      soundManager.speak(currentQ.item.furigana || currentQ.item.kanji || currentQ.item.japanese, speechRate);
-    }
-  }, [currentIndex, currentQ, isAnswered, speechRate]);
 
   const handleSelectOption = (option: string) => {
     if (isAnswered) return;
@@ -863,7 +849,6 @@ export const QuizView: React.FC<QuizViewProps> = ({
             {currentQ.type === 'meaning' && 'Tebak Arti Indonesia'}
             {currentQ.type === 'reading' && 'Tebak Cara Baca Romaji'}
             {currentQ.type === 'reverse' && 'Tebak Karakter Jepang'}
-            {currentQ.type === 'audio' && 'Kuis Pendengaran (Audio)'}
           </span>
 
           {/* SPESIFIK GOLONGAN KATA: Kata Sifat -i / -na, Kata Kerja Gol 1, 2, 3, dsb */}
@@ -895,63 +880,56 @@ export const QuizView: React.FC<QuizViewProps> = ({
         </div>
 
         {/* Question Japanese Prompt */}
-        {currentQ.type === 'audio' ? (
-          <div className="my-4 flex flex-col items-center">
-            <button
-              id="quiz-audio-play-btn"
-              onClick={() => soundManager.speakJapanese(currentQ.item.kanji || currentQ.item.japanese, speechRate, undefined, currentQ.item.furigana || currentQ.item.reading)}
-              className={`w-20 h-20 rounded-full text-white flex items-center justify-center shadow-lg transition-all cursor-pointer mb-2 select-none ${
-                isPlayingAudio
-                  ? 'bg-rose-600 scale-110 ring-4 ring-rose-200 animate-pulse shadow-rose-300'
-                  : 'bg-rose-500 hover:bg-rose-600 shadow-rose-200 hover:scale-105 active:scale-95'
-              }`}
-              title="Putar Suara Bahasa Jepang"
-            >
-              <Volume2 className="w-9 h-9" />
-            </button>
-            <p className="text-xs font-bold text-slate-500">
-              {isPlayingAudio ? 'Sedang memutar suara...' : 'Ketuk untuk mendengarkan pelafalannya'}
-            </p>
-          </div>
-        ) : (
-          <div className="my-4">
-            {(() => {
-              const promptText = currentQ.type === 'reverse' ? currentQ.item.meaningId : currentQ.item.japanese;
-              const itemFurigana = getHiraganaReading(currentQ.item);
-              const isJpPrompt = currentQ.type !== 'reverse';
-              const len = promptText.length;
-              const sizeClass =
-                len <= 2
-                  ? 'text-5xl sm:text-6xl'
-                  : len <= 5
-                  ? 'text-3xl sm:text-4xl lg:text-5xl'
-                  : len <= 12
-                  ? 'text-2xl sm:text-3xl lg:text-4xl'
-                  : len <= 25
-                  ? 'text-xl sm:text-2xl'
-                  : 'text-base sm:text-lg md:text-xl';
+        <div className="my-4">
+          {(() => {
+            const promptText = currentQ.type === 'reverse' ? currentQ.item.meaningId : currentQ.item.japanese;
+            const itemFurigana = getHiraganaReading(currentQ.item);
+            const isJpPrompt = currentQ.type !== 'reverse';
+            const isKana = currentQ.item.category === 'hiragana' || currentQ.item.category === 'katakana';
+            const hasKanji = containsKanji(promptText);
+            // Furigana HANYA untuk karakter yang mengandung Kanji, BUKAN kuis tebak bacaan, dan BUKAN huruf Kana
+            const canShowFurigana = isJpPrompt && showHiragana && !isKana && hasKanji && currentQ.type !== 'reading';
+            const len = promptText.length;
+            const sizeClass =
+              len <= 2
+                ? 'text-5xl sm:text-6xl'
+                : len <= 5
+                ? 'text-3xl sm:text-4xl lg:text-5xl'
+                : len <= 12
+                ? 'text-2xl sm:text-3xl lg:text-4xl'
+                : len <= 25
+                ? 'text-xl sm:text-2xl'
+                : 'text-base sm:text-lg md:text-xl';
 
-              return (
-                <div>
-                  {/* Hiragana Subtitle jika prompt adalah Kanji Jepang dan Hiragana aktif */}
-                  {isJpPrompt && showHiragana && itemFurigana && itemFurigana !== promptText && (
-                    <div className="text-sm sm:text-base font-black text-rose-600 font-jp tracking-wider mb-1.5 animate-fadeIn">
-                      【 {itemFurigana} 】
-                    </div>
-                  )}
-                  <div className={`font-jp ${sizeClass} font-black text-slate-900 tracking-normal drop-shadow-xs max-w-xl mx-auto break-words leading-snug`}>
-                    {promptText}
+            return (
+              <div>
+                {/* Hiragana Subtitle HANYA jika prompt adalah Kanji Jepang dan bukan kuis tebak bacaan */}
+                {canShowFurigana && itemFurigana && itemFurigana !== promptText && (
+                  <div className="text-sm sm:text-base font-black text-rose-600 font-jp tracking-wider mb-1.5 animate-fadeIn">
+                    【 {itemFurigana} 】
                   </div>
+                )}
+                <div className={`font-jp ${sizeClass} font-black text-slate-900 dark:text-white tracking-normal drop-shadow-xs max-w-xl mx-auto break-words leading-snug`}>
+                  {promptText}
                 </div>
-              );
-            })()}
-            {currentQ.subText && (
-              <p className="text-xs text-slate-500 mt-2 font-medium">
-                {currentQ.subText}
-              </p>
-            )}
-          </div>
-        )}
+              </div>
+            );
+          })()}
+          {currentQ.subText && (
+            <p className="text-xs text-slate-500 mt-2 font-medium">
+              {currentQ.subText}
+            </p>
+          )}
+          {/* Tampilkan bacaan lengkap HANYA setelah soal dijawab agar tidak membocorkan jawaban */}
+          {isAnswered && (
+            <div className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-bold animate-fadeIn">
+              <span>Pelafalan: <strong>{currentQ.item.reading}</strong></span>
+              {currentQ.item.furigana && currentQ.item.furigana !== currentQ.item.reading && (
+                <span className="text-rose-600 dark:text-rose-400 font-jp">({currentQ.item.furigana})</span>
+              )}
+            </div>
+          )}
+        </div>
 
         <h3 className="text-base sm:text-lg font-bold text-slate-800 mb-6">
           {currentQ.questionText}
@@ -997,8 +975,8 @@ export const QuizView: React.FC<QuizViewProps> = ({
                       {option}
                     </span>
 
-                    {/* Bacaan Hiragana jika opsi berupa karakter Jepang dan fitur Hiragana aktif */}
-                    {showHiragana && optFurigana && optFurigana !== option && containsJapanese(option) && (
+                    {/* Bacaan Hiragana hanya jika opsi berupa karakter Kanji (bukan huruf Kana) dan bukan kuis tebak bacaan */}
+                    {showHiragana && optFurigana && optFurigana !== option && containsKanji(option) && currentQ.type !== 'reading' && (
                       <span className="text-xs font-black text-rose-600 font-jp tracking-wide mt-0.5">
                         【 {optFurigana} 】
                       </span>

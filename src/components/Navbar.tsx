@@ -1,11 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { Volume2, SlidersHorizontal, Search, Home, Moon, Sun } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import {
+  Volume2,
+  SlidersHorizontal,
+  Search,
+  Home,
+  Moon,
+  Sun,
+  Monitor,
+  Tablet,
+  Smartphone,
+  ChevronDown,
+  Check,
+  RotateCw,
+} from 'lucide-react';
 import { soundManager } from '../utils/audio';
 import { AudioSettingsModal } from './AudioSettingsModal';
+import { DevicePreviewMode, DeviceOrientation } from './DeviceSimulator';
 
 interface NavbarProps {
   onOpenAddCustom?: () => void;
   onOpenGlobalSearch: () => void;
+  devicePreview?: DevicePreviewMode;
+  onSelectDevicePreview?: (mode: DevicePreviewMode) => void;
+  onToggleRotate?: () => void;
+  orientation?: DeviceOrientation;
   speechRate: number;
   onToggleSpeechRate: () => void;
   onSelectSpeechRate?: (rate: number) => void;
@@ -18,6 +36,10 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenAddCustom,
   onOpenGlobalSearch,
+  devicePreview = 'desktop',
+  onSelectDevicePreview,
+  onToggleRotate,
+  orientation = 'portrait',
   speechRate,
   onToggleSpeechRate,
   onSelectSpeechRate,
@@ -28,6 +50,23 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [isAudioSettingsOpen, setIsAudioSettingsOpen] = useState(false);
+  const [isDeviceMenuOpen, setIsDeviceMenuOpen] = useState(false);
+  const deviceMenuRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (deviceMenuRef.current && !deviceMenuRef.current.contains(e.target as Node)) {
+        setIsDeviceMenuOpen(false);
+      }
+    };
+    if (isDeviceMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDeviceMenuOpen]);
 
   useEffect(() => {
     const unsubPlayback = soundManager.onPlaybackChange((playing) => {
@@ -58,14 +97,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Brand Logo & Name (Clickable to Go Home) */}
           <button
             onClick={onGoHome}
-            className="flex items-center gap-2 sm:gap-3 shrink-0 text-left cursor-pointer group focus:outline-hidden"
+            className="flex items-center gap-2 sm:gap-3 min-w-0 shrink text-left cursor-pointer group focus:outline-hidden"
             title="Kembali ke Beranda Utama"
           >
             <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-rose-500 to-red-600 text-white flex items-center justify-center font-bold text-lg sm:text-2xl shadow-md shadow-rose-200/60 dark:shadow-rose-950/40 shrink-0 select-none group-hover:scale-105 transition-transform">
               日
             </div>
-            <div>
-              <h1 className="text-base sm:text-2xl md:text-3xl font-black text-slate-900 dark:text-slate-100 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors font-jp tracking-wide leading-none">
+            <div className="min-w-0">
+              <h1 className="text-base sm:text-2xl md:text-3xl font-black text-slate-900 dark:text-slate-100 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors font-jp tracking-wide leading-none truncate">
                 日本語クラス
               </h1>
             </div>
@@ -104,6 +143,120 @@ export const Navbar: React.FC<NavbarProps> = ({
                 Cari Kata
               </span>
             </button>
+
+            {/* Rotate Button (Available when in Mobile or Tablet Preview) */}
+            {devicePreview !== 'desktop' && onToggleRotate && (
+              <button
+                onClick={onToggleRotate}
+                className="flex items-center gap-1.5 min-h-[36px] sm:min-h-[44px] px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition-all cursor-pointer select-none active:scale-95 shadow-3xs"
+                title={`Putar Orientasi (${orientation === 'landscape' ? 'Landscape' : 'Portrait'})`}
+                aria-label="Putar Orientasi Layar"
+              >
+                <RotateCw className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
+                <span className="hidden sm:inline">Rotate</span>
+              </button>
+            )}
+
+            {/* Device Preview Selector */}
+            {onSelectDevicePreview && (
+              <div className="relative" ref={deviceMenuRef}>
+                <button
+                  id="device-preview-navbar-btn"
+                  onClick={() => setIsDeviceMenuOpen(!isDeviceMenuOpen)}
+                  className={`flex items-center gap-1.5 min-h-[36px] sm:min-h-[44px] px-2.5 sm:px-3 py-1.5 rounded-xl border transition-all cursor-pointer select-none active:scale-95 shadow-3xs ${
+                    devicePreview !== 'desktop'
+                      ? 'border-indigo-500/60 bg-indigo-600 text-white font-black shadow-md shadow-indigo-500/20'
+                      : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold'
+                  }`}
+                  title="Pilih Tampilan Layar (Device Preview)"
+                  aria-label="Pilih Tampilan Perangkat"
+                >
+                  {devicePreview === 'mobile' ? (
+                    <Smartphone className="w-4 h-4 text-amber-300 shrink-0" />
+                  ) : devicePreview === 'tablet' ? (
+                    <Tablet className="w-4 h-4 text-cyan-300 shrink-0" />
+                  ) : (
+                    <Monitor className="w-4 h-4 text-slate-600 dark:text-slate-300 shrink-0" />
+                  )}
+                  <span className="text-xs leading-none font-bold hidden xs:inline">
+                    {devicePreview === 'mobile'
+                      ? 'Mobile'
+                      : devicePreview === 'tablet'
+                      ? 'Tablet'
+                      : 'Current screen size'}
+                  </span>
+                  <ChevronDown className={`w-3.5 h-3.5 opacity-70 transition-transform ${isDeviceMenuOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {/* Dropdown Menu for Device Selection (Matching Screenshot) */}
+                {isDeviceMenuOpen && (
+                  <div className="absolute right-0 top-full mt-2 w-52 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-700/80 shadow-2xl p-1.5 z-50 flex flex-col gap-1 backdrop-blur-md animate-in fade-in slide-in-from-top-2 duration-150">
+                    {/* Option: Current screen size */}
+                    <button
+                      onClick={() => {
+                        onSelectDevicePreview('desktop');
+                        setIsDeviceMenuOpen(false);
+                      }}
+                      className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left transition-all cursor-pointer ${
+                        devicePreview === 'desktop'
+                          ? 'bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 font-black'
+                          : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <Monitor className="w-4 h-4 text-slate-500 dark:text-slate-400 shrink-0" />
+                        <span className="text-xs">Current screen size</span>
+                      </div>
+                      {devicePreview === 'desktop' && (
+                        <Check className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                      )}
+                    </button>
+
+                    {/* Option: Mobile */}
+                    <button
+                      onClick={() => {
+                        onSelectDevicePreview('mobile');
+                        setIsDeviceMenuOpen(false);
+                      }}
+                      className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left transition-all cursor-pointer ${
+                        devicePreview === 'mobile'
+                          ? 'bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 font-black'
+                          : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <Smartphone className="w-4 h-4 text-slate-500 dark:text-slate-400 shrink-0" />
+                        <span className="text-xs">Mobile</span>
+                      </div>
+                      {devicePreview === 'mobile' && (
+                        <Check className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                      )}
+                    </button>
+
+                    {/* Option: Tablet */}
+                    <button
+                      onClick={() => {
+                        onSelectDevicePreview('tablet');
+                        setIsDeviceMenuOpen(false);
+                      }}
+                      className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-left transition-all cursor-pointer ${
+                        devicePreview === 'tablet'
+                          ? 'bg-indigo-50 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 font-black'
+                          : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-medium'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <Tablet className="w-4 h-4 text-slate-500 dark:text-slate-400 shrink-0" />
+                        <span className="text-xs">Tablet</span>
+                      </div>
+                      {devicePreview === 'tablet' && (
+                        <Check className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                      )}
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Nightmode Toggle Button */}
             {onToggleDarkMode && (

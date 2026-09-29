@@ -295,8 +295,8 @@ export function generateQuizQuestions(
   const selected = shuffled.slice(0, targetCount);
 
   return selected.map((item, index) => {
-    // Choose question type: meaning, reading, reverse, or audio
-    const types: ('meaning' | 'reading' | 'reverse' | 'audio')[] = ['meaning', 'reading', 'reverse', 'audio'];
+    // Choose question type: meaning, reading, or reverse (kuis audio dihilangkan sesuai permintaan pengguna)
+    const types: ('meaning' | 'reading' | 'reverse')[] = ['meaning', 'reading', 'reverse'];
     const chosenType = types[index % types.length];
 
     const itemClarified = getClarifiedMeaning(item);
@@ -355,12 +355,19 @@ export function generateQuizQuestions(
     let rawOptionDetails: QuizOptionDetail[] = [];
     let explanation = '';
 
+    const isKana = item.category === 'hiragana' || item.category === 'katakana';
+
     if (chosenType === 'meaning') {
-      // Prompt Japanese, user picks Indonesian meaning (Diperjelas agar tidak ambigu)
-      questionText = `Apa arti dari: ${item.japanese}?`;
-      subText = itemHiragana && itemHiragana !== item.japanese
-        ? `【 ${itemHiragana} 】 (${item.reading})`
-        : `(${item.reading})`;
+      // Prompt Japanese, user picks Indonesian meaning (Bebas bocoran jawaban)
+      questionText = isKana
+        ? `Huruf apakah ini dan bagaimana bunyinya: ${item.japanese}?`
+        : `Apa arti dari: ${item.japanese}?`;
+      // JANGAN bocorkan bacaan atau furigana di subText sebelum dijawab!
+      subText = isKana
+        ? `[Huruf ${item.category === 'katakana' ? 'Katakana' : 'Hiragana'}]`
+        : itemClassification.shortLabel
+        ? `[${itemClassification.shortLabel}]`
+        : '';
       correctAnswer = itemMeaningDisplay;
       rawOptionDetails = allCandidates.map((c) => {
         const cClarified = getClarifiedMeaning(c);
@@ -381,7 +388,10 @@ export function generateQuizQuestions(
     } else if (chosenType === 'reading') {
       // Prompt Japanese/Kanji, user picks Romaji/reading
       questionText = `Bagaimana cara membaca: ${item.japanese}?`;
-      subText = `Arti: "${itemClarified.primaryMeaning}" • [${itemClassification.shortLabel}]`;
+      // Untuk kana, jangan bocorkan arti yang mengandung suku katanya
+      subText = isKana
+        ? `[Huruf ${item.category === 'katakana' ? 'Katakana' : 'Hiragana'}]`
+        : `Arti: "${itemClarified.primaryMeaning}" • [${itemClassification.shortLabel}]`;
       correctAnswer = item.reading;
       rawOptionDetails = allCandidates.map((c) => ({
         value: c.reading,
@@ -393,8 +403,8 @@ export function generateQuizQuestions(
         isCorrect: c.id === item.id,
       }));
       explanation = `Bacaan dari ${item.japanese} adalah "${itemHiragana}" (${item.reading}). [${itemClassification.shortLabel}]: "${itemClarified.primaryMeaning}".`;
-    } else if (chosenType === 'reverse') {
-      // Prompt Indonesian meaning, user picks Japanese
+    } else {
+      // Prompt Indonesian meaning, user picks Japanese (reverse)
       questionText = `Pilihlah bahasa Jepang untuk: "${itemMeaningDisplay}"`;
       subText = `Golongan Kata: ${itemClassification.label}`;
       correctAnswer = item.japanese;
@@ -408,21 +418,6 @@ export function generateQuizQuestions(
         isCorrect: c.id === item.id,
       }));
       explanation = `"${itemClarified.primaryMeaning}" dalam bahasa Jepang adalah ${item.japanese}【${itemHiragana}】(${item.reading}). [${itemClassification.label}]. ${itemClassification.grammarHint}`;
-    } else {
-      // Audio quiz: prompt audio listening
-      questionText = `Dengarkan pelafalan audionya, karakter atau kata apakah itu?`;
-      subText = `Klik tombol suara untuk mendengar ulang • [${itemClassification.shortLabel}]`;
-      correctAnswer = `${item.japanese} (${item.reading})`;
-      rawOptionDetails = allCandidates.map((c) => ({
-        value: `${c.japanese} (${c.reading})`,
-        label: c.japanese,
-        furigana: getHiraganaReading(c),
-        reading: c.reading,
-        meaning: getClarifiedMeaning(c).primaryMeaning,
-        wordTypeLabel: getWordClassification(c).shortLabel,
-        isCorrect: c.id === item.id,
-      }));
-      explanation = `Audio tersebut melafalkan ${item.japanese}【${itemHiragana}】(${item.reading}) [${itemClassification.label}] yang artinya "${itemClarified.primaryMeaning}".`;
     }
 
     // Pembeda Nuansa / Anti-Bingung Tambahan

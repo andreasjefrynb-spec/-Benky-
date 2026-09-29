@@ -838,14 +838,16 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
               Menampilkan <strong className="text-slate-800">{filteredCards.length}</strong> kartu
             </span>
 
-            <button
-              onClick={handleShuffle}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-slate-600 hover:text-slate-900 bg-white border border-slate-200 hover:bg-slate-50 rounded-lg font-semibold transition-colors cursor-pointer shadow-2xs"
-              title="Acak urutan kartu"
-            >
-              <Shuffle className="w-3.5 h-3.5" />
-              <span>Acak Kartu</span>
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handleShuffle}
+                className="flex items-center gap-1.5 px-3 py-1.5 text-slate-600 hover:text-slate-900 bg-white border border-slate-200 hover:bg-slate-50 rounded-lg font-semibold transition-colors cursor-pointer shadow-2xs"
+                title="Acak urutan kartu"
+              >
+                <Shuffle className="w-3.5 h-3.5" />
+                <span>Acak Kartu</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

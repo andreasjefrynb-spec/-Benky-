@@ -24,6 +24,7 @@ import { AdvancedGrammarView } from './components/AdvancedGrammarView';
 import { GlobalSearchModal } from './components/GlobalSearchModal';
 import { HomePortalView } from './components/HomePortalView';
 import { RoadmapModal } from './components/RoadmapModal';
+import { DeviceSimulator, DevicePreviewMode, DeviceOrientation } from './components/DeviceSimulator';
 import {
   MainCategory,
   StudyMode,
@@ -117,6 +118,8 @@ export default function App() {
   // Modal & Navigation States
   const [isAddCustomOpen, setIsAddCustomOpen] = useState(false);
   const [isGlobalSearchOpen, setIsGlobalSearchOpen] = useState(false);
+  const [devicePreview, setDevicePreview] = useState<DevicePreviewMode>('desktop');
+  const [deviceOrientation, setDeviceOrientation] = useState<DeviceOrientation>('portrait');
   const [initialSearchCardId, setInitialSearchCardId] = useState<string | undefined>(undefined);
   const [writingTargetCard, setWritingTargetCard] = useState<CardItem | null>(null);
   const [vocabGroupTarget, setVocabGroupTarget] = useState<{
@@ -378,19 +381,34 @@ export default function App() {
   }, [activeCategory, studyMode]);
 
   return (
-    <div className={`min-h-screen flex flex-col ${isDarkMode ? 'dark bg-slate-950 text-slate-100' : 'bg-[#faf9f6] text-slate-800'} selection:bg-rose-500 selection:text-white transition-colors duration-200`}>
-      {/* Top Navigation */}
-      <Navbar
-        onOpenAddCustom={() => setIsAddCustomOpen(true)}
-        onOpenGlobalSearch={() => setActiveCategory('search')}
-        speechRate={speechRate}
-        onToggleSpeechRate={handleToggleSpeechRate}
-        onSelectSpeechRate={(rate) => setSpeechRate(rate)}
-        onGoHome={() => setActiveCategory('home')}
-        isHomeActive={activeCategory === 'home'}
-        isDarkMode={isDarkMode}
-        onToggleDarkMode={handleToggleDarkMode}
-      />
+    <DeviceSimulator
+      device={devicePreview}
+      orientation={deviceOrientation}
+      onChangeDevice={setDevicePreview}
+      onToggleOrientation={() =>
+        setDeviceOrientation((prev) => (prev === 'portrait' ? 'landscape' : 'portrait'))
+      }
+      isDarkMode={isDarkMode}
+    >
+      <div className={`min-h-screen flex flex-col ${isDarkMode ? 'dark bg-slate-950 text-slate-100' : 'bg-[#faf9f6] text-slate-800'} selection:bg-rose-500 selection:text-white transition-colors duration-200`}>
+        {/* Top Navigation */}
+        <Navbar
+          onOpenAddCustom={() => setIsAddCustomOpen(true)}
+          onOpenGlobalSearch={() => setActiveCategory('search')}
+          devicePreview={devicePreview}
+          onSelectDevicePreview={(mode) => setDevicePreview(mode)}
+          onToggleRotate={() =>
+            setDeviceOrientation((prev) => (prev === 'portrait' ? 'landscape' : 'portrait'))
+          }
+          orientation={deviceOrientation}
+          speechRate={speechRate}
+          onToggleSpeechRate={handleToggleSpeechRate}
+          onSelectSpeechRate={(rate) => setSpeechRate(rate)}
+          onGoHome={() => setActiveCategory('home')}
+          isHomeActive={activeCategory === 'home'}
+          isDarkMode={isDarkMode}
+          onToggleDarkMode={handleToggleDarkMode}
+        />
 
       {/* Main Container */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-6 py-3 sm:py-6 flex flex-col gap-3.5 sm:gap-6">
@@ -774,6 +792,7 @@ export default function App() {
           }
         }}
       />
-    </div>
+      </div>
+    </DeviceSimulator>
   );
 }
