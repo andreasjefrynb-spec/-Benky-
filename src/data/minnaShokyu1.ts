@@ -82,36 +82,65 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "あなた",
         "reading": "anata",
-        "id": "Anda / Kamu"
+        "id": "Kamu"
       },
       {
         "jp": "あのひと (あの人)",
-        "reading": "ano hito",
-        "id": "Orang itu",
+        "reading": "anohito",
+        "id": "Orang itu (biasa)",
         "kanji": "あの人"
       },
       {
-        "jp": "〜さん",
+        "jp": "あのかた (あの方)",
+        "reading": "anokata",
+        "id": "Orang itu (sopan)",
+        "kanji": "あの方"
+      },
+      {
+        "jp": "～さん",
         "reading": "~san",
-        "id": "Sdr. / Tuan / Nyonya / Saudara……."
+        "id": "Saudara……."
+      },
+      {
+        "jp": "～ちゃん",
+        "reading": "~chan",
+        "id": "Panggilan untuk anak laki/perempuan"
+      },
+      {
+        "jp": "～じん (～人)",
+        "reading": "~jin",
+        "id": "Orang…….",
+        "kanji": "～人"
       },
       {
         "jp": "せんせい (先生)",
         "reading": "sensei",
-        "id": "Guru / Pengajar / Dosen",
+        "id": "Guru,dosen",
         "kanji": "先生"
+      },
+      {
+        "jp": "きょうし (教師)",
+        "reading": "kyoushi",
+        "id": "Guru,dosen (dipakai untuk kalangan sendiri)",
+        "kanji": "教師"
       },
       {
         "jp": "がくせい (学生)",
         "reading": "gakusei",
-        "id": "Mahasiswa / Murid / Siswa",
+        "id": "Siswa,murid",
         "kanji": "学生"
       },
       {
         "jp": "かいしゃいん (会社員)",
         "reading": "kaishain",
-        "id": "Karyawan perusahaan / Pegawai perusahaan",
+        "id": "Pegawai perusahaan",
         "kanji": "会社員"
+      },
+      {
+        "jp": "しゃいん (社員)",
+        "reading": "shain",
+        "id": "Pegawai perusahaan",
+        "kanji": "社員"
       },
       {
         "jp": "ぎんこういん (銀行員)",
@@ -144,65 +173,26 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "病院"
       },
       {
-        "jp": "だれ (どなた)",
-        "reading": "dare (donata)",
-        "id": "Siapa (sopan) / Siapa (biasa)"
-      },
-      {
-        "jp": "～さい (～歳)",
-        "reading": "~sai",
-        "id": "... tahun (usia) / Umur…..",
-        "kanji": "～歳"
-      },
-      {
-        "jp": "なんさい (何歳)",
-        "reading": "nansai",
-        "id": "Berapa umur / Umur berapa?(biasa)",
-        "kanji": "何歳"
-      },
-      {
-        "jp": "はじめまして",
-        "reading": "hajimemashite",
-        "id": "Senang berkenalan (salam awal) / Perkenalkan"
-      },
-      {
-        "jp": "どうぞよろしく",
-        "reading": "douzo yoroshiku",
-        "id": "Mohon bantuannya"
-      },
-      {
-        "jp": "あのかた (あの方)",
-        "reading": "anokata",
-        "id": "Orang itu (sopan)",
-        "kanji": "あの方"
-      },
-      {
-        "jp": "～ちゃん",
-        "reading": "~chan",
-        "id": "Panggilan untuk anak laki/perempuan"
-      },
-      {
-        "jp": "～じん (～人)",
-        "reading": "~jin",
-        "id": "Orang…….",
-        "kanji": "～人"
-      },
-      {
-        "jp": "きょうし (教師)",
-        "reading": "kyoushi",
-        "id": "Guru,dosen (dipakai untuk kalangan sendiri)",
-        "kanji": "教師"
-      },
-      {
-        "jp": "しゃいん (社員)",
-        "reading": "shain",
-        "id": "Pegawai perusahaan",
-        "kanji": "社員"
+        "jp": "だれ",
+        "reading": "dare",
+        "id": "Siapa (biasa)"
       },
       {
         "jp": "どなた",
         "reading": "donata",
         "id": "Siapa (sopan)"
+      },
+      {
+        "jp": "～さい (～歳)",
+        "reading": "~sai",
+        "id": "Umur…..",
+        "kanji": "～歳"
+      },
+      {
+        "jp": "なんさい (何歳)",
+        "reading": "nansai",
+        "id": "Umur berapa?(biasa)",
+        "kanji": "何歳"
       },
       {
         "jp": "おいくつ",
@@ -218,6 +208,11 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "jp": "いいえ",
         "reading": "iie",
         "id": "Tidak"
+      },
+      {
+        "jp": "はじめまして",
+        "reading": "hajimemashite",
+        "id": "Perkenalkan"
       },
       {
         "jp": "～からきました (～から来ました)",
@@ -381,6 +376,36 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
     ],
     "keyVocab": [
       {
+        "jp": "これ",
+        "reading": "kore",
+        "id": "Ini"
+      },
+      {
+        "jp": "それ",
+        "reading": "sore",
+        "id": "Itu (dekat)"
+      },
+      {
+        "jp": "あれ",
+        "reading": "are",
+        "id": "Itu (jauh)"
+      },
+      {
+        "jp": "この～",
+        "reading": "kono～",
+        "id": "～ini"
+      },
+      {
+        "jp": "その～",
+        "reading": "sono～",
+        "id": "～itu (dekat)"
+      },
+      {
+        "jp": "あの～",
+        "reading": "ano～",
+        "id": "～itu (jauh)"
+      },
+      {
         "jp": "ほん (本)",
         "reading": "hon",
         "id": "Buku",
@@ -406,13 +431,13 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ノート",
-        "reading": "nooto",
+        "reading": "no-to",
         "id": "Buku catatan"
       },
       {
         "jp": "てちょう (手帳)",
         "reading": "techou",
-        "id": "Buku agenda / memo",
+        "id": "Buku agenda",
         "kanji": "手帳"
       },
       {
@@ -422,6 +447,11 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "名刺"
       },
       {
+        "jp": "カード",
+        "reading": "ka-do",
+        "id": "Kartu"
+      },
+      {
         "jp": "えんぴつ (鉛筆)",
         "reading": "enpitsu",
         "id": "Pensil",
@@ -429,8 +459,13 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ボールペン",
-        "reading": "boorupen",
-        "id": "Pulpen / Bolpoin"
+        "reading": "bo-rupen",
+        "id": "Bolpoin"
+      },
+      {
+        "jp": "シャープペンシル",
+        "reading": "sha-pupenshiru",
+        "id": "Pensil mekanik"
       },
       {
         "jp": "かぎ (鍵)",
@@ -441,7 +476,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "とけい (時計)",
         "reading": "tokei",
-        "id": "Jam",
+        "id": "Jam , arloji",
         "kanji": "時計"
       },
       {
@@ -462,68 +497,6 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "id": "Televisi"
       },
       {
-        "jp": "くるま (車)",
-        "reading": "kuruma",
-        "id": "Mobil",
-        "kanji": "車"
-      },
-      {
-        "jp": "机 (つくえ)",
-        "reading": "tsukue",
-        "id": "Meja"
-      },
-      {
-        "jp": "椅子 (いす)",
-        "reading": "isu",
-        "id": "Kursi"
-      },
-      {
-        "jp": "おみやげ (お土産)",
-        "reading": "omiyage",
-        "id": "Oleh-oleh",
-        "kanji": "お土産"
-      },
-      {
-        "jp": "これ",
-        "reading": "kore",
-        "id": "Ini"
-      },
-      {
-        "jp": "それ",
-        "reading": "sore",
-        "id": "Itu (dekat)"
-      },
-      {
-        "jp": "あれ",
-        "reading": "are",
-        "id": "Itu (jauh)"
-      },
-      {
-        "jp": "この～",
-        "reading": "kono~",
-        "id": "～ini"
-      },
-      {
-        "jp": "その～",
-        "reading": "sono~",
-        "id": "～itu (dekat)"
-      },
-      {
-        "jp": "あの～",
-        "reading": "ano~",
-        "id": "～itu (jauh)"
-      },
-      {
-        "jp": "カード",
-        "reading": "kaado",
-        "id": "Kartu"
-      },
-      {
-        "jp": "シャープペンシル",
-        "reading": "shaapupenshiru",
-        "id": "Pensil mekanik"
-      },
-      {
         "jp": "ラジオ",
         "reading": "rajio",
         "id": "Radio"
@@ -535,8 +508,14 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "コンピューター",
-        "reading": "konpyuutaa",
+        "reading": "konpyu-ta-",
         "id": "Komputer"
+      },
+      {
+        "jp": "くるま (車)",
+        "reading": "kuruma",
+        "id": "Mobil",
+        "kanji": "車"
       },
       {
         "jp": "つくえ (机)",
@@ -552,13 +531,19 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "チョコレート",
-        "reading": "chokoreeto",
+        "reading": "chokore-to",
         "id": "Coklat"
       },
       {
         "jp": "コーヒー",
-        "reading": "koohii",
+        "reading": "ko-hi-",
         "id": "Kopi"
+      },
+      {
+        "jp": "おみやげ (お土産)",
+        "reading": "omiyage",
+        "id": "Oleh-oleh",
+        "kanji": "お土産"
       },
       {
         "jp": "えいご (英語)",
@@ -569,7 +554,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "にほんご (日本語)",
         "reading": "nihongo",
-        "id": "Bahasa Jepang",
+        "id": "Bahasa jepang",
         "kanji": "日本語"
       },
       {
@@ -698,109 +683,6 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
     ],
     "keyVocab": [
       {
-        "jp": "きょうしつ (教室)",
-        "reading": "kyoushitsu",
-        "id": "Ruang kelas",
-        "kanji": "教室"
-      },
-      {
-        "jp": "しょくどう (食堂)",
-        "reading": "shokudou",
-        "id": "Kantin / Ruang makan",
-        "kanji": "食堂"
-      },
-      {
-        "jp": "じむしょ (事務所)",
-        "reading": "jimusho",
-        "id": "Kantor",
-        "kanji": "事務所"
-      },
-      {
-        "jp": "かいぎしつ (会議室)",
-        "reading": "kaigishitsu",
-        "id": "Ruang rapat",
-        "kanji": "会議室"
-      },
-      {
-        "jp": "うけつけ (受付)",
-        "reading": "uketsuke",
-        "id": "Resepsionis / Meja informasi",
-        "kanji": "受付"
-      },
-      {
-        "jp": "ロビー",
-        "reading": "robii",
-        "id": "Lobi"
-      },
-      {
-        "jp": "へや (部屋)",
-        "reading": "heya",
-        "id": "Kamar",
-        "kanji": "部屋"
-      },
-      {
-        "jp": "トイレ (おてあらい)",
-        "reading": "toire (otearai)",
-        "id": "Toilet"
-      },
-      {
-        "jp": "かいだん (階段)",
-        "reading": "kaidan",
-        "id": "Tangga",
-        "kanji": "階段"
-      },
-      {
-        "jp": "エレベーター",
-        "reading": "erebeetaa",
-        "id": "Lift / Elevator"
-      },
-      {
-        "jp": "くに",
-        "reading": "kuni",
-        "id": "Negara"
-      },
-      {
-        "jp": "かいしゃ (会社)",
-        "reading": "kaisha",
-        "id": "Perusahaan",
-        "kanji": "会社"
-      },
-      {
-        "jp": "うち (いえ)",
-        "reading": "uchi (ie)",
-        "id": "Rumah",
-        "kanji": "家"
-      },
-      {
-        "jp": "うりば (売り場)",
-        "reading": "uriba",
-        "id": "Tempat penjualan / counter",
-        "kanji": "売り場"
-      },
-      {
-        "jp": "ちか (地下)",
-        "reading": "chika",
-        "id": "Bawah tanah (basement) / Bawah tanah , basement",
-        "kanji": "地下"
-      },
-      {
-        "jp": "〜かい (がい)",
-        "reading": "~kai (~gai)",
-        "id": "Lantai ... / lantai～/ tingkat～",
-        "kanji": "～階"
-      },
-      {
-        "jp": "～えん (～円)",
-        "reading": "~en",
-        "id": "Yen (mata uang) / ～yen",
-        "kanji": "～円"
-      },
-      {
-        "jp": "いくら",
-        "reading": "ikura",
-        "id": "Berapa harga / Berapa?"
-      },
-      {
         "jp": "ここ",
         "reading": "koko",
         "id": "Disini"
@@ -841,14 +723,71 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "id": "Dimana ?"
       },
       {
+        "jp": "きょうしつ (教室)",
+        "reading": "kyoushitsu",
+        "id": "Ruang kelas",
+        "kanji": "教室"
+      },
+      {
+        "jp": "しょくどう (食堂)",
+        "reading": "shokudou",
+        "id": "Ruang makan, Kantin",
+        "kanji": "食堂"
+      },
+      {
+        "jp": "じむしょ (事務所)",
+        "reading": "jimusho",
+        "id": "Kantor",
+        "kanji": "事務所"
+      },
+      {
+        "jp": "かいぎしつ (会議室)",
+        "reading": "kaigishitsu",
+        "id": "Ruang rapat",
+        "kanji": "会議室"
+      },
+      {
+        "jp": "うけつけ (受付)",
+        "reading": "uketsuke",
+        "id": "Meja informasi",
+        "kanji": "受付"
+      },
+      {
+        "jp": "ロビー",
+        "reading": "robi-",
+        "id": "Ruang tunggu, lobi"
+      },
+      {
+        "jp": "へや (部屋)",
+        "reading": "heya",
+        "id": "Kamar",
+        "kanji": "部屋"
+      },
+      {
         "jp": "おてあらい (お手洗い)",
         "reading": "otearai",
         "id": "Kamar kecil, WC",
         "kanji": "お手洗い"
       },
       {
+        "jp": "トイレ",
+        "reading": "toire",
+        "id": "Toilet"
+      },
+      {
+        "jp": "かいだん (階段)",
+        "reading": "kaidan",
+        "id": "Tangga",
+        "kanji": "階段"
+      },
+      {
+        "jp": "エレベーター",
+        "reading": "erebe-ta-",
+        "id": "Lift"
+      },
+      {
         "jp": "エスカレーター",
-        "reading": "esukareetaa",
+        "reading": "esukare-ta-",
         "id": "Eskalator, tangga berjalan"
       },
       {
@@ -870,6 +809,18 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "お国"
       },
       {
+        "jp": "かいしゃ (会社)",
+        "reading": "kaisha",
+        "id": "Perusahaan",
+        "kanji": "会社"
+      },
+      {
+        "jp": "うち (家)",
+        "reading": "uchi",
+        "id": "Rumah",
+        "kanji": "家"
+      },
+      {
         "jp": "くつ (靴)",
         "reading": "kutsu",
         "id": "Sepatu",
@@ -886,10 +837,39 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "id": "Anggur putih"
       },
       {
+        "jp": "うりば (売り場)",
+        "reading": "uriba",
+        "id": "Tempat penjualan",
+        "kanji": "売り場"
+      },
+      {
+        "jp": "ちか (地下)",
+        "reading": "chika",
+        "id": "Bawah tanah , basement",
+        "kanji": "地下"
+      },
+      {
+        "jp": "～かい (～階)",
+        "reading": "~kai",
+        "id": "lantai～/ tingkat～",
+        "kanji": "～階"
+      },
+      {
         "jp": "なんがい (何階)",
         "reading": "nangai",
         "id": "Lantai berapa?",
         "kanji": "何階"
+      },
+      {
+        "jp": "～えん (～円)",
+        "reading": "~en",
+        "id": "～yen",
+        "kanji": "～円"
+      },
+      {
+        "jp": "いくら",
+        "reading": "ikura",
+        "id": "Berapa?"
       },
       {
         "jp": "ひゃく (百)",
@@ -937,7 +917,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "～をください",
-        "reading": "~okudasai",
+        "reading": "~wokudasai",
         "id": "Tolong ～"
       },
       {
@@ -1001,7 +981,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "スポーツようひん (スポーツ用品)",
-        "reading": "supootsuyouhin",
+        "reading": "supo-tsuyouhin",
         "id": "Peralatan olahraga",
         "kanji": "スポーツ用品"
       },
@@ -1060,7 +1040,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "アクセサリー",
-        "reading": "akusesarii",
+        "reading": "akusesari-",
         "id": "Perhiasan, aksesoris"
       },
       {
@@ -1152,12 +1132,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "やすみます (休みます)",
         "reading": "yasumimasu",
-        "id": "Istirahat / Libur",
+        "id": "Beristirahat , libur",
         "kanji": "休みます"
       },
       {
         "jp": "べんきょうします (勉強します)",
-        "reading": "benkyou shimasu",
+        "reading": "benkyoushimasu",
         "id": "Belajar",
         "kanji": "勉強します"
       },
@@ -1168,98 +1148,8 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "終わります"
       },
       {
-        "jp": "いま (今)",
-        "reading": "ima",
-        "id": "Sekarang",
-        "kanji": "今"
-      },
-      {
-        "jp": "〜じ (時)",
-        "reading": "~ji",
-        "id": "Pukul / jam ...",
-        "kanji": "時"
-      },
-      {
-        "jp": "〜ふん (分)",
-        "reading": "~fun / ~pun",
-        "id": "... menit",
-        "kanji": "分"
-      },
-      {
-        "jp": "はん (半)",
-        "reading": "han",
-        "id": "Setengah (30 menit)",
-        "kanji": "半"
-      },
-      {
-        "jp": "あさ (朝)",
-        "reading": "asa",
-        "id": "Pagi",
-        "kanji": "朝"
-      },
-      {
-        "jp": "ひる (昼)",
-        "reading": "hiru",
-        "id": "Siang",
-        "kanji": "昼"
-      },
-      {
-        "jp": "ばん (よる)",
-        "reading": "ban (yoru)",
-        "id": "Malam",
-        "kanji": "晩"
-      },
-      {
-        "jp": "おととい (一昨日)",
-        "reading": "ototoi",
-        "id": "Kemarin lusa",
-        "kanji": "一昨日"
-      },
-      {
-        "jp": "きのう (昨日)",
-        "reading": "kinou",
-        "id": "Kemarin",
-        "kanji": "昨日"
-      },
-      {
-        "jp": "きょう (今日)",
-        "reading": "kyou",
-        "id": "Hari ini",
-        "kanji": "今日"
-      },
-      {
-        "jp": "あした (明日)",
-        "reading": "ashita",
-        "id": "Besok",
-        "kanji": "明日"
-      },
-      {
-        "jp": "あさって (明後日)",
-        "reading": "asatte",
-        "id": "Besok lusa",
-        "kanji": "明後日"
-      },
-      {
-        "jp": "まいあさ (毎朝)",
-        "reading": "maiasa",
-        "id": "Setiap pagi",
-        "kanji": "毎朝"
-      },
-      {
-        "jp": "まいばん (毎晩)",
-        "reading": "maiban",
-        "id": "Setiap malam",
-        "kanji": "毎晩"
-      },
-      {
-        "jp": "まいにち (毎日)",
-        "reading": "mainichi",
-        "id": "Setiap hari",
-        "kanji": "毎日"
-      },
-      {
         "jp": "デパート",
-        "reading": "depaato",
+        "reading": "depa-to",
         "id": "Departemen store"
       },
       {
@@ -1287,6 +1177,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "美術館"
       },
       {
+        "jp": "いま (今)",
+        "reading": "ima",
+        "id": "Sekarang",
+        "kanji": "今"
+      },
+      {
         "jp": "～じ (～時)",
         "reading": "~ji",
         "id": "Jam , pukul",
@@ -1294,9 +1190,15 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "～ふん／ぶん (～分)",
-        "reading": "~fun/bun",
+        "reading": "~fun／bun",
         "id": "Menit",
         "kanji": "～分"
+      },
+      {
+        "jp": "はん (半)",
+        "reading": "han",
+        "id": "Setengah",
+        "kanji": "半"
       },
       {
         "jp": "なんんじ (何時)",
@@ -1323,10 +1225,58 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "午後"
       },
       {
+        "jp": "あさ (朝)",
+        "reading": "asa",
+        "id": "Pagi",
+        "kanji": "朝"
+      },
+      {
+        "jp": "ひる (昼)",
+        "reading": "hiru",
+        "id": "Siang",
+        "kanji": "昼"
+      },
+      {
+        "jp": "ばん (晩)",
+        "reading": "ban",
+        "id": "Malam",
+        "kanji": "晩"
+      },
+      {
         "jp": "よる (夜)",
         "reading": "yoru",
         "id": "Malam",
         "kanji": "夜"
+      },
+      {
+        "jp": "おととい (一昨日)",
+        "reading": "ototoi",
+        "id": "2 hari yang lalu , kemarin lusa",
+        "kanji": "一昨日"
+      },
+      {
+        "jp": "きのう (昨日)",
+        "reading": "kinou",
+        "id": "Kemarin",
+        "kanji": "昨日"
+      },
+      {
+        "jp": "きょう (今日)",
+        "reading": "kyou",
+        "id": "Hari ini",
+        "kanji": "今日"
+      },
+      {
+        "jp": "あした (明日)",
+        "reading": "ashita",
+        "id": "Besok",
+        "kanji": "明日"
+      },
+      {
+        "jp": "あさって (明後日)",
+        "reading": "asatte",
+        "id": "Besok lusa",
+        "kanji": "明後日"
       },
       {
         "jp": "けさ (今朝)",
@@ -1369,6 +1319,24 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "eiga",
         "id": "Film",
         "kanji": "映画"
+      },
+      {
+        "jp": "まいあさ (毎朝)",
+        "reading": "maiasa",
+        "id": "Setiap pagi",
+        "kanji": "毎朝"
+      },
+      {
+        "jp": "まいばん (毎晩)",
+        "reading": "maiban",
+        "id": "Setiap malam",
+        "kanji": "毎晩"
+      },
+      {
+        "jp": "まいにち (毎日)",
+        "reading": "mainichi",
+        "id": "Setiap hari",
+        "kanji": "毎日"
       },
       {
         "jp": "げつようび (月曜日)",
@@ -1430,13 +1398,13 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "～と～",
-        "reading": "~to~",
+        "reading": "~to～",
         "id": "Dan"
       },
       {
         "jp": "たいへんですね (大変ですね)",
         "reading": "taihendesune",
-        "id": "Berat ya",
+        "id": "Berat ya,",
         "kanji": "大変ですね"
       },
       {
@@ -1453,7 +1421,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ニューヨーク",
-        "reading": "nyuuyooku",
+        "reading": "nyu-yo-ku",
         "id": "New york"
       },
       {
@@ -1588,12 +1556,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "がっこう (学校)",
         "reading": "gakkou",
-        "id": "Sekolah",
+        "id": "Sekolahan",
         "kanji": "学校"
       },
       {
         "jp": "スーパー",
-        "reading": "suupaa",
+        "reading": "su-pa-",
         "id": "Supermarket"
       },
       {
@@ -1629,7 +1597,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "しんかんせん (新幹線)",
         "reading": "shinkansen",
-        "id": "Shinkansen (kereta cepat)",
+        "id": "Shinkansen",
         "kanji": "新幹線"
       },
       {
@@ -1639,7 +1607,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "タクシー",
-        "reading": "takushii",
+        "reading": "takushi-",
         "id": "Taksi"
       },
       {
@@ -1655,33 +1623,16 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "歩いて"
       },
       {
-        "jp": "ともだち (友達)",
-        "reading": "tomodachi",
-        "id": "Teman",
-        "kanji": "友達"
-      },
-      {
-        "jp": "ひとりで (一人で)",
-        "reading": "hitori de",
-        "id": "Sendirian",
-        "kanji": "一人で"
-      },
-      {
-        "jp": "いつ",
-        "reading": "itsu",
-        "id": "Kapan"
-      },
-      {
-        "jp": "たんじょうび (誕生日)",
-        "reading": "tanjoubi",
-        "id": "Hari ulang tahun",
-        "kanji": "誕生日"
-      },
-      {
         "jp": "ひと (人)",
         "reading": "hito",
         "id": "Orang",
         "kanji": "人"
+      },
+      {
+        "jp": "ともだち (友達)",
+        "reading": "tomodachi",
+        "id": "Teman",
+        "kanji": "友達"
       },
       {
         "jp": "かれ (彼)",
@@ -1700,6 +1651,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "kazoku",
         "id": "Keluarga",
         "kanji": "家族"
+      },
+      {
+        "jp": "ひとりで (一人で)",
+        "reading": "hitoride",
+        "id": "Sendirian",
+        "kanji": "一人で"
       },
       {
         "jp": "せんしゅう (先週)",
@@ -1868,6 +1825,17 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "nannichi",
         "id": "Tanggal berapa, berapa hari",
         "kanji": "何日"
+      },
+      {
+        "jp": "いつ",
+        "reading": "itsu",
+        "id": "Kapan"
+      },
+      {
+        "jp": "たんじょうび (誕生日)",
+        "reading": "tanjoubi",
+        "id": "Hari ulang tahun",
+        "kanji": "誕生日"
       },
       {
         "jp": "そうですね",
@@ -2085,7 +2053,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "すいます (吸います)",
         "reading": "suimasu",
-        "id": "Menghisap (rokok) / Menghisap / merokok",
+        "id": "Menghisap / merokok",
         "kanji": "吸います"
       },
       {
@@ -2121,13 +2089,13 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "とります (撮ります)",
         "reading": "torimasu",
-        "id": "Mengambil (foto) / Mengambi (foto) / memotret",
+        "id": "Mengambi (foto) / memotret",
         "kanji": "撮ります"
       },
       {
         "jp": "します",
         "reading": "shimasu",
-        "id": "Melakukan / Mengerjakan / Berbuat"
+        "id": "Melakukan / mengerjakan / berbuat"
       },
       {
         "jp": "あいます (会います)",
@@ -2138,13 +2106,13 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "ごはん (ご飯)",
         "reading": "gohan",
-        "id": "Nasi / makanan",
+        "id": "Nasi",
         "kanji": "ご飯"
       },
       {
         "jp": "あさごはん (朝ご飯)",
         "reading": "asagohan",
-        "id": "Sarapan",
+        "id": "Makan pagi / sarapan",
         "kanji": "朝ご飯"
       },
       {
@@ -2203,7 +2171,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "おちゃ (お茶)",
         "reading": "ocha",
-        "id": "Teh Jepang / teh hijau",
+        "id": "Teh jepang / teh hijau",
         "kanji": "お茶"
       },
       {
@@ -2220,12 +2188,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ジュース",
-        "reading": "juusu",
+        "reading": "ju-su",
         "id": "Jus"
       },
       {
         "jp": "ビール",
-        "reading": "biiru",
+        "reading": "bi-ru",
         "id": "Bir"
       },
       {
@@ -2247,7 +2215,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "レポート",
-        "reading": "repooto",
+        "reading": "repo-to",
         "id": "Laporan"
       },
       {
@@ -2286,7 +2254,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "サッカー",
-        "reading": "sakkaa",
+        "reading": "sakka-",
         "id": "Sepak bola"
       },
       {
@@ -2345,7 +2313,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "じゃ、また",
-        "reading": "ja, mata",
+        "reading": "ja、mata",
         "id": "Ok, sampai jumpa besok"
       },
       {
@@ -2480,12 +2448,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ソーセージ",
-        "reading": "sooseeji",
+        "reading": "so-se-ji",
         "id": "Sosis"
       },
       {
         "jp": "ハム",
-        "reading": "haム",
+        "reading": "hamu",
         "id": "Ham"
       },
       {
@@ -2617,7 +2585,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "きります (切ります)",
         "reading": "kirimasu",
-        "id": "Memotong",
+        "id": "Memotong / menggunting",
         "kanji": "切ります"
       },
       {
@@ -2634,31 +2602,42 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "もらいます",
         "reading": "moraimasu",
-        "id": "Menerima"
+        "id": "Menerima / mendapatkan"
       },
       {
         "jp": "かします (貸します)",
         "reading": "kashimasu",
-        "id": "Meminjamkan",
+        "id": "Meminjamkan / menyewakan",
         "kanji": "貸します"
       },
       {
         "jp": "かります (借ります)",
         "reading": "karimasu",
-        "id": "Meminjam",
+        "id": "Meminjam / menyewa",
         "kanji": "借ります"
       },
       {
         "jp": "おしえます (教えます)",
         "reading": "oshiemasu",
-        "id": "Mengajar / memberi tahu",
+        "id": "Mengajar",
         "kanji": "教えます"
       },
       {
         "jp": "ならいます (習います)",
         "reading": "naraimasu",
-        "id": "Belajar (dari orang) / Belajar (kepada)",
+        "id": "Belajar (kepada)",
         "kanji": "習います"
+      },
+      {
+        "jp": "かけます（を）",
+        "reading": "kakemasu",
+        "id": "Menelpon"
+      },
+      {
+        "jp": "て (手)",
+        "reading": "te",
+        "id": "Tangan",
+        "kanji": "手"
       },
       {
         "jp": "はし",
@@ -2667,7 +2646,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "スプーン",
-        "reading": "supuun",
+        "reading": "supu-n",
         "id": "Sendok"
       },
       {
@@ -2677,7 +2656,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "フォーク",
-        "reading": "fooku",
+        "reading": "fuぉ-ku",
         "id": "Garpu"
       },
       {
@@ -2688,54 +2667,16 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "パソコン",
         "reading": "pasokon",
-        "id": "Laptop / PC"
+        "id": "Laptop"
       },
       {
         "jp": "ケータイ",
-        "reading": "keetai",
-        "id": "HP / Ponsel"
-      },
-      {
-        "jp": "プレゼント",
-        "reading": "purezento",
-        "id": "Hadiah"
-      },
-      {
-        "jp": "にもつ (荷物)",
-        "reading": "nimotsu",
-        "id": "Barang bawaan / paket",
-        "kanji": "荷物"
-      },
-      {
-        "jp": "おかね (お金)",
-        "reading": "okane",
-        "id": "Uang",
-        "kanji": "お金"
-      },
-      {
-        "jp": "もう",
-        "reading": "mou",
-        "id": "Sudah"
-      },
-      {
-        "jp": "まだ",
-        "reading": "mada",
-        "id": "Belum"
-      },
-      {
-        "jp": "かけます（を）",
-        "reading": "kakemasu (o)",
-        "id": "Menelpon"
-      },
-      {
-        "jp": "て (手)",
-        "reading": "te",
-        "id": "Tangan",
-        "kanji": "手"
+        "reading": "ke-tai",
+        "id": "HP"
       },
       {
         "jp": "メール",
-        "reading": "meeru",
+        "reading": "me-ru",
         "id": "Email"
       },
       {
@@ -2751,17 +2692,17 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ホッチキス",
-        "reading": "hotchikisu",
+        "reading": "hocchikisu",
         "id": "Stapler"
       },
       {
         "jp": "セロテープ",
-        "reading": "seroteepu",
+        "reading": "serote-pu",
         "id": "Selotip"
       },
       {
         "jp": "けしゴム (消しゴム)",
-        "reading": "keshiゴム",
+        "reading": "keshigomu",
         "id": "Penghapus karet",
         "kanji": "消しゴム"
       },
@@ -2781,6 +2722,23 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "jp": "シャツ",
         "reading": "shatsu",
         "id": "Kemeja"
+      },
+      {
+        "jp": "プレゼント",
+        "reading": "purezento",
+        "id": "Hadiah / kado"
+      },
+      {
+        "jp": "にもつ (荷物)",
+        "reading": "nimotsu",
+        "id": "Barang",
+        "kanji": "荷物"
+      },
+      {
+        "jp": "おかね (お金)",
+        "reading": "okane",
+        "id": "Uang",
+        "kanji": "お金"
       },
       {
         "jp": "きっぷ (切符)",
@@ -2816,6 +2774,16 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "okaasan",
         "id": "Ibu orang lain",
         "kanji": "お母さん"
+      },
+      {
+        "jp": "もう",
+        "reading": "mou",
+        "id": "Sudah"
+      },
+      {
+        "jp": "まだ",
+        "reading": "mada",
+        "id": "Belum"
       },
       {
         "jp": "これから",
@@ -3086,49 +3054,60 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
     ],
     "keyVocab": [
       {
-        "jp": "ハンサム [な]",
-        "reading": "hansamu [na]",
-        "id": "Tampan / rupawan"
+        "jp": "ハンサム（な）",
+        "reading": "hansamu",
+        "id": "Tampan / gagah / ganteng"
       },
       {
-        "jp": "きれい [な]",
-        "reading": "kirei [na]",
-        "id": "Cantik / bersih / indah"
+        "jp": "きれい（な）",
+        "reading": "kirei",
+        "id": "Cantik / bersih"
       },
       {
-        "jp": "しずか [な]",
-        "reading": "shizuka [na]",
-        "id": "Tenang / sunyi"
+        "jp": "しずか（な） (静香（な）)",
+        "reading": "shizuka",
+        "id": "Sunyi / tenang",
+        "kanji": "静香（な）"
       },
       {
-        "jp": "にぎやか [な]",
-        "reading": "nigiyaka [na]",
+        "jp": "にぎやか（な）",
+        "reading": "nigiyaka",
         "id": "Ramai"
       },
       {
-        "jp": "ゆうめい [な]",
-        "reading": "yuumei [na]",
-        "id": "Terkenal"
+        "jp": "ゆうめい（な） (有名（な）)",
+        "reading": "yuumei",
+        "id": "Terkenal",
+        "kanji": "有名（な）"
       },
       {
-        "jp": "しんせつ [な]",
-        "reading": "shinsetsu [na]",
-        "id": "Ramah / baik hati"
+        "jp": "しんせつ（な） (新設（な）)",
+        "reading": "shinsetsu",
+        "id": "Baik hati",
+        "kanji": "新設（な）"
       },
       {
-        "jp": "げんき [な]",
-        "reading": "genki [na]",
-        "id": "Sehat / bersemangat"
+        "jp": "げんき（な） (元気（な）)",
+        "reading": "genki",
+        "id": "Sehat",
+        "kanji": "元気（な）"
       },
       {
-        "jp": "ひま [な]",
-        "reading": "hima [na]",
-        "id": "Senggang / luang"
+        "jp": "ひま（な） (暇（な）)",
+        "reading": "hima",
+        "id": "Senggang",
+        "kanji": "暇（な）"
       },
       {
-        "jp": "べんり [な]",
-        "reading": "benri [na]",
-        "id": "Praktis"
+        "jp": "べんり（な） (便利（な）)",
+        "reading": "benri",
+        "id": "Praktis",
+        "kanji": "便利（な）"
+      },
+      {
+        "jp": "すてき（な）",
+        "reading": "suteki",
+        "id": "Bagus"
       },
       {
         "jp": "おおきい (大きい)",
@@ -3155,44 +3134,44 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "古い"
       },
       {
-        "jp": "いい (よい)",
-        "reading": "ii (yoi)",
-        "id": "Bagus / Baik"
+        "jp": "いい（よい）",
+        "reading": "ii",
+        "id": "Baik / bagus"
       },
       {
         "jp": "わるい (悪い)",
         "reading": "warui",
-        "id": "Buruk / jelek",
+        "id": "Jelek",
         "kanji": "悪い"
       },
       {
-        "jp": "あつい (暑い / 熱い)",
+        "jp": "あつい (暑い、熱い)",
         "reading": "atsui",
-        "id": "Panas (cuaca / benda)",
-        "kanji": "暑い / 熱い"
+        "id": "Panas",
+        "kanji": "暑い、熱い"
       },
       {
         "jp": "さむい (寒い)",
         "reading": "samui",
-        "id": "Dingin (suhu udara) / Dingin suhu",
+        "id": "Dingin suhu",
         "kanji": "寒い"
       },
       {
         "jp": "つめたい (冷たい)",
         "reading": "tsumetai",
-        "id": "Dingin (benda disentuh) / Dingin benda",
+        "id": "Dingin benda",
         "kanji": "冷たい"
       },
       {
         "jp": "むずかしい (難しい)",
         "reading": "muzukashii",
-        "id": "Sulit",
+        "id": "Sulit / susah",
         "kanji": "難しい"
       },
       {
         "jp": "やさしい (易しい)",
         "reading": "yasashii",
-        "id": "Mudah",
+        "id": "Mudah / gampang",
         "kanji": "易しい"
       },
       {
@@ -3208,79 +3187,6 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "安い"
       },
       {
-        "jp": "おいしい",
-        "reading": "oishii",
-        "id": "Enak / lezat"
-      },
-      {
-        "jp": "いそがしい (忙しい)",
-        "reading": "isogashii",
-        "id": "Sibuk",
-        "kanji": "忙しい"
-      },
-      {
-        "jp": "ハンサム（な）",
-        "reading": "hansaム (na)",
-        "id": "Tampan / gagah / ganteng"
-      },
-      {
-        "jp": "きれい（な）",
-        "reading": "kirei (na)",
-        "id": "Cantik / bersih"
-      },
-      {
-        "jp": "しずか（な） (静香（な）)",
-        "reading": "shizuka (na)",
-        "id": "Sunyi / tenang",
-        "kanji": "静香（な）"
-      },
-      {
-        "jp": "にぎやか（な）",
-        "reading": "nigiyaka (na)",
-        "id": "Ramai"
-      },
-      {
-        "jp": "ゆうめい（な） (有名（な）)",
-        "reading": "yuumei (na)",
-        "id": "Terkenal",
-        "kanji": "有名（な）"
-      },
-      {
-        "jp": "しんせつ（な） (新設（な）)",
-        "reading": "shinsetsu (na)",
-        "id": "Baik hati",
-        "kanji": "新設（な）"
-      },
-      {
-        "jp": "げんき（な） (元気（な）)",
-        "reading": "genki (na)",
-        "id": "Sehat",
-        "kanji": "元気（な）"
-      },
-      {
-        "jp": "ひま（な） (暇（な）)",
-        "reading": "hima (na)",
-        "id": "Senggang",
-        "kanji": "暇（な）"
-      },
-      {
-        "jp": "べんり（な） (便利（な）)",
-        "reading": "benri (na)",
-        "id": "Praktis",
-        "kanji": "便利（な）"
-      },
-      {
-        "jp": "すてき（な）",
-        "reading": "suteki (na)",
-        "id": "Bagus"
-      },
-      {
-        "jp": "あつい (暑い、熱い)",
-        "reading": "atsui",
-        "id": "Panas",
-        "kanji": "暑い、熱い"
-      },
-      {
         "jp": "ひくい (低い)",
         "reading": "hikui",
         "id": "Rendah",
@@ -3290,6 +3196,17 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "jp": "おもしろい",
         "reading": "omoshiroi",
         "id": "Menarik"
+      },
+      {
+        "jp": "おいしい",
+        "reading": "oishii",
+        "id": "Enak"
+      },
+      {
+        "jp": "いそがしい (忙しい)",
+        "reading": "isogashii",
+        "id": "Sibuk",
+        "kanji": "忙しい"
       },
       {
         "jp": "たのしい (楽しい)",
@@ -3381,7 +3298,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "どんな～",
-        "reading": "donna~",
+        "reading": "donna～",
         "id": "Yang bagaimana ?"
       },
       {
@@ -3401,7 +3318,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "～が～",
-        "reading": "~ga~",
+        "reading": "~ga～",
         "id": "Tetapi"
       },
       {
@@ -3422,7 +3339,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "（いいえ）けっこうです",
-        "reading": "(iie) kekkoudesu",
+        "reading": "kekkoudesu",
         "id": "Cukup"
       },
       {
@@ -3464,7 +3381,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "ちゃいろい",
         "reading": "chairoi",
-        "id": "Coklat"
+        "id": "coklat"
       },
       {
         "jp": "ピンク",
@@ -3478,13 +3395,13 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "グレー",
-        "reading": "guree",
+        "reading": "gure-",
         "id": "Abu-abu"
       },
       {
         "jp": "ベージュ",
-        "reading": "beeju",
-        "id": "Krem"
+        "reading": "be-ju",
+        "id": "krem"
       },
       {
         "jp": "はる (春)",
@@ -3574,43 +3491,37 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "わかります (分かります)",
         "reading": "wakarimasu",
-        "id": "Mengerti / paham",
+        "id": "Mengerti",
         "kanji": "分かります"
       },
       {
         "jp": "あります",
         "reading": "arimasu",
-        "id": "Ada / Memiliki / Mempunyai (benda mati)"
+        "id": "Ada / mempunyai"
       },
       {
-        "jp": "すき [な] (好き)",
-        "reading": "suki [na]",
-        "id": "Suka",
-        "kanji": "好き"
+        "jp": "すき（な） (好きな)",
+        "reading": "suki",
+        "id": "Suka , gemar",
+        "kanji": "好きな"
       },
       {
-        "jp": "きらい [な] (嫌い)",
-        "reading": "kirai [na]",
-        "id": "Tidak suka / benci",
-        "kanji": "嫌い"
+        "jp": "きらい（な） (嫌いな)",
+        "reading": "kirai",
+        "id": "Benci",
+        "kanji": "嫌いな"
       },
       {
-        "jp": "じょうず [な] (上手)",
-        "reading": "jouzu [na]",
-        "id": "Pandai / mahir",
-        "kanji": "上手"
+        "jp": "じょうず（な） (上手な)",
+        "reading": "jouzu",
+        "id": "Pandai , pintar",
+        "kanji": "上手な"
       },
       {
-        "jp": "へた [な] (下手)",
-        "reading": "heta [na]",
-        "id": "Kurang pandai / payah",
-        "kanji": "下手"
-      },
-      {
-        "jp": "りょうり (料理)",
-        "reading": "ryouri",
-        "id": "Masakan",
-        "kanji": "料理"
+        "jp": "へた（な） (下手な)",
+        "reading": "heta",
+        "id": "Tidak pandai , tidak pintar , bodoh",
+        "kanji": "下手な"
       },
       {
         "jp": "のみもの (飲み物)",
@@ -3619,9 +3530,32 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "飲み物"
       },
       {
+        "jp": "りょうり (料理)",
+        "reading": "ryouri",
+        "id": "Masakan",
+        "kanji": "料理"
+      },
+      {
         "jp": "スポーツ",
-        "reading": "supootsu",
+        "reading": "supo-tsu",
         "id": "Olahraga"
+      },
+      {
+        "jp": "やきゅう (野球)",
+        "reading": "yakyuu",
+        "id": "Baseball",
+        "kanji": "野球"
+      },
+      {
+        "jp": "ダンス",
+        "reading": "dansu",
+        "id": "Dansa"
+      },
+      {
+        "jp": "りょこう (旅行)",
+        "reading": "ryokou",
+        "id": "Tamasya",
+        "kanji": "旅行"
       },
       {
         "jp": "おんがく (音楽)",
@@ -3636,21 +3570,74 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "歌"
       },
       {
-        "jp": "ダンス",
-        "reading": "dansu",
-        "id": "Tarian / Dansa"
+        "jp": "クラシック",
+        "reading": "kurashikku",
+        "id": "Klasik"
+      },
+      {
+        "jp": "ジャズ",
+        "reading": "jazu",
+        "id": "Jaz"
+      },
+      {
+        "jp": "コンサート",
+        "reading": "konsa-to",
+        "id": "Konser"
+      },
+      {
+        "jp": "カラオケ",
+        "reading": "karaoke",
+        "id": "Karaoke"
+      },
+      {
+        "jp": "かぶき (歌舞伎)",
+        "reading": "kabuki",
+        "id": "Kabuki (drama tradisional jepang)",
+        "kanji": "歌舞伎"
+      },
+      {
+        "jp": "え (絵)",
+        "reading": "e",
+        "id": "Gambar",
+        "kanji": "絵"
       },
       {
         "jp": "じ (字)",
         "reading": "ji",
-        "id": "Huruf / aksara",
+        "id": "Huruf",
         "kanji": "字"
       },
       {
         "jp": "かんじ (漢字)",
         "reading": "kanji",
-        "id": "Huruf Kanji",
+        "id": "Kanji",
         "kanji": "漢字"
+      },
+      {
+        "jp": "ひらがな",
+        "reading": "hiragana",
+        "id": "Hiragana"
+      },
+      {
+        "jp": "かたかな",
+        "reading": "katakana",
+        "id": "Katakana"
+      },
+      {
+        "jp": "ローマじ",
+        "reading": "ro-maji",
+        "id": "Huruf latin"
+      },
+      {
+        "jp": "こまかいおかね (細かいお金)",
+        "reading": "komakaiokane",
+        "id": "Uang kecil, receh",
+        "kanji": "細かいお金"
+      },
+      {
+        "jp": "チケット",
+        "reading": "chiketto",
+        "id": "Tiket"
       },
       {
         "jp": "じかん (時間)",
@@ -3671,14 +3658,49 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "約束"
       },
       {
+        "jp": "アルバイト",
+        "reading": "arubaito",
+        "id": "Kerja paruh waktu"
+      },
+      {
+        "jp": "ごしゅじん (ご主人)",
+        "reading": "goshujin",
+        "id": "Suami orang lain",
+        "kanji": "ご主人"
+      },
+      {
+        "jp": "おっと／しゅじん (夫／主人)",
+        "reading": "otto／shujin",
+        "id": "Suami",
+        "kanji": "夫／主人"
+      },
+      {
+        "jp": "おくさん (奥さん)",
+        "reading": "okusan",
+        "id": "Istri orang lain",
+        "kanji": "奥さん"
+      },
+      {
+        "jp": "つま／かない (妻／家内)",
+        "reading": "tsuma／kanai",
+        "id": "Istri",
+        "kanji": "妻／家内"
+      },
+      {
+        "jp": "こども (子供)",
+        "reading": "kodomo",
+        "id": "Anak",
+        "kanji": "子供"
+      },
+      {
         "jp": "よく",
         "reading": "yoku",
-        "id": "Sering / dengan baik"
+        "id": "Dengan baik"
       },
       {
         "jp": "だいたい",
         "reading": "daitai",
-        "id": "Sebagian besar / garis besar / Kira-kira"
+        "id": "Kira-kira"
       },
       {
         "jp": "たくさん",
@@ -3694,137 +3716,8 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "ぜんぜん (全然)",
         "reading": "zenzen",
-        "id": "Sama sekali tidak (diikuti negatif)",
+        "id": "Sama sekali",
         "kanji": "全然"
-      },
-      {
-        "jp": "すき（な） (好きな)",
-        "reading": "suki (na)",
-        "id": "Suka , gemar",
-        "kanji": "好きな"
-      },
-      {
-        "jp": "きらい（な） (嫌いな)",
-        "reading": "kirai (na)",
-        "id": "Benci",
-        "kanji": "嫌いな"
-      },
-      {
-        "jp": "じょうず（な） (上手な)",
-        "reading": "jouzu (na)",
-        "id": "Pandai , pintar",
-        "kanji": "上手な"
-      },
-      {
-        "jp": "へた（な） (下手な)",
-        "reading": "heta (na)",
-        "id": "Tidak pandai , tidak pintar , bodoh",
-        "kanji": "下手な"
-      },
-      {
-        "jp": "やきゅう (野球)",
-        "reading": "yakyuu",
-        "id": "Baseball",
-        "kanji": "野球"
-      },
-      {
-        "jp": "りょこう (旅行)",
-        "reading": "ryokou",
-        "id": "Tamasya",
-        "kanji": "旅行"
-      },
-      {
-        "jp": "クラシック",
-        "reading": "kurashikku",
-        "id": "Klasik"
-      },
-      {
-        "jp": "ジャズ",
-        "reading": "jazu",
-        "id": "Jaz"
-      },
-      {
-        "jp": "コンサート",
-        "reading": "konsaato",
-        "id": "Konser"
-      },
-      {
-        "jp": "カラオケ",
-        "reading": "karaoke",
-        "id": "Karaoke"
-      },
-      {
-        "jp": "かぶき (歌舞伎)",
-        "reading": "kabuki",
-        "id": "Kabuki (drama tradisional Jepang)",
-        "kanji": "歌舞伎"
-      },
-      {
-        "jp": "え (絵)",
-        "reading": "e",
-        "id": "Gambar",
-        "kanji": "絵"
-      },
-      {
-        "jp": "ひらがな",
-        "reading": "hiragana",
-        "id": "Hiragana"
-      },
-      {
-        "jp": "かたかな",
-        "reading": "katakana",
-        "id": "Katakana"
-      },
-      {
-        "jp": "ローマじ",
-        "reading": "roomaji",
-        "id": "Huruf latin"
-      },
-      {
-        "jp": "こまかいおかね (細かいお金)",
-        "reading": "komakaiokane",
-        "id": "Uang kecil, receh",
-        "kanji": "細かいお金"
-      },
-      {
-        "jp": "チケット",
-        "reading": "chiketto",
-        "id": "Tiket"
-      },
-      {
-        "jp": "アルバイト",
-        "reading": "arubaito",
-        "id": "Kerja paruh waktu"
-      },
-      {
-        "jp": "ごしゅじん (ご主人)",
-        "reading": "goshujin",
-        "id": "Suami orang lain",
-        "kanji": "ご主人"
-      },
-      {
-        "jp": "おっと／しゅじん (夫／主人)",
-        "reading": "otto/shujin",
-        "id": "Suami",
-        "kanji": "夫／主人"
-      },
-      {
-        "jp": "おくさん (奥さん)",
-        "reading": "okusan",
-        "id": "Istri orang lain",
-        "kanji": "奥さん"
-      },
-      {
-        "jp": "つま／かない (妻／家内)",
-        "reading": "tsuma/kanai",
-        "id": "Istri",
-        "kanji": "妻／家内"
-      },
-      {
-        "jp": "こども (子供)",
-        "reading": "kodomo",
-        "id": "Anak",
-        "kanji": "子供"
       },
       {
         "jp": "はやく (早く／速く)",
@@ -3904,12 +3797,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "えんか (演歌)",
         "reading": "enka",
-        "id": "Lagu tradisional Jepang populer",
+        "id": "Lagu tradisional jepang populer",
         "kanji": "演歌"
       },
       {
         "jp": "ミュージカル",
-        "reading": "myuujikaru",
+        "reading": "myu-jikaru",
         "id": "Drama musikal"
       },
       {
@@ -3919,7 +3812,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ホラー",
-        "reading": "horaa",
+        "reading": "hora-",
         "id": "Film horor"
       },
       {
@@ -3929,7 +3822,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ドキュメンタリー",
-        "reading": "dokyumentarii",
+        "reading": "dokyumentari-",
         "id": "Film dokumentasi"
       },
       {
@@ -3940,7 +3833,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ミステリー",
-        "reading": "misuterii",
+        "reading": "misuteri-",
         "id": "Film misteri"
       },
       {
@@ -3968,22 +3861,22 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ソフトボール",
-        "reading": "sofutobooru",
+        "reading": "sofutobo-ru",
         "id": "Softball"
       },
       {
         "jp": "サッカー",
-        "reading": "sakkaa",
+        "reading": "sakka-",
         "id": "Sepak bola"
       },
       {
         "jp": "ラグビー",
-        "reading": "ragubii",
+        "reading": "ragubi-",
         "id": "Rugby"
       },
       {
         "jp": "バレーボール",
-        "reading": "bareebooru",
+        "reading": "bare-bo-ru",
         "id": "Voli"
       },
       {
@@ -3998,17 +3891,17 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "スキー",
-        "reading": "sukii",
+        "reading": "suki-",
         "id": "Sky"
       },
       {
         "jp": "スケート",
-        "reading": "sukeeto",
+        "reading": "suke-to",
         "id": "Skate"
       },
       {
         "jp": "たっきゅう／ピンポン (卓球)",
-        "reading": "takkyuu/pinpon",
+        "reading": "takkyuu／pinpon",
         "id": "Pingpong",
         "kanji": "卓球"
       },
@@ -4087,39 +3980,39 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "あります",
         "reading": "arimasu",
-        "id": "Ada (benda mati/tumbuhan) / Ada (benda mati)"
+        "id": "Ada (benda mati)"
       },
       {
         "jp": "います",
         "reading": "imasu",
-        "id": "Ada (makhluk hidup: orang/hewan) / Ada (benda hidup)"
+        "id": "Ada (benda hidup)"
       },
       {
-        "jp": "いろいろ [な]",
-        "reading": "iroiro [na]",
-        "id": "Bermacam-macam"
+        "jp": "いろいろ（な）",
+        "reading": "iroiro",
+        "id": "Berbagai / macam-macam"
       },
       {
         "jp": "おとこのひと (男の人)",
-        "reading": "otoko no hito",
-        "id": "Laki-laki dewasa / Orang laki-laki",
+        "reading": "otokonohito",
+        "id": "Orang laki-laki",
         "kanji": "男の人"
       },
       {
         "jp": "おんなのひと (女の人)",
-        "reading": "onna no hito",
-        "id": "Perempuan dewasa / Orang perempuan",
+        "reading": "onnanohito",
+        "id": "Orang perempuan",
         "kanji": "女の人"
       },
       {
         "jp": "おとこのこ (男の子)",
-        "reading": "otoko no ko",
+        "reading": "otokonoko",
         "id": "Anak laki-laki",
         "kanji": "男の子"
       },
       {
         "jp": "おんなのこ (女の子)",
-        "reading": "onna no ko",
+        "reading": "onnanoko",
         "id": "Anak perempuan",
         "kanji": "女の子"
       },
@@ -4136,6 +4029,17 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "猫"
       },
       {
+        "jp": "パンダ",
+        "reading": "panda",
+        "id": "Panda"
+      },
+      {
+        "jp": "ぞう (像)",
+        "reading": "zou",
+        "id": "Gajah",
+        "kanji": "像"
+      },
+      {
         "jp": "き (木)",
         "reading": "ki",
         "id": "Pohon",
@@ -4146,88 +4050,6 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "mono",
         "id": "Barang",
         "kanji": "物"
-      },
-      {
-        "jp": "うえ (上)",
-        "reading": "ue",
-        "id": "Atas",
-        "kanji": "上"
-      },
-      {
-        "jp": "した (下)",
-        "reading": "shita",
-        "id": "Bawah",
-        "kanji": "下"
-      },
-      {
-        "jp": "まえ (前)",
-        "reading": "mae",
-        "id": "Depan",
-        "kanji": "前"
-      },
-      {
-        "jp": "うしろ (後ろ)",
-        "reading": "ushiro",
-        "id": "Belakang",
-        "kanji": "後ろ"
-      },
-      {
-        "jp": "みぎ (右)",
-        "reading": "migi",
-        "id": "Kanan",
-        "kanji": "右"
-      },
-      {
-        "jp": "ひだり (左)",
-        "reading": "hidari",
-        "id": "Kiri",
-        "kanji": "左"
-      },
-      {
-        "jp": "なか (中)",
-        "reading": "naka",
-        "id": "Dalam",
-        "kanji": "中"
-      },
-      {
-        "jp": "そと (外)",
-        "reading": "soto",
-        "id": "Luar",
-        "kanji": "外"
-      },
-      {
-        "jp": "となり (隣)",
-        "reading": "tonari",
-        "id": "Sebelah / Samping / Tetangga",
-        "kanji": "隣"
-      },
-      {
-        "jp": "ちかく (近く)",
-        "reading": "chikaku",
-        "id": "Dekat",
-        "kanji": "近く"
-      },
-      {
-        "jp": "あいだ (間)",
-        "reading": "aida",
-        "id": "Antara",
-        "kanji": "間"
-      },
-      {
-        "jp": "いろいろ（な）",
-        "reading": "iroiro (na)",
-        "id": "Berbagai / macam-macam"
-      },
-      {
-        "jp": "パンダ",
-        "reading": "panda",
-        "id": "Panda"
-      },
-      {
-        "jp": "ぞう (像)",
-        "reading": "zou",
-        "id": "Gajah",
-        "kanji": "像"
       },
       {
         "jp": "でんち (電池)",
@@ -4243,7 +4065,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "スイッチ",
-        "reading": "suitchi",
+        "reading": "suicchi",
         "id": "Saklar"
       },
       {
@@ -4254,7 +4076,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "テーブル",
-        "reading": "teeburu",
+        "reading": "te-buru",
         "id": "Meja makan"
       },
       {
@@ -4330,18 +4152,84 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "県"
       },
       {
+        "jp": "うえ (上)",
+        "reading": "ue",
+        "id": "Atas",
+        "kanji": "上"
+      },
+      {
+        "jp": "した (下)",
+        "reading": "shita",
+        "id": "Bawah",
+        "kanji": "下"
+      },
+      {
+        "jp": "まえ (前)",
+        "reading": "mae",
+        "id": "Depan",
+        "kanji": "前"
+      },
+      {
+        "jp": "うしろ (後ろ)",
+        "reading": "ushiro",
+        "id": "Belakang",
+        "kanji": "後ろ"
+      },
+      {
+        "jp": "みぎ (右)",
+        "reading": "migi",
+        "id": "Kanan",
+        "kanji": "右"
+      },
+      {
+        "jp": "ひだり (左)",
+        "reading": "hidari",
+        "id": "Kiri",
+        "kanji": "左"
+      },
+      {
+        "jp": "なか (中)",
+        "reading": "naka",
+        "id": "Dalam",
+        "kanji": "中"
+      },
+      {
+        "jp": "そと (外)",
+        "reading": "soto",
+        "id": "Luar",
+        "kanji": "外"
+      },
+      {
+        "jp": "となり (隣)",
+        "reading": "tonari",
+        "id": "Samping / sebelah",
+        "kanji": "隣"
+      },
+      {
+        "jp": "ちかく (近く)",
+        "reading": "chikaku",
+        "id": "Dekat",
+        "kanji": "近く"
+      },
+      {
+        "jp": "あいだ (間)",
+        "reading": "aida",
+        "id": "Antara",
+        "kanji": "間"
+      },
+      {
         "jp": "どうもすみません",
         "reading": "doumosumimasen",
         "id": "Maaf / terima kasih banyak"
       },
       {
         "jp": "ナンプラー",
-        "reading": "nanpuraa",
+        "reading": "nanpura-",
         "id": "Kecap ikan"
       },
       {
         "jp": "コーナー",
-        "reading": "koonaa",
+        "reading": "ko-na-",
         "id": "Tempat / bagian penjualan"
       },
       {
@@ -4401,7 +4289,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "ベランダ",
         "reading": "beranda",
-        "id": "Teras"
+        "id": "teras"
       }
     ]
   },
@@ -4460,117 +4348,6 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
     ],
     "keyVocab": [
       {
-        "jp": "ひとつ (１つ)",
-        "reading": "hitotsu",
-        "id": "1 buah (umum)"
-      },
-      {
-        "jp": "ふたつ (２つ)",
-        "reading": "futatsu",
-        "id": "2 buah"
-      },
-      {
-        "jp": "みっつ (３つ)",
-        "reading": "mittsu",
-        "id": "3 buah"
-      },
-      {
-        "jp": "よっつ (４つ)",
-        "reading": "yottsu",
-        "id": "4 buah"
-      },
-      {
-        "jp": "いつつ (５つ)",
-        "reading": "itsutsu",
-        "id": "5 buah"
-      },
-      {
-        "jp": "むっつ (６つ)",
-        "reading": "muttsu",
-        "id": "6 buah"
-      },
-      {
-        "jp": "ななつ (７つ)",
-        "reading": "nanatsu",
-        "id": "7 buah"
-      },
-      {
-        "jp": "やっつ (８つ)",
-        "reading": "yattsu",
-        "id": "8 buah"
-      },
-      {
-        "jp": "ここのつ (９つ)",
-        "reading": "kokonotsu",
-        "id": "9 buah"
-      },
-      {
-        "jp": "とお (１０)",
-        "reading": "too",
-        "id": "10 buah"
-      },
-      {
-        "jp": "いくつ",
-        "reading": "ikutsu",
-        "id": "Berapa buah"
-      },
-      {
-        "jp": "〜にん (人)",
-        "reading": "~nin",
-        "id": "... orang",
-        "kanji": "人"
-      },
-      {
-        "jp": "〜だい (台)",
-        "reading": "~dai",
-        "id": "... unit (mesin/kendaraan)",
-        "kanji": "台"
-      },
-      {
-        "jp": "〜まい (枚)",
-        "reading": "~mai",
-        "id": "... lembar (benda tipis/datar)",
-        "kanji": "枚"
-      },
-      {
-        "jp": "〜かい (回)",
-        "reading": "~kai",
-        "id": "... kali (frekuensi)",
-        "kanji": "回"
-      },
-      {
-        "jp": "りんご",
-        "reading": "ringo",
-        "id": "Apel"
-      },
-      {
-        "jp": "みかん",
-        "reading": "mikan",
-        "id": "Jeruk"
-      },
-      {
-        "jp": "きって (切手)",
-        "reading": "kitte",
-        "id": "Perangko",
-        "kanji": "切手"
-      },
-      {
-        "jp": "はがき",
-        "reading": "hagaki",
-        "id": "Kartu pos"
-      },
-      {
-        "jp": "ふうとう (封筒)",
-        "reading": "fuutou",
-        "id": "Amplop",
-        "kanji": "封筒"
-      },
-      {
-        "jp": "どのくらい",
-        "reading": "dono kurai",
-        "id": "Berapa lama / kira-kira seberapa / Berapa lama ?"
-      },
-      {
         "jp": "います",
         "reading": "imasu",
         "id": "Ada / mempunyai"
@@ -4582,9 +4359,64 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "やすみます（を） (休みます)",
-        "reading": "yasumimasu (o)",
+        "reading": "yasumimasu",
         "id": "Tidak masuk kerja / libur",
         "kanji": "休みます"
+      },
+      {
+        "jp": "ひとつ",
+        "reading": "hitotsu",
+        "id": "1 buah"
+      },
+      {
+        "jp": "ふたつ",
+        "reading": "futatsu",
+        "id": "2 buah"
+      },
+      {
+        "jp": "みっつ",
+        "reading": "mittsu",
+        "id": "3 buah"
+      },
+      {
+        "jp": "よっつ",
+        "reading": "yottsu",
+        "id": "4 buah"
+      },
+      {
+        "jp": "いつつ",
+        "reading": "itsutsu",
+        "id": "5 buah"
+      },
+      {
+        "jp": "むっつ",
+        "reading": "muttsu",
+        "id": "6 buah"
+      },
+      {
+        "jp": "ななつ",
+        "reading": "nanatsu",
+        "id": "7 buah"
+      },
+      {
+        "jp": "やっつ",
+        "reading": "yattsu",
+        "id": "8 buah"
+      },
+      {
+        "jp": "ここのつ",
+        "reading": "kokonotsu",
+        "id": "9 buah"
+      },
+      {
+        "jp": "とお",
+        "reading": "too",
+        "id": "10 buah"
+      },
+      {
+        "jp": "いくつ",
+        "reading": "ikutsu",
+        "id": "Berapa buah ?"
       },
       {
         "jp": "ひとり",
@@ -4621,19 +4453,46 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "～回"
       },
       {
+        "jp": "りんご",
+        "reading": "ringo",
+        "id": "Apel"
+      },
+      {
+        "jp": "みかん",
+        "reading": "mikan",
+        "id": "Jeruk"
+      },
+      {
         "jp": "サンドイッチ",
-        "reading": "sandoitchi",
+        "reading": "sandoicchi",
         "id": "Sandwich"
       },
       {
         "jp": "カレー",
-        "reading": "karee",
+        "reading": "kare-",
         "id": "Kare"
       },
       {
         "jp": "アイスクリーム",
-        "reading": "aisukuriiム",
+        "reading": "aisukuri-mu",
         "id": "Es krim"
+      },
+      {
+        "jp": "きって (切手)",
+        "reading": "kitte",
+        "id": "Perangko",
+        "kanji": "切手"
+      },
+      {
+        "jp": "はがき",
+        "reading": "hagaki",
+        "id": "Kartu pos"
+      },
+      {
+        "jp": "ふうとう (封筒)",
+        "reading": "fuutou",
+        "id": "Amplop",
+        "kanji": "封筒"
       },
       {
         "jp": "がいこく (外国)",
@@ -4680,6 +4539,11 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "jp": "～ぐらい",
         "reading": "~gurai",
         "id": "Kira-kira ~"
+      },
+      {
+        "jp": "どのくらい",
+        "reading": "donokurai",
+        "id": "Berapa lama ?"
       },
       {
         "jp": "ぜんぶで (全部で)",
@@ -4740,12 +4604,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "エアメール",
-        "reading": "eameeru",
+        "reading": "eame-ru",
         "id": "Pos udara"
       },
       {
         "jp": "オーストラリア",
-        "reading": "oosutoraria",
+        "reading": "o-sutoraria",
         "id": "Australia"
       },
       {
@@ -4818,22 +4682,22 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "うどん",
         "reading": "udon",
-        "id": "Mie Jepang ukuran besar"
+        "id": "Mie jepang ukuran besar"
       },
       {
         "jp": "そば",
         "reading": "soba",
-        "id": "Mie Jepang warna abu-abu"
+        "id": "Mie jepang warna abu-abu"
       },
       {
         "jp": "ラーメン",
-        "reading": "raamen",
-        "id": "Mie Jepang ukuran biasa"
+        "reading": "ra-men",
+        "id": "Mie jepang ukuran biasa"
       },
       {
         "jp": "やきそば (焼きそば)",
         "reading": "yakisoba",
-        "id": "Mie goreng Jepang",
+        "id": "Mie goreng jepang",
         "kanji": "焼きそば"
       },
       {
@@ -4844,13 +4708,13 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "カレーライス",
-        "reading": "kareeraisu",
+        "reading": "kare-raisu",
         "id": "Nasi kare"
       },
       {
         "jp": "ハンバーグ",
-        "reading": "hanbaagu",
-        "id": "Hamburger"
+        "reading": "hanba-gu",
+        "id": "hamburger"
       },
       {
         "jp": "コロッケ",
@@ -4874,12 +4738,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "スープ",
-        "reading": "suupu",
+        "reading": "su-pu",
         "id": "Sup"
       },
       {
         "jp": "スパゲッティ",
-        "reading": "supagetti",
+        "reading": "supagetteぃ",
         "id": "Spageti"
       },
       {
@@ -4889,12 +4753,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "トースト",
-        "reading": "toosuto",
+        "reading": "to-suto",
         "id": "Roti panggang"
       },
       {
         "jp": "コーヒー",
-        "reading": "koohii",
+        "reading": "ko-hi-",
         "id": "Kopi"
       },
       {
@@ -4910,12 +4774,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ジュース",
-        "reading": "juusu",
+        "reading": "ju-su",
         "id": "Jus"
       },
       {
         "jp": "コーラ",
-        "reading": "koora",
+        "reading": "ko-ra",
         "id": "Coca cola"
       }
     ]
@@ -4980,10 +4844,10 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
     ],
     "keyVocab": [
       {
-        "jp": "かんたん [な] (簡単)",
-        "reading": "kantan [na]",
-        "id": "Mudah / sederhana",
-        "kanji": "簡単"
+        "jp": "かんたん（な） (簡単な)",
+        "reading": "kantan",
+        "id": "Mudah, gampang",
+        "kanji": "簡単な"
       },
       {
         "jp": "ちかい (近い)",
@@ -4998,21 +4862,21 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "遠い"
       },
       {
-        "jp": "はやい (早い / 速い)",
+        "jp": "はやい (早い，速い)",
         "reading": "hayai",
-        "id": "Cepat / pagi",
-        "kanji": "早い / 速い"
+        "id": "Cepat",
+        "kanji": "早い，速い"
       },
       {
         "jp": "おそい (遅い)",
         "reading": "osoi",
-        "id": "Lambat / larut",
+        "id": "Lambat",
         "kanji": "遅い"
       },
       {
         "jp": "おおい (多い)",
         "reading": "ooi",
-        "id": "Banyak (orang/benda)",
+        "id": "Banyak",
         "kanji": "多い"
       },
       {
@@ -5022,10 +4886,10 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "少ない"
       },
       {
-        "jp": "あたたかい (暖かい / 温かい)",
+        "jp": "あたたかい (暖かい、温かい)",
         "reading": "atatakai",
         "id": "Hangat",
-        "kanji": "暖かい / 温かい"
+        "kanji": "暖かい、温かい"
       },
       {
         "jp": "すずしい (涼しい)",
@@ -5058,34 +4922,15 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "軽い"
       },
       {
+        "jp": "いい",
+        "reading": "ii",
+        "id": "Lebih baik"
+      },
+      {
         "jp": "きせつ (季節)",
         "reading": "kisetsu",
         "id": "Musim",
         "kanji": "季節"
-      },
-      {
-        "jp": "はる (春)",
-        "reading": "haru",
-        "id": "Musim semi",
-        "kanji": "春"
-      },
-      {
-        "jp": "なつ (夏)",
-        "reading": "natsu",
-        "id": "Musim panas",
-        "kanji": "夏"
-      },
-      {
-        "jp": "あき (秋)",
-        "reading": "aki",
-        "id": "Musim gugur",
-        "kanji": "秋"
-      },
-      {
-        "jp": "ふゆ (冬)",
-        "reading": "fuyu",
-        "id": "Musim dingin",
-        "kanji": "冬"
       },
       {
         "jp": "てんき (天気)",
@@ -5104,29 +4949,6 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "yuki",
         "id": "Salju",
         "kanji": "雪"
-      },
-      {
-        "jp": "かんたん（な） (簡単な)",
-        "reading": "kantan (na)",
-        "id": "Mudah, gampang",
-        "kanji": "簡単な"
-      },
-      {
-        "jp": "はやい (早い，速い)",
-        "reading": "hayai",
-        "id": "Cepat",
-        "kanji": "早い，速い"
-      },
-      {
-        "jp": "あたたかい (暖かい、温かい)",
-        "reading": "atatakai",
-        "id": "Hangat",
-        "kanji": "暖かい、温かい"
-      },
-      {
-        "jp": "いい",
-        "reading": "ii",
-        "id": "Lebih baik"
       },
       {
         "jp": "くもり (曇り)",
@@ -5159,7 +4981,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "パーティー",
-        "reading": "paatii",
+        "reading": "pa-teぃ-",
         "id": "Pesta"
       },
       {
@@ -5224,7 +5046,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "わあ、すごいひとですね",
-        "reading": "waa, sugoihitodesune",
+        "reading": "waa、sugoihitodesune",
         "id": "Wah...banyak orang"
       },
       {
@@ -5240,7 +5062,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "シンガポール",
-        "reading": "shingapooru",
+        "reading": "shingapo-ru",
         "id": "Singapura"
       },
       {
@@ -5313,7 +5135,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "あそびます (遊びます)",
         "reading": "asobimasu",
-        "id": "Bermain / bersenang-senang",
+        "id": "Bermain",
         "kanji": "遊びます"
       },
       {
@@ -5331,43 +5153,43 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "つかれます (疲れます)",
         "reading": "tsukaremasu",
-        "id": "Lelah / capek",
+        "id": "Lelah",
         "kanji": "疲れます"
       },
       {
         "jp": "けっこんします (結婚します)",
-        "reading": "kekkon shimasu",
+        "reading": "kekkonshimasu",
         "id": "Menikah",
         "kanji": "結婚します"
       },
       {
         "jp": "かいものします (買い物します)",
-        "reading": "kaimono shimasu",
+        "reading": "kaimonoshimasu",
         "id": "Berbelanja",
         "kanji": "買い物します"
       },
       {
         "jp": "しょくじします (食事します)",
-        "reading": "shokuji shimasu",
-        "id": "Makan (bersantap) / Makan bersama",
+        "reading": "shokujishimasu",
+        "id": "Makan bersama",
         "kanji": "食事します"
       },
       {
-        "jp": "さんぽします (散歩します)",
-        "reading": "sanpo shimasu",
-        "id": "Jalan-jalan santai",
+        "jp": "さんぽします（を） (散歩します)",
+        "reading": "sanposhimasu",
+        "id": "Jalan-jalan",
         "kanji": "散歩します"
       },
       {
-        "jp": "たいへん [な] (大変)",
-        "reading": "taihen [na]",
-        "id": "Berat / gawat / susah",
-        "kanji": "大変"
+        "jp": "たいへん（な） (大変な)",
+        "reading": "taihen",
+        "id": "Susah, berat",
+        "kanji": "大変な"
       },
       {
         "jp": "ほしい (欲しい)",
         "reading": "hoshii",
-        "id": "Ingin (benda)",
+        "id": "Ingin",
         "kanji": "欲しい"
       },
       {
@@ -5384,7 +5206,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "プール",
-        "reading": "puuru",
+        "reading": "pu-ru",
         "id": "Kolam renang"
       },
       {
@@ -5396,24 +5218,18 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "びじゅつ (美術)",
         "reading": "bijutsu",
-        "id": "Seni rupa",
+        "id": "Seni",
         "kanji": "美術"
       },
       {
         "jp": "つり (釣り)",
         "reading": "tsuri",
-        "id": "Memancing",
+        "id": "Pancing , memancing",
         "kanji": "釣り"
       },
       {
-        "jp": "たいへん（な） (大変な)",
-        "reading": "taihen (na)",
-        "id": "Susah, berat",
-        "kanji": "大変な"
-      },
-      {
         "jp": "スキー",
-        "reading": "sukii",
+        "reading": "suki-",
         "id": "Ski"
       },
       {
@@ -5683,12 +5499,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "つけます",
         "reading": "tsukemasu",
-        "id": "Menyalakan (lampu/AC) / Menyalakan, memasang, menghidupkan"
+        "id": "Menyalakan, memasang, menghidupkan"
       },
       {
         "jp": "けします (消します)",
         "reading": "keshimasu",
-        "id": "Mematikan (lampu/api) / Mematikan, memadamkan",
+        "id": "Mematikan, memadamkan",
         "kanji": "消します"
       },
       {
@@ -5706,7 +5522,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "いそぎます (急ぎます)",
         "reading": "isogimasu",
-        "id": "Buru-buru / cepat-cepat",
+        "id": "Buru-buru",
         "kanji": "急ぎます"
       },
       {
@@ -5716,27 +5532,15 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "待ちます"
       },
       {
-        "jp": "とめます (止めます)",
-        "reading": "tomemasu",
-        "id": "Menghentikan / memarkir",
-        "kanji": "止めます"
-      },
-      {
-        "jp": "まがります (曲がります)",
-        "reading": "magarimasu",
-        "id": "Berbelok",
-        "kanji": "曲がります"
-      },
-      {
         "jp": "もちます (持ちます)",
         "reading": "mochimasu",
-        "id": "Membawa / memegang",
+        "id": "Membawa",
         "kanji": "持ちます"
       },
       {
         "jp": "とります (取ります)",
         "reading": "torimasu",
-        "id": "Mengambilkan",
+        "id": "Mengambil",
         "kanji": "取ります"
       },
       {
@@ -5758,49 +5562,22 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "話します"
       },
       {
-        "jp": "みせます (見せます)",
-        "reading": "misemasu",
-        "id": "Memperlihatkan",
-        "kanji": "見せます"
-      },
-      {
-        "jp": "ふります (降ります)",
-        "reading": "furimasu",
-        "id": "Turun (hujan/salju) / Turun hujan",
-        "kanji": "降ります"
-      },
-      {
-        "jp": "コピーします",
-        "reading": "kopiishimasu",
-        "id": "Memfotokopi / Memfotocopy"
-      },
-      {
-        "jp": "エアコン",
-        "reading": "eakon",
-        "id": "AC / pendingin ruangan"
-      },
-      {
-        "jp": "パスポート",
-        "reading": "pasupooto",
-        "id": "Paspor"
-      },
-      {
-        "jp": "なまえ (名前)",
-        "reading": "namae",
-        "id": "Nama",
-        "kanji": "名前"
-      },
-      {
-        "jp": "じゅうしょ (住所)",
-        "reading": "juusho",
-        "id": "Alamat",
-        "kanji": "住所"
-      },
-      {
         "jp": "つかいます (使います)",
         "reading": "tsukaimasu",
         "id": "Memakai",
         "kanji": "使います"
+      },
+      {
+        "jp": "とめます (止めます)",
+        "reading": "tomemasu",
+        "id": "Menghentikan",
+        "kanji": "止めます"
+      },
+      {
+        "jp": "みせます (見せます)",
+        "reading": "misemasu",
+        "id": "Memperlihatkan",
+        "kanji": "見せます"
       },
       {
         "jp": "おしえます (教えます)",
@@ -5833,10 +5610,43 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "出ます"
       },
       {
+        "jp": "ふります (降ります)",
+        "reading": "furimasu",
+        "id": "Turun hujan",
+        "kanji": "降ります"
+      },
+      {
+        "jp": "コピーします",
+        "reading": "kopi-shimasu",
+        "id": "Memfotocopy"
+      },
+      {
         "jp": "でんき (電気)",
         "reading": "denki",
         "id": "Listrik, lampu",
         "kanji": "電気"
+      },
+      {
+        "jp": "エアコン",
+        "reading": "eakon",
+        "id": "AC"
+      },
+      {
+        "jp": "パスポート",
+        "reading": "pasupo-to",
+        "id": "Paspor"
+      },
+      {
+        "jp": "なまえ (名前)",
+        "reading": "namae",
+        "id": "Nama",
+        "kanji": "名前"
+      },
+      {
+        "jp": "じゅうしょ (住所)",
+        "reading": "juusho",
+        "id": "Alamat",
+        "kanji": "住所"
       },
       {
         "jp": "ちず (地図)",
@@ -5913,7 +5723,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "もう～",
-        "reading": "mou~",
+        "reading": "mou～",
         "id": "~lagi"
       },
       {
@@ -6006,7 +5816,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "プラットホーム",
-        "reading": "purattohooム",
+        "reading": "purattoho-mu",
         "id": "Peron"
       },
       {
@@ -6017,17 +5827,17 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "コインロッカー",
-        "reading": "koinrokkaa",
+        "reading": "koinrokka-",
         "id": "Loker"
       },
       {
         "jp": "タクシーのりば",
-        "reading": "takushiinoriba",
+        "reading": "takushi-noriba",
         "id": "Tempat naik taksi"
       },
       {
         "jp": "バスターミナル",
-        "reading": "basutaaminaru",
+        "reading": "basuta-minaru",
         "id": "Terminal bis"
       },
       {
@@ -6163,33 +5973,15 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
     ],
     "keyVocab": [
       {
-        "jp": "すわります (座ります)",
-        "reading": "suwarimasu",
-        "id": "Duduk",
-        "kanji": "座ります"
-      },
-      {
-        "jp": "たちます (立ちます)",
-        "reading": "tachimasu",
-        "id": "Berdiri",
-        "kanji": "立ちます"
-      },
-      {
-        "jp": "つかいます (使います)",
-        "reading": "tsukaimasu",
-        "id": "Menggunakan / memakai",
-        "kanji": "使います"
-      },
-      {
         "jp": "おきます (置きます)",
         "reading": "okimasu",
-        "id": "Meletakkan / menaruh",
+        "id": "Meletakkan",
         "kanji": "置きます"
       },
       {
         "jp": "つくります (作ります)",
         "reading": "tsukurimasu",
-        "id": "Membuat / memproduksi",
+        "id": "Membuat",
         "kanji": "作ります"
       },
       {
@@ -6201,25 +5993,25 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "しります (知ります)",
         "reading": "shirimasu",
-        "id": "Mengenal / Mengetahui",
+        "id": "Mengenal, mengetahui",
         "kanji": "知ります"
       },
       {
         "jp": "すみます (住みます)",
         "reading": "sumimasu",
-        "id": "Tinggal / bermukim",
+        "id": "Tinggal",
         "kanji": "住みます"
       },
       {
         "jp": "けんきゅうします (研究します)",
-        "reading": "kenkyuu shimasu",
+        "reading": "kenkyuushimasu",
         "id": "Meneliti",
         "kanji": "研究します"
       },
       {
         "jp": "しりょう (資料)",
         "reading": "shiryou",
-        "id": "Data / Dokumen / Bahan",
+        "id": "Data, bahan",
         "kanji": "資料"
       },
       {
@@ -6228,45 +6020,21 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "id": "Katalog"
       },
       {
-        "jp": "じこくひょう (時刻表)",
-        "reading": "jikokuhyou",
-        "id": "Jadwal keberangkatan kereta",
-        "kanji": "時刻表"
-      },
-      {
         "jp": "ふく (服)",
         "reading": "fuku",
-        "id": "Pakaian / baju",
+        "id": "Pakaian",
         "kanji": "服"
       },
       {
         "jp": "せいひん (製品)",
         "reading": "seihin",
-        "id": "Produk barang jadi",
+        "id": "Produk",
         "kanji": "製品"
       },
       {
         "jp": "ソフト",
         "reading": "sofuto",
-        "id": "Perangkat lunak (software)"
-      },
-      {
-        "jp": "せんもん (専門)",
-        "reading": "senmon",
-        "id": "Keahlian khusus / jurusan",
-        "kanji": "専門"
-      },
-      {
-        "jp": "はいしゃ (歯医者)",
-        "reading": "haisha",
-        "id": "Dokter gigi",
-        "kanji": "歯医者"
-      },
-      {
-        "jp": "どくしん (独身)",
-        "reading": "dokushin",
-        "id": "Lajang / belum menikah / Bujangan, jomblo",
-        "kanji": "独身"
+        "id": "Perangkat lunak"
       },
       {
         "jp": "でんしじしょ (電子辞書)",
@@ -6279,6 +6047,18 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "keizai",
         "id": "Ekonomi",
         "kanji": "経済"
+      },
+      {
+        "jp": "はいしゃ (歯医者)",
+        "reading": "haisha",
+        "id": "Dokter gigi",
+        "kanji": "歯医者"
+      },
+      {
+        "jp": "どくしん (独身)",
+        "reading": "dokushin",
+        "id": "Bujangan, jomblo",
+        "kanji": "独身"
       },
       {
         "jp": "おもいだします (思い出します)",
@@ -6436,12 +6216,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "デザイナー",
-        "reading": "dezainaa",
+        "reading": "dezaina-",
         "id": "Perancang busana"
       },
       {
         "jp": "ジャーナリスト",
-        "reading": "jaanarisuto",
+        "reading": "ja-narisuto",
         "id": "Wartawan"
       },
       {
@@ -6458,7 +6238,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "スポーツせんしゅ (スポーツ選手)",
-        "reading": "supootsusenshu",
+        "reading": "supo-tsusenshu",
         "id": "Olahragawan / atlit",
         "kanji": "スポーツ選手"
       }
@@ -6519,27 +6299,27 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
     ],
     "keyVocab": [
       {
-        "jp": "のります (乗ります)",
+        "jp": "のります（に） (乗ります)",
         "reading": "norimasu",
-        "id": "Naik (kendaraan)",
+        "id": "Naik",
         "kanji": "乗ります"
       },
       {
-        "jp": "おります (降ります)",
+        "jp": "おります（を） (降ります)",
         "reading": "orimasu",
-        "id": "Turun (dari kendaraan)",
+        "id": "Turun",
         "kanji": "降ります"
       },
       {
         "jp": "のりかえます (乗り換えます)",
         "reading": "norikaemasu",
-        "id": "Pindah jalur / transit kendaraan / Ganti, pindah kendaraan",
+        "id": "Ganti, pindah kendaraan",
         "kanji": "乗り換えます"
       },
       {
-        "jp": "あびます (浴びます)",
+        "jp": "あびます（を） (浴びます)",
         "reading": "abimasu",
-        "id": "Mandi (shower)",
+        "id": "Mandi",
         "kanji": "浴びます"
       },
       {
@@ -6551,13 +6331,13 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "だします (出します)",
         "reading": "dashimasu",
-        "id": "Mengeluarkan / menyerahkan",
+        "id": "Mengeluarkan",
         "kanji": "出します"
       },
       {
-        "jp": "おろします (下ろします)",
+        "jp": "おろします（を） (下ろします)",
         "reading": "oroshimasu",
-        "id": "Menarik (uang di ATM) / Mengeluarkan/mengambil uang",
+        "id": "Mengeluarkan/mengambil uang",
         "kanji": "下ろします"
       },
       {
@@ -6575,8 +6355,32 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "おします (押します)",
         "reading": "oshimasu",
-        "id": "Menekan (tombol)",
+        "id": "Menekan",
         "kanji": "押します"
+      },
+      {
+        "jp": "のみます (飲みます)",
+        "reading": "nomimasu",
+        "id": "Minum",
+        "kanji": "飲みます"
+      },
+      {
+        "jp": "はじめます (始めます)",
+        "reading": "hajimemasu",
+        "id": "Mulai",
+        "kanji": "始めます"
+      },
+      {
+        "jp": "けんがくします (見学します)",
+        "reading": "kengakushimasu",
+        "id": "Mengunjungi",
+        "kanji": "見学します"
+      },
+      {
+        "jp": "でんわします (電話します)",
+        "reading": "denwashimasu",
+        "id": "Menelepon",
+        "kanji": "電話します"
       },
       {
         "jp": "わかい (若い)",
@@ -6599,7 +6403,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "あかるい (明るい)",
         "reading": "akarui",
-        "id": "Terang / ceria",
+        "id": "Terang",
         "kanji": "明るい"
       },
       {
@@ -6611,7 +6415,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "からだ (体)",
         "reading": "karada",
-        "id": "Tubuh / badan",
+        "id": "Badan",
         "kanji": "体"
       },
       {
@@ -6619,6 +6423,18 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "atama",
         "id": "Kepala",
         "kanji": "頭"
+      },
+      {
+        "jp": "かみ (髪)",
+        "reading": "kami",
+        "id": "Rambut",
+        "kanji": "髪"
+      },
+      {
+        "jp": "かお (顔)",
+        "reading": "kao",
+        "id": "Wajah",
+        "kanji": "顔"
       },
       {
         "jp": "め (目)",
@@ -6651,42 +6467,6 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "歯"
       },
       {
-        "jp": "のみます (飲みます)",
-        "reading": "nomimasu",
-        "id": "Minum",
-        "kanji": "飲みます"
-      },
-      {
-        "jp": "はじめます (始めます)",
-        "reading": "hajimemasu",
-        "id": "Mulai",
-        "kanji": "始めます"
-      },
-      {
-        "jp": "けんがくします (見学します)",
-        "reading": "kengakushimasu",
-        "id": "Mengunjungi",
-        "kanji": "見学します"
-      },
-      {
-        "jp": "でんわします (電話します)",
-        "reading": "denwashimasu",
-        "id": "Menelepon",
-        "kanji": "電話します"
-      },
-      {
-        "jp": "かみ (髪)",
-        "reading": "kami",
-        "id": "Rambut",
-        "kanji": "髪"
-      },
-      {
-        "jp": "かお (顔)",
-        "reading": "kao",
-        "id": "Wajah",
-        "kanji": "顔"
-      },
-      {
         "jp": "おなか",
         "reading": "onaka",
         "id": "Perut"
@@ -6705,7 +6485,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "サービス",
-        "reading": "saabisu",
+        "reading": "sa-bisu",
         "id": "Pelayanan"
       },
       {
@@ -6715,7 +6495,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "シャワー",
-        "reading": "shawaa",
+        "reading": "shawa-",
         "id": "Shower"
       },
       {
@@ -6749,7 +6529,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "どの～",
-        "reading": "dono~",
+        "reading": "dono～",
         "id": "Yang mana?"
       },
       {
@@ -6764,7 +6544,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "いいえ、まだまだです",
-        "reading": "iie, madamadadesu",
+        "reading": "iie、madamadadesu",
         "id": "Tidak, belum memuaskan"
       },
       {
@@ -6786,7 +6566,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "キャッシュカード",
-        "reading": "kyasshukaado",
+        "reading": "kyasshuka-do",
         "id": "Kartu ATM"
       },
       {
@@ -6907,7 +6687,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "おぼえます (覚えます)",
         "reading": "oboemasu",
-        "id": "Mengingat / menghafal",
+        "id": "Mengingat",
         "kanji": "覚えます"
       },
       {
@@ -6919,7 +6699,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "なくします",
         "reading": "nakushimasu",
-        "id": "Menghilangkan / Kehilangan / Hilang"
+        "id": "Kehilangan, hilang"
       },
       {
         "jp": "はらいます (払います)",
@@ -6936,80 +6716,44 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "でかけます (出かけます)",
         "reading": "dekakemasu",
-        "id": "Bepergian keluar / Keluar rumah",
+        "id": "Keluar rumah",
         "kanji": "出かけます"
       },
       {
         "jp": "ぬぎます (脱ぎます)",
         "reading": "nugimasu",
-        "id": "Melepas (pakaian/sepatu) / Melepas pakaian",
+        "id": "Melepas pakaian",
         "kanji": "脱ぎます"
       },
       {
         "jp": "もっていきます (持って行きます)",
-        "reading": "motte ikimasu",
+        "reading": "motteikimasu",
         "id": "Membawa pergi",
         "kanji": "持って行きます"
       },
       {
         "jp": "もってきます (持って来ます)",
-        "reading": "motte kimasu",
-        "id": "Membawa datang ke mari",
+        "reading": "mottekimasu",
+        "id": "Membawa datang",
         "kanji": "持って来ます"
       },
       {
         "jp": "しんぱいします (心配します)",
-        "reading": "shinpai shimasu",
-        "id": "Khawatir / cemas",
+        "reading": "shinpaishimasu",
+        "id": "Khawatir",
         "kanji": "心配します"
       },
       {
         "jp": "ざんぎょうします (残業します)",
-        "reading": "zangyou shimasu",
-        "id": "Lembur kerja",
+        "reading": "zangyoushimasu",
+        "id": "Lembur",
         "kanji": "残業します"
       },
       {
         "jp": "しゅっちょうします (出張します)",
-        "reading": "shucchou shimasu",
-        "id": "Dinas luar kota",
+        "reading": "shucchoushimasu",
+        "id": "Dinas",
         "kanji": "出張します"
-      },
-      {
-        "jp": "くすり (薬)",
-        "reading": "kusuri",
-        "id": "Obat",
-        "kanji": "薬"
-      },
-      {
-        "jp": "ほけんしょう (保険証)",
-        "reading": "hokenshou",
-        "id": "Kartu asuransi kesehatan",
-        "kanji": "保険証"
-      },
-      {
-        "jp": "ねつ (熱)",
-        "reading": "netsu",
-        "id": "Demam / panas tubuh",
-        "kanji": "熱"
-      },
-      {
-        "jp": "びょうき (病気)",
-        "reading": "byouki",
-        "id": "Sakit / penyakit",
-        "kanji": "病気"
-      },
-      {
-        "jp": "たいせつ [な] (大切)",
-        "reading": "taisetsu [na]",
-        "id": "Penting / berharga",
-        "kanji": "大切"
-      },
-      {
-        "jp": "だいじょうぶ [な] (大丈夫)",
-        "reading": "daijoubu [na]",
-        "id": "Tidak apa-apa / aman",
-        "kanji": "大丈夫"
       },
       {
         "jp": "たいせつな (大切な)",
@@ -7040,6 +6784,24 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "kenkouhokenshou",
         "id": "Kartu asuransi kesehatan",
         "kanji": "健康保険証"
+      },
+      {
+        "jp": "ねつ (熱)",
+        "reading": "netsu",
+        "id": "Demam",
+        "kanji": "熱"
+      },
+      {
+        "jp": "びょうき (病気)",
+        "reading": "byouki",
+        "id": "Sakit",
+        "kanji": "病気"
+      },
+      {
+        "jp": "くすり (薬)",
+        "reading": "kusuri",
+        "id": "Obat",
+        "kanji": "薬"
       },
       {
         "jp": "おふろ",
@@ -7160,24 +6922,24 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "げりをします (下痢をします)",
-        "reading": "gerioshimasu",
+        "reading": "geriwoshimasu",
         "id": "Mencret, diare",
         "kanji": "下痢をします"
       },
       {
         "jp": "べんぴをします (便秘をします)",
-        "reading": "benpioshimasu",
+        "reading": "benpiwoshimasu",
         "id": "Sembelit",
         "kanji": "便秘をします"
       },
       {
         "jp": "けがをします",
-        "reading": "kegaoshimasu",
+        "reading": "kegawoshimasu",
         "id": "Terluka"
       },
       {
         "jp": "やけどをします",
-        "reading": "yakedooshimasu",
+        "reading": "yakedowoshimasu",
         "id": "Terbakar"
       },
       {
@@ -7301,7 +7063,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "できます",
         "reading": "dekimasu",
-        "id": "Bisa / Sanggup / Mampu"
+        "id": "Dapat, bisa, mampu"
       },
       {
         "jp": "あらいます (洗います)",
@@ -7312,19 +7074,19 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "ひきます (弾きます)",
         "reading": "hikimasu",
-        "id": "Memainkan (alat musik petik/tuts: piano/gitar) / Bermain (alat musik , piano)",
+        "id": "Bermain (alat musik , piano)",
         "kanji": "弾きます"
       },
       {
         "jp": "うたいます (歌います)",
         "reading": "utaimasu",
-        "id": "Bernyanyi / Menyanyi",
+        "id": "Menyanyi",
         "kanji": "歌います"
       },
       {
         "jp": "あつめます (集めます)",
         "reading": "atsumemasu",
-        "id": "Mengumpulkan / mengoleksi",
+        "id": "Mengumpulkan",
         "kanji": "集めます"
       },
       {
@@ -7336,19 +7098,19 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "かえます (換えます)",
         "reading": "kaemasu",
-        "id": "Menukar / Mengganti",
+        "id": "Menukar, mengganti",
         "kanji": "換えます"
       },
       {
         "jp": "うんてんします (運転します)",
-        "reading": "unten shimasu",
-        "id": "Mengemudi / Menyetir / Mengendarai",
+        "reading": "untenshimasu",
+        "id": "Menyetir, mengendarai",
         "kanji": "運転します"
       },
       {
         "jp": "よやくします (予約します)",
-        "reading": "yoyaku shimasu",
-        "id": "Memesan / reservasi",
+        "reading": "yoyakushimasu",
+        "id": "Memesan",
         "kanji": "予約します"
       },
       {
@@ -7357,9 +7119,9 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "id": "Piano"
       },
       {
-        "jp": "〜メートル",
-        "reading": "~meetoru",
-        "id": "... meter"
+        "jp": "～メートル",
+        "reading": "~me-toru",
+        "id": "Meter"
       },
       {
         "jp": "げんきん (現金)",
@@ -7370,37 +7132,37 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "しゅみ (趣味)",
         "reading": "shumi",
-        "id": "Hobi",
+        "id": "Hobi , kegemaran",
         "kanji": "趣味"
       },
       {
         "jp": "にっき (日記)",
         "reading": "nikki",
-        "id": "Buku harian / Catatan harian",
+        "id": "Catatan harian",
         "kanji": "日記"
       },
       {
         "jp": "おいのり (お祈り)",
         "reading": "oinori",
-        "id": "Doa / ibadah",
+        "id": "Doa",
         "kanji": "お祈り"
       },
       {
         "jp": "かちょう (課長)",
         "reading": "kachou",
-        "id": "Kepala seksi / manajer bagian",
+        "id": "Kepala seksi",
         "kanji": "課長"
       },
       {
         "jp": "ぶちょう (部長)",
         "reading": "buchou",
-        "id": "Kepala departemen / Kepala bagian",
+        "id": "Kepala bagian",
         "kanji": "部長"
       },
       {
         "jp": "しゃちょう (社長)",
         "reading": "shachou",
-        "id": "Direktur utama perusahaan",
+        "id": "Direktur utama",
         "kanji": "社長"
       },
       {
@@ -7417,7 +7179,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "インターネット",
-        "reading": "intaanetto",
+        "reading": "inta-netto",
         "id": "Internet"
       },
       {
@@ -7454,7 +7216,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "とぶ（はねる） (跳ぶ)",
-        "reading": "tobu (haneru)",
+        "reading": "tobu",
         "id": "Meloncat",
         "kanji": "跳ぶ"
       },
@@ -7624,26 +7386,26 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
     ],
     "keyVocab": [
       {
-        "jp": "のぼります (登ります)",
+        "jp": "のぼります (登ります、上ります)",
         "reading": "noborimasu",
-        "id": "Mendaki",
-        "kanji": "登ります"
+        "id": "Naik , mendaki",
+        "kanji": "登ります、上ります"
       },
       {
-        "jp": "とまります (泊まります)",
+        "jp": "とまります（に） (泊まります)",
         "reading": "tomarimasu",
-        "id": "Menginap (hotel/ryokan)",
+        "id": "Menginap",
         "kanji": "泊まります"
       },
       {
         "jp": "そうじします (掃除します)",
-        "reading": "souji shimasu",
-        "id": "Membersihkan rumah",
+        "reading": "soujishimasu",
+        "id": "Membersihkan",
         "kanji": "掃除します"
       },
       {
         "jp": "せんたくします (洗濯します)",
-        "reading": "sentaku shimasu",
+        "reading": "sentakushimasu",
         "id": "Mencuci pakaian",
         "kanji": "洗濯します"
       },
@@ -7671,51 +7433,6 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "弱い"
       },
       {
-        "jp": "ちょうし (調子)",
-        "reading": "choushi",
-        "id": "Kondisi tubuh / mesin",
-        "kanji": "調子"
-      },
-      {
-        "jp": "いちど (一度)",
-        "reading": "ichido",
-        "id": "Satu kali / Sekali",
-        "kanji": "一度"
-      },
-      {
-        "jp": "いちども (一度も)",
-        "reading": "ichido mo",
-        "id": "Belum pernah sama sekali (diikuti negatif) / Sekalipun",
-        "kanji": "一度も"
-      },
-      {
-        "jp": "だんだん",
-        "reading": "dandan",
-        "id": "Berangsur-angsur / Makin lama makin / Sedikit demi sedikit"
-      },
-      {
-        "jp": "もうすぐ",
-        "reading": "mousugu",
-        "id": "Sebentar lagi"
-      },
-      {
-        "jp": "おかげさまで",
-        "reading": "okagesama de",
-        "id": "Berkat doa Anda (puji syukur) / Atas berkat ( doa ) anda"
-      },
-      {
-        "jp": "かんぱい (乾杯)",
-        "reading": "kanpai",
-        "id": "Bersulang! / Toast",
-        "kanji": "乾杯"
-      },
-      {
-        "jp": "のぼります (登ります、上ります)",
-        "reading": "noborimasu",
-        "id": "Naik , mendaki",
-        "kanji": "登ります、上ります"
-      },
-      {
         "jp": "れんしゅう (練習)",
         "reading": "renshuu",
         "id": "Latihan",
@@ -7723,7 +7440,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ゴルフ",
-        "reading": "ゴrufu",
+        "reading": "gorufu",
         "id": "Golf"
       },
       {
@@ -7745,9 +7462,48 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "日"
       },
       {
+        "jp": "ちょうし (調子)",
+        "reading": "choushi",
+        "id": "Kondisi",
+        "kanji": "調子"
+      },
+      {
+        "jp": "いちど (一度)",
+        "reading": "ichido",
+        "id": "Sekali",
+        "kanji": "一度"
+      },
+      {
+        "jp": "いちども (一度も)",
+        "reading": "ichidomo",
+        "id": "Sekalipun",
+        "kanji": "一度も"
+      },
+      {
+        "jp": "だんだん",
+        "reading": "dandan",
+        "id": "Sedikit demi sedikit, berangsur-angsur"
+      },
+      {
+        "jp": "もうすぐ",
+        "reading": "mousugu",
+        "id": "Tidak lama lagi , sebentar lagi"
+      },
+      {
+        "jp": "おかげさまで",
+        "reading": "okagesamade",
+        "id": "Atas berkat ( doa ) anda"
+      },
+      {
         "jp": "でも",
         "reading": "demo",
         "id": "Tetapi"
+      },
+      {
+        "jp": "かんぱい (乾杯)",
+        "reading": "kanpai",
+        "id": "Toast",
+        "kanji": "乾杯"
       },
       {
         "jp": "ダイエット",
@@ -7768,7 +7524,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "とうきょうスカイツリー",
-        "reading": "toukyousukaitsurii",
+        "reading": "toukyousukaitsuri-",
         "id": "Tokyo sky tree"
       },
       {
@@ -7786,13 +7542,13 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "しょどう (書道)",
         "reading": "shodou",
-        "id": "Seni menulis huruf Jepang",
+        "id": "Seni menulis huruf jepang",
         "kanji": "書道"
       },
       {
         "jp": "かぶき (歌舞伎)",
         "reading": "kabuki",
-        "id": "Kabuki (Drama tradisional Jepang)",
+        "id": "Kabuki (Drama tradisional jepang)",
         "kanji": "歌舞伎"
       },
       {
@@ -7804,37 +7560,37 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "ぶんらく (文楽)",
         "reading": "bunraku",
-        "id": "Bunraku (Wayang golek tradisional Jepang)",
+        "id": "Bunraku (Wayang golek tradisional jepang)",
         "kanji": "文楽"
       },
       {
         "jp": "じゅうどう (柔道)",
         "reading": "juudou",
-        "id": "Judo (Olahraga tradisional Jepang)",
+        "id": "Judo (Olahraga tradisional jepang)",
         "kanji": "柔道"
       },
       {
         "jp": "けんどう (剣道)",
         "reading": "kendou",
-        "id": "Kendo (Olahraga tradisional Jepang)",
+        "id": "Kendo (Olahraga tradisional jepang)",
         "kanji": "剣道"
       },
       {
         "jp": "からて (空手)",
         "reading": "karate",
-        "id": "Karate (olahraga beladiri Jepang)",
+        "id": "Karate (olahraga beladiri jepang)",
         "kanji": "空手"
       },
       {
         "jp": "まんざい・らくご (漫才・落語)",
-        "reading": "manzai/rakugo",
+        "reading": "manzai・rakugo",
         "id": "Lelucon, komedi",
         "kanji": "漫才・落語"
       },
       {
         "jp": "いご・しょうぎ (囲碁・将棋)",
-        "reading": "igo/shougi",
-        "id": "Catur Jepang",
+        "reading": "igo・shougi",
+        "id": "Catur jepang",
         "kanji": "囲碁・将棋"
       },
       {
@@ -7897,96 +7653,34 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
     ],
     "keyVocab": [
       {
-        "jp": "いります (要ります)",
+        "jp": "いります（が） (要ります)",
         "reading": "irimasu",
-        "id": "Perlu / membutuhkan / Memerlukan",
+        "id": "Memerlukan",
         "kanji": "要ります"
       },
       {
         "jp": "しらべます (調べます)",
         "reading": "shirabemasu",
-        "id": "Memeriksa / Mencari tahu / Meneliti / Mengecek",
+        "id": "Memeriksa,meneliti,mengecek",
         "kanji": "調べます"
       },
       {
-        "jp": "なおします (直します)",
-        "reading": "naoshimasu",
-        "id": "Memperbaiki",
-        "kanji": "直します"
-      },
-      {
         "jp": "しゅうりします (修理します)",
-        "reading": "shuuri shimasu",
-        "id": "Mereparasi / Memperbaiki",
+        "reading": "shuurishimasu",
+        "id": "Memperbaiki",
         "kanji": "修理します"
-      },
-      {
-        "jp": "でんわします (電話します)",
-        "reading": "denwa shimasu",
-        "id": "Menelepon",
-        "kanji": "電話します"
       },
       {
         "jp": "ぼく (僕)",
         "reading": "boku",
-        "id": "Aku (laki-laki akrab)",
+        "id": "Aku",
         "kanji": "僕"
       },
       {
         "jp": "きみ (君)",
         "reading": "kimi",
-        "id": "Kamu (akrab)",
+        "id": "Kamu",
         "kanji": "君"
-      },
-      {
-        "jp": "うん",
-        "reading": "un",
-        "id": "Iya / ya (kasual dari hai)"
-      },
-      {
-        "jp": "ううん",
-        "reading": "uun",
-        "id": "Nggak / tidak (kasual dari iie)"
-      },
-      {
-        "jp": "サラリーマン",
-        "reading": "sarariiman",
-        "id": "Karyawan kantoran bergaji"
-      },
-      {
-        "jp": "ことば (言葉)",
-        "reading": "kotoba",
-        "id": "Kata / bahasa",
-        "kanji": "言葉"
-      },
-      {
-        "jp": "ぶっか (物価)",
-        "reading": "bukka",
-        "id": "Harga barang komoditas",
-        "kanji": "物価"
-      },
-      {
-        "jp": "きもの (着物)",
-        "reading": "kimono",
-        "id": "Kimono (pakaian adat Jepang)",
-        "kanji": "着物"
-      },
-      {
-        "jp": "ビザ",
-        "reading": "biza",
-        "id": "Visa"
-      },
-      {
-        "jp": "はじめ (初め)",
-        "reading": "hajime",
-        "id": "Awal mula",
-        "kanji": "初め"
-      },
-      {
-        "jp": "おわり (終わり)",
-        "reading": "owari",
-        "id": "Akhir / tamat",
-        "kanji": "終わり"
       },
       {
         "jp": "～くん (～君)",
@@ -7995,9 +7689,30 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "～君"
       },
       {
+        "jp": "うん",
+        "reading": "un",
+        "id": "Ya"
+      },
+      {
+        "jp": "ううん",
+        "reading": "uun",
+        "id": "Tidak"
+      },
+      {
         "jp": "ことば",
         "reading": "kotoba",
         "id": "Kata, kosakata ,bahasa"
+      },
+      {
+        "jp": "きもの (着物)",
+        "reading": "kimono",
+        "id": "Kimono",
+        "kanji": "着物"
+      },
+      {
+        "jp": "ビザ",
+        "reading": "biza",
+        "id": "Visa"
       },
       {
         "jp": "はじめ",
@@ -8011,23 +7726,23 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "こっち",
-        "reading": "kotchi",
+        "reading": "kocchi",
         "id": "Sini"
       },
       {
         "jp": "そっち",
-        "reading": "sotchi",
+        "reading": "socchi",
         "id": "Situ"
       },
       {
         "jp": "あっち",
-        "reading": "atchi",
+        "reading": "acchi",
         "id": "Sana"
       },
       {
         "jp": "どっち",
-        "reading": "dotchi",
-        "id": "Mana"
+        "reading": "docchi",
+        "id": "mana"
       },
       {
         "jp": "みんなで",
@@ -8105,20 +7820,14 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "おもいます (思います)",
         "reading": "omoimasu",
-        "id": "Berpikir / berpendapat / Mengira, berfikir",
+        "id": "Mengira, berfikir",
         "kanji": "思います"
       },
       {
         "jp": "いいます (言います)",
         "reading": "iimasu",
-        "id": "Berkata / Berucap / Mengatakan",
+        "id": "Berkata, mengatakan",
         "kanji": "言います"
-      },
-      {
-        "jp": "たります (足ります)",
-        "reading": "tarimasu",
-        "id": "Cukup",
-        "kanji": "足ります"
       },
       {
         "jp": "かちます (勝ちます)",
@@ -8133,94 +7842,33 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "負けます"
       },
       {
-        "jp": "あります [お祭りが〜]",
-        "reading": "arimasu",
-        "id": "Diadakan / berlangsung [festival]"
-      },
-      {
         "jp": "やくにたちます (役に立ちます)",
-        "reading": "yaku ni tachimasu",
-        "id": "Berguna / Bermanfaat",
+        "reading": "yakunitachimasu",
+        "id": "Bermanfaat, berguna",
         "kanji": "役に立ちます"
       },
       {
         "jp": "うごきます (動きます)",
         "reading": "ugokimasu",
-        "id": "Bergerak / Beroperasi / Pindah",
+        "id": "Pindah, bergerak",
         "kanji": "動きます"
       },
       {
-        "jp": "やめます [会社を〜]",
-        "reading": "yamemasu",
-        "id": "Berhenti [dari perusahaan]"
-      },
-      {
-        "jp": "きをつけます (気をつけます)",
-        "reading": "ki o tsukemasu",
-        "id": "Berhati-hati",
-        "kanji": "気をつけます"
-      },
-      {
-        "jp": "りゅうがくします (留学します)",
-        "reading": "ryuugaku shimasu",
-        "id": "Belajar di luar negeri / Studi di luar negeri",
-        "kanji": "留学します"
-      },
-      {
-        "jp": "むだ [な]",
-        "reading": "muda [na]",
-        "id": "Sia-sia / mubazir"
-      },
-      {
-        "jp": "ふべん [な] (不便)",
-        "reading": "fuben [na]",
-        "id": "Tidak praktis / repot",
-        "kanji": "不便"
-      },
-      {
-        "jp": "おなじ (同じ)",
-        "reading": "onaji",
-        "id": "Sama",
-        "kanji": "同じ"
-      },
-      {
-        "jp": "すごい",
-        "reading": "sugoi",
-        "id": "Hebat / luar biasa"
-      },
-      {
-        "jp": "しゅしょう (首相)",
-        "reading": "shushou",
-        "id": "Perdana menteri",
-        "kanji": "首相"
-      },
-      {
-        "jp": "だいとうりょう (大統領)",
-        "reading": "daitouryou",
-        "id": "Presiden",
-        "kanji": "大統領"
-      },
-      {
-        "jp": "せいじ (政治)",
-        "reading": "seiji",
-        "id": "Politik",
-        "kanji": "政治"
-      },
-      {
-        "jp": "ニュース",
-        "reading": "nyuusu",
-        "id": "Berita / Siaran, pengumuman"
-      },
-      {
         "jp": "やめます（を）",
-        "reading": "yamemasu (o)",
+        "reading": "yamemasu",
         "id": "Berhenti"
       },
       {
         "jp": "きをつけます (気を付けます)",
-        "reading": "kiotsukemasu",
+        "reading": "kiwotsukemasu",
         "id": "Berhati-hati, berwaspada",
         "kanji": "気を付けます"
+      },
+      {
+        "jp": "りゅうがくします (留学します)",
+        "reading": "ryuugakushimasu",
+        "id": "Studi di luar negeri",
+        "kanji": "留学します"
       },
       {
         "jp": "むだな",
@@ -8232,6 +7880,11 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "fubenna",
         "id": "Tidak praktis",
         "kanji": "不便な"
+      },
+      {
+        "jp": "すごい",
+        "reading": "sugoi",
+        "id": "Hebat"
       },
       {
         "jp": "ほんとう",
@@ -8260,6 +7913,11 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "bukka",
         "id": "Harga barang",
         "kanji": "物価"
+      },
+      {
+        "jp": "ニュース",
+        "reading": "nyu-su",
+        "id": "Siaran, pengumuman"
       },
       {
         "jp": "アニメ",
@@ -8392,7 +8050,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "しゅしょう（ないかくそうりだいじん） (首相（内閣総理大臣）)",
-        "reading": "shushou (naikakusouridaijin)",
+        "reading": "shushou",
         "id": "Perdana menteri",
         "kanji": "首相（内閣総理大臣）"
       },
@@ -8560,23 +8218,28 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "きます (着ます)",
         "reading": "kimasu",
-        "id": "Mengenakan (baju/kemeja bagian atas) / Memakai (pakaian)",
+        "id": "Memakai (pakaian)",
         "kanji": "着ます"
       },
       {
         "jp": "はきます",
         "reading": "hakimasu",
-        "id": "Mengenakan (celana/sepatu bagian bawah) / Memakai (sepatu,celana)"
+        "id": "Memakai (sepatu,celana)"
       },
       {
         "jp": "かぶります",
         "reading": "kaburimasu",
-        "id": "Mengenakan (topi/helm) / Memakai (topi)"
+        "id": "Memakai (topi)"
       },
       {
-        "jp": "かけます [めがねを〜]",
+        "jp": "かけます（を）",
         "reading": "kakemasu",
-        "id": "Mengenakan [kacamata]"
+        "id": "Memakai (kacamata)"
+      },
+      {
+        "jp": "します（を）",
+        "reading": "shimasu",
+        "id": "Memakai (dasi)"
       },
       {
         "jp": "うまれます (生まれます)",
@@ -8585,19 +8248,24 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "生まれます"
       },
       {
-        "jp": "コート",
-        "reading": "kooto",
-        "id": "Mantel / jas tebal"
+        "jp": "わたしたち",
+        "reading": "watashitachi",
+        "id": "Kami,kita"
       },
       {
-        "jp": "スーツ",
-        "reading": "suutsu",
-        "id": "Setelan jas kantor / Pakaian setelan"
+        "jp": "コート",
+        "reading": "ko-to",
+        "id": "Mantel"
       },
       {
         "jp": "セーター",
-        "reading": "seetaa",
-        "id": "Baju hangat sweater / Sweter / baju hangat"
+        "reading": "se-ta-",
+        "id": "Sweter / baju hangat"
+      },
+      {
+        "jp": "スーツ",
+        "reading": "su-tsu",
+        "id": "Pakaian setelan"
       },
       {
         "jp": "ぼうし (帽子)",
@@ -8612,33 +8280,8 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "眼鏡"
       },
       {
-        "jp": "よく [お祝い〜]",
-        "reading": "yoku",
-        "id": "Sering"
-      },
-      {
-        "jp": "おめでとうございます",
-        "reading": "omedetou gozaimasu",
-        "id": "Selamat! (ucapan selamat)"
-      },
-      {
-        "jp": "かけます（を）",
-        "reading": "kakemasu (o)",
-        "id": "Memakai (kacamata)"
-      },
-      {
-        "jp": "します（を）",
-        "reading": "shimasu (o)",
-        "id": "Memakai (dasi)"
-      },
-      {
-        "jp": "わたしたち",
-        "reading": "watashitachi",
-        "id": "Kami,kita"
-      },
-      {
         "jp": "ケーキ",
-        "reading": "keeki",
+        "reading": "ke-ki",
         "id": "Kue"
       },
       {
@@ -8654,7 +8297,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ユーモア",
-        "reading": "yuumoa",
+        "reading": "yu-moa",
         "id": "Humor"
       },
       {
@@ -8669,6 +8312,11 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "id": "Sering , dengan baik"
       },
       {
+        "jp": "おめでとうございます",
+        "reading": "omedetougozaimasu",
+        "id": "Selamat"
+      },
+      {
         "jp": "では",
         "reading": "deha",
         "id": "Kalau begitu"
@@ -8681,25 +8329,25 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ダイニングキッチン",
-        "reading": "dainingukitchin",
+        "reading": "dainingukicchin",
         "id": "Ruang makan dengan dapur"
       },
       {
         "jp": "わしつ (和室)",
         "reading": "washitsu",
-        "id": "Kamar ala Jepang",
+        "id": "Kamar ala jepang",
         "kanji": "和室"
       },
       {
         "jp": "おしいれ (押し入れ)",
         "reading": "oshiire",
-        "id": "Lemari dinding ala Jepang",
+        "id": "Lemari dinding ala jepang",
         "kanji": "押し入れ"
       },
       {
         "jp": "ふとん (布団)",
         "reading": "futon",
-        "id": "Selimut dan kasur berisi kapas ala Jepang",
+        "id": "Selimut dan kasur berisi kapas ala jepang",
         "kanji": "布団"
       },
       {
@@ -8715,7 +8363,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ワンピース",
-        "reading": "wanpiisu",
+        "reading": "wanpi-su",
         "id": "Pakaian terusan"
       },
       {
@@ -8731,12 +8379,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ジーンズ",
-        "reading": "jiinzu",
+        "reading": "ji-nzu",
         "id": "Celana jeans"
       },
       {
         "jp": "スカート",
-        "reading": "sukaato",
+        "reading": "suka-to",
         "id": "Rok"
       },
       {
@@ -8751,7 +8399,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "マフラー",
-        "reading": "mafuraa",
+        "reading": "mafura-",
         "id": "Shal, selendang"
       },
       {
@@ -8767,7 +8415,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "レインコート",
-        "reading": "reinkooto",
+        "reading": "reinko-to",
         "id": "Jas hujan"
       },
       {
@@ -8777,28 +8425,28 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ハイヒール",
-        "reading": "haihiiru",
+        "reading": "haihi-ru",
         "id": "Sepatu berhak tinggi"
       },
       {
         "jp": "ブーツ",
-        "reading": "buutsu",
+        "reading": "bu-tsu",
         "id": "Sepatu bot"
       },
       {
         "jp": "ぞうり",
         "reading": "zouri",
-        "id": "Sandal tradisional Jepang"
+        "id": "Sandal tradisional jepang"
       },
       {
         "jp": "たび",
         "reading": "tabi",
-        "id": "Kaos kaki tradisional Jepang"
+        "id": "Kaos kaki tradisional jepang"
       },
       {
         "jp": "おび (帯)",
         "reading": "obi",
-        "id": "Ikat pinggang tradisional Jepang",
+        "id": "Ikat pinggang tradisional jepang",
         "kanji": "帯"
       }
     ]
@@ -8855,20 +8503,21 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
     ],
     "keyVocab": [
       {
-        "jp": "ききます [先生に〜]",
+        "jp": "ききます（に） (聞きます)",
         "reading": "kikimasu",
-        "id": "Bertanya [kepada guru]"
+        "id": "Bertanya",
+        "kanji": "聞きます"
       },
       {
         "jp": "まわします (回します)",
         "reading": "mawashimasu",
-        "id": "Memutar (keran/kenop)",
+        "id": "Memutar",
         "kanji": "回します"
       },
       {
         "jp": "ひきます (引きます)",
         "reading": "hikimasu",
-        "id": "Menarik",
+        "id": "Menarik, tarik",
         "kanji": "引きます"
       },
       {
@@ -8878,15 +8527,16 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "変えます"
       },
       {
-        "jp": "さわります (触ります)",
+        "jp": "さわります（に） (触ります)",
         "reading": "sawarimasu",
         "id": "Menyentuh",
         "kanji": "触ります"
       },
       {
-        "jp": "でます [おつりが〜]",
+        "jp": "でます（が） (出ます)",
         "reading": "demasu",
-        "id": "Keluar [uang kembalian]"
+        "id": "Keluar",
+        "kanji": "出ます"
       },
       {
         "jp": "あるきます (歩きます)",
@@ -8895,27 +8545,56 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "歩きます"
       },
       {
-        "jp": "わたります (渡ります)",
+        "jp": "わたります（を） (渡ります)",
         "reading": "watarimasu",
-        "id": "Menyeberang (jalan/jembatan)",
+        "id": "Menyeberang",
         "kanji": "渡ります"
+      },
+      {
+        "jp": "まがります（へ） (曲がります)",
+        "reading": "magarimasu",
+        "id": "Belok",
+        "kanji": "曲がります"
+      },
+      {
+        "jp": "さびしい (寂しい)",
+        "reading": "sabishii",
+        "id": "Sepi",
+        "kanji": "寂しい"
+      },
+      {
+        "jp": "おゆ (お湯)",
+        "reading": "oyu",
+        "id": "Air panas",
+        "kanji": "お湯"
+      },
+      {
+        "jp": "おと (音)",
+        "reading": "oto",
+        "id": "Suara, bunyi",
+        "kanji": "音"
+      },
+      {
+        "jp": "サイズ",
+        "reading": "saizu",
+        "id": "Ukuran"
       },
       {
         "jp": "こしょう (故障)",
         "reading": "koshou",
-        "id": "Kerusakan mesin",
+        "id": "Kerusakan",
         "kanji": "故障"
       },
       {
         "jp": "みち (道)",
         "reading": "michi",
-        "id": "Jalanan",
+        "id": "Jalan",
         "kanji": "道"
       },
       {
         "jp": "こうさてん (交差点)",
         "reading": "kousaten",
-        "id": "Persimpangan jalan / perempatan",
+        "id": "Perempatan",
         "kanji": "交差点"
       },
       {
@@ -8927,7 +8606,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "かど (角)",
         "reading": "kado",
-        "id": "Sudut / pojokan jalan",
+        "id": "Sudut",
         "kanji": "角"
       },
       {
@@ -8941,47 +8620,6 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "chuushajou",
         "id": "Tempat parkir",
         "kanji": "駐車場"
-      },
-      {
-        "jp": "おゆ (お湯)",
-        "reading": "oyu",
-        "id": "Air panas",
-        "kanji": "お湯"
-      },
-      {
-        "jp": "サイズ",
-        "reading": "saizu",
-        "id": "Ukuran size"
-      },
-      {
-        "jp": "ききます（に） (聞きます)",
-        "reading": "kikimasu (ni)",
-        "id": "Bertanya",
-        "kanji": "聞きます"
-      },
-      {
-        "jp": "でます（が） (出ます)",
-        "reading": "demasu (ga)",
-        "id": "Keluar",
-        "kanji": "出ます"
-      },
-      {
-        "jp": "まがります（へ） (曲がります)",
-        "reading": "magarimasu (he)",
-        "id": "Belok",
-        "kanji": "曲がります"
-      },
-      {
-        "jp": "さびしい (寂しい)",
-        "reading": "sabishii",
-        "id": "Sepi",
-        "kanji": "寂しい"
-      },
-      {
-        "jp": "おと (音)",
-        "reading": "oto",
-        "id": "Suara, bunyi",
-        "kanji": "音"
       },
       {
         "jp": "たてもの (建物)",
@@ -9144,52 +8782,58 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "くれます",
         "reading": "kuremasu",
-        "id": "Memberikan (kepada saya) / Diberikan"
+        "id": "Diberikan"
+      },
+      {
+        "jp": "なおします (直します)",
+        "reading": "naoshimasu",
+        "id": "Mengoreksi , memperbaiki",
+        "kanji": "直します"
       },
       {
         "jp": "つれていきます (連れて行きます)",
-        "reading": "tsurete ikimasu",
-        "id": "Mengajak pergi (orang/hewan) / Mengajak pergi, membawa, mengantarkan",
+        "reading": "tsureteikimasu",
+        "id": "Mengajak pergi, membawa, mengantarkan",
         "kanji": "連れて行きます"
       },
       {
         "jp": "つれてきます (連れて来ます)",
-        "reading": "tsurete kimasu",
-        "id": "Mengajak datang ke mari / Membawa datang",
+        "reading": "tsuretekimasu",
+        "id": "Membawa datang",
         "kanji": "連れて来ます"
       },
       {
-        "jp": "おくります [人を〜] (送ります)",
+        "jp": "おくります（を） (送ります)",
         "reading": "okurimasu",
-        "id": "Mengantar [orang]",
+        "id": "Mengantar (orang)",
         "kanji": "送ります"
       },
       {
         "jp": "しょうかいします (紹介します)",
-        "reading": "shoukai shimasu",
+        "reading": "shoukaishimasu",
         "id": "Memperkenalkan",
         "kanji": "紹介します"
       },
       {
         "jp": "あんないします (案内します)",
-        "reading": "annai shimasu",
-        "id": "Memandu / Mengantar keliling",
+        "reading": "annaishimasu",
+        "id": "Memandu , mengantarkan",
         "kanji": "案内します"
       },
       {
         "jp": "せつめいします (説明します)",
-        "reading": "setsumei shimasu",
-        "id": "Menjelaskan",
+        "reading": "setsumeishimasu",
+        "id": "Menjelaskan, menerangkan",
         "kanji": "説明します"
       },
       {
-        "jp": "おじいさん / おじいちゃん",
-        "reading": "ojiisan",
+        "jp": "おじいさん／おじいちゃん",
+        "reading": "ojiisan／ojiichan",
         "id": "Kakek"
       },
       {
-        "jp": "おばあさん / おばあちゃん",
-        "reading": "obaasan",
+        "jp": "おばあさん／おばあちゃん",
+        "reading": "obaasan／obaachan",
         "id": "Nenek"
       },
       {
@@ -9205,40 +8849,6 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "kanji": "引っ越し"
       },
       {
-        "jp": "ぜんぶ (全部)",
-        "reading": "zenbu",
-        "id": "Semuanya",
-        "kanji": "全部"
-      },
-      {
-        "jp": "じぶんで (自分で)",
-        "reading": "jibun de",
-        "id": "Sendiri / secara mandiri / Dengan sendiri",
-        "kanji": "自分で"
-      },
-      {
-        "jp": "なおします (直します)",
-        "reading": "naoshimasu",
-        "id": "Mengoreksi , memperbaiki",
-        "kanji": "直します"
-      },
-      {
-        "jp": "おくります（を） (送ります)",
-        "reading": "okurimasu (o)",
-        "id": "Mengantar (orang)",
-        "kanji": "送ります"
-      },
-      {
-        "jp": "おじいさん／おじいちゃん",
-        "reading": "ojiisan/ojiichan",
-        "id": "Kakek"
-      },
-      {
-        "jp": "おばあさん／おばあちゃん",
-        "reading": "obaasan/obaachan",
-        "id": "Nenek"
-      },
-      {
         "jp": "おかし (お菓子)",
         "reading": "okashi",
         "id": "Kue, snack, makanan ringan",
@@ -9246,8 +8856,20 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "ホームステイ",
-        "reading": "hooムsutei",
+        "reading": "ho-musutei",
         "id": "Homestay"
+      },
+      {
+        "jp": "ぜんぶ (全部)",
+        "reading": "zenbu",
+        "id": "Semua",
+        "kanji": "全部"
+      },
+      {
+        "jp": "じぶんで (自分で)",
+        "reading": "jibunde",
+        "id": "Dengan sendiri",
+        "kanji": "自分で"
       },
       {
         "jp": "ほかに",
@@ -9298,7 +8920,7 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       },
       {
         "jp": "おちゅうげん／おせいぼ (お中元／お歳暮)",
-        "reading": "ochuugen/oseibo",
+        "reading": "ochuugen／oseibo",
         "id": "Hadiah yang diberikan kepada orang yang telah memberi bantuan",
         "kanji": "お中元／お歳暮"
       },
@@ -9376,67 +8998,18 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
       {
         "jp": "かんがえます (考えます)",
         "reading": "kangaemasu",
-        "id": "Memikirkan",
+        "id": "Berfikir, memikirkan",
         "kanji": "考えます"
       },
       {
         "jp": "つきます (着きます)",
         "reading": "tsukimasu",
-        "id": "Tiba / Sampai di tujuan",
+        "id": "Tiba, sampai",
         "kanji": "着きます"
       },
       {
-        "jp": "とります [年を〜]",
-        "reading": "torimasu",
-        "id": "Bertambah [usia / menua]"
-      },
-      {
-        "jp": "いなか (田舎)",
-        "reading": "inaka",
-        "id": "Kampung halaman / Desa",
-        "kanji": "田舎"
-      },
-      {
-        "jp": "たいしかん (大使館)",
-        "reading": "taishikan",
-        "id": "Kedutaan besar",
-        "kanji": "大使館"
-      },
-      {
-        "jp": "グループ",
-        "reading": "guruupu",
-        "id": "Grup / kelompok"
-      },
-      {
-        "jp": "チャンス",
-        "reading": "chansu",
-        "id": "Peluang / kesempatan"
-      },
-      {
-        "jp": "おく (億)",
-        "reading": "oku",
-        "id": "100 juta / Ratus juta",
-        "kanji": "億"
-      },
-      {
-        "jp": "もし",
-        "reading": "moshi",
-        "id": "Jika / seandainya / Kalau"
-      },
-      {
-        "jp": "いくら〜ても",
-        "reading": "ikura ~te mo",
-        "id": "Betapapun / sebanyak apapun ... tetap saja"
-      },
-      {
-        "jp": "がんばります (頑張ります)",
-        "reading": "ganbarimasu",
-        "id": "Bersemangat / berjuang sekuat tenaga / Berusaha, bekerja keras",
-        "kanji": "頑張ります"
-      },
-      {
         "jp": "とります（としを～） (取ります)",
-        "reading": "torimasu (toshio~)",
+        "reading": "torimasu",
         "id": "Berumur, usia lanjut",
         "kanji": "取ります"
       },
@@ -9445,6 +9018,28 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "tarimasu",
         "id": "Cukup",
         "kanji": "足ります"
+      },
+      {
+        "jp": "いなか (田舎)",
+        "reading": "inaka",
+        "id": "Desa, kampung halaman",
+        "kanji": "田舎"
+      },
+      {
+        "jp": "チャンス",
+        "reading": "chansu",
+        "id": "Kesempatan"
+      },
+      {
+        "jp": "おく (億)",
+        "reading": "oku",
+        "id": "Ratus juta",
+        "kanji": "億"
+      },
+      {
+        "jp": "もし",
+        "reading": "moshi",
+        "id": "Kalau"
       },
       {
         "jp": "いみ (意味)",
@@ -9474,6 +9069,12 @@ export const minnaShokyu1Lessons: MinnaLesson[] = [
         "reading": "iroiroosewaninarimashita",
         "id": "Terima kasih banyak bantuan anda yang telah diberikan",
         "kanji": "いろいろお世話になりました"
+      },
+      {
+        "jp": "がんばります (頑張ります)",
+        "reading": "ganbarimasu",
+        "id": "Berusaha, bekerja keras",
+        "kanji": "頑張ります"
       },
       {
         "jp": "どうぞおげんきで (どうぞお元気で)",

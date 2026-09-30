@@ -1,0 +1,675 @@
+BAB 6
+1 たべます 食べます Makan
+2 のみます 飲みます Minum
+3 すいます 吸います Menghisap / merokok
+4 みます 見ます Melihat / menonton
+5 ききます 聞きます Mendengar
+6 よみます 読みます Membaca
+7 かきます 書きます Menulis / menggambar
+8 かいます 買います Membeli
+9 とります 撮ります Mengambi (foto) / memotret
+10 します Melakukan / mengerjakan / berbuat
+11 あいます 会います Bertemu
+12 ごはん ご飯 Nasi
+13 あさごはん 朝ご飯 Makan pagi / sarapan
+14 ひるごはん 昼ご飯 Makan siang
+15 ばんごはん 晩ご飯 Makan malam
+16 パン Roti
+17 たまご 卵 Telur
+18 にく 肉 Daging
+19 さかな 魚 Ikan
+20 やさい 野菜 Sayuran
+21 くだもの 果物 Buah-buahan
+22 みず 水 Air
+23 おちゃ お茶 Teh jepang / teh hijau
+24 こうちゃ 紅茶 Teh
+25 ぎゅうにゅう 牛乳 Susu
+26 ジュース Jus
+27 ビール Bir
+28 おさけ お酒 Minuman keras
+29 たばこ Rokok
+30 てがみ 手紙 Surat
+31 レポート Laporan
+32 しゃしん 写真 Foto
+33 ビデオ Kaset video
+34 みせ 店 Toko
+35 にわ 庭 Halaman
+36 しゅくだい 宿題 Pekerjaan rumah / PR
+37 テニス Tenis
+38 サッカー Sepak bola
+39 はなみ 花見 Hanami (menikmati bunga sakura)
+40 なに 何 Apa
+41 いっしょに Bersama-sama
+42 ちょっと Sebentar / sedikit
+43 いつも Selalu
+44 ときどき 時々 Kadang-kadang
+45 それから Setelah itu / kemudian
+46 ええ Ya
+47 いいですね Bagus ya / baik ya
+48 わかりました 分かりました Mengerti / baik
+49 じゃ、また Ok, sampai jumpa besok
+50 メキシコ Meksiko
+51 きゅうり Timun
+52 トマト Tomat
+53 なす Terong
+54 まめ Kacang-kacangan
+55 キャベツ Kol
+56 ねぎ Daun bawang
+57 はくさい Sawi
+58 ほうれんそう Bayam
+59 レタス Letas
+60 じゃがいも Kentang
+61 だいこん Lobak
+62 たまねぎ Bawang
+63 にんじん Wortel
+64 いちご Stroberi
+65 もも Buah peach
+66 すいか Semangka
+67 ぶどう Anggur
+68 なし Pir
+69 かき Kesemek
+70 みかん Jeruk
+71 りんご Apel
+72 バナナ Pisang
+73 ぎゅうにく Daging sapi
+74 とりにく Daging ayam
+75 ぶたにく Daging babi
+76 ソーセージ Sosis
+77 ハム Ham
+78 あじ Ikan mackerel
+79 いわし Ikan sarden
+80 さば Ikan kembung
+81 さんま Ikan sauri pasifik
+82 さけ Ikan salmon
+83 まぐろ Ikan tuna
+84 たい Ikan kakap
+85 たら Ikan gabus
+86 えび Udang
+87 かに Kepiting
+88 いか Cumi-cumi
+89 たこ Gurita
+90 こめ Beras
+
+BAB 7
+1 きります 切ります Memotong / menggunting
+2 おくります 送ります Mengirim
+3 あげます Memberikan
+4 もらいます Menerima / mendapatkan
+5 かします 貸します Meminjamkan / menyewakan
+6 かります 借ります Meminjam / menyewa
+7 おしえます 教えます Mengajar
+8 ならいます 習います Belajar (kepada)
+9 かけます（を） Menelpon
+10 て 手 Tangan
+11 はし Sumpit
+12 スプーン Sendok
+13 ナイフ Pisau
+14 フォーク Garpu
+15 はさみ Gunting
+16 パソコン Laptop
+17 ケータイ HP
+18 メール Email
+19 ねんがじょう 年賀状 Kartu tahun baru
+20 パンチ Pelubang kertas
+21 ホッチキス Stapler
+22 セロテープ Selotip
+23 けしゴム 消しゴム Penghapus karet
+24 かみ 紙 Kertas
+25 はな 花 Bunga
+26 シャツ Kemeja
+27 プレゼント Hadiah / kado
+28 にもつ 荷物 Barang
+29 おかね お金 Uang
+30 きっぷ 切符 Karcis
+31 クリスマス Natal
+32 ちち 父 Ayah
+33 はは 母 Ibu
+34 おとうさん お父さん Ayah orang lain
+35 おかあさん お母さん Ibu orang lain
+36 もう Sudah
+37 まだ Belum
+38 これから Mulai dari sekarang
+39 すてきですね Bagus ya / indah ya
+40 いらっしゃい Selamat datang
+41 どうぞおあがりください Silakan masuk
+42 しつれいします 失礼します Permisi
+43 ～いかがですか Bagaimana ? (menawarkan sesuatu kepada orang)
+44 いただきます Selamat makan
+45 ごちそうさまでした Terima kasih atas hidangannya
+46 スペイン Spanyol
+47 かぞく 家族 Keluarga
+48 そぼ 祖母 Nenek
+49 そふ 祖父 Kakek
+50 そふぼ 祖父母 Kakek nenek
+51 りょうしん 両親 Orang tua
+52 いもうと 妹 Adik perempuan
+53 おとうと 弟 Adik laki-laki
+54 あね 姉 Kakak perempuan
+55 あに 兄 Kakak laki-laki
+56 きょうだい 兄弟 Saudara kandung
+57 つま 妻 Istri
+58 おっと 夫 Suami
+59 ふうふ 夫婦 Pasangan suami istri
+60 むすめ 娘 Anak perempuan
+61 むすこ 息子 Anak laki-laki
+62 こども 子供 Anak
+63 おばあさん Nenek (orang lain)
+64 おじいさん Kakek (orang lain)
+65 ごりょうしん Orang tua (orang lain)
+66 いもうとさん Adik perempuan (orang lain)
+67 おとうとさん Adik laki-laki (orang lain)
+68 おねえさん Kakak perempuan (orang lain)
+69 おにいさん Kakak laki-laki (orang lain)
+70 ごきょうだい Saudara kandung (orang lain)
+71 おくさん Istri (orang lain)
+72 ごふうふ Pasangan suami istri (orang lain)
+73 むすめさん Anak perempuan (orang lain)
+74 むすこさん Anak laki-laki (orang lain)
+75 おこさん Anak (orang lain)
+
+BAB 8
+1 ハンサム（な） Tampan / gagah / ganteng
+2 きれい（な） Cantik / bersih
+3 しずか（な） 静香（な） Sunyi / tenang
+4 にぎやか（な） Ramai
+5 ゆうめい（な） 有名（な） Terkenal
+6 しんせつ（な） 新設（な） Baik hati
+7 げんき（な） 元気（な） Sehat
+8 ひま（な） 暇（な） Senggang
+9 べんり（な） 便利（な） Praktis
+10 すてき（な） Bagus
+11 おおきい 大きい Besar
+12 ちいさい 小さい Kecil
+13 あたらしい 新しい Baru
+14 ふるい 古い Lama / tua
+15 いい（よい） Baik / bagus
+16 わるい 悪い Jelek
+17 あつい 暑い、熱い Panas
+18 さむい 寒い Dingin suhu
+19 つめたい 冷たい Dingin benda
+20 むずかしい 難しい Sulit / susah
+21 やさしい 易しい Mudah / gampang
+22 たかい 高い Mahal / tinggi
+23 やすい 安い Murah
+24 ひくい 低い Rendah
+25 おもしろい Menarik
+26 おいしい Enak
+27 いそがしい 忙しい Sibuk
+28 たのしい 楽しい Senang
+29 しろい 白い Putih
+30 くろい 黒い Hitam
+31 あかい 赤い Merah
+32 あおい 青い Biru
+33 さくら 桜 Sakura
+34 やま 山 Gunung
+35 まち 町 Kota
+36 たべもの 食べ物 Makanan
+37 ところ 所 Tempat
+38 りょう 寮 Asrama
+39 レストラン Restoran
+40 せいかつ 生活 Kehidupan
+41 しごと 仕事 Pekerjaan
+42 どう Bagaimana?
+43 どんな～ Yang bagaimana ?
+44 とても Sangat / ~sekali
+45 あまり Tidak begitu ~ / kurang begitu ~
+46 そして Kemudian
+47 ～が～ Tetapi
+48 おげんきですか お元気ですか Apa kabar ?
+49 そうですね Bagaimana ya?
+50 ～もういっぱいいかがですか Mau nambah secangkir lagi ?
+51 （いいえ）けっこうです Cukup
+52 そろそろしつれいします そろそろ失礼します Maaf saya mau pamit dulu
+53 いいえ Sama-sama
+54 またいらっしゃってください Silakan datang lagi
+55 シャンハイ Shanghai
+56 みどり Hijau
+57 むらさき Ungu
+58 きいろい Kuning
+59 ちゃいろい coklat
+60 ピンク Merah muda
+61 オレンジ Oranye
+62 グレー Abu-abu
+63 ベージュ krem
+64 はる 春 Musim semi
+65 なつ 夏 Musim panas
+66 あき 秋 Musim gugur
+67 ふゆ 冬 Musim dingin
+
+BAB 9
+1 わかります 分かります Mengerti
+2 あります Ada / mempunyai
+3 すき（な） 好きな Suka , gemar
+4 きらい（な） 嫌いな Benci
+5 じょうず（な） 上手な Pandai , pintar
+6 へた（な） 下手な Tidak pandai , tidak pintar , bodoh
+7 のみもの 飲み物 Minuman
+8 りょうり 料理 Masakan
+9 スポーツ Olahraga
+10 やきゅう 野球 Baseball
+11 ダンス Dansa
+12 りょこう 旅行 Tamasya
+13 おんがく 音楽 Musik
+14 うた 歌 Lagu
+15 クラシック Klasik
+16 ジャズ Jaz
+17 コンサート Konser
+18 カラオケ Karaoke
+19 かぶき 歌舞伎 Kabuki (drama tradisional jepang)
+20 え 絵 Gambar
+21 じ 字 Huruf
+22 かんじ 漢字 Kanji
+23 ひらがな Hiragana
+24 かたかな Katakana
+25 ローマじ Huruf latin
+26 こまかいおかね 細かいお金 Uang kecil, receh
+27 チケット Tiket
+28 じかん 時間 Waktu
+29 ようじ 用事 Urusan
+30 やくそく 約束 Janji
+31 アルバイト Kerja paruh waktu
+32 ごしゅじん ご主人 Suami orang lain
+33 おっと／しゅじん 夫／主人 Suami
+34 おくさん 奥さん Istri orang lain
+35 つま／かない 妻／家内 Istri
+36 こども 子供 Anak
+37 よく Dengan baik
+38 だいたい Kira-kira
+39 たくさん Banyak
+40 すこし 少し Sedikit
+41 ぜんぜん 全然 Sama sekali
+42 はやく 早く／速く Dengan Cepat
+43 ～から Karena
+44 どうして Kenapa
+45 かしてください 貸してください Tolong pinjamkan
+46 いいですよ Boleh
+47 ざんねんです 残念です Sayang sekali
+48 いっしょにいかがですか Bagaimana kalau bersama-sama
+49 ～ちょっと。。。。 Maaf, saya tidak bisa
+50 だめですか Tidak bisa ya / tidak boleh ya
+51 またこんどおねがいします また今度お願いします Maaf lain kali saja
+52 ポップス Pop
+53 ロック Rock
+54 ラテン Musik latin
+55 みんよう 民謡 Musik rakyat / nyanyian daerah
+56 えんか 演歌 Lagu tradisional jepang populer
+57 ミュージカル Drama musikal
+58 オペラ Opera
+59 ホラー Film horor
+60 アニメ Film kartun , animasi
+61 ドキュメンタリー Film dokumentasi
+62 れんあい 恋愛 Film percintaan
+63 ミステリー Film misteri
+64 ぶんげい 文芸 Film kesusastraan
+65 せんそう 戦争 Film peperangan
+66 アクション Film action
+67 きげき 喜劇 Film komedi
+68 ソフトボール Softball
+69 サッカー Sepak bola
+70 ラグビー Rugby
+71 バレーボール Voli
+72 テニス Tenis
+73 ボウリング Bowling
+74 スキー Sky
+75 スケート Skate
+76 たっきゅう／ピンポン 卓球 Pingpong
+77 すもう 相撲 Sumo
+78 じゅうどう 柔道 Judo
+79 けんどう 剣道 Kendo
+80 すいえい 水泳 Renang
+
+BAB 10
+1 あります Ada (benda mati)
+2 います Ada (benda hidup)
+3 いろいろ（な） Berbagai / macam-macam
+4 おとこのひと 男の人 Orang laki-laki
+5 おんなのひと 女の人 Orang perempuan
+6 おとこのこ 男の子 Anak laki-laki
+7 おんなのこ 女の子 Anak perempuan
+8 いぬ 犬 Anjing
+9 ねこ 猫 Kucing
+10 パンダ Panda
+11 ぞう 像 Gajah
+12 き 木 Pohon
+13 もの 物 Barang
+14 でんち 電池 Baterai
+15 はこ 箱 Kotak
+16 スイッチ Saklar
+17 れいぞうこ 冷蔵庫 Kulkas
+18 テーブル Meja makan
+19 ベッド Tempat tidur
+20 たな 棚 Lemari
+21 ドア Pintu
+22 まど 窓 Jendela
+23 ポスト Kotak surat
+24 ビル Gedung
+25 ＡＴＭ Atm
+26 コンビニ Toko 24 jam
+27 こうえん 公園 Taman
+28 きっさてん 喫茶店 Coffe shop / cafe
+29 ～や ～屋 Toko ~
+30 のりば 乗り場 Tempat naik
+31 けん 県 Prefektur
+32 うえ 上 Atas
+33 した 下 Bawah
+34 まえ 前 Depan
+35 うしろ 後ろ Belakang
+36 みぎ 右 Kanan
+37 ひだり 左 Kiri
+38 なか 中 Dalam
+39 そと 外 Luar
+40 となり 隣 Samping / sebelah
+41 ちかく 近く Dekat
+42 あいだ 間 Antara
+43 どうもすみません Maaf / terima kasih banyak
+44 ナンプラー Kecap ikan
+45 コーナー Tempat / bagian penjualan
+46 いちばんした 一番下 Paling bawah
+47 げんかん 玄関 Pintu masuk
+48 ふろば 風呂場 Kamar mandi
+49 せんめんじょ 洗面所 Tempat cuci tangan
+50 だいどころ 台所 Dapur
+51 しょくどう 食堂 Kantin / ruang makan
+52 いま 居間 Ruang tamu
+53 しんしつ 寝室 Kamar tidur
+54 ろうか 廊下 Koridor
+55 ベランダ teras
+
+BAB 11
+1 います Ada / mempunyai
+2 かかります Memerlukan waktu
+3 やすみます（を） 休みます Tidak masuk kerja / libur
+4 ひとつ 1 buah
+5 ふたつ 2 buah
+6 みっつ 3 buah
+7 よっつ 4 buah
+8 いつつ 5 buah
+9 むっつ 6 buah
+10 ななつ 7 buah
+11 やっつ 8 buah
+12 ここのつ 9 buah
+13 とお 10 buah
+14 いくつ Berapa buah ?
+15 ひとり 1 orang
+16 ふたり 2 orang
+17 ～にん ～人 ~ orang
+18 ～だい ～台 ~ unit
+19 ～まい ～枚 ~ lembar
+20 ～かい ～回 ~ kali
+21 りんご Apel
+22 みかん Jeruk
+23 サンドイッチ Sandwich
+24 カレー Kare
+25 アイスクリーム Es krim
+26 きって 切手 Perangko
+27 はがき Kartu pos
+28 ふうとう 封筒 Amplop
+29 がいこく 外国 Luar negeri
+30 りゅうがくせい 留学生 Pelajar asing
+31 クラス Kelas
+32 ～じかん ～時間 ~ jam
+33 ～しゅうかん ～週間 ~ minggu
+34 ～かげつ ～か月 ~ bulan
+35 ～ねん ～年 ~ tahun
+36 ～ぐらい Kira-kira ~
+37 どのくらい Berapa lama ?
+38 ぜんぶで 全部で Semuanya
+39 みんな Semua
+40 ～だけ Hanya ~
+41 かしこまりました Baik / mengerti
+42 いいてんきですね いい天気ですね Cuacanya bagus ya...
+43 おでかけですか お出かけですか Mau keluar ?
+44 いってらっしゃい 行ってらっしゃい Hati-hati (berangkatnya)
+45 いってきます 行ってきます Saya berangkat
+46 ふなびん 船便 Pos laut
+47 こうくうびん 航空便 Pos udara
+48 エアメール Pos udara
+49 オーストラリア Australia
+50 ていしょく 定食 Makanan paket
+51 ランチ Makan siang
+52 てんどん 天どん Semangkuk Nasi dan tempura
+53 おやこどん Semangkuk Nasi, daging ayam dan telur
+54 ぎゅうどん 牛どん Semangkuk nasi dan daging sapi
+55 やきにく 焼肉 Daging panggang
+56 やさいため 野菜ため Sayur goreng
+57 つけもの 漬物 Asinan
+58 みそしる みそ汁 Sup miso
+59 おにぎり Nasi kepal
+60 てんぷら Tempura
+61 すし Nasi dicampur cuka dan diberi ikan mentah
+62 うどん Mie jepang ukuran besar
+63 そば Mie jepang warna abu-abu
+64 ラーメン Mie jepang ukuran biasa
+65 やきそば 焼きそば Mie goreng jepang
+66 おこのみやき お好み焼き Gorengan dicampur daging di loyang
+67 カレーライス Nasi kare
+68 ハンバーグ hamburger
+69 コロッケ Kroket
+70 えびフライ Udang goreng tepung
+71 フライドチキン Ayam goreng
+72 サラダ Salad
+73 スープ Sup
+74 スパゲッティ Spageti
+75 ピザ Pizza
+76 トースト Roti panggang
+77 コーヒー Kopi
+78 こうちゃ 紅茶 Teh
+79 ココア Minuman coklat
+80 ジュース Jus
+81 コーラ Coca cola
+
+BAB 12
+1 かんたん（な） 簡単な Mudah, gampang
+2 ちかい 近い Dekat
+3 とおい 遠い Jauh
+4 はやい 早い，速い Cepat
+5 おそい 遅い Lambat
+6 おおい 多い Banyak
+7 すくない 少ない Sedikit
+8 あたたかい 暖かい、温かい Hangat
+9 すずしい 涼しい Sejuk
+10 あまい 甘い Manis
+11 からい 辛い Pedas
+12 おもい 重い Berat
+13 かるい 軽い Ringan
+14 いい Lebih baik
+15 きせつ 季節 Musim
+16 てんき 天気 Cuaca
+17 あめ 雨 Hujan
+18 ゆき 雪 Salju
+19 くもり 曇り Mendung
+20 ホテル Hotel
+21 くうこう 空港 Bandara
+22 うみ 海 Laut
+23 せかい 世界 Dunia
+24 パーティー Pesta
+25 まつり 祭り Perayaan
+26 レモン Lemon
+27 いけばな 生け花 Seni merangkai bunga
+28 もみじ 紅葉 Maple
+29 どちら Yang mana
+30 どちらも Dua-duanya / yang mana saja
+31 いちばん Yang paling
+32 ずっと Selamanya
+33 はじめて 初めて Pertama kali
+34 ただいま Saya pulang / saya kembali
+35 おかえりなさい お帰りなさい Sudah pulang ya...
+36 わあ、すごいひとですね Wah...banyak orang
+37 つかれました 疲れました Capek / lelah
+38 ホンコン Hongkong
+39 シンガポール Singapura
+40 めいしょ 名所 Tempat terkenal
+
+BAB 13
+1 あそびます 遊びます Bermain
+2 およぎます 泳ぎます Berenang
+3 むかえます 迎えます Menjemput
+4 つかれます 疲れます Lelah
+5 けっこんします 結婚します Menikah
+6 かいものします 買い物します Berbelanja
+7 しょくじします 食事します Makan bersama
+8 さんぽします（を） 散歩します Jalan-jalan
+9 たいへん（な） 大変な Susah, berat
+10 ほしい 欲しい Ingin
+11 ひろい 広い Luas
+12 せまい 狭い Sempit
+13 プール Kolam renang
+14 かわ 川 Sungai
+15 びじゅつ 美術 Seni
+16 つり 釣り Pancing , memancing
+17 スキー Ski
+18 しゅうまつ 週末 Akhir pekan
+19 おしょうがつ お諸王月 Tahun baru
+20 ～ごろ Kira-kira , sekitar
+21 なにか 何か Sesuatu
+22 どこか Suatu tempat
+23 のどがかわきます Haus
+24 おなかがすきます Lapar
+25 そうしましょう Ya ayo
+26 ごちゅうもんは ご注文は Mau pesan apa?
+27 おまちください お待ちください Tunggu sebentar
+28 べつべつに 別々に Sendiri-sendiri / masing-masing
+29 はくぶつかん 博物館 Museum
+30 びじゅつかん 美術館 Gedung kesenian
+31 としょかん 図書館 Perpustakaan
+32 えいがかん 映画館 Bioskop
+33 どうぶつえん 動物園 Kebun binatang
+34 しょくぶつえん 植物園 Kebun raya
+35 おてら お寺 Kuil budha
+36 じんじゃ 神社 Kuil sinto
+37 きょうかい 協会 Gereja
+38 たいしかん 体育館 Kedutaan besar
+39 にゅうこくかんりきょく 入国管理局 Kantor imigrasi
+40 しやくしょ 市役所 Kantor balaikota
+41 こうばん 交番 Pos polisi
+42 ちゅうしゃじょう 駐車場 Tempat parkir
+43 だいがく 大学 Universitas
+44 こうこう 高校 Sma
+45 ちゅうがっこう 中学校 Smp
+46 しょうがっこう 小学校 Sd
+47 ようちえん 幼稚園 Tk
+48 にくや 肉屋 Toko daging
+49 パンや Toko roti
+50 さかなや 魚屋 Toko ikan
+51 やおや 八百屋 Toko sayuran
+
+BAB 14
+1 つけます Menyalakan, memasang, menghidupkan
+2 けします 消します Mematikan, memadamkan
+3 あけます 開けます Membuka
+4 しめます 閉めます Menutup
+5 いそぎます 急ぎます Buru-buru
+6 まちます 待ちます Menunggu
+7 もちます 持ちます Membawa
+8 とります 取ります Mengambil
+9 てつだいます 手伝います Membantu
+10 よびます 呼びます Memanggil
+11 はなします 話します Berbicara
+12 つかいます 使います Memakai
+13 とめます 止めます Menghentikan
+14 みせます 見せます Memperlihatkan
+15 おしえます 教えます Memberitahu
+16 すわります 座ります Duduk
+17 たちます 立ちます Berdiri
+18 はいります 入ります Masuk
+19 でます 出ます Keluar
+20 ふります 降ります Turun hujan
+21 コピーします Memfotocopy
+22 でんき 電気 Listrik, lampu
+23 エアコン AC
+24 パスポート Paspor
+25 なまえ 名前 Nama
+26 じゅうしょ 住所 Alamat
+27 ちず 地図 Peta
+28 しお 塩 Garam
+29 さとう 佐藤 Gula
+30 もんだい 問題 Masalah, soal
+31 こたえ 答え Jawaban
+32 よみかた 読み方 Cara membaca
+33 ～かた ～方 Cara~
+34 まっすぐ Lurus
+35 ゆっくり Pelan-pelan, istirahat dengan baik
+36 すぐ Segera, langsung
+37 また Lagi
+38 あとで Nanti
+39 もうすこし もう少し Sedikit lagi
+40 もう～ ~lagi
+41 さあ Mari
+42 あれ？ Ah (saat heran atau kaget)
+43 これでおねがいします これでお願いします Minta dengan ini
+44 おつり お釣り Kembalian
+45 きっぷうりば 切符売り場 Loket penjualan karcis
+46 じどうけんばいき 自動券売機 Mesin karcis otomatis
+47 せいさんき 精算機 Alat penghitung otomatis
+48 かいさつぐち 改札口 Pintu pemeriksaan karcis
+49 でぐち 出口 Pintu keluar
+50 いりぐち 入口 Pintu masuk
+51 ひがしぐち 東口 Pintu timur
+52 にしぐち 西口 Pintu barat
+53 みなみぐち 南口 Pintu selatan
+54 きたぐち 北口 Pintu utara
+55 ちゅうおうぐち 中央口 Pintu tengah
+56 プラットホーム Peron
+57 ばいてん 売店 Kios, kedai
+58 コインロッカー Loker
+59 タクシーのりば Tempat naik taksi
+60 バスターミナル Terminal bis
+61 バスてい バス停 Halte bis
+62 かいそく 快速 Kereta cepat yang lewat pinggir kota
+63 じゅんきゅう 準急 Kereta semi cepat
+64 じこくひょう 時刻表 Jadwal keberangkatan bis,kereta dll
+65 ～はつ ～発 Berangkat dari / berangkat pukul
+66 ～ちゃく ～着 Berangkat ke / tiba pukul
+67 とうきょういき 東京行き Tujuan tokyo
+68 ていきけん 定期券 Kartu langganan berjangka
+69 かいすうけん 回数券 Karcis kupon
+70 かたみち 片道 Sekali jalan
+71 おうふく 往復 Pulang pergi
+
+BAB 15
+1 おきます 置きます Meletakkan
+2 つくります 作ります Membuat
+3 うります 売ります Menjual
+4 しります 知ります Mengenal, mengetahui
+5 すみます 住みます Tinggal
+6 けんきゅうします 研究します Meneliti
+7 しりょう 資料 Data, bahan
+8 カタログ Katalog
+9 ふく 服 Pakaian
+10 せいひん 製品 Produk
+11 ソフト Perangkat lunak
+12 でんしじしょ 電子辞書 Kamus elektronik
+13 けいざい 経済 Ekonomi
+14 はいしゃ 歯医者 Dokter gigi
+15 どくしん 独身 Bujangan, jomblo
+16 おもいだします 思い出します Teringat
+17 いらっしゃいます Ada (hidup)
+18 しょくぎょう 職業 Pekerjaan , profesi
+19 かいしゃいん 会社員 Pegawai perusahaan
+20 こうむいん 公務員 Pegawai negeri
+21 えきいん 駅員 Pegawai stasiun
+22 ぎんこういん 銀行員 Pegawai bank
+23 ゆうびんきょくいん 郵便局員 Pegawai kantor pos
+24 てんいん 店員 Pegawai toko
+25 ちょうりし 調理師 Tukang masak
+26 りようし 理容師 Tukang potong rambut
+27 びようし 美容師 Ahli kecantikan
+28 きょうし 教師 Guru
+29 べんごし 弁護士 Pengacara
+30 けんきゅうしゃ 研究者 Peneliti
+31 いしゃ 医者 Dokter
+32 かんごし 看護師 Perawat
+33 うんてんしゅ 運転手 Sopir
+34 けいさつかん 警察官 Polisi
+35 がいこうかん 外交官 Diplomat
+36 せいじか 政治家 Politikus
+37 がか 画家 Pelukis
+38 さっか 作家 Pengarang
+39 おんがくか 音楽家 Musisi
+40 けんちくか 建築家 Arsitek
+41 エンジニア Insinyur
+42 デザイナー Perancang busana
+43 ジャーナリスト Wartawan
+44 かしゅ 歌手 Penyanyi
+45 はいゆう 俳優 Aktor / artis
+46 スポーツせんしゅ スポーツ選手 Olahragawan / atlit
