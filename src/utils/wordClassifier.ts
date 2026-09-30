@@ -64,6 +64,9 @@ const NOUN_SUBCATEGORIES = new Set([
   'profesi_sekolah',
   'sekolah_kantor',
   'kata_benda',
+  'pakaian',
+  'benda_sekolah',
+  'negara_bahasa',
   'kanji_alam',
   'kanji_manusia',
   'kanji_arah',
@@ -119,6 +122,7 @@ const KNOWN_NA_ADJECTIVES = new Set([
   '大切', 'たいせつ', 'taisetsu',
   '大事', 'だいじ', 'daiji',
   '安全', 'あんぜん', 'anzen',
+  '大丈夫', 'だいじょうぶ', 'daijoubu',
   '危険', 'きけん', 'kiken',
   '自由', 'じゆう', 'jiyuu',
   '素敵', 'すてき', 'suteki',
@@ -154,6 +158,8 @@ const KNOWN_NA_ADJECTIVES = new Set([
   '愉快', 'ゆかい', 'yukai',
   '快適', 'かいてき', 'kaiteki',
   '快適な',
+  '平和', 'へいわ', 'heiwa',
+  '面倒', 'めんどう', 'mendou',
   '迷惑', 'めいわく', 'meiwaku',
   '邪魔', 'じゃま', 'jama',
   '残念', 'ざんねん', 'zannen',
@@ -229,6 +235,11 @@ const KNOWN_NA_ADJECTIVES = new Set([
   'じゅうぶん', 'じゅうぶんな', '十分', '十分な', 'juubun', 'juubunna',
   'せいじつ', 'せいじつな', '誠実', '誠実な', 'seijitsu', 'seijitsuna',
   'てきとう', 'てきとうな', '適当', '適当な', 'tekitou', 'tekitouna',
+  '平和', 'へいわ', 'heiwa', '平和な', 'heiwana',
+  '新鮮', 'しんせん', 'shinsen', '新鮮な', 'shinsenna',
+  '大きな～', 'おおきな～', 'ookina~', '大きな', 'おおきな', 'ookina',
+  '小さな～', 'ちいさな～', 'chiisana~', '小さな', 'ちいさな', 'chiisana',
+  '多くの～', 'おおくの～', 'ookuno~', '多くの', 'おおくの', 'ookuno',
   'あんな', 'anna', 'こんな', 'konna', 'そんな', 'sonna', 'どんな', 'donna',
 ]);
 
@@ -1021,6 +1032,49 @@ const KNOWN_NOUN_WORDS = new Set([
   '山', 'やま', 'yama',
   '雨', 'あめ', 'ame',
   '雪', 'ゆき', 'yuki',
+  '生け花', 'いけばな', 'ikebana',
+  '目的', 'もくてき', 'mokuteki',
+  '標的', 'ひょうてき', 'hyouteki',
+  '魚', 'さかな', 'sakana',
+  '女', 'おんな', 'onna',
+  '穴', 'あな', 'ana',
+  '刀', 'かたな', 'katana',
+  '水着', 'みずぎ', 'mizugi',
+  '棚', 'たな', 'tana',
+  '罠', 'わな', 'wana',
+  '石鹸', 'せっけん', 'sekken',
+  '向こう', 'むこう', 'mukou',
+  'お菓子', 'おかし', 'okashi',
+  'お茶', 'おちゃ', 'ocha',
+  '水', 'みず', 'mizu',
+  '空き缶', 'あきかん', 'akikan',
+  '空きびん', 'あきびん', 'akibin',
+  'バレリーナ', 'bareriina',
+  'みんな', 'minna',
+  '面積', 'めんせき', 'menseki',
+  '自然', 'しぜん', 'shizen',
+  '性格', 'せいかく', 'seikaku',
+  '写真現像', 'しゃしんげんぞう', 'shashingenzou',
+  '車道', 'しゃどう', 'shadou',
+  '昼ご飯', 'ひるごはん', 'hirugohan',
+  '晩ご飯', 'ばんごはん', 'bangohan',
+  '朝ご飯', 'あさごはん', 'asagohan',
+  '昼食', 'ちゅうしょく', 'chuushoku',
+  '夕食', 'ゆうしょく', 'yuushoku',
+  '朝食', 'ちょうしょく', 'choushoku',
+  '読書', 'どくしょ', 'dokusho',
+  '往復', 'おうふく', 'oufuku',
+  '合格', 'ごうかく', 'goukaku',
+  '退院', 'たいいん', 'taiin',
+  '乗り換え', 'のりかえ', 'norikae',
+  '引っ越し', 'ひっこし', 'hikkoshi',
+  '水洗い', 'みずあらい', 'mizuarai',
+  '昼休み', 'ひるやすみ', 'hiruyasumi',
+  '休み', 'やすみ', 'yasumi',
+  '網棚', 'あみだな', 'amidana',
+  '片仮名', 'カタカナ', 'かたかな', 'katakana',
+  '営業中', 'えいぎょうちゅう', 'eigyou chuu',
+  '現像', 'げんぞう', 'genzou',
 ]);
 
 // Populasikan nomina dari vocab1000 secara otomatis (hanya yang bukan kata kerja/kata sifat/angka waktu)
@@ -1031,6 +1085,7 @@ vocab1000
       v.subCategory !== 'kata_sifat' &&
       v.subCategory !== 'keterangan_fukushi' &&
       v.subCategory !== 'salam' &&
+      v.subCategory !== 'onomatope' &&
       v.subCategory !== 'angka_waktu' &&
       !/(直す|乗る|進める|する|ます|ました)$/.test(v.japanese || '') &&
       !/^(me[mnlrng]?[a-z]+|ber[a-z]+)\b/i.test((v.meaningId || '').toLowerCase())
@@ -1263,12 +1318,15 @@ export function getWordClassification(item: CardItem): WordClassification {
   // 3. KATA BILANGAN POKOK / NUMERALIA (数詞 / SUUSHI)
   // Termasuk いち, に, さん, ひとつ, ふたつ, ひとり, ふたり, dsb.
   const isNumeralWord =
-    KNOWN_NUMERAL_WORDS.has(cleanJp) ||
-    KNOWN_NUMERAL_WORDS.has(cleanFuri) ||
-    KNOWN_NUMERAL_WORDS.has(cleanReading) ||
-    /^[\d０-９]+$/.test(cleanJp) ||
-    (subCat === 'kanji_angka' && !cleanJp.includes('年') && !cleanJp.includes('月')) ||
-    (/^(angka|nomor|jumlah|bilangan|nominal)\b/i.test(meaning) && !cleanJp.includes('電話'));
+    cleanJp !== '置く' &&
+    cleanJp !== '奥' &&
+    !(cleanJp === 'おく' && !meaning.includes('seratus juta') && !meaning.includes('100.000.000') && !meaning.includes('angka')) &&
+    (KNOWN_NUMERAL_WORDS.has(cleanJp) ||
+      KNOWN_NUMERAL_WORDS.has(cleanFuri) ||
+      (KNOWN_NUMERAL_WORDS.has(cleanReading) && cleanReading !== 'oku' && cleanReading !== 'ku') ||
+      /^[\d０-９]+$/.test(cleanJp) ||
+      (subCat === 'kanji_angka' && !cleanJp.includes('年') && !cleanJp.includes('月')) ||
+      (/^(angka|nomor|jumlah|bilangan|nominal)\b/i.test(meaning) && !cleanJp.includes('電話')));
 
   if (isNumeralWord) {
     return createNumeralInfo();
@@ -1358,8 +1416,7 @@ export function getWordClassification(item: CardItem): WordClassification {
     cleanJp.includes('でしょう') ||
     cleanJp.includes('ですね') ||
     (cleanJp.endsWith('ね') && cleanJp.length > 5) ||
-    KNOWN_EXPRESSIONS.has(cleanJp) ||
-    KNOWN_EXPRESSIONS.has(cleanReading) ||
+    (subCat !== 'kata_sifat' && (KNOWN_EXPRESSIONS.has(cleanJp) || KNOWN_EXPRESSIONS.has(cleanReading))) ||
     item.category === 'phrases' ||
     item.category === 'irodori' ||
     subCat === 'salam' ||
@@ -1369,9 +1426,9 @@ export function getWordClassification(item: CardItem): WordClassification {
     meaning.includes('selamat siang') ||
     meaning.includes('selamat malam') ||
     meaning.includes('selamat jalan') ||
-    meaning.includes('terima kasih') ||
+    (meaning.includes('terima kasih') && !cleanJp.endsWith('する') && !cleanJp.endsWith('します')) ||
     meaning.includes('sama-sama') ||
-    meaning.includes('bersulang') ||
+    (meaning.includes('bersulang') && !cleanJp.endsWith('する') && !cleanJp.endsWith('します')) ||
     meaning.includes('apa kabar') ||
     meaning.includes('permisi duluan') ||
     meaning.includes('selamat datang') ||
@@ -1444,7 +1501,12 @@ export function getWordClassification(item: CardItem): WordClassification {
     KNOWN_GODAN_SU_MASU_STEMS.has(cleanJp);
 
   const isHomophoneNoun =
-    (cleanJp === '夕食' || cleanJp === '昼食' || cleanJp === '朝食') ||
+    (cleanJp === '夕食' || cleanJp === '昼食' || cleanJp === '朝食' || cleanJp === '服' || cleanJp === '夜' || cleanJp === '清潔' || cleanJp === '退屈' || cleanJp === 'かどう' || cleanJp === '華道' || cleanJp.endsWith('メートル')) ||
+    cleanJp.includes('ご飯') ||
+    (cleanJp.includes('食') && !cleanJp.startsWith('食')) ||
+    ((cleanJp === 'おく' || cleanReading === 'oku') && (meaning.includes('dalam') || meaning.includes('belakang'))) ||
+    ((cleanJp === 'ふく' || cleanReading === 'fuku') && (meaning.includes('pakaian') || meaning.includes('baju'))) ||
+    ((cleanJp === 'よる' || cleanReading === 'yoru') && (meaning.includes('malam'))) ||
     ((cleanJp === 'はる' || cleanReading === 'haru') && (meaning.includes('semi') || meaning.includes('musim')));
 
   const isVerb =
@@ -1561,14 +1623,26 @@ export function getWordClassification(item: CardItem): WordClassification {
       return createVerb2Info();
     }
 
+    // Hati-hati jebakan Godan (-iru/-eru yang sebenarnya Golongan 1 / 五段動詞)
+    if (
+      cleanJp === '帰る' || cleanJp === '入る' || cleanJp === '走る' || cleanJp === '知る' ||
+      cleanJp === '減る' || cleanJp === '滑る' || cleanJp === '蹴る' || cleanJp === '焦る' ||
+      cleanJp === '限る' || cleanJp === '照る' || cleanJp === '握る' || cleanJp === '散る' ||
+      cleanJp === '喋る' ||
+      (cleanJp === '切る' && (meaning.includes('potong') || !meaning.includes('pakaian') && !meaning.includes('baju'))) ||
+      (cleanJp === '要る' && (meaning.includes('butuh') || meaning.includes('perlu'))) ||
+      ((cleanFuri === 'かえる' || cleanReading === 'kaeru') && (meaning.includes('pulang') || !meaning.includes('ubah') && !meaning.includes('tukar') && !meaning.includes('ganti'))) ||
+      ((cleanFuri === 'はいる' || cleanReading === 'hairu') && meaning.includes('masuk')) ||
+      ((cleanFuri === 'はしる' || cleanReading === 'hashiru') && meaning.includes('lari')) ||
+      ((cleanFuri === 'しる' || cleanReading === 'shiru') && meaning.includes('tahu')) ||
+      ((cleanFuri === 'きる' || cleanReading === 'kiru') && (meaning.includes('potong') || !meaning.includes('baju') && !meaning.includes('pakaian')))
+    ) {
+      return createVerb1Info();
+    }
+
     // 3) Bentuk kamus Ichidan (KNOWN_ICHIDAN_VERBS atau berakhiran -iru/-eru murni)
     if (KNOWN_ICHIDAN_VERBS.has(cleanJp) || KNOWN_ICHIDAN_VERBS.has(cleanFuri)) {
       return createVerb2Info();
-    }
-
-    // Hati-hati jebakan Godan (-iru/-eru yang sebenarnya Golongan 1)
-    if (TRAP_GODAN_VERBS.has(cleanJp) || TRAP_GODAN_VERBS.has(cleanFuri) || TRAP_GODAN_VERBS.has(cleanReading)) {
-      return createVerb1Info();
     }
 
     if (cleanJp.endsWith('る') || cleanReading.endsWith('ru')) {
@@ -1629,22 +1703,35 @@ export function getWordClassification(item: CardItem): WordClassification {
   const stemFuri = cleanFuri.replace(/(ですね|でした|です|だ|な|よ|ね|ですか|ですが)$/, '').trim();
   const stemReading = cleanReading.replace(/(desune|deshita|desuka|desuga|desu|da|na|yo|ne)$/, '').trim();
 
+  const isNotNoun =
+    !KNOWN_NOUN_WORDS.has(cleanJp) &&
+    !KNOWN_NOUN_WORDS.has(cleanFuri) &&
+    !KNOWN_NOUN_WORDS.has(cleanReading) &&
+    cleanJp !== '目的' &&
+    cleanReading !== 'mokuteki' &&
+    cleanJp !== '標的' &&
+    cleanJp !== '向こう' &&
+    cleanJp !== '生け花' &&
+    cleanJp !== 'いけばな';
+
   const isNaAdj =
     isExplicitNaAdj ||
-    cleanJp.endsWith('的') ||
-    cleanReading.endsWith('teki') ||
-    NA_ADJECTIVES_ENDING_IN_I.has(cleanJp) ||
-    NA_ADJECTIVES_ENDING_IN_I.has(cleanFuri) ||
-    NA_ADJECTIVES_ENDING_IN_I.has(cleanReading) ||
-    KNOWN_NA_ADJECTIVES.has(cleanJp) ||
-    KNOWN_NA_ADJECTIVES.has(cleanFuri) ||
-    KNOWN_NA_ADJECTIVES.has(cleanReading) ||
-    (stemJp.length >= 2 && (KNOWN_NA_ADJECTIVES.has(stemJp) || NA_ADJECTIVES_ENDING_IN_I.has(stemJp))) ||
-    (stemFuri.length >= 2 && (KNOWN_NA_ADJECTIVES.has(stemFuri) || NA_ADJECTIVES_ENDING_IN_I.has(stemFuri))) ||
-    (stemReading.length >= 2 && (KNOWN_NA_ADJECTIVES.has(stemReading) || NA_ADJECTIVES_ENDING_IN_I.has(stemReading))) ||
-    ((cleanJp.endsWith('な') || cleanReading.endsWith('na')) &&
-      !cleanJp.endsWith('魚') && !cleanJp.endsWith('棚') && !cleanJp.endsWith('ana') &&
-      (cleanJp.length >= 3 && !KNOWN_NOUN_WORDS.has(cleanJp)));
+    (isNotNoun && (
+      (cleanJp.endsWith('的') && cleanJp.length >= 3) ||
+      (cleanReading.endsWith('teki') && cleanReading.length >= 5) ||
+      NA_ADJECTIVES_ENDING_IN_I.has(cleanJp) ||
+      NA_ADJECTIVES_ENDING_IN_I.has(cleanFuri) ||
+      NA_ADJECTIVES_ENDING_IN_I.has(cleanReading) ||
+      KNOWN_NA_ADJECTIVES.has(cleanJp) ||
+      KNOWN_NA_ADJECTIVES.has(cleanFuri) ||
+      KNOWN_NA_ADJECTIVES.has(cleanReading) ||
+      (stemJp.length >= 2 && (KNOWN_NA_ADJECTIVES.has(stemJp) || NA_ADJECTIVES_ENDING_IN_I.has(stemJp))) ||
+      (stemFuri.length >= 2 && (KNOWN_NA_ADJECTIVES.has(stemFuri) || NA_ADJECTIVES_ENDING_IN_I.has(stemFuri))) ||
+      (stemReading.length >= 2 && (KNOWN_NA_ADJECTIVES.has(stemReading) || NA_ADJECTIVES_ENDING_IN_I.has(stemReading))) ||
+      ((cleanJp.endsWith('な') || cleanFuri.endsWith('な') || cleanReading.endsWith(' na') || reading.trim().endsWith(' na')) &&
+        !cleanJp.endsWith('魚') && !cleanJp.endsWith('棚') && !cleanJp.endsWith('ana') &&
+        (cleanJp.length >= 2 && !KNOWN_NOUN_WORDS.has(cleanJp)))
+    ));
 
   if (isNaAdj) {
     return createAdjNaInfo();
@@ -1671,7 +1758,7 @@ export function getWordClassification(item: CardItem): WordClassification {
       /^(yang |sangat |sulit|mudah|panas|dingin|terang|gelap|manis|pahit|asin|asam|pedas|berat|ringan|luas|sempit|tebal|tipis|pendek|panjang|tinggi|rendah|jauh|dekat|cepat|lambat|bahaya|aman|kuat|lemah|ramai|sepi|enak|lezat|lucu|menarik|bosan|sedih|gembira|senang|susah|capek|lelah|tajam|tumpul|dalam|dangkal)/i.test(meaning);
 
     if (
-      (cleanJp.endsWith('い') || cleanReading.endsWith('i')) &&
+      (cleanJp.endsWith('い') || (cleanReading.endsWith('i') && cleanJp.endsWith('い'))) &&
       !cleanJp.endsWith('台') && !cleanJp.endsWith('会') && !cleanJp.endsWith('菜') && !cleanJp.endsWith('線') &&
       !NA_ADJECTIVES_ENDING_IN_I.has(cleanJp) && !KNOWN_NA_ADJECTIVES.has(cleanJp) &&
       !KNOWN_NOUN_WORDS.has(cleanJp) &&
@@ -1685,10 +1772,11 @@ export function getWordClassification(item: CardItem): WordClassification {
   // Pastikan nomina seperti 白菜/はくさい/sawi, 野菜/やさい, 姉妹, 海外, 関係, 大会, ガス台, 間違い, におい, ごみ (sampah)
   // SELALU diklasifikasikan sebagai KATA BENDA!
   if (
-    KNOWN_NOUN_WORDS.has(cleanJp) ||
-    KNOWN_NOUN_WORDS.has(jp) ||
-    KNOWN_NOUN_WORDS.has(cleanReading) ||
-    KNOWN_NOUN_WORDS.has(reading)
+    subCat !== 'kata_sifat' &&
+    (KNOWN_NOUN_WORDS.has(cleanJp) ||
+      KNOWN_NOUN_WORDS.has(jp) ||
+      KNOWN_NOUN_WORDS.has(cleanReading) ||
+      KNOWN_NOUN_WORDS.has(reading))
   ) {
     return createNounInfo();
   }

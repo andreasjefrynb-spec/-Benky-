@@ -42,6 +42,82 @@ export interface MeaningClarification {
 
 // Kamus Disambiguasi Mendalam untuk Kata-kata yang Sering Membingungkan
 const DETAILED_CLARIFICATIONS: Record<string, MeaningClarification> = {
+  // === KATA PEWATAS / PENUNJUK: 別の (betsuno) ===
+  '別の': {
+    primaryMeaning: 'Yang lain / Berbeda / Terpisah (misal: 別の場所 = tempat lain)',
+    secondaryMeanings: ['Yang lain', 'Berbeda', 'Terpisah', 'Lainnya'],
+    contextBadge: { text: 'Nomina Pewatas (連体詞)', variant: 'context' },
+    particleHint: '別の + [Kata Benda] (misal: 別の部屋, 別の本)',
+    clarificationNote: 'Kata "betsuno" (別の / べつの) dalam bahasa Jepang artinya adalah "yang lain", "berbeda", atau "terpisah". Berfungsi sebagai nomina pewatas yang langsung diletakkan di depan kata benda tanpa partikel tambahan untuk menunjukkan entitas selain yang sedang dibicarakan.',
+    contrastPair: {
+      word: '別に',
+      reading: 'betsuni',
+      difference: 'Kata Keterangan (Adverbia): "Tidak ada yang khusus..." (digunakan bersama bentuk kalimat negatif: 別に問題はありません).',
+    },
+    usageHint: '別の機会にお話ししましょう (Mari kita bicarakan di kesempatan lain / lain kali).',
+  },
+  'べつの': {
+    primaryMeaning: 'Yang lain / Berbeda / Terpisah (misal: 別の場所, 別の方法)',
+    secondaryMeanings: ['Yang lain', 'Berbeda', 'Terpisah', 'Lainnya'],
+    contextBadge: { text: 'Nomina Pewatas (連体詞)', variant: 'context' },
+    particleHint: '別の + [Kata Benda] (misal: 別の部屋, 別の本)',
+    clarificationNote: 'Kata "betsuno" (別の / べつの) dalam bahasa Jepang artinya adalah "yang lain", "berbeda", atau "terpisah". Digunakan untuk merujuk pada benda, orang, waktu, atau hal lain selain yang sedang dibahas.',
+    contrastPair: {
+      word: '別に',
+      reading: 'betsuni',
+      difference: 'Kata Keterangan (Adverbia): "Tidak ada yang khusus..." (digunakan dengan bentuk negatif).',
+    },
+    usageHint: '別の日にしましょう (Mari kita ganti ke hari lain).',
+  },
+
+  // === PERBEDAAN KELAS KATA: KATA KERJA vs KATA SIFAT (太る vs 太い, 痩せる vs 細い) ===
+  '太る': {
+    primaryMeaning: 'Bertambah gemuk / Menjadi gemuk (perubahan berat badan)',
+    contextBadge: { text: 'Kata Kerja (動詞)', variant: 'nuance' },
+    particleHint: '〜が 太る / 太っています (sedang dalam kondisi gemuk)',
+    clarificationNote: 'Merupakan kata kerja (verb) yang menyatakan proses atau tindakan perubahan kondisi tubuh bertambah gemuk / berat badan naik. Jangan tertukar dengan 太い (futoi) yang merupakan kata sifat -i!',
+    contrastPair: {
+      word: '太い',
+      reading: 'futoi',
+      difference: 'Kata Sifat -i (Adjective): Gemuk, tebal, atau lebar untuk mendeskripsikan sifat fisik benda, bagian tubuh, atau garis (misal: 太い腕 = lengan tebal/kekar)',
+    },
+    usageHint: '最近甘いものを食べすぎて少し太りました (Akhir-akhir ini saya terlalu banyak makan manis jadi sedikit bertambah gemuk).',
+  },
+  '太い': {
+    primaryMeaning: 'Tebal / Gemuk / Lebar (ukuran fisik/garis/tali)',
+    contextBadge: { text: 'Kata Sifat -i (形容詞)', variant: 'nuance' },
+    clarificationNote: 'Merupakan kata sifat -i untuk mendeskripsikan sifat fisik benda atau bagian tubuh yang berdiameter besar, tebal, atau lebar. Jangan tertukar dengan 太る (futoru) yang merupakan kata kerja proses menjadi gemuk!',
+    contrastPair: {
+      word: '太る',
+      reading: 'futoru',
+      difference: 'Kata Kerja (Verb): Menjadi gemuk / proses bertambah berat badan pada manusia atau hewan',
+    },
+    usageHint: 'このペンは線が太いです (Pulpen ini garis tulisannya tebal).',
+  },
+  '痩せる': {
+    primaryMeaning: 'Menjadi kurus / Turun berat badan / Langsing',
+    contextBadge: { text: 'Kata Kerja (動詞)', variant: 'nuance' },
+    particleHint: '〜が 痩せる / 痩せています (sedang dalam kondisi kurus)',
+    clarificationNote: 'Merupakan kata kerja (verb) yang menyatakan proses perubahan kondisi tubuh berkurang berat badannya menjadi kurus/langsing. Jangan tertukar dengan 細い (hosoi) yang merupakan kata sifat -i!',
+    contrastPair: {
+      word: '細い',
+      reading: 'hosoi',
+      difference: 'Kata Sifat -i (Adjective): Ramping, tipis panjang, atau kecil untuk mendeskripsikan ukuran fisik garis atau benda',
+    },
+    usageHint: '毎朝ジョギングをして3キロ痩せました (Setiap pagi joging dan berhasil turun 3 kg / menjadi kurus).',
+  },
+  '細い': {
+    primaryMeaning: 'Ramping / Tipis / Halus (ukuran garis/benda)',
+    contextBadge: { text: 'Kata Sifat -i (形容詞)', variant: 'nuance' },
+    clarificationNote: 'Merupakan kata sifat -i untuk mendeskripsikan sifat ramping atau tipisnya suatu benda fisik (misal pensil tipis, jari ramping, tali halus). Jangan tertukar dengan 痩せる (yaseru) yang merupakan kata kerja proses tubuh menjadi kurus!',
+    contrastPair: {
+      word: '痩せる',
+      reading: 'yaseru',
+      difference: 'Kata Kerja (Verb): Menjadi kurus / proses tubuh kehilangan berat badan',
+    },
+    usageHint: '彼女は指が細くてきれいです (Jari tangannya ramping dan indah).',
+  },
+
   // === PASANGAN TRANSITIF vs INTRANSITIF (他動詞 vs 自動詞) ===
   '開く': {
     primaryMeaning: 'Terbuka (dengan sendirinya / tanpa pelaku)',
@@ -1028,4 +1104,133 @@ export function hasClarificationDetails(item: CardItem): boolean {
     (clarification.secondaryMeanings && clarification.secondaryMeanings.length > 0)
   );
 }
+
+export interface FullDictionaryDetail {
+  /** Kalimat pembuka ala kamus resmi, misal: Kata "betsuno" (別の / べつの) dalam bahasa Jepang artinya adalah "yang lain", "berbeda", atau "terpisah". */
+  fullExplanationSentence: string;
+  wordRomaji: string;
+  wordKanjiKana: string;
+  meaningsList: string[];
+  primaryMeaning: string;
+  grammaticalRole: string;
+  particlePattern?: string;
+  disambiguationNote?: string;
+  contrastPair?: {
+    word: string;
+    reading: string;
+    difference: string;
+  };
+  sampleSentenceJp?: string;
+  sampleSentenceId?: string;
+}
+
+import { hiraganaToRomaji, romajiToHiragana } from './hiraganaConverter';
+
+/**
+ * Format daftar makna menjadi kalimat bahasa Indonesia alami (dengan tanda petik & kata "atau")
+ */
+export function formatMeaningListAsSentence(raw: string, secondary?: string[]): { formatted: string; items: string[] } {
+  const allParts: string[] = [];
+  const clean = raw.replace(/\(.*?\)/g, '').replace(/\[.*?\]/g, '').trim();
+  clean
+    .split(/[/;,]/)
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean)
+    .forEach((s) => {
+      if (!allParts.includes(s)) allParts.push(s);
+    });
+
+  if (secondary) {
+    secondary.forEach((s) => {
+      const sClean = s.toLowerCase().trim();
+      if (!allParts.includes(sClean)) allParts.push(sClean);
+    });
+  }
+
+  if (allParts.length === 0) return { formatted: `"${raw}"`, items: [raw] };
+  if (allParts.length === 1) return { formatted: `"${allParts[0]}"`, items: allParts };
+  if (allParts.length === 2) return { formatted: `"${allParts[0]}" atau "${allParts[1]}"`, items: allParts };
+  return {
+    formatted: allParts.slice(0, -1).map((p) => `"${p}"`).join(', ') + `, atau "${allParts[allParts.length - 1]}"`,
+    items: allParts,
+  };
+}
+
+/**
+ * Menghasilkan sintesis detail kamus bahasa Jepang terlengkap untuk setiap kosakata:
+ * Contoh: Kata "betsuno" (別の / べつの) dalam bahasa Jepang artinya adalah "yang lain", "berbeda", atau "terpisah".
+ */
+export function getFullDictionaryDetail(item: CardItem): FullDictionaryDetail {
+  const clarification = getClarifiedMeaning(item);
+  let romaji = item.reading?.trim() || '';
+  const kanji = item.kanji?.trim() || '';
+  const jp = item.japanese?.trim() || '';
+  let furi = item.furigana?.trim() || '';
+
+  // Jika reading berupa Hiragana / Katakana, konversikan ke Romaji
+  if (/[\u3040-\u309F\u30A0-\u30FF]/.test(romaji)) {
+    const converted = hiraganaToRomaji(romaji);
+    if (converted) romaji = converted;
+  }
+
+  // Jika furigana kosong namun japanese adalah kanji & reading adalah romaji
+  if (!furi && /[\u4E00-\u9FAF]/.test(jp) && romaji) {
+    const kanaFromRomaji = romajiToHiragana(romaji);
+    if (kanaFromRomaji) furi = kanaFromRomaji;
+  }
+
+  let kanjiKanaDisplay = '';
+  if (kanji && (kanji !== jp || furi)) {
+    const kanaForm = furi || jp;
+    kanjiKanaDisplay = `${kanji} / ${kanaForm}`;
+  } else if (kanji && furi) {
+    kanjiKanaDisplay = `${kanji} / ${furi}`;
+  } else if (/[\u4E00-\u9FAF]/.test(jp) && furi && jp !== furi) {
+    kanjiKanaDisplay = `${jp} / ${furi}`;
+  } else {
+    kanjiKanaDisplay = jp;
+  }
+
+  const { formatted: meaningsFormatted, items: meaningsList } = formatMeaningListAsSentence(
+    clarification.primaryMeaning,
+    clarification.secondaryMeanings
+  );
+
+  const fullSentence = `Kata "${romaji}" (${kanjiKanaDisplay}) dalam bahasa Jepang artinya adalah ${meaningsFormatted}.`;
+
+  // Deteksi kelas kata / peran gramatikal
+  let grammaticalRole = '';
+  if (item.subCategory === 'kata_kerja') {
+    grammaticalRole = 'Kata Kerja (動詞 / Doushi)';
+  } else if (item.subCategory === 'kata_sifat') {
+    grammaticalRole = 'Kata Sifat (形容詞 / Keiyoushi)';
+  } else if (item.subCategory === 'keterangan_fukushi') {
+    grammaticalRole = 'Kata Keterangan (副詞 / Fukushi)';
+  } else if (item.subCategory === 'salam') {
+    grammaticalRole = 'Ungkapan / Salam Percakapan (挨拶・日常表現)';
+  } else if (item.subCategory === 'onomatope') {
+    grammaticalRole = 'Onomatope / Kata Tiruan Bunyi & Rasa (オノマトペ)';
+  } else if (item.subCategory === 'angka_waktu') {
+    grammaticalRole = 'Waktu, Angka & Satuan Hitung (時間・助数詞)';
+  } else if (clarification.contextBadge?.text) {
+    grammaticalRole = clarification.contextBadge.text;
+  } else {
+    grammaticalRole = 'Kata Benda (名詞 / Meishi)';
+  }
+
+  return {
+    fullExplanationSentence: fullSentence,
+    wordRomaji: romaji,
+    wordKanjiKana: kanjiKanaDisplay,
+    meaningsList,
+    primaryMeaning: clarification.primaryMeaning,
+    grammaticalRole,
+    particlePattern: clarification.particleHint,
+    disambiguationNote: clarification.clarificationNote,
+    contrastPair: clarification.contrastPair,
+    sampleSentenceJp: item.exampleJp || clarification.usageHint,
+    sampleSentenceId: item.exampleId,
+  };
+}
+
 

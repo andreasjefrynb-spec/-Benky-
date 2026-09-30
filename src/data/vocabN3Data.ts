@@ -1091,7 +1091,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-biz-extra-1',
     category: 'vocab',
-    subCategory: 'tempat_kerja',
+    subCategory: 'bisnis_formal',
     japanese: '締め切り',
     kanji: '締め切り',
     reading: 'shimekiri',
@@ -1104,7 +1104,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-biz-extra-5',
     category: 'vocab',
-    subCategory: 'tempat_kerja',
+    subCategory: 'bisnis_formal',
     japanese: '責任',
     kanji: '責任',
     reading: 'sekinin',
@@ -1117,7 +1117,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-biz-extra-6',
     category: 'vocab',
-    subCategory: 'tempat_kerja',
+    subCategory: 'bisnis_formal',
     japanese: '同僚',
     kanji: '同僚',
     reading: 'douryou',
@@ -1130,7 +1130,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-biz-extra-7',
     category: 'vocab',
-    subCategory: 'tempat_kerja',
+    subCategory: 'bisnis_formal',
     japanese: '取引先',
     kanji: '取引先',
     reading: 'torihikisaki',
@@ -1147,7 +1147,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-soc-extra-1',
     category: 'vocab',
-    subCategory: 'keuangan',
+    subCategory: 'bisnis_formal',
     japanese: '物価',
     kanji: '物価',
     reading: 'bukka',
@@ -1160,7 +1160,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-soc-extra-2',
     category: 'vocab',
-    subCategory: 'keuangan',
+    subCategory: 'bisnis_formal',
     japanese: '消費税',
     kanji: '消費税',
     reading: 'shouhizei',
@@ -1173,7 +1173,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-soc-extra-4',
     category: 'vocab',
-    subCategory: 'keuangan',
+    subCategory: 'bisnis_formal',
     japanese: '節約',
     kanji: '節約',
     reading: 'setsuyaku',
@@ -1186,7 +1186,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-soc-extra-5',
     category: 'vocab',
-    subCategory: 'lingkungan',
+    subCategory: 'alam_hewan',
     japanese: '環境',
     kanji: '環境',
     reading: 'kankyou',
@@ -1199,7 +1199,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-soc-extra-6',
     category: 'vocab',
-    subCategory: 'lingkungan',
+    subCategory: 'alam_hewan',
     japanese: '非常口',
     kanji: '非常口',
     reading: 'hijouguchi',
@@ -1212,7 +1212,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-soc-extra-7',
     category: 'vocab',
-    subCategory: 'lingkungan',
+    subCategory: 'alam_hewan',
     japanese: '地震',
     kanji: '地震',
     reading: 'jishin',
@@ -1225,7 +1225,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-soc-extra-8',
     category: 'vocab',
-    subCategory: 'lingkungan',
+    subCategory: 'alam_hewan',
     japanese: '避難',
     kanji: '避難',
     reading: 'hinan',
@@ -1242,7 +1242,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-em-extra-1',
     category: 'vocab',
-    subCategory: 'perasaan',
+    subCategory: 'abstrak_akademik',
     japanese: '緊張',
     kanji: '緊張',
     reading: 'kinchou',
@@ -1255,7 +1255,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-em-extra-2',
     category: 'vocab',
-    subCategory: 'perasaan',
+    subCategory: 'abstrak_akademik',
     japanese: '感動',
     kanji: '感動',
     reading: 'kandou',
@@ -1268,7 +1268,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-em-extra-3',
     category: 'vocab',
-    subCategory: 'perasaan',
+    subCategory: 'abstrak_akademik',
     japanese: '感謝',
     kanji: '感謝',
     reading: 'kansha',
@@ -1281,7 +1281,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-em-extra-4',
     category: 'vocab',
-    subCategory: 'kesehatan',
+    subCategory: 'tubuh_kesehatan',
     japanese: '予防',
     kanji: '予防',
     reading: 'yobou',
@@ -1294,7 +1294,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-em-extra-5',
     category: 'vocab',
-    subCategory: 'kesehatan',
+    subCategory: 'tubuh_kesehatan',
     japanese: '体調',
     kanji: '体調',
     reading: 'taichou',
@@ -2191,7 +2191,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-1',
     category: 'vocab',
-    subCategory: 'kantor',
+    subCategory: 'bisnis_formal',
     japanese: '納期',
     kanji: '納期',
     reading: 'nouki',
@@ -2204,7 +2204,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-2',
     category: 'vocab',
-    subCategory: 'kantor',
+    subCategory: 'bisnis_formal',
     japanese: '利益',
     kanji: '利益',
     reading: 'rieki',
@@ -2217,7 +2217,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-3',
     category: 'vocab',
-    subCategory: 'kantor',
+    subCategory: 'bisnis_formal',
     japanese: '損失',
     kanji: '損失',
     reading: 'sonshitsu',
@@ -2230,7 +2230,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-4',
     category: 'vocab',
-    subCategory: 'masyarakat',
+    subCategory: 'bisnis_formal',
     japanese: '景気',
     kanji: '景気',
     reading: 'keiki',
@@ -2243,7 +2243,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-5',
     category: 'vocab',
-    subCategory: 'kantor',
+    subCategory: 'bisnis_formal',
     japanese: '予算',
     kanji: '予算',
     reading: 'yosan',
@@ -2256,7 +2256,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-6',
     category: 'vocab',
-    subCategory: 'kantor',
+    subCategory: 'bisnis_formal',
     japanese: '見積書',
     kanji: '見積書',
     reading: 'mitsumorisho',
@@ -2269,7 +2269,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-7',
     category: 'vocab',
-    subCategory: 'kantor',
+    subCategory: 'bisnis_formal',
     japanese: '請求書',
     kanji: '請求書',
     reading: 'seikyuusho',
@@ -2282,7 +2282,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-8',
     category: 'vocab',
-    subCategory: 'kantor',
+    subCategory: 'bisnis_formal',
     japanese: '仕様書',
     kanji: '仕様書',
     reading: 'shiyousho',
@@ -2295,7 +2295,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-9',
     category: 'vocab',
-    subCategory: 'kantor',
+    subCategory: 'bisnis_formal',
     japanese: '担当者',
     kanji: '担当者',
     reading: 'tantousha',
@@ -2308,7 +2308,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-10',
     category: 'vocab',
-    subCategory: 'kantor',
+    subCategory: 'bisnis_formal',
     japanese: '株主',
     kanji: '株主',
     reading: 'kabunushi',
@@ -2321,7 +2321,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-11',
     category: 'vocab',
-    subCategory: 'kantor',
+    subCategory: 'bisnis_formal',
     japanese: '業績',
     kanji: '業績',
     reading: 'gyouseki',
@@ -2334,7 +2334,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-12',
     category: 'vocab',
-    subCategory: 'masyarakat',
+    subCategory: 'bisnis_formal',
     japanese: '需要',
     kanji: '需要',
     reading: 'juyou',
@@ -2347,7 +2347,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-13',
     category: 'vocab',
-    subCategory: 'masyarakat',
+    subCategory: 'bisnis_formal',
     japanese: '供給',
     kanji: '供給',
     reading: 'kyoukyuu',
@@ -2360,7 +2360,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-14',
     category: 'vocab',
-    subCategory: 'alam',
+    subCategory: 'alam_hewan',
     japanese: '景観',
     kanji: '景観',
     reading: 'keikan',
@@ -2373,7 +2373,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-15',
     category: 'vocab',
-    subCategory: 'masyarakat',
+    subCategory: 'bisnis_formal',
     japanese: '規模',
     kanji: '規模',
     reading: 'kibo',
@@ -2386,7 +2386,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-16',
     category: 'vocab',
-    subCategory: 'kantor',
+    subCategory: 'bisnis_formal',
     japanese: '方針',
     kanji: '方針',
     reading: 'houshin',
@@ -2399,7 +2399,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-17',
     category: 'vocab',
-    subCategory: 'masyarakat',
+    subCategory: 'bisnis_formal',
     japanese: '対策',
     kanji: '対策',
     reading: 'taisaku',
@@ -2412,7 +2412,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-18',
     category: 'vocab',
-    subCategory: 'masyarakat',
+    subCategory: 'bisnis_formal',
     japanese: '影響',
     kanji: '影響',
     reading: 'eikyou',
@@ -2425,7 +2425,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-19',
     category: 'vocab',
-    subCategory: 'hukum',
+    subCategory: 'bisnis_formal',
     japanese: '権利',
     kanji: '権利',
     reading: 'kenri',
@@ -2438,7 +2438,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-20',
     category: 'vocab',
-    subCategory: 'hukum',
+    subCategory: 'bisnis_formal',
     japanese: '義務',
     kanji: '義務',
     reading: 'gimu',
@@ -2451,7 +2451,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-21',
     category: 'vocab',
-    subCategory: 'hukum',
+    subCategory: 'bisnis_formal',
     japanese: '制度',
     kanji: '制度',
     reading: 'seido',
@@ -2464,7 +2464,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-22',
     category: 'vocab',
-    subCategory: 'hukum',
+    subCategory: 'bisnis_formal',
     japanese: '裁判',
     kanji: '裁判',
     reading: 'saiban',
@@ -2477,7 +2477,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-23',
     category: 'vocab',
-    subCategory: 'hukum',
+    subCategory: 'bisnis_formal',
     japanese: '憲法',
     kanji: '憲法',
     reading: 'kenpou',
@@ -2490,7 +2490,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-24',
     category: 'vocab',
-    subCategory: 'hukum',
+    subCategory: 'bisnis_formal',
     japanese: '投票',
     kanji: '投票',
     reading: 'touhyou',
@@ -2503,7 +2503,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-n-25',
     category: 'vocab',
-    subCategory: 'hukum',
+    subCategory: 'bisnis_formal',
     japanese: '政策',
     kanji: '政策',
     reading: 'seisaku',
@@ -2516,7 +2516,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-a-1',
     category: 'vocab',
-    subCategory: 'sifat',
+    subCategory: 'kata_sifat',
     japanese: '深刻',
     kanji: '深刻',
     reading: 'shinkoku',
@@ -2529,7 +2529,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-a-2',
     category: 'vocab',
-    subCategory: 'sifat',
+    subCategory: 'kata_sifat',
     japanese: '適切',
     kanji: '適切',
     reading: 'tekisetsu',
@@ -2542,7 +2542,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-a-3',
     category: 'vocab',
-    subCategory: 'sifat',
+    subCategory: 'kata_sifat',
     japanese: '貧しい',
     kanji: '貧しい',
     reading: 'mazushii',
@@ -2555,7 +2555,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-a-4',
     category: 'vocab',
-    subCategory: 'sifat',
+    subCategory: 'kata_sifat',
     japanese: '険しい',
     kanji: '険しい',
     reading: 'kewashii',
@@ -2568,7 +2568,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-a-5',
     category: 'vocab',
-    subCategory: 'sifat',
+    subCategory: 'kata_sifat',
     japanese: '幼い',
     kanji: '幼い',
     reading: 'osanai',
@@ -2581,7 +2581,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-a-6',
     category: 'vocab',
-    subCategory: 'sifat',
+    subCategory: 'kata_sifat',
     japanese: '怪しい',
     kanji: '怪しい',
     reading: 'ayashii',
@@ -2594,7 +2594,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-a-7',
     category: 'vocab',
-    subCategory: 'sifat',
+    subCategory: 'kata_sifat',
     japanese: '煙い',
     kanji: '煙い',
     reading: 'kemui',
@@ -2607,7 +2607,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-adv-1',
     category: 'vocab',
-    subCategory: 'keterangan',
+    subCategory: 'keterangan_fukushi',
     japanese: '案外',
     kanji: '案外',
     reading: 'angai',
@@ -2620,7 +2620,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-adv-2',
     category: 'vocab',
-    subCategory: 'keterangan',
+    subCategory: 'keterangan_fukushi',
     japanese: '意外に',
     kanji: '意外に',
     reading: 'igaini',
@@ -2633,7 +2633,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-adv-3',
     category: 'vocab',
-    subCategory: 'keterangan',
+    subCategory: 'keterangan_fukushi',
     japanese: '偶然',
     kanji: '偶然',
     reading: 'guuzen',
@@ -2646,7 +2646,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-adv-4',
     category: 'vocab',
-    subCategory: 'keterangan',
+    subCategory: 'keterangan_fukushi',
     japanese: 'いきなり',
     reading: 'ikinari',
     furigana: 'いきなり',
@@ -2658,7 +2658,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-adv-5',
     category: 'vocab',
-    subCategory: 'keterangan',
+    subCategory: 'keterangan_fukushi',
     japanese: 'ぎっしり',
     reading: 'gisshiri',
     furigana: 'ぎっしり',
@@ -2670,7 +2670,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-adv-6',
     category: 'vocab',
-    subCategory: 'keterangan',
+    subCategory: 'keterangan_fukushi',
     japanese: 'ぐっすり',
     reading: 'gussuri',
     furigana: 'ぐっすり',
@@ -2682,7 +2682,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-adv-7',
     category: 'vocab',
-    subCategory: 'keterangan',
+    subCategory: 'keterangan_fukushi',
     japanese: 'ばったり',
     reading: 'battari',
     furigana: 'ばったり',
@@ -2694,7 +2694,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-1',
     category: 'vocab',
-    subCategory: 'alam',
+    subCategory: 'alam_hewan',
     japanese: '洪水',
     kanji: '洪水',
     reading: 'kouzui',
@@ -2707,7 +2707,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-2',
     category: 'vocab',
-    subCategory: 'alam',
+    subCategory: 'alam_hewan',
     japanese: '火災',
     kanji: '火災',
     reading: 'kasai',
@@ -2720,7 +2720,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-3',
     category: 'vocab',
-    subCategory: 'alam',
+    subCategory: 'alam_hewan',
     japanese: '温暖化',
     kanji: '温暖化',
     reading: 'ondanka',
@@ -2733,7 +2733,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-4',
     category: 'vocab',
-    subCategory: 'alam',
+    subCategory: 'alam_hewan',
     japanese: '環境汚染',
     kanji: '環境汚染',
     reading: 'kankyou osen',
@@ -2746,7 +2746,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-5',
     category: 'vocab',
-    subCategory: 'alam',
+    subCategory: 'alam_hewan',
     japanese: '天然資源',
     kanji: '天然資源',
     reading: 'tennen shigen',
@@ -2759,7 +2759,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-6',
     category: 'vocab',
-    subCategory: 'emosi',
+    subCategory: 'abstrak_akademik',
     japanese: '機嫌',
     kanji: '機嫌',
     reading: 'kigen',
@@ -2772,7 +2772,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-7',
     category: 'vocab',
-    subCategory: 'hubungan',
+    subCategory: 'keluarga',
     japanese: '友情',
     kanji: '友情',
     reading: 'yuujou',
@@ -2798,7 +2798,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-9',
     category: 'vocab',
-    subCategory: 'masyarakat',
+    subCategory: 'bisnis_formal',
     japanese: '礼儀',
     kanji: '礼儀',
     reading: 'reigi',
@@ -2811,7 +2811,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-10',
     category: 'vocab',
-    subCategory: 'emosi',
+    subCategory: 'abstrak_akademik',
     japanese: '興奮',
     kanji: '興奮',
     reading: 'koufun',
@@ -2824,7 +2824,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-11',
     category: 'vocab',
-    subCategory: 'kesehatan',
+    subCategory: 'tubuh_kesehatan',
     japanese: '脈拍',
     kanji: '脈拍',
     reading: 'myakuhaku',
@@ -2837,7 +2837,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-12',
     category: 'vocab',
-    subCategory: 'kesehatan',
+    subCategory: 'tubuh_kesehatan',
     japanese: '血圧',
     kanji: '血圧',
     reading: 'ketsuatsu',
@@ -2850,7 +2850,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-13',
     category: 'vocab',
-    subCategory: 'kesehatan',
+    subCategory: 'tubuh_kesehatan',
     japanese: '診断',
     kanji: '診断',
     reading: 'shindan',
@@ -2863,7 +2863,7 @@ export const vocabN3Data: CardItem[] = [
   {
     id: 'vn3-exp-soc-14',
     category: 'vocab',
-    subCategory: 'kesehatan',
+    subCategory: 'tubuh_kesehatan',
     japanese: '予防接種',
     kanji: '予防接種',
     reading: 'yobousesshu',

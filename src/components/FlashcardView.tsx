@@ -19,9 +19,10 @@ import { CardItem, UserItemProgress, SubCategory, LevelFilterOption } from '../t
 import { soundManager } from '../utils/audio';
 import { KanjiStrokeOrderViewer } from './KanjiStrokeOrderViewer';
 import { WordConjugationModal } from './WordConjugationModal';
+import { WordDetailModal } from './WordDetailModal';
 import { getWordClassification } from '../utils/wordClassifier';
 import { getWordNuanceInfo } from '../utils/wordNuances';
-import { getClarifiedMeaning } from '../utils/meaningClarifier';
+import { getClarifiedMeaning, getFullDictionaryDetail } from '../utils/meaningClarifier';
 
 interface FlashcardViewProps {
   cards: CardItem[];
@@ -54,6 +55,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [strokeModalCard, setStrokeModalCard] = useState<CardItem | null>(null);
   const [conjugationModalCard, setConjugationModalCard] = useState<CardItem | null>(null);
+  const [detailModalCard, setDetailModalCard] = useState<CardItem | null>(null);
   const [isFilterExpandedOnMobile, setIsFilterExpandedOnMobile] = useState(false);
   const [isWrapSubCats, setIsWrapSubCats] = useState(false);
   const subCatScrollRef = useRef<HTMLDivElement | null>(null);
@@ -1049,9 +1051,11 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
               {/* Indonesian Meaning - Diperjelas & Bebas Ambiguitas */}
               {(() => {
                 const clarified = getClarifiedMeaning(currentCard);
+                const dict = getFullDictionaryDetail(currentCard);
+
                 return (
-                  <div className="w-full max-w-md flex flex-col items-center">
-                    <div className="flex items-center justify-center gap-1.5 flex-wrap mb-1">
+                  <div className="w-full max-w-md flex flex-col items-center space-y-2">
+                    <div className="flex items-center justify-center gap-1.5 flex-wrap">
                       <span className="text-[10px] font-bold text-slate-400 dark:text-slate-400 uppercase tracking-wider">
                         Arti Presisi
                       </span>
@@ -1071,7 +1075,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                     </div>
 
                     <h4
-                      className={`font-extrabold text-slate-900 dark:text-white mt-0.5 leading-snug ${
+                      className={`font-extrabold text-slate-900 dark:text-white leading-snug ${
                         clarified.primaryMeaning.length > 50
                           ? 'text-base sm:text-lg'
                           : clarified.primaryMeaning.length > 25
@@ -1082,9 +1086,32 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                       {clarified.primaryMeaning}
                     </h4>
 
+                    {/* SPOTLIGHT: Kalimat Detail Kamus Resmi */}
+                    <div className="w-full bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-3 text-left shadow-2xs border border-indigo-800/60">
+                      <div className="flex items-center justify-between gap-1 text-[10px] text-indigo-300 font-bold mb-1">
+                        <span className="flex items-center gap-1">
+                          <Sparkles className="w-3 h-3 text-amber-400" />
+                          <span>Penjelasan Detail:</span>
+                        </span>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setDetailModalCard(currentCard);
+                          }}
+                          className="text-amber-300 hover:text-white font-extrabold hover:underline flex items-center gap-0.5 cursor-pointer"
+                        >
+                          <span>Kamus Lengkap ➜</span>
+                        </button>
+                      </div>
+                      <p className="text-xs sm:text-[13px] font-semibold text-indigo-50 leading-relaxed font-sans">
+                        {dict.fullExplanationSentence}
+                      </p>
+                    </div>
+
                     {/* Secondary Meanings if any */}
                     {clarified.secondaryMeanings && clarified.secondaryMeanings.length > 0 && (
-                      <div className="flex items-center gap-1.5 flex-wrap justify-center mt-1.5 text-[11px] text-slate-600 dark:text-slate-300">
+                      <div className="flex items-center gap-1.5 flex-wrap justify-center text-[11px] text-slate-600 dark:text-slate-300">
                         <span className="text-slate-400 dark:text-slate-400 font-semibold text-[10px]">Makna lain:</span>
                         {clarified.secondaryMeanings.map((alt, altIdx) => (
                           <span
@@ -1099,7 +1126,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
                     {/* Particle Hint */}
                     {clarified.particleHint && (
-                      <div className="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-indigo-50/80 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800 text-indigo-900 dark:text-indigo-200 text-[11px] font-bold">
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-indigo-50/80 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800 text-indigo-900 dark:text-indigo-200 text-[11px] font-bold">
                         <span className="text-indigo-500 dark:text-indigo-400 font-mono text-[10px]">Partikel:</span>
                         <span className="font-jp">{clarified.particleHint}</span>
                       </div>
@@ -1107,7 +1134,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
                     {/* Anti-Bingung: Pasangan Pembanding / Kontras Langsung */}
                     {clarified.contrastPair && (
-                      <div className="w-full mt-2.5 bg-amber-50/90 dark:bg-amber-950/40 border border-amber-200/90 dark:border-amber-800/60 p-2.5 rounded-xl text-left shadow-2xs">
+                      <div className="w-full bg-amber-50/90 dark:bg-amber-950/40 border border-amber-200/90 dark:border-amber-800/60 p-2.5 rounded-xl text-left shadow-2xs">
                         <div className="flex items-center gap-1.5 text-amber-900 dark:text-amber-300 font-extrabold text-[11px] mb-0.5">
                           <span>💡 Anti-Bingung: Bedakan dengan</span>
                           <span className="font-jp font-black text-amber-950 dark:text-amber-100 px-1.5 py-0.5 bg-amber-100/90 dark:bg-amber-900/60 rounded border border-amber-200 dark:border-amber-700">
@@ -1362,6 +1389,19 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
           </div>
         </div>
       )}
+
+      {/* Modal Detail Arti Kosakata Lengkap */}
+      <WordDetailModal
+        card={detailModalCard}
+        isOpen={!!detailModalCard}
+        onClose={() => setDetailModalCard(null)}
+        speechRate={speechRate}
+        onOpenConjugation={(c) => {
+          setDetailModalCard(null);
+          setConjugationModalCard(c);
+        }}
+        onPracticeWriting={onPracticeWriting}
+      />
 
       {/* Modal Perubahan Kata Lengkap (14+ Bentuk Konjugasi) */}
       <WordConjugationModal

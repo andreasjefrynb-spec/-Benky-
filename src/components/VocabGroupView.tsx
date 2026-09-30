@@ -19,10 +19,12 @@ import {
   Check,
   Bookmark,
   Star,
+  Info,
 } from 'lucide-react';
 import { CardItem, UserItemProgress, LevelFilterOption } from '../types';
 import { soundManager } from '../utils/audio';
 import { WordConjugationModal } from './WordConjugationModal';
+import { WordDetailModal } from './WordDetailModal';
 import { getQuickConjugationForms } from '../utils/japaneseConjugator';
 import { getWordClassification } from '../utils/wordClassifier';
 import { getClarifiedMeaning, hasClarificationDetails } from '../utils/meaningClarifier';
@@ -42,7 +44,7 @@ export interface GroupMeta {
   kanjiTitle: string;
   icon: string;
   desc: string;
-  cluster: 'tata_bahasa' | 'kehidupan' | 'masyarakat' | 'alam_manusia' | 'tingkat_mahir_native';
+  cluster: 'tata_bahasa' | 'kehidupan' | 'masyarakat' | 'alam_manusia' | 'modern_kreatif' | 'tingkat_mahir_native';
   color: string;
 }
 
@@ -50,32 +52,38 @@ export const GROUP_CLUSTERS = [
   {
     id: 'tata_bahasa',
     title: 'Tata Bahasa & Pondasi Inti',
-    sub: 'Kata kerja, sifat, dan keterangan pokok',
+    sub: 'Kata kerja, sifat, keterangan, dan nomina pokok',
     icon: '⚡',
-  },
-  {
-    id: 'tingkat_mahir_native',
-    title: 'Idiom & Ungkapan Penutur Asli',
-    sub: 'Yojijukugo (四字熟語), Idiom tubuh (慣用句), Bisnis & Percakapan Alami',
-    icon: '⛩️',
   },
   {
     id: 'kehidupan',
     title: 'Aktivitas & Kehidupan Sehari-hari',
-    sub: 'Makanan, perabotan rumah, etiket dan salam',
+    sub: 'Makanan, perabotan rumah, pakaian, alat tulis & salam',
     icon: '🍜',
   },
   {
     id: 'masyarakat',
     title: 'Masyarakat, Tempat & Karier',
-    sub: 'Tempat, transportasi, sekolah, kerja & keluarga',
+    sub: 'Tempat, transportasi, sekolah/karier, keluarga, bisnis & negara',
     icon: '🏙️',
   },
   {
     id: 'alam_manusia',
     title: 'Waktu, Tubuh & Alam Sekitar',
-    sub: 'Waktu, angka, anatomi, kesehatan & cuaca',
+    sub: 'Waktu & angka, tubuh & kesehatan, alam & cuaca',
     icon: '🌿',
+  },
+  {
+    id: 'modern_kreatif',
+    title: 'Minat, Digital & Wacana Modern',
+    sub: 'Hobi & olahraga, teknologi & IT, konsep abstrak & opini',
+    icon: '🚀',
+  },
+  {
+    id: 'tingkat_mahir_native',
+    title: 'Idiom & Ungkapan Penutur Asli',
+    sub: 'Yojijukugo (四字熟語), Idiom tubuh (慣用句), Kotowaza & Onomatope',
+    icon: '⛩️',
   },
 ] as const;
 
@@ -103,8 +111,8 @@ export const GROUP_METAS: Record<string, GroupMeta> = {
     name: 'Kata Benda Pokok',
     kanjiTitle: '名詞 (Meishi)',
     icon: '📦',
-    desc: 'Benda umum, peralatan, konsep & nomina penting',
-    cluster: 'kehidupan',
+    desc: 'Benda umum, pronomina penunjuk (これ/それ/あれ) & nomina penting',
+    cluster: 'tata_bahasa',
     color: 'from-slate-500/10 to-zinc-500/10 border-slate-300 text-slate-800',
   },
   keterangan_fukushi: {
@@ -128,11 +136,29 @@ export const GROUP_METAS: Record<string, GroupMeta> = {
   benda_rumah: {
     id: 'benda_rumah',
     name: 'Benda & Rumah',
-    kanjiTitle: '日用品・家具・衣類',
+    kanjiTitle: '日用品・家具',
     icon: '🏠',
-    desc: 'Perabot rumah tangga, pakaian & perlengkapan',
+    desc: 'Perabot rumah tangga & perlengkapan sehari-hari',
     cluster: 'kehidupan',
     color: 'from-emerald-500/10 to-teal-500/10 border-emerald-200 text-emerald-800',
+  },
+  pakaian: {
+    id: 'pakaian',
+    name: 'Pakaian & Busana',
+    kanjiTitle: '服・衣類・服飾 (Irui)',
+    icon: '👔',
+    desc: 'Pakaian, kemeja, celana, sepatu, jas, dasi, topi & busana',
+    cluster: 'kehidupan',
+    color: 'from-pink-500/10 to-indigo-500/10 border-pink-200 text-pink-800',
+  },
+  benda_sekolah: {
+    id: 'benda_sekolah',
+    name: 'Alat Tulis & Belajar',
+    kanjiTitle: '文房具・勉強道具 (Bunbougu)',
+    icon: '✏️',
+    desc: 'Buku, pensil, pulpen, kamus, penggaris, buku catatan & alat belajar',
+    cluster: 'kehidupan',
+    color: 'from-amber-500/10 to-orange-500/10 border-amber-200 text-amber-800',
   },
   salam: {
     id: 'salam',
@@ -160,6 +186,15 @@ export const GROUP_METAS: Record<string, GroupMeta> = {
     desc: 'Stasiun, kereta, jalan raya & armada kendaraan',
     cluster: 'masyarakat',
     color: 'from-cyan-500/10 to-blue-500/10 border-cyan-200 text-cyan-800',
+  },
+  negara_bahasa: {
+    id: 'negara_bahasa',
+    name: 'Negara & Bahasa Asing',
+    kanjiTitle: '国名・外国語・外国人',
+    icon: '🌐',
+    desc: 'Nama negara Katakana (Amerika, Doitsu, Furansu), bahasa asing & bangsa',
+    cluster: 'masyarakat',
+    color: 'from-blue-500/10 to-teal-500/10 border-blue-200 text-blue-800',
   },
   profesi_sekolah: {
     id: 'profesi_sekolah',
@@ -235,7 +270,7 @@ export const GROUP_METAS: Record<string, GroupMeta> = {
   },
   onomatope: {
     id: 'onomatope',
-    name: 'Onomatope & Gitaigo Penutur Asli',
+    name: 'Onomatope & Gitaigo',
     kanjiTitle: 'オノマトペ・擬態語',
     icon: '✨',
     desc: 'Tiruan bunyi & keadaan rasa penutur asli (ぺこぺこ, ぎりぎり, ぐっすり, dll.)',
@@ -244,20 +279,38 @@ export const GROUP_METAS: Record<string, GroupMeta> = {
   },
   bisnis_formal: {
     id: 'bisnis_formal',
-    name: 'Bisnis & Formal',
-    kanjiTitle: 'ビジネス・社会',
+    name: 'Bisnis, Kantor & Keuangan',
+    kanjiTitle: 'ビジネス・社会・金融',
     icon: '🏛️',
-    desc: 'Istilah koran, kontrak kerja, etika & etiket profesional',
-    cluster: 'tingkat_mahir_native',
+    desc: 'Etika kantor, kontrak, rapat, keuangan, gaji, belanja & transaksi',
+    cluster: 'masyarakat',
     color: 'from-blue-600/10 to-cyan-600/10 border-blue-300 text-blue-900',
+  },
+  hiburan_olahraga: {
+    id: 'hiburan_olahraga',
+    name: 'Hobi, Seni & Olahraga',
+    kanjiTitle: '趣味・スポーツ・娯楽',
+    icon: '⚽',
+    desc: 'Musik, instrumen, olahraga, film, anime, manga, seni & rekreasi',
+    cluster: 'modern_kreatif',
+    color: 'from-amber-500/10 to-orange-500/10 border-amber-200 text-amber-800',
+  },
+  teknologi_media: {
+    id: 'teknologi_media',
+    name: 'Teknologi, IT & Media',
+    kanjiTitle: 'IT・通信・メディア',
+    icon: '💻',
+    desc: 'Komputer, internet, aplikasi, ponsel, perangkat digital & berita',
+    cluster: 'modern_kreatif',
+    color: 'from-indigo-500/10 to-blue-500/10 border-indigo-200 text-indigo-800',
   },
   abstrak_akademik: {
     id: 'abstrak_akademik',
-    name: 'Abstrak & Opini Kritis',
-    kanjiTitle: '抽象概念・論説',
+    name: 'Abstrak, Pemikiran & Opini',
+    kanjiTitle: '抽象概念・論説・思考',
     icon: '🧠',
-    desc: 'Kosakata tematik wacana, opini publik & diskusi',
-    cluster: 'tingkat_mahir_native',
+    desc: 'Konsep pemikiran, opini, ide, alasan, nilai sosial & masyarakat',
+    cluster: 'modern_kreatif',
     color: 'from-purple-600/10 to-indigo-600/10 border-purple-300 text-purple-900',
   },
 };
@@ -279,6 +332,7 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
   const [showFurigana, setShowFurigana] = useState<boolean>(true);
   const [onlyClarified, setOnlyClarified] = useState<boolean>(false);
   const [selectedConjugationCard, setSelectedConjugationCard] = useState<CardItem | null>(null);
+  const [selectedDetailCard, setSelectedDetailCard] = useState<CardItem | null>(null);
 
   // Group cards by subCategory with smart classification fallback
   const allGroupedMap = useMemo(() => {
@@ -290,11 +344,11 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
 
       // Smart classification check if miscategorized or unmapped
       const cls = getWordClassification(card);
-      if (cls.type.startsWith('verb') && targetSub !== 'kata_kerja') {
+      if (cls.type.startsWith('verb') && targetSub === 'kata_benda') {
         targetSub = 'kata_kerja';
-      } else if ((cls.type === 'adj_i' || cls.type === 'adj_na') && targetSub !== 'kata_sifat') {
+      } else if ((cls.type === 'adj_i' || cls.type === 'adj_na') && targetSub === 'kata_benda') {
         targetSub = 'kata_sifat';
-      } else if (cls.type === 'adverb' && targetSub !== 'keterangan_fukushi') {
+      } else if (cls.type === 'adverb' && targetSub === 'kata_benda') {
         targetSub = 'keterangan_fukushi';
       } else if ((cls.type === 'numeral' || cls.type === 'time_adverb' || cls.type === 'counter') && targetSub === 'kata_benda') {
         targetSub = 'angka_waktu';
@@ -939,8 +993,8 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                   );
                 })()}
 
-                    {/* Card Bottom: Audio Play Button & Perubahan Kata */}
-                    <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
+                    {/* Card Bottom: Audio Play Button, Detail Kamus & Perubahan Kata */}
+                    <div className="pt-2 border-t border-slate-100 flex items-center justify-between gap-1.5 flex-wrap">
                       <button
                         onClick={(e) =>
                           handlePlayAudio(
@@ -955,15 +1009,29 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                         <span className="text-[11px]">Audio</span>
                       </button>
 
-                      <button
-                        type="button"
-                        onClick={() => setSelectedConjugationCard(card)}
-                        className="flex items-center gap-1.5 text-xs font-bold text-indigo-700 hover:text-indigo-900 bg-indigo-50 hover:bg-indigo-100/90 px-2.5 py-1.5 rounded-xl border border-indigo-200/80 transition-all cursor-pointer active:scale-95 shadow-2xs"
-                        title="Lihat seluruh perubahan kata lengkap"
-                      >
-                        <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
-                        <span>Perubahan Kata</span>
-                      </button>
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          type="button"
+                          onClick={() => setSelectedDetailCard(card)}
+                          className="flex items-center gap-1 text-xs font-bold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200/80 px-2.5 py-1.5 rounded-xl border border-slate-200 transition-all cursor-pointer active:scale-95 shadow-2xs"
+                          title="Lihat penjelasan detail arti kata lengkap"
+                        >
+                          <BookOpen className="w-3.5 h-3.5 text-rose-600" />
+                          <span>Detail Arti</span>
+                        </button>
+
+                        {wordClass.type.startsWith('verb') || wordClass.type.startsWith('adj') ? (
+                          <button
+                            type="button"
+                            onClick={() => setSelectedConjugationCard(card)}
+                            className="flex items-center gap-1 text-xs font-bold text-indigo-700 hover:text-indigo-900 bg-indigo-50 hover:bg-indigo-100/90 px-2.5 py-1.5 rounded-xl border border-indigo-200/80 transition-all cursor-pointer active:scale-95 shadow-2xs"
+                            title="Lihat seluruh 14+ perubahan bentuk kata"
+                          >
+                            <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+                            <span>14 Bentuk</span>
+                          </button>
+                        ) : null}
+                      </div>
                     </div>
                   </div>
                 );
@@ -982,7 +1050,7 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                       <th className="py-3 px-4">Jenis / Golongan</th>
                       <th className="py-3 px-4">Romaji / Baca</th>
                       <th className="py-3 px-4">Arti (Indonesia)</th>
-                      <th className="py-3 px-4 text-center">Perubahan Kata</th>
+                      <th className="py-3 px-4 text-center">Detail & Konjugasi</th>
                       <th className="py-3 px-4 text-center">Level</th>
                       <th className="py-3 px-4 text-center">Suara</th>
                     </tr>
@@ -992,6 +1060,8 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                       const itemProg = progress[card.id];
                       const isMastered = itemProg?.status === 'mastered';
                       const wordClass = getWordClassification(card);
+                      const isConjugatable =
+                        wordClass.type.startsWith('verb') || wordClass.type.startsWith('adj');
 
                       return (
                         <tr
@@ -1067,16 +1137,29 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
                             })()}
                           </td>
 
-                          {/* Perubahan Kata Button */}
+                          {/* Detail & Perubahan Kata Action Buttons */}
                           <td className="py-2.5 px-4 text-center">
-                            <button
-                              onClick={() => setSelectedConjugationCard(card)}
-                              className="px-2.5 py-1 text-[11px] font-bold rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 transition-colors border border-indigo-200/80 inline-flex items-center gap-1 cursor-pointer whitespace-nowrap shadow-2xs"
-                              title="Buka seluruh bentuk konjugasi kata"
-                            >
-                              <Sparkles className="w-3 h-3 text-indigo-600" />
-                              <span>14 Bentuk</span>
-                            </button>
+                            <div className="flex items-center justify-center gap-1.5">
+                              <button
+                                onClick={() => setSelectedDetailCard(card)}
+                                className="px-2 py-1 text-[11px] font-bold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors border border-slate-200 inline-flex items-center gap-1 cursor-pointer whitespace-nowrap"
+                                title="Lihat penjelasan detail arti kata lengkap"
+                              >
+                                <BookOpen className="w-3 h-3 text-rose-600" />
+                                <span>Detail</span>
+                              </button>
+
+                              {isConjugatable && (
+                                <button
+                                  onClick={() => setSelectedConjugationCard(card)}
+                                  className="px-2 py-1 text-[11px] font-bold rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 transition-colors border border-indigo-200/80 inline-flex items-center gap-1 cursor-pointer whitespace-nowrap shadow-2xs"
+                                  title="Buka seluruh bentuk konjugasi kata"
+                                >
+                                  <Sparkles className="w-3 h-3 text-indigo-600" />
+                                  <span>14 Bentuk</span>
+                                </button>
+                              )}
+                            </div>
                           </td>
 
                           {/* Level */}
@@ -1126,6 +1209,18 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
           )}
         </div>
       )}
+
+      {/* Modal Detail Arti Kosakata Lengkap */}
+      <WordDetailModal
+        card={selectedDetailCard}
+        isOpen={!!selectedDetailCard}
+        onClose={() => setSelectedDetailCard(null)}
+        speechRate={speechRate}
+        onOpenConjugation={(c) => {
+          setSelectedDetailCard(null);
+          setSelectedConjugationCard(c);
+        }}
+      />
 
       {/* Modal Perubahan Kata Lengkap (14+ Bentuk Konjugasi) */}
       <WordConjugationModal
