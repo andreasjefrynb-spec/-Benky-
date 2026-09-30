@@ -140,10 +140,9 @@ export const CharacterChart: React.FC<CharacterChartProps> = ({
 
                   <div className="flex items-center gap-1">
                     {isMastered && (
-                      <CheckCircle2
-                        className="w-4 h-4 text-emerald-500"
-                        title="Sudah dihapal"
-                      />
+                      <span title="Sudah dihapal" className="inline-flex">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                      </span>
                     )}
                     <button
                       onClick={(e) => {

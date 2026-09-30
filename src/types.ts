@@ -121,13 +121,13 @@ export interface CardItem {
   onyomi?: string;         // For Kanji
   kunyomi?: string;        // For Kanji
   strokes?: number;        // Stroke count
-  level?: 'N5' | 'N4' | 'N3' | 'Dasar' | 'Lanjutan' | 'Starter (A1)' | 'Shokyu 1 (A2)' | 'Shokyu 2 (A2)' | 'SSW / N4-N3';
+  level?: 'N5' | 'N4' | 'N3' | 'N2' | 'N1' | 'Dasar' | 'Lanjutan' | 'Starter (A1)' | 'Shokyu 1 (A2)' | 'Shokyu 2 (A2)' | 'SSW / N4-N3' | 'Native';
   notes?: string;
   isCustom?: boolean;
 }
 
-export type JlptLevel = 'N5' | 'N4' | 'N3';
-export type LevelFilterOption = 'all' | 'N5' | 'N4' | 'N3';
+export type JlptLevel = 'N5' | 'N4' | 'N3' | 'N2' | 'N1';
+export type LevelFilterOption = 'all' | 'N5' | 'N4' | 'N3' | 'N2' | 'N1' | 'Dasar' | 'Lanjutan' | 'Starter (A1)' | 'Shokyu 1 (A2)' | 'Shokyu 2 (A2)' | 'SSW / N4-N3' | 'Native';
 
 export type MasteryStatus = 'new' | 'learning' | 'mastered';
 
