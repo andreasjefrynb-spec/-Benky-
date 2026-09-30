@@ -45,7 +45,7 @@ const DETAILED_CLARIFICATIONS: Record<string, MeaningClarification> = {
   // === KATA PEWATAS / PENUNJUK: 別の (betsuno) ===
   '別の': {
     primaryMeaning: 'Yang lain / Berbeda / Terpisah (misal: 別の場所 = tempat lain)',
-    secondaryMeanings: ['Yang lain', 'Berbeda', 'Terpisah', 'Lainnya'],
+    secondaryMeanings: ['Yang lain', 'Berbeda', 'Terpisah'],
     contextBadge: { text: 'Nomina Pewatas (連体詞)', variant: 'context' },
     particleHint: '別の + [Kata Benda] (misal: 別の部屋, 別の本)',
     clarificationNote: 'Kata "betsuno" (別の / べつの) dalam bahasa Jepang artinya adalah "yang lain", "berbeda", atau "terpisah". Berfungsi sebagai nomina pewatas yang langsung diletakkan di depan kata benda tanpa partikel tambahan untuk menunjukkan entitas selain yang sedang dibicarakan.',
@@ -58,7 +58,7 @@ const DETAILED_CLARIFICATIONS: Record<string, MeaningClarification> = {
   },
   'べつの': {
     primaryMeaning: 'Yang lain / Berbeda / Terpisah (misal: 別の場所, 別の方法)',
-    secondaryMeanings: ['Yang lain', 'Berbeda', 'Terpisah', 'Lainnya'],
+    secondaryMeanings: ['Yang lain', 'Berbeda', 'Terpisah'],
     contextBadge: { text: 'Nomina Pewatas (連体詞)', variant: 'context' },
     particleHint: '別の + [Kata Benda] (misal: 別の部屋, 別の本)',
     clarificationNote: 'Kata "betsuno" (別の / べつの) dalam bahasa Jepang artinya adalah "yang lain", "berbeda", atau "terpisah". Digunakan untuk merujuk pada benda, orang, waktu, atau hal lain selain yang sedang dibahas.',
