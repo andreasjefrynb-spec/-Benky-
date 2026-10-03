@@ -970,6 +970,109 @@ const DETAILED_CLARIFICATIONS: Record<string, MeaningClarification> = {
       difference: 'Penting personal dan emosional',
     },
   },
+  // === GELAR KEHORMATAN & AKHIRAN NAMA ORANG (KEISHO / SETSUBIJI) ===
+  '〜さん': {
+    primaryMeaning: 'Tuan / Nyonya / Nona / Saudara (Gelar Kehormatan Nama)',
+    contextBadge: { text: 'Gelar Kehormatan Nama', variant: 'context' },
+    clarificationNote: 'Gelar kehormatan sopan universal yang dibubuhkan di akhir nama orang (misal: Tanaka-san = Tuan/Sdr. Tanaka). TIDAK digunakan untuk menyebut diri sendiri.',
+    usageHint: '田中さん、おはようございます (Selamat pagi, Tuan Tanaka).',
+  },
+  '～さん': {
+    primaryMeaning: 'Tuan / Nyonya / Nona / Saudara (Gelar Kehormatan Nama)',
+    contextBadge: { text: 'Gelar Kehormatan Nama', variant: 'context' },
+    clarificationNote: 'Gelar kehormatan sopan universal yang dibubuhkan di akhir nama orang (misal: Tanaka-san = Tuan/Sdr. Tanaka). TIDAK digunakan untuk menyebut diri sendiri.',
+    usageHint: '田中さん、おはようございます (Selamat pagi, Tuan Tanaka).',
+  },
+  'さん': {
+    primaryMeaning: 'Tuan / Nyonya / Nona / Saudara (Gelar Kehormatan)',
+    contextBadge: { text: 'Gelar Kehormatan Nama', variant: 'context' },
+    clarificationNote: 'Gelar kehormatan sopan universal yang dibubuhkan di akhir nama orang (misal: Tanaka-san = Tuan/Sdr. Tanaka). TIDAK digunakan untuk menyebut diri sendiri.',
+    usageHint: '田中さん、おはようございます (Selamat pagi, Tuan Tanaka).',
+  },
+  '〜ちゃん': {
+    primaryMeaning: 'Panggilan Sayang / Akrab (Anak / Sahabat)',
+    contextBadge: { text: 'Panggilan Sayang / Akrab', variant: 'context' },
+    clarificationNote: 'Akhiran bernada ramah dan kasih sayang untuk anak kecil, bayi, atau sahabat dekat wanita.',
+    usageHint: '花子ちゃん、一緒に遊ぼう (Hanako-chan, ayo main bersama).',
+  },
+  'ちゃん': {
+    primaryMeaning: 'Panggilan Sayang / Akrab (Anak / Sahabat)',
+    contextBadge: { text: 'Panggilan Sayang / Akrab', variant: 'context' },
+    clarificationNote: 'Akhiran bernada ramah dan kasih sayang untuk anak kecil, bayi, atau sahabat dekat wanita.',
+  },
+  '〜くん': {
+    primaryMeaning: 'Panggilan Akrab Laki-laki / Rekan Sebaya',
+    contextBadge: { text: 'Panggilan Sebaya / Junior', variant: 'context' },
+    clarificationNote: 'Akhiran panggilan untuk anak laki-laki, rekan pria sebaya, atau junior di tempat kerja/sekolah.',
+    usageHint: '健太くん、手伝ってくれてありがとう (Kenta-kun, terima kasih sudah membantu).',
+  },
+  'くん': {
+    primaryMeaning: 'Panggilan Akrab Laki-laki / Rekan Sebaya',
+    contextBadge: { text: 'Panggilan Sebaya / Junior', variant: 'context' },
+    clarificationNote: 'Akhiran panggilan untuk anak laki-laki, rekan pria sebaya, atau junior di tempat kerja/sekolah.',
+  },
+  '〜様': {
+    primaryMeaning: 'Yang Terhormat (Sangat Sopan / Tamu / Pelanggan)',
+    contextBadge: { text: 'Sangat Hormat (Keigo)', variant: 'context' },
+    clarificationNote: 'Bentuk penghormatan tertinggi dari -san, ditujukan kepada pelanggan (お客様), tamu, atau surat resmi.',
+    usageHint: 'お客様、お待たせいたしました (Bapak/Ibu pelanggan yang terhormat, maaf telah menunggu).',
+  },
+  '〜さま': {
+    primaryMeaning: 'Yang Terhormat (Sangat Sopan / Tamu / Pelanggan)',
+    contextBadge: { text: 'Sangat Hormat (Keigo)', variant: 'context' },
+    clarificationNote: 'Bentuk penghormatan tertinggi dari -san, ditujukan kepada pelanggan (お客様), tamu, atau surat resmi.',
+  },
+  // === SATUAN BILANGAN & PENGHITUNG (JOSHUUSHI) ===
+  '〜かい': {
+    primaryMeaning: 'Lantai ... (Gedung) / ... Kali (Frekuensi)',
+    contextBadge: { text: 'Satuan Lantai / Frekuensi', variant: 'context' },
+    clarificationNote: 'Bila kanji 階 berarti lantai gedung (misal: 3階 = lantai 3). Bila kanji 回 berarti frekuensi pengulangan (misal: 1回 = 1 kali).',
+  },
+  '〜さい': {
+    primaryMeaning: '... Tahun (Satuan Umur / Usia)',
+    contextBadge: { text: 'Satuan Umur (歳 / 才)', variant: 'context' },
+    clarificationNote: 'Penghitung umur seseorang, misal: 20歳 (20 tahun / hatachi).',
+  },
+  '〜にん': {
+    primaryMeaning: '... Orang (Satuan Jumlah Manusia)',
+    contextBadge: { text: 'Satuan Hitung Orang (人)', variant: 'context' },
+    clarificationNote: 'Penghitung jumlah orang. Catatan pengecualian: 1 orang = ひとり (一人), 2 orang = ふたり (二人), 3 orang ke atas = 〜にん (三人 = さんにん).',
+  },
+  '〜まい': {
+    primaryMeaning: '... Lembar (Benda Tipis & Datar)',
+    contextBadge: { text: 'Satuan Benda Datar (枚)', variant: 'context' },
+    clarificationNote: 'Digunakan untuk kertas, tiket, foto, kemeja/kaos, piring, prangko, dsb.',
+  },
+  '〜だい': {
+    primaryMeaning: '... Unit (Mesin / Kendaraan / Elektronik)',
+    contextBadge: { text: 'Satuan Mesin & Kendaraan (台)', variant: 'context' },
+    clarificationNote: 'Digunakan untuk mobil, sepeda, komputer, televisi, mesin fotokopi, dsb.',
+  },
+  '〜ほん': {
+    primaryMeaning: '... Batang / Botol (Benda Panjang Silindris)',
+    contextBadge: { text: 'Satuan Benda Panjang (本)', variant: 'context' },
+    clarificationNote: 'Digunakan untuk pensil, botol, payung, pohon, sungai, jari tangan, dsb.',
+  },
+  '〜さつ': {
+    primaryMeaning: '... Jilid / Eksemplar (Buku / Majalah / Kamus)',
+    contextBadge: { text: 'Satuan Buku (冊)', variant: 'context' },
+    clarificationNote: 'Khusus untuk bahan bacaan berjilid seperti buku, novel, majalah, dan kamus.',
+  },
+  '〜こ': {
+    primaryMeaning: '... Butir / Buah (Benda Kecil / Bulat / Tiga Dimensi)',
+    contextBadge: { text: 'Satuan Benda Kecil (個)', variant: 'context' },
+    clarificationNote: 'Digunakan untuk apel, telur, bola, kotak kecil, penghapus, batu kecil, dsb.',
+  },
+  '〜はい': {
+    primaryMeaning: '... Cangkir / Gelas / Mangkok (Takaran Minuman & Sup)',
+    contextBadge: { text: 'Satuan Cangkir / Porsi (杯)', variant: 'context' },
+    clarificationNote: 'Digunakan untuk secangkir kopi, teh, gelas air, atau semangkuk ramen/sup.',
+  },
+  '〜えん': {
+    primaryMeaning: '... Yen (Mata Uang Jepang)',
+    contextBadge: { text: 'Mata Uang Yen (円)', variant: 'context' },
+    clarificationNote: 'Satuan nominal mata uang resmi negara Jepang (¥).',
+  },
 };
 
 /**
@@ -985,26 +1088,51 @@ export function cleanRawMeaning(rawMeaning: string): {
 } {
   if (!rawMeaning) return { primary: '', alternatives: [] };
 
-  let text = rawMeaning.trim();
+  const text = rawMeaning.trim();
   let extractedContext: string | undefined;
 
-  // Ekstrak tag kurung seperti "(kendaraan)", "(cuaca)", "(sendirinya)", "(transitif)"
-  const contextMatch = text.match(/[（(]([^()（）]{2,25})[）)]/);
+  // Ekstrak tag kurung konteks penting
+  const contextMatch = text.match(/[（(]([^()（）]{2,40})[）)]/);
   if (contextMatch) {
-    extractedContext = contextMatch[1].trim();
+    const rawTag = contextMatch[1].trim();
+    if (
+      !rawTag.includes('tulisan') &&
+      !rawTag.includes('varian') &&
+      !rawTag.includes('dasar') &&
+      !rawTag.includes('gabungan')
+    ) {
+      extractedContext = rawTag;
+    }
   }
 
-  // Pecah berdasarkan slash / atau titik koma ;
+  // Pecah berdasarkan slash / atau titik koma ; (kecuali slash di dalam kurung)
   const parts = text
-    .split(/[/;]/)
+    .split(/\s*[\/;]\s*(?![^()（）]*[)）])/)
     .map((p) => p.trim())
     .filter(Boolean);
 
   let primary = parts[0] || text;
-  // Bersihkan kurung dari primary agar teks arti utama bersih dan enak dibaca
-  primary = primary.replace(/[（(][^()（）]+[）)]/g, '').trim();
 
-  const alternatives = parts.slice(1).map((p) => p.replace(/[（(][^()（）]+[）)]/g, '').trim()).filter(Boolean);
+  // Hapus tanda kurung hanya jika kurung tersebut berisi info tulisan/varian redundan
+  primary = primary
+    .replace(/[.]{2,}/g, '')
+    .replace(/[…～~]/g, '')
+    .replace(/[（(]\s*(?:tulisan\s+)?hiragana[^\)）]*[）)]/gi, '')
+    .replace(/[（(]\s*kanji\s*(?:dasar)?[^\)）]*[）)]/gi, '')
+    .replace(/[（(]\s*varian\s*\d+[^\)）]*[）)]/gi, '')
+    .replace(/[（(]\s*gabungan\s*(?:variasi)?[^\)）]*[）)]/gi, '')
+    .trim();
+
+  const alternatives = parts.slice(1).map((p) =>
+    p
+      .replace(/[.]{2,}/g, '')
+      .replace(/[…～~]/g, '')
+      .replace(/[（(]\s*(?:tulisan\s+)?hiragana[^\)）]*[）)]/gi, '')
+      .replace(/[（(]\s*kanji\s*(?:dasar)?[^\)）]*[）)]/gi, '')
+      .replace(/[（(]\s*varian\s*\d+[^\)）]*[）)]/gi, '')
+      .replace(/[（(]\s*gabungan\s*(?:variasi)?[^\)）]*[）)]/gi, '')
+      .trim()
+  ).filter(Boolean);
 
   // Kapitalisasi huruf pertama
   if (primary.length > 0) {
@@ -1045,6 +1173,12 @@ export function getClarifiedMeaning(item: CardItem): MeaningClarification {
     return DETAILED_CLARIFICATIONS[strippedNa];
   }
 
+  // Cek jika diawali tilde / wave dash (〜 atau ～)
+  const strippedTilde = baseJp.replace(/^[〜～~]/, '').trim();
+  if (strippedTilde && DETAILED_CLARIFICATIONS[strippedTilde]) {
+    return DETAILED_CLARIFICATIONS[strippedTilde];
+  }
+
   // 2. Analisis pintar berbasis data yang ada
   const { primary, contextTag, alternatives } = cleanRawMeaning(rawMeaning);
 
@@ -1064,11 +1198,15 @@ export function getClarifiedMeaning(item: CardItem): MeaningClarification {
     contextBadge = { text: 'Intransitif (自動詞)', variant: 'intransitive' };
   } else if (notesLower.includes('transitif')) {
     contextBadge = { text: 'Transitif (他動詞)', variant: 'transitive' };
-  } else if (meaningLower.includes('cuaca') || meaningLower.includes('udara')) {
-    contextBadge = { text: 'Konteks: Cuaca / Udara', variant: 'context' };
-  } else if (meaningLower.includes('benda') || meaningLower.includes('makanan')) {
+  } else if (
+    (meaningLower.includes('cuaca') || /\b(suhu udara|hawa cuaca)\b/.test(meaningLower)) &&
+    !meaningLower.includes('saudara') &&
+    !meaningLower.includes('saudari')
+  ) {
+    contextBadge = { text: 'Konteks: Cuaca / Hawa', variant: 'context' };
+  } else if (/\b(suhu benda|benda padat|makanan panas)\b/.test(meaningLower)) {
     contextBadge = { text: 'Konteks: Benda / Makanan', variant: 'context' };
-  } else if (meaningLower.includes('pakaian')) {
+  } else if (/\b(pakaian|busana|baju|sepatu)\b/.test(meaningLower) && item.subCategory === 'kata_kerja') {
     contextBadge = { text: 'Konteks: Busana', variant: 'context' };
   }
 
@@ -1131,10 +1269,16 @@ import { hiraganaToRomaji, romajiToHiragana } from './hiraganaConverter';
  */
 export function formatMeaningListAsSentence(raw: string, secondary?: string[]): { formatted: string; items: string[] } {
   const allParts: string[] = [];
-  const clean = raw.replace(/\(.*?\)/g, '').replace(/\[.*?\]/g, '').trim();
+  const clean = raw
+    .replace(/[.]{2,}/g, '')
+    .replace(/[…～~]/g, '')
+    .replace(/\(.*?\)/g, '')
+    .replace(/\[.*?\]/g, '')
+    .trim();
+
   clean
     .split(/[/;,]/)
-    .map((s) => s.trim().toLowerCase())
+    .map((s) => s.replace(/[.]{2,}/g, '').trim().toLowerCase())
     .filter(Boolean)
     .forEach((s) => {
       if (!allParts.includes(s)) allParts.push(s);
@@ -1142,12 +1286,13 @@ export function formatMeaningListAsSentence(raw: string, secondary?: string[]): 
 
   if (secondary) {
     secondary.forEach((s) => {
-      const sClean = s.toLowerCase().trim();
-      if (!allParts.includes(sClean)) allParts.push(sClean);
+      const sClean = s.replace(/[.]{2,}/g, '').replace(/[…～~]/g, '').trim().toLowerCase();
+      if (sClean && !allParts.includes(sClean)) allParts.push(sClean);
     });
   }
 
-  if (allParts.length === 0) return { formatted: `"${raw}"`, items: [raw] };
+  const safeRaw = raw.replace(/[.]{2,}/g, '').replace(/[…～~]/g, '').trim();
+  if (allParts.length === 0) return { formatted: `"${safeRaw}"`, items: [safeRaw] };
   if (allParts.length === 1) return { formatted: `"${allParts[0]}"`, items: allParts };
   if (allParts.length === 2) return { formatted: `"${allParts[0]}" atau "${allParts[1]}"`, items: allParts };
   return {
@@ -1196,11 +1341,26 @@ export function getFullDictionaryDetail(item: CardItem): FullDictionaryDetail {
     clarification.secondaryMeanings
   );
 
-  const fullSentence = `Kata "${romaji}" (${kanjiKanaDisplay}) dalam bahasa Jepang artinya adalah ${meaningsFormatted}.`;
+  let fullSentence = '';
+  if (/^[〜～~]?(さん|ちゃん|くん|君|様|さま|たち|方|がた)$/.test(jp)) {
+    fullSentence = `Akhiran "${romaji}" (${kanjiKanaDisplay}) dalam bahasa Jepang adalah gelar kehormatan yang dibubuhkan di akhir nama orang (artinya setara dengan "Tuan", "Nyonya", "Nona", atau "Saudara/i").`;
+  } else if (/^[〜～~](人|じん)$/.test(jp)) {
+    fullSentence = `Akhiran "${romaji}" (${kanjiKanaDisplay}) dalam bahasa Jepang dibubuhkan setelah nama negara untuk menyatakan orang / warga negara (misal: インドネシア人 = orang Indonesia).`;
+  } else if (/^[〜～~](語|ご)$/.test(jp)) {
+    fullSentence = `Akhiran "${romaji}" (${kanjiKanaDisplay}) dalam bahasa Jepang dibubuhkan setelah nama negara untuk menyatakan bahasa (misal: 日本語 = bahasa Jepang).`;
+  } else if (item.subCategory === 'angka_waktu' && (jp.startsWith('〜') || jp.startsWith('～'))) {
+    fullSentence = `Satuan "${romaji}" (${kanjiKanaDisplay}) dalam bahasa Jepang adalah satuan bilangan (助数詞) yang digunakan untuk menyatakan ${meaningsFormatted}.`;
+  } else {
+    fullSentence = `Kata "${romaji}" (${kanjiKanaDisplay}) dalam bahasa Jepang artinya adalah ${meaningsFormatted}.`;
+  }
 
   // Deteksi kelas kata / peran gramatikal
   let grammaticalRole = '';
-  if (item.subCategory === 'kata_kerja') {
+  if (/^[〜～~]?(さん|ちゃん|くん|君|様|さま|たち|方|がた)$/.test(jp)) {
+    grammaticalRole = 'Gelar Kehormatan / Sufiks Nama (接尾辞・敬称)';
+  } else if (item.subCategory === 'angka_waktu' && (jp.startsWith('〜') || jp.startsWith('～'))) {
+    grammaticalRole = 'Satuan Bilangan (助数詞 / Joshuushi)';
+  } else if (item.subCategory === 'kata_kerja') {
     grammaticalRole = 'Kata Kerja (動詞 / Doushi)';
   } else if (item.subCategory === 'kata_sifat') {
     grammaticalRole = 'Kata Sifat (形容詞 / Keiyoushi)';

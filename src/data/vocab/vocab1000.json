@@ -273,11 +273,11 @@
     "kanji": "知る",
     "reading": "shiru",
     "furigana": "しる",
-    "meaningId": "Mengetahui / Kenal",
+    "meaningId": "Tahu / mengenal (mendapatkan informasi baru)",
     "exampleJp": "その人を知っていますか？",
     "exampleId": "Apakah kamu kenal orang itu?",
     "level": "N5",
-    "meaning": "Mengetahui / Kenal"
+    "meaning": "Tahu / mengenal (mendapatkan informasi baru)"
   },
   {
     "id": "voc-0021",
@@ -287,11 +287,11 @@
     "kanji": "分かる",
     "reading": "wakaru",
     "furigana": "わかる",
-    "meaningId": "Mengerti / Paham",
+    "meaningId": "Mengerti / paham (memahami konsep / alasan)",
     "exampleJp": "意味がよく分かります。",
     "exampleId": "Saya sangat mengerti artinya.",
     "level": "N5",
-    "meaning": "Mengerti / Paham"
+    "meaning": "Mengerti / paham (memahami konsep / alasan)"
   },
   {
     "id": "voc-0022",
@@ -455,11 +455,11 @@
     "kanji": "教える",
     "reading": "oshieru",
     "furigana": "おしえる",
-    "meaningId": "Mengajar / Memberitahu",
+    "meaningId": "Mengajar / memberi tahu (informasi / jalan)",
     "exampleJp": "日本語を教えてください。",
     "exampleId": "Tolong ajarkan bahasa Jepang kepada saya.",
     "level": "N5",
-    "meaning": "Mengajar / Memberitahu"
+    "meaning": "Mengajar / memberi tahu (informasi / jalan)"
   },
   {
     "id": "voc-0034",
@@ -469,11 +469,11 @@
     "kanji": "習う",
     "reading": "narau",
     "furigana": "ならう",
-    "meaningId": "Belajar (dari orang lain)",
+    "meaningId": "Belajar (menerima bimbingan praktikal dari guru)",
     "exampleJp": "ピアノを習っています。",
     "exampleId": "Saya belajar les piano.",
     "level": "N5",
-    "meaning": "Belajar (dari orang lain)"
+    "meaning": "Belajar (menerima bimbingan praktikal dari guru)"
   },
   {
     "id": "voc-0035",
@@ -483,11 +483,11 @@
     "kanji": "貸す",
     "reading": "kasu",
     "furigana": "かす",
-    "meaningId": "Meminjamkan",
+    "meaningId": "Meminjamkan (kepada orang lain)",
     "exampleJp": "傘を貸してください。",
     "exampleId": "Tolong pinjamkan saya payung.",
     "level": "N5",
-    "meaning": "Meminjamkan"
+    "meaning": "Meminjamkan (kepada orang lain)"
   },
   {
     "id": "voc-0036",
@@ -497,11 +497,11 @@
     "kanji": "借りる",
     "reading": "kariru",
     "furigana": "かりる",
-    "meaningId": "Meminjam",
+    "meaningId": "Meminjam (dari orang lain)",
     "exampleJp": "図書館で本を借りました。",
     "exampleId": "Saya meminjam buku di perpustakaan.",
     "level": "N5",
-    "meaning": "Meminjam"
+    "meaning": "Meminjam (dari orang lain)"
   },
   {
     "id": "voc-0037",
@@ -553,11 +553,11 @@
     "kanji": "開ける",
     "reading": "akeru",
     "furigana": "あける",
-    "meaningId": "Membuka (pintu / jendela)",
+    "meaningId": "Membuka (transitif: seseorang membuka pintu/jendela)",
     "exampleJp": "窓を開けてください。",
     "exampleId": "Tolong buka jendelanya.",
     "level": "N5",
-    "meaning": "Membuka (pintu / jendela)"
+    "meaning": "Membuka (transitif: seseorang membuka pintu/jendela)"
   },
   {
     "id": "voc-0041",
@@ -567,11 +567,11 @@
     "kanji": "閉める",
     "reading": "shimeru",
     "furigana": "しめる",
-    "meaningId": "Menutup (pintu / jendela)",
+    "meaningId": "Menutup (transitif: seseorang menutup pintu)",
     "exampleJp": "ドアを閉めました。",
     "exampleId": "Saya telah menutup pintu.",
     "level": "N5",
-    "meaning": "Menutup (pintu / jendela)"
+    "meaning": "Menutup (transitif: seseorang menutup pintu)"
   },
   {
     "id": "voc-0042",
@@ -581,11 +581,11 @@
     "kanji": "開く",
     "reading": "aku",
     "furigana": "あく",
-    "meaningId": "Terbuka (sendirinya)",
+    "meaningId": "Terbuka / Membuka (pintu, bunga mekrok)",
     "exampleJp": "ドアが開きました。",
     "exampleId": "Pintunya terbuka.",
     "level": "N5",
-    "meaning": "Terbuka (sendirinya)"
+    "meaning": "Terbuka / Membuka (pintu, bunga mekrok)"
   },
   {
     "id": "voc-0043",
@@ -595,11 +595,11 @@
     "kanji": "閉まる",
     "reading": "shimaru",
     "furigana": "しまる",
-    "meaningId": "Tertutup (sendirinya)",
+    "meaningId": "Tertutup (intransitif: pintu tertutup)",
     "exampleJp": "店が閉まりました。",
     "exampleId": "Tokonya sudah tutup.",
     "level": "N5",
-    "meaning": "Tertutup (sendirinya)"
+    "meaning": "Tertutup (intransitif: pintu tertutup)"
   },
   {
     "id": "voc-0044",
@@ -622,25 +622,25 @@
     "kanji": "消す",
     "reading": "kesu",
     "furigana": "けす",
-    "meaningId": "Mematikan / Menghapus",
+    "meaningId": "Memadamkan / mematikan / menghapus (transitif)",
     "exampleJp": "電気を消してください。",
     "exampleId": "Tolong matikan lampu.",
     "level": "N5",
-    "meaning": "Mematikan / Menghapus"
+    "meaning": "Memadamkan / mematikan / menghapus (transitif)"
   },
   {
     "id": "voc-0046",
     "category": "vocab",
-    "subCategory": "kata_kerja",
+    "subCategory": "salam",
     "japanese": "入る",
     "kanji": "入る",
     "reading": "hairu",
     "furigana": "はいる",
-    "meaningId": "Masuk",
+    "meaningId": "Masuk (intransitif)",
     "exampleJp": "部屋に入ります。",
     "exampleId": "Saya masuk ke kamar.",
     "level": "N5",
-    "meaning": "Masuk"
+    "meaning": "Masuk (intransitif)"
   },
   {
     "id": "voc-0047",
@@ -650,11 +650,11 @@
     "kanji": "出る",
     "reading": "deru",
     "furigana": "でる",
-    "meaningId": "Keluar",
+    "meaningId": "Keluar / muncul / menghadiri (intransitif)",
     "exampleJp": "家を出ます。",
     "exampleId": "Saya keluar dari rumah.",
     "level": "N5",
-    "meaning": "Keluar"
+    "meaning": "Keluar / muncul / menghadiri (intransitif)"
   },
   {
     "id": "voc-0048",
@@ -664,11 +664,11 @@
     "kanji": "入れる",
     "reading": "ireru",
     "furigana": "いれる",
-    "meaningId": "Memasukkan",
+    "meaningId": "Memasukkan (transitif)",
     "exampleJp": "鞄に財布を入れます。",
     "exampleId": "Saya memasukkan dompet ke dalam tas.",
     "level": "N5",
-    "meaning": "Memasukkan"
+    "meaning": "Memasukkan (transitif)"
   },
   {
     "id": "voc-0049",
@@ -678,11 +678,11 @@
     "kanji": "出す",
     "reading": "dasu",
     "furigana": "だす",
-    "meaningId": "Mengeluarkan / Menyerahkan",
+    "meaningId": "Mengeluarkan / menyerahkan / mengirim (transitif)",
     "exampleJp": "宿題を出します。",
     "exampleId": "Saya mengumpulkan tugas PR.",
     "level": "N5",
-    "meaning": "Mengeluarkan / Menyerahkan"
+    "meaning": "Mengeluarkan / menyerahkan / mengirim (transitif)"
   },
   {
     "id": "voc-0050",
@@ -776,11 +776,11 @@
     "kanji": "着る",
     "reading": "kiru",
     "furigana": "きる",
-    "meaningId": "Memakai (pakaian atas)",
+    "meaningId": "Memakai pakaian badan atas (kemeja, kaus, jaket)",
     "exampleJp": "上着を着ます。",
     "exampleId": "Saya memakai jaket luar.",
     "level": "N5",
-    "meaning": "Memakai (pakaian atas)"
+    "meaning": "Memakai pakaian badan atas (kemeja, kaus, jaket)"
   },
   {
     "id": "voc-0057",
@@ -790,11 +790,11 @@
     "kanji": "履く",
     "reading": "haku",
     "furigana": "はく",
-    "meaningId": "Memakai (celana / sepatu)",
+    "meaningId": "Memakai pakaian badan bawah / alas kaki (celana, sepatu)",
     "exampleJp": "新しい靴を履きます。",
     "exampleId": "Saya memakai sepatu baru.",
     "level": "N5",
-    "meaning": "Memakai (celana / sepatu)"
+    "meaning": "Memakai pakaian badan bawah / alas kaki (celana, sepatu)"
   },
   {
     "id": "voc-0058",
@@ -803,11 +803,11 @@
     "japanese": "かぶる",
     "reading": "kaburu",
     "furigana": "かぶる",
-    "meaningId": "Memakai (topi)",
+    "meaningId": "Memakai penutup kepala (topi, helm)",
     "exampleJp": "帽子をかぶっています。",
     "exampleId": "Saya sedang memakai topi.",
     "level": "N5",
-    "meaning": "Memakai (topi)"
+    "meaning": "Memakai penutup kepala (topi, helm)"
   },
   {
     "id": "voc-0059",
@@ -901,11 +901,11 @@
     "kanji": "止まる",
     "reading": "tomaru",
     "furigana": "とまる",
-    "meaningId": "Berhenti (kendaraan)",
+    "meaningId": "Berhenti (intransitif: kendaraan/gerakan berhenti)",
     "exampleJp": "車が止まりました。",
     "exampleId": "Mobilnya berhenti.",
     "level": "N5",
-    "meaning": "Berhenti (kendaraan)"
+    "meaning": "Berhenti (intransitif: kendaraan/gerakan berhenti)"
   },
   {
     "id": "voc-0066",
@@ -915,11 +915,11 @@
     "kanji": "止める",
     "reading": "tomeru",
     "furigana": "とめる",
-    "meaningId": "Menghentikan / Memarkir",
+    "meaningId": "Menghentikan / memarkir (transitif)",
     "exampleJp": "車を駐車場に止めます。",
     "exampleId": "Memarkir mobil di area parkir.",
     "level": "N5",
-    "meaning": "Menghentikan / Memarkir"
+    "meaning": "Menghentikan / memarkir (transitif)"
   },
   {
     "id": "voc-0067",
@@ -929,11 +929,11 @@
     "kanji": "泊まる",
     "reading": "tomaru",
     "furigana": "とまる",
-    "meaningId": "Menginap",
+    "meaningId": "Menginap (di hotel/rumah teman)",
     "exampleJp": "温泉旅館に泊まります。",
     "exampleId": "Menginap di penginapan onsen.",
     "level": "N4",
-    "meaning": "Menginap"
+    "meaning": "Menginap (di hotel/rumah teman)"
   },
   {
     "id": "voc-0068",
@@ -1181,11 +1181,11 @@
     "kanji": "直す",
     "reading": "naosu",
     "furigana": "なおす",
-    "meaningId": "Memperbaiki / Membetulkan",
+    "meaningId": "Memperbaiki kerusakan / mengoreksi kesalahan",
     "exampleJp": "パソコンを直します。",
     "exampleId": "Saya memperbaiki komputer.",
     "level": "N4",
-    "meaning": "Memperbaiki / Membetulkan"
+    "meaning": "Memperbaiki kerusakan / mengoreksi kesalahan"
   },
   {
     "id": "voc-0086",
@@ -1195,11 +1195,11 @@
     "kanji": "壊す",
     "reading": "kowasu",
     "furigana": "こわす",
-    "meaningId": "Merusak",
+    "meaningId": "Merusakkan / memecahkan (transitif)",
     "exampleJp": "おもちゃを壊しました。",
     "exampleId": "Merusak mainan.",
     "level": "N4",
-    "meaning": "Merusak"
+    "meaning": "Merusakkan / memecahkan (transitif)"
   },
   {
     "id": "voc-0087",
@@ -1209,11 +1209,11 @@
     "kanji": "壊れる",
     "reading": "kowareru",
     "furigana": "こわれる",
-    "meaningId": "Rusak",
+    "meaningId": "Rusak / hancur (intransitif)",
     "exampleJp": "椅子が壊れました。",
     "exampleId": "Kursinya patah / rusak.",
     "level": "N4",
-    "meaning": "Rusak"
+    "meaning": "Rusak / hancur (intransitif)"
   },
   {
     "id": "voc-0088",
@@ -1223,11 +1223,11 @@
     "kanji": "落とす",
     "reading": "otosu",
     "furigana": "おとす",
-    "meaningId": "Menjatuhkan",
+    "meaningId": "Menjatuhkan / menghilangkan barang (transitif)",
     "exampleJp": "財布を落としました。",
     "exampleId": "Saya menjatuhkan dompet.",
     "level": "N4",
-    "meaning": "Menjatuhkan"
+    "meaning": "Menjatuhkan / menghilangkan barang (transitif)"
   },
   {
     "id": "voc-0089",
@@ -1237,11 +1237,11 @@
     "kanji": "落ちる",
     "reading": "ochiru",
     "furigana": "おちる",
-    "meaningId": "Jatuh (sendirinya)",
+    "meaningId": "Jatuh / gugur / gagal ujian (intransitif)",
     "exampleJp": "木の葉が落ちます。",
     "exampleId": "Daun-daun pohon berguguran.",
     "level": "N4",
-    "meaning": "Jatuh (sendirinya)"
+    "meaning": "Jatuh / gugur / gagal ujian (intransitif)"
   },
   {
     "id": "voc-0090",
@@ -1405,11 +1405,11 @@
     "kanji": "降る",
     "reading": "furu",
     "furigana": "ふる",
-    "meaningId": "Turun (hujan / salju)",
+    "meaningId": "Turun hujan / salju (bentuk kamus)",
     "exampleJp": "雪が降っています。",
     "exampleId": "Salju sedang turun.",
     "level": "N5",
-    "meaning": "Turun (hujan / salju)"
+    "meaning": "Turun hujan / salju (bentuk kamus)"
   },
   {
     "id": "voc-0102",
@@ -1545,11 +1545,11 @@
     "kanji": "勉強する",
     "reading": "benkyou suru",
     "furigana": "べんきょうする",
-    "meaningId": "Belajar",
+    "meaningId": "Belajar (belajar materi / sains / bahasa)",
     "exampleJp": "毎晩勉強します。",
     "exampleId": "Belajar setiap malam.",
     "level": "N5",
-    "meaning": "Belajar"
+    "meaning": "Belajar (belajar materi / sains / bahasa)"
   },
   {
     "id": "voc-0112",
@@ -1932,7 +1932,7 @@
   {
     "id": "voc-0139",
     "category": "vocab",
-    "subCategory": "salam",
+    "subCategory": "kata_benda",
     "japanese": "謝る",
     "kanji": "謝る",
     "reading": "ayamaru",
@@ -1946,7 +1946,7 @@
   {
     "id": "voc-0140",
     "category": "vocab",
-    "subCategory": "salam",
+    "subCategory": "kata_kerja",
     "japanese": "許す",
     "kanji": "許す",
     "reading": "yurusu",
@@ -2454,11 +2454,11 @@
     "japanese": "もらう",
     "reading": "morau",
     "furigana": "もらう",
-    "meaningId": "Menerima dari orang lain",
+    "meaningId": "Menerima (dari orang lain)",
     "exampleJp": "花をもらいました。",
     "exampleId": "Menerima bunga.",
     "level": "N5",
-    "meaning": "Menerima dari orang lain"
+    "meaning": "Menerima (dari orang lain)"
   },
   {
     "id": "voc-0177",
@@ -2467,11 +2467,11 @@
     "japanese": "あげる",
     "reading": "ageru",
     "furigana": "あげる",
-    "meaningId": "Memberikan ke orang lain",
+    "meaningId": "Memberi (kepada orang lain / pihak luar)",
     "exampleJp": "プレゼントをあげます。",
     "exampleId": "Memberikan kado.",
     "level": "N5",
-    "meaning": "Memberikan ke orang lain"
+    "meaning": "Memberi (kepada orang lain / pihak luar)"
   },
   {
     "id": "voc-0178",
@@ -2480,11 +2480,11 @@
     "japanese": "くれる",
     "reading": "kureru",
     "furigana": "くれる",
-    "meaningId": "Memberi ke saya",
+    "meaningId": "Memberi (orang lain memberikan kepada saya / keluarga saya)",
     "exampleJp": "本をくれました。",
     "exampleId": "Dia memberi saya buku.",
     "level": "N5",
-    "meaning": "Memberi ke saya"
+    "meaning": "Memberi (orang lain memberikan kepada saya / keluarga saya)"
   },
   {
     "id": "voc-0179",
@@ -2522,11 +2522,11 @@
     "kanji": "太る",
     "reading": "futoru",
     "furigana": "ふとる",
-    "meaningId": "Bertambah gemuk",
+    "meaningId": "Bertambah gemuk / berat badan naik (kata kerja)",
     "exampleJp": "少し太りました。",
     "exampleId": "Sedikit bertambah gemuk.",
     "level": "N4",
-    "meaning": "Bertambah gemuk"
+    "meaning": "Bertambah gemuk / berat badan naik (kata kerja)"
   },
   {
     "id": "voc-0182",
@@ -2536,11 +2536,11 @@
     "kanji": "痩せる",
     "reading": "yaseru",
     "furigana": "やせる",
-    "meaningId": "Menjadi kurus / Langsing",
+    "meaningId": "Menjadi kurus / turun berat badan (kata kerja)",
     "exampleJp": "運動で痩せました。",
     "exampleId": "Menjadi langsing karena olahraga.",
     "level": "N4",
-    "meaning": "Menjadi kurus / Langsing"
+    "meaning": "Menjadi kurus / turun berat badan (kata kerja)"
   },
   {
     "id": "voc-0183",
@@ -3081,11 +3081,11 @@
     "kanji": "暑い",
     "reading": "atsui",
     "furigana": "あつい",
-    "meaningId": "Panas (suhu cuaca)",
+    "meaningId": "Panas (suhu cuaca / udara)",
     "exampleJp": "今日はとても暑いです。",
     "exampleId": "Hari ini sangat panas.",
     "level": "N5",
-    "meaning": "Panas (suhu cuaca)"
+    "meaning": "Panas (suhu cuaca / udara)"
   },
   {
     "id": "voc-0222",
@@ -3095,11 +3095,11 @@
     "kanji": "熱い",
     "reading": "atsui",
     "furigana": "あつい",
-    "meaningId": "Panas (benda / minuman)",
+    "meaningId": "Panas (suhu benda / makanan / minuman)",
     "exampleJp": "熱いお茶を飲みます。",
     "exampleId": "Minum teh panas.",
     "level": "N5",
-    "meaning": "Panas (benda / minuman)"
+    "meaning": "Panas (suhu benda / makanan / minuman)"
   },
   {
     "id": "voc-0223",
@@ -3109,11 +3109,11 @@
     "kanji": "寒い",
     "reading": "samui",
     "furigana": "さむい",
-    "meaningId": "Dingin (suhu cuaca)",
+    "meaningId": "Dingin (suhu cuaca / udara)",
     "exampleJp": "冬はとても寒いです。",
     "exampleId": "Musim dingin sangat sejuk/dingin.",
     "level": "N5",
-    "meaning": "Dingin (suhu cuaca)"
+    "meaning": "Dingin (suhu cuaca / udara)"
   },
   {
     "id": "voc-0224",
@@ -3123,11 +3123,11 @@
     "kanji": "冷たい",
     "reading": "tsumetai",
     "furigana": "つめたい",
-    "meaningId": "Dingin (benda / sikap)",
+    "meaningId": "Dingin (suhu benda / minuman / sikap)",
     "exampleJp": "冷たい水をください。",
     "exampleId": "Minta air dingin tolong.",
     "level": "N5",
-    "meaning": "Dingin (benda / sikap)"
+    "meaning": "Dingin (suhu benda / minuman / sikap)"
   },
   {
     "id": "voc-0225",
@@ -3285,7 +3285,7 @@
   {
     "id": "voc-0236",
     "category": "vocab",
-    "subCategory": "kata_sifat",
+    "subCategory": "salam",
     "japanese": "まずい",
     "reading": "mazui",
     "furigana": "まずい",
@@ -3303,11 +3303,11 @@
     "kanji": "甘い",
     "reading": "amai",
     "furigana": "あまい",
-    "meaningId": "Manis",
+    "meaningId": "Manis (rasa) / Lunak atau manja (sikap)",
     "exampleJp": "甘いお菓子が好きです。",
     "exampleId": "Suka camilan manis.",
     "level": "N5",
-    "meaning": "Manis"
+    "meaning": "Manis (rasa) / Lunak atau manja (sikap)"
   },
   {
     "id": "voc-0238",
@@ -3317,11 +3317,11 @@
     "kanji": "辛い",
     "reading": "karai",
     "furigana": "からい",
-    "meaningId": "Pedas / Asin menusuk",
+    "meaningId": "Pedas / Berat atau tersiksa (kondisi batin)",
     "exampleJp": "辛いカレーを食べます。",
     "exampleId": "Makan kari pedas.",
     "level": "N5",
-    "meaning": "Pedas / Asin menusuk"
+    "meaning": "Pedas / Berat atau tersiksa (kondisi batin)"
   },
   {
     "id": "voc-0239",
@@ -3625,11 +3625,11 @@
     "kanji": "太い",
     "reading": "futoi",
     "furigana": "ふとい",
-    "meaningId": "Tebal / Gemuk",
+    "meaningId": "Tebal / gemuk / berdiameter besar (kata sifat -i)",
     "exampleJp": "太いペンで書きます。",
     "exampleId": "Menulis dengan spidol tebal.",
     "level": "N5",
-    "meaning": "Tebal / Gemuk"
+    "meaning": "Tebal / gemuk / berdiameter besar (kata sifat -i)"
   },
   {
     "id": "voc-0261",
@@ -3639,11 +3639,11 @@
     "kanji": "細い",
     "reading": "hosoi",
     "furigana": "ほそい",
-    "meaningId": "Ramping / Tipis",
+    "meaningId": "Tipis / ramping / kecil halus (kata sifat -i)",
     "exampleJp": "細い道を通ります。",
     "exampleId": "Melewati jalan sempit/ramping.",
     "level": "N5",
-    "meaning": "Ramping / Tipis"
+    "meaning": "Tipis / ramping / kecil halus (kata sifat -i)"
   },
   {
     "id": "voc-0262",
@@ -3653,11 +3653,11 @@
     "kanji": "厚い",
     "reading": "atsui",
     "furigana": "あつい",
-    "meaningId": "Tebal (buku / kain)",
+    "meaningId": "Tebal (buku, pakaian, atau lapisan)",
     "exampleJp": "厚い本を読みます。",
     "exampleId": "Membaca buku tebal.",
     "level": "N5",
-    "meaning": "Tebal (buku / kain)"
+    "meaning": "Tebal (buku, pakaian, atau lapisan)"
   },
   {
     "id": "voc-0263",
@@ -3900,7 +3900,7 @@
   {
     "id": "voc-0280",
     "category": "vocab",
-    "subCategory": "kata_sifat",
+    "subCategory": "salam",
     "japanese": "下手",
     "kanji": "下手",
     "reading": "heta",
@@ -3998,7 +3998,7 @@
   {
     "id": "voc-0287",
     "category": "vocab",
-    "subCategory": "kata_sifat",
+    "subCategory": "salam",
     "japanese": "不便",
     "kanji": "不便",
     "reading": "fuben",
@@ -4166,7 +4166,7 @@
   {
     "id": "voc-0300",
     "category": "vocab",
-    "subCategory": "kata_sifat",
+    "subCategory": "salam",
     "japanese": "不真面目",
     "kanji": "不真面目",
     "reading": "fumajime",
@@ -4208,7 +4208,7 @@
   {
     "id": "voc-0303",
     "category": "vocab",
-    "subCategory": "salam",
+    "subCategory": "kata_benda",
     "japanese": "失礼",
     "kanji": "失礼",
     "reading": "shitsurei",
@@ -4264,7 +4264,7 @@
   {
     "id": "voc-0307",
     "category": "vocab",
-    "subCategory": "transportasi",
+    "subCategory": "kata_benda",
     "japanese": "普通",
     "kanji": "普通",
     "reading": "futsuu",
@@ -4306,7 +4306,7 @@
   {
     "id": "voc-0310",
     "category": "vocab",
-    "subCategory": "kata_sifat",
+    "subCategory": "salam",
     "japanese": "素晴らしい",
     "kanji": "素晴らしい",
     "reading": "subarashii",
@@ -4557,7 +4557,7 @@
   {
     "id": "voc-0329",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "kata_benda",
     "japanese": "本棚",
     "kanji": "本棚",
     "reading": "hondana",
@@ -4612,7 +4612,7 @@
   {
     "id": "voc-0333",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "kata_benda",
     "japanese": "毛布",
     "kanji": "毛布",
     "reading": "moufu",
@@ -4667,7 +4667,7 @@
   {
     "id": "voc-0337",
     "category": "vocab",
-    "subCategory": "teknologi_media",
+    "subCategory": "benda_rumah",
     "japanese": "テレビ",
     "reading": "terebi",
     "furigana": "terebi",
@@ -4680,7 +4680,7 @@
   {
     "id": "voc-0338",
     "category": "vocab",
-    "subCategory": "teknologi_media",
+    "subCategory": "benda_rumah",
     "japanese": "ラジオ",
     "reading": "rajio",
     "furigana": "rajio",
@@ -4706,7 +4706,7 @@
   {
     "id": "voc-0340",
     "category": "vocab",
-    "subCategory": "teknologi_media",
+    "subCategory": "kata_benda",
     "japanese": "電話",
     "kanji": "電話",
     "reading": "denwa",
@@ -4734,7 +4734,7 @@
   {
     "id": "voc-0342",
     "category": "vocab",
-    "subCategory": "teknologi_media",
+    "subCategory": "hiburan_olahraga",
     "japanese": "カメラ",
     "reading": "kamera",
     "furigana": "kamera",
@@ -4747,7 +4747,7 @@
   {
     "id": "voc-0343",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "bisnis_formal",
     "japanese": "エアコン",
     "reading": "eakon",
     "furigana": "eakon",
@@ -4802,7 +4802,7 @@
   {
     "id": "voc-0347",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "makanan",
     "japanese": "炊飯器",
     "kanji": "炊飯器",
     "reading": "suihanki",
@@ -4816,7 +4816,7 @@
   {
     "id": "voc-0348",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "angka_waktu",
     "japanese": "時計",
     "kanji": "時計",
     "reading": "tokei",
@@ -4844,7 +4844,7 @@
   {
     "id": "voc-0350",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "kata_benda",
     "japanese": "傘",
     "kanji": "傘",
     "reading": "kasa",
@@ -4858,7 +4858,7 @@
   {
     "id": "voc-0351",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "bisnis_formal",
     "japanese": "財布",
     "kanji": "財布",
     "reading": "saifu",
@@ -4886,7 +4886,7 @@
   {
     "id": "voc-0353",
     "category": "vocab",
-    "subCategory": "benda_sekolah",
+    "subCategory": "pakaian",
     "japanese": "手帳",
     "kanji": "手帳",
     "reading": "techou",
@@ -4900,7 +4900,7 @@
   {
     "id": "voc-0354",
     "category": "vocab",
-    "subCategory": "benda_sekolah",
+    "subCategory": "negara_bahasa",
     "japanese": "辞書",
     "kanji": "辞書",
     "reading": "jisho",
@@ -4928,7 +4928,7 @@
   {
     "id": "voc-0356",
     "category": "vocab",
-    "subCategory": "teknologi_media",
+    "subCategory": "kata_benda",
     "japanese": "雑誌",
     "kanji": "雑誌",
     "reading": "zasshi",
@@ -4942,7 +4942,7 @@
   {
     "id": "voc-0357",
     "category": "vocab",
-    "subCategory": "teknologi_media",
+    "subCategory": "angka_waktu",
     "japanese": "新聞",
     "kanji": "新聞",
     "reading": "shinbun",
@@ -5037,7 +5037,7 @@
   {
     "id": "voc-0364",
     "category": "vocab",
-    "subCategory": "benda_sekolah",
+    "subCategory": "kata_benda",
     "japanese": "紙",
     "kanji": "紙",
     "reading": "kami",
@@ -5079,7 +5079,7 @@
   {
     "id": "voc-0367",
     "category": "vocab",
-    "subCategory": "benda_sekolah",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "手紙",
     "kanji": "手紙",
     "reading": "tegami",
@@ -5160,7 +5160,7 @@
   {
     "id": "voc-0373",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "靴下",
     "kanji": "靴下",
     "reading": "kutsushita",
@@ -5174,7 +5174,7 @@
   {
     "id": "voc-0374",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "帽子",
     "kanji": "帽子",
     "reading": "boushi",
@@ -5188,7 +5188,7 @@
   {
     "id": "voc-0375",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "眼鏡",
     "kanji": "眼鏡",
     "reading": "megane",
@@ -5202,7 +5202,7 @@
   {
     "id": "voc-0376",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "ネクタイ",
     "reading": "nekutai",
     "furigana": "nekutai",
@@ -5267,7 +5267,7 @@
   {
     "id": "voc-0381",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "kata_benda",
     "japanese": "タオル",
     "reading": "taoru",
     "furigana": "taoru",
@@ -5280,7 +5280,7 @@
   {
     "id": "voc-0382",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "kata_benda",
     "japanese": "石鹸",
     "kanji": "石鹸",
     "reading": "sekken",
@@ -5294,7 +5294,7 @@
   {
     "id": "voc-0383",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "歯ブラシ",
     "kanji": "歯ブラシ",
     "reading": "haburashi",
@@ -5308,7 +5308,7 @@
   {
     "id": "voc-0384",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "シャンプー",
     "reading": "shanpuu",
     "furigana": "shanpuu",
@@ -5321,7 +5321,7 @@
   {
     "id": "voc-0385",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "kata_benda",
     "japanese": "ゴミ箱",
     "kanji": "ゴミ箱",
     "reading": "gomibako",
@@ -5418,7 +5418,7 @@
   {
     "id": "voc-0392",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "makanan",
     "japanese": "魚",
     "kanji": "魚",
     "reading": "sakana",
@@ -5527,7 +5527,7 @@
   {
     "id": "voc-0400",
     "category": "vocab",
-    "subCategory": "makanan",
+    "subCategory": "hiburan_olahraga",
     "japanese": "お茶",
     "kanji": "お茶",
     "reading": "ocha",
@@ -5716,7 +5716,7 @@
   {
     "id": "voc-0414",
     "category": "vocab",
-    "subCategory": "makanan",
+    "subCategory": "tempat",
     "japanese": "お弁当",
     "kanji": "お弁当",
     "reading": "obentou",
@@ -5840,7 +5840,7 @@
   {
     "id": "voc-0423",
     "category": "vocab",
-    "subCategory": "makanan",
+    "subCategory": "kata_benda",
     "japanese": "スープ",
     "reading": "suupu",
     "furigana": "suupu",
@@ -5893,7 +5893,7 @@
   {
     "id": "voc-0427",
     "category": "vocab",
-    "subCategory": "makanan",
+    "subCategory": "kata_benda",
     "japanese": "チョコレート",
     "reading": "chokoreeto",
     "furigana": "chokoreeto",
@@ -5919,7 +5919,7 @@
   {
     "id": "voc-0429",
     "category": "vocab",
-    "subCategory": "makanan",
+    "subCategory": "kata_benda",
     "japanese": "朝食",
     "kanji": "朝食",
     "reading": "choushoku",
@@ -5933,7 +5933,7 @@
   {
     "id": "voc-0430",
     "category": "vocab",
-    "subCategory": "makanan",
+    "subCategory": "kata_benda",
     "japanese": "昼食",
     "kanji": "昼食",
     "reading": "chuushoku",
@@ -6663,11 +6663,11 @@
     "kanji": "足",
     "reading": "ashi",
     "furigana": "あし",
-    "meaningId": "Kaki",
+    "meaningId": "Kaki bagian bawah / telapak kaki (foot)",
     "exampleJp": "足が長いです。",
     "exampleId": "Kakinya jenjang panjang.",
     "level": "N5",
-    "meaning": "Kaki"
+    "meaning": "Kaki bagian bawah / telapak kaki (foot)"
   },
   {
     "id": "voc-0483",
@@ -6756,7 +6756,7 @@
   {
     "id": "voc-0489",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "病院",
     "kanji": "病院",
     "reading": "byouin",
@@ -6770,7 +6770,7 @@
   {
     "id": "voc-0490",
     "category": "vocab",
-    "subCategory": "profesi_sekolah",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "医者",
     "kanji": "医者",
     "reading": "isha",
@@ -6784,7 +6784,7 @@
   {
     "id": "voc-0491",
     "category": "vocab",
-    "subCategory": "profesi_sekolah",
+    "subCategory": "tempat",
     "japanese": "看護師",
     "kanji": "看護師",
     "reading": "kangoshi",
@@ -7372,7 +7372,7 @@
   {
     "id": "voc-0533",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "bisnis_formal",
     "japanese": "部屋",
     "kanji": "部屋",
     "reading": "heya",
@@ -7386,7 +7386,7 @@
   {
     "id": "voc-0534",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "kata_benda",
     "japanese": "台所",
     "kanji": "台所",
     "reading": "daidokoro",
@@ -7400,7 +7400,7 @@
   {
     "id": "voc-0535",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "benda_rumah",
     "japanese": "お風呂",
     "kanji": "お風呂",
     "reading": "ofuro",
@@ -7427,7 +7427,7 @@
   {
     "id": "voc-0537",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "benda_rumah",
     "japanese": "玄関",
     "kanji": "玄関",
     "reading": "genkan",
@@ -7441,7 +7441,7 @@
   {
     "id": "voc-0538",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "benda_rumah",
     "japanese": "庭",
     "kanji": "庭",
     "reading": "niwa",
@@ -7483,7 +7483,7 @@
   {
     "id": "voc-0541",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "bisnis_formal",
     "japanese": "教室",
     "kanji": "教室",
     "reading": "kyoushitsu",
@@ -7580,7 +7580,7 @@
   {
     "id": "voc-0548",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "angka_waktu",
     "japanese": "コンビニ",
     "reading": "konbini",
     "furigana": "konbini",
@@ -7620,7 +7620,7 @@
   {
     "id": "voc-0551",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "bisnis_formal",
     "japanese": "銀行",
     "kanji": "銀行",
     "reading": "ginkou",
@@ -7690,7 +7690,7 @@
   {
     "id": "voc-0557",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "hiburan_olahraga",
     "japanese": "映画館",
     "kanji": "映画館",
     "reading": "eigakan",
@@ -7704,7 +7704,7 @@
   {
     "id": "voc-0558",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "kata_benda",
     "japanese": "美術館",
     "kanji": "美術館",
     "reading": "bijutsukan",
@@ -7718,7 +7718,7 @@
   {
     "id": "voc-0559",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "abstrak_akademik",
     "japanese": "博物館",
     "kanji": "博物館",
     "reading": "hakubutsukan",
@@ -8106,7 +8106,7 @@
   {
     "id": "voc-0587",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "angka_waktu",
     "japanese": "天気",
     "kanji": "天気",
     "reading": "tenki",
@@ -8148,7 +8148,7 @@
   {
     "id": "voc-0590",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "transportasi",
     "japanese": "風",
     "kanji": "風",
     "reading": "kaze",
@@ -8190,7 +8190,7 @@
   {
     "id": "voc-0593",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "angka_waktu",
     "japanese": "太陽",
     "kanji": "太陽",
     "reading": "taiyou",
@@ -8204,7 +8204,7 @@
   {
     "id": "voc-0594",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "angka_waktu",
     "japanese": "月",
     "kanji": "月",
     "reading": "tsuki",
@@ -8274,7 +8274,7 @@
   {
     "id": "voc-0599",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "島",
     "kanji": "島",
     "reading": "shima",
@@ -8288,7 +8288,7 @@
   {
     "id": "voc-0600",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "森",
     "kanji": "森",
     "reading": "mori",
@@ -8330,7 +8330,7 @@
   {
     "id": "voc-0603",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "草",
     "kanji": "草",
     "reading": "kusa",
@@ -8456,7 +8456,7 @@
   {
     "id": "voc-0613",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "猿",
     "kanji": "猿",
     "reading": "saru",
@@ -8484,7 +8484,7 @@
   {
     "id": "voc-0615",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "象",
     "kanji": "象",
     "reading": "zou",
@@ -8498,7 +8498,7 @@
   {
     "id": "voc-0616",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "虫",
     "kanji": "虫",
     "reading": "mushi",
@@ -8554,7 +8554,7 @@
   {
     "id": "voc-0620",
     "category": "vocab",
-    "subCategory": "profesi_sekolah",
+    "subCategory": "bisnis_formal",
     "japanese": "会社員",
     "kanji": "会社員",
     "reading": "kaishain",
@@ -8568,7 +8568,7 @@
   {
     "id": "voc-0621",
     "category": "vocab",
-    "subCategory": "profesi_sekolah",
+    "subCategory": "kata_benda",
     "japanese": "公務員",
     "kanji": "公務員",
     "reading": "koumuin",
@@ -8638,7 +8638,7 @@
   {
     "id": "voc-0626",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "bisnis_formal",
     "japanese": "会社",
     "kanji": "会社",
     "reading": "kaisha",
@@ -8652,7 +8652,7 @@
   {
     "id": "voc-0627",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "bisnis_formal",
     "japanese": "事務所 / オフィス",
     "kanji": "事務所 / オフィス",
     "reading": "jimusho / ofisu",
@@ -8722,7 +8722,7 @@
   {
     "id": "voc-0632",
     "category": "vocab",
-    "subCategory": "profesi_sekolah",
+    "subCategory": "tempat",
     "japanese": "宿題",
     "kanji": "宿題",
     "reading": "shukudai",
@@ -8736,7 +8736,7 @@
   {
     "id": "voc-0633",
     "category": "vocab",
-    "subCategory": "profesi_sekolah",
+    "subCategory": "angka_waktu",
     "japanese": "授業",
     "kanji": "授業",
     "reading": "jugyou",
@@ -8750,7 +8750,7 @@
   {
     "id": "voc-0634",
     "category": "vocab",
-    "subCategory": "profesi_sekolah",
+    "subCategory": "kata_benda",
     "japanese": "試験 / テスト",
     "kanji": "試験 / テスト",
     "reading": "shiken / tesuto",
@@ -8806,7 +8806,7 @@
   {
     "id": "voc-0638",
     "category": "vocab",
-    "subCategory": "abstrak_akademik",
+    "subCategory": "kata_benda",
     "japanese": "意味",
     "kanji": "意味",
     "reading": "imi",
@@ -8820,7 +8820,7 @@
   {
     "id": "voc-0639",
     "category": "vocab",
-    "subCategory": "benda_sekolah",
+    "subCategory": "kata_benda",
     "japanese": "作文",
     "kanji": "作文",
     "reading": "sakubun",
@@ -8862,7 +8862,7 @@
   {
     "id": "voc-0642",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "とても / 大変",
     "kanji": "とても / 大変",
     "reading": "totemo / taihen",
@@ -8876,7 +8876,7 @@
   {
     "id": "voc-0643",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "少し / ちょっと",
     "kanji": "少し / ちょっと",
     "reading": "sukoshi / chotto",
@@ -8943,7 +8943,7 @@
   {
     "id": "voc-0648",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "あまり（〜ない）",
     "reading": "amari (...nai)",
     "furigana": "あまり",
@@ -8956,7 +8956,7 @@
   {
     "id": "voc-0649",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "全然（〜ない）",
     "kanji": "全然（〜ない）",
     "reading": "zenzen (...nai)",
@@ -8970,7 +8970,7 @@
   {
     "id": "voc-0650",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "もう",
     "reading": "mou",
     "furigana": "もう",
@@ -8983,7 +8983,7 @@
   {
     "id": "voc-0651",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "まだ（〜ない）",
     "reading": "mada (...nai)",
     "furigana": "まだ",
@@ -8996,7 +8996,7 @@
   {
     "id": "voc-0652",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "angka_waktu",
     "japanese": "一緒に",
     "kanji": "一緒に",
     "reading": "isshoni",
@@ -9010,7 +9010,7 @@
   {
     "id": "voc-0653",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "angka_waktu",
     "japanese": "一人で",
     "kanji": "一人で",
     "reading": "hitoride",
@@ -9090,7 +9090,7 @@
   {
     "id": "voc-0659",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "きっと",
     "reading": "kitto",
     "furigana": "きっと",
@@ -9116,7 +9116,7 @@
   {
     "id": "voc-0661",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "もし",
     "reading": "moshi",
     "furigana": "もし",
@@ -9155,7 +9155,7 @@
   {
     "id": "voc-0664",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "大体",
     "kanji": "大体",
     "reading": "daitai",
@@ -9224,7 +9224,7 @@
   {
     "id": "voc-0669",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "とうとう",
     "reading": "toutou",
     "furigana": "とうとう",
@@ -9237,7 +9237,7 @@
   {
     "id": "voc-0670",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "しかし / でも",
     "reading": "shikashi / demo",
     "furigana": "しかし",
@@ -9250,7 +9250,7 @@
   {
     "id": "voc-0671",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "だから / ですから",
     "reading": "dakara / desukara",
     "furigana": "だから",
@@ -9473,7 +9473,7 @@
   {
     "id": "voc-0688",
     "category": "vocab",
-    "subCategory": "salam",
+    "subCategory": "kata_benda",
     "japanese": "初めまして",
     "kanji": "初めまして",
     "reading": "hajimemashite",
@@ -10088,7 +10088,7 @@
   {
     "id": "voc-0732",
     "category": "vocab",
-    "subCategory": "angka_waktu",
+    "subCategory": "kata_benda",
     "japanese": "半分",
     "kanji": "半分",
     "reading": "hanbun",
@@ -10116,7 +10116,7 @@
   {
     "id": "voc-0734",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "makanan",
     "japanese": "箸",
     "kanji": "箸",
     "reading": "hashi",
@@ -10130,7 +10130,7 @@
   {
     "id": "voc-0735",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "makanan",
     "japanese": "皿",
     "kanji": "皿",
     "reading": "sara",
@@ -10144,7 +10144,7 @@
   {
     "id": "voc-0736",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "makanan",
     "japanese": "コップ",
     "reading": "koppu",
     "furigana": "koppu",
@@ -10157,7 +10157,7 @@
   {
     "id": "voc-0737",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "makanan",
     "japanese": "茶碗",
     "kanji": "茶碗",
     "reading": "chawan",
@@ -10171,7 +10171,7 @@
   {
     "id": "voc-0738",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "makanan",
     "japanese": "スプーン",
     "reading": "supuun",
     "furigana": "supuun",
@@ -10184,7 +10184,7 @@
   {
     "id": "voc-0739",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "makanan",
     "japanese": "フォーク",
     "reading": "fooku",
     "furigana": "fooku",
@@ -10197,7 +10197,7 @@
   {
     "id": "voc-0740",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "makanan",
     "japanese": "ナイフ",
     "reading": "naifu",
     "furigana": "naifu",
@@ -10210,7 +10210,7 @@
   {
     "id": "voc-0741",
     "category": "vocab",
-    "subCategory": "makanan",
+    "subCategory": "kata_benda",
     "japanese": "包丁",
     "kanji": "包丁",
     "reading": "houchou",
@@ -10224,7 +10224,7 @@
   {
     "id": "voc-0742",
     "category": "vocab",
-    "subCategory": "makanan",
+    "subCategory": "kata_benda",
     "japanese": "まな板",
     "kanji": "まな板",
     "reading": "manaita",
@@ -10238,7 +10238,7 @@
   {
     "id": "voc-0743",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "transportasi",
     "japanese": "鍋",
     "kanji": "鍋",
     "reading": "nabe",
@@ -10252,7 +10252,7 @@
   {
     "id": "voc-0744",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "kata_benda",
     "japanese": "フライパン",
     "reading": "furaipan",
     "furigana": "furaipan",
@@ -10292,7 +10292,7 @@
   {
     "id": "voc-0747",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "benda_rumah",
     "japanese": "廊下",
     "kanji": "廊下",
     "reading": "rouka",
@@ -10320,7 +10320,7 @@
   {
     "id": "voc-0749",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "bisnis_formal",
     "japanese": "床",
     "kanji": "床",
     "reading": "yuka",
@@ -10362,7 +10362,7 @@
   {
     "id": "voc-0752",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "kata_benda",
     "japanese": "畳",
     "kanji": "畳",
     "reading": "tatami",
@@ -10444,7 +10444,7 @@
   {
     "id": "voc-0758",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "pakaian",
     "japanese": "アイロン",
     "reading": "airon",
     "furigana": "airon",
@@ -10457,7 +10457,7 @@
   {
     "id": "voc-0759",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "ドライヤー",
     "reading": "doraiyaa",
     "furigana": "doraiyaa",
@@ -10564,7 +10564,7 @@
   {
     "id": "voc-0767",
     "category": "vocab",
-    "subCategory": "makanan",
+    "subCategory": "kata_benda",
     "japanese": "大根",
     "kanji": "大根",
     "reading": "daikon",
@@ -10810,7 +10810,7 @@
   {
     "id": "voc-0785",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "手袋",
     "kanji": "手袋",
     "reading": "tebukuro",
@@ -10824,7 +10824,7 @@
   {
     "id": "voc-0786",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "マフラー",
     "reading": "mafuraa",
     "furigana": "mafuraa",
@@ -10837,7 +10837,7 @@
   {
     "id": "voc-0787",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "指輪",
     "kanji": "指輪",
     "reading": "yubiwa",
@@ -10865,7 +10865,7 @@
   {
     "id": "voc-0789",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "ネックレス",
     "reading": "nekkuresu",
     "furigana": "nekkuresu",
@@ -10878,7 +10878,7 @@
   {
     "id": "voc-0790",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "イヤリング / ピアス",
     "reading": "iyaringu",
     "furigana": "iyaringu",
@@ -10917,7 +10917,7 @@
   {
     "id": "voc-0793",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "bisnis_formal",
     "japanese": "スリッパ",
     "reading": "surippa",
     "furigana": "surippa",
@@ -10956,7 +10956,7 @@
   {
     "id": "voc-0796",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "hiburan_olahraga",
     "japanese": "水着",
     "kanji": "水着",
     "reading": "mizugi",
@@ -10984,7 +10984,7 @@
   {
     "id": "voc-0798",
     "category": "vocab",
-    "subCategory": "pakaian",
+    "subCategory": "kata_benda",
     "japanese": "浴衣",
     "kanji": "浴衣",
     "reading": "yukata",
@@ -11012,7 +11012,7 @@
   {
     "id": "voc-0800",
     "category": "vocab",
-    "subCategory": "transportasi",
+    "subCategory": "angka_waktu",
     "japanese": "定期券",
     "kanji": "定期券",
     "reading": "teikiken",
@@ -11067,7 +11067,7 @@
   {
     "id": "voc-0804",
     "category": "vocab",
-    "subCategory": "transportasi",
+    "subCategory": "abstrak_akademik",
     "japanese": "行き先",
     "kanji": "行き先",
     "reading": "ikisaki",
@@ -11081,7 +11081,7 @@
   {
     "id": "voc-0805",
     "category": "vocab",
-    "subCategory": "bisnis_formal",
+    "subCategory": "negara_bahasa",
     "japanese": "パスポート",
     "reading": "pasupooto",
     "furigana": "pasupooto",
@@ -11094,7 +11094,7 @@
   {
     "id": "voc-0806",
     "category": "vocab",
-    "subCategory": "bisnis_formal",
+    "subCategory": "kata_benda",
     "japanese": "ビザ",
     "reading": "biza",
     "furigana": "biza",
@@ -11107,7 +11107,7 @@
   {
     "id": "voc-0807",
     "category": "vocab",
-    "subCategory": "transportasi",
+    "subCategory": "benda_rumah",
     "japanese": "荷物",
     "kanji": "荷物",
     "reading": "nimotsu",
@@ -11121,7 +11121,7 @@
   {
     "id": "voc-0808",
     "category": "vocab",
-    "subCategory": "transportasi",
+    "subCategory": "benda_rumah",
     "japanese": "スーツケース",
     "reading": "suutsukeesu",
     "furigana": "suutsukeesu",
@@ -11148,7 +11148,7 @@
   {
     "id": "voc-0810",
     "category": "vocab",
-    "subCategory": "hiburan_olahraga",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "土産",
     "kanji": "土産",
     "reading": "miyage",
@@ -11218,7 +11218,7 @@
   {
     "id": "voc-0815",
     "category": "vocab",
-    "subCategory": "transportasi",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "横断歩道",
     "kanji": "横断歩道",
     "reading": "oudanhodou",
@@ -11232,7 +11232,7 @@
   {
     "id": "voc-0816",
     "category": "vocab",
-    "subCategory": "transportasi",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "歩道",
     "kanji": "歩道",
     "reading": "hodou",
@@ -11251,11 +11251,11 @@
     "kanji": "橋",
     "reading": "hashi",
     "furigana": "はし",
-    "meaningId": "Jembatan penyeberangan sungai",
+    "meaningId": "Jembatan penyeberangan",
     "exampleJp": "長い橋を渡ります。",
     "exampleId": "Menyeberangi jembatan yang panjang.",
     "level": "N5",
-    "meaning": "Jembatan penyeberangan sungai"
+    "meaning": "Jembatan penyeberangan"
   },
   {
     "id": "voc-0818",
@@ -11274,7 +11274,7 @@
   {
     "id": "voc-0819",
     "category": "vocab",
-    "subCategory": "transportasi",
+    "subCategory": "tempat",
     "japanese": "角",
     "kanji": "角",
     "reading": "kado",
@@ -11288,7 +11288,7 @@
   {
     "id": "voc-0820",
     "category": "vocab",
-    "subCategory": "keluarga",
+    "subCategory": "kata_benda",
     "japanese": "先輩",
     "kanji": "先輩",
     "reading": "senpai",
@@ -11302,7 +11302,7 @@
   {
     "id": "voc-0821",
     "category": "vocab",
-    "subCategory": "keluarga",
+    "subCategory": "kata_benda",
     "japanese": "後輩",
     "kanji": "後輩",
     "reading": "kouhai",
@@ -11414,7 +11414,7 @@
   {
     "id": "voc-0829",
     "category": "vocab",
-    "subCategory": "teknologi_media",
+    "subCategory": "kata_benda",
     "japanese": "連絡先",
     "kanji": "連絡先",
     "reading": "renrakusaki",
@@ -11540,7 +11540,7 @@
   {
     "id": "voc-0838",
     "category": "vocab",
-    "subCategory": "angka_waktu",
+    "subCategory": "tempat",
     "japanese": "将来",
     "kanji": "将来",
     "reading": "shourai",
@@ -11662,7 +11662,7 @@
   {
     "id": "voc-0847",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "はっきり",
     "reading": "hakkiri",
     "furigana": "はっきり",
@@ -11688,7 +11688,7 @@
   {
     "id": "voc-0849",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "しっかり",
     "reading": "shikkari",
     "furigana": "しっかり",
@@ -11701,7 +11701,7 @@
   {
     "id": "voc-0850",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "のんびり",
     "reading": "nonbiri",
     "furigana": "のんびり",
@@ -11860,7 +11860,7 @@
   {
     "id": "voc-0862",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "雷",
     "kanji": "雷",
     "reading": "kaminari",
@@ -11888,7 +11888,7 @@
   {
     "id": "voc-0864",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "霧",
     "kanji": "霧",
     "reading": "kiri",
@@ -11916,7 +11916,7 @@
   {
     "id": "voc-0866",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "光",
     "kanji": "光",
     "reading": "hikari",
@@ -11972,7 +11972,7 @@
   {
     "id": "voc-0870",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "湖",
     "kanji": "湖",
     "reading": "mizuumi",
@@ -12014,7 +12014,7 @@
   {
     "id": "voc-0873",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "砂浜",
     "kanji": "砂浜",
     "reading": "sunahama",
@@ -12593,7 +12593,7 @@
   {
     "id": "voc-0916",
     "category": "vocab",
-    "subCategory": "hiburan_olahraga",
+    "subCategory": "kata_kerja",
     "japanese": "キャンプ",
     "reading": "kyanpu",
     "furigana": "kyanpu",
@@ -12744,7 +12744,7 @@
   {
     "id": "voc-0927",
     "category": "vocab",
-    "subCategory": "bisnis_formal",
+    "subCategory": "negara_bahasa",
     "japanese": "税金",
     "kanji": "税金",
     "reading": "zeikin",
@@ -12758,7 +12758,7 @@
   {
     "id": "voc-0928",
     "category": "vocab",
-    "subCategory": "bisnis_formal",
+    "subCategory": "kata_benda",
     "japanese": "贈り物",
     "kanji": "贈り物",
     "reading": "okurimono",
@@ -12772,7 +12772,7 @@
   {
     "id": "voc-0929",
     "category": "vocab",
-    "subCategory": "bisnis_formal",
+    "subCategory": "kata_benda",
     "japanese": "包装",
     "kanji": "包装",
     "reading": "housou",
@@ -12800,7 +12800,7 @@
   {
     "id": "voc-0931",
     "category": "vocab",
-    "subCategory": "abstrak_akademik",
+    "subCategory": "kata_benda",
     "japanese": "世界",
     "kanji": "世界",
     "reading": "sekai",
@@ -12884,7 +12884,7 @@
   {
     "id": "voc-0937",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "abstrak_akademik",
     "japanese": "環境",
     "kanji": "環境",
     "reading": "kankyou",
@@ -12995,7 +12995,7 @@
   {
     "id": "voc-0945",
     "category": "vocab",
-    "subCategory": "bisnis_formal",
+    "subCategory": "negara_bahasa",
     "japanese": "貿易",
     "kanji": "貿易",
     "reading": "boueki",
@@ -13065,7 +13065,7 @@
   {
     "id": "voc-0950",
     "category": "vocab",
-    "subCategory": "tubuh_kesehatan",
+    "subCategory": "kata_benda",
     "japanese": "心臓",
     "kanji": "心臓",
     "reading": "shinzou",
@@ -13079,7 +13079,7 @@
   {
     "id": "voc-0951",
     "category": "vocab",
-    "subCategory": "tubuh_kesehatan",
+    "subCategory": "kata_benda",
     "japanese": "胃",
     "kanji": "胃",
     "reading": "i",
@@ -13107,7 +13107,7 @@
   {
     "id": "voc-0953",
     "category": "vocab",
-    "subCategory": "tubuh_kesehatan",
+    "subCategory": "kata_benda",
     "japanese": "手術",
     "kanji": "手術",
     "reading": "shujutsu",
@@ -13149,7 +13149,7 @@
   {
     "id": "voc-0956",
     "category": "vocab",
-    "subCategory": "tubuh_kesehatan",
+    "subCategory": "kata_benda",
     "japanese": "体温計",
     "kanji": "体温計",
     "reading": "taionkei",
@@ -13372,7 +13372,7 @@
   {
     "id": "voc-0972",
     "category": "vocab",
-    "subCategory": "salam",
+    "subCategory": "kata_kerja",
     "japanese": "挨拶する",
     "kanji": "挨拶する",
     "reading": "aisatsu suru",
@@ -13750,7 +13750,7 @@
   {
     "id": "voc-1000",
     "category": "vocab",
-    "subCategory": "teknologi_media",
+    "subCategory": "alam_hewan",
     "japanese": "住所",
     "kanji": "住所",
     "reading": "juusho",
@@ -13764,7 +13764,7 @@
   {
     "id": "voc-1001",
     "category": "vocab",
-    "subCategory": "teknologi_media",
+    "subCategory": "kata_benda",
     "japanese": "電話番号",
     "kanji": "電話番号",
     "reading": "denwa bangou",
@@ -14197,11 +14197,11 @@
     "kanji": "治る",
     "reading": "naoru",
     "furigana": "なおる",
-    "meaningId": "Sembuh (dari penyakit)",
+    "meaningId": "Sembuh pulih (dari penyakit/luka)",
     "exampleJp": "風邪がやっと治りました。",
     "exampleId": "Flu saya akhirnya sudah sembuh.",
     "level": "N4",
-    "meaning": "Sembuh (dari penyakit)"
+    "meaning": "Sembuh pulih (dari penyakit/luka)"
   },
   {
     "id": "voc-1033",
@@ -14211,11 +14211,11 @@
     "kanji": "治す",
     "reading": "naosu",
     "furigana": "なおす",
-    "meaningId": "Mengobati / Menyembuhkan",
+    "meaningId": "Menyembuhkan penyakit / merawat luka",
     "exampleJp": "早く病気を治したいです。",
     "exampleId": "Saya ingin segera menyembuhkan penyakit ini.",
     "level": "N4",
-    "meaning": "Mengobati / Menyembuhkan"
+    "meaning": "Menyembuhkan penyakit / merawat luka"
   },
   {
     "id": "voc-1034",
@@ -15229,7 +15229,7 @@
   {
     "id": "voc-1106",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "ぜひ",
     "kanji": "是非",
     "reading": "zehi",
@@ -15257,7 +15257,7 @@
   {
     "id": "voc-1108",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "ずいぶん",
     "kanji": "随分",
     "reading": "zuibun",
@@ -15271,7 +15271,7 @@
   {
     "id": "voc-1109",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "けっこう",
     "kanji": "結構",
     "reading": "kekkou",
@@ -15285,7 +15285,7 @@
   {
     "id": "voc-1110",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "なかなか",
     "kanji": "中々",
     "reading": "nakanaka",
@@ -15327,7 +15327,7 @@
   {
     "id": "voc-1113",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "onomatope",
     "japanese": "そろそろ",
     "kanji": "そろそろ",
     "reading": "sorosoro",
@@ -15355,7 +15355,7 @@
   {
     "id": "voc-1115",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "ぼんやり",
     "kanji": "ぼんやり",
     "reading": "bonyari",
@@ -15369,7 +15369,7 @@
   {
     "id": "voc-1116",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "たまたま",
     "kanji": "たまたま",
     "reading": "tamatama",
@@ -15383,7 +15383,7 @@
   {
     "id": "voc-1117",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "わざわざ",
     "kanji": "わざわざ",
     "reading": "wazawaza",
@@ -15397,7 +15397,7 @@
   {
     "id": "voc-1118",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "salam",
     "japanese": "まさか",
     "kanji": "まさか",
     "reading": "masaka",
@@ -15411,7 +15411,7 @@
   {
     "id": "voc-1119",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "kata_benda",
     "japanese": "なるべく",
     "kanji": "なるべく",
     "reading": "narubeku",
@@ -15425,16 +15425,16 @@
   {
     "id": "voc-1120",
     "category": "vocab",
-    "subCategory": "keterangan_fukushi",
+    "subCategory": "salam",
     "japanese": "別に",
     "kanji": "別に",
     "reading": "betsuni",
     "furigana": "べつに",
-    "meaningId": "Tidak ada yang khusus (dengan bentuk negatif)",
+    "meaningId": "Tidak ada yang khusus (diikuti bentuk negatif)",
     "exampleJp": "休日は別にどこへも行きませんでした。",
     "exampleId": "Hari libur saya tidak pergi ke tempat khusus mana pun.",
     "level": "N4",
-    "meaning": "Tidak ada yang khusus (dengan bentuk negatif)"
+    "meaning": "Tidak ada yang khusus (diikuti bentuk negatif)"
   },
   {
     "id": "voc-1121",
@@ -15621,7 +15621,7 @@
   {
     "id": "voc-1134",
     "category": "vocab",
-    "subCategory": "profesi_sekolah",
+    "subCategory": "transportasi",
     "japanese": "運転手",
     "kanji": "運転手",
     "reading": "untenshu",
@@ -15691,7 +15691,7 @@
   {
     "id": "voc-1139",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "benda_rumah",
     "japanese": "受付",
     "kanji": "受付",
     "reading": "uketsuke",
@@ -15719,7 +15719,7 @@
   {
     "id": "voc-1141",
     "category": "vocab",
-    "subCategory": "profesi_sekolah",
+    "subCategory": "makanan",
     "japanese": "奨学金",
     "kanji": "奨学金",
     "reading": "shougakukin",
@@ -15733,7 +15733,7 @@
   {
     "id": "voc-1142",
     "category": "vocab",
-    "subCategory": "profesi_sekolah",
+    "subCategory": "kata_benda",
     "japanese": "講義",
     "kanji": "講義",
     "reading": "kougi",
@@ -15761,7 +15761,7 @@
   {
     "id": "voc-1144",
     "category": "vocab",
-    "subCategory": "profesi_sekolah",
+    "subCategory": "alam_hewan",
     "japanese": "専門",
     "kanji": "専門",
     "reading": "semmon",
@@ -15789,7 +15789,7 @@
   {
     "id": "voc-1146",
     "category": "vocab",
-    "subCategory": "tubuh_kesehatan",
+    "subCategory": "kata_benda",
     "japanese": "火傷",
     "kanji": "火傷",
     "reading": "yakedo",
@@ -15845,7 +15845,7 @@
   {
     "id": "voc-1150",
     "category": "vocab",
-    "subCategory": "tubuh_kesehatan",
+    "subCategory": "angka_waktu",
     "japanese": "救急車",
     "kanji": "救急車",
     "reading": "kyuukyuusha",
@@ -15901,7 +15901,7 @@
   {
     "id": "voc-1154",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "kata_benda",
     "japanese": "大使館",
     "kanji": "大使館",
     "reading": "taishikan",
@@ -15915,7 +15915,7 @@
   {
     "id": "voc-1155",
     "category": "vocab",
-    "subCategory": "transportasi",
+    "subCategory": "kata_benda",
     "japanese": "港",
     "kanji": "港",
     "reading": "minato",
@@ -16041,7 +16041,7 @@
   {
     "id": "voc-1164",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "kata_benda",
     "japanese": "箒",
     "kanji": "箒",
     "reading": "houki",
@@ -16055,7 +16055,7 @@
   {
     "id": "voc-1165",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "pakaian",
     "japanese": "洗剤",
     "kanji": "洗剤",
     "reading": "senzai",
@@ -16125,7 +16125,7 @@
   {
     "id": "voc-1170",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "kata_benda",
     "japanese": "居酒屋",
     "kanji": "居酒屋",
     "reading": "izakaya",
@@ -16167,7 +16167,7 @@
   {
     "id": "voc-1173",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "pakaian",
     "japanese": "枝",
     "kanji": "枝",
     "reading": "eda",
@@ -16181,7 +16181,7 @@
   {
     "id": "voc-1174",
     "category": "vocab",
-    "subCategory": "keluarga",
+    "subCategory": "kata_benda",
     "japanese": "赤ん坊",
     "kanji": "赤ん坊",
     "reading": "akanbou",
@@ -16209,7 +16209,7 @@
   {
     "id": "voc-1176",
     "category": "vocab",
-    "subCategory": "angka_waktu",
+    "subCategory": "abstrak_akademik",
     "japanese": "時代",
     "kanji": "時代",
     "reading": "jidai",
@@ -16307,7 +16307,7 @@
   {
     "id": "voc-1183",
     "category": "vocab",
-    "subCategory": "salam",
+    "subCategory": "kata_benda",
     "japanese": "おかげさまで",
     "kanji": "おかげさまで",
     "reading": "okagesamade",
@@ -16363,7 +16363,7 @@
   {
     "id": "voc-1187",
     "category": "vocab",
-    "subCategory": "salam",
+    "subCategory": "kata_benda",
     "japanese": "恐れ入りますが",
     "kanji": "恐れ入りますが",
     "reading": "osoreirimasu ga",
@@ -16489,7 +16489,7 @@
   {
     "id": "voc-1196",
     "category": "vocab",
-    "subCategory": "salam",
+    "subCategory": "kata_kerja",
     "japanese": "感謝する",
     "kanji": "感謝する",
     "reading": "kansha suru",
@@ -16951,7 +16951,7 @@
   {
     "id": "voc-1229",
     "category": "vocab",
-    "subCategory": "benda_sekolah",
+    "subCategory": "bisnis_formal",
     "japanese": "判子",
     "kanji": "判子",
     "reading": "hanko",
@@ -16965,7 +16965,7 @@
   {
     "id": "voc-1230",
     "category": "vocab",
-    "subCategory": "benda_sekolah",
+    "subCategory": "kata_benda",
     "japanese": "便箋",
     "kanji": "便箋",
     "reading": "binsen",
@@ -16979,7 +16979,7 @@
   {
     "id": "voc-1231",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "angka_waktu",
     "japanese": "針",
     "kanji": "針",
     "reading": "hari",
@@ -17035,7 +17035,7 @@
   {
     "id": "voc-1235",
     "category": "vocab",
-    "subCategory": "benda_sekolah",
+    "subCategory": "kata_benda",
     "japanese": "糊",
     "kanji": "糊",
     "reading": "nori",
@@ -17049,7 +17049,7 @@
   {
     "id": "voc-1236",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "makanan",
     "japanese": "棚",
     "kanji": "棚",
     "reading": "tana",
@@ -17217,7 +17217,7 @@
   {
     "id": "voc-1248",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "kata_benda",
     "japanese": "動物園",
     "kanji": "動物園",
     "reading": "doubutsuen",
@@ -17231,7 +17231,7 @@
   {
     "id": "voc-1249",
     "category": "vocab",
-    "subCategory": "tempat",
+    "subCategory": "kata_benda",
     "japanese": "植物園",
     "kanji": "植物園",
     "reading": "shokubutsuen",
@@ -17273,7 +17273,7 @@
   {
     "id": "voc-1252",
     "category": "vocab",
-    "subCategory": "angka_waktu",
+    "subCategory": "alam_hewan",
     "japanese": "蜂",
     "kanji": "蜂",
     "reading": "hachi",
@@ -17371,7 +17371,7 @@
   {
     "id": "voc-1259",
     "category": "vocab",
-    "subCategory": "bisnis_formal",
+    "subCategory": "kata_benda",
     "japanese": "中止",
     "kanji": "中止",
     "reading": "chuushi",
@@ -17469,7 +17469,7 @@
   {
     "id": "voc-1266",
     "category": "vocab",
-    "subCategory": "salam",
+    "subCategory": "kata_benda",
     "japanese": "ご存知",
     "kanji": "ご存知",
     "reading": "gozonji",
@@ -17917,7 +17917,7 @@
   {
     "id": "voc-1298",
     "category": "vocab",
-    "subCategory": "angka_waktu",
+    "subCategory": "abstrak_akademik",
     "japanese": "スケジュール",
     "kanji": "スケジュール",
     "reading": "sukejuuru",
@@ -17959,7 +17959,7 @@
   {
     "id": "voc-1301",
     "category": "vocab",
-    "subCategory": "transportasi",
+    "subCategory": "kata_kerja",
     "japanese": "トンネル",
     "kanji": "トンネル",
     "reading": "tonneru",
@@ -18015,7 +18015,7 @@
   {
     "id": "voc-1305",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "kata_benda",
     "japanese": "プラスチック",
     "kanji": "プラスチック",
     "reading": "purasuchikku",
@@ -18071,7 +18071,7 @@
   {
     "id": "voc-1309",
     "category": "vocab",
-    "subCategory": "bisnis_formal",
+    "subCategory": "profesi_sekolah",
     "japanese": "リポート",
     "kanji": "リポート",
     "reading": "ripooto",
@@ -18085,7 +18085,7 @@
   {
     "id": "voc-1310",
     "category": "vocab",
-    "subCategory": "benda_rumah",
+    "subCategory": "kata_benda",
     "japanese": "ロッカー",
     "kanji": "ロッカー",
     "reading": "rokkaa",
@@ -18155,7 +18155,7 @@
   {
     "id": "voc-1315",
     "category": "vocab",
-    "subCategory": "bisnis_formal",
+    "subCategory": "negara_bahasa",
     "japanese": "国際",
     "kanji": "国際",
     "reading": "kokusai",
@@ -18365,7 +18365,7 @@
   {
     "id": "voc-1330",
     "category": "vocab",
-    "subCategory": "teknologi_media",
+    "subCategory": "tempat",
     "japanese": "看板",
     "kanji": "看板",
     "reading": "kamban",
@@ -18393,7 +18393,7 @@
   {
     "id": "voc-1332",
     "category": "vocab",
-    "subCategory": "bisnis_formal",
+    "subCategory": "kata_benda",
     "japanese": "案内",
     "kanji": "案内",
     "reading": "annai",
@@ -18421,7 +18421,7 @@
   {
     "id": "voc-1334",
     "category": "vocab",
-    "subCategory": "bisnis_formal",
+    "subCategory": "kata_benda",
     "japanese": "入場料",
     "kanji": "入場料",
     "reading": "nyuujouryou",
@@ -18449,7 +18449,7 @@
   {
     "id": "voc-1336",
     "category": "vocab",
-    "subCategory": "bisnis_formal",
+    "subCategory": "kata_benda",
     "japanese": "整理券",
     "kanji": "整理券",
     "reading": "seiriken",
@@ -18505,7 +18505,7 @@
   {
     "id": "voc-1340",
     "category": "vocab",
-    "subCategory": "transportasi",
+    "subCategory": "tubuh_kesehatan",
     "japanese": "荷物棚",
     "kanji": "荷物棚",
     "reading": "nimotsudana",
@@ -18645,7 +18645,7 @@
   {
     "id": "voc-1350",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "湿度",
     "kanji": "湿度",
     "reading": "shitsudo",
@@ -18659,7 +18659,7 @@
   {
     "id": "voc-1351",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "kata_benda",
     "japanese": "気温",
     "kanji": "気温",
     "reading": "kion",
@@ -18673,7 +18673,7 @@
   {
     "id": "voc-1352",
     "category": "vocab",
-    "subCategory": "alam_hewan",
+    "subCategory": "tempat",
     "japanese": "零下",
     "kanji": "零下",
     "reading": "reika",
@@ -18743,7 +18743,7 @@
   {
     "id": "voc-1357",
     "category": "vocab",
-    "subCategory": "kata_sifat",
+    "subCategory": "kata_kerja",
     "japanese": "清潔",
     "kanji": "清潔",
     "reading": "seiketsu",
@@ -18799,7 +18799,7 @@
   {
     "id": "voc-1361",
     "category": "vocab",
-    "subCategory": "kata_sifat",
+    "subCategory": "kata_kerja",
     "japanese": "退屈",
     "kanji": "退屈",
     "reading": "taikutsu",
@@ -18872,7 +18872,7 @@
     "reading": "chuugokugo",
     "meaningId": "Bahasa Mandarin / China",
     "category": "vocab",
-    "subCategory": "negara_bahasa",
+    "subCategory": "keluarga",
     "jlptLevel": "N5",
     "meaning": "Bahasa Mandarin / China"
   },
@@ -19235,7 +19235,7 @@
     "reading": "kankoku",
     "meaningId": "Korea (Negara Korea Selatan)",
     "category": "vocab",
-    "subCategory": "negara_bahasa",
+    "subCategory": "tempat",
     "jlptLevel": "N5",
     "meaning": "Korea (Negara Korea Selatan)"
   }

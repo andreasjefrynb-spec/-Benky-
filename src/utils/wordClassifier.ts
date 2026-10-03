@@ -20,6 +20,7 @@ export type WordClassType =
   | 'numeral'
   | 'time_adverb'
   | 'counter'
+  | 'suffix_title'
   | 'noun'
   | 'adverb'
   | 'conjunction'
@@ -67,6 +68,10 @@ const NOUN_SUBCATEGORIES = new Set([
   'pakaian',
   'benda_sekolah',
   'negara_bahasa',
+  'bisnis_formal',
+  'hiburan_olahraga',
+  'teknologi_media',
+  'abstrak_akademik',
   'kanji_alam',
   'kanji_manusia',
   'kanji_arah',
@@ -1371,6 +1376,42 @@ export function getWordClassification(item: CardItem): WordClassification {
     return createCounterNounInfo();
   }
 
+  // 5.5 Gelar Kehormatan & Panggilan Nama Orang (接尾辞・敬称)
+  // Termasuk 〜さん, 〜ちゃん, 〜くん, 〜様, 〜さま, 〜たち, 〜がた
+  const isHonorificSuffix =
+    /^[〜～~]?(さん|ちゃん|くん|君|様|さま|たち|方|がた)$/.test(cleanJp) ||
+    /^(~|\b)(san|chan|kun|sama|tachi|gata)$/i.test(cleanReading) ||
+    ((cleanJp.includes('さん') || cleanJp.includes('くん') || cleanJp.includes('様')) &&
+      (meaning.includes('saudara') || meaning.includes('gelar') || meaning.includes('tuan') || meaning.includes('nyonya')));
+
+  if (isHonorificSuffix) {
+    return createHonorificSuffixInfo();
+  }
+
+  // 5.6 Sufiks Kewarganegaraan & Bahasa (〜人 / 〜語)
+  if (/^[〜～~](人|じん)$/.test(cleanJp) || (cleanJp.startsWith('〜') && (meaning.includes('orang...') || meaning.includes('kebangsaan') || meaning.includes('kewarganegaraan')))) {
+    return {
+      type: 'noun',
+      label: 'Sufiks Kewarganegaraan (接尾辞: 〜人)',
+      shortLabel: 'Sufiks Bangsa',
+      kanjiLabel: '接尾辞 (国籍)',
+      badgeClass: 'bg-blue-50 dark:bg-blue-950/70 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-800',
+      icon: '🌐',
+      grammarHint: 'Dibubuhkan setelah nama negara untuk menyatakan orang / warga negara.',
+    };
+  }
+  if (/^[〜～~](語|ご)$/.test(cleanJp) || (cleanJp.startsWith('〜') && meaning.includes('bahasa'))) {
+    return {
+      type: 'noun',
+      label: 'Sufiks Bahasa (接尾辞: 〜語)',
+      shortLabel: 'Sufiks Bahasa',
+      kanjiLabel: '接尾辞 (言語)',
+      badgeClass: 'bg-teal-50 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 border-teal-200 dark:border-teal-800',
+      icon: '🗣️',
+      grammarHint: 'Dibubuhkan setelah nama negara untuk menyatakan bahasa dari negara tersebut.',
+    };
+  }
+
   // 3. Ungkapan, Salam, Kalimat & Frasa Percakapan (挨拶・表現 / Aisatsu・Hyougen)
   const isAdverbWord =
     subCat === 'keterangan_fukushi' ||
@@ -1861,6 +1902,18 @@ function createCounterNounInfo(): WordClassification {
     badgeClass: 'bg-amber-50 dark:bg-amber-950/70 text-amber-900 dark:text-amber-300 border-amber-300 dark:border-amber-700/80 font-bold',
     icon: '🔢',
     grammarHint: 'Penghitung satuan waktu (jam/menit), orang, barang, urutan, dsb.',
+  };
+}
+
+function createHonorificSuffixInfo(): WordClassification {
+  return {
+    type: 'suffix_title',
+    label: 'Gelar Kehormatan / Sufiks Nama (接尾辞・敬称)',
+    shortLabel: 'Gelar Panggilan',
+    kanjiLabel: '接尾辞 (敬称)',
+    badgeClass: 'bg-indigo-50 dark:bg-indigo-950/70 text-indigo-900 dark:text-indigo-300 border-indigo-300 dark:border-indigo-700 font-extrabold',
+    icon: '🎖️',
+    grammarHint: 'Gelar kehormatan yang dibubuhkan setelah nama orang (Tuan, Nyonya, Nona, Kak, Saudara, dsb.).',
   };
 }
 

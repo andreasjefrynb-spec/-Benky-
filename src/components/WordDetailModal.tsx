@@ -94,15 +94,15 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 15 }}
           transition={{ duration: 0.2 }}
-          className="bg-white rounded-3xl shadow-2xl border border-slate-200/90 w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden text-slate-800"
+          className="bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200/90 dark:border-slate-800 w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden text-slate-800 dark:text-slate-100"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header Panel */}
-          <div className="relative p-5 sm:p-6 bg-gradient-to-br from-rose-50/80 via-white to-amber-50/60 border-b border-slate-200">
+          <div className="relative p-5 sm:p-6 bg-gradient-to-br from-rose-50/80 via-white to-amber-50/60 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 border-b border-slate-200 dark:border-slate-800">
             <button
               id="close-word-detail-modal-btn"
               onClick={onClose}
-              className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-colors cursor-pointer"
+              className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors cursor-pointer"
               title="Tutup (Esc)"
             >
               <X className="w-5 h-5" />
@@ -118,13 +118,13 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
               </span>
 
               {card.level && (
-                <span className="px-2.5 py-1 rounded-lg text-xs font-black bg-rose-50 text-rose-700 border border-rose-200">
+                <span className="px-2.5 py-1 rounded-lg text-xs font-black bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800">
                   JLPT {card.level}
                 </span>
               )}
 
               {card.subCategory && (
-                <span className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-200">
+                <span className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
                   {card.subCategory.replace(/_/g, ' ')}
                 </span>
               )}
@@ -138,8 +138,8 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
                   onClick={handleSpeakMainWord}
                   className={`p-3 rounded-2xl transition-all cursor-pointer shadow-xs active:scale-95 ${
                     isPlayingAudio
-                      ? 'bg-rose-600 text-white ring-4 ring-rose-200 scale-105'
-                      : 'bg-white hover:bg-rose-50 text-rose-600 border border-rose-100 hover:border-rose-200'
+                      ? 'bg-rose-600 text-white ring-4 ring-rose-200 dark:ring-rose-900 scale-105'
+                      : 'bg-white dark:bg-slate-800 hover:bg-rose-50 dark:hover:bg-slate-700 text-rose-600 dark:text-rose-400 border border-rose-100 dark:border-slate-700 hover:border-rose-200'
                   }`}
                   title="Dengarkan pelafalan asli penutur bahasa Jepang"
                 >
@@ -148,16 +148,16 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
 
                 <div>
                   <div className="flex items-baseline gap-2.5 flex-wrap">
-                    <span className="text-2xl sm:text-3xl font-black text-slate-900 font-jp leading-none tracking-tight">
+                    <span className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white font-jp leading-none tracking-tight">
                       {card.japanese}
                     </span>
                     {card.furigana && card.furigana !== card.japanese && (
-                      <span className="text-sm sm:text-base font-bold text-rose-500 font-jp">
+                      <span className="text-sm sm:text-base font-bold text-rose-500 dark:text-rose-400 font-jp">
                         {card.furigana}
                       </span>
                     )}
                   </div>
-                  <div className="text-xs sm:text-sm font-mono font-semibold text-slate-500 mt-1">
+                  <div className="text-xs sm:text-sm font-mono font-semibold text-slate-500 dark:text-slate-400 mt-1">
                     {card.reading}
                   </div>
                 </div>
@@ -171,10 +171,10 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
                     onPracticeWriting(card);
                     onClose();
                   }}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 transition-all cursor-pointer active:scale-95 shadow-2xs"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-50 dark:bg-amber-950/60 hover:bg-amber-100 dark:hover:bg-amber-900/60 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800 transition-all cursor-pointer active:scale-95 shadow-2xs"
                   title="Latihan tulis goresan kanji"
                 >
-                  <PenTool className="w-3.5 h-3.5 text-amber-600" />
+                  <PenTool className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
                   <span>Latihan Tulis</span>
                 </button>
               )}
@@ -182,7 +182,7 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
           </div>
 
           {/* Modal Content Body */}
-          <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 bg-slate-50/40">
+          <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 bg-slate-50/40 dark:bg-slate-950/40">
             {/* 1. SPOTLIGHT: PENJELASAN ARTI DETAIL ALA KAMUS RESMI */}
             <div className="bg-gradient-to-br from-indigo-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-4 sm:p-5 shadow-md relative overflow-hidden border border-indigo-800/60">
               <div className="flex items-center justify-between gap-2 mb-2 pb-2 border-b border-indigo-700/50">
@@ -210,8 +210,6 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
                 </button>
               </div>
 
-              {/* Kalimat Lengkap Sesuai Permintaan User:
-                  Kata "betsuno" (別の / べつの) dalam bahasa Jepang artinya adalah "yang lain", "berbeda", atau "terpisah". */}
               <p className="text-sm sm:text-base font-semibold leading-relaxed text-indigo-50 font-sans tracking-wide">
                 {detail.fullExplanationSentence}
               </p>
@@ -235,95 +233,95 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
             {/* 2. KAIDAH TATA BAHASA & POLA PARTIKEL */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {/* Kelas Kata & Kaidah Gramatikal */}
-              <div className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-2xs space-y-1.5">
-                <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-200/90 dark:border-slate-700 shadow-2xs space-y-1.5">
+                <span className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-wider block">
                   Peran Gramatikal & Golongan
                 </span>
-                <div className="flex items-center gap-1.5 font-bold text-slate-800 text-xs sm:text-sm">
+                <div className="flex items-center gap-1.5 font-bold text-slate-800 dark:text-slate-200 text-xs sm:text-sm">
                   <span>{wordClass.icon}</span>
                   <span>{detail.grammaticalRole}</span>
                 </div>
-                <p className="text-[11px] text-slate-500 leading-relaxed font-medium">
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
                   {wordClass.grammarHint}
                 </p>
               </div>
 
               {/* Pola Penggunaan / Partikel Penting */}
-              <div className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-2xs space-y-1.5">
-                <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-200/90 dark:border-slate-700 shadow-2xs space-y-1.5">
+                <span className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-wider block">
                   Pola Partikel / Rumus Pakai
                 </span>
                 {detail.particlePattern ? (
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-50 border border-indigo-100 text-indigo-900 font-bold font-jp text-xs sm:text-sm">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800 text-indigo-900 dark:text-indigo-300 font-bold font-jp text-xs sm:text-sm">
                     {detail.particlePattern}
                   </div>
                 ) : (
-                  <p className="text-[11px] text-slate-500 leading-relaxed font-medium">
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
                     Dapat digunakan langsung dengan partikel pokok (は, が, を, に, で) sesuai peran subjek / objek kalimat.
                   </p>
                 )}
               </div>
             </div>
 
-            {/* 3. CATATAN ANTI-BINGUNG & PASANGAN KONTRAS (Jika Ada) */}
+            {/* 3. CATATAN ANTI-BINGUNG & PASANGAN KONTRAS */}
             {(detail.disambiguationNote || detail.contrastPair) && (
-              <div className="bg-amber-50/90 border border-amber-200 rounded-2xl p-4 shadow-2xs space-y-2">
-                <div className="flex items-center gap-1.5 text-amber-900 font-black text-xs">
-                  <Lightbulb className="w-4 h-4 text-amber-600 shrink-0" />
+              <div className="bg-amber-50/90 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 rounded-2xl p-4 shadow-2xs space-y-2">
+                <div className="flex items-center gap-1.5 text-amber-900 dark:text-amber-300 font-black text-xs">
+                  <Lightbulb className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
                   <span>Konteks & Pembeda Anti-Bingung</span>
                 </div>
 
                 {detail.disambiguationNote && (
-                  <p className="text-xs text-amber-950 leading-relaxed font-medium">
+                  <p className="text-xs text-amber-950 dark:text-amber-200 leading-relaxed font-medium">
                     {detail.disambiguationNote}
                   </p>
                 )}
 
                 {detail.contrastPair && (
-                  <div className="bg-white/90 rounded-xl p-2.5 border border-amber-200/80 text-xs text-slate-800">
-                    <span className="font-extrabold text-amber-900 block mb-0.5">
+                  <div className="bg-white/90 dark:bg-slate-800/90 rounded-xl p-2.5 border border-amber-200/80 dark:border-amber-800/60 text-xs text-slate-800 dark:text-slate-200">
+                    <span className="font-extrabold text-amber-900 dark:text-amber-300 block mb-0.5">
                       💡 Bedakan dengan:
                     </span>
-                    <span className="font-jp font-black text-slate-900 mr-1">
+                    <span className="font-jp font-black text-slate-900 dark:text-white mr-1">
                       {detail.contrastPair.word}
                     </span>
-                    <span className="font-mono text-slate-500 font-semibold mr-1.5">
+                    <span className="font-mono text-slate-500 dark:text-slate-400 font-semibold mr-1.5">
                       ({detail.contrastPair.reading})
                     </span>
-                    <span className="text-slate-600">— {detail.contrastPair.difference}</span>
+                    <span className="text-slate-600 dark:text-slate-300">— {detail.contrastPair.difference}</span>
                   </div>
                 )}
               </div>
             )}
 
-            {/* 4. PEMBEDA NUANSA (Jika Ada Data Nuansa Khusus) */}
+            {/* 4. PEMBEDA NUANSA */}
             {nuance && (
-              <div className="bg-sky-50/80 border border-sky-200 rounded-2xl p-4 shadow-2xs space-y-2">
-                <div className="flex items-center gap-1.5 text-sky-900 font-black text-xs">
-                  <BookOpen className="w-4 h-4 text-sky-600 shrink-0" />
+              <div className="bg-sky-50/80 dark:bg-sky-950/40 border border-sky-200 dark:border-sky-800/60 rounded-2xl p-4 shadow-2xs space-y-2">
+                <div className="flex items-center gap-1.5 text-sky-900 dark:text-sky-300 font-black text-xs">
+                  <BookOpen className="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0" />
                   <span>Nuansa Penggunaan: {nuance.japanese}</span>
                 </div>
-                <p className="text-xs text-sky-950 font-medium leading-relaxed">
+                <p className="text-xs text-sky-950 dark:text-sky-200 font-medium leading-relaxed">
                   {nuance.nuanceExplanation}
                 </p>
-                <div className="text-[11px] text-slate-700 bg-white/80 p-2 rounded-xl border border-sky-100">
-                  <strong className="text-sky-900">Konteks:</strong> {nuance.contextUsage}
+                <div className="text-[11px] text-slate-700 dark:text-slate-300 bg-white/80 dark:bg-slate-800 p-2 rounded-xl border border-sky-100 dark:border-sky-900">
+                  <strong className="text-sky-900 dark:text-sky-300">Konteks:</strong> {nuance.contextUsage}
                 </div>
               </div>
             )}
 
-            {/* 5. CONTOH KALIMAT NYATA (Lengkap Audio, Furigana & Terjemahan) */}
+            {/* 5. CONTOH KALIMAT NYATA */}
             {(card.exampleJp || detail.sampleSentenceJp) && (
-              <div className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-2xs space-y-2">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-200/90 dark:border-slate-700 shadow-2xs space-y-2">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">
+                  <span className="text-[10px] font-extrabold text-slate-400 dark:text-slate-500 uppercase tracking-wider block">
                     Contoh Kalimat Alami
                   </span>
                   <button
                     onClick={(e) =>
                       handleSpeakSentence(card.exampleJp || detail.sampleSentenceJp!, e)
                     }
-                    className="flex items-center gap-1 text-xs font-bold text-rose-600 hover:text-rose-700 bg-rose-50 hover:bg-rose-100 px-2 py-1 rounded-lg transition-colors cursor-pointer"
+                    className="flex items-center gap-1 text-xs font-bold text-rose-600 dark:text-rose-400 hover:text-rose-700 bg-rose-50 dark:bg-rose-950/60 hover:bg-rose-100 dark:hover:bg-rose-900/60 px-2 py-1 rounded-lg transition-colors cursor-pointer"
                     title="Dengarkan pelafalan contoh kalimat"
                   >
                     <Volume2 className={`w-3.5 h-3.5 ${playingSentence ? 'animate-bounce' : ''}`} />
@@ -331,12 +329,12 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
                   </button>
                 </div>
 
-                <div className="p-3 bg-slate-50/80 rounded-xl border border-slate-100 space-y-1">
-                  <p className="font-jp text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                <div className="p-3 bg-slate-50/80 dark:bg-slate-900/60 rounded-xl border border-slate-100 dark:border-slate-700/80 space-y-1">
+                  <p className="font-jp text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100 leading-snug">
                     {card.exampleJp || detail.sampleSentenceJp}
                   </p>
                   {(card.exampleId || detail.sampleSentenceId) && (
-                    <p className="text-xs text-slate-600 italic">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 italic">
                       {card.exampleId || detail.sampleSentenceId}
                     </p>
                   )}
@@ -346,10 +344,10 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
 
             {/* 6. PERUBAHAN BENTUK KATA (JIKA KATA KERJA / KATA SIFAT) */}
             {isConjugatable && (
-              <div className="bg-indigo-50/80 border border-indigo-200 rounded-2xl p-4 shadow-2xs space-y-2.5">
+              <div className="bg-indigo-50/80 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800/60 rounded-2xl p-4 shadow-2xs space-y-2.5">
                 <div className="flex items-center justify-between gap-2 flex-wrap">
-                  <div className="flex items-center gap-1.5 text-indigo-950 font-black text-xs">
-                    <Sparkles className="w-4 h-4 text-indigo-600" />
+                  <div className="flex items-center gap-1.5 text-indigo-950 dark:text-indigo-200 font-black text-xs">
+                    <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                     <span>Perubahan Bentuk (Konjugasi Pokok)</span>
                   </div>
 
@@ -369,21 +367,21 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
 
                 {quickConjugation && (
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
-                    <div className="bg-white p-2.5 rounded-xl border border-indigo-100">
-                      <span className="text-[10px] text-slate-400 font-bold block">Bentuk ~Masu</span>
-                      <span className="font-jp font-black text-slate-900">{quickConjugation.masu}</span>
+                    <div className="bg-white dark:bg-slate-800 p-2.5 rounded-xl border border-indigo-100 dark:border-indigo-900">
+                      <span className="text-[10px] text-slate-400 dark:text-slate-500 font-bold block">Bentuk ~Masu</span>
+                      <span className="font-jp font-black text-slate-900 dark:text-white">{quickConjugation.masu}</span>
                     </div>
-                    <div className="bg-white p-2.5 rounded-xl border border-indigo-100">
-                      <span className="text-[10px] text-slate-400 font-bold block">Bentuk ~Te (Sambung)</span>
-                      <span className="font-jp font-black text-slate-900">{quickConjugation.te}</span>
+                    <div className="bg-white dark:bg-slate-800 p-2.5 rounded-xl border border-indigo-100 dark:border-indigo-900">
+                      <span className="text-[10px] text-slate-400 dark:text-slate-500 font-bold block">Bentuk ~Te (Sambung)</span>
+                      <span className="font-jp font-black text-slate-900 dark:text-white">{quickConjugation.te}</span>
                     </div>
-                    <div className="bg-white p-2.5 rounded-xl border border-indigo-100">
-                      <span className="text-[10px] text-slate-400 font-bold block">Bentuk ~Nai (Negatif)</span>
-                      <span className="font-jp font-black text-slate-900">{quickConjugation.nai}</span>
+                    <div className="bg-white dark:bg-slate-800 p-2.5 rounded-xl border border-indigo-100 dark:border-indigo-900">
+                      <span className="text-[10px] text-slate-400 dark:text-slate-500 font-bold block">Bentuk ~Nai (Negatif)</span>
+                      <span className="font-jp font-black text-slate-900 dark:text-white">{quickConjugation.nai}</span>
                     </div>
-                    <div className="bg-white p-2.5 rounded-xl border border-indigo-100">
-                      <span className="text-[10px] text-slate-400 font-bold block">Bentuk ~Ta (Lampau)</span>
-                      <span className="font-jp font-black text-slate-900">{quickConjugation.ta}</span>
+                    <div className="bg-white dark:bg-slate-800 p-2.5 rounded-xl border border-indigo-100 dark:border-indigo-900">
+                      <span className="text-[10px] text-slate-400 dark:text-slate-500 font-bold block">Bentuk ~Ta (Lampau)</span>
+                      <span className="font-jp font-black text-slate-900 dark:text-white">{quickConjugation.ta}</span>
                     </div>
                   </div>
                 )}
@@ -392,8 +390,8 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
 
             {/* 7. MNEMONIC / TIPS MENGHAFAL */}
             {card.mnemonic && (
-              <div className="bg-amber-50/60 rounded-2xl p-4 border border-amber-150 text-xs text-amber-900 space-y-1">
-                <span className="font-extrabold text-amber-800 text-[10px] uppercase tracking-wider block">
+              <div className="bg-amber-50/60 dark:bg-amber-950/30 rounded-2xl p-4 border border-amber-200/60 dark:border-amber-900/40 text-xs text-amber-900 dark:text-amber-300 space-y-1">
+                <span className="font-extrabold text-amber-800 dark:text-amber-400 text-[10px] uppercase tracking-wider block">
                   💡 Tips Menghafal / Cara Cepat Ingat
                 </span>
                 <p className="leading-relaxed font-medium">{card.mnemonic}</p>
@@ -402,15 +400,15 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
           </div>
 
           {/* Footer Bar */}
-          <div className="p-3 sm:p-4 border-t border-slate-200 bg-white flex items-center justify-between text-xs text-slate-500">
+          <div className="p-3 sm:p-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
             <span className="inline-flex items-center gap-1.5 font-medium">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               <span>Kamus Terverifikasi Bahasa Jepang - Indonesia</span>
             </span>
             <button
               id="close-word-detail-modal-bottom-btn"
               onClick={onClose}
-              className="px-4 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition-colors cursor-pointer"
+              className="px-4 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold transition-colors cursor-pointer border border-transparent dark:border-slate-700"
             >
               Tutup
             </button>

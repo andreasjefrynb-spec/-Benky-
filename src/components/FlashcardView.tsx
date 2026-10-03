@@ -1150,40 +1150,6 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 );
               })()}
 
-              {/* Klasifikasi Golongan Kata & Kaidah Gramatikal + Perubahan Kata */}
-              {(() => {
-                const wordClass = getWordClassification(currentCard);
-                const isConjugatable =
-                  wordClass.type.startsWith('verb') ||
-                  wordClass.type.startsWith('adj');
-
-                return (
-                  <div className={`w-full max-w-md p-2.5 rounded-xl border text-xs text-left shadow-2xs ${wordClass.badgeClass}`}>
-                    <div className="flex items-center justify-between gap-2 mb-1">
-                      <div className="font-extrabold flex items-center gap-1.5">
-                        <span>{wordClass.icon}</span>
-                        <span>{wordClass.label}</span>
-                      </div>
-                      {isConjugatable && (
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setConjugationModalCard(currentCard);
-                          }}
-                          className="px-2.5 py-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-[11px] flex items-center gap-1 shadow-2xs transition-all cursor-pointer select-none active:scale-95"
-                          title="Buka seluruh 14+ bentuk perubahan kata lengkap"
-                        >
-                          <Sparkles className="w-3 h-3 text-indigo-200" />
-                          <span>Perubahan Kata</span>
-                        </button>
-                      )}
-                    </div>
-                    <p className="font-medium text-[11px] opacity-90 leading-relaxed">{wordClass.grammarHint}</p>
-                  </div>
-                );
-              })()}
-
               {/* Pembeda Nuansa Kata (Agar Tidak Bingung Seperti Tanjun vs Jimi) */}
               {(() => {
                 const nuance = getWordNuanceInfo(currentCard);

@@ -646,51 +646,51 @@ export const ConjugationView: React.FC<ConjugationViewProps> = ({ speechRate }) 
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3.5">
                 {selectedProfile.forms.map((form) => (
                   <div
                     key={form.formKey}
                     id={`form-row-${selectedProfile.id}-${form.formKey}`}
-                    className="p-4 rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-indigo-300 hover:shadow-md transition-all space-y-2.5 relative group"
+                    className="p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-indigo-300 hover:shadow-sm transition-all space-y-2 sm:space-y-2.5 relative group"
                   >
                     {/* Header */}
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-xs font-extrabold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-lg border border-indigo-200/80">
+                      <span className="text-[11px] sm:text-xs font-bold text-indigo-700 bg-indigo-50 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md sm:rounded-lg border border-indigo-200/80">
                         {form.formName}
                       </span>
                       <button
                         id={`audio-form-${selectedProfile.id}-${form.formKey}`}
                         onClick={() => handleSpeak(form.japanese, form.reading)}
                         title="Dengar pengucapan bentuk ini"
-                        className="p-2 rounded-xl bg-white hover:bg-indigo-50 text-slate-500 hover:text-indigo-600 transition-colors border border-slate-200 cursor-pointer shadow-2xs"
+                        className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-white hover:bg-indigo-50 text-slate-500 hover:text-indigo-600 transition-colors border border-slate-200 cursor-pointer shadow-2xs"
                       >
-                        <Volume2 className="w-4 h-4" />
+                        <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </button>
                     </div>
 
                     {/* Form Word Display with highlighted suffix */}
                     <div>
-                      <div className="text-xl font-bold font-jp">
+                      <div className="text-base sm:text-xl font-bold font-jp leading-tight">
                         {renderWordWithColor(form.japanese, selectedProfile)}
                       </div>
-                      <div className="text-xs text-slate-500 italic mt-0.5">
+                      <div className="text-[11px] sm:text-xs text-slate-500 italic mt-0.5">
                         {form.reading}
                       </div>
-                      <div className="text-xs text-slate-700 font-semibold mt-1">
+                      <div className="text-[11px] sm:text-xs text-slate-700 font-semibold mt-1">
                         Makna: <span className="text-slate-900 font-bold">{form.meaningId}</span>
                       </div>
                     </div>
 
                     {/* Rule explanation */}
                     {form.ruleExplanation && (
-                      <div className="text-[11px] text-slate-600 bg-white p-2.5 rounded-xl border border-slate-200/70 space-y-0.5">
-                        <strong className="text-indigo-900 font-bold">Rumus Perubahan:</strong> {form.ruleExplanation}
+                      <div className="text-[10px] sm:text-[11px] text-slate-600 bg-white p-2 sm:p-2.5 rounded-lg sm:rounded-xl border border-slate-200/70 space-y-0.5">
+                        <strong className="text-indigo-900 font-bold">Rumus:</strong> {form.ruleExplanation}
                       </div>
                     )}
 
                     {/* Example Sentence */}
-                    <div className="bg-white p-3 rounded-xl border border-slate-200/90 flex items-start justify-between gap-2 shadow-2xs">
-                      <div className="space-y-1 text-left text-xs min-w-0">
+                    <div className="bg-white p-2.5 sm:p-3 rounded-lg sm:rounded-xl border border-slate-200/90 flex items-start justify-between gap-2 shadow-2xs">
+                      <div className="space-y-0.5 sm:space-y-1 text-left text-[11px] sm:text-xs min-w-0">
                         <div className="font-bold text-slate-900 font-jp leading-relaxed">
                           {form.exampleJp}
                         </div>
@@ -701,9 +701,9 @@ export const ConjugationView: React.FC<ConjugationViewProps> = ({ speechRate }) 
                       <button
                         onClick={() => handleSpeak(form.exampleJp)}
                         title="Dengar audio contoh kalimat"
-                        className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-indigo-600 transition-colors shrink-0 cursor-pointer mt-0.5"
+                        className="p-1 sm:p-1.5 rounded-lg hover:bg-slate-100 text-slate-400 hover:text-indigo-600 transition-colors shrink-0 cursor-pointer mt-0.5"
                       >
-                        <Volume2 className="w-3.5 h-3.5" />
+                        <Volume2 className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                       </button>
                     </div>
                   </div>

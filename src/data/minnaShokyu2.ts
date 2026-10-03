@@ -4674,12 +4674,13 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "いも",
         "reading": "imo",
-        "id": "Lemak"
+        "id": "Umbi-umbian / Ubi",
+        "kanji": "芋"
       },
       {
         "jp": "しぼう (脂肪)",
         "reading": "shibou",
-        "id": "Umbi-umbian",
+        "id": "Lemak",
         "kanji": "脂肪"
       },
       {
