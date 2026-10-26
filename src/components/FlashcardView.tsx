@@ -20,6 +20,7 @@ import { soundManager } from '../utils/audio';
 import { KanjiStrokeOrderViewer } from './KanjiStrokeOrderViewer';
 import { WordConjugationModal } from './WordConjugationModal';
 import { WordDetailModal } from './WordDetailModal';
+import { WordCharacteristicTable } from './WordCharacteristicTable';
 import { getWordClassification } from '../utils/wordClassifier';
 import { getWordNuanceInfo } from '../utils/wordNuances';
 import { getClarifiedMeaning, getFullDictionaryDetail } from '../utils/meaningClarifier';
@@ -872,19 +873,19 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
       </div>
 
       {/* 3D FLASHCARD CONTAINER - Optimized for Mobile (HP) & PC */}
-      <div className="w-full min-h-[380px] h-[390px] sm:h-[430px] md:h-[460px] perspective-1000 select-none mb-3 sm:mb-5">
-        <motion.div
+      <div className="w-full min-h-[380px] h-[390px] sm:h-[430px] md:h-[460px] flashcard-perspective select-none mb-3 sm:mb-5">
+        <div
           id="flashcard-element"
           onClick={handleCardClick}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
-          className="relative w-full h-full cursor-pointer transform-style-3d duration-500 rounded-3xl shadow-lg border border-slate-200/90 dark:border-slate-800"
-          animate={{ rotateY: isFlipped ? 180 : 0 }}
-          transition={{ duration: 0.45, ease: 'easeOut' }}
+          className={`flashcard-flipper relative w-full h-full cursor-pointer rounded-3xl shadow-lg border border-slate-200/90 dark:border-slate-800 ${
+            isFlipped ? 'is-flipped' : ''
+          }`}
         >
           {/* FRONT OF CARD */}
           <div
-            className={`absolute inset-0 w-full h-full rounded-3xl p-4 sm:p-7 flex flex-col justify-between backface-hidden bg-gradient-to-b from-white to-[#fffaf8] dark:from-slate-900 dark:to-slate-950 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-lg ${
+            className={`flashcard-face flashcard-front absolute inset-0 w-full h-full rounded-3xl p-4 sm:p-7 flex flex-col justify-between backface-hidden bg-gradient-to-b from-white to-[#fffaf8] dark:from-slate-900 dark:to-slate-950 dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-lg ${
               isFlipped ? 'pointer-events-none' : ''
             }`}
           >
@@ -924,51 +925,51 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
             </div>
 
             {/* Center: Main Character / Word */}
-            <div className="flex flex-col items-center justify-center my-auto text-center px-2 sm:px-4 flex-1 min-h-0">
+            <div className="flex flex-col items-center justify-center my-auto text-center px-3 sm:px-6 flex-1 min-h-0">
               <motion.div
                 key={currentCard.id}
-                initial={{ scale: 0.85, opacity: 0 }}
+                initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 className={`font-jp font-black text-slate-900 dark:text-white tracking-normal drop-shadow-xs max-w-full break-words leading-tight ${
                   currentCard.japanese.length <= 2
-                    ? 'text-5xl sm:text-7xl lg:text-8xl'
+                    ? 'text-4xl sm:text-6xl md:text-7xl'
                     : currentCard.japanese.length <= 4
-                    ? 'text-4xl sm:text-5xl lg:text-6xl'
+                    ? 'text-3xl sm:text-4xl md:text-5xl'
                     : currentCard.japanese.length <= 8
-                    ? 'text-2xl sm:text-3xl lg:text-4xl'
+                    ? 'text-2xl sm:text-3xl md:text-4xl'
                     : currentCard.japanese.length <= 15
-                    ? 'text-xl sm:text-2xl lg:text-3xl'
-                    : currentCard.japanese.length <= 25
-                    ? 'text-lg sm:text-xl lg:text-2xl'
-                    : 'text-base sm:text-lg lg:text-xl'
+                    ? 'text-xl sm:text-2xl md:text-3xl'
+                    : 'text-lg sm:text-xl md:text-2xl'
                 }`}
               >
                 {currentCard.japanese}
               </motion.div>
 
-              {currentCard.furigana &&
-                currentCard.furigana !== currentCard.japanese &&
-                currentCard.furigana !== currentCard.reading &&
-                /[\u4E00-\u9FAF]/.test(currentCard.japanese) && (
-                <p className="mt-2 text-sm sm:text-base font-semibold text-rose-600 dark:text-rose-400 font-jp">
-                  {currentCard.furigana}
-                </p>
-              )}
+              {/* Pendamping Hiragana & Kanji (Hanya Hiragana & Kanji, Tanpa Romaji) */}
+              {(() => {
+                const kanji = currentCard.kanji?.trim() || '';
+                const jp = currentCard.japanese?.trim() || '';
+                const furi = currentCard.furigana?.trim() || '';
 
-              {(currentCard.strokes || currentCard.category === 'kanji') && (
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setStrokeModalCard(currentCard);
-                  }}
-                  className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-rose-50 dark:bg-slate-800 text-rose-700 dark:text-rose-300 border border-rose-200/80 dark:border-slate-700 hover:bg-rose-100 dark:hover:bg-slate-700 cursor-pointer transition-all active:scale-95 shadow-2xs select-none"
-                  title="Lihat urutan goresan & langkah tulis (Hitsujun)"
-                >
-                  <PenTool className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />
-                  <span>{currentCard.strokes ? `${currentCard.strokes} Goresan` : 'Langkah Tulis'} &bull; 筆順</span>
-                </button>
-              )}
+                let companion = '';
+                // 1. Jika kata utama berupa kana (misal "あに") dan memiliki kanji (misal "兄")
+                if (kanji && kanji !== jp && !/[\u4E00-\u9FAF]/.test(jp)) {
+                  companion = `(${kanji})`;
+                } else if (/[\u4E00-\u9FAF]/.test(jp) && furi && furi !== jp) {
+                  // 2. Jika kata utama berupa kanji (misal "兄" atau "明るい") dan memiliki bacaan hiragana (misal "あに", "あかるい")
+                  companion = `(${furi})`;
+                }
+
+                if (!companion) return null;
+
+                return (
+                  <div className="mt-2.5 sm:mt-3.5 flex items-center justify-center">
+                    <span className="text-xl sm:text-2xl md:text-3xl font-extrabold font-jp text-rose-600 dark:text-rose-400 bg-rose-50/90 dark:bg-rose-950/60 px-4 py-1 sm:py-1.5 rounded-xl border border-rose-200/80 dark:border-rose-900/60 shadow-2xs tracking-wider">
+                      {companion}
+                    </span>
+                  </div>
+                );
+              })()}
             </div>
 
             {/* Bottom Hint */}
@@ -980,7 +981,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
 
           {/* BACK OF CARD */}
           <div
-            className={`absolute inset-0 w-full h-full rounded-3xl p-4 sm:p-7 flex flex-col justify-between backface-hidden rotate-y-180 bg-white dark:bg-slate-900 border-2 border-rose-200/80 dark:border-slate-700 shadow-xl ${
+            className={`flashcard-face flashcard-back absolute inset-0 w-full h-full rounded-3xl p-4 sm:p-7 flex flex-col justify-between backface-hidden bg-white dark:bg-slate-900 border-2 border-rose-200/80 dark:border-slate-700 shadow-xl ${
               !isFlipped ? 'pointer-events-none' : ''
             }`}
           >
@@ -1034,6 +1035,11 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                   }`}
                 >
                   {currentCard.japanese}
+                  {currentCard.kanji && currentCard.kanji !== currentCard.japanese && !currentCard.japanese.includes(currentCard.kanji) && (
+                    <span className="ml-2 text-lg sm:text-xl md:text-2xl text-slate-700 dark:text-slate-300 font-bold font-jp">
+                      ({currentCard.kanji})
+                    </span>
+                  )}
                 </div>
 
                 <div className="flex items-center justify-center gap-1.5 mt-1 flex-wrap">
@@ -1048,142 +1054,10 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                 </div>
               </div>
 
-              {/* Indonesian Meaning - Diperjelas & Bebas Ambiguitas */}
-              {(() => {
-                const clarified = getClarifiedMeaning(currentCard);
-                const dict = getFullDictionaryDetail(currentCard);
-
-                return (
-                  <div className="w-full max-w-md flex flex-col items-center space-y-2">
-                    <div className="flex items-center justify-center gap-1.5 flex-wrap">
-                      <span className="text-[10px] font-bold text-slate-400 dark:text-slate-400 uppercase tracking-wider">
-                        Arti Presisi
-                      </span>
-                      {clarified.contextBadge && (
-                        <span
-                          className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold border shadow-2xs ${
-                            clarified.contextBadge.variant === 'intransitive'
-                              ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800'
-                              : clarified.contextBadge.variant === 'transitive'
-                              ? 'bg-sky-50 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300 border-sky-200 dark:border-sky-800'
-                              : 'bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-800'
-                          }`}
-                        >
-                          {clarified.contextBadge.text}
-                        </span>
-                      )}
-                    </div>
-
-                    <h4
-                      className={`font-extrabold text-slate-900 dark:text-white leading-snug ${
-                        clarified.primaryMeaning.length > 50
-                          ? 'text-base sm:text-lg'
-                          : clarified.primaryMeaning.length > 25
-                          ? 'text-lg sm:text-xl md:text-2xl'
-                          : 'text-2xl sm:text-3xl'
-                      }`}
-                    >
-                      {clarified.primaryMeaning}
-                    </h4>
-
-                    {/* SPOTLIGHT: Kalimat Detail Kamus Resmi */}
-                    <div className="w-full bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-3 text-left shadow-2xs border border-indigo-800/60">
-                      <div className="flex items-center justify-between gap-1 text-[10px] text-indigo-300 font-bold mb-1">
-                        <span className="flex items-center gap-1">
-                          <Sparkles className="w-3 h-3 text-amber-400" />
-                          <span>Penjelasan Detail:</span>
-                        </span>
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setDetailModalCard(currentCard);
-                          }}
-                          className="text-amber-300 hover:text-white font-extrabold hover:underline flex items-center gap-0.5 cursor-pointer"
-                        >
-                          <span>Kamus Lengkap ➜</span>
-                        </button>
-                      </div>
-                      <p className="text-xs sm:text-[13px] font-semibold text-indigo-50 leading-relaxed font-sans">
-                        {dict.fullExplanationSentence}
-                      </p>
-                    </div>
-
-                    {/* Secondary Meanings if any */}
-                    {clarified.secondaryMeanings && clarified.secondaryMeanings.length > 0 && (
-                      <div className="flex items-center gap-1.5 flex-wrap justify-center text-[11px] text-slate-600 dark:text-slate-300">
-                        <span className="text-slate-400 dark:text-slate-400 font-semibold text-[10px]">Makna lain:</span>
-                        {clarified.secondaryMeanings.map((alt, altIdx) => (
-                          <span
-                            key={altIdx}
-                            className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 px-2 py-0.5 rounded-md font-semibold text-[10px] border border-transparent dark:border-slate-700"
-                          >
-                            {alt}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Particle Hint */}
-                    {clarified.particleHint && (
-                      <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-indigo-50/80 dark:bg-indigo-950/60 border border-indigo-100 dark:border-indigo-800 text-indigo-900 dark:text-indigo-200 text-[11px] font-bold">
-                        <span className="text-indigo-500 dark:text-indigo-400 font-mono text-[10px]">Partikel:</span>
-                        <span className="font-jp">{clarified.particleHint}</span>
-                      </div>
-                    )}
-
-                    {/* Anti-Bingung: Pasangan Pembanding / Kontras Langsung */}
-                    {clarified.contrastPair && (
-                      <div className="w-full bg-amber-50/90 dark:bg-amber-950/40 border border-amber-200/90 dark:border-amber-800/60 p-2.5 rounded-xl text-left shadow-2xs">
-                        <div className="flex items-center gap-1.5 text-amber-900 dark:text-amber-300 font-extrabold text-[11px] mb-0.5">
-                          <span>💡 Anti-Bingung: Bedakan dengan</span>
-                          <span className="font-jp font-black text-amber-950 dark:text-amber-100 px-1.5 py-0.5 bg-amber-100/90 dark:bg-amber-900/60 rounded border border-amber-200 dark:border-amber-700">
-                            {clarified.contrastPair.word} ({clarified.contrastPair.reading})
-                          </span>
-                        </div>
-                        <p className="text-[11px] text-amber-900 dark:text-amber-200 font-medium leading-relaxed">
-                          {clarified.contrastPair.difference}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                );
-              })()}
-
-              {/* Pembeda Nuansa Kata (Agar Tidak Bingung Seperti Tanjun vs Jimi) */}
-              {(() => {
-                const nuance = getWordNuanceInfo(currentCard);
-                if (!nuance) return null;
-                return (
-                  <div className="w-full max-w-md bg-amber-50/90 dark:bg-amber-950/40 border border-amber-200/90 dark:border-amber-800/60 p-3 rounded-2xl text-left shadow-2xs">
-                    <div className="flex items-center gap-1.5 text-amber-900 dark:text-amber-300 font-extrabold text-xs mb-1">
-                      <Lightbulb className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-                      <span>Pembeda Nuansa: {nuance.japanese} (語彙の使い分け)</span>
-                    </div>
-                    <p className="text-xs font-semibold text-amber-950 dark:text-amber-200 leading-relaxed mb-1.5">
-                      {nuance.nuanceExplanation}
-                    </p>
-                    <div className="bg-white/85 dark:bg-slate-900/90 rounded-xl p-2 border border-amber-200/60 dark:border-amber-800/60 text-[11px] space-y-1">
-                      <div className="text-slate-700 dark:text-slate-200">
-                        <strong className="text-amber-900 dark:text-amber-300">Konteks Pemakaian:</strong> {nuance.contextUsage}
-                      </div>
-                      {nuance.contrastedWith && nuance.contrastedWith.length > 0 && (
-                        <div className="pt-1 border-t border-amber-100 dark:border-slate-800">
-                          <span className="text-[10px] font-extrabold uppercase text-slate-400 dark:text-slate-400 block mb-0.5">
-                            Bandingkan dengan:
-                          </span>
-                          {nuance.contrastedWith.map((c, cIdx) => (
-                            <div key={cIdx} className="text-slate-700 dark:text-slate-200 flex items-start gap-1">
-                              <span className="font-jp font-bold text-amber-800 dark:text-amber-400 shrink-0">• {c.kanji} ({c.reading}):</span>
-                              <span>{c.nuance}</span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                );
-              })()}
+              {/* Indonesian Meaning & Characteristic Table persis gambar referensi user */}
+              <div className="w-full max-w-md flex flex-col items-center">
+                <WordCharacteristicTable card={currentCard} />
+              </div>
 
               {/* Onyomi & Kunyomi with Audio if Kanji */}
               {(currentCard.onyomi || currentCard.kunyomi) && (
@@ -1249,21 +1123,6 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
                   </div>
                 </div>
               )}
-
-              {/* Grammar / Usage Notes */}
-              {currentCard.notes && (
-                <div className="w-full max-w-md bg-indigo-50/80 dark:bg-indigo-950/40 border border-indigo-200/80 dark:border-indigo-800/60 p-2.5 rounded-xl text-left flex items-start gap-2">
-                  <BookOpen className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" />
-                  <div className="flex-1">
-                    <span className="text-[10px] font-extrabold text-indigo-700 dark:text-indigo-400 uppercase tracking-wide block">
-                      Catatan Tata Bahasa / Penggunaan
-                    </span>
-                    <p className="text-xs text-indigo-950 dark:text-indigo-200 leading-relaxed font-medium mt-0.5">
-                      {currentCard.notes}
-                    </p>
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* Bottom Hint */}
@@ -1272,7 +1131,7 @@ export const FlashcardView: React.FC<FlashcardViewProps> = ({
               <span>Ketuk untuk kembali ke sisi depan</span>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* FLASHCARD CONTROLS: PREV, FLIP, NEXT */}

@@ -1,0 +1,2033 @@
+{
+  "kata_sifat_na": [
+    {
+      "no": 1,
+      "meaning": "Cantik / Bersih",
+      "kana": "きれい（な）",
+      "kanji": "綺麗（な）",
+      "reading": "kirei (na)"
+    },
+    {
+      "no": 2,
+      "meaning": "Tampan",
+      "kana": "ハンサム（な）",
+      "kanji": "ハンサム（な）",
+      "reading": "hansamu (na)"
+    },
+    {
+      "no": 3,
+      "meaning": "Baik Hati",
+      "kana": "しんせつ（な）",
+      "kanji": "親切（な）",
+      "reading": "shinsetsu (na)"
+    },
+    {
+      "no": 4,
+      "meaning": "Sehat",
+      "kana": "げんき（な）",
+      "kanji": "元気（な）",
+      "reading": "genki (na)"
+    },
+    {
+      "no": 5,
+      "meaning": "Terkenal",
+      "kana": "ゆうめい（な）",
+      "kanji": "有名（な）",
+      "reading": "yuumei (na)"
+    },
+    {
+      "no": 6,
+      "meaning": "Ramai",
+      "kana": "にぎやか（な）",
+      "kanji": "賑やか（な）",
+      "reading": "nigiyaka (na)"
+    },
+    {
+      "no": 7,
+      "meaning": "Sepi, Tenang",
+      "kana": "しずか（な）",
+      "kanji": "静か（な）",
+      "reading": "shizuka (na)"
+    },
+    {
+      "no": 8,
+      "meaning": "Mudah, Sederhana",
+      "kana": "かんたん（な）",
+      "kanji": "簡単（な）",
+      "reading": "kantan (na)"
+    },
+    {
+      "no": 9,
+      "meaning": "Rumit",
+      "kana": "ふくざつ（な）",
+      "kanji": "複雑（な）",
+      "reading": "fukuzatsu (na)"
+    },
+    {
+      "no": 10,
+      "meaning": "Suka",
+      "kana": "すき（な）",
+      "kanji": "好き（な）",
+      "reading": "suki (na)"
+    },
+    {
+      "no": 11,
+      "meaning": "Benci",
+      "kana": "きらい（な）",
+      "kanji": "嫌い（な）",
+      "reading": "kirai (na)"
+    },
+    {
+      "no": 12,
+      "meaning": "Sangat Suka",
+      "kana": "だいすき（な）",
+      "kanji": "大好き（な）",
+      "reading": "daisuki (na)"
+    },
+    {
+      "no": 13,
+      "meaning": "Sangat Benci",
+      "kana": "だいきらい（な）",
+      "kanji": "大嫌い（な）",
+      "reading": "daikirai (na)"
+    },
+    {
+      "no": 14,
+      "meaning": "Pandai",
+      "kana": "じょうず（な）",
+      "kanji": "上手（な）",
+      "reading": "jouzu (na)"
+    },
+    {
+      "no": 15,
+      "meaning": "Bodoh / Kurang Pandai",
+      "kana": "へた（な）",
+      "kanji": "下手（な）",
+      "reading": "heta (na)"
+    },
+    {
+      "no": 16,
+      "meaning": "Senggang",
+      "kana": "ひま（な）",
+      "kanji": "暇（な）",
+      "reading": "hima (na)"
+    },
+    {
+      "no": 17,
+      "meaning": "Penting",
+      "kana": "たいせつ（な）",
+      "kanji": "大切（な）",
+      "reading": "taisetsu (na)"
+    },
+    {
+      "no": 18,
+      "meaning": "Praktis",
+      "kana": "べんり（な）",
+      "kanji": "便利（な）",
+      "reading": "benri (na)"
+    },
+    {
+      "no": 19,
+      "meaning": "Tidak Praktis",
+      "kana": "ふべん（な）",
+      "kanji": "不便（な）",
+      "reading": "fuben (na)"
+    },
+    {
+      "no": 20,
+      "meaning": "Menyayangkan",
+      "kana": "ざんねん（な）",
+      "kanji": "残念（な）",
+      "reading": "zannen (na)"
+    },
+    {
+      "no": 21,
+      "meaning": "Cemas, Depresi",
+      "kana": "ふあん（な）",
+      "kanji": "不安（な）",
+      "reading": "fuan (na)"
+    },
+    {
+      "no": 22,
+      "meaning": "Bermacam-macam",
+      "kana": "いろいろ（な）",
+      "kanji": "色々（な）",
+      "reading": "iroiro (na)"
+    },
+    {
+      "no": 23,
+      "meaning": "Bahagia",
+      "kana": "しあわせ（な）",
+      "kanji": "幸せ（な）",
+      "reading": "shiawase (na)"
+    },
+    {
+      "no": 24,
+      "meaning": "Bagus, Mempesona",
+      "kana": "すてき（な）",
+      "kanji": "素敵（な）",
+      "reading": "suteki (na)"
+    },
+    {
+      "no": 25,
+      "meaning": "Hal Terpenting",
+      "kana": "だいじ（な）",
+      "kanji": "大事（な）",
+      "reading": "daiji (na)"
+    },
+    {
+      "no": 26,
+      "meaning": "Tidak Boleh",
+      "kana": "だめ（な）",
+      "kanji": "駄目（な）",
+      "reading": "dame (na)"
+    },
+    {
+      "no": 27,
+      "meaning": "Error, Aneh",
+      "kana": "へん（な）",
+      "kanji": "変（な）",
+      "reading": "hen (na)"
+    },
+    {
+      "no": 28,
+      "meaning": "Sia-Sia",
+      "kana": "むだ（な）",
+      "kanji": "無駄（な）",
+      "reading": "muda (na)"
+    },
+    {
+      "no": 29,
+      "meaning": "Tiba-Tiba",
+      "kana": "きゅう（な）",
+      "kanji": "急（な）",
+      "reading": "kyuu (na)"
+    },
+    {
+      "no": 30,
+      "meaning": "Kasihan",
+      "kana": "かわいそう（な）",
+      "kanji": "可哀相（な）",
+      "reading": "kawaisou (na)"
+    },
+    {
+      "no": 31,
+      "meaning": "Tidak begitu suka / Lemah",
+      "kana": "にがて（な）",
+      "kanji": "苦手（な）",
+      "reading": "nigate (na)"
+    },
+    {
+      "no": 32,
+      "meaning": "Kesusahan, Berat",
+      "kana": "たいへん（な）",
+      "kanji": "大変（な）",
+      "reading": "taihen (na)"
+    },
+    {
+      "no": 33,
+      "meaning": "Enteng, Mudah",
+      "kana": "らく（な）",
+      "kanji": "楽（な）",
+      "reading": "raku (na)"
+    },
+    {
+      "no": 34,
+      "meaning": "Tidak Bisa / Mustahil",
+      "kana": "むり（な）",
+      "kanji": "無理（な）",
+      "reading": "muri (na)"
+    },
+    {
+      "no": 35,
+      "meaning": "Serius, Rajin",
+      "kana": "まじめ（な）",
+      "kanji": "真面目（な）",
+      "reading": "majime (na)"
+    },
+    {
+      "no": 36,
+      "meaning": "Tidak Serius, Tidak Rajin",
+      "kana": "ふまじめ（な）",
+      "kanji": "不真面目（な）",
+      "reading": "fumajime (na)"
+    },
+    {
+      "no": 37,
+      "meaning": "Mengganggu",
+      "kana": "じゃま（な）",
+      "kanji": "邪魔（な）",
+      "reading": "jama (na)"
+    },
+    {
+      "no": 38,
+      "meaning": "Cukup",
+      "kana": "じゅうぶん（な）",
+      "kanji": "十分（な）",
+      "reading": "juubun (na)"
+    },
+    {
+      "no": 39,
+      "meaning": "Spesial, Khusus",
+      "kana": "とくべつ（な）",
+      "kanji": "特別（な）",
+      "reading": "tokubetsu (na)"
+    },
+    {
+      "no": 40,
+      "meaning": "Bebas",
+      "kana": "じゆう（な）",
+      "kanji": "自由（な）",
+      "reading": "jiyuu (na)"
+    },
+    {
+      "no": 41,
+      "meaning": "Masing-Masing / Terpisah",
+      "kana": "べつ（な）",
+      "kanji": "別（な）",
+      "reading": "betsu (na)"
+    },
+    {
+      "no": 42,
+      "meaning": "Ajaib",
+      "kana": "ふしぎ（な）",
+      "kanji": "不思議（な）",
+      "reading": "fushigi (na)"
+    },
+    {
+      "no": 43,
+      "meaning": "Sama",
+      "kana": "おなじ（な）",
+      "kanji": "同じ（な）",
+      "reading": "onaji (na)"
+    },
+    {
+      "no": 44,
+      "meaning": "Tidak apa-apa",
+      "kana": "だいじょうぶ（な）",
+      "kanji": "大丈夫（な）",
+      "reading": "daijoubu (na)"
+    },
+    {
+      "no": 45,
+      "meaning": "Egois",
+      "kana": "わがまま（な）",
+      "kanji": "我が儘（な）",
+      "reading": "wagamama (na)"
+    },
+    {
+      "no": 46,
+      "meaning": "Tua / Lebih berumur",
+      "kana": "としうえ",
+      "kanji": "年上",
+      "reading": "toshiue"
+    },
+    {
+      "no": 47,
+      "meaning": "Hijau",
+      "kana": "みどり",
+      "kanji": "緑",
+      "reading": "midori"
+    },
+    {
+      "no": 48,
+      "meaning": "Khawatir",
+      "kana": "しんぱい（な）",
+      "kanji": "心配（な）",
+      "reading": "shinpai (na)"
+    },
+    {
+      "no": 49,
+      "meaning": "Megah, Mewah",
+      "kana": "りっぱ（な）",
+      "kanji": "立派（な）",
+      "reading": "rippa (na)"
+    },
+    {
+      "no": 50,
+      "meaning": "Sombong",
+      "kana": "なまいき（な）",
+      "kanji": "生意気（な）",
+      "reading": "namaiki (na)"
+    },
+    {
+      "no": 51,
+      "meaning": "Keren, Modis",
+      "kana": "おしゃれ（な）",
+      "kanji": "お洒落（な）",
+      "reading": "oshare (na)"
+    },
+    {
+      "no": 52,
+      "meaning": "Biasa saja / Kurang memuaskan",
+      "kana": "いまいち（な）",
+      "kanji": "今一つ（な）",
+      "reading": "imaichi (na)"
+    },
+    {
+      "no": 53,
+      "meaning": "Tengah-tengah (sedang-sedang)",
+      "kana": "まあまあ（な）",
+      "kanji": "まあまあ（な）",
+      "reading": "maamaa (na)"
+    },
+    {
+      "no": 54,
+      "meaning": "Masuk akal / Terjangkau",
+      "kana": "リーズナブル（な）",
+      "kanji": "リーズナブル（な）",
+      "reading": "riizunaburu (na)"
+    },
+    {
+      "no": 55,
+      "meaning": "Kaya (alam) / Makmur",
+      "kana": "ゆたか（な）",
+      "kanji": "豊かな",
+      "reading": "yutaka (na)"
+    },
+    {
+      "no": 56,
+      "meaning": "Segar / Fresh",
+      "kana": "しんせん（な）",
+      "kanji": "新鮮な",
+      "reading": "shinsen (na)"
+    },
+    {
+      "no": 57,
+      "meaning": "Tidak mencolok / Sederhana",
+      "kana": "じみ（な）",
+      "kanji": "地味な",
+      "reading": "jimi (na)"
+    },
+    {
+      "no": 58,
+      "meaning": "Kasual",
+      "kana": "カジュアル（な）",
+      "kanji": "カジュアル（な）",
+      "reading": "kajuaru (na)"
+    },
+    {
+      "no": 59,
+      "meaning": "Mencolok / Mewah gemerlap",
+      "kana": "はで（な）",
+      "kanji": "派手な",
+      "reading": "hade (na)"
+    },
+    {
+      "no": 60,
+      "meaning": "Powerfull",
+      "kana": "パワフル（な）",
+      "kanji": "パワフル（な）",
+      "reading": "pawafuru (na)"
+    },
+    {
+      "no": 61,
+      "meaning": "Simpel",
+      "kana": "シンプル（な）",
+      "kanji": "シンプル（な）",
+      "reading": "shinpuru (na)"
+    },
+    {
+      "no": 62,
+      "meaning": "Berbagai macam",
+      "kana": "さまざま（な）",
+      "kanji": "様々（な）",
+      "reading": "samazama (na)"
+    },
+    {
+      "no": 63,
+      "meaning": "Aman",
+      "kana": "あんぜん（な）",
+      "kanji": "安全な",
+      "reading": "anzen (na)"
+    },
+    {
+      "no": 64,
+      "meaning": "Perlu",
+      "kana": "ひつよう（な）",
+      "kanji": "必要な",
+      "reading": "hitsuyou (na)"
+    }
+  ],
+  "kata_sifat_i": [
+    {
+      "no": 1,
+      "meaning": "Cantik, Imut",
+      "kana": "かわいい",
+      "kanji": "可愛い",
+      "reading": "kawaii"
+    },
+    {
+      "no": 2,
+      "meaning": "Keren, Tampan",
+      "kana": "かっこいい",
+      "kanji": "格好いい",
+      "reading": "kakkoii"
+    },
+    {
+      "no": 3,
+      "meaning": "Baik Hati, Ramah",
+      "kana": "やさしい",
+      "kanji": "優しい",
+      "reading": "yasashii"
+    },
+    {
+      "no": 4,
+      "meaning": "Jahat / Kejam",
+      "kana": "ひどい",
+      "kanji": "酷い",
+      "reading": "hidoi"
+    },
+    {
+      "no": 5,
+      "meaning": "Perasaan Jahat / Tega",
+      "kana": "いじわるい",
+      "kanji": "意地悪い",
+      "reading": "ijiwarui"
+    },
+    {
+      "no": 6,
+      "meaning": "Kuat",
+      "kana": "つよい",
+      "kanji": "強い",
+      "reading": "tsuyoi"
+    },
+    {
+      "no": 7,
+      "meaning": "Lemah",
+      "kana": "よわい",
+      "kanji": "弱い",
+      "reading": "yowai"
+    },
+    {
+      "no": 8,
+      "meaning": "Senang, Menyenangkan",
+      "kana": "たのしい",
+      "kanji": "楽しい",
+      "reading": "tanoshii"
+    },
+    {
+      "no": 9,
+      "meaning": "Besar",
+      "kana": "おおきい",
+      "kanji": "大きい",
+      "reading": "ookii"
+    },
+    {
+      "no": 10,
+      "meaning": "Kecil",
+      "kana": "ちいさい",
+      "kanji": "小さい",
+      "reading": "chiisai"
+    },
+    {
+      "no": 11,
+      "meaning": "Baru",
+      "kana": "あたらしい",
+      "kanji": "新しい",
+      "reading": "atarashii"
+    },
+    {
+      "no": 12,
+      "meaning": "Lama, Tua",
+      "kana": "ふるい",
+      "kanji": "古い",
+      "reading": "furui"
+    },
+    {
+      "no": 13,
+      "meaning": "Bagus, Baik, Boleh",
+      "kana": "いい",
+      "kanji": "良い",
+      "reading": "ii / yoi"
+    },
+    {
+      "no": 14,
+      "meaning": "Buruk, Jelek",
+      "kana": "わるい",
+      "kanji": "悪い",
+      "reading": "warui"
+    },
+    {
+      "no": 15,
+      "meaning": "Panas (Suhu Cuaca)",
+      "kana": "あつい",
+      "kanji": "暑い",
+      "reading": "atsui"
+    },
+    {
+      "no": 16,
+      "meaning": "Dingin (Suhu Cuaca)",
+      "kana": "さむい",
+      "kanji": "寒い",
+      "reading": "samui"
+    },
+    {
+      "no": 17,
+      "meaning": "Panas (Benda/Makanan)",
+      "kana": "あつい",
+      "kanji": "熱い",
+      "reading": "atsui"
+    },
+    {
+      "no": 18,
+      "meaning": "Dingin (Benda/Minuman)",
+      "kana": "つめたい",
+      "kanji": "冷たい",
+      "reading": "tsumetai"
+    },
+    {
+      "no": 19,
+      "meaning": "Susah, Sulit",
+      "kana": "むずかしい",
+      "kanji": "難しい",
+      "reading": "muzukashii"
+    },
+    {
+      "no": 20,
+      "meaning": "Tinggi",
+      "kana": "たかい",
+      "kanji": "高い",
+      "reading": "takai"
+    },
+    {
+      "no": 21,
+      "meaning": "Rendah",
+      "kana": "ひくい",
+      "kanji": "低い",
+      "reading": "hikui"
+    },
+    {
+      "no": 22,
+      "meaning": "Mahal",
+      "kana": "たかい",
+      "kanji": "高い",
+      "reading": "takai"
+    },
+    {
+      "no": 23,
+      "meaning": "Murah",
+      "kana": "やすい",
+      "kanji": "安い",
+      "reading": "yasui"
+    },
+    {
+      "no": 24,
+      "meaning": "Tinggi (Badan)",
+      "kana": "せがたかい",
+      "kanji": "背が高い",
+      "reading": "se ga takai"
+    },
+    {
+      "no": 25,
+      "meaning": "Pendek (Badan)",
+      "kana": "せがひくい",
+      "kanji": "背が低い",
+      "reading": "se ga hikui"
+    },
+    {
+      "no": 26,
+      "meaning": "Lucu, Menarik",
+      "kana": "おもしろい",
+      "kanji": "面白い",
+      "reading": "omoshiroi"
+    },
+    {
+      "no": 27,
+      "meaning": "Membosankan",
+      "kana": "つまらない",
+      "kanji": "詰まらない",
+      "reading": "tsumaranai"
+    },
+    {
+      "no": 28,
+      "meaning": "Enak, Lezat",
+      "kana": "おいしい",
+      "kanji": "美味しい",
+      "reading": "oishii"
+    },
+    {
+      "no": 29,
+      "meaning": "Enak, Pandai",
+      "kana": "うまい",
+      "kanji": "旨い / 上手い",
+      "reading": "umai"
+    },
+    {
+      "no": 30,
+      "meaning": "Tidak Enak",
+      "kana": "まずい",
+      "kanji": "不味い",
+      "reading": "mazui"
+    },
+    {
+      "no": 31,
+      "meaning": "Dekat",
+      "kana": "ちかい",
+      "kanji": "近い",
+      "reading": "chikai"
+    },
+    {
+      "no": 32,
+      "meaning": "Jauh",
+      "kana": "とおい",
+      "kanji": "遠い",
+      "reading": "tooi"
+    },
+    {
+      "no": 33,
+      "meaning": "Cepat (Waktu)",
+      "kana": "はやい",
+      "kanji": "早い",
+      "reading": "hayai"
+    },
+    {
+      "no": 34,
+      "meaning": "Lambat",
+      "kana": "おそい",
+      "kanji": "遅い",
+      "reading": "osoi"
+    },
+    {
+      "no": 35,
+      "meaning": "Banyak (Orang/Benda)",
+      "kana": "おおい",
+      "kanji": "多い",
+      "reading": "ooi"
+    },
+    {
+      "no": 36,
+      "meaning": "Sedikit",
+      "kana": "すくない",
+      "kanji": "少ない",
+      "reading": "sukunai"
+    },
+    {
+      "no": 37,
+      "meaning": "Hangat (Suhu Cuaca)",
+      "kana": "あたたかい",
+      "kanji": "暖かい",
+      "reading": "atatakai"
+    },
+    {
+      "no": 38,
+      "meaning": "Sejuk",
+      "kana": "すずしい",
+      "kanji": "涼しい",
+      "reading": "suzushii"
+    },
+    {
+      "no": 39,
+      "meaning": "Panjang",
+      "kana": "ながい",
+      "kanji": "長い",
+      "reading": "nagai"
+    },
+    {
+      "no": 40,
+      "meaning": "Pendek",
+      "kana": "みじかい",
+      "kanji": "短い",
+      "reading": "mijikai"
+    },
+    {
+      "no": 41,
+      "meaning": "Berat",
+      "kana": "おもい",
+      "kanji": "重い",
+      "reading": "omoi"
+    },
+    {
+      "no": 42,
+      "meaning": "Ringan",
+      "kana": "かるい",
+      "kanji": "軽い",
+      "reading": "karui"
+    },
+    {
+      "no": 43,
+      "meaning": "Manis",
+      "kana": "あまい",
+      "kanji": "甘い",
+      "reading": "amai"
+    },
+    {
+      "no": 44,
+      "meaning": "Pedas",
+      "kana": "からい",
+      "kanji": "辛い",
+      "reading": "karai"
+    },
+    {
+      "no": 45,
+      "meaning": "Sibuk",
+      "kana": "いそがしい",
+      "kanji": "忙しい",
+      "reading": "isogashii"
+    },
+    {
+      "no": 46,
+      "meaning": "Muda",
+      "kana": "わかい",
+      "kanji": "若い",
+      "reading": "wakai"
+    },
+    {
+      "no": 47,
+      "meaning": "Ingin",
+      "kana": "ほしい",
+      "kanji": "欲しい",
+      "reading": "hoshii"
+    },
+    {
+      "no": 48,
+      "meaning": "Terang, Riang",
+      "kana": "あかるい",
+      "kanji": "明るい",
+      "reading": "akarui"
+    },
+    {
+      "no": 49,
+      "meaning": "Gelap, Suram",
+      "kana": "くらい",
+      "kanji": "暗い",
+      "reading": "kurai"
+    },
+    {
+      "no": 50,
+      "meaning": "Luas",
+      "kana": "ひろい",
+      "kanji": "広い",
+      "reading": "hiroi"
+    },
+    {
+      "no": 51,
+      "meaning": "Sempit",
+      "kana": "せまい",
+      "kanji": "狭い",
+      "reading": "semai"
+    },
+    {
+      "no": 52,
+      "meaning": "Bahaya",
+      "kana": "あぶない",
+      "kanji": "危ない",
+      "reading": "abunai"
+    },
+    {
+      "no": 53,
+      "meaning": "Bahaya / Gawat (Slang)",
+      "kana": "やばい",
+      "kanji": "危ない",
+      "reading": "yabai"
+    },
+    {
+      "no": 54,
+      "meaning": "Senang, Gembira",
+      "kana": "うれしい",
+      "kanji": "嬉しい",
+      "reading": "ureshii"
+    },
+    {
+      "no": 55,
+      "meaning": "Sedih",
+      "kana": "かなしい",
+      "kanji": "悲しい",
+      "reading": "kanashii"
+    },
+    {
+      "no": 56,
+      "meaning": "Kesepian",
+      "kana": "さびしい",
+      "kanji": "寂しい",
+      "reading": "sabishii"
+    },
+    {
+      "no": 57,
+      "meaning": "Ngantuk",
+      "kana": "ねむい",
+      "kanji": "眠い",
+      "reading": "nemui"
+    },
+    {
+      "no": 58,
+      "meaning": "Gemuk, Tebal",
+      "kana": "ふとい",
+      "kanji": "太い",
+      "reading": "futoi"
+    },
+    {
+      "no": 59,
+      "meaning": "Kurus, Ramping",
+      "kana": "ほそい",
+      "kanji": "細い",
+      "reading": "hosoi"
+    },
+    {
+      "no": 60,
+      "meaning": "Tebal",
+      "kana": "あつい",
+      "kanji": "厚い",
+      "reading": "atsui"
+    },
+    {
+      "no": 61,
+      "meaning": "Tipis",
+      "kana": "うすい",
+      "kanji": "薄い",
+      "reading": "usui"
+    },
+    {
+      "no": 62,
+      "meaning": "Keras",
+      "kana": "かたい",
+      "kanji": "硬い",
+      "reading": "katai"
+    },
+    {
+      "no": 63,
+      "meaning": "Lunak, Empuk",
+      "kana": "やわらかい",
+      "kanji": "柔らかい",
+      "reading": "yawarakai"
+    },
+    {
+      "no": 64,
+      "meaning": "Uang Receh / Kecil / Rinci",
+      "kana": "こまかい",
+      "kanji": "細かい",
+      "reading": "komakai"
+    },
+    {
+      "no": 65,
+      "meaning": "Kasar",
+      "kana": "あらい",
+      "kanji": "粗い",
+      "reading": "arai"
+    },
+    {
+      "no": 66,
+      "meaning": "Kurang Panas (Hangat Kuku)",
+      "kana": "ぬるい",
+      "kanji": "温い",
+      "reading": "nurui"
+    },
+    {
+      "no": 67,
+      "meaning": "Asam",
+      "kana": "すっぱい",
+      "kanji": "酸っぱい",
+      "reading": "suppai"
+    },
+    {
+      "no": 68,
+      "meaning": "Asin",
+      "kana": "しおからい",
+      "kanji": "塩辛い",
+      "reading": "shiokarai"
+    },
+    {
+      "no": 69,
+      "meaning": "Pahit",
+      "kana": "にがい",
+      "kanji": "苦い",
+      "reading": "nigai"
+    },
+    {
+      "no": 70,
+      "meaning": "Pekat / Kental",
+      "kana": "こい",
+      "kanji": "濃い",
+      "reading": "koi"
+    },
+    {
+      "no": 71,
+      "meaning": "Encer / Tipis",
+      "kana": "うすい",
+      "kanji": "薄い",
+      "reading": "usui"
+    },
+    {
+      "no": 72,
+      "meaning": "Detail, Terperinci",
+      "kana": "くわしい",
+      "kanji": "詳しい",
+      "reading": "kuwashii"
+    },
+    {
+      "no": 73,
+      "meaning": "Langka, Aneh",
+      "kana": "めずらしい",
+      "kanji": "珍しい",
+      "reading": "mezurashii"
+    },
+    {
+      "no": 74,
+      "meaning": "Aneh, Lucu",
+      "kana": "おかしい",
+      "kanji": "可笑しい",
+      "reading": "okashii"
+    },
+    {
+      "no": 75,
+      "meaning": "Berisik",
+      "kana": "うるさい",
+      "kanji": "煩い",
+      "reading": "urusai"
+    },
+    {
+      "no": 76,
+      "meaning": "Hebat, Luar Biasa",
+      "kana": "すごい",
+      "kanji": "凄い",
+      "reading": "sugoi"
+    },
+    {
+      "no": 77,
+      "meaning": "Hebat, Luar Biasa",
+      "kana": "すばらしい",
+      "kanji": "素晴らしい",
+      "reading": "subarashii"
+    },
+    {
+      "no": 78,
+      "meaning": "Betul, Benar",
+      "kana": "ただしい",
+      "kanji": "正しい",
+      "reading": "tadashii"
+    },
+    {
+      "no": 79,
+      "meaning": "Ketat, Disiplin, Galak",
+      "kana": "きびしい",
+      "kanji": "厳しい",
+      "reading": "kibishii"
+    },
+    {
+      "no": 80,
+      "meaning": "Cantik, Indah",
+      "kana": "うつくしい",
+      "kanji": "美しい",
+      "reading": "utsukushii"
+    },
+    {
+      "no": 81,
+      "meaning": "Akrab, Rukun",
+      "kana": "なかがいい",
+      "kanji": "仲がいい",
+      "reading": "naka ga ii"
+    },
+    {
+      "no": 82,
+      "meaning": "Pendiam, Penurut",
+      "kana": "おとなしい",
+      "kanji": "大人しい",
+      "reading": "otonashii"
+    },
+    {
+      "no": 83,
+      "meaning": "Takut",
+      "kana": "こわい",
+      "kanji": "怖い",
+      "reading": "kowai"
+    },
+    {
+      "no": 84,
+      "meaning": "Malu",
+      "kana": "はずかしい",
+      "kanji": "恥ずかしい",
+      "reading": "hazukashii"
+    },
+    {
+      "no": 85,
+      "meaning": "Iri Hati (Positif)",
+      "kana": "うらやましい",
+      "kanji": "羨ましい",
+      "reading": "urayamashii"
+    },
+    {
+      "no": 86,
+      "meaning": "Sakit (Nyeri)",
+      "kana": "いたい",
+      "kanji": "痛い",
+      "reading": "itai"
+    },
+    {
+      "no": 87,
+      "meaning": "Bulat",
+      "kana": "まるい",
+      "kanji": "丸い",
+      "reading": "marui"
+    },
+    {
+      "no": 88,
+      "meaning": "Kotor",
+      "kana": "きたない",
+      "kanji": "汚い",
+      "reading": "kitanai"
+    },
+    {
+      "no": 89,
+      "meaning": "Putih",
+      "kana": "しろい",
+      "kanji": "白い",
+      "reading": "shiroi"
+    },
+    {
+      "no": 90,
+      "meaning": "Hitam",
+      "kana": "くろい",
+      "kanji": "黒い",
+      "reading": "kuroi"
+    },
+    {
+      "no": 91,
+      "meaning": "Merah",
+      "kana": "あかい",
+      "kanji": "赤い",
+      "reading": "akai"
+    },
+    {
+      "no": 92,
+      "meaning": "Biru",
+      "kana": "あおい",
+      "kanji": "青い",
+      "reading": "aoi"
+    },
+    {
+      "no": 93,
+      "meaning": "Coklat",
+      "kana": "ちゃいろい",
+      "kanji": "茶色い",
+      "reading": "chairoi"
+    },
+    {
+      "no": 94,
+      "meaning": "Kuning",
+      "kana": "きいろい",
+      "kanji": "黄色い",
+      "reading": "kiiroi"
+    },
+    {
+      "no": 95,
+      "meaning": "Orange",
+      "kana": "オレンジ",
+      "kanji": "オレンジ",
+      "reading": "orenji"
+    },
+    {
+      "no": 96,
+      "meaning": "Silver / Perak",
+      "kana": "シルバー",
+      "kanji": "銀色",
+      "reading": "shirubaa"
+    },
+    {
+      "no": 97,
+      "meaning": "Bau Tidak Enak / Busuk",
+      "kana": "くさい",
+      "kanji": "臭い",
+      "reading": "kusai"
+    },
+    {
+      "no": 98,
+      "meaning": "Wangi, Harum",
+      "kana": "いいにおい",
+      "kanji": "良い匂い",
+      "reading": "ii nioi"
+    },
+    {
+      "no": 99,
+      "meaning": "Pintar, Hebat",
+      "kana": "えらい",
+      "kanji": "偉い",
+      "reading": "erai"
+    },
+    {
+      "no": 100,
+      "meaning": "Pedih, Pahit, Berat",
+      "kana": "つらい",
+      "kanji": "辛い",
+      "reading": "tsurai"
+    },
+    {
+      "no": 101,
+      "meaning": "Panas Lembab / Gerah",
+      "kana": "むしあつい",
+      "kanji": "蒸し暑い",
+      "reading": "mushiatsui"
+    },
+    {
+      "no": 102,
+      "meaning": "Hitam Putih",
+      "kana": "しろくろい",
+      "kanji": "白黒い",
+      "reading": "shirokuroi"
+    },
+    {
+      "no": 103,
+      "meaning": "Persegi Empat",
+      "kana": "しかくい",
+      "kanji": "四角い",
+      "reading": "shikakui"
+    },
+    {
+      "no": 104,
+      "meaning": "Hangat (Makanan/Minuman/Hati)",
+      "kana": "あたたかい",
+      "kanji": "温かい",
+      "reading": "atatakai"
+    },
+    {
+      "no": 105,
+      "meaning": "Pedas Manis",
+      "kana": "あまからい",
+      "kanji": "甘辛い",
+      "reading": "amakarai"
+    },
+    {
+      "no": 106,
+      "meaning": "Membosankan / Merepotkan",
+      "kana": "めんどくさい",
+      "kanji": "面倒くさい",
+      "reading": "mendokusai"
+    },
+    {
+      "no": 107,
+      "meaning": "Gatal",
+      "kana": "かゆい",
+      "kanji": "痒い",
+      "reading": "kayui"
+    },
+    {
+      "no": 108,
+      "meaning": "Mubazir / Sayang sekali",
+      "kana": "もったいない",
+      "kanji": "勿体ない",
+      "reading": "mottainai"
+    },
+    {
+      "no": 109,
+      "meaning": "Kuat, Dahsyat, Hebat",
+      "kana": "はげしい",
+      "kanji": "激しい",
+      "reading": "hageshii"
+    }
+  ],
+  "verbs_group_1": [
+    {
+      "kana": "あいます",
+      "kanji": "会います",
+      "reading": "aimasu",
+      "meaning": "bertemu, berjumpa"
+    },
+    {
+      "kana": "あそびます",
+      "kanji": "遊びます",
+      "reading": "asobimasu",
+      "meaning": "bermain"
+    },
+    {
+      "kana": "あらいます",
+      "kanji": "洗います",
+      "reading": "araimasu",
+      "meaning": "mencuci (tangan)"
+    },
+    {
+      "kana": "あります",
+      "kanji": "有ります",
+      "reading": "arimasu",
+      "meaning": "ada (benda mati)"
+    },
+    {
+      "kana": "あるきます",
+      "kanji": "歩きます",
+      "reading": "arukimasu",
+      "meaning": "berjalan kaki"
+    },
+    {
+      "kana": "いいます",
+      "kanji": "言います",
+      "reading": "iimasu",
+      "meaning": "berkata, mengatakan"
+    },
+    {
+      "kana": "いきます",
+      "kanji": "行きます",
+      "reading": "ikimasu",
+      "meaning": "pergi"
+    },
+    {
+      "kana": "いそぎます",
+      "kanji": "急ぎます",
+      "reading": "isogimasu",
+      "meaning": "terburu-buru, tergesa-gesa"
+    },
+    {
+      "kana": "いります",
+      "kanji": "要ります",
+      "reading": "irimasu",
+      "meaning": "memerlukan"
+    },
+    {
+      "kana": "うごきます",
+      "kanji": "動きます",
+      "reading": "ugokimasu",
+      "meaning": "bergerak, berputar"
+    },
+    {
+      "kana": "うたいます",
+      "kanji": "歌います",
+      "reading": "utaimasu",
+      "meaning": "menyanyi"
+    },
+    {
+      "kana": "うります",
+      "kanji": "売ります",
+      "reading": "urimasu",
+      "meaning": "menjual"
+    },
+    {
+      "kana": "おきます",
+      "kanji": "置きます",
+      "reading": "okimasu",
+      "meaning": "meletakkan"
+    },
+    {
+      "kana": "おくります",
+      "kanji": "送ります",
+      "reading": "okurimasu",
+      "meaning": "mengirim, mengantar"
+    },
+    {
+      "kana": "おします",
+      "kanji": "押します",
+      "reading": "oshimasu",
+      "meaning": "menekan, mendorong"
+    },
+    {
+      "kana": "おもいます",
+      "kanji": "思います",
+      "reading": "omoimasu",
+      "meaning": "mengira, merasa"
+    },
+    {
+      "kana": "おもいだします",
+      "kanji": "思い出します",
+      "reading": "omoidashimasu",
+      "meaning": "teringat"
+    },
+    {
+      "kana": "およぎます",
+      "kanji": "泳ぎます",
+      "reading": "oyogimasu",
+      "meaning": "berenang"
+    },
+    {
+      "kana": "おわります",
+      "kanji": "終わります",
+      "reading": "owarimasu",
+      "meaning": "habis, selesai"
+    },
+    {
+      "kana": "かいます",
+      "kanji": "買います",
+      "reading": "kaimasu",
+      "meaning": "membeli"
+    },
+    {
+      "kana": "かえします",
+      "kanji": "返します",
+      "reading": "kaeshimasu",
+      "meaning": "mengembalikan"
+    },
+    {
+      "kana": "かえります",
+      "kanji": "帰ります",
+      "reading": "kaerimasu",
+      "meaning": "pulang, kembali"
+    },
+    {
+      "kana": "かかります",
+      "kanji": "掛かります",
+      "reading": "kakarimasu",
+      "meaning": "memerlukan, memakan (waktu,uang)"
+    },
+    {
+      "kana": "かきます",
+      "kanji": "書きます",
+      "reading": "kakimasu",
+      "meaning": "menulis, menggambar, melukis"
+    },
+    {
+      "kana": "かします",
+      "kanji": "貸します",
+      "reading": "kashimasu",
+      "meaning": "meminjamkan"
+    },
+    {
+      "kana": "かちます",
+      "kanji": "勝ちます",
+      "reading": "kachimasu",
+      "meaning": "menang"
+    },
+    {
+      "kana": "かぶります",
+      "kanji": "被ります",
+      "reading": "kaburimasu",
+      "meaning": "memakai (topi,dll)"
+    },
+    {
+      "kana": "ききます",
+      "kanji": "聞きます",
+      "reading": "kikimasu",
+      "meaning": "mendengar, bertanya"
+    },
+    {
+      "kana": "きります",
+      "kanji": "切ります",
+      "reading": "kirimasu",
+      "meaning": "memotong, menggunting"
+    },
+    {
+      "kana": "けします",
+      "kanji": "消します",
+      "reading": "keshimasu",
+      "meaning": "mematikan, memadamkan"
+    },
+    {
+      "kana": "さわります",
+      "kanji": "触ります",
+      "reading": "sawarimasu",
+      "meaning": "menyentuh, memegang"
+    },
+    {
+      "kana": "しります",
+      "kanji": "知ります",
+      "reading": "shirimasu",
+      "meaning": "tahu, mengetahui"
+    },
+    {
+      "kana": "すいます",
+      "kanji": "吸います",
+      "reading": "suimasu",
+      "meaning": "merokok, menghisap"
+    },
+    {
+      "kana": "すみます",
+      "kanji": "住みます",
+      "reading": "sumimasu",
+      "meaning": "tinggal, bermukim"
+    },
+    {
+      "kana": "すわります",
+      "kanji": "座ります",
+      "reading": "suwarimasu",
+      "meaning": "duduk"
+    },
+    {
+      "kana": "たちます",
+      "kanji": "立ちます",
+      "reading": "tachimasu",
+      "meaning": "berdiri"
+    },
+    {
+      "kana": "だします",
+      "kanji": "出します",
+      "reading": "dashimasu",
+      "meaning": "mengeluarkan, mengirim (surat), menyerahkan (laporan)"
+    },
+    {
+      "kana": "つかいます",
+      "kanji": "使います",
+      "reading": "tsukaimasu",
+      "meaning": "memakai, menggunakan"
+    },
+    {
+      "kana": "つきます",
+      "kanji": "着きます",
+      "reading": "tsukimasu",
+      "meaning": "tiba, sampai"
+    },
+    {
+      "kana": "つくります",
+      "kanji": "作ります",
+      "reading": "tsukurimasu",
+      "meaning": "membuat, memproduksi"
+    },
+    {
+      "kana": "つれていきます",
+      "kanji": "連れていきます",
+      "reading": "tsurete ikimasu",
+      "meaning": "pergi mengantar (orang lain)"
+    },
+    {
+      "kana": "てつだいます",
+      "kanji": "手伝います",
+      "reading": "tetsudaimasu",
+      "meaning": "membantu"
+    },
+    {
+      "kana": "とまります",
+      "kanji": "止まります",
+      "reading": "tomarimasu",
+      "meaning": "menginap, bermalam"
+    },
+    {
+      "kana": "とります",
+      "kanji": "取ります",
+      "reading": "torimasu",
+      "meaning": "mengambil, memotret, menjadi tua"
+    },
+    {
+      "kana": "なおします",
+      "kanji": "直します",
+      "reading": "naoshimasu",
+      "meaning": "memperbaiki, membetulkan"
+    },
+    {
+      "kana": "なくします",
+      "kanji": "亡くします",
+      "reading": "nakushimasu",
+      "meaning": "hilang, kehilangan"
+    },
+    {
+      "kana": "ならいます",
+      "kanji": "習います",
+      "reading": "naraimasu",
+      "meaning": "belajar"
+    },
+    {
+      "kana": "なります",
+      "kanji": "成ります",
+      "reading": "narimasu",
+      "meaning": "menjadi"
+    },
+    {
+      "kana": "ぬぎます",
+      "kanji": "脱ぎます",
+      "reading": "nugimasu",
+      "meaning": "membuka, melepaskan"
+    },
+    {
+      "kana": "のぼります",
+      "kanji": "上ります",
+      "reading": "noborimasu",
+      "meaning": "mendaki"
+    },
+    {
+      "kana": "のみます",
+      "kanji": "飲みます",
+      "reading": "nomimasu",
+      "meaning": "minum"
+    },
+    {
+      "kana": "のります",
+      "kanji": "乗ります",
+      "reading": "norimasu",
+      "meaning": "naik"
+    },
+    {
+      "kana": "はいります",
+      "kanji": "入ります",
+      "reading": "hairimasu",
+      "meaning": "masuk"
+    },
+    {
+      "kana": "はきます",
+      "kanji": "履きます",
+      "reading": "hakimasu",
+      "meaning": "memakai (sepatu, celana, dll)"
+    },
+    {
+      "kana": "はたらきます",
+      "kanji": "働きます",
+      "reading": "hatarakimasu",
+      "meaning": "bekerja"
+    },
+    {
+      "kana": "ひきます",
+      "kanji": "引きます",
+      "reading": "hikimasu",
+      "meaning": "menarik"
+    },
+    {
+      "kana": "ふります",
+      "kanji": "降ります",
+      "reading": "furimasu",
+      "meaning": "turun (hujan, salju)"
+    },
+    {
+      "kana": "はらいます",
+      "kanji": "払います",
+      "reading": "haraimasu",
+      "meaning": "membayar"
+    },
+    {
+      "kana": "はなします",
+      "kanji": "話します",
+      "reading": "hanashimasu",
+      "meaning": "berbicara"
+    },
+    {
+      "kana": "まがります",
+      "kanji": "曲がります",
+      "reading": "magarimasu",
+      "meaning": "belok (kiri, kanan)"
+    },
+    {
+      "kana": "まちます",
+      "kanji": "待ちます",
+      "reading": "machimasu",
+      "meaning": "menunggu"
+    },
+    {
+      "kana": "まわします",
+      "kanji": "回します",
+      "reading": "mawashimasu",
+      "meaning": "memutar"
+    },
+    {
+      "kana": "もちます",
+      "kanji": "持ちます",
+      "reading": "mochimasu",
+      "meaning": "memegang, membawa, memiliki"
+    },
+    {
+      "kana": "もっていきます",
+      "kanji": "持っていきます",
+      "reading": "motte ikimasu",
+      "meaning": "pergi membawa"
+    },
+    {
+      "kana": "もらいます",
+      "kanji": "貰います",
+      "reading": "moraimasu",
+      "meaning": "menerima"
+    },
+    {
+      "kana": "やくにたちます",
+      "kanji": "役に立ちます",
+      "reading": "yaku ni tachimasu",
+      "meaning": "berguna, berfaedah, bermanfaat"
+    },
+    {
+      "kana": "やすみます",
+      "kanji": "休みます",
+      "reading": "yasumimasu",
+      "meaning": "beristirahat"
+    },
+    {
+      "kana": "よびます",
+      "kanji": "呼びます",
+      "reading": "yobimasu",
+      "meaning": "memanggil"
+    },
+    {
+      "kana": "よみます",
+      "kanji": "読みます",
+      "reading": "yomimasu",
+      "meaning": "membaca"
+    },
+    {
+      "kana": "わかります",
+      "kanji": "分かります",
+      "reading": "wakarimasu",
+      "meaning": "mengerti"
+    },
+    {
+      "kana": "わたります",
+      "kanji": "渡ります",
+      "reading": "watarimasu",
+      "meaning": "menyeberang"
+    }
+  ],
+  "verbs_group_2": [
+    {
+      "kana": "あけます",
+      "kanji": "開けます",
+      "reading": "akemasu",
+      "meaning": "membuka"
+    },
+    {
+      "kana": "あげます",
+      "kanji": "挙げます",
+      "reading": "agemasu",
+      "meaning": "memberikan"
+    },
+    {
+      "kana": "あつめます",
+      "kanji": "集めます",
+      "reading": "atsumemasu",
+      "meaning": "mengumpulkan"
+    },
+    {
+      "kana": "あびます",
+      "kanji": "浴びます",
+      "reading": "abimasu",
+      "meaning": "mandi"
+    },
+    {
+      "kana": "います",
+      "kanji": "居ます",
+      "reading": "imasu",
+      "meaning": "ada (makhluk hidup)"
+    },
+    {
+      "kana": "いれます",
+      "kanji": "入れます",
+      "reading": "iremasu",
+      "meaning": "memasukkan"
+    },
+    {
+      "kana": "うまれます",
+      "kanji": "生まれます",
+      "reading": "umaremasu",
+      "meaning": "lahir, dilahirkan"
+    },
+    {
+      "kana": "おきます",
+      "kanji": "起きます",
+      "reading": "okimasu",
+      "meaning": "bangun"
+    },
+    {
+      "kana": "おしえます",
+      "kanji": "教えます",
+      "reading": "oshiemasu",
+      "meaning": "mengajar, memberitahukan (alamat)"
+    },
+    {
+      "kana": "おぼえます",
+      "kanji": "覚えます",
+      "reading": "oboemasu",
+      "meaning": "mengingat, menghafal"
+    },
+    {
+      "kana": "おります",
+      "kanji": "降ります",
+      "reading": "orimasu",
+      "meaning": "turun (dari kendaraan)"
+    },
+    {
+      "kana": "かえます",
+      "kanji": "変えます",
+      "reading": "kaemasu",
+      "meaning": "mengganti, menukar, mengubah"
+    },
+    {
+      "kana": "かけます",
+      "kanji": "掛けます",
+      "reading": "kakemasu",
+      "meaning": "menelepon, memakai"
+    },
+    {
+      "kana": "かんがえます",
+      "kanji": "考えます",
+      "reading": "kangaemasu",
+      "meaning": "memikirkan"
+    },
+    {
+      "kana": "きをつけます",
+      "kanji": "気を付けます",
+      "reading": "ki o tsukemasu",
+      "meaning": "berhati-hati"
+    },
+    {
+      "kana": "きます",
+      "kanji": "着ます",
+      "reading": "kimasu",
+      "meaning": "memakai (pakaian, dll)"
+    },
+    {
+      "kana": "くれます",
+      "kanji": "呉れます",
+      "reading": "kuremasu",
+      "meaning": "memberi (kepada saya)"
+    },
+    {
+      "kana": "しめます",
+      "kanji": "閉めます",
+      "reading": "shimemasu",
+      "meaning": "menutup"
+    },
+    {
+      "kana": "しらべます",
+      "kanji": "調べます",
+      "reading": "shirabemasu",
+      "meaning": "memeriksa, menyelidiki"
+    },
+    {
+      "kana": "すてます",
+      "kanji": "捨てます",
+      "reading": "sutemasu",
+      "meaning": "membuang"
+    },
+    {
+      "kana": "たべます",
+      "kanji": "食べます",
+      "reading": "tabemasu",
+      "meaning": "makan"
+    },
+    {
+      "kana": "たります",
+      "kanji": "足ります",
+      "reading": "tarimasu",
+      "meaning": "cukup, mencukupi"
+    },
+    {
+      "kana": "つかれます",
+      "kanji": "疲れます",
+      "reading": "tsukaremasu",
+      "meaning": "capek, lelah"
+    },
+    {
+      "kana": "つけます",
+      "kanji": "点けます",
+      "reading": "tsukemasu",
+      "meaning": "menyalakan"
+    },
+    {
+      "kana": "でかけます",
+      "kanji": "出かけます",
+      "reading": "dekakemasu",
+      "meaning": "pergi keluar, berangkat keluar"
+    },
+    {
+      "kana": "できます",
+      "kanji": "出来ます",
+      "reading": "dekimasu",
+      "meaning": "dapat, bisa, mampu"
+    },
+    {
+      "kana": "でます",
+      "kanji": "出ます",
+      "reading": "demasu",
+      "meaning": "keluar"
+    },
+    {
+      "kana": "とめます",
+      "kanji": "止めます",
+      "reading": "tomemasu",
+      "meaning": "menghentikan"
+    },
+    {
+      "kana": "ねます",
+      "kanji": "寝ます",
+      "reading": "nemasu",
+      "meaning": "tidur"
+    },
+    {
+      "kana": "のりかえます",
+      "kanji": "乗り換えます",
+      "reading": "norikaemasu",
+      "meaning": "ganti kendaraan, pindah kendaraan"
+    },
+    {
+      "kana": "はじめます",
+      "kanji": "始めます",
+      "reading": "hajimemasu",
+      "meaning": "memulai"
+    },
+    {
+      "kana": "まけます",
+      "kanji": "負けます",
+      "reading": "makemasu",
+      "meaning": "kalah"
+    },
+    {
+      "kana": "みせます",
+      "kanji": "見せます",
+      "reading": "misemasu",
+      "meaning": "memperlihatkan"
+    },
+    {
+      "kana": "みます",
+      "kanji": "見ます",
+      "reading": "mimasu",
+      "meaning": "melihat, menonton"
+    },
+    {
+      "kana": "むかえます",
+      "kanji": "迎えます",
+      "reading": "mukaemasu",
+      "meaning": "menjemput"
+    },
+    {
+      "kana": "やめます",
+      "kanji": "辞めます",
+      "reading": "yamemasu",
+      "meaning": "berhenti, meninggalkan (perusahaan)"
+    },
+    {
+      "kana": "わすれます",
+      "kanji": "忘れます",
+      "reading": "wasuremasu",
+      "meaning": "lupa"
+    }
+  ],
+  "verbs_group_3": [
+    {
+      "kana": "あんないします",
+      "kanji": "案内します",
+      "reading": "annai shimasu",
+      "meaning": "mengantarkan untuk melihat-lihat"
+    },
+    {
+      "kana": "うんてんします",
+      "kanji": "運転します",
+      "reading": "unten shimasu",
+      "meaning": "mengemudikan, menjalankan"
+    },
+    {
+      "kana": "かいものします",
+      "kanji": "買い物します",
+      "reading": "kaimono shimasu",
+      "meaning": "berbelanja"
+    },
+    {
+      "kana": "きます",
+      "kanji": "来ます",
+      "reading": "kimasu",
+      "meaning": "datang"
+    },
+    {
+      "kana": "けっこんします",
+      "kanji": "結婚します",
+      "reading": "kekkon shimasu",
+      "meaning": "menikah"
+    },
+    {
+      "kana": "けんがくします",
+      "kanji": "見学します",
+      "reading": "kengaku shimasu",
+      "meaning": "meninjau"
+    },
+    {
+      "kana": "けんきゅうします",
+      "kanji": "研究します",
+      "reading": "kenkyuu shimasu",
+      "meaning": "meneliti"
+    },
+    {
+      "kana": "コピーします",
+      "kanji": "コピーします",
+      "reading": "kopii shimasu",
+      "meaning": "mengkopi"
+    },
+    {
+      "kana": "さんぽします",
+      "kanji": "散歩します",
+      "reading": "sanpo shimasu",
+      "meaning": "berjalan-jalan (di taman)"
+    },
+    {
+      "kana": "ざんぎょうします",
+      "kanji": "残業します",
+      "reading": "zangyou shimasu",
+      "meaning": "lembur (kerja)"
+    },
+    {
+      "kana": "します",
+      "kanji": "為ます",
+      "reading": "shimasu",
+      "meaning": "mengerjakan, berbuat, melakukan"
+    },
+    {
+      "kana": "しゅうりします",
+      "kanji": "修理します",
+      "reading": "shuuri shimasu",
+      "meaning": "memperbaiki"
+    },
+    {
+      "kana": "しゅっちょうします",
+      "kanji": "出張します",
+      "reading": "shucchou shimasu",
+      "meaning": "dinas keluar kota"
+    },
+    {
+      "kana": "しょうかいします",
+      "kanji": "紹介します",
+      "reading": "shoukai shimasu",
+      "meaning": "memperkenalkan"
+    },
+    {
+      "kana": "しょくじします",
+      "kanji": "食事します",
+      "reading": "shokuji shimasu",
+      "meaning": "makan"
+    },
+    {
+      "kana": "しんぱいします",
+      "kanji": "心配します",
+      "reading": "shinpai shimasu",
+      "meaning": "khawatir, cemas"
+    },
+    {
+      "kana": "せつめいします",
+      "kanji": "説明します",
+      "reading": "setsumei shimasu",
+      "meaning": "menjelaskan, menerangkan"
+    },
+    {
+      "kana": "せんたくします",
+      "kanji": "洗濯します",
+      "reading": "sentaku shimasu",
+      "meaning": "mencuci (pakaian)"
+    },
+    {
+      "kana": "そうじします",
+      "kanji": "掃除します",
+      "reading": "souji shimasu",
+      "meaning": "membersihkan (kamar)"
+    },
+    {
+      "kana": "つれてきます",
+      "kanji": "連れてきます",
+      "reading": "tsurete kimasu",
+      "meaning": "membawa, datang mengantar (orang)"
+    },
+    {
+      "kana": "でんわします",
+      "kanji": "電話します",
+      "reading": "denwa shimasu",
+      "meaning": "menelepon"
+    },
+    {
+      "kana": "ひっこしします",
+      "kanji": "引っ越しします",
+      "reading": "hikkoshi shimasu",
+      "meaning": "pindah rumah"
+    },
+    {
+      "kana": "べんきょうします",
+      "kanji": "勉強します",
+      "reading": "benkyou shimasu",
+      "meaning": "belajar"
+    },
+    {
+      "kana": "もってきます",
+      "kanji": "持ってきます",
+      "reading": "motte kimasu",
+      "meaning": "membawa, datang membawa"
+    },
+    {
+      "kana": "よやくします",
+      "kanji": "予約します",
+      "reading": "yoyaku shimasu",
+      "meaning": "memesan"
+    },
+    {
+      "kana": "りゅうがくします",
+      "kanji": "留学します",
+      "reading": "ryuugaku shimasu",
+      "meaning": "belajar di luar negeri"
+    },
+    {
+      "kana": "れんしゅうします",
+      "kanji": "練習します",
+      "reading": "renshuu shimasu",
+      "meaning": "berlatih"
+    }
+  ]
+}

@@ -1263,6 +1263,505 @@ export interface FullDictionaryDetail {
 }
 
 import { hiraganaToRomaji, romajiToHiragana } from './hiraganaConverter';
+import { getWordClassification } from './wordClassifier';
+
+/**
+ * Kamus kaya banyak arti (multi-meanings & kontekstual) untuk kosakata bahasa Jepang
+ */
+export const RICH_MULTI_MEANINGS: Record<string, string> = {
+  // Kata Kerja (Verba)
+  '上がります': 'naik, mendaki, atau masuk ke dalam rumah/ruangan',
+  'あがります': 'naik, mendaki, atau masuk ke dalam rumah/ruangan',
+  '上がる': 'naik, mendaki, atau masuk ke dalam rumah/ruangan',
+  'あがる': 'naik, mendaki, atau masuk ke dalam rumah/ruangan',
+  'agarimasu': 'naik, mendaki, atau masuk ke dalam rumah/ruangan',
+  'agaru': 'naik, mendaki, atau masuk ke dalam rumah/ruangan',
+  '渡します': 'menyerahkan, memberikan, atau menyampaikan sesuatu kepada orang lain',
+  'わたします': 'menyerahkan, memberikan, atau menyampaikan sesuatu kepada orang lain',
+  '渡す': 'menyerahkan, memberikan, mengantarkan, atau menyampaikan sesuatu ke tangan orang lain',
+  'わたす': 'menyerahkan, memberikan, mengantarkan, atau menyampaikan sesuatu ke tangan orang lain',
+  '食べます': 'makan, menikmati makanan, atau menyantap hidangan',
+  'たべます': 'makan, menikmati makanan, atau menyantap hidangan',
+  '食べる': 'makan, menikmati hidangan, menyantap santapan, atau mengonsumsi makanan',
+  '飲みます': 'minum, meneguk cairan, menenggak, atau meminum obat',
+  'のみます': 'minum, meneguk cairan, menenggak, atau meminum obat',
+  '飲む': 'minum, meneguk air/minuman, menelan, atau meminum obat',
+  '行きます': 'pergi, berangkat, menuju suatu tempat, atau berjalan ke sana',
+  'いきます': 'pergi, berangkat, menuju suatu tempat, atau berjalan ke sana',
+  '行く': 'pergi, berangkat, berkunjung, atau melangkah menuju destinasi',
+  '来ます': 'datang, tiba, sampai, hadir, atau berkunjung ke sini',
+  'きます': 'datang, tiba, sampai, hadir, atau berkunjung ke sini',
+  '来る': 'datang, berkunjung, tiba di lokasi, atau menampakkan diri',
+  '帰ります': 'pulang ke rumah, kembali ke asal, atau berbalik arah',
+  'かえります': 'pulang ke rumah, kembali ke asal, atau berbalik arah',
+  '帰る': 'pulang, kembali ke tempat tinggal, atau berpulang ke kampung halaman',
+  '見ます': 'melihat, menyaksikan, menonton tayangan, atau memeriksa sesuatu',
+  'みます': 'melihat, menyaksikan, menonton tayangan, atau memeriksa sesuatu',
+  '見る': 'melihat, memandang, mengamati, menyaksikan pertunjukan, atau menonton',
+  '聞きます': 'mendengar suara, mendengarkan musik/cerita, atau menanyakan kabar/petunjuk',
+  'ききます': 'mendengar suara, mendengarkan musik/cerita, atau menanyakan kabar/petunjuk',
+  '聞く': 'mendengar, menyimak audio, mencari informasi, atau menanyakan sesuatu',
+  '読みます': 'membaca buku/tulisan, menelaah isi teks, atau melafalkan bacaan',
+  'よみます': 'membaca buku/tulisan, menelaah isi teks, atau melafalkan bacaan',
+  '読む': 'membaca, menelaah bahan bacaan, atau melafalkan teks secara lisan',
+  '書きます': 'menulis huruf, mencatat informasi, mengarang cerita, atau melukis/menggambar',
+  'かきます': 'menulis huruf, mencatat informasi, mengarang cerita, atau melukis/menggambar',
+  '書く': 'menulis, mencatatkan peristiwa, membukukan, atau mengarang',
+  '買います': 'membeli barang, berbelanja, memperoleh lewat pembayaran, atau menebus',
+  'かいます': 'membeli barang, berbelanja, memperoleh lewat pembayaran, atau menebus',
+  '買う': 'membeli, berbelanja di toko, atau memperoleh hak milik dengan uang',
+  '売ります': 'menjual barang, memperdagangkan, atau memasarkan produk kepada pembeli',
+  'うります': 'menjual barang, memperdagangkan, atau memasarkan produk kepada pembeli',
+  '会います': 'bertemu, berjumpa tatap muka, atau bersua dengan seseorang',
+  'あいます': 'bertemu, berjumpa tatap muka, atau bersua dengan seseorang',
+  '話します': 'berbicara, bercakap-cakap, mengobrol, mendongengkan cerita, atau berdiskusi',
+  'はなします': 'berbicara, bercakap-cakap, mengobrol, mendongengkan cerita, atau berdiskusi',
+  '待ちます': 'menunggu, menanti kedatangan seseorang, atau bersiap menyambut',
+  'まちます': 'menunggu, menanti kedatangan seseorang, atau bersiap menyambut',
+  '持ちます': 'membawa barang, memegang, memiliki aset, atau menanggung sesuatu',
+  'もちます': 'membawa barang, memegang, memiliki aset, atau menanggung sesuatu',
+  '取ります': 'mengambil barang, meraih prestasi/skor, memetik, atau mencabut sesuatu',
+  'とります': 'mengambil barang, meraih prestasi/skor, memetik, atau mencabut sesuatu',
+  '置きます': 'meletakkan, menaruh barang di suatu tempat, atau menempatkan posisi',
+  'おきます': 'meletakkan, menaruh barang di suatu tempat, atau menempatkan posisi',
+  '作ります': 'membuat karya, memproduksi kerajinan, memasak masakan, atau membangun',
+  'つくります': 'membuat karya, memproduksi kerajinan, memasak masakan, atau membangun',
+  '教えます': 'mengajar ilmu, mendidik siswa, memberitahukan rahasia/alamat, atau menunjukkan jalan',
+  'おしえます': 'mengajar ilmu, mendidik siswa, memberitahukan rahasia/alamat, atau menunjukkan jalan',
+  '習います': 'belajar keterampilan khusus, berguru, menimba ilmu, atau berlatih bersama ahli',
+  'ならいます': 'belajar keterampilan khusus, berguru, menimba ilmu, atau berlatih bersama ahli',
+  '貸します': 'meminjamkan barang, menyewakan fasilitas, atau memberi pinjaman kepada orang lain',
+  'かします': 'meminjamkan barang, menyewakan fasilitas, atau memberi pinjaman kepada orang lain',
+  '借ります': 'meminjam barang, menyewa tempat, atau berutang fasilitas dari orang lain',
+  'かります': 'meminjam barang, menyewa tempat, atau berutang fasilitas dari orang lain',
+  '送ります': 'mengirimkan barang/pesan, melayangkan paket pos, atau mengantar orang ke tempat tujuan',
+  'おくります': 'mengirimkan barang/pesan, melayangkan paket pos, atau mengantar orang ke tempat tujuan',
+  '手伝います': 'membantu pekerjaan, menolong meringankan beban, atau turut berpartisipasi',
+  'てつだいます': 'membantu pekerjaan, menolong meringankan beban, atau turut berpartisipasi',
+  '開けます': 'membuka pintu/jendela/kotak, mengawali kegiatan, atau merintis usaha baru',
+  'あけます': 'membuka pintu/jendela/kotak, mengawali kegiatan, atau merintis usaha baru',
+  '開きます': 'terbuka dengan sendirinya, mekar (bunga), atau mulai jam operasional bisnis',
+  'あきます': 'terbuka dengan sendirinya, mekar (bunga), atau mulai jam operasional bisnis',
+  '閉めます': 'menutup pintu/jendela, mengakhiri rapat, atau menyudahi aktivitas harian',
+  'しめます': 'menutup pintu/jendela, mengakhiri rapat, atau menyudahi aktivitas harian',
+  '閉まります': 'tertutup dengan sendirinya atau berakhir jam buka operasional toko',
+  'しまります': 'tertutup dengan sendirinya atau berakhir jam buka operasional toko',
+  'つけます': 'menyalakan lampu/listrik, menghidupkan AC, menempelkan stiker, atau membubuhkan bumbu',
+  '消します': 'mematikan lampu/alat listrik, memadamkan api, menghapus tulisan, atau menghilangkan jejak',
+  'けします': 'mematikan lampu/alat listrik, memadamkan api, menghapus tulisan, atau menghilangkan jejak',
+  '始めます': 'memulai kegiatan, mengawali upacara, atau membuka agenda pertemuan',
+  'はじめます': 'memulai kegiatan, mengawali upacara, atau membuka agenda pertemuan',
+  '終わります': 'selesai, berakhir, tuntas kegiatannya, atau rampung semua urusan',
+  'おわります': 'selesai, berakhir, tuntas kegiatannya, atau rampung semua urusan',
+  '起きます': 'bangun dari tidur, bangkit berdiri, atau terjadi suatu peristiwa penting',
+  'おきます_bangun': 'bangun tidur, terjaga dari lelap, atau bangkit berdiri',
+  '寝ます': 'tidur, berbaring terlelap di tempat tidur, atau beristirahat malam',
+  'ねます': 'tidur, berbaring terlelap di tempat tidur, atau beristirahat malam',
+  '働きます': 'bekerja mencari nafkah, bertugas di kantor, berkarier, atau menjalankan fungsi mesin',
+  'はたらきます': 'bekerja mencari nafkah, bertugas di kantor, berkarier, atau menjalankan fungsi mesin',
+  '休みます': 'beristirahat, mengambil cuti libur, absen tidak masuk, atau tidur sejenak',
+  'やすみます': 'beristirahat, mengambil cuti libur, absen tidak masuk, atau tidur sejenak',
+  '勉強します': 'belajar materi pelajaran, menelaah buku, atau mendalami suatu bidang studi',
+  'べんきょうします': 'belajar materi pelajaran, menelaah buku, atau mendalami suatu bidang studi',
+  '歩きます': 'berjalan kaki, melangkahkan kaki perlahan, atau berpawai',
+  'あるきます': 'berjalan kaki, melangkahkan kaki perlahan, atau berpawai',
+  '走ります': 'berlari kencang, melesat laju, atau meluncur melintasi jalan',
+  'はしります': 'berlari kencang, melesat laju, atau meluncur melintasi jalan',
+  '泳ぎます': 'berenang di air, menyelam, atau mengarungi perairan',
+  'およぎます': 'berenang di air, menyelam, atau mengarungi perairan',
+  '遊びます': 'bermain santai, bersenang-senang, berlibur, atau berkunjung untuk rekreasi',
+  'あそびます': 'bermain santai, bersenang-senang, berlibur, atau berkunjung untuk rekreasi',
+  '洗います': 'mencuci pakaian/piring, membilas kotoran dengan air, atau membasuh tangan',
+  'あらいます': 'mencuci pakaian/piring, membilas kotoran dengan air, atau membasuh tangan',
+  '忘れます': 'lupa ingatan, melupakan memori, atau tertinggal barang bawaannya',
+  'わすれます': 'lupa ingatan, melupakan memori, atau tertinggal barang bawaannya',
+  '覚えます': 'mengingat kuat, menghafal teks pelajaran, atau menguasai tata cara',
+  'おぼえます': 'mengingat kuat, menghafal teks pelajaran, atau menguasai tata cara',
+  '払います': 'membayar tagihan belanja, menyetorkan uang ongkos, atau melunasi kewajiban finansial',
+  'はらいます': 'membayar tagihan belanja, menyetorkan uang ongkos, atau melunasi kewajiban finansial',
+  '脱ぎます': 'melepas pakaian/sepatu, mencopot jaket, atau menanggalkan busana',
+  'ぬぎます': 'melepas pakaian/sepatu, mencopot jaket, atau menanggalkan busana',
+  '着ます': 'mengenakan pakaian atas, memakai baju, atau mengenakan busana formal',
+
+  // Kata Sifat (Adjektiva)
+  '明るい': 'terang (cahaya/ruangan), cerah (cuaca/masa depan), riang, ramah, atau ceria (kepribadian)',
+  'あかるい': 'terang (cahaya/ruangan), cerah (cuaca/masa depan), riang, ramah, atau ceria (kepribadian)',
+  '暗い': 'gelap (ruangan/malam), suram (masa depan), redup pencahayaan, atau murung/pendiam (sikap)',
+  'くらい': 'gelap (ruangan/malam), suram (masa depan), redup pencahayaan, atau murung/pendiam (sikap)',
+  '高い': 'tinggi (ukuran vertikal/posisi), mahal (biaya/harga barang), atau unggul tingkatannya',
+  'たかい': 'tinggi (ukuran vertikal/posisi), mahal (biaya/harga barang), atau unggul tingkatannya',
+  '安い': 'murah (harga terjangkau), hemat biaya, ekonomis, atau bersahabat di kantong',
+  'やすい': 'murah (harga terjangkau), hemat biaya, ekonomis, atau bersahabat di kantong',
+  '新しい': 'baru (barang/model), segar (makanan/ide), modern rancangannya, atau mutakhir',
+  'あたらしい': 'baru (barang/model), segar (makanan/ide), modern rancangannya, atau mutakhir',
+  '古い': 'lama (waktu berlalu), kuno (gaya/zaman), tua usianya, antik, atau bekas pakai',
+  'ふるい': 'lama (waktu berlalu), kuno (gaya/zaman), tua usianya, antik, atau bekas pakai',
+  '大きい': 'besar (ukuran/skala), luas daya tampung, berbobot, atau megah bangunannya',
+  'おおきい': 'besar (ukuran/skala), luas daya tampung, berbobot, atau megah bangunannya',
+  '小さい': 'kecil (dimensi/volume), sedikit jumlahnya, mungil bentuknya, atau bersuara lirih',
+  'ちいさい': 'kecil (dimensi/volume), sedikit jumlahnya, mungil bentuknya, atau bersuara lirih',
+  'いい': 'baik budi, bagus kualitasnya, prima performanya, pantas, atau menguntungkan',
+  'よい': 'baik, bagus, tepat guna, berkualitas prima, pantas, atau menguntungkan',
+  '悪い': 'buruk sifatnya, jelek mutunya, tidak sehat kondisinya, atau bersalah/merasa tidak enak',
+  'わるい': 'buruk sifatnya, jelek mutunya, tidak sehat kondisinya, atau bersalah/merasa tidak enak',
+  '美味しい': 'enak rasanya, lezat hidangannya, sedap dinikmati, atau memanjakan lidah',
+  'おいしい': 'enak rasanya, lezat hidangannya, sedap dinikmati, atau memanjakan lidah',
+  '甘い': 'manis rasanya, terlalu memanjakan anak, bersikap lunak/gampang menyerah, atau naif',
+  'あまい': 'manis rasanya, terlalu memanjakan anak, bersikap lunak/gampang menyerah, atau naif',
+  '辛い': 'pedas menyengat di lidah, asin pekat, berat ujian hidupnya, atau menyiksa perasaan',
+  'からい': 'pedas menyengat di lidah, asin pekat, berat ujian hidupnya, atau menyiksa perasaan',
+  '面白い': 'menarik untuk disimak, seru permainannya, menghibur, menyenangkan, atau lucu menggelitik',
+  'おもしろい': 'menarik untuk disimak, seru permainannya, menghibur, menyenangkan, atau lucu menggelitik',
+  '難しい': 'sulit dipecahkan, sukar dipelajari, rumit penjelasannya, atau penuh tantangan',
+  'むずかしい': 'sulit dipecahkan, sukar dipelajari, rumit penjelasannya, atau penuh tantangan',
+  '易しい': 'mudah dipelajari, gampang dipahami, sederhana konsepnya, atau ramah untuk pemula',
+  'やさしい': 'ramah bersahabat, lemah lembut hatinya, penyayang, atau mudah dipahami',
+  '忙しい': 'sibuk luar biasa, padat jadwal kegiatan, tergesa-gesa mengurus banyak hal, atau tiada waktu santai',
+  'いそがしい': 'sibuk luar biasa, padat jadwal kegiatan, tergesa-gesa mengurus banyak hal, atau tiada waktu santai',
+  '暇': 'luang waktunya, senggang tanpa kesibukan, santai, atau sepi pengunjung toko',
+  'ひま': 'luang waktunya, senggang tanpa kesibukan, santai, atau sepi pengunjung toko',
+  '静か': 'tenang suasananya, hening tanpa kebisingan, sunyi, atau damai tenteram lingkungannya',
+  'しずか': 'tenang suasananya, hening tanpa kebisingan, sunyi, atau damai tenteram lingkungannya',
+  '賑やか': 'ramai suasananya, meriah kegiatannya, riuh penuh tawa, atau padat pengunjung',
+  'にぎやか': 'ramai suasananya, meriah kegiatannya, riuh penuh tawa, atau padat pengunjung',
+  '便利': 'praktis digunakan, memudahkan pekerjaan, efisien fungsinya, atau strategis lokasinya',
+  'べんり': 'praktis digunakan, memudahkan pekerjaan, efisien fungsinya, atau strategis lokasinya',
+  '親切': 'ramah melayani, baik hati perilakunya, suka menolong, atau peduli sesama',
+  'しんせつ': 'ramah melayani, baik hati perilakunya, suka menolong, atau peduli sesama',
+  '元気': 'sehat jasmani raga, bugar bertenaga, ceria penuh semangat, atau berenergi positif',
+  'げんき': 'sehat jasmani raga, bugar bertenaga, ceria penuh semangat, atau berenergi positif',
+  '好き': 'suka, gemar menekuni hobi, menyukai seseorang, atau favorit di hati',
+  'すき': 'suka, gemar menekuni hobi, menyukai seseorang, atau favorit di hati',
+  '嫌い': 'benci tidak menyukai, enggan berdekatan, antipati, atau pantangan',
+  'きらい': 'benci tidak menyukai, enggan berdekatan, antipati, atau pantangan',
+  '上手': 'pandai berkarya, mahir keterampilannya, ahli di bidangnya, atau jago melakukan sesuatu',
+  'じょうず': 'pandai berkarya, mahir keterampilannya, ahli di bidangnya, atau jago melakukan sesuatu',
+  '下手': 'kurang pandai, belum mahir, kaku mempraktikkan, atau belum berpengalaman',
+  'へた': 'kurang pandai, belum mahir, kaku mempraktikkan, atau belum berpengalaman',
+
+  // Kata Benda (Nomina)
+  '兄': 'kakak laki-laki, abang kandung sendiri, atau saudara laki-laki yang lebih tua',
+  'あに': 'kakak laki-laki, abang kandung sendiri, atau saudara laki-laki yang lebih tua',
+  'お兄さん': 'kakak laki-laki orang lain, sebutan abang/mas yang sopan, atau panggilan pemuda',
+  'おにいさん': 'kakak laki-laki orang lain, sebutan abang/mas yang sopan, atau panggilan pemuda',
+  '姉': 'kakak perempuan, mbak kandung sendiri, atau saudara perempuan yang lebih tua',
+  'あね': 'kakak perempuan, mbak kandung sendiri, atau saudara perempuan yang lebih tua',
+  'お姉さん': 'kakak perempuan orang lain, sapaan mbak/kakak wanita yang sopan, atau panggilan wanita muda',
+  'おねえさん': 'kakak perempuan orang lain, sapaan mbak/kakak wanita yang sopan, atau panggilan wanita muda',
+  '弟': 'adik laki-laki kandung sendiri atau saudara laki-laki yang lebih muda',
+  'おとうと': 'adik laki-laki kandung sendiri atau saudara laki-laki yang lebih muda',
+  '妹': 'adik perempuan kandung sendiri atau saudara perempuan yang lebih muda',
+  'いもうと': 'adik perempuan kandung sendiri atau saudara perempuan yang lebih muda',
+  '父': 'ayah/bapak kandung sendiri, orang tua laki-laki, atau kepala keluarga',
+  'ちち': 'ayah/bapak kandung sendiri, orang tua laki-laki, atau kepala keluarga',
+  'お父さん': 'ayah/bapak orang lain atau panggilan sopan kepada ayah tersayang',
+  'おとうさん': 'ayah/bapak orang lain atau panggilan sopan kepada ayah tersayang',
+  '母': 'ibu/mama kandung sendiri, orang tua perempuan, atau bunda tersayang',
+  'はは': 'ibu/mama kandung sendiri, orang tua perempuan, atau bunda tersayang',
+  'お母さん': 'ibu/mama orang lain atau sapaan hormat penuh kasih kepada ibu',
+  'おかあさん': 'ibu/mama orang lain atau sapaan hormat penuh kasih kepada ibu',
+  '友達': 'teman akrab, kawan seperjuangan, sahabat karib, atau rekan bergaul',
+  'ともだち': 'teman akrab, kawan seperjuangan, sahabat karib, atau rekan bergaul',
+  '青': 'warna biru, warna hijau (lampu lalu lintas/daun segar), atau belum matang/muda usianya',
+  'あお': 'warna biru, warna hijau (lampu lalu lintas/daun segar), atau belum matang/muda usianya',
+  '青い': 'berwarna biru, hijau segar dedaunan, pucat pasi wajahnya, atau belum berpengalaman',
+  'あおい': 'berwarna biru, hijau segar dedaunan, pucat pasi wajahnya, atau belum berpengalaman',
+  '赤': 'warna merah, tanda bahaya/peringatan, atau kondisi keuangan merugi (defisit)',
+  'あか': 'warna merah, tanda bahaya/peringatan, atau kondisi keuangan merugi (defisit)',
+  '赤い': 'berwarna merah menyala, merona pipinya, atau membara warnanya',
+  'あかい': 'berwarna merah menyala, merona pipinya, atau membara warnanya',
+  '白': 'warna putih, bersih tanpa noda, atau tanda tidak bersalah (bebas tuduhan)',
+  'しろ': 'warna putih, bersih tanpa noda, atau tanda tidak bersalah (bebas tuduhan)',
+  '黒': 'warna hitam pekat, tanda kedukaan, gelap, atau terbukti bersalah dalam penyelidikan',
+  'くろ': 'warna hitam pekat, tanda kedukaan, gelap, atau terbukti bersalah dalam penyelidikan',
+  '本': 'buku bacaan, pustaka jilidan, bahan studi literatur, atau jilid referensi',
+  'ほん': 'buku bacaan, pustaka jilidan, bahan studi literatur, atau jilid referensi',
+  '水': 'air bersih alami, air tawar dingin, cairan hidrasi, atau pelepas dahaga',
+  'みず': 'air bersih alami, air tawar dingin, cairan hidrasi, atau pelepas dahaga',
+  'お金': 'uang tunai, dana finansial, alat pembayaran sah, atau harta kekayaan',
+  'おかね': 'uang tunai, dana finansial, alat pembayaran sah, atau harta kekayaan',
+  '時間': 'waktu bergulir, jam durasi tertentu, saat kesempatan, atau tempo perjalanan',
+  'じかん': 'waktu bergulir, jam durasi tertentu, saat kesempatan, atau tempo perjalanan',
+};
+
+/**
+ * Memperkaya arti kata tunggal dengan sinonim kontekstual bahasa Indonesia
+ */
+function expandSingleMeaningWithSynonyms(base: string): string {
+  const b = base.toLowerCase().trim();
+
+  // Pola verba umum
+  if (b.includes('menyerah') || b.includes('serah')) {
+    return 'menyerahkan, memberikan, atau menyampaikan sesuatu kepada orang lain';
+  }
+  if (b.includes('makan') || b.includes('santap')) {
+    return 'makan, menikmati hidangan, menyantap makanan, atau mengonsumsi santapan';
+  }
+  if (b.includes('minum')) {
+    return 'minum, meneguk cairan, menenggak minuman, atau meminum obat';
+  }
+  if (b.includes('lihat') || b.includes('tonton') || b.includes('pandang')) {
+    return 'melihat, memandang, menyaksikan, mengamati, atau menonton';
+  }
+  if (b.includes('dengar') || b.includes('simak')) {
+    return 'mendengar, menyimak audio/cerita, atau menanyakan kabar/informasi';
+  }
+  if (b.includes('tulis') || b.includes('catat')) {
+    return 'menulis huruf, mencatat informasi penting, mengarang, atau melukis';
+  }
+  if (b.includes('baca')) {
+    return 'membaca buku/tulisan, menelaah isi teks, atau melafalkan bacaan';
+  }
+  if (b.includes('beli') || b.includes('belanja')) {
+    return 'membeli barang, berbelanja di toko, atau memperoleh lewat pembayaran';
+  }
+  if (b.includes('jual')) {
+    return 'menjual barang dagangan, memperdagangkan, atau memasarkan produk';
+  }
+  if (b.includes('temu') || b.includes('jumpa')) {
+    return 'bertemu, berjumpa tatap muka, atau bersua dengan seseorang';
+  }
+  if (b.includes('bicara') || b.includes('obrol') || b.includes('cakap')) {
+    return 'berbicara, bercakap-cakap, mengobrol santai, atau berdiskusi';
+  }
+  if (b.includes('tunggu') || b.includes('nanti')) {
+    return 'menunggu, menanti kedatangan seseorang, atau bersiap menyambut';
+  }
+  if (b.includes('bawa') || b.includes('pegang')) {
+    return 'membawa barang, memegang, memiliki aset, atau menyimpan barang';
+  }
+  if (b.includes('ambil') || b.includes('petik')) {
+    return 'mengambil, memungut, meraih hasil, atau memetik sesuatu';
+  }
+  if (b.includes('taruh') || b.includes('letak')) {
+    return 'meletakkan, menaruh barang di suatu tempat, atau menempatkan posisi';
+  }
+  if (b.includes('buat') || b.includes('bikin') || b.includes('produksi')) {
+    return 'membuat karya, memproduksi kerajinan, memasak hidangan, atau membangun';
+  }
+  if (b.includes('ajar') || b.includes('didik')) {
+    return 'mengajar ilmu, mendidik, memberitahukan petunjuk, atau menunjukkan jalan';
+  }
+  if (b.includes('belajar') || b.includes('studi')) {
+    return 'belajar materi, mendalami ilmu pengetahuan, atau berlatih keterampilan';
+  }
+  if (b.includes('pinjamkan') || b.includes('sewakan')) {
+    return 'meminjamkan barang, menyewakan fasilitas, atau memberi pinjaman kepada orang lain';
+  }
+  if (b.includes('pinjam') || b.includes('sewa')) {
+    return 'meminjam barang, menyewa tempat, atau berutang fasilitas dari orang lain';
+  }
+  if (b.includes('kirim') || b.includes('layang')) {
+    return 'mengirimkan barang/pesan, melayangkan paket pos, atau mengantar ke tujuan';
+  }
+  if (b.includes('bantu') || b.includes('tolong')) {
+    return 'membantu pekerjaan, menolong meringankan beban, atau turut berpartisipasi';
+  }
+  if (b.includes('buka')) {
+    return 'membuka (pintu/kotak/buku), mengawali kegiatan, atau merintis usaha baru';
+  }
+  if (b.includes('tutup')) {
+    return 'menutup (pintu/jendela/buku), mengakhiri pertemuan, atau menyudahi aktivitas';
+  }
+  if (b.includes('nyala') || b.includes('hidupkan')) {
+    return 'menyalakan lampu/alat listrik, menghidupkan mesin, atau mengaktifkan perangkat';
+  }
+  if (b.includes('padam') || b.includes('mati') || b.includes('hapus')) {
+    return 'mematikan lampu/listrik, memadamkan api, atau menghapus catatan tulisan';
+  }
+  if (b.includes('mulai') || b.includes('awal')) {
+    return 'memulai kegiatan, mengawali agenda, atau membuka rangkaian acara';
+  }
+  if (b.includes('selesai') || b.includes('tuntas') || b.includes('akhir')) {
+    return 'selesai, berakhir, tuntas kegiatannya, atau rampung semua urusan';
+  }
+
+  // Pola adjektiva umum
+  if (b.includes('terang') || b.includes('cerah')) {
+    return 'terang (cahaya/ruangan), cerah (cuaca/masa depan), riang, atau ceria';
+  }
+  if (b.includes('gelap') || b.includes('suram') || b.includes('redup')) {
+    return 'gelap (ruangan/malam), suram (masa depan), redup, atau murung';
+  }
+  if (b.includes('tinggi')) {
+    return 'tinggi (ukuran vertikal/posisi), mahal (harga/biaya), atau bernilai tinggi';
+  }
+  if (b.includes('rendah') || b.includes('murah')) {
+    return 'murah (harga terjangkau), hemat biaya, ekonomis, atau bersahabat di kantong';
+  }
+  if (b.includes('besar') || b.includes('luas')) {
+    return 'besar (ukuran/skala), luas daya tampung, berbobot, atau megah';
+  }
+  if (b.includes('kecil') || b.includes('sedikit')) {
+    return 'kecil (dimensi/volume), sedikit jumlahnya, mungil, atau bersuara lirih';
+  }
+  if (b.includes('enak') || b.includes('lezat') || b.includes('sedap')) {
+    return 'enak rasanya, lezat hidangannya, sedap dinikmati, atau memuaskan selera';
+  }
+  if (b.includes('bagus') || b.includes('baik')) {
+    return 'baik budi, bagus kualitasnya, prima performanya, pantas, atau menguntungkan';
+  }
+  if (b.includes('buruk') || b.includes('jelek')) {
+    return 'buruk sifatnya, jelek mutunya, tidak sehat kondisinya, atau merugikan';
+  }
+  if (b.includes('sulit') || b.includes('sukar') || b.includes('susah')) {
+    return 'sulit dipecahkan, sukar dipelajari, rumit penjelasannya, atau penuh tantangan';
+  }
+  if (b.includes('mudah') || b.includes('gampang')) {
+    return 'mudah dipelajari, gampang dipahami, sederhana konsepnya, atau praktis';
+  }
+  if (b.includes('ramai') || b.includes('meriah')) {
+    return 'ramai suasananya, meriah kegiatannya, riuh penuh tawa, atau padat pengunjung';
+  }
+  if (b.includes('sepi') || b.includes('tenang') || b.includes('sunyi')) {
+    return 'tenang suasananya, hening tanpa kebisingan, sunyi, atau damai tenteram';
+  }
+  if (b.includes('sibuk')) {
+    return 'sibuk luar biasa, padat jadwal kegiatan, atau tergesa-gesa mengurus banyak hal';
+  }
+  if (b.includes('luang') || b.includes('senggang')) {
+    return 'luang waktunya, senggang tanpa kesibukan, santai, atau rileks';
+  }
+
+  // Pola nomina umum
+  if (b.includes('kakak laki') || b.includes('abang')) {
+    return 'kakak laki-laki, abang kandung sendiri, atau saudara laki-laki yang lebih tua';
+  }
+  if (b.includes('kakak peremp') || b.includes('mbak')) {
+    return 'kakak perempuan, mbak kandung sendiri, atau saudara perempuan yang lebih tua';
+  }
+  if (b.includes('adik laki')) {
+    return 'adik laki-laki kandung sendiri atau saudara laki-laki yang lebih muda';
+  }
+  if (b.includes('adik peremp')) {
+    return 'adik perempuan kandung sendiri atau saudara perempuan yang lebih muda';
+  }
+  if (b.includes('ayah') || b.includes('bapak')) {
+    return 'ayah/bapak kandung sendiri, orang tua laki-laki, atau kepala keluarga';
+  }
+  if (b.includes('ibu') || b.includes('mama')) {
+    return 'ibu/mama kandung sendiri, orang tua perempuan, atau bunda tersayang';
+  }
+  if (b.includes('teman') || b.includes('kawan') || b.includes('sahabat')) {
+    return 'teman akrab, kawan seperjuangan, sahabat karib, atau rekan bergaul';
+  }
+  if (b.includes('biru')) {
+    return 'warna biru, hijau pada lampu lalu lintas/daun segar, atau belum matang';
+  }
+  if (b.includes('merah')) {
+    return 'warna merah menyala, tanda bahaya/peringatan, atau kondisi merugi';
+  }
+  if (b.includes('putih')) {
+    return 'warna putih, bersih tanpa noda, atau tanda tidak bersalah (bebas tuduhan)';
+  }
+  if (b.includes('hitam')) {
+    return 'warna hitam pekat, tanda kedukaan, gelap, atau terbukti bersalah';
+  }
+  if (b.includes('buku')) {
+    return 'buku bacaan, pustaka jilidan, bahan studi literatur, atau jilid referensi';
+  }
+  if (b.includes('air')) {
+    return 'air bersih alami, air tawar dingin, cairan hidrasi, atau pelepas dahaga';
+  }
+  if (b.includes('uang')) {
+    return 'uang tunai, dana finansial, alat pembayaran sah, atau harta kekayaan';
+  }
+  if (b.includes('waktu') || b.includes('jam')) {
+    return 'waktu bergulir, jam durasi tertentu, saat kesempatan, atau tempo perjalanan';
+  }
+
+  return base;
+}
+
+/**
+ * Menghasilkan sintesis arti kosakata lengkap dan kaya banyak arti sesuai standar user:
+ * Contoh: "Watashimasu (渡します) : menyerahkan, memberikan, atau menyampaikan sesuatu kepada orang lain"
+ */
+export function formatSimpleMeaningSentence(item: CardItem): string {
+  // 1. Reading & Kanji/Jp header
+  let romaji = (item.reading || '')
+    .replace(/\s*[\(（][a-zA-Z\u3040-\u309F\u30A0-\u30FF\s]+[\)）]\s*/g, '')
+    .trim();
+  const kanji = item.kanji?.trim() || '';
+  const jp = item.japanese?.trim() || '';
+
+  if (/[\u3040-\u309F\u30A0-\u30FF]/.test(romaji)) {
+    const converted = hiraganaToRomaji(romaji);
+    if (converted) romaji = converted;
+  }
+  if (!romaji && !/[\u4E00-\u9FAF]/.test(jp)) {
+    romaji = jp;
+  }
+
+  const capRomaji = romaji ? romaji.charAt(0).toUpperCase() + romaji.slice(1) : '';
+  const kanjiOrJp = kanji || jp;
+  let wordHeader = '';
+  if (capRomaji && kanjiOrJp && kanjiOrJp.toLowerCase() !== romaji.toLowerCase()) {
+    wordHeader = `${capRomaji} (${kanjiOrJp})`;
+  } else if (capRomaji) {
+    wordHeader = capRomaji;
+  } else {
+    wordHeader = kanjiOrJp;
+  }
+
+  // 2. Cek apakah ada di kamus kurasi banyak arti (RICH_MULTI_MEANINGS)
+  const jpKey = (kanji || jp || '').trim();
+  const rdKey = (item.reading || '').trim().toLowerCase();
+  const cleanRdKey = romaji.toLowerCase();
+  if (RICH_MULTI_MEANINGS[jpKey]) {
+    return `${wordHeader} : ${RICH_MULTI_MEANINGS[jpKey]}`;
+  }
+  if (RICH_MULTI_MEANINGS[jp]) {
+    return `${wordHeader} : ${RICH_MULTI_MEANINGS[jp]}`;
+  }
+  if (RICH_MULTI_MEANINGS[cleanRdKey]) {
+    return `${wordHeader} : ${RICH_MULTI_MEANINGS[cleanRdKey]}`;
+  }
+  if (RICH_MULTI_MEANINGS[rdKey]) {
+    return `${wordHeader} : ${RICH_MULTI_MEANINGS[rdKey]}`;
+  }
+
+  // 3. Fallback dinamis: kumpulkan dan perluas banyak arti dari makna-makna yang tersedia
+  const clarification = getClarifiedMeaning(item);
+  const rawSources: string[] = [
+    clarification.primaryMeaning || '',
+    item.meaningId || '',
+    ...(clarification.secondaryMeanings || []),
+  ];
+
+  const parts: string[] = [];
+  rawSources.forEach((raw) => {
+    if (!raw) return;
+    const clean = raw
+      .replace(/[.]{2,}/g, '')
+      .replace(/[…～~]/g, '')
+      .replace(/\(.*?\)/g, '')
+      .replace(/\[.*?\]/g, '')
+      .replace(/^asal:.*$/i, '')
+      .trim();
+
+    clean
+      .split(/[/;,]/)
+      .map((s) => s.trim().toLowerCase())
+      .filter((s) => s.length > 0 && !s.startsWith('asal:') && !s.includes('minnashokyu'))
+      .forEach((s) => {
+        if (!parts.includes(s)) parts.push(s);
+      });
+  });
+
+  let formattedMeanings = '';
+  if (parts.length >= 3) {
+    formattedMeanings = `${parts.slice(0, -1).join(', ')}, atau ${parts[parts.length - 1]}`;
+  } else if (parts.length === 2) {
+    formattedMeanings = `${parts[0]} atau ${parts[1]}`;
+  } else if (parts.length === 1) {
+    formattedMeanings = expandSingleMeaningWithSynonyms(parts[0]);
+  } else {
+    formattedMeanings = (clarification.primaryMeaning || item.meaningId || 'makna kosakata').toLowerCase().trim();
+  }
+
+  return `${wordHeader} : ${formattedMeanings}`;
+}
 
 /**
  * Format daftar makna menjadi kalimat bahasa Indonesia alami (dengan tanda petik & kata "atau")
@@ -1303,7 +1802,7 @@ export function formatMeaningListAsSentence(raw: string, secondary?: string[]): 
 
 /**
  * Menghasilkan sintesis detail kamus bahasa Jepang terlengkap untuk setiap kosakata:
- * Contoh: Kata "betsuno" (別の / べつの) dalam bahasa Jepang artinya adalah "yang lain", "berbeda", atau "terpisah".
+ * Contoh: Akarui (明るい) adalah kata sifat I dalam bahasa Jepang yang berarti terang, cerah, atau ceria.
  */
 export function getFullDictionaryDetail(item: CardItem): FullDictionaryDetail {
   const clarification = getClarifiedMeaning(item);
@@ -1336,23 +1835,12 @@ export function getFullDictionaryDetail(item: CardItem): FullDictionaryDetail {
     kanjiKanaDisplay = jp;
   }
 
-  const { formatted: meaningsFormatted, items: meaningsList } = formatMeaningListAsSentence(
+  const { items: meaningsList } = formatMeaningListAsSentence(
     clarification.primaryMeaning,
     clarification.secondaryMeanings
   );
 
-  let fullSentence = '';
-  if (/^[〜～~]?(さん|ちゃん|くん|君|様|さま|たち|方|がた)$/.test(jp)) {
-    fullSentence = `Akhiran "${romaji}" (${kanjiKanaDisplay}) dalam bahasa Jepang adalah gelar kehormatan yang dibubuhkan di akhir nama orang (artinya setara dengan "Tuan", "Nyonya", "Nona", atau "Saudara/i").`;
-  } else if (/^[〜～~](人|じん)$/.test(jp)) {
-    fullSentence = `Akhiran "${romaji}" (${kanjiKanaDisplay}) dalam bahasa Jepang dibubuhkan setelah nama negara untuk menyatakan orang / warga negara (misal: インドネシア人 = orang Indonesia).`;
-  } else if (/^[〜～~](語|ご)$/.test(jp)) {
-    fullSentence = `Akhiran "${romaji}" (${kanjiKanaDisplay}) dalam bahasa Jepang dibubuhkan setelah nama negara untuk menyatakan bahasa (misal: 日本語 = bahasa Jepang).`;
-  } else if (item.subCategory === 'angka_waktu' && (jp.startsWith('〜') || jp.startsWith('～'))) {
-    fullSentence = `Satuan "${romaji}" (${kanjiKanaDisplay}) dalam bahasa Jepang adalah satuan bilangan (助数詞) yang digunakan untuk menyatakan ${meaningsFormatted}.`;
-  } else {
-    fullSentence = `Kata "${romaji}" (${kanjiKanaDisplay}) dalam bahasa Jepang artinya adalah ${meaningsFormatted}.`;
-  }
+  const fullSentence = formatSimpleMeaningSentence(item);
 
   // Deteksi kelas kata / peran gramatikal
   let grammaticalRole = '';

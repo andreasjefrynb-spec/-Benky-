@@ -1,5 +1,6 @@
 import { CardItem } from '../types';
 import { phrasesN3Data } from './phrasesN3Data';
+import phrasesMinnaList from './phrasesMinnaData.json';
 
 export { phrasesN3Data } from './phrasesN3Data';
 
@@ -1492,9 +1493,10 @@ const phrasesN5N4Data: CardItem[] = [
   }
 ];
 
-// Koleksi Frasa, Tata Bahasa & Ungkapan Lengkap JLPT N5, N4 & N3
+// Koleksi Frasa, Tata Bahasa & Ungkapan Lengkap JLPT N5, N4 & N3 + Pola Kalimat Percakapan Minna
 export const phrasesData: CardItem[] = [
   ...phrasesN5N4Data,
   ...phrasesN3Data,
+  ...(phrasesMinnaList as CardItem[]),
 ];
 

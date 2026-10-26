@@ -21,6 +21,7 @@ import { getFullDictionaryDetail, FullDictionaryDetail } from '../utils/meaningC
 import { getWordClassification } from '../utils/wordClassifier';
 import { getWordNuanceInfo } from '../utils/wordNuances';
 import { getQuickConjugationForms } from '../utils/japaneseConjugator';
+import { WordCharacteristicTable } from './WordCharacteristicTable';
 
 interface WordDetailModalProps {
   card: CardItem | null;
@@ -228,6 +229,11 @@ export const WordDetailModal: React.FC<WordDetailModalProps> = ({
                   ))}
                 </div>
               )}
+            </div>
+
+            {/* TABEL KARAKTERISTIK KATA (PERSIS GAMBAR REFERENSI USER) */}
+            <div className="w-full">
+              <WordCharacteristicTable card={card} />
             </div>
 
             {/* 2. KAIDAH TATA BAHASA & POLA PARTIKEL */}

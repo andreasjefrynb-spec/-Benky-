@@ -163,15 +163,6 @@ export const GROUP_METAS: Record<string, GroupMeta> = {
     cluster: 'kehidupan',
     color: 'from-pink-500/10 to-rose-500/10 border-pink-200 dark:border-pink-900/60 text-pink-800 dark:text-pink-300',
   },
-  kalimat_percakapan: {
-    id: 'kalimat_percakapan',
-    name: 'Pola Kalimat & Percakapan Minna',
-    kanjiTitle: '実用会話・短文 (Reibun)',
-    icon: '💬',
-    desc: 'Pola kalimat praktis & contoh percakapan penting Minna no Nihongo (Bab 1–50)',
-    cluster: 'kehidupan',
-    color: 'from-sky-500/10 to-indigo-500/10 border-sky-200 dark:border-sky-900/60 text-sky-800 dark:text-sky-300',
-  },
   tempat: {
     id: 'tempat',
     name: 'Tempat & Arah',
@@ -355,7 +346,7 @@ export const VocabGroupView: React.FC<VocabGroupViewProps> = ({
         } else if (cls.type === 'numeral' || cls.type === 'time_adverb' || cls.type === 'counter') {
           targetSub = 'angka_waktu';
         } else if (cls.type === 'phrase') {
-          targetSub = 'kalimat_percakapan';
+          targetSub = 'salam';
         } else {
           targetSub = 'kata_benda';
         }

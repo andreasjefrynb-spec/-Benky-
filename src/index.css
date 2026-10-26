@@ -5,16 +5,68 @@
 @layer utilities {
   .perspective-1000 {
     perspective: 1000px;
+    -webkit-perspective: 1000px;
+  }
+  .flashcard-perspective {
+    perspective: 1200px;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
   }
   .transform-style-3d {
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
   }
   .backface-hidden {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
   .rotate-y-180 {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
   }
+}
+
+/* Highly Optimized Smooth 3D Flip Card CSS Transitions (Cross-Device & Mobile-Ready) */
+.flashcard-flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  will-change: transform;
+  transform: rotateY(0deg) translateZ(0);
+  -webkit-transform: rotateY(0deg) translateZ(0);
+}
+
+.flashcard-flipper.is-flipped {
+  transform: rotateY(180deg) translateZ(0);
+  -webkit-transform: rotateY(180deg) translateZ(0);
+}
+
+.flashcard-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-font-smoothing: antialiased;
+}
+
+.flashcard-front {
+  z-index: 2;
+  transform: rotateY(0deg) translateZ(1px);
+  -webkit-transform: rotateY(0deg) translateZ(1px);
+}
+
+.flashcard-back {
+  transform: rotateY(180deg) translateZ(1px);
+  -webkit-transform: rotateY(180deg) translateZ(1px);
 }
 
 html {

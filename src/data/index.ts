@@ -33,8 +33,8 @@ function deduplicateMinnaVocab(rawVocab: typeof minnaShokyu1Lessons[0]['keyVocab
   const seen = new Map<string, (typeof rawVocab)[0]>();
 
   for (const item of rawVocab) {
-    const normJp = (item.jp || '').replace(/[（\(].*?[）\)]/g, '').replace(/\[.*?\]/g, '').replace(/\s+/g, '');
-    const normReading = (item.reading || '').replace(/[（\(].*?[）\)]/g, '').replace(/\[.*?\]/g, '').replace(/\s+/g, '').toLowerCase();
+    const normJp = (item.jp || '').replace(/[（\(].*?[）\)]/g, '').replace(/\[.*?\]/g, '').replace(/\s+/g, '').replace(/な$/, '');
+    const normReading = (item.reading || '').replace(/[（\(].*?[）\)]/g, '').replace(/\[.*?\]/g, '').replace(/\s+/g, '').replace(/na$/i, '').toLowerCase();
     const key = normReading.length >= 2 ? normReading : normJp;
 
     if (seen.has(key)) {
