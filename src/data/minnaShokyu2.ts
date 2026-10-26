@@ -11,32 +11,53 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m26-1",
-        "pattern": "Bentuk Biasa + んです (~ n desu)",
-        "formula": "Kalimat [Futsuukei: KK/I-Kei/Na-Kei+na/KB+na] + n desu",
-        "explanation": "Dipakai saat menjelaskan latar belakang keadaan, mencari konfirmasi alasan, atau mengekspresikan rasa penasaran.",
+        "pattern": "Bentuk Biasa + んです (~ n desu - Penjelasan Alasan Mendalam)",
+        "formula": "Kalimat Futsuukei (Na-Kei & KB + na) + n desu",
+        "explanation": "Digunakan dalam percakapan lisan untuk menjelaskan latar belakang situasi, menegaskan alasan, atau bertanya karena merasa heran/penasaran.",
         "examples": [
           {
             "jp": "どうして 遅れたんですか。バスが 来なかったんです。",
             "reading": "Doushite okureta n desu ka. Basu ga konakatta n desu.",
-            "id": "Kenapa Anda terlambat? Karena busnya tadi tidak datang."
-          },
-          {
-            "jp": "日本語が 上手ですね。たくさん 練習したんです。",
-            "reading": "Nihongo ga jouzu desu ne. Takusan renshuu shita n desu.",
-            "id": "Bahasa Jepangmu bagus sekali ya. Karena saya sudah banyak berlatih."
+            "id": "Kenapa Anda terlambat? Karena busnya tidak kunjung datang."
           }
         ]
       },
       {
         "id": "m26-2",
-        "pattern": "〜んですが、[Permohonan / Pertanyaan] (Pembuka Kalimat)",
+        "pattern": "〜んですが、... (~ n desu ga - Pembuka Kalimat Santun)",
         "formula": "Kalimat [~n desu ga], permohonan / tolong ajari",
-        "explanation": "Melembutkan awal pembicaraan sebelum meminta bantuan atau menanyakan arah.",
+        "explanation": "Melembutkan awal pembicaraan sebelum meminta bantuan, mengajukan permohonan, atau menanyakan arah.",
         "examples": [
           {
             "jp": "生け花を 習いたいんですが、いい 先生を 紹介して くださいませんか。",
             "reading": "Ikebana o naraitai n desu ga, ii sensei o shoukai shite kudasaimasen ka.",
-            "id": "Saya ingin belajar merangkai bunga ikebana, maukah memperkenalkan guru yang bagus kepada saya?"
+            "id": "Saya ingin belajar merangkai bunga ikebana, dapatkah Anda memperkenalkan guru yang baik kepada saya?"
+          }
+        ]
+      },
+      {
+        "id": "m26-3",
+        "pattern": "KK bentuk-Te + いただけませんか (Permohonan Sangat Sopan)",
+        "formula": "KK bentuk-Te + itadakemasen ka",
+        "explanation": "Bentuk permohonan yang jauh lebih sopan daripada '~te kudasai' kepada orang yang dihormati atau belum akrab.",
+        "examples": [
+          {
+            "jp": "日本語で 手紙を 書いたんですが、ちょっと 見て いただけませんか。",
+            "reading": "Nihongo de tegami o kaita n desu ga, chotto mite itadakemasen ka.",
+            "id": "Saya telah menulis surat dalam bahasa Jepang, bersediakah Anda memeriksanya sebentar?"
+          }
+        ]
+      },
+      {
+        "id": "m26-4",
+        "pattern": "Kata Tanya + KK bentuk-Ta + ら いいですか (Meminta Saran)",
+        "formula": "Doko/Doushite/Nani + KK-tara ii desu ka",
+        "explanation": "Meminta petunjuk atau nasihat terbaik mengenai langkah apa yang sebaiknya dilakukan.",
+        "examples": [
+          {
+            "jp": "どこで カメラを 買ったら いいですか。",
+            "reading": "Doko de kamera o kattara ii desu ka.",
+            "id": "Di manakah sebaiknya saya membeli kamera?"
           }
         ]
       }
@@ -414,7 +435,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Hari selasa minggu ke 3",
         "kanji": "第3火曜日"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "どこで買ったらいいですか (Sebaiknya Beli di Mana?)",
+      "lines": [
+        {
+          "speaker": "Miller",
+          "jp": "いいカメラですね。どこで買ったんですか。",
+          "reading": "Ii kamera desu ne. Doko de katta n desu ka.",
+          "id": "Kamera yang bagus ya. Anda beli di mana?"
+        },
+        {
+          "speaker": "Sato",
+          "jp": "秋葉原で買いました。安くて種類が多いですよ。",
+          "reading": "Akihabara de kaimashita. Yasukute shurui ga ooi desu yo.",
+          "id": "Saya beli di Akihabara. Murah dan pilihannya banyak lho."
+        },
+        {
+          "speaker": "Miller",
+          "jp": "わたしも新しいのを買いたいんですが、どこへ行ったらいいですか。",
+          "reading": "Watashi mo atarashii no o kaitai n desu ga, doko e ittara ii desu ka.",
+          "id": "Saya juga ingin membeli yang baru, sebaiknya pergi ke mana ya?"
+        },
+        {
+          "speaker": "Sato",
+          "jp": "じゃ、日曜日にいっしょに行きましょうか。",
+          "reading": "Ja, nichiyoubi ni issho ni ikimashou ka.",
+          "id": "Kalau begitu, bagaimana kalau hari Minggu kita pergi bersama?"
+        }
+      ]
+    }
   },
   {
     "chapter": 27,
@@ -426,37 +476,63 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m27-1",
-        "pattern": "Objek が Kata Kerja Bentuk Potensial (Bisa/Mampu)",
-        "formula": "KB [ga] KK [kanou-kei]",
-        "explanation": "Menyatakan kemampuan personal atau kemungkinan situasional.",
+        "pattern": "Kata Kerja Bentuk Potensial (可能形 Kano-kei - Bisa/Mampu)",
+        "formula": "Grup 1: vokal 'u' -> 'eru' (kaku -> kakeru). Grup 2: buang ru + rareru (taberareru). Grup 3: kuru -> korareru, suru -> dekiru. Objek ditandai が.",
+        "explanation": "Menyatakan kemampuan kompetensi subjek atau kemungkinan diizinkannya suatu tindakan. Objek partikel を berubah menjadi が.",
         "examples": [
           {
-            "jp": "わたしは 漢字が 読めます。",
-            "reading": "Watashi wa kanji ga yomemasu.",
-            "id": "Saya bisa membaca kanji."
+            "jp": "わたしは 日本語が 話せます。",
+            "reading": "Watashi wa Nihongo ga hanasemasu.",
+            "id": "Saya bisa berbicara bahasa Jepang."
           },
           {
             "jp": "一人で 病院へ 行けますか。",
             "reading": "Hitori de byouin e ikemasu ka.",
-            "id": "Apakah Anda bisa pergi ke rumah sakit sendirian?"
+            "id": "Dapatkah Anda pergi ke rumah sakit sendirian?"
           }
         ]
       },
       {
         "id": "m27-2",
-        "pattern": "見えます (Mieru) vs 見られます (Mirareru) & 聞こえます (Kikoeru)",
-        "formula": "Mieru / Kikoeru = spontan tertangkap indera | Mirareru = memiliki kesempatan menonton",
-        "explanation": "Mieru dan Kikoeru terjadi alami tanpa usaha sengaja.",
+        "pattern": "見えます (Miemasu) vs 見られます (Mirareru) & 聞こえます vs 聞けます",
+        "formula": "Miemasu / Kikoemasu = otomatis spontan tertangkap indera; Mirareru / Kikemasu = ada usaha/peluang menonton",
+        "explanation": "'Miemasu' dan 'kikoemasu' terjadi secara alami tanpa kehendak pembicara. Sedangkan 'mirareru' dan 'kikemasu' membutuhkan niat atau kesempatan.",
         "examples": [
           {
-            "jp": "ここから 富士山が 見えます。",
-            "reading": "Koko kara Fujisan ga miemasu.",
-            "id": "Dari sini Gunung Fuji terlihat (spontan tampak di mata)."
+            "jp": "新幹線から 富士山が 見えます。",
+            "reading": "Shinkansen kara Fujisan ga miemasu.",
+            "id": "Dari Shinkansen kelihatan Gunung Fuji (secara alami)."
           },
           {
-            "jp": "隣の 部屋から 声が 聞こえます。",
-            "reading": "Tonari no heya kara koe ga kikoemasu.",
-            "id": "Terdengar suara dari kamar sebelah."
+            "jp": "電話で 天気予報が 聞けます。",
+            "reading": "Denwa de tenki yohou ga kikemasu.",
+            "id": "Lewat telepon kita bisa mendengarkan prakiraan cuaca."
+          }
+        ]
+      },
+      {
+        "id": "m27-3",
+        "pattern": "できます (Dekimasu - Rampung / Jadi / Dibangun)",
+        "formula": "KB + ga dekimasu",
+        "explanation": "Dalam konteks ini 'dekimasu' bermakna selesai dibuat, rampung dibangun, atau toko baru dibuka.",
+        "examples": [
+          {
+            "jp": "駅の 前に 大きい スーパーが できました。",
+            "reading": "Eki no mae ni ookii suupaa ga dekimashita.",
+            "id": "Di depan stasiun telah selesai dibangun supermarket besar."
+          }
+        ]
+      },
+      {
+        "id": "m27-4",
+        "pattern": "〜しか 〜ません (~ Shika ... Masen - Hanya)",
+        "formula": "KB + shika + Predikat Negatif",
+        "explanation": "Menyatakan batasan dengan nuansa rasa kurang atau tidak cukup ('hanya... saja'). Wajib selalu berpasangan dengan bentuk negatif.",
+        "examples": [
+          {
+            "jp": "ローマ字しか 書けません。",
+            "reading": "Roomaji shika kakemasen.",
+            "id": "Saya hanya bisa menulis huruf Romawi saja (yang lain tidak bisa)."
           }
         ]
       }
@@ -889,7 +965,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "reading": "konsa-tochikettonohanbai",
         "id": "Penjualan tiket konser"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "何でも作れるんですね (Bisa Membuat Apa Saja ya)",
+      "lines": [
+        {
+          "speaker": "Peserta",
+          "jp": "先生、日曜大工で本棚を作りたいんですが、できますか。",
+          "reading": "Sensei, nichiyoudaiku de hondana o tsukuritai n desu ga, dekimasu ka.",
+          "id": "Pak guru, saya ingin membuat lemari buku sendiri saat senggang di hari Minggu, apakah bisa?"
+        },
+        {
+          "speaker": "Instruktur",
+          "jp": "ええ、道具の使い方がわかれば、何でも作れますよ。",
+          "reading": "Ee, dougu no tsukaikata ga wakareba, nan demo tsukuremasu yo.",
+          "id": "Tentu, kalau mengerti cara menggunakan perkakasnya, Anda bisa membuat apa saja."
+        },
+        {
+          "speaker": "Peserta",
+          "jp": "この設計図のとおりに切ればいいですか。",
+          "reading": "Kono sekkeizu no toori ni kireba ii desu ka.",
+          "id": "Apakah cukup memotong kayu sesuai gambar desain ini?"
+        },
+        {
+          "speaker": "Instruktur",
+          "jp": "はい。安全に気をつけてやってみてください。",
+          "reading": "Hai. Anzen ni ki o tsukete yatte mite kudasai.",
+          "id": "Ya. Hati-hati jaga keselamatan dan silakan dicoba."
+        }
+      ]
+    }
   },
   {
     "chapter": 28,
@@ -901,32 +1006,58 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m28-1",
-        "pattern": "KK1 Stem + ながら、KK2 (Sambil...)",
-        "formula": "KK1 (Stem masu) + nagara, KK2",
-        "explanation": "Melakukan dua perbuatan pada saat yang sama oleh pelaku yang sama. Fokus perbuatan utama berada di KK2.",
+        "pattern": "KK1 Bentuk Masu (Stem) + ながら、KK2 (Sambil)",
+        "formula": "KK1 Stem [nagara], KK2",
+        "explanation": "Menyatakan dua perbuatan yang dilakukan secara bersamaan oleh satu subjek. Perbuatan KK2 adalah tindakan utama pembicara.",
         "examples": [
           {
-            "jp": "音楽を 聞きながら、勉強します。",
-            "reading": "Ongaku o kikinagara, benkyou shimasu.",
-            "id": "Belajar sambil mendengarkan musik."
+            "jp": "音楽を 聞きながら 食事します。",
+            "reading": "Ongaku o kikinagara shokuji shimasu.",
+            "id": "Saya makan sambil mendengarkan musik."
           },
           {
-            "jp": "働きながら、大学に 通っています。",
-            "reading": "Hatarakinagara, daigaku ni kayotte imasu.",
-            "id": "Kuliah di universitas sambil bekerja."
+            "jp": "働きながら 日本語を 勉強して います。",
+            "reading": "Hatarakinagara Nihongo o benkyou shite imasu.",
+            "id": "Saya belajar bahasa Jepang sambil bekerja."
           }
         ]
       },
       {
         "id": "m28-2",
-        "pattern": "Kalimat 1 し、Kalimat 2 し、Kalimat 3 (Alasan Majemuk)",
-        "formula": "Futsuukei [shi], Futsuukei [shi], Kesimpulan",
-        "explanation": "Menyebutkan lebih dari satu faktor/alasan yang mendukung satu kesimpulan.",
+        "pattern": "KK bentuk-Te + います (Te imasu - Rutinitas / Kebiasaan)",
+        "formula": "KK bentuk-Te + imasu (kebiasaan berulang)",
+        "explanation": "Menyatakan rutinitas atau kebiasaan yang rutin dilakukan berulang kali dalam kurun waktu tertentu.",
         "examples": [
           {
-            "jp": "この 店は 美味しいし、安いし、いつも 来ています。",
-            "reading": "Kono mise wa oishii shi, yasui shi, itsumo kite imasu.",
-            "id": "Warung ini enak, murah pula, makanya saya selalu datang ke mari."
+            "jp": "毎朝 ジョギングを して います。",
+            "reading": "Maiasa jogingu o shite imasu.",
+            "id": "Setiap pagi saya rutin berjoging."
+          }
+        ]
+      },
+      {
+        "id": "m28-3",
+        "pattern": "Kalimat1 し、Kalimat2 し、Kalimat3 (Menyebutkan Berbagai Alasan)",
+        "formula": "Kalimat Futsuukei [shi], Kalimat Futsuukei [shi]",
+        "explanation": "Menyebutkan dua atau lebih alasan atau kelebihan secara sejajar sebelum menyampaikan kesimpulan.",
+        "examples": [
+          {
+            "jp": "駅から 近いし、車でも 来られるし、この店は とても 便利です。",
+            "reading": "Eki kara chikaishi, kuruma demo korareru shi, kono mise wa totemo benri desu.",
+            "id": "Dekat dari stasiun, bisa didatangi dengan mobil pula, toko ini sangat praktis."
+          }
+        ]
+      },
+      {
+        "id": "m28-4",
+        "pattern": "それに (Lagipula / Selain itu) & それで (Oleh karena itu)",
+        "formula": "Soreni = menambahkan fakta pendukung; Sorede = menyatakan akibat",
+        "explanation": "'Soreni' menambah alasan positif/negatif yang seirama. 'Sorede' merupakan kata sambung penjelas akibat.",
+        "examples": [
+          {
+            "jp": "この店は 料理も おいしいし、値段も 安いです。それに 店員も 親切です。",
+            "reading": "Kono mise wa ryouri mo oishiishi, nedan mo yasui desu. Soreni ten'in mo shinsetsu desu.",
+            "id": "Toko ini makanannya enak, harganya murah. Lagipula pelayannya ramah."
           }
         ]
       }
@@ -1206,7 +1337,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Harga",
         "kanji": "値段"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "出張も多いし、試験もあるし (Karena Banyak Dinas dan Ada Ujian)",
+      "lines": [
+        {
+          "speaker": "Ogawa",
+          "jp": "ワット先生、最近とても忙しそうですね。",
+          "reading": "Watto-sensei, saikin totemo isogashisou desu ne.",
+          "id": "Pak Guru Watt, akhir-akhir ini kelihatannya sibuk sekali ya."
+        },
+        {
+          "speaker": "Watt",
+          "jp": "ええ、出張も多いし、来週は日本語の試験もあるんです。",
+          "reading": "Ee, shucchou mo ooi shi, raishuu wa Nihongo no shiken mo aru n desu.",
+          "id": "Iya, dinas luar kota sering, dan minggu depan juga ada ujian bahasa Jepang."
+        },
+        {
+          "speaker": "Ogawa",
+          "jp": "それは大変ですね。音楽を聞きながら勉強しているんですか。",
+          "reading": "Sore wa taihen desu ne. Ongaku o kikinagara benkyou shite iru n desu ka.",
+          "id": "Berat sekali ya. Apakah Anda belajar sambil mendengarkan musik?"
+        },
+        {
+          "speaker": "Watt",
+          "jp": "はい。リラックスできますから。",
+          "reading": "Hai. Rirakkusu dekimasu kara.",
+          "id": "Iya. Karena bisa membuat rileks."
+        }
+      ]
+    }
   },
   {
     "chapter": 29,
@@ -1218,42 +1378,50 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m29-1",
-        "pattern": "KB が Jidoushi bentuk-Te + います (Kondisi Sedang Berlangsung/Terbuka/Pecah)",
-        "formula": "KB [ga] KK Intransitif [te-kei] + imasu",
-        "explanation": "Menyatakan keadaan yang tersisa setelah suatu kejadian berlangsung secara spontan.",
+        "pattern": "KB が Jidoushi (Intransitif) + ています (Kondisi Sedang Berlangsung)",
+        "formula": "Kata Benda [ga] Jidoushi-te imasu",
+        "explanation": "Menyatakan keadaan atau kondisi fisik suatu benda yang masih berlangsung saat ini sebagai hasil perubahan spontan (kaca pecah, pintu terbuka, lampu menyala).",
         "examples": [
           {
-            "jp": "窓が 開いています。",
-            "reading": "Mado ga aite imasu.",
-            "id": "Jendela dalam keadaan terbuka."
+            "jp": "窓が 割れて います。",
+            "reading": "Mado ga warete imasu.",
+            "id": "Jendelanya pecah (dalam kondisi pecah)."
           },
           {
-            "jp": "電気が ついています。",
+            "jp": "電気が ついて います。",
             "reading": "Denki ga tsuite imasu.",
-            "id": "Lampu dalam keadaan menyala."
-          },
-          {
-            "jp": "お皿が 割れています。",
-            "reading": "Osara ga warete imasu.",
-            "id": "Piringnya dalam keadaan pecah."
+            "id": "Lampunya menyala."
           }
         ]
       },
       {
         "id": "m29-2",
-        "pattern": "KK bentuk-Te + しまいました (Kelar Tuntas / Penyesalan Tak Sengaja)",
-        "formula": "KK [te-kei] + shimaimashita / shimaimasu",
-        "explanation": "Menyatakan tindakan selesai sampai tuntas atau penyesalan atas ketidaksengajaan yang terjadi.",
+        "pattern": "KB は Jidoushi-te imasu (Menjadikan Benda sebagai Topik)",
+        "formula": "Kata Benda [wa] Jidoushi-te imasu",
+        "explanation": "Mengangkat benda yang kondisinya rusak/berubah menjadi topik pembicaraan.",
         "examples": [
           {
-            "jp": "宿題を 全部 やって しまいました。",
-            "reading": "Shukudai o zenbu yatte shimaimashita.",
-            "id": "Pekerjaan rumah sudah selesai dikerjakan semuanya sampai tuntas."
+            "jp": "この 椅子は 壊れて います。",
+            "reading": "Kono isu wa kowarete imasu.",
+            "id": "Kursi ini rusak."
+          }
+        ]
+      },
+      {
+        "id": "m29-3",
+        "pattern": "KK bentuk-Te + しまいました (Kelar Tuntas / Penyesalan Tak Sengaja)",
+        "formula": "KK bentuk-Te + shimaimashita / shimaimasu",
+        "explanation": "Memiliki 2 arti: (1) Suatu pekerjaan telah selesai tuntas seutuhnya, (2) Terjadinya kekeliruan atau peristiwa yang disesalkan oleh pembicara.",
+        "examples": [
+          {
+            "jp": "漢字の 宿題は もう やって しまいました。",
+            "reading": "Kanji no shukudai wa mou yatte shimaimashita.",
+            "id": "PR kanji sudah selesai saya kerjakan tuntas."
           },
           {
             "jp": "パスポートを なくして しまいました。",
             "reading": "Pasupooto o nakushite shimaimashita.",
-            "id": "Gawat, paspor saya sampai hilang (rasa sesal)."
+            "id": "Gawat, paspor saya hilang (terlanjur hilang)."
           }
         ]
       }
@@ -1598,7 +1766,42 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Beku",
         "kanji": "凍っている"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "忘れ物をしてしまいました (Barang Saya Tertinggal di Kereta)",
+      "lines": [
+        {
+          "speaker": "Miller",
+          "jp": "すみません、電車の中に傘を忘れてしまいました。",
+          "reading": "Sumimasen, densha no naka ni kasa o wasurete shimaimashita.",
+          "id": "Permisi, payung saya tertinggal di dalam kereta."
+        },
+        {
+          "speaker": "Petugas",
+          "jp": "どんな傘ですか。いつの電車でしたか。",
+          "reading": "Donna kasa desu ka. Itsu no densha deshita ka.",
+          "id": "Payung seperti apa? Kereta pukul berapa tadi?"
+        },
+        {
+          "speaker": "Miller",
+          "jp": "青くて長い傘です。さっき2番線に着いた電車です。",
+          "reading": "Aokute nagai kasa desu. Sakki nibansen ni tsuita densha desu.",
+          "id": "Payung biru panjang. Kereta yang baru saja tiba di jalur peron 2."
+        },
+        {
+          "speaker": "Petugas",
+          "jp": "あ、事務所に届いていますよ。こちらの傘ですか。",
+          "reading": "A, jimusho ni todoite imasu yo. Kochira no kasa desu ka.",
+          "id": "Ah, sudah diantarkan ke kantor stasiun lho. Apakah payung yang ini?"
+        },
+        {
+          "speaker": "Miller",
+          "jp": "あ、それです！よかった、ありがとうございます。",
+          "reading": "A, sore desu! Yokatta, arigatou gozaimasu.",
+          "id": "Ah, benar yang itu! Syukurlah, terima kasih banyak."
+        }
+      ]
+    }
   },
   {
     "chapter": 30,
@@ -1610,37 +1813,50 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m30-1",
-        "pattern": "KB が KK Transitif bentuk-Te + あります (Kondisi Sengaja Dipasang/Ditulis)",
-        "formula": "KB [ga] KK Transitif [te-kei] + arimasu",
-        "explanation": "Menyatakan keadaan di mana seseorang sengaja meletakkan/memasang sesuatu demi tujuan tertentu.",
+        "pattern": "KB が Tadoushi (Transitif) + てあります (Kondisi Sengaja Dipersiapkan)",
+        "formula": "Kata Benda [ga] Tadoushi-te arimasu",
+        "explanation": "Menyatakan keadaan yang tercipta karena sengaja dilakukan oleh seseorang demi suatu tujuan tertentu (misal: kalender sengaja dipasang di dinding).",
         "examples": [
           {
             "jp": "カレンダーに 今月の 予定が 書いて あります。",
             "reading": "Karendaa ni kongetsu no yotei ga kaite arimasu.",
-            "id": "Pada kalender sudah tertulis rencana jadwal bulan ini."
+            "id": "Di kalender telah tertulis rencana bulan ini."
           },
           {
-            "jp": "壁に カレンダーが 掛けて あります。",
-            "reading": "Kabe ni karendaa ga kakete arimasu.",
-            "id": "Di dinding sengaja dipasangi kalender."
+            "jp": "壁に 絵が かけて あります。",
+            "reading": "Kabe ni e ga kakete arimasu.",
+            "id": "Di dinding tergantung lukisan."
           }
         ]
       },
       {
         "id": "m30-2",
-        "pattern": "KK bentuk-Te + おきます (Melakukan Persiapan Terlebih Dahulu)",
-        "formula": "KK [te-kei] + okimasu",
-        "explanation": "Melakukan persiapan sebelum waktu tiba, atau mengembalikan barang ke tempat semula.",
+        "pattern": "KK bentuk-Te + おきます (Te okimasu - Persiapan Terlebih Dahulu)",
+        "formula": "KK bentuk-Te + okimasu",
+        "explanation": "Memiliki 3 makna: (1) Menyelesaikan persiapan sebelum waktu kegiatan tiba, (2) Tindakan antisipasi, (3) Membiarkan barang tetap pada posisinya.",
         "examples": [
           {
-            "jp": "旅行の 前に、ホテルを 予約して おきます。",
-            "reading": "Ryokou no mae ni, hoteru o yoyaku shite okimasu.",
-            "id": "Sebelum perjalanan, saya memesan hotel terlebih dahulu."
+            "jp": "旅行の まえに、切符を 買って おきます。",
+            "reading": "Ryokou no mae ni, kippu o katte okimasu.",
+            "id": "Sebelum bepergian, saya membeli tiket terlebih dahulu."
           },
           {
-            "jp": "使ったら、元の 所に 戻して おいて ください。",
-            "reading": "Tsukattara, moto no tokoro ni modoshite oite kudasai.",
-            "id": "Setelah dipakai, tolong kembalikan ke tempat semula ya."
+            "jp": "はさみを 使ったら、元の 所に 戻して おいて ください。",
+            "reading": "Hasami o tsukattara, moto no tokoro ni modoshite oite kudasai.",
+            "id": "Setelah memakai gunting, tolong kembalikan ke tempat semula."
+          }
+        ]
+      },
+      {
+        "id": "m30-3",
+        "pattern": "まだ + Kata Kerja (Masih Sedang...)",
+        "formula": "Mada + KK-te imasu / Mada + KB",
+        "explanation": "Menyatakan bahwa suatu keadaan atau tindakan masih terus berlanjut tanpa perubahan.",
+        "examples": [
+          {
+            "jp": "まだ 雨が 降って います。",
+            "reading": "Mada ame ga futte imasu.",
+            "id": "Hujan masih turun."
           }
         ]
       }
@@ -1999,7 +2215,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Baris ke 2 (buku)",
         "kanji": "２行目"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "非常袋を準備しておきます (Menyiapkan Tas Darurat Gempa)",
+      "lines": [
+        {
+          "speaker": "Santos",
+          "jp": "田中さん、壁にカレンダーが掛けてありますね。",
+          "reading": "Tanaka-san, kabe ni karendaa ga kakete arimasu ne.",
+          "id": "Sdr. Tanaka, di dinding tergantung kalender ya."
+        },
+        {
+          "speaker": "Tanaka",
+          "jp": "ええ、予定を忘れないように、書いてあるんです。",
+          "reading": "Ee, yotei o wasurenai you ni, kaite aru n desu.",
+          "id": "Ya, saya tulis di situ agar tidak lupa jadwal rencana kegiatan."
+        },
+        {
+          "speaker": "Santos",
+          "jp": "玄関の横にある袋は何ですか。",
+          "reading": "Genkan no yoko ni aru fukuro wa nan desu ka.",
+          "id": "Kantong tas di samping pintu masuk itu apa?"
+        },
+        {
+          "speaker": "Tanaka",
+          "jp": "地震の時の非常袋です。水や懐中電灯が入れてあります。",
+          "reading": "Jishin no toki no hijou-bukuro desu. Mizu ya kaichuudentou ga irete arimasu.",
+          "id": "Itu tas darurat saat terjadi gempa. Sudah disiapkan air dan senter di dalamnya."
+        }
+      ]
+    }
   },
   {
     "chapter": 31,
@@ -2011,45 +2256,53 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m31-1",
-        "pattern": "KK bentuk-Ikoukei (Ajakan Kasual)",
-        "formula": "G1: u -> ou (ikou) | G2: tabeyou | G3: koyou / shiyou",
-        "explanation": "Bentuk kasual dari ~mashou (\"Ayo!\").",
+        "pattern": "Kata Kerja Bentuk Maksud (意向形 Ikoukei)",
+        "formula": "Grup 1: vokal 'u' -> 'ou' (kaku -> kakou). Grup 2: buang ru + you (tabeyou). Grup 3: shiyou, koyou.",
+        "explanation": "Bentuk kasual dari ajakan '〜ましょう' (mashou), digunakan dalam situasi akrab dengan teman atau rencana internal.",
         "examples": [
           {
             "jp": "ちょっと 休もう。",
             "reading": "Chotto yasumou.",
-            "id": "Ayo kita istirahat sebentar (kasual)."
+            "id": "Yuk istirahat sebentar (kasual)."
           }
         ]
       },
       {
         "id": "m31-2",
-        "pattern": "KK bentuk-Ikoukei + と 思っています (Bermaksud / Berencana...)",
-        "formula": "KK [ikou-kei] + to omotte imasu",
-        "explanation": "Menyatakan maksud atau niat yang sudah lama direncanakan dan masih terus dipegang.",
+        "pattern": "KK Ikoukei + と 思っています (Bermaksud / Berencana)",
+        "formula": "KK Ikoukei [to omotte imasu]",
+        "explanation": "Menyatakan tekad atau niat yang sudah dipikirkan sejak beberapa waktu lalu dan masih berniat melaksanakannya.",
         "examples": [
           {
-            "jp": "週末は 海へ 行こうと 思っています。",
+            "jp": "週末は 海へ 行こうと 思って います。",
             "reading": "Shuumatsu wa umi e ikou to omotte imasu.",
-            "id": "Akhir pekan saya bermaksud pergi ke pantai."
-          },
-          {
-            "jp": "国へ 帰ったら、会社を 作ろうと 思っています。",
-            "reading": "Kuni e kaettara, kaisha o tsukurou to omotte imasu.",
-            "id": "Setelah kembali ke tanah air, saya berencana mendirikan perusahaan."
+            "id": "Akhir pekan saya bermaksud pergi ke laut."
           }
         ]
       },
       {
         "id": "m31-3",
-        "pattern": "KK Kamus / KB の + 予定です (Terjadwal...)",
-        "formula": "KK [jisho-kei] / KB [no] + yotei desu",
-        "explanation": "Menyatakan jadwal atau agenda pasti yang sudah diputuskan secara resmi.",
+        "pattern": "KK Kamus / Nai + つもりです (Niat / Tekad Pribadi)",
+        "formula": "KK Jishokei / Nai + tsumori desu",
+        "explanation": "Menyatakan tekad kuat pembicara untuk melakukan atau tidak melakukan suatu hal di masa depan.",
         "examples": [
           {
-            "jp": "出張は １週間の 予定です。",
-            "reading": "Shucchou wa isshuukan no yotei desu.",
-            "id": "Dinas luar kota dijadwalkan selama 1 minggu."
+            "jp": "明日からは たばこを 吸わない つもりです。",
+            "reading": "Ashita kara wa tabako o suwanai tsumori desu.",
+            "id": "Mulai besok saya bertekad tidak akan merokok."
+          }
+        ]
+      },
+      {
+        "id": "m31-4",
+        "pattern": "KK Kamus / KB の + 予定です (Jadwal Rencana Resmi)",
+        "formula": "[KK Jishokei / KB no] + yotei desu",
+        "explanation": "Menyatakan rencana atau jadwal resmi yang sudah ditentukan secara objektif.",
+        "examples": [
+          {
+            "jp": "7月の 終わりに ドイツへ 出張する 予定です。",
+            "reading": "Shichigatsu no owari ni Doitsu e shucchou suru yotei desu.",
+            "id": "Akhir bulan Juli terjadwal dinas ke Jerman."
           }
         ]
       }
@@ -2518,7 +2771,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Pendidikan jasmani",
         "kanji": "体育学"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "料理を習おうと思っています (Bermaksud Ingin Belajar Memasak)",
+      "lines": [
+        {
+          "speaker": "Miller",
+          "jp": "来月から日本料理を習おうと思っています。",
+          "reading": "Raigetsu kara Nihon ryouri o naraou to omotte imasu.",
+          "id": "Mulai bulan depan saya bermaksud ingin belajar memasak makanan Jepang."
+        },
+        {
+          "speaker": "Sato",
+          "jp": "へえ、いいですね。教室はもう決めましたか。",
+          "reading": "Hee, ii desu ne. Kyoushitsu wa mou kimemashita ka.",
+          "id": "Wah, bagus ya. Tempat kursusnya sudah ditentukan?"
+        },
+        {
+          "speaker": "Miller",
+          "jp": "ええ、駅前のクッキングスクールに行くつもりです。",
+          "reading": "Ee, ekimae no kukkingu sukuuru ni iku tsumori desu.",
+          "id": "Iya, rencananya saya akan pergi ke sekolah memasak depan stasiun."
+        },
+        {
+          "speaker": "Sato",
+          "jp": "上手になったら、ぜひごちそうしてくださいね。",
+          "reading": "Jouzu ni nattara, zehi gochisou shite kudasai ne.",
+          "id": "Kalau sudah mahir, pastikan mentraktir masakan untuk saya ya."
+        }
+      ]
+    }
   },
   {
     "chapter": 32,
@@ -2530,27 +2812,27 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m32-1",
-        "pattern": "KK bentuk-Ta / Nai + ほうがいいです (Sebaiknya... / Lebih Baik Jangan...)",
-        "formula": "KK [ta-kei] hou ga ii desu / KK [nai-kei] hou ga ii desu",
-        "explanation": "Memberikan saran atau anjuran kuat mana pilihan yang lebih baik bagi lawan bicara.",
+        "pattern": "KK bentuk-Ta / Nai + ほうが いいです (Saran / Nasihat Terbaik)",
+        "formula": "KK-ta hou ga ii desu (sebaiknya); KK-nai hou ga ii desu (sebaiknya jangan)",
+        "explanation": "Memberikan saran atau anjuran spesifik kepada lawan bicara yang sedang menghadapi masalah.",
         "examples": [
           {
-            "jp": "毎朝 運動した ほうがいいです。",
-            "reading": "Maiasa undou shita hou ga ii desu.",
-            "id": "Sebaiknya setiap pagi berolahraga."
+            "jp": "毎日 運動した ほうが いいです。",
+            "reading": "Mainichi undou shita hou ga ii desu.",
+            "id": "Sebaiknya Anda berolahraga setiap hari."
           },
           {
-            "jp": "熱が ありますから、お風呂に 入らない ほうがいいです。",
+            "jp": "熱が ありますから、お風呂に 入らない ほうが いいです。",
             "reading": "Netsu ga arimasu kara, ofuro ni hairanai hou ga ii desu.",
-            "id": "Karena demam, sebaiknya jangan berendam di bak mandi."
+            "id": "Karena demam, sebaiknya jangan mandi berendam."
           }
         ]
       },
       {
         "id": "m32-2",
-        "pattern": "〜でしょう (Pasti / Kemungkinan Besar...)",
-        "formula": "Futsuukei [tanpa da pada KB/Na-kei] + deshou",
-        "explanation": "Menyatakan perkiraan berdasarkan data objektif (seperti ramalan cuaca).",
+        "pattern": "〜でしょう (~ Deshou - Dugaan / Perkiraan Kuat)",
+        "formula": "Kalimat Futsuukei (Na-Kei & KB tanpa da) + deshou",
+        "explanation": "Menyatakan dugaan atau ramalan pembicara berdasarkan data atau pengamatan (kemungkinan tinggi).",
         "examples": [
           {
             "jp": "明日は 雨が 降るでしょう。",
@@ -2561,14 +2843,14 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       },
       {
         "id": "m32-3",
-        "pattern": "〜かもしれません (Mungkin saja...)",
-        "formula": "Futsuukei [tanpa da pada KB/Na-kei] + kamoshiremasen",
-        "explanation": "Menyatakan kemungkinan yang belum pasti (kira-kira 50% atau kurang).",
+        "pattern": "〜かもしれません (~ Kamoshiremasen - Mungkin Saja)",
+        "formula": "Kalimat Futsuukei (Na-Kei & KB tanpa da) + kamoshiremasen",
+        "explanation": "Menyatakan dugaan dengan derajat kepastian yang lebih rendah daripada deshou ('ada kemungkinan bahwa...').",
         "examples": [
           {
             "jp": "約束の 時間に 間に合わないかも しれません。",
             "reading": "Yakusoku no jikan ni maniawanai kamo shiremasen.",
-            "id": "Mungkin saja saya tidak sempat tepat waktu pada janji temu."
+            "id": "Mungkin saja saya tidak sempat tepat waktu pada jam janji."
           }
         ]
       }
@@ -2981,7 +3263,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Petir",
         "kanji": "雷"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "無理をしないほうがいいですよ (Sebaiknya Jangan Memaksakan Diri)",
+      "lines": [
+        {
+          "speaker": "Rekan",
+          "jp": "ミラーさん、顔色が悪いですね。熱があるんじゃないですか。",
+          "reading": "Miraa-san, kaoiro ga warui desu ne. Netsu ga aru n ja nai desu ka.",
+          "id": "Sdr. Miller, wajah Anda pucat ya. Jangan-jangan Anda demam?"
+        },
+        {
+          "speaker": "Miller",
+          "jp": "ええ、少し寒気がして、頭も痛いんです。",
+          "reading": "Ee, sukoshi samuke ga shite, atama mo itai n desu.",
+          "id": "Iya, badan terasa agak kedinginan dan kepala juga sakit."
+        },
+        {
+          "speaker": "Rekan",
+          "jp": "今日は早く帰って、お風呂に入らないで寝たほうがいいですよ。",
+          "reading": "Kyou wa hayaku kaette, ofuro ni hairanaide neta hou ga ii desu yo.",
+          "id": "Hari ini sebaiknya Anda pulang cepat dan langsung tidur tanpa mandi berendam."
+        },
+        {
+          "speaker": "Miller",
+          "jp": "そうですね。無理をしないで、今日はゆっくり休みます。",
+          "reading": "Sou desu ne. Muri o shinaide, kyou wa yukkuri yasumimasu.",
+          "id": "Benar juga ya. Saya tidak akan memaksakan diri dan hari ini akan istirahat."
+        }
+      ]
+    }
   },
   {
     "chapter": 33,
@@ -2994,31 +3305,57 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "id": "m33-1",
         "pattern": "Bentuk Perintah (命令形 Meireikei) & Larangan (禁止形 Kinshikei)",
-        "formula": "G1: u -> e (ike/mate) | Larangan: KK Kamus + na (iku na / taberu na)",
-        "explanation": "Dipakai pada kondisi darurat (kebakaran/gempa), instruksi atasan pabrik dalam bahaya, atau teriakan suporter olahraga.",
+        "formula": "Perintah: Grup 1 vokal 'e' (ike, yome); Grup 2 + ro (tabero); Grup 3 shiro, koi. Larangan: KK Kamus + na (suru na, iku na).",
+        "explanation": "Digunakan oleh atasan kepada bawahan laki-laki, dalam situasi darurat militer/bencana, seruan pertandingan olahraga, atau rambu lalu lintas.",
         "examples": [
           {
-            "jp": "逃げろ！ (Nigero!)",
-            "reading": "Nigero!",
-            "id": "Lari cepat! (perintah evakuasi)"
+            "jp": "早く 走れ！あきらめるな！",
+            "reading": "Hayaku hashire! Akirameru na!",
+            "id": "Lari cepat! Jangan menyerah!"
           },
           {
-            "jp": "触るな！ (Sawaru na!)",
-            "reading": "Sawaru na!",
-            "id": "Jangan sentuh! (larangan bahaya)"
+            "jp": "止まれ。入るな。",
+            "reading": "Tomare. Hairu na.",
+            "id": "Berhenti! Dilarang masuk!"
           }
         ]
       },
       {
         "id": "m33-2",
-        "pattern": "〜という 意味です (~ to iu imi desu: Artinya adalah...)",
-        "formula": "Kata / Rambu [wa] Kalimat [to iu imi desu]",
-        "explanation": "Menjelaskan definisi atau makna dari suatu lambang, huruf Kanji, atau istilah.",
+        "pattern": "〜と 読みます & 〜と 書いて あります",
+        "formula": "[Kutipan / Makna] to yomimasu / kaite arimasu",
+        "explanation": "Menjelaskan cara baca huruf kanji atau tulisan yang tertera pada tanda pengumuman/rambu.",
         "examples": [
           {
-            "jp": "「立入禁止」は 入るな という 意味です。",
-            "reading": "\"Tachiiri Kinshi\" wa hairu na to iu imi desu.",
-            "id": "\"Tachiiri Kinshi\" artinya adalah jangan masuk (Dilarang Masuk)."
+            "jp": "あの漢字は 何と 読みますか。「たちいりきんし」と 読みます。",
+            "reading": "Ano kanji wa nan to yomimasu ka. 'Tachiiri kinshi' to yomimasu.",
+            "id": "Kanji itu dibaca apa? Dibaca 'Tachiiri kinshi'."
+          }
+        ]
+      },
+      {
+        "id": "m33-3",
+        "pattern": "X は Y という 意味です (X Artinya Adalah Y)",
+        "formula": "X [wa] Y [to iu imi desu]",
+        "explanation": "Mendefinisikan arti dari suatu rambu, lambang, simbol, atau istilah bahasa Jepang.",
+        "examples": [
+          {
+            "jp": "「立入禁止」は 入るなと いう 意味です。",
+            "reading": "'Tachiiri kinshi' wa hairu na to iu imi desu.",
+            "id": "'Tachiiri kinshi' artinya adalah dilarang masuk."
+          }
+        ]
+      },
+      {
+        "id": "m33-4",
+        "pattern": "〜と 言って いました & 〜と 伝えて いただけませんか",
+        "formula": "Kalimat + to itte imashita (menyampaikan pesan) / to tsutaete itadakemasen ka (titip pesan)",
+        "explanation": "Digunakan untuk menyampaikan pesan dari pihak ketiga atau menitipkan pesan santun melalui orang lain.",
+        "examples": [
+          {
+            "jp": "田中さんは 明日 休むと 言って いました。",
+            "reading": "Tanaka-san wa ashita yasumu to itte imashita.",
+            "id": "Sdr. Tanaka tadi berkata bahwa besok dia akan libur."
           }
         ]
       }
@@ -3425,7 +3762,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "reading": "doraikuri-ningu",
         "id": "Hanya untuk di dry cleaning"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "これはどういう意味ですか (Apa Arti Tanda Ini?)",
+      "lines": [
+        {
+          "speaker": "Miller",
+          "jp": "渡辺さん、あの漢字は何と読むんですか。",
+          "reading": "Watanabe-san, ano kanji wa nan to yomu n desu ka.",
+          "id": "Sdri. Watanabe, huruf Kanji itu dibacanya apa?"
+        },
+        {
+          "speaker": "Watanabe",
+          "jp": "「立入禁止」と読みますよ。",
+          "reading": "'Tachiiri kinshi' to yomimasu yo.",
+          "id": "Dibacanya 'Tachiiri Kinshi'."
+        },
+        {
+          "speaker": "Miller",
+          "jp": "どういう意味ですか。",
+          "reading": "Douiu imi desu ka.",
+          "id": "Apa artinya?"
+        },
+        {
+          "speaker": "Watanabe",
+          "jp": "「入るな」という意味です。工事中ですから。",
+          "reading": "'Hairu na' to iu imi desu. Koujichuu desu kara.",
+          "id": "Artinya 'Jangan masuk'. Karena sedang ada perbaikan jalan/konstruksi."
+        }
+      ]
+    }
   },
   {
     "chapter": 34,
@@ -3437,32 +3803,50 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m34-1",
-        "pattern": "KK Kamus / Ta / KB の + とおりに (Sesuai Petunjuk/Arahan...)",
-        "formula": "KK [jisho/ta] / KB [no] + toori ni, KK2",
-        "explanation": "Melakukan suatu perbuatan persis sesuai dengan instruksi, gambar, resep, atau contoh.",
+        "pattern": "KK Kamus / Ta / KB の + とおりに (Sesuai Petunjuk / Arahan)",
+        "formula": "[KK Jishokei / KK-Ta / KB no] + toori ni",
+        "explanation": "Melakukan suatu perbuatan persis sesuai dengan instruksi, gambar, garis, atau petunjuk yang ada.",
         "examples": [
           {
             "jp": "わたしが 言う とおりに、書いて ください。",
             "reading": "Watashi ga iu toori ni, kaite kudasai.",
-            "id": "Tolong tulis persis sesuai apa yang saya katakan."
+            "id": "Tulislah persis seperti apa yang saya ucapkan."
           },
           {
             "jp": "説明書の とおりに、組み立てました。",
             "reading": "Setsumeisho no toori ni, kumitatemashita.",
-            "id": "Sudah saya rakit sesuai buku petunjuk manual."
+            "id": "Saya merakitnya persis sesuai buku petunjuk."
           }
         ]
       },
       {
         "id": "m34-2",
         "pattern": "KK bentuk-Ta / KB の + あとで (Setelah...)",
-        "formula": "KK [ta-kei] / KB [no] + ato de, KK2",
-        "explanation": "Menyatakan urutan waktu di mana perbuatan kedua berlangsung sesudah perbuatan pertama.",
+        "formula": "[KK-Ta / KB no] + ato de",
+        "explanation": "Menyatakan bahwa suatu tindakan dilakukan setelah perbuatan atau peristiwa lain selesai.",
         "examples": [
           {
-            "jp": "仕事が 終わった あとで、飲みに行きます。",
-            "reading": "Shigoto ga owatta ato de, nomi ni ikimasu.",
-            "id": "Setelah pekerjaan selesai, saya pergi minum-minum."
+            "jp": "新しいのを 買った あとで、時計が 見つかりました。",
+            "reading": "Atarashii no o katta ato de, tokei ga mitsukarimashita.",
+            "id": "Setelah membeli jam yang baru, jam lama malah ketemu."
+          }
+        ]
+      },
+      {
+        "id": "m34-3",
+        "pattern": "KK1-て KK2 vs KK1-ないで KK2 (Kondisi Penyerta Tindakan)",
+        "formula": "KK1-te KK2 (dengan memakai/disertai); KK1-naide KK2 (tanpa melakukan KK1)",
+        "explanation": "Menyatakan situasi atau kondisi yang menyertai tindakan utama KK2.",
+        "examples": [
+          {
+            "jp": "しょうゆを つけて 食べます。",
+            "reading": "Shouyu o tsukete tabemasu.",
+            "id": "Makan dengan membubuhi kecap asin."
+          },
+          {
+            "jp": "しょうゆを つけないで 食べます。",
+            "reading": "Shouyu o tsukenaide tabemasu.",
+            "id": "Makan tanpa membubuhi kecap asin."
           }
         ]
       }
@@ -3966,7 +4350,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Kipas ventilasi",
         "kanji": "換気扇"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "わたしが言うとおりに、やってください (Lakukan Seperti yang Saya Katakan)",
+      "lines": [
+        {
+          "speaker": "Instruktur",
+          "jp": "皆さん、わたしが折るとおりに、折り紙を折ってください。",
+          "reading": "Minasan, watashi ga oru toori ni, origami o otte kudasai.",
+          "id": "Semuanya, tolong lipat kertas origami persis seperti cara saya melipatnya."
+        },
+        {
+          "speaker": "Murid",
+          "jp": "はい。角と角をぴったり合わせるんですね。",
+          "reading": "Hai. Kado to kado o pittari awaseru n desu ne.",
+          "id": "Baik. Sudut dengan sudutnya harus dirapatkan pas ya."
+        },
+        {
+          "speaker": "Instruktur",
+          "jp": "そうです。それから、裏返したあとで、線に沿って切ります。",
+          "reading": "Sou desu. Sorekara, uragaeshita ato de, sen ni sotte kirimasu.",
+          "id": "Benar sekali. Setelah itu, setelah dibalik, potonglah mengikuti garis."
+        },
+        {
+          "speaker": "Murid",
+          "jp": "きれいに鶴ができました！",
+          "reading": "Kirei ni tsuru ga dekimashita!",
+          "id": "Burung bangau kertasnya jadi dengan sangat indah!"
+        }
+      ]
+    }
   },
   {
     "chapter": 35,
@@ -3978,32 +4391,40 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m35-1",
-        "pattern": "KK / Sifat bentuk-Ba (Syarat Pengandaian: Kalau...)",
-        "formula": "KK [jouken-kei ~ba] / I-Kei [~kereba]",
-        "explanation": "Menyatakan kondisi syarat mutlak agar suatu hal dapat terwujud.",
+        "pattern": "Bentuk Pengandaian Syarat (条件形 Joukenkei: 〜ば)",
+        "formula": "Grup 1: u -> eba (kakeba); Grup 2: ru -> reba (tabereba); Grup 3: sureba, kureba. Sifat-I: kereba. Sifat-Na/KB: nara.",
+        "explanation": "Menyatakan syarat mutlak yang diperlukan agar suatu hasil dapat tercapai ('kalau / jika...').",
         "examples": [
           {
-            "jp": "春に なれば、桜が 咲きます。",
-            "reading": "Haru ni nareba, sakura ga sakimasu.",
-            "id": "Kalau sudah tiba musim semi, bunga sakura akan mekar."
-          },
-          {
-            "jp": "安ければ、買います。",
-            "reading": "Yasukereba, kaimasu.",
-            "id": "Kalau murah, saya beli."
+            "jp": "ボタンを 押せば、窓が 開きます。",
+            "reading": "Botan o oseba, mado ga akimasu.",
+            "id": "Kalau tombol ditekan, jendelanya akan terbuka."
           }
         ]
       },
       {
         "id": "m35-2",
-        "pattern": "KB + なら (Kalau Soal Hal Itu, Maka...)",
-        "formula": "KB + nara",
-        "explanation": "Mengambil topik yang baru saja diutarakan lawan bicara lalu memberikan saran spesifik.",
+        "pattern": "KB + なら (Kalau Soal Hal Itu...)",
+        "formula": "Kata Benda + nara",
+        "explanation": "Mengambil topik yang diangkat lawan bicara dan memberikan informasi atau rekomendasi terbaik untuk topik tersebut.",
         "examples": [
           {
-            "jp": "温泉なら、草津が いいですよ。",
-            "reading": "Onsen nara, Kusatsu ga ii desu yo.",
-            "id": "Kalau pemandian air panas onsen, Kusatsu sangat bagus lho."
+            "jp": "温泉に 行きたいんですが、どこか いい所 ありませんか。温泉なら、白馬が いいですよ。",
+            "reading": "Onsen ni ikitai n desu ga, dokoka ii tokoro arimasen ka. Onsen nara, Hakuba ga ii desu yo.",
+            "id": "Saya ingin pergi ke onsen, ada rekomendasi tempat bagus? Kalau soal onsen, Hakuba sangat bagus lho."
+          }
+        ]
+      },
+      {
+        "id": "m35-3",
+        "pattern": "〜ば 〜ほど 〜 (Semakin... Semakin...)",
+        "formula": "[KK-ba / KS-kereba] + [KK Kamus / KS] hodo",
+        "explanation": "Menyatakan perubahan proporsional: semakin tinggi suatu kondisi, semakin meningkat pula akibatnya.",
+        "examples": [
+          {
+            "jp": "ビートルズの音楽は 聞けば 聞くほど 好きに なります。",
+            "reading": "Biitoruzu no ongaku wa kikeba kiku hodo suki ni narimasu.",
+            "id": "Musik The Beatles semakin didengarkan semakin disukai."
           }
         ]
       }
@@ -4269,7 +4690,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Perlu",
         "kanji": "必要な"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "旅行に行くなら、北海道がいいですよ (Kalau Mau Liburan, Hokkaido Paling Bagus)",
+      "lines": [
+        {
+          "speaker": "Santos",
+          "jp": "夏休みに旅行に行きたいんですが、どこかいい所はありませんか。",
+          "reading": "Natsuyasumi ni ryokou ni ikitai n desu ga, dokoka ii tokoro wa arimasen ka.",
+          "id": "Saya ingin liburan musim panas nanti, apakah ada rekomendasi tempat yang bagus?"
+        },
+        {
+          "speaker": "Agen",
+          "jp": "涼しい所へ行きたいなら、北海道がいいですよ。",
+          "reading": "Suzushii tokoro e ikitai nara, Hokkaidou ga ii desu yo.",
+          "id": "Kalau ingin pergi ke tempat yang sejuk, Hokkaido pilihan terbaik."
+        },
+        {
+          "speaker": "Santos",
+          "jp": "食べ物もおいしいですか。",
+          "reading": "Tabemono mo oishii desu ka.",
+          "id": "Makanannya juga enak-enak?"
+        },
+        {
+          "speaker": "Agen",
+          "jp": "ええ、海鮮を食べれば食べるほど、ファンになりますよ。",
+          "reading": "Ee, kaisen o tabereba taberu hodo, fan ni narimasu yo.",
+          "id": "Tentu, semakin banyak makan hidangan lautnya, Anda akan semakin ketagihan."
+        }
+      ]
+    }
   },
   {
     "chapter": 36,
@@ -4281,32 +4731,45 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m36-1",
-        "pattern": "KK Potensial/Nai + ように、〜 (Supaya / Agar...)",
-        "formula": "KK [kanou-kei / nai-kei] + you ni, KK Pokok",
-        "explanation": "Menyatakan tindakan sadar yang dilakukan agar kondisi yang tidak bisa dikontrol sendiri dapat tercapai.",
+        "pattern": "KK Kamus / Nai + ように、〜 (Supaya / Agar - Tujuan)",
+        "formula": "[KK Non-volisional / Potensial / Nai] + you ni, Kalimat Utama",
+        "explanation": "Menyatakan target sasaran atau tujuan yang ingin dicapai melalui usaha pada kalimat utama.",
         "examples": [
           {
-            "jp": "日本語が 話せるように、毎日 練習しています。",
-            "reading": "Nihongo ga hanaseru you ni, mainichi renshuu shite imasu.",
-            "id": "Supaya bisa berbicara bahasa Jepang, setiap hari berlatih."
+            "jp": "早く 泳げる ように、毎日 練習して います。",
+            "reading": "Hayaku oyogeru you ni, mainichi renshuu shite imasu.",
+            "id": "Supaya bisa berenang dengan cepat, saya berlatih setiap hari."
           },
           {
-            "jp": "忘れないように、メモして おきます。",
-            "reading": "Wasurenai you ni, memo shite okimasu.",
-            "id": "Supaya tidak lupa, saya catat memo terlebih dahulu."
+            "jp": "忘れない ように、メモして ください。",
+            "reading": "Wasurenai you ni, memo shite kudasai.",
+            "id": "Agar tidak lupa, tolong catat memo."
           }
         ]
       },
       {
         "id": "m36-2",
-        "pattern": "KK Kamus + ように なりました (Sudah Menjadi Bisa)",
-        "formula": "KK [jisho-kei / kanou-kei] + you ni narimashita",
-        "explanation": "Menyatakan perubahan dari kondisi sebelumnya belum bisa menjadi sekarang sudah mampu.",
+        "pattern": "KK Kamus / Nai + ように なりました (Perubahan Kemampuan)",
+        "formula": "KK Kamus / Nai + you ni narimashita",
+        "explanation": "Menyatakan perubahan kondisi dari semula tidak bisa menjadi bisa melakukan sesuatu.",
         "examples": [
           {
-            "jp": "刺身が 食べられるように なりました。",
-            "reading": "Sashimi ga taberareru you ni narimashita.",
-            "id": "Sekarang saya sudah bisa makan sashimi."
+            "jp": "やっと 自転車に 乗れる ように なりました。",
+            "reading": "Yatto jitensha ni noreru you ni narimashita.",
+            "id": "Akhirnya saya sudah menjadi bisa mengendarai sepeda."
+          }
+        ]
+      },
+      {
+        "id": "m36-3",
+        "pattern": "KK Kamus / Nai + ように して ください / います (Usaha Disiplin)",
+        "formula": "KK Kamus / Nai + you ni shite kudasai",
+        "explanation": "Anjuran atau komitmen diri untuk selalu berusaha membiasakan suatu tindakan positif secara teratur.",
+        "examples": [
+          {
+            "jp": "毎日 運動して、何でも 食べる ように して います。",
+            "reading": "Mainichi undou shite, nan demo taberu you ni shite imasu.",
+            "id": "Saya berusaha berolahraga setiap hari dan tidak pilih-pilih makanan."
           }
         ]
       }
@@ -4674,13 +5137,12 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       {
         "jp": "いも",
         "reading": "imo",
-        "id": "Umbi-umbian / Ubi",
-        "kanji": "芋"
+        "id": "Lemak"
       },
       {
         "jp": "しぼう (脂肪)",
         "reading": "shibou",
-        "id": "Lemak",
+        "id": "Umbi-umbian",
         "kanji": "脂肪"
       },
       {
@@ -4721,7 +5183,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "reading": "bitamin",
         "id": "Vitamin"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "毎日運動するようにしています (Saya Berusaha Berolahraga Setiap Hari)",
+      "lines": [
+        {
+          "speaker": "Dokter",
+          "jp": "ミラーさん、最近健康のために何かしていますか。",
+          "reading": "Miraa-san, saikin kenkou no tame ni nanika shite imasu ka.",
+          "id": "Sdr. Miller, akhir-akhir ini apa yang Anda lakukan untuk kesehatan?"
+        },
+        {
+          "speaker": "Miller",
+          "jp": "毎朝早く起きて、ジョギングをするようにしています。",
+          "reading": "Maiasa hayaku okite, jogingu o suru you ni shite imasu.",
+          "id": "Saya berusaha bangun pagi-pagi setiap hari untuk joging."
+        },
+        {
+          "speaker": "Dokter",
+          "jp": "素晴らしいですね。甘い物はどうですか。",
+          "reading": "Subarashii desu ne. Amai mono wa dou desu ka.",
+          "id": "Luar biasa. Kalau makanan manis bagaimana?"
+        },
+        {
+          "speaker": "Miller",
+          "jp": "夜遅くは甘い物を食べないように気をつけています。",
+          "reading": "Yoru osoku wa amai mono o tabenai you ni ki o tsukete imasu.",
+          "id": "Saya berhati-hati untuk tidak makan yang manis-manis larut malam."
+        }
+      ]
+    }
   },
   {
     "chapter": 37,
@@ -4733,37 +5224,50 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m37-1",
-        "pattern": "Orang 1 は Orang 2 に Kata Kerja Pasif (Diberi Perlakuan Oleh...)",
-        "formula": "Korban/Penerima [wa] Pelaku [ni] KK [ukemi-kei]",
-        "explanation": "Menyatakan bahwa subjek dikenai tindakan perbuatan oleh orang lain.",
+        "pattern": "Bentuk Pasif (受身形 Ukemikei)",
+        "formula": "Grup 1: vokal 'u' -> 'areru' (kakareru). Grup 2: buang ru + rareru (homerareru). Grup 3: sareru, korareru.",
+        "explanation": "Menyatakan kalimat pasif di mana subjek dikenai tindakan perbuatan oleh pihak lain.",
         "examples": [
           {
             "jp": "わたしは 先生に 褒められました。",
             "reading": "Watashi wa sensei ni homeraremashita.",
             "id": "Saya dipuji oleh guru."
-          },
-          {
-            "jp": "部長に 叱られました。",
-            "reading": "Buchou ni shikararemashita.",
-            "id": "Saya dimarahi oleh manajer bagian."
           }
         ]
       },
       {
         "id": "m37-2",
-        "pattern": "Pasif Pemilikan / Ketiban Sial (迷惑の受身 Meiwaku no Ukemi)",
-        "formula": "Subjek [wa] Pelaku [ni] Benda Milik [o] KK Pasif",
-        "explanation": "Subjek merasa dirugikan karena barang miliknya diinjak, dicuri, atau dirusak orang lain.",
+        "pattern": "Pasif Kerugian / Ketiban Sial (迷惑の受身 Meiwaku no Ukemi)",
+        "formula": "Subjek [wa] Pelaku [ni] Milik [o] KK Pasif",
+        "explanation": "Menyatakan peristiwa di mana kepemilikan subjek dirusak atau diganggu orang lain sehingga subjek merasa dirugikan.",
         "examples": [
           {
-            "jp": "電車で 足を 踏まれました。",
-            "reading": "Densha de ashi o fumaremashita.",
-            "id": "Kaki saya terinjak oleh seseorang di dalam kereta (merasa sial)."
+            "jp": "わたしは 弟に パソコンを 壊されました。",
+            "reading": "Watashi wa otouto ni pasokon o kowasaremashita.",
+            "id": "Laptop saya dirusakkan oleh adik laki-laki saya."
           },
           {
-            "jp": "泥棒に 財布を 盗まれました。",
-            "reading": "Dorobou ni saifu o nusumaremashita.",
-            "id": "Dompet saya dicuri oleh pencuri."
+            "jp": "わたしは 犬に 手を かまれました。",
+            "reading": "Watashi wa inu ni te o kamaremashita.",
+            "id": "Tangan saya digigit oleh anjing."
+          }
+        ]
+      },
+      {
+        "id": "m37-3",
+        "pattern": "KB は [Orang] によって KK Pasif & [Bahan] から/で 作られます",
+        "formula": "Karya [wa] Tokoh [ni yotte] tsukurareta; Produk [kara / de] tsukuraremasu",
+        "explanation": "'Ni yotte' dipakai pada penemuan/karya agung bersejarah. 'Kara' untuk bahan mentah yang berubah wujud, 'de' untuk bahan yang bentuk fisiknya masih tampak.",
+        "examples": [
+          {
+            "jp": "『源氏物語』は 紫式部に よって 書かれました。",
+            "reading": "'Genji Monogatari' wa Murasaki Shikibu ni yotte kakaremashita.",
+            "id": "'Hikayat Genji' ditulis oleh Murasaki Shikibu."
+          },
+          {
+            "jp": "ビールは 麦から 造られます。",
+            "reading": "Biiru wa mugi kara tsukuraremasu.",
+            "id": "Bir dibuat dari bahan gandum."
           }
         ]
       }
@@ -5142,7 +5646,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Tenggelam",
         "kanji": "沈没する"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "海を埋め立てて造られました (Dibuat dengan Menimbun Laut)",
+      "lines": [
+        {
+          "speaker": "Wisatawan",
+          "jp": "この関西国際空港は海の上にあるんですね。",
+          "reading": "Kono Kansai Kokusai Kuukou wa umi no ue ni aru n desu ne.",
+          "id": "Bandara Internasional Kansai ini terapung di atas laut ya."
+        },
+        {
+          "speaker": "Pemandu",
+          "jp": "ええ。海を埋め立てて、最新の技術で造られた島なんです。",
+          "reading": "Ee. Umi o umetatete, saishin no gijutsu de tsukurareta shima nan desu.",
+          "id": "Iya. Ini adalah pulau buatan yang dibangun dengan menimbun laut memakai teknologi mutakhir."
+        },
+        {
+          "speaker": "Wisatawan",
+          "jp": "騒音の問題も解決されたわけですね。",
+          "reading": "Souon no mondai mo kaiketsu sareta wake desu ne.",
+          "id": "Berarti masalah polusi kebisingan suara pesawat juga terpecahkan ya."
+        },
+        {
+          "speaker": "Pemandu",
+          "jp": "そのとおりです。世界中から高い評価を受けています。",
+          "reading": "Sono toori desu. Sekaijuu kara takai hyouka o ukete imasu.",
+          "id": "Tepat sekali. Bandara ini mendapat apresiasi tinggi dari seluruh dunia."
+        }
+      ]
+    }
   },
   {
     "chapter": 38,
@@ -5154,32 +5687,45 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m38-1",
-        "pattern": "KK bentuk Biasa + のは 〜です (Hal Melakukan Itu Adalah...)",
-        "formula": "KK [futsuukei] + no wa + Sifat / KB desu",
-        "explanation": "Menjadikan keseluruhan klausa perbuatan sebagai subjek kalimat.",
+        "pattern": "KK Kamus + のは [Kata Sifat] です (Nominalisasi Subjek)",
+        "formula": "KK Jishokei [no wa] + Kata Sifat + desu",
+        "explanation": "Menjadikan perbuatan sebagai subjek kalimat nominal dengan membubuhkan partikel 'no'.",
         "examples": [
           {
-            "jp": "一人で 暮らすのは 大変です。",
-            "reading": "Hitori de kurasu no wa taihen desu.",
-            "id": "Tinggal hidup sendirian itu ternyata berat."
-          },
-          {
-            "jp": "テニスを 見るのは 面白いです。",
+            "jp": "テニスを 見るのは おもしろいです。",
             "reading": "Tenisu o miru no wa omoshiroi desu.",
             "id": "Menonton tenis itu menarik."
+          },
+          {
+            "jp": "東京の 人は 歩くのが 速いです。",
+            "reading": "Toukyou no hito wa aruku no ga hayai desu.",
+            "id": "Orang Tokyo jalannya cepat."
           }
         ]
       },
       {
         "id": "m38-2",
-        "pattern": "KK bentuk Biasa + のを 忘れました (Lupa Melakukan Suatu Hal)",
-        "formula": "KK [futsuukei] + no o wasuremashita",
-        "explanation": "Menyatakan bahwa diri sendiri lupa mengerjakan suatu rutinitas atau kewajiban.",
+        "pattern": "KK Kamus + のを 忘れました (Lupa Melakukan Sesuatu)",
+        "formula": "KK Jishokei [no o] wasuremashita",
+        "explanation": "Menyatakan lupa mengerjakan suatu tindakan.",
         "examples": [
           {
-            "jp": "鍵を 掛けるのを 忘れました。",
-            "reading": "Kagi o kakeru no o wasuremashita.",
-            "id": "Saya lupa mengunci pintu."
+            "jp": "薬を 飲むのを 忘れました。",
+            "reading": "Kusuri o nomu no o wasuremashita.",
+            "id": "Saya lupa minum obat."
+          }
+        ]
+      },
+      {
+        "id": "m38-3",
+        "pattern": "KK Kamus + のを 知って いますか (Menanyakan Fakta)",
+        "formula": "Kalimat Futsuukei [no o] shitte imasu ka",
+        "explanation": "Menanyakan apakah lawan bicara mengetahui suatu berita atau peristiwa.",
+        "examples": [
+          {
+            "jp": "鈴木さんが 来月 結婚するのを 知って いますか。",
+            "reading": "Suzuki-san ga raigetsu kekkon suru no o shitte imasu ka.",
+            "id": "Apakah Anda tahu bahwa Sdr. Suzuki akan menikah bulan depan?"
           }
         ]
       }
@@ -5477,7 +6023,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Hari terakhir tahun",
         "kanji": "大みそか"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "片づけるのが好きなんです (Saya Senang Merapikan Barang)",
+      "lines": [
+        {
+          "speaker": "Rekan",
+          "jp": "ミラーさんのデスクはいつも綺麗ですね。",
+          "reading": "Miraa-san no desuku wa itsumo kirei desu ne.",
+          "id": "Meja kerja Sdr. Miller selalu bersih dan rapi ya."
+        },
+        {
+          "speaker": "Miller",
+          "jp": "わたしは物を整理するのが好きなんです。",
+          "reading": "Watashi wa mono o seiri suru no ga suki nan desu.",
+          "id": "Saya memang sangat suka merapikan dan menata barang."
+        },
+        {
+          "speaker": "Rekan",
+          "jp": "書類をなくすこともないでしょうね。",
+          "reading": "Shorui o nakusu koto mo nai deshou ne.",
+          "id": "Pasti tidak pernah kehilangan berkas dokumen penting ya."
+        },
+        {
+          "speaker": "Miller",
+          "jp": "ええ、パソコンの中のファイルを分類するのも得意ですよ。",
+          "reading": "Ee, pasokon no naka no fairu o bunrui suru no mo tokui desu yo.",
+          "id": "Iya, saya juga mahir mengelompokkan folder file di dalam komputer."
+        }
+      ]
+    }
   },
   {
     "chapter": 39,
@@ -5489,32 +6064,50 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m39-1",
-        "pattern": "KK-te / Sifat-kute / Sifat-de + Perasaan Batin / Akibat Spontan",
-        "formula": "Sebab [bentuk te] + Akibat Emosional / Spontan",
-        "explanation": "Bagian akibat tidak boleh berupa kalimat perintah, ajakan, atau kemauan pribadi.",
+        "pattern": "KK-te / Sifat-kute / Sifat-de (Sebab-Akibat Emosi & Spontan)",
+        "formula": "Sebab [te/kute/de], Akibat (emosi batin / peristiwa tak sengaja)",
+        "explanation": "Kalimat pertama adalah sebab alami yang menimbulkan perasaan terkejut, sedih, lega, atau akibat yang tidak bisa dikendalikan kemauan.",
         "examples": [
-          {
-            "jp": "家族に 会えなくて、寂しいです。",
-            "reading": "Kazoku ni aenakute, sabishii desu.",
-            "id": "Karena tidak bisa bertemu keluarga, merasa kesepian."
-          },
           {
             "jp": "ニュースを 聞いて、びっくりしました。",
             "reading": "Nyuusu o kiite, bikkuri shimashita.",
-            "id": "Mendengar berita itu, saya sangat terkejut."
+            "id": "Mendengar berita itu, saya terkejut."
+          },
+          {
+            "jp": "家族に 会えなくて、寂しいです。",
+            "reading": "Kazoku ni aenakute, sabishii desu.",
+            "id": "Tidak bisa bertemu keluarga, saya merasa kesepian."
           }
         ]
       },
       {
         "id": "m39-2",
-        "pattern": "Kalimat Biasa + ので、〜 (~ node: Berhubung / Karena...)",
-        "formula": "Futsuukei [Na-kei/KB + na] + node, Akibat",
-        "explanation": "Menyatakan alasan yang terdengar wajar dan sopan kepada lawan bicara saat meminta izin atau permisi.",
+        "pattern": "KB で (Partikel De Sebab Bencana / Fenomena Alam)",
+        "formula": "Bencana/Penyakit [de] + Akibat",
+        "explanation": "Menunjukkan penyebab terjadinya kerusakan, keterlambatan, atau korban akibat fenomena alam atau insiden.",
         "examples": [
           {
-            "jp": "気分が 悪いので、早退しても いいですか。",
-            "reading": "Kibun ga warui node, soutai shite mo ii desu ka.",
-            "id": "Berhubung badan saya kurang sehat, bolehkah saya pulang lebih awal?"
+            "jp": "地震で ビルが 倒れました。",
+            "reading": "Jishin de biru ga taoremashita.",
+            "id": "Gedung roboh karena gempa bumi."
+          },
+          {
+            "jp": "事故で バスが 遅れて しまいました。",
+            "reading": "Jiko de basu ga okurete shimaimashita.",
+            "id": "Bus terlambat karena kecelakaan."
+          }
+        ]
+      },
+      {
+        "id": "m39-3",
+        "pattern": "〜ので、〜 (~ Node - Karena Alasan Objektif & Halus)",
+        "formula": "Kalimat Futsuukei (Na-Kei & KB + na) + node",
+        "explanation": "Menyatakan alasan yang lebih objektif dan santun daripada 'kara', sangat umum dipakai saat meminta izin atau permisi.",
+        "examples": [
+          {
+            "jp": "用事が ありますので、お先に 失礼します。",
+            "reading": "Youji ga arimasu node, osaki ni shitsurei shimasu.",
+            "id": "Berhubung ada urusan, saya mohon permisi duluan."
           }
         ]
       }
@@ -5823,7 +6416,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "reading": "wakuwakusuru",
         "id": "Tidak sabar menunggu"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "遅れて、すみません (Maaf Saya Terlambat)",
+      "lines": [
+        {
+          "speaker": "Miller",
+          "jp": "遅れて、すみません！",
+          "reading": "Okurete, sumimasen!",
+          "id": "Maaf, saya terlambat!"
+        },
+        {
+          "speaker": "Atasan",
+          "jp": "どうしたんですか。事故でもあったんですか。",
+          "reading": "Dou shita n desu ka. Jiko demo atta n desu ka.",
+          "id": "Ada apa gerangan? Apakah terjadi kecelakaan?"
+        },
+        {
+          "speaker": "Miller",
+          "jp": "はい、大雨で電車が止まってしまったんです。",
+          "reading": "Hai, ooame de densha ga tomatte shimatta n desu.",
+          "id": "Iya, keretanya berhenti total karena hujan lebat."
+        },
+        {
+          "speaker": "Atasan",
+          "jp": "そうでしたか。無事で何よりです。急いで会議室へ行きましょう。",
+          "reading": "Sou deshita ka. Buji de naniyori desu. Isoide kaigishitsu e ikimashou.",
+          "id": "O begitu rupanya. Yang terpenting Anda selamat. Ayo bergegas ke ruang rapat."
+        }
+      ]
+    }
   },
   {
     "chapter": 40,
@@ -5835,40 +6457,58 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m40-1",
-        "pattern": "Kata Tanya + Kalimat Biasa + か、わかりません",
-        "formula": "Doko/Dare/Itsu [futsuukei] + ka, shirimasen/kikimasu",
-        "explanation": "Menyisipkan kalimat tanya ke dalam pembicaraan.",
+        "pattern": "Kata Tanya + Kalimat Biasa + か、〜 (Klausa Tanya Tertanam)",
+        "formula": "Kata Tanya [doko/dare/itsu/nani] + Futsuukei (tanpa da) + ka, ...",
+        "explanation": "Memasukkan kalimat tanya ke dalam kalimat induk yang lebih besar.",
         "examples": [
           {
-            "jp": "会議が 何時に 始まるか、知っていますか。",
-            "reading": "Kaigi ga nan-ji ni hajimaru ka, shitte imasu ka.",
-            "id": "Apakah Anda tahu jam berapa rapat akan dimulai?"
+            "jp": "JL107便は 何時に 到着するか、調べて ください。",
+            "reading": "JL107-bin wa nan-ji ni touchaku suru ka, shirabete kudasai.",
+            "id": "Tolong periksa jam berapa penerbangan JL107 akan tiba."
           }
         ]
       },
       {
         "id": "m40-2",
-        "pattern": "Kalimat Biasa + かどうか、〜 (~ ka dou ka: Apakah iya atau tidak)",
-        "formula": "Futsuukei [tanpa da] + ka dou ka",
-        "explanation": "Digunakan saat anak kalimat tanya tidak memiliki kata tanya khusus.",
+        "pattern": "Kalimat Biasa + か どうか、〜 (Apakah Iya atau Tidak)",
+        "formula": "Kalimat Futsuukei (tanpa da) + ka dou ka",
+        "explanation": "Memasukkan pertanyaan tertutup ya/tidak ke dalam kalimat lain.",
         "examples": [
           {
-            "jp": "間違いが ないかどうか、確かめて ください。",
-            "reading": "Machigai ga nai ka dou ka, tashikamete kudasai.",
-            "id": "Tolong pastikan apakah ada kesalahan atau tidak."
+            "jp": "忘年会に 出席するか どうか、20日までに 返事を ください。",
+            "reading": "Bounenkai ni shusseki suru ka dou ka, hatsuka made ni henji o kudasai.",
+            "id": "Tolong beri jawaban sebelum tanggal 20 apakah akan hadir di pesta akhir tahun atau tidak."
           }
         ]
       },
       {
         "id": "m40-3",
-        "pattern": "KK bentuk-Te + みます (Mencoba Melakukan...)",
-        "formula": "KK [te-kei] + mimasu",
-        "explanation": "Mencoba melakukan suatu perbuatan untuk mengetahui rasanya, pas tidaknya, atau hasilnya.",
+        "pattern": "KK bentuk-Te + みます (Te mimasu - Mencoba Melakukan)",
+        "formula": "KK bentuk-Te + mimasu",
+        "explanation": "Melakukan suatu perbuatan untuk melihat atau merasakan hasilnya seperti apa ('mencoba...').",
         "examples": [
+          {
+            "jp": "もう 一度 考えて みます。",
+            "reading": "Mou ichido kangaete mimasu.",
+            "id": "Saya akan mencoba memikirkannya sekali lagi."
+          },
           {
             "jp": "この ズボンを はいて みても いいですか。",
             "reading": "Kono zubon o haite mite mo ii desu ka.",
-            "id": "Bolehkah saya mencoba mencocokkan celana ini?"
+            "id": "Bolehkah saya mencoba memakai celana panjang ini?"
+          }
+        ]
+      },
+      {
+        "id": "m40-4",
+        "pattern": "Kata Sifat-I (-i diganti 〜さ: Nominalisasi Ukuran)",
+        "formula": "Sifat-I buang i + sa (takasa, nagasa, omosa)",
+        "explanation": "Mengubah kata sifat menjadi kata benda yang menunjukkan tingkat atau besaran kuantitatif.",
+        "examples": [
+          {
+            "jp": "富士山の 高さは 3,776メートルです。",
+            "reading": "Fujisan no takasa wa san-zen nana-hyaku nanajuuroku meetoru desu.",
+            "id": "Tingginya Gunung Fuji adalah 3.776 meter."
           }
         ]
       }
@@ -6432,7 +7072,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Polos",
         "kanji": "無地"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "覚えているかどうか、確かめてみます (Saya Pastikan Ingat atau Tidak)",
+      "lines": [
+        {
+          "speaker": "Sensei",
+          "jp": "昨日の授業の内容を覚えているかどうか、テストをします。",
+          "reading": "Kinou no jugyou no naiyou o oboete iru ka dou ka, tesuto o shimasu.",
+          "id": "Kita akan adakan tes untuk memeriksa apakah kalian mengingat materi kemarin atau tidak."
+        },
+        {
+          "speaker": "Siswa",
+          "jp": "先生、辞書を見てもいいですか。",
+          "reading": "Sensei, jisho o mite mo ii desu ka.",
+          "id": "Pak guru, bolehkah melihat kamus?"
+        },
+        {
+          "speaker": "Sensei",
+          "jp": "いいえ、何も見ないで答えてみてください。",
+          "reading": "Iie, nanimo minaide kotaete mite kudasai.",
+          "id": "Tidak boleh, tolong coba jawab tanpa melihat apa pun."
+        },
+        {
+          "speaker": "Siswa",
+          "jp": "はい、頑張って思い出してみます！",
+          "reading": "Hai, ganbatte omoidashite mimasu!",
+          "id": "Baik, saya akan berusaha keras mengingatnya!"
+        }
+      ]
+    }
   },
   {
     "chapter": 41,
@@ -6444,27 +7113,50 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m41-1",
-        "pattern": "KK-te いただきます (Menerima Kebaikan Dari Atasan)",
-        "formula": "Watashi wa Atasan [ni] KK [te-kei] + itadakimashita",
-        "explanation": "Bentuk merendah hormat dari ~te moraimashita.",
+        "pattern": "Hierarki Pemberian Barang: やります, いただきます, くださいます",
+        "formula": "Atasan kudasaimasu -> Saya itadakimasu; Saya yarimasu -> bawahan/hewan",
+        "explanation": "'Itadakimasu' adalah ragam merendah dari moraimasu. 'Kudasaimasu' adalah ragam hormat dari kuremasu. 'Yarimasu' memberi kepada bawahan, tanaman, atau hewan peliharaan.",
         "examples": [
           {
-            "jp": "わたしは 社長に ご馳走して いただきました。",
-            "reading": "Watashi wa shachou ni gochisou shite itadakimashita.",
-            "id": "Saya ditraktir makan oleh Bapak Direktur."
+            "jp": "わたしは 社長に お土産を いただきました。",
+            "reading": "Watashi wa shachou ni omiyage o itadakimashita.",
+            "id": "Saya menerima oleh-oleh dari bapak direktur utama."
+          },
+          {
+            "jp": "部長が わたしに 時計を くださいました。",
+            "reading": "Buchou ga watashi ni tokei o kudasaimashita.",
+            "id": "Bapak kepala bagian berkenan memberikan jam tangan kepada saya."
           }
         ]
       },
       {
         "id": "m41-2",
-        "pattern": "KK-te くださいます (Atasan Berkenan Membantu Saya)",
-        "formula": "Atasan [ga/wa] watashi ni KK [te-kei] + kudasaimashita",
-        "explanation": "Bentuk penghormatan tinggi dari ~te kuremashita.",
+        "pattern": "KK-te いただきます / くださいます / やります (Tindakan Jasa)",
+        "formula": "KK-te itadakimasu; KK-te kudasaimasu; KK-te yarimasu",
+        "explanation": "Ungkapan rasa terima kasih atas bantuan atau perbuatan baik yang diterima dari atasan atau diberikan kepada bawahan.",
         "examples": [
           {
-            "jp": "部長の 奥さんが お茶を 教えて くださいました。",
-            "reading": "Buchou no okusan ga ocha o oshiete kudasaimashita.",
-            "id": "Istri kepala bagian berkenan mengajari saya upacara minum teh."
+            "jp": "課長に レポートを 直して いただきました。",
+            "reading": "Kachou ni repooto o naoshite itadakimashita.",
+            "id": "Saya menerima kebaikan dari kepala seksi yang telah mengoreksi laporan saya."
+          },
+          {
+            "jp": "息子に 紙飛行機を 作って やりました。",
+            "reading": "Musuko ni kami-hikouki o tsukutte yarimashita.",
+            "id": "Saya membuatkan pesawat kertas untuk anak laki-laki saya."
+          }
+        ]
+      },
+      {
+        "id": "m41-3",
+        "pattern": "KK bentuk-Te + くださいませんか (Permohonan Sangat Santun)",
+        "formula": "KK bentuk-Te + kudasaimasen ka",
+        "explanation": "Permohonan bantuan kepada atasan atau orang luar yang sangat halus.",
+        "examples": [
+          {
+            "jp": "コピー機の 使い方を 教えて くださいませんか。",
+            "reading": "Kopiiki no tsukaikata o oshiete kudasaimasen ka.",
+            "id": "Bersediakah Anda mengajarkan cara penggunaan mesin fotokopi kepada saya?"
           }
         ]
       }
@@ -6758,7 +7450,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Isi",
         "kanji": "中身"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "荷物を運んでいただきました (Saya Dibantu Membawakan Barang)",
+      "lines": [
+        {
+          "speaker": "Nenek",
+          "jp": "重そうですね。手伝ってあげましょうか。",
+          "reading": "Omosou desu ne. Tetsudatte agemashou ka.",
+          "id": "Kelihatannya berat ya nak. Mau nenek bantu bawakan?"
+        },
+        {
+          "speaker": "Miller",
+          "jp": "いいえ、おばあさん、わたしが持ってさしあげますよ。",
+          "reading": "Iie, obaasan, watashi ga motte sashiagemasu yo.",
+          "id": "Tidak usah nek, justru saya yang akan membawakan barang nenek."
+        },
+        {
+          "speaker": "Nenek",
+          "jp": "親切な方ですね。どうもありがとう。",
+          "reading": "Shinsetsu na kata desu ne. Doumo arigatou.",
+          "id": "Kamu anak yang sangat baik hati ya. Terima kasih banyak."
+        },
+        {
+          "speaker": "Miller",
+          "jp": "いいえ、どういたしまして。",
+          "reading": "Iie, douitashimashite.",
+          "id": "Sama-sama, tidak apa-apa nek."
+        }
+      ]
+    }
   },
   {
     "chapter": 42,
@@ -6770,32 +7491,50 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m42-1",
-        "pattern": "KK Kamus / KB の + ために (Demi / Untuk Mencapai...)",
-        "formula": "KK [jisho-kei] / KB [no] + tame ni, Tindakan Sadar",
-        "explanation": "Menyatakan tekad kuat melakukan sesuatu demi terwujudnya cita-cita atau demi kepentingan seseorang.",
+        "pattern": "KK Kamus / KB の + ために (Demi / Untuk Tujuan)",
+        "formula": "[KK Jishokei / KB no] + tame ni",
+        "explanation": "Menyatakan tujuan utama yang ingin dicapai melalui tindakan yang disengaja ('demi / untuk...').",
         "examples": [
           {
-            "jp": "将来 自分の 店を 持つ ために、貯金しています。",
-            "reading": "Shourai jibun no mise o motsu tame ni, chokin shite imasu.",
-            "id": "Demi memiliki toko sendiri di masa depan, saya giat menabung."
+            "jp": "自分の 店を 持つ ために、貯金して います。",
+            "reading": "Jibun no mise o motsu tame ni, chokin shite imasu.",
+            "id": "Demi memiliki toko sendiri, saya rajin menabung."
           },
           {
-            "jp": "家族の ために、一生懸命 働きます。",
-            "reading": "Kazoku no tame ni, isshoukenmei hatarakimasu.",
-            "id": "Demi keluarga, saya bekerja sekuat tenaga."
+            "jp": "家族の ために、うちを 建てます。",
+            "reading": "Kazoku no tame ni, uchi o tatemasu.",
+            "id": "Demi keluarga, saya membangun rumah."
           }
         ]
       },
       {
         "id": "m42-2",
-        "pattern": "KK Kamus + のに 使います / 便利です (Digunakan Untuk...)",
-        "formula": "KK [jisho-kei] + no ni tsukaimasu / benri desu / jikan ga kakarimasu",
-        "explanation": "Menyatakan fungsi pemanfaatan suatu perkakas, atau estimasi waktu penyelesaian.",
+        "pattern": "KK Kamus のに / KB に + 使います / 便利です (Fungsi & Kegunaan)",
+        "formula": "KK Jishokei [no ni] / KB [ni] + tsukaimasu / benri desu / kakaru",
+        "explanation": "Menyatakan fungsi kegunaan barang, kemudahan alat, atau biaya/waktu yang diperlukan untuk suatu aktivitas.",
         "examples": [
           {
-            "jp": "この はさみは 花を 切るのに 使います。",
+            "jp": "このはさみは 花を 切るのに 使います。",
             "reading": "Kono hasami wa hana o kiru no ni tsukaimasu.",
-            "id": "Gunting ini dipakai untuk memotong bunga."
+            "id": "Gunting ini digunakan untuk memotong bunga."
+          },
+          {
+            "jp": "このかばんは 旅行に 便利です。",
+            "reading": "Kono kaban wa ryokou ni benri desu.",
+            "id": "Tas ini sangat praktis untuk bepergian."
+          }
+        ]
+      },
+      {
+        "id": "m42-3",
+        "pattern": "Kuantitas + は (Minimal) vs Kuantitas + も (Banyak)",
+        "formula": "Angka + wa (paling sedikit); Angka + mo (sebanyak itu)",
+        "explanation": "Partikel 'wa' setelah bilangan menunjukkan perkiraan jumlah minimal. Partikel 'mo' menunjukkan rasa takjub karena jumlahnya yang sangat banyak.",
+        "examples": [
+          {
+            "jp": "結婚式を するのに 200万円は 要ります。",
+            "reading": "Kekkonshiki o suru no ni nihyaku-man-en wa irimasu.",
+            "id": "Untuk menyelenggarakan resepsi pernikahan setidaknya butuh minimal 2 juta yen."
           }
         ]
       }
@@ -7232,7 +7971,30 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Melonggarkan",
         "kanji": "緩める"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "ボーナスは何に使いますか (Bonus Mau Dipakai untuk Apa?)",
+      "lines": [
+        {
+          "speaker": "Santos",
+          "jp": "ミラーさん、冬のボーナスは何に使うつもりですか。",
+          "reading": "Miraa-san, fuyu no boonasu wa nan ni tsukau tsumori desu ka.",
+          "id": "Sdr. Miller, bonus musim dingin nanti rencananya mau dipakai untuk apa?"
+        },
+        {
+          "speaker": "Miller",
+          "jp": "将来自分の店を持つために、貯金するつもりです。",
+          "reading": "Shourai jibun no mise o motsu tame ni, chokin suru tsumori desu.",
+          "id": "Saya berniat menabungnya agar kelak di masa depan bisa punya toko sendiri."
+        },
+        {
+          "speaker": "Santos",
+          "jp": "素晴らしい夢ですね！わたしは家族のために車を買います。",
+          "reading": "Subarashii yume desu ne! Watashi wa kazoku no tame ni kuruma o kaimasu.",
+          "id": "Mimpi yang luar biasa! Kalau saya mau membeli mobil demi keluarga."
+        }
+      ]
+    }
   },
   {
     "chapter": 43,
@@ -7244,37 +8006,32 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m43-1",
-        "pattern": "KK Stem / Sifat (buang i/na) + そうです (Kelihatannya...)",
-        "formula": "KK (Stem) / I-Kei (-i) / Na-Kei + sou desu",
-        "explanation": "Menyatakan dugaan spontan berdasarkan penampakan fisik luar saat itu.",
+        "pattern": "KK Masu-stem / Sifat (tanpa i/na) + そうです (Kelihatannya Akan / Tampak)",
+        "formula": "KK Masu-stem / I-Kei (buang i) / Na-Kei (buang na) + sou desu",
+        "explanation": "Menyatakan dugaan perkiraan berdasarkan pengamatan visual langsung sesaat sebelum kejadian ('sepertinya akan...'). Pengecualian: ii -> yosasou desu.",
         "examples": [
           {
             "jp": "今にも 雨が 降りそうです。",
-            "reading": "Ima ni mo ame ga furisou desu.",
-            "id": "Kelihatannya sebentar lagi akan turun hujan."
+            "reading": "Ima ni mo ame ga furi-sou desu.",
+            "id": "Kelihatannya sebentar lagi hujan akan turun."
           },
           {
-            "jp": "この ケーキは 美味しそうです。",
-            "reading": "Kono keeki wa oishisou desu.",
-            "id": "Kue ini kelihatannya enak sekali."
-          },
-          {
-            "jp": "ボタンが 外れそうです。",
-            "reading": "Botan ga hazuresou desu.",
-            "id": "Kancingnya kelihatannya mau lepas."
+            "jp": "この料理は 辛そうです。",
+            "reading": "Kono ryouri wa kara-sou desu.",
+            "id": "Masakan ini kelihatannya pedas."
           }
         ]
       },
       {
         "id": "m43-2",
-        "pattern": "KK-te 来ます (Pergi Melakukan Lalu Kembali Lagi)",
-        "formula": "KK [te-kei] + kimasu",
-        "explanation": "Pergi sebentar untuk membeli/mengambil sesuatu lalu segera kembali ke tempat awal.",
+        "pattern": "KK bentuk-Te + 来ます (Te kimasu - Pergi Melakukan Lalu Kembali)",
+        "formula": "KK bentuk-Te + kimasu",
+        "explanation": "Menyatakan pergi sebentar ke suatu tempat untuk melakukan suatu perbuatan lalu segera kembali lagi ke tempat semula.",
         "examples": [
           {
             "jp": "ちょっと たばこを 買って 来ます。",
             "reading": "Chotto tabako o katte kimasu.",
-            "id": "Saya pergi sebentar beli rokok lalu balik lagi."
+            "id": "Saya pergi sebentar beli rokok dulu lalu kembali lagi."
           }
         ]
       }
@@ -7537,7 +8294,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Penggugup, mudah gelisah",
         "kanji": "神経質な"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "やさしそうな人ですね (Kelihatannya Orang yang Ramah ya)",
+      "lines": [
+        {
+          "speaker": "Sato",
+          "jp": "新しい課長の山田さんは、とても優しそうな人ですね。",
+          "reading": "Atarashii kachou no Yamada-san wa, totemo yasashisou na hito desu ne.",
+          "id": "Kepala seksi yang baru, Pak Yamada, kelihatannya orang yang sangat ramah ya."
+        },
+        {
+          "speaker": "Miller",
+          "jp": "ええ、仕事も丁寧に教えてくれそうです。",
+          "reading": "Ee, shigoto mo teinei ni oshiete kuresou desu.",
+          "id": "Iya, tampaknya beliau akan mengajari pekerjaan dengan teliti dan sabar."
+        },
+        {
+          "speaker": "Sato",
+          "jp": "雨が降りそうですね。傘を買って帰りましょう。",
+          "reading": "Ame ga furisou desu ne. Kasa o katte kaerimashou.",
+          "id": "Sepertinya akan turun hujan ya. Ayo kita beli payung sebelum pulang."
+        },
+        {
+          "speaker": "Miller",
+          "jp": "そうですね。急ぎましょう。",
+          "reading": "Sou desu ne. Isogimashou.",
+          "id": "Setuju, ayo kita bergegas."
+        }
+      ]
+    }
   },
   {
     "chapter": 44,
@@ -7549,42 +8335,60 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m44-1",
-        "pattern": "KK Stem / Sifat + すぎます (Terlalu Berlebihan...)",
-        "formula": "KK (Stem) / I-Kei (-i) / Na-Kei + sugimasu",
-        "explanation": "Menyatakan bahwa suatu perbuatan atau kondisi melampaui batas kewajaran.",
+        "pattern": "KK Masu-stem / Sifat + すぎます (Terlalu Berlebihan)",
+        "formula": "KK Stem / I-Kei (buang i) / Na-Kei (buang na) + sugimasu",
+        "explanation": "Menyatakan bahwa suatu perbuatan atau sifat telah melampaui batas wajar sehingga berakibat buruk.",
         "examples": [
           {
             "jp": "ゆうべ お酒を 飲みすぎました。",
             "reading": "Yuube osake o nomisugimashita.",
-            "id": "Tadi malam saya terlalu banyak minum sake."
+            "id": "Semalam saya terlalu banyak minum minuman keras."
           },
           {
-            "jp": "この 問題は 難しすぎます。",
-            "reading": "Kono mondai wa muzukashisugimasu.",
-            "id": "Soal ini terlalu sulit."
+            "jp": "このセーターは 大きすぎます。",
+            "reading": "Kono seetaa wa ookisugimasu.",
+            "id": "Sweter ini terlalu besar."
           }
         ]
       },
       {
         "id": "m44-2",
-        "pattern": "KK Stem + やすいです / にくいです (Mudah / Sulit Dilakukan)",
-        "formula": "KK (Stem masu) + yasui desu / nikui desu",
-        "explanation": "Menyatakan kemudahan atau kesulitan karakteristik dari suatu benda/tindakan.",
+        "pattern": "KK Masu-stem + やすいです / にくいです (Mudah / Sulit Dilakukan)",
+        "formula": "KK Stem + yasui desu (mudah) / nikui desu (sulit)",
+        "explanation": "Menyatakan sifat dari suatu barang yang gampang atau sukar untuk dioperasikan/dialami.",
         "examples": [
           {
-            "jp": "この 薬は 苦くなくて、飲みやすいです。",
-            "reading": "Kono kusuri wa nigakunakute, nomiyasui desu.",
-            "id": "Obat ini tidak pahit sehingga mudah diminum."
+            "jp": "このパソコンは 使いやすいです。",
+            "reading": "Kono pasokon wa tsukaiyasui desu.",
+            "id": "Komputer ini mudah digunakan."
           },
           {
-            "jp": "雨の 日は 事故が 起きやすいです。",
-            "reading": "Ame no hi wa jiko ga okiyasui desu.",
-            "id": "Pada hari hujan, kecelakaan mudah/rentan terjadi."
+            "jp": "東京は 住みにくいです。",
+            "reading": "Toukyou wa suminikui desu.",
+            "id": "Tokyo sulit untuk ditinggali (biaya tinggi/padat)."
+          }
+        ]
+      },
+      {
+        "id": "m44-3",
+        "pattern": "Kata Sifat (-ku / -ni) します & KB に します",
+        "formula": "I-Kei buang i + ku shimasu; Na-Kei + ni shimasu; KB + ni shimasu",
+        "explanation": "Menjadikan atau mengubah kondisi benda menjadi sifat tertentu. 'KB ni shimasu' berarti memutuskan pilihan.",
+        "examples": [
+          {
+            "jp": "音を 大きく します。",
+            "reading": "Oto o ookiku shimasu.",
+            "id": "Saya membesarkan volume suara."
           },
           {
-            "jp": "東京は 道が 狭くて、歩きにくいです。",
-            "reading": "Toukyou wa michi ga semakute, arukinikui desu.",
-            "id": "Di Tokyo jalannya sempit sehingga susah dilalui pejalan kaki."
+            "jp": "部屋を きれいに します。",
+            "reading": "Heya o kirei ni shimasu.",
+            "id": "Saya membersihkan kamar."
+          },
+          {
+            "jp": "わたしは コーヒーに します。",
+            "reading": "Watashi wa koohii ni shimasu.",
+            "id": "Saya memutuskan memilih kopi."
           }
         ]
       }
@@ -7905,7 +8709,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "reading": "ri-zento",
         "id": "Potongan jambul"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "この写真みたいにしてください (Tolong Buat Seperti Foto Ini)",
+      "lines": [
+        {
+          "speaker": "Barber",
+          "jp": "いらっしゃいませ。今日はどうなさいますか。",
+          "reading": "Irasshaimase. Kyou wa dou nasaimasu ka.",
+          "id": "Selamat datang. Hari ini mau potong model bagaimana?"
+        },
+        {
+          "speaker": "Miller",
+          "jp": "この雑誌の写真みたいに、短くカットしてください。",
+          "reading": "Kono zasshi no shashin mitai ni, mijikaku katto shite kudasai.",
+          "id": "Tolong potong pendek mirip seperti foto majalah ini."
+        },
+        {
+          "speaker": "Barber",
+          "jp": "横と後ろはすっきりさせますね。",
+          "reading": "Yoko to ushiro wa sukkiri sasemasu ne.",
+          "id": "Bagian samping dan belakang saya rapikan tipis ya."
+        },
+        {
+          "speaker": "Miller",
+          "jp": "はい、お願いします。",
+          "reading": "Hai, onegai shimasu.",
+          "id": "Ya, tolong ya."
+        }
+      ]
+    }
   },
   {
     "chapter": 45,
@@ -7917,37 +8750,32 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m45-1",
-        "pattern": "Kalimat Biasa + 場合は、〜 (~ baai wa: Dalam Hal / Kasus Terjadi...)",
-        "formula": "Futsuukei [Na-kei+na / KB+no] + baai wa",
-        "explanation": "Petunjuk langkah antisipasi jika suatu kejadian darurat atau situasi tak terduga muncul.",
+        "pattern": "Kalimat Biasa + 場合は、〜 (~ Baai wa - Dalam Kasus / Hal)",
+        "formula": "Kalimat Futsuukei (Na-Kei + na, KB + no) + baai wa",
+        "explanation": "Menyatakan petunjuk atau instruksi antisipasi dalam menghadapi situasi darurat atau kondisi khusus.",
         "examples": [
           {
-            "jp": "火事の 場合は、エレベーターを 使わないで ください。",
-            "reading": "Kaji no baai wa, erebeetaa o tsukawanaide kudasai.",
-            "id": "Dalam hal terjadi kebakaran, tolong jangan gunakan lift!"
-          },
-          {
-            "jp": "時間に 遅れる 場合は、連絡して ください。",
-            "reading": "Jikan ni okureru baai wa, renraku shite kudasai.",
-            "id": "Jika seandainya terlambat dari waktu yang ditentukan, tolong kabari ya."
+            "jp": "火事や 地震の 場合は、エレベーターを 使わないで ください。",
+            "reading": "Kaji ya jishin no baai wa, erebeetaa o tsukawanaide kudasai.",
+            "id": "Dalam kasus kebakaran atau gempa bumi, jangan menggunakan lift."
           }
         ]
       },
       {
         "id": "m45-2",
-        "pattern": "Kalimat 1 (Biasa) + のに、Kalimat 2 (~ noni: Padahal...)",
-        "formula": "Futsuukei [Na-kei+na / KB+na] + noni",
-        "explanation": "Menyatakan kekecewaan, kejutan, atau rasa jengkel karena hasil yang terjadi bertolak belakang dengan harapan sewajarnya.",
+        "pattern": "Kalimat 1 + のに、Kalimat 2 (~ Noni - Padahal / Meskipun)",
+        "formula": "Kalimat Futsuukei (Na-Kei & KB + na) + noni, Kalimat 2",
+        "explanation": "Menyatakan pertentangan yang disertai rasa heran, kecewa, atau jengkel karena hasil yang terjadi bertolak belakang dengan ekspektasi.",
         "examples": [
           {
-            "jp": "一生懸命 勉強したのに、試験に 落ちました。",
-            "reading": "Isshoukenmei benkyou shita noni, shiken ni ochimashita.",
-            "id": "Padahal sudah belajar mati-matian, tetapi gagal dalam ujian."
+            "jp": "約束を したのに、彼女は 来ませんでした。",
+            "reading": "Yakusoku o shita noni, kanojo wa kimasen deshita.",
+            "id": "Padahal sudah berjanji, tetapi dia tidak datang."
           },
           {
-            "jp": "約束したのに、彼は 来ませんでした。",
-            "reading": "Yakusoku shita noni, kare wa kimasen deshita.",
-            "id": "Padahal sudah berjanji, tetapi dia tidak datang."
+            "jp": "今日は 日曜日なのに、働かなければ なりません。",
+            "reading": "Kyou wa nichiyoubi na noni, hatarakanakereba narimasen.",
+            "id": "Padahal hari ini hari Minggu, tetapi saya harus tetap bekerja."
           }
         ]
       }
@@ -8282,7 +9110,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Keadaan darurat",
         "kanji": "緊急"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "一生懸命練習したのに (Padahal Sudah Berlatih Sekuat Tenaga)",
+      "lines": [
+        {
+          "speaker": "Siswa",
+          "jp": "一生懸命練習したのに、試合に負けてしまいました。",
+          "reading": "Isshoukenmei renshuu shita noni, shiai ni makete shimaimashita.",
+          "id": "Padahal kami sudah berlatih sekuat tenaga, tapi sayangnya kami kalah dalam pertandingan."
+        },
+        {
+          "speaker": "Pelatih",
+          "jp": "残念だったね。でも、皆ベストを尽くしたよ。",
+          "reading": "Zannen datta ne. Demo, mina besuto o tsukushita yo.",
+          "id": "Memang sangat disayangkan. Tapi kalian semua sudah memberikan yang terbaik."
+        },
+        {
+          "speaker": "Siswa",
+          "jp": "はい。次の大会では絶対に優勝したいです。",
+          "reading": "Hai. Tsugi no taikai de wa zettai ni yuushou shitai desu.",
+          "id": "Baik. Pada kejuaraan berikutnya kami bertekad pasti ingin jadi juara."
+        },
+        {
+          "speaker": "Pelatih",
+          "jp": "その意気だ。明日からまた頑張ろう！",
+          "reading": "Sono iki da. Ashita kara mata ganbarou!",
+          "id": "Itu baru semangat! Mulai besok ayo kita berjuang lagi!"
+        }
+      ]
+    }
   },
   {
     "chapter": 46,
@@ -8294,50 +9151,50 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m46-1",
-        "pattern": "Tiga Fase Tokoro (今から〜ところ / 今〜ているところ / たった今〜たところ)",
-        "formula": "Jisho + tokoro (mau) | Te iru + tokoro (sedang) | Ta + tokoro (baru beres)",
-        "explanation": "Menyatakan titik momen waktu yang sangat presisi.",
+        "pattern": "Tiga Fase ところ (今から〜ところ / 今〜ているところ / たった今〜たところ)",
+        "formula": "KK Kamus + tokoro (akan); KK-te iru + tokoro (sedang); KK-ta + tokoro (baru saja selesai)",
+        "explanation": "Menunjukkan titik fase presisi dari suatu tindakan: tepat sesaat sebelum mulai, persis sedang berlangsung, atau baru saja kelar.",
         "examples": [
           {
-            "jp": "今から 会議が 始まる ところです。",
-            "reading": "Ima kara kaigi ga hajimaru tokoro desu.",
-            "id": "Rapat baru mau dimulai sekarang."
+            "jp": "昼ごはんは もう 食べましたか。いいえ、これから 食べる ところです。",
+            "reading": "Hirugohan wa mou tabemashita ka. Iie, korekara taberu tokoro desu.",
+            "id": "Apakah sudah makan siang? Belum, baru saja mau makan sekarang."
           },
           {
-            "jp": "今 レポートを 書いている ところです。",
-            "reading": "Ima repooto o kaite iru tokoro desu.",
-            "id": "Sekarang saya tepat sedang di tengah-tengah menulis laporan."
-          },
-          {
-            "jp": "たった今 昼ご飯を 食べた ところです。",
-            "reading": "Tatta ima hirugohan o tabeta tokoro desu.",
-            "id": "Saya baru saja semenit lalu selesai makan siang."
+            "jp": "今 調べて いる ところです。",
+            "reading": "Ima shirabete iru tokoro desu.",
+            "id": "Sekarang sedang dalam proses memeriksa."
           }
         ]
       },
       {
         "id": "m46-2",
         "pattern": "KK bentuk-Ta + ばかりです (Baru Saja Terjadi)",
-        "formula": "KK [ta-kei] + bakari desu",
-        "explanation": "Secara psikologis pembicara merasa perbuatan tersebut masih sangat baru terjadi (meskipun hitungan hari/bulan lalu).",
+        "formula": "KK bentuk-Ta + bakari desu",
+        "explanation": "Menyatakan bahwa suatu peristiwa dirasakan belum lama berselang menurut sudut pandang psikologis pembicara.",
         "examples": [
           {
-            "jp": "先月 この 会社に 入った ばかりです。",
-            "reading": "Sengetsu kono kaisha ni haitta bakari desu.",
-            "id": "Saya baru saja masuk ke perusahaan ini bulan lalu."
+            "jp": "さっき 昼ごはんを 食べた ばかりです。",
+            "reading": "Sakki hirugohan o tabeta bakari desu.",
+            "id": "Saya baru saja makan siang tadi (masih kenyang)."
+          },
+          {
+            "jp": "このビデオは 先週 買った ばかりなのに、故障して しまいました。",
+            "reading": "Kono bideo wa senshuu katta bakari na noni, koshou shite shimaimashita.",
+            "id": "Padahal video ini baru dibeli minggu lalu, tetapi sudah rusak."
           }
         ]
       },
       {
         "id": "m46-3",
-        "pattern": "Kalimat Biasa + はずです (Seharusnya Pasti...)",
-        "formula": "Futsuukei [Na-kei+na / KB+no] + hazu desu",
-        "explanation": "Menyatakan keyakinan kuat bahwa suatu hal pasti terjadi berdasarkan alasan atau bukti logis.",
+        "pattern": "Kalimat Biasa + はずです (Seharusnya Pasti)",
+        "formula": "Kalimat Futsuukei (Na-Kei + na, KB + no) + hazu desu",
+        "explanation": "Menyatakan keyakinan kuat pembicara berdasarkan logika, bukti, atau dasar pertimbangan yang jelas ('seharusnya pasti begitu').",
         "examples": [
           {
-            "jp": "田中さんは 今日 来る はずです。",
-            "reading": "Tanaka-san wa kyou kuru hazu desu.",
-            "id": "Tuan Tanaka seharusnya pasti datang hari ini."
+            "jp": "ミラーさんは 今日 来る はずです。きのう 電話が ありましたから。",
+            "reading": "Miraa-san wa kyou kuru hazu desu. Kinou denwa ga arimashita kara.",
+            "id": "Tuan Miller seharusnya pasti datang hari ini. Karena kemarin dia sudah menelepon."
           }
         ]
       }
@@ -8798,7 +9655,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "reading": "bareri-na",
         "id": "Ballerina"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "ちょうど今から出かけるところです (Pas Sekali Baru Mau Berangkat)",
+      "lines": [
+        {
+          "speaker": "Tanaka",
+          "jp": "もしもし、ミラーさん。今お時間よろしいでしょうか。",
+          "reading": "Moshimoshi, Miraa-san. Ima ojikan yoroshii deshou ka.",
+          "id": "Halo, Sdr. Miller. Apakah sekarang ada waktu senggang untuk bicara?"
+        },
+        {
+          "speaker": "Miller",
+          "jp": "すみません、ちょうど今から会議に出かけるところなんです。",
+          "reading": "Sumimasen, choudo ima kara kaigi ni dekakeru tokoro na n desu.",
+          "id": "Maaf sekali, pas sekarang saya baru saja mau berangkat ke rapat."
+        },
+        {
+          "speaker": "Tanaka",
+          "jp": "あ、お忙しいところ失礼しました。後でまた電話します。",
+          "reading": "A, oisogashii tokoro shitsurei shimashita. Ato de mata denwa shimasu.",
+          "id": "Oh, maaf mengganggu di saat sibuk. Nanti akan saya telepon lagi."
+        },
+        {
+          "speaker": "Miller",
+          "jp": "恐れ入ります。3時過ぎにお願いします。",
+          "reading": "Osoreirimasu. Sanji-sugi ni onegai shimasu.",
+          "id": "Terima kasih atas pengertiannya. Tolong hubungi lewat jam 3 ya."
+        }
+      ]
+    }
   },
   {
     "chapter": 47,
@@ -8810,32 +9696,40 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m47-1",
-        "pattern": "Bentuk Biasa (Futsuukei) + そうです (Kabarnya / Katanya Menurut Berita)",
-        "formula": "Kalimat [Futsuukei Utuh] + sou desu",
-        "explanation": "Mengutip kabar angin atau informasi dari sumber berita tanpa perubahan bentuk kata benda/sifat.",
+        "pattern": "Bentuk Biasa + そうです (Kabarnya / Katanya Menurut Berita)",
+        "formula": "Kalimat Futsuukei (Na-Kei & KB tetap berakhiran 'da') + sou desu",
+        "explanation": "Menyampaikan kembali informasi atau kabar angin yang didengar dari pihak luar tanpa opini subjektif ('katanya...').",
         "examples": [
           {
-            "jp": "天気予報に よると、明日は 寒くなる そうです。",
+            "jp": "天気予報に よると、明日は 寒く なるそうです。",
             "reading": "Tenki yohou ni yoru to, ashita wa samuku naru sou desu.",
-            "id": "Berdasarkan ramalan cuaca, kabarnya besok akan bertambah dingin."
-          },
-          {
-            "jp": "ミラーさんは 来月 国へ 帰る そうです。",
-            "reading": "Miraa-san wa raigetsu kuni e kaeru sou desu.",
-            "id": "Katanya Tuan Miller bulan depan akan kembali ke negaranya."
+            "id": "Menurut ramalan cuaca, kabarnya besok akan menjadi dingin."
           }
         ]
       },
       {
         "id": "m47-2",
-        "pattern": "〜ようです (Tampaknya / Kelihatannya seperti...)",
-        "formula": "Futsuukei [Na-kei+na / KB+no] + you desu",
-        "explanation": "Menyatakan kesimpulan dugaan logis setelah melihat, mendengar, atau mencium bukti nyata.",
+        "pattern": "〜ようです (~ You desu - Tampaknya / Sepertinya)",
+        "formula": "Kalimat Futsuukei (Na-Kei + na, KB + no) + you desu",
+        "explanation": "Menyatakan dugaan atau kesimpulan yang ditarik berdasarkan apa yang dilihat, didengar, atau dirasakan oleh panca indera.",
         "examples": [
           {
-            "jp": "外に 人が たくさん 集まっています。事故が あった ようです。",
-            "reading": "Soto ni hito ga takusan atsumatte imasu. Jiko ga atta you desu.",
-            "id": "Di luar banyak orang berkerumun. Tampaknya telah terjadi kecelakaan."
+            "jp": "人が 大勢 集まって いますね。事故の ようです。",
+            "reading": "Hito ga oozei atsumatte imasu ne. Jiko no you desu.",
+            "id": "Banyak orang berkumpul ya. Tampaknya telah terjadi kecelakaan."
+          }
+        ]
+      },
+      {
+        "id": "m47-3",
+        "pattern": "声 / 音 / 匂い / 味 が します (Terdengar / Tercium / Terasa)",
+        "formula": "[Koe / Oto / Nioi / Aji] + ga shimasu",
+        "explanation": "Menyatakan adanya rangsangan sensorik panca indera yang tertangkap secara spontan.",
+        "examples": [
+          {
+            "jp": "変な 音が しますね。",
+            "reading": "Hen na oto ga shimasu ne.",
+            "id": "Terdengar suara aneh ya."
           }
         ]
       }
@@ -9153,7 +10047,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "reading": "tsurutsuru",
         "id": "Terasa licin"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "婚約したそうですよ (Katanya Mereka Sudah Bertunangan)",
+      "lines": [
+        {
+          "speaker": "Sato",
+          "jp": "ミラーさん、小林さんと渡辺さんが婚約したそうですよ。",
+          "reading": "Miraa-san, Kobayashi-san to Watanabe-san ga konyaku shita sou desu yo.",
+          "id": "Sdr. Miller, katanya Sdr. Kobayashi dan Sdri. Watanabe sudah bertunangan lho."
+        },
+        {
+          "speaker": "Miller",
+          "jp": "本当ですか！お似合いのカップルですね。",
+          "reading": "Hontou desu ka! Oniai no kappuru desu ne.",
+          "id": "Benarkah! Pasangan yang sangat serasi ya."
+        },
+        {
+          "speaker": "Sato",
+          "jp": "ええ、来年の春に結婚式を挙げるようです。",
+          "reading": "Ee, rainen no haru ni kekkonshiki o ageru you desu.",
+          "id": "Iya, sepertinya mereka akan melangsungkan upacara pernikahan musim semi tahun depan."
+        },
+        {
+          "speaker": "Miller",
+          "jp": "それはおめでたいですね。お祝いを準備しましょう。",
+          "reading": "Sore wa omedetai desu ne. Oiwai o junbi shimashou.",
+          "id": "Kabar yang sangat menggembirakan. Ayo kita siapkan hadiah perayaannya."
+        }
+      ]
+    }
   },
   {
     "chapter": 48,
@@ -9165,32 +10088,32 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m48-1",
-        "pattern": "Bentuk Kausatif (使役形 Shiekikei: Menyuruh Melakukan)",
-        "formula": "Atasan/Orang tua [wa] Bawahan/Anak [ni/o] KK [shieki-kei]",
-        "explanation": "Menyuruh orang lain melakukan sesuatu atau mengizinkan anak berbuat sesuatu.",
+        "pattern": "Bentuk Kausatif (使役形 Shiekikei: Menyuruh / Membiarkan)",
+        "formula": "Grup 1: vokal 'u' -> 'aseru' (ikaseru). Grup 2: buang ru + saseru (tabesaseru). Grup 3: saseru, kosaseru.",
+        "explanation": "Digunakan oleh pihak berkedudukan lebih tinggi untuk menyuruh atau mengizinkan bawahannya melakukan suatu perbuatan.",
         "examples": [
           {
-            "jp": "部長は 山田さんを 大阪へ 出張させました。",
-            "reading": "Buchou wa Yamada-san o Oosaka e shucchou sasemashita.",
-            "id": "Kepala bagian menugaskan Sdr. Yamada dinas ke Osaka."
+            "jp": "部長は 加藤さんを 大阪へ 出張させます。",
+            "reading": "Buchou wa Katou-san o Oosaka e shucchou sasemasu.",
+            "id": "Kepala bagian menugaskan Sdr. Kato untuk dinas ke Osaka."
           },
           {
-            "jp": "母は 子供に 部屋を 掃除させました。",
-            "reading": "Haha wa kodomo ni heya o souji sasemashita.",
-            "id": "Ibu menyuruh anak membersihkan kamar."
+            "jp": "わたしは 娘を 自由に 遊ばせました。",
+            "reading": "Watashi wa musume o jiyuu ni asobasemashita.",
+            "id": "Saya membiarkan anak perempuan saya bermain dengan bebas."
           }
         ]
       },
       {
         "id": "m48-2",
-        "pattern": "KK bentuk Kausatif-Te + いただけませんか (Izinkanlah Saya Melakukan...)",
-        "formula": "KK [shieki-kei] + te itadakemasen ka",
-        "explanation": "Permohonan izin diri sendiri yang sangat santun di tempat kerja.",
+        "pattern": "KK Kausatif-Te + いただけませんか (Mohon Izinkan Saya)",
+        "formula": "KK Shiekikei-te + itadakemasen ka",
+        "explanation": "Ungkapan sangat santun untuk memohon izin dari atasan agar pembicara diperkenankan melakukan suatu tindakan.",
         "examples": [
           {
-            "jp": "気分が 悪いので、早く 帰らせて いただけませんか。",
-            "reading": "Kibun ga warui node, hayaku kaerasete itadakemasen ka.",
-            "id": "Berhubung badan saya kurang fit, sudikah Anda mengizinkan saya pulang lebih awal?"
+            "jp": "友だちの 結婚式が あるので、早く 帰らせて いただけませんか。",
+            "reading": "Tomodachi no kekkonshiki ga aru node, hayaku kaerasete itadakemasen ka.",
+            "id": "Berhubung ada pernikahan teman, mohon izinkan saya pulang lebih awal."
           }
         ]
       }
@@ -9425,7 +10348,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "id": "Bersabar",
         "kanji": "我慢する"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "好きなようにさせてやりたいです (Ingin Membiarkan Anak Melakukan Sukanya)",
+      "lines": [
+        {
+          "speaker": "Ibu",
+          "jp": "息子に水泳とピアノを習わせているんです。",
+          "reading": "Musuko ni suiei to piano o narawasete iru n desu.",
+          "id": "Saya sedang mengikutsertakan putra saya les renang dan piano."
+        },
+        {
+          "speaker": "Guru",
+          "jp": "お子さんは楽しんで通っていますか。",
+          "reading": "Okosan wa tanoshinde kayotte imasu ka.",
+          "id": "Apakah ananda menjalaninya dengan senang hati?"
+        },
+        {
+          "speaker": "Ibu",
+          "jp": "ええ、できるだけ子どもの好きなように自由にやらせてやりたいと思っています。",
+          "reading": "Ee, dekiru dake kodomo no suki na you ni jiyuu ni yarasete yaritai to omotte imasu.",
+          "id": "Iya, sebisa mungkin saya ingin membiarkannya bebas mengeksplorasi apa yang dia sukai."
+        },
+        {
+          "speaker": "Guru",
+          "jp": "それはとても素晴らしい教育方針ですね。",
+          "reading": "Sore wa totemo subarashii kyouiku houshin desu ne.",
+          "id": "Itu adalah prinsip pengasuhan yang sangat terpuji."
+        }
+      ]
+    }
   },
   {
     "chapter": 49,
@@ -9437,37 +10389,45 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m49-1",
-        "pattern": "Kata Kerja Khusus Sonkeigo (尊敬語)",
-        "formula": "Irassharu (iku/kuru/iru) | Ossharu (iu) | Nasaru (suru) | Meshiagaru (taberu/nomu) | Goran ni naru (miru)",
-        "explanation": "Kata kerja pengganti khusus untuk menghormati perbuatan yang dilakukan oleh atasan atau tamu.",
+        "pattern": "Bahasa Hormat Sonkeigo (尊敬語: Bentuk Khusus Kata Kerja)",
+        "formula": "Irassharu (ada/pergi/datang), Meshiagaru (makan/minum), Ossharu (berkata), Goran ni naru (melihat), Gozonji desu (mengetahui)",
+        "explanation": "Bentuk kata kerja khusus yang digunakan untuk menghormati perbuatan dari atasan, tamu, atau pelanggan.",
         "examples": [
           {
-            "jp": "社長は もう お帰りに なりました。",
-            "reading": "Shachou wa mou okaeri ni narimashita.",
-            "id": "Bapak Direktur sudah pulang."
+            "jp": "ワット先生は 研究室に いらっしゃいます。",
+            "reading": "Watto-sensei wa kenkyuushitsu ni irasshaimasu.",
+            "id": "Bapak Guru Watt ada di ruang penelitian."
           },
           {
-            "jp": "何を 召し上がりますか。",
-            "reading": "Nani o meshiagarimasu ka.",
-            "id": "Bapak/Ibu berkenan makan apa?"
+            "jp": "どうぞ 召し上がって ください。",
+            "reading": "Douzo meshiagatte kudasai.",
+            "id": "Silakan dinikmati makanannya."
           }
         ]
       },
       {
         "id": "m49-2",
-        "pattern": "お + KK Stem + ください (Permohonan Santun Resmi)",
-        "formula": "o + KK (Stem masu) + kudasai",
-        "explanation": "Cara sopan resmi meminta tamu melakukan sesuatu (misalnya di hotel, bank, toko).",
+        "pattern": "お + KK Masu-stem + に なります (Rumus Umum Sonkeigo)",
+        "formula": "O + KK Stem + ni narimasu",
+        "explanation": "Rumus umum untuk mengubah kata kerja biasa menjadi bentuk hormat santun kepada orang yang dihormati.",
         "examples": [
           {
-            "jp": "こちらに お名前を お書き ください。",
-            "reading": "Kochira ni onamae o okaki kudasai.",
-            "id": "Silakan berkenan menulis nama di sebelah sini."
-          },
+            "jp": "社長は もう お帰りに なりました。",
+            "reading": "Shachou wa mou okaeri ni narimashita.",
+            "id": "Bapak Direktur Utama sudah pulang."
+          }
+        ]
+      },
+      {
+        "id": "m49-3",
+        "pattern": "お + KK Masu-stem + ください (Permohonan Hormat Santun)",
+        "formula": "O + KK Stem + kudasai",
+        "explanation": "Instruksi atau permohonan santun resmi kepada tamu atau pelanggan.",
+        "examples": [
           {
-            "jp": "少々 お待ち ください。",
-            "reading": "Shoushou omachi kudasai.",
-            "id": "Mohon berkenan menunggu sebentar."
+            "jp": "あちらから お入り ください。",
+            "reading": "Achira kara ohairi kudasai.",
+            "id": "Silakan masuk dari sebelah sana."
           }
         ]
       }
@@ -9719,7 +10679,36 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
         "reading": "~deirasshaimasu",
         "id": "Kata hormat です"
       }
-    ]
+    ],
+    "dialogue": {
+      "title": "社長はいらっしゃいますか (Apakah Bapak Direktur Berada di Tempat?)",
+      "lines": [
+        {
+          "speaker": "Tamu",
+          "jp": "失礼いたします。IMCのミラーと申しますが、社長はいらっしゃいますか。",
+          "reading": "Shitsurei itashimasu. IMC no Miraa to moushimasu ga, shachou wa irasshaimasu ka.",
+          "id": "Permisi. Saya Miller dari IMC, apakah Bapak Direktur Utama berada di tempat?"
+        },
+        {
+          "speaker": "Sekretaris",
+          "jp": "あいにく社長は会議室で来客とお会いになっております。",
+          "reading": "Ainiku shachou wa kaigishitsu de raikyaku to oai ni natte orimasu.",
+          "id": "Mohon maaf, Bapak Direktur saat ini sedang menemui tamu di ruang rapat."
+        },
+        {
+          "speaker": "Tamu",
+          "jp": "何時ごろお戻りになりますでしょうか。",
+          "reading": "Nanji goro omodori ni narimasu deshou ka.",
+          "id": "Kira-kira pukul berapa beliau selesai kembali?"
+        },
+        {
+          "speaker": "Sekretaris",
+          "jp": "3時前には終わる予定でございます。こちらでお待ちいただけますか。",
+          "reading": "Sanji mae ni wa owaru yotei de gozaimasu. Kochira de omachi itadakemasu ka.",
+          "id": "Dijadwalkan selesai sebelum pukul 3. Sudikah Anda menunggu sejenak di sini?"
+        }
+      ]
+    }
   },
   {
     "chapter": 50,
@@ -9731,37 +10720,55 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
     "grammarPatterns": [
       {
         "id": "m50-1",
-        "pattern": "Kata Kerja Khusus Kenjougo (謙譲語)",
-        "formula": "Mairimasu (iku/kuru) | Orimasu (iru) | Itashimasu (suru) | Moushimasu (iu) | Haikenshimasu (miru)",
-        "explanation": "Merendahkan tindakan diri sendiri atau keluarga saat berbicara di hadapan klien, tamu, atau orang luar.",
+        "pattern": "Bahasa Rendah Diri Kenjougo (謙譲語: Bentuk Khusus Kata Kerja)",
+        "formula": "Mairu (pergi/datang), Oru (ada), Itadaku (makan/minum/menerima), Mousu (berkata), Itasu (melakukan), Haiken suru (melihat), Zonjiru (tahu), Ukagau (bertanya/mengunjungi)",
+        "explanation": "Bentuk kata kerja yang digunakan untuk merendahkan tindakan diri sendiri atau keluarga ketika berhadapan dengan atasan atau mitra bisnis.",
         "examples": [
           {
-            "jp": "マイク・ミラーと 申します。アメリカから 参りました。",
-            "reading": "Maiku Miraa to moushimasu. Amerika kara mairimashita.",
-            "id": "Nama saya Mike Miller. Saya datang dari Amerika (sopan merendah)."
+            "jp": "アメリカから 参りました。ミラーと 申します。",
+            "reading": "Amerika kara mairimashita. Miraa to moushimasu.",
+            "id": "Saya datang dari Amerika. Nama saya Miller."
           },
           {
-            "jp": "明日 １０時に そちらへ 伺います。",
-            "reading": "Ashita juu-ji ni sochira e伺います(ukagaimasu).",
-            "id": "Besok jam 10 saya akan berkunjung ke tempat Anda."
+            "jp": "社長の 奥様に お目に かかりました。",
+            "reading": "Shachou no okusama ni ome ni kakarimashita.",
+            "id": "Saya telah berjumpa dengan nyonya istri direktur."
           }
         ]
       },
       {
         "id": "m50-2",
-        "pattern": "お + KK Stem + します / ご + Kata Benda Kango + します (Merendah Membantu Orang)",
-        "formula": "o + KK Stem + shimasu / go + Kango + shimasu",
-        "explanation": "Melakukan tindakan yang melibatkan atau membantu orang lain dengan sikap rendah hati.",
+        "pattern": "お + KK Masu-stem + します / いたします (Rumus Umum Kenjougo)",
+        "formula": "O + KK Stem + shimasu / itashimasu",
+        "explanation": "Rumus umum merendahkan diri saat perbuatan pembicara ditujukan untuk membantu atau melayani orang lain.",
         "examples": [
           {
-            "jp": "荷物を お持ち しましょうか。",
-            "reading": "Nimotsu o omochi shimashou ka.",
-            "id": "Bolehkah saya bawakan barang bawaan Anda? (santun bisnis)"
+            "jp": "重そうですね。お持ちしましょうか。",
+            "reading": "Omosou desu ne. Omochi shimashou ka.",
+            "id": "Kelihatannya berat ya. Bolehkah saya bantu bawakan?"
           },
           {
-            "jp": "今日の スケジュールを ご案内 いたします。",
-            "reading": "Kyou no sukejuuru o goannai itashimasu.",
-            "id": "Saya akan memandu jadwal hari ini."
+            "jp": "今日の 予定を ご説明 いたします。",
+            "reading": "Kyou no yotei o gosetsumei itashimasu.",
+            "id": "Saya akan menjelaskan rencana hari ini."
+          }
+        ]
+      },
+      {
+        "id": "m50-3",
+        "pattern": "Bahasa Santun Teineigo (ございます, 〜で ございます, よろしいでしょうか)",
+        "formula": "Gozaimasu (ada); ~de gozaimasu (adalah); yoroshii deshou ka (apakah berkenan?)",
+        "explanation": "Bentuk penghalusan kalimat tingkat tinggi yang biasa digunakan dalam pelayanan tamu, hotel, toko, dan instansi resmi.",
+        "examples": [
+          {
+            "jp": "電話は 階段の 横に ございます。",
+            "reading": "Denwa wa kaidan no yoko ni gozaimasu.",
+            "id": "Telepon ada di samping tangga."
+          },
+          {
+            "jp": "はい、IMCで ございます。",
+            "reading": "Hai, IMC de gozaimasu.",
+            "id": "Ya, di sini perusahaan IMC."
           }
         ]
       }
@@ -10021,25 +11028,31 @@ export const minnaShokyu2Lessons: MinnaLesson[] = [
       }
     ],
     "dialogue": {
-      "title": "心から 感謝いたします (Terima Kasih Dari Lubuk Hati)",
+      "title": "心から感謝いたします (Saya Mengucapkan Terima Kasih Setulus Hati)",
       "lines": [
         {
           "speaker": "Miller",
-          "jp": "社長、今まで 本当に お世話に なりました。心から 感謝いたします。",
-          "reading": "Shachou, ima made hontou ni osewa ni narimashita. Kokoro kara kansha itashimasu.",
-          "id": "Bapak Direktur, hingga saat ini saya sangat berterima kasih atas semua bimbingan dan bantuan Bapak. Saya menghaturkan terima kasih yang sedalam-dalamnya."
+          "jp": "本日はわたくしどものために送別会を開いていただき、誠にありがとうございます。",
+          "reading": "Honjitsu wa watakushidomo no tame ni soubetsukai o hiraite itadaki, makoto ni arigatou gozaimasu.",
+          "id": "Hari ini saya mengucapkan terima kasih yang sebesar-besarnya karena telah mengadakan pesta perpisahan untuk kami."
         },
         {
-          "speaker": "Shachou",
-          "jp": "ミラー君、よく 頑張って くれたね。新しい 職場でも 活躍を 祈って いるよ。",
-          "reading": "Miraa-kun, yoku ganbatte kureta ne. Atarashii shokuba demo katsuyaku o inotte iru yo.",
-          "id": "Saudara Miller, kamu telah berjuang dengan sangat baik. Di tempat kerja yang baru pun, saya mendoakan kesuksesanmu selalu."
+          "speaker": "Rekan",
+          "jp": "ミラーさん、日本での3年間はいかがでしたか。",
+          "reading": "Miraa-san, Nihon de no sannenkan wa ikaga deshita ka.",
+          "id": "Sdr. Miller, bagaimana kesan Anda selama 3 tahun bertugas di Jepang?"
         },
         {
           "speaker": "Miller",
-          "jp": "はい、精一杯 努めて まいります。本当に ありがとうございました。",
-          "reading": "Hai, seiippai tsutomete mairimasu. Hontou ni arigatou gozaimashita.",
-          "id": "Baik, saya akan berusaha sekuat tenaga saya. Terima kasih banyak atas segalanya."
+          "jp": "皆様の温かいご支援をいただき、多くのことを学ばせていただきました。心から感謝申し上げます。",
+          "reading": "Minasama no atatakai goshien o itadaki, ooku no koto o manabawasete itadakimashita. Kokoro kara kansha moushiagemasu.",
+          "id": "Berkat dukungan hangat dari Bapak/Ibu sekalian, saya dapat menimba banyak ilmu berharga. Dari lubuk hati terdalam, saya haturkan terima kasih yang tak terhingga."
+        },
+        {
+          "speaker": "Rekan",
+          "jp": "お元気でご活躍されることをお祈りいたします！",
+          "reading": "Ogenki de gokatsuyaku sareru koto o oinori itashimasu!",
+          "id": "Kami mendoakan semoga Anda senantiasa sehat walafiat dan sukses selalu!"
         }
       ]
     }

@@ -101,7 +101,8 @@ body.dark {
   overflow-x: clip;
 }
 
-.font-jp {
+.font-jp,
+.font-japanese {
   font-family: 'Noto Sans JP', 'Zen Maru Gothic', 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
   font-feature-settings: "palt" 1;
   text-rendering: optimizeLegibility;

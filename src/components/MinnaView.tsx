@@ -123,11 +123,11 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
       </div>
 
       {/* Quick Chapter Switcher for Mobile & PC */}
-      <div className="bg-white p-2 sm:p-2.5 rounded-2xl border border-slate-200/90 shadow-2xs flex items-center justify-between gap-1.5 sm:gap-2">
+      <div className="bg-white dark:bg-slate-900 p-2 sm:p-2.5 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-2xs flex items-center justify-between gap-1.5 sm:gap-2">
         <button
           onClick={handlePrevChapter}
           disabled={currentIndex <= 0}
-          className="min-h-[38px] px-2.5 sm:px-3 rounded-xl bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed text-xs font-bold text-slate-700 flex items-center gap-1 cursor-pointer select-none transition-colors"
+          className="min-h-[38px] px-2.5 sm:px-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1 cursor-pointer select-none transition-colors"
           title="Bab Sebelumnya"
         >
           <ChevronLeft className="w-4 h-4" />
@@ -135,7 +135,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
         </button>
 
         <div className="flex items-center gap-1.5 sm:gap-2 flex-1 justify-center max-w-md min-w-0">
-          <span className="text-xs font-extrabold text-slate-500 whitespace-nowrap hidden min-[480px]:inline">
+          <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400 whitespace-nowrap hidden min-[480px]:inline">
             Bab:
           </span>
           <select
@@ -144,12 +144,12 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
               const found = allMinnaLessons.find((l) => getLessonKey(l) === e.target.value);
               if (found) handleSelectLesson(found);
             }}
-            className="w-full sm:w-auto bg-rose-50/90 border border-rose-200 text-rose-900 text-xs sm:text-sm font-bold rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 focus:outline-hidden focus:ring-2 focus:ring-rose-400 cursor-pointer truncate"
+            className="w-full sm:w-auto bg-rose-50/90 dark:bg-slate-800 border border-rose-200 dark:border-rose-900/50 text-rose-900 dark:text-rose-300 text-xs sm:text-sm font-bold rounded-xl px-2.5 sm:px-3 py-1.5 sm:py-2 focus:outline-hidden focus:ring-2 focus:ring-rose-400 cursor-pointer truncate"
           >
             {allMinnaLessons.map((l) => {
               const k = getLessonKey(l);
               return (
-                <option key={k} value={k}>
+                <option key={k} value={k} className="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100">
                   [{l.part}] Bab {l.chapter}: {l.title} ({l.level})
                 </option>
               );
@@ -160,7 +160,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
         <button
           onClick={handleNextChapter}
           disabled={currentIndex >= allMinnaLessons.length - 1}
-          className="min-h-[38px] px-2.5 sm:px-3 rounded-xl bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed text-xs font-bold text-slate-700 flex items-center gap-1 cursor-pointer select-none transition-colors"
+          className="min-h-[38px] px-2.5 sm:px-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1 cursor-pointer select-none transition-colors"
           title="Bab Berikutnya"
         >
           <span className="hidden sm:inline">Berikutnya</span>
@@ -171,13 +171,13 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
       {/* Filter and Search Bar */}
       <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
         {/* Part Tabs */}
-        <div className="flex items-center bg-white p-1 rounded-2xl border border-slate-200/90 shadow-2xs overflow-x-auto no-scrollbar gap-1">
+        <div className="flex items-center bg-white dark:bg-slate-900 p-1 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-2xs overflow-x-auto no-scrollbar gap-1">
           <button
             onClick={() => setFilterPart('all')}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors whitespace-nowrap cursor-pointer ${
               filterPart === 'all'
                 ? 'bg-rose-600 text-white shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800'
             }`}
           >
             Semua ({allMinnaLessons.length})
@@ -187,7 +187,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors whitespace-nowrap cursor-pointer ${
               filterPart === 'shokyu1'
                 ? 'bg-rose-600 text-white shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800'
             }`}
           >
             Shokyu I &bull; N5 (1–25)
@@ -197,7 +197,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors whitespace-nowrap cursor-pointer ${
               filterPart === 'shokyu2'
                 ? 'bg-rose-600 text-white shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800'
             }`}
           >
             Shokyu II &bull; N4 (26–50)
@@ -207,7 +207,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors whitespace-nowrap cursor-pointer ${
               filterPart === 'chuukyu1'
                 ? 'bg-rose-600 text-white shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800'
             }`}
           >
             Chuukyu I &bull; N3 (1–12)
@@ -222,7 +222,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Cari pola, bab, atau kosakata..."
-            className="w-full bg-white pl-9 pr-4 py-2 rounded-2xl border border-slate-200 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-rose-400 focus:border-rose-400 shadow-2xs transition-all"
+            className="w-full bg-white dark:bg-slate-900 pl-9 pr-4 py-2 rounded-2xl border border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-rose-400 focus:border-rose-400 shadow-2xs transition-all"
           />
         </div>
       </div>
@@ -230,18 +230,18 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
       {/* Main Content Layout: Sidebar Lesson List + Main Lesson Workspace */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-start">
         {/* Lesson Directory (Chapters 1 - 50) */}
-        <div className="lg:col-span-4 bg-white rounded-3xl border border-slate-200/90 shadow-2xs p-3.5 flex flex-col">
-          <div className="px-2 py-1.5 flex items-center justify-between border-b border-slate-100 mb-2">
-            <span className="text-xs font-extrabold text-slate-600 uppercase tracking-wider">
+        <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/90 dark:border-slate-800 shadow-2xs p-3.5 flex flex-col">
+          <div className="px-2 py-1.5 flex items-center justify-between border-b border-slate-100 dark:border-slate-800 mb-2">
+            <span className="text-xs font-extrabold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
               Daftar Bab ({filteredLessons.length})
             </span>
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-semibold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-md">
+              <span className="text-[11px] font-semibold text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-950/60 px-2 py-0.5 rounded-md">
                 Bab {currentLesson.chapter} Aktif
               </span>
               <button
                 onClick={() => setIsMobileListExpanded(!isMobileListExpanded)}
-                className="lg:hidden p-1 text-slate-400 hover:text-slate-700 cursor-pointer"
+                className="lg:hidden p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 cursor-pointer"
                 title="Buka/Tutup Daftar Bab"
               >
                 {isMobileListExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -261,13 +261,15 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                   onClick={() => handleSelectLesson(lesson)}
                   className={`w-full text-left p-2.5 rounded-2xl transition-all cursor-pointer flex items-start gap-2.5 border ${
                     isSelected
-                      ? 'bg-rose-50/80 border-rose-300 text-slate-900 shadow-xs'
-                      : 'bg-white hover:bg-slate-50 border-slate-100 text-slate-700'
+                      ? 'bg-rose-50/80 dark:bg-rose-950/40 border-rose-300 dark:border-rose-700 text-slate-900 dark:text-white shadow-xs'
+                      : 'bg-white hover:bg-slate-50 dark:bg-slate-900/70 dark:hover:bg-slate-800 border-slate-100 dark:border-slate-800/80 text-slate-700 dark:text-slate-300'
                   }`}
                 >
                   <div
                     className={`w-7 h-7 rounded-xl flex items-center justify-center font-extrabold text-xs shrink-0 ${
-                      isSelected ? 'bg-rose-600 text-white' : 'bg-slate-100 text-slate-600'
+                      isSelected
+                        ? 'bg-rose-600 text-white'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300'
                     }`}
                   >
                     {lesson.chapter}
@@ -280,24 +282,24 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                       <span
                         className={`text-[9px] font-extrabold px-1.5 py-0.2 rounded-md ${
                           lesson.level === 'N5'
-                            ? 'bg-emerald-100 text-emerald-700'
+                            ? 'bg-emerald-100 dark:bg-emerald-950/70 text-emerald-700 dark:text-emerald-300'
                             : lesson.level === 'N4'
-                            ? 'bg-indigo-100 text-indigo-700'
+                            ? 'bg-indigo-100 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300'
                             : lesson.level === 'N3'
-                            ? 'bg-amber-100 text-amber-700'
-                            : 'bg-purple-100 text-purple-700'
+                            ? 'bg-amber-100 dark:bg-amber-950/70 text-amber-700 dark:text-amber-300'
+                            : 'bg-purple-100 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300'
                         }`}
                       >
                         {lesson.level}
                       </span>
                     </div>
-                    <p className="text-[11px] text-slate-500 line-clamp-1 mt-0.5 font-medium">
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5 font-medium">
                       {lesson.theme}
                     </p>
                   </div>
                   <ChevronRight
                     className={`w-3.5 h-3.5 shrink-0 self-center transition-transform ${
-                      isSelected ? 'text-rose-600 translate-x-0.5' : 'text-slate-300'
+                      isSelected ? 'text-rose-600 dark:text-rose-400 translate-x-0.5' : 'text-slate-300 dark:text-slate-600'
                     }`}
                   />
                 </button>
@@ -309,24 +311,24 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
         {/* Selected Lesson Workspace */}
         <div ref={workspaceRef} className="lg:col-span-8 flex flex-col gap-5 scroll-mt-20">
           {/* Lesson Header Card */}
-          <div className="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-6 shadow-2xs">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/90 dark:border-slate-800 p-5 sm:p-6 shadow-2xs">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
               <div className="flex items-center gap-2">
                 <span className="bg-rose-600 text-white text-xs font-extrabold px-3 py-1 rounded-xl shadow-xs">
                   {currentLesson.part.includes('Chuukyuu') ? 'Chuukyu ' : ''}Bab {currentLesson.chapter}
                 </span>
-                <span className="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded-xl">
+                <span className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold px-2.5 py-1 rounded-xl">
                   {currentLesson.part}
                 </span>
                 <span
                   className={`text-xs font-extrabold px-2.5 py-1 rounded-xl ${
                     currentLesson.level === 'N5'
-                      ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                      ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60'
                       : currentLesson.level === 'N4'
-                      ? 'bg-indigo-50 text-indigo-700 border border-indigo-200'
+                      ? 'bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800/60'
                       : currentLesson.level === 'N3'
-                      ? 'bg-amber-50 text-amber-700 border border-amber-200'
-                      : 'bg-purple-50 text-purple-700 border border-purple-200'
+                      ? 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60'
+                      : 'bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800/60'
                   }`}
                 >
                   Target JLPT {currentLesson.level}
@@ -337,7 +339,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                 {onPracticeLesson && (
                   <button
                     onClick={() => onPracticeLesson(currentLesson.chapter, currentLesson.part)}
-                    className="inline-flex items-center gap-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200/80 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 bg-rose-50 dark:bg-rose-950/60 hover:bg-rose-100 dark:hover:bg-rose-900/60 text-rose-700 dark:text-rose-300 border border-rose-200/80 dark:border-rose-900/50 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
                   >
                     <Layers className="w-3.5 h-3.5" />
                     <span>Hafal Kosakata</span>
@@ -346,7 +348,7 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                 {onStartQuiz && (
                   <button
                     onClick={() => onStartQuiz(currentLesson.chapter, currentLesson.part)}
-                    className="inline-flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200/80 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1.5 bg-emerald-50 dark:bg-emerald-950/60 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200/80 dark:border-emerald-900/50 px-3 py-1.5 rounded-xl font-bold text-xs transition-colors cursor-pointer"
                   >
                     <HelpCircle className="w-3.5 h-3.5" />
                     <span>Kuis Bab Ini</span>
@@ -355,22 +357,22 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
               </div>
             </div>
 
-            <h2 className="text-xl sm:text-2xl font-black text-slate-900 mt-2">
+            <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-2">
               {currentLesson.title}
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1 font-medium">
-              <strong className="text-slate-800">Tema Pokok:</strong> {currentLesson.theme}
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 font-medium">
+              <strong className="text-slate-800 dark:text-slate-100">Tema Pokok:</strong> {currentLesson.theme}
             </p>
-            <div className="bg-slate-50 border-l-4 border-rose-500 p-3 rounded-r-2xl mt-3 text-xs text-slate-700 leading-relaxed">
+            <div className="bg-slate-50 dark:bg-slate-800/60 border-l-4 border-rose-500 p-3 rounded-r-2xl mt-3 text-xs text-slate-700 dark:text-slate-200 leading-relaxed">
               {currentLesson.summary}
             </div>
           </div>
 
           {/* Section 1: Grammar Patterns (Bunkei & Reibun) */}
-          <div className="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-6 shadow-2xs flex flex-col gap-4">
-            <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-              <Sparkles className="w-4 h-4 text-rose-600" />
-              <h3 className="text-base font-extrabold text-slate-900">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/90 dark:border-slate-800 p-5 sm:p-6 shadow-2xs flex flex-col gap-4">
+            <div className="flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+              <Sparkles className="w-4 h-4 text-rose-600 dark:text-rose-400" />
+              <h3 className="text-base font-extrabold text-slate-900 dark:text-white">
                 Pola Tata Bahasa &amp; Rumus (文型 Bunkei)
               </h3>
             </div>
@@ -379,52 +381,52 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
               {currentLesson.grammarPatterns.map((gp, idx) => (
                 <div
                   key={gp.id || idx}
-                  className="bg-slate-50/70 hover:bg-slate-50 rounded-2xl border border-slate-200/80 p-4 transition-all"
+                  className="bg-slate-50/70 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-800/70 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-4 transition-all"
                 >
                   <div className="flex items-start justify-between gap-2">
-                    <h4 className="text-sm sm:text-base font-extrabold text-slate-900">
+                    <h4 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
                       {idx + 1}. {gp.pattern}
                     </h4>
                   </div>
 
                   {/* Formula Box */}
-                  <div className="bg-white border border-rose-100 text-rose-700 font-mono text-xs font-semibold px-3 py-2 rounded-xl mt-2 flex items-center gap-2">
-                    <span className="bg-rose-100 text-rose-800 px-1.5 py-0.5 rounded-md text-[10px] uppercase font-bold">
+                  <div className="bg-white dark:bg-slate-900 border border-rose-100 dark:border-rose-950/60 text-rose-700 dark:text-rose-300 font-mono text-xs font-semibold px-3 py-2 rounded-xl mt-2 flex items-center gap-2">
+                    <span className="bg-rose-100 dark:bg-rose-950/80 text-rose-800 dark:text-rose-200 px-1.5 py-0.5 rounded-md text-[10px] uppercase font-bold">
                       Rumus
                     </span>
                     <span className="break-all">{gp.formula}</span>
                   </div>
 
                   {/* Explanation */}
-                  <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
                     {gp.explanation}
                   </p>
 
                   {/* Examples */}
-                  <div className="mt-3 space-y-2 pt-2 border-t border-slate-200/60">
-                    <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">
+                  <div className="mt-3 space-y-2 pt-2 border-t border-slate-200/60 dark:border-slate-700/60">
+                    <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
                       Contoh Kalimat (例文 Reibun):
                     </span>
                     {gp.examples.map((ex, exIdx) => (
                       <div
                         key={exIdx}
-                        className="bg-white p-2.5 sm:p-3 rounded-xl border border-slate-100 flex items-start justify-between gap-3 group"
+                        className="bg-white dark:bg-slate-900 p-2.5 sm:p-3 rounded-xl border border-slate-100 dark:border-slate-800 flex items-start justify-between gap-3 group"
                       >
                         <div className="flex-1 space-y-0.5">
-                          <p className="text-sm sm:text-base font-bold text-slate-900 font-japanese">
+                          <p className="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-japanese">
                             {ex.jp}
                           </p>
-                          <p className="text-xs text-rose-600 font-medium">
+                          <p className="text-xs text-rose-600 dark:text-rose-400 font-medium">
                             {ex.reading}
                           </p>
-                          <p className="text-xs text-slate-600">
+                          <p className="text-xs text-slate-600 dark:text-slate-300">
                             {ex.id}
                           </p>
                         </div>
                         <button
                           onClick={(e) => handleSpeak(ex.jp, ex.reading, e)}
                           title="Dengarkan Pelafalan Audio"
-                          className="p-2 rounded-xl bg-slate-100 hover:bg-rose-100 text-slate-600 hover:text-rose-700 transition-colors shrink-0 cursor-pointer"
+                          className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-rose-100 dark:hover:bg-rose-900/50 text-slate-600 dark:text-slate-300 hover:text-rose-700 dark:hover:text-rose-300 transition-colors shrink-0 cursor-pointer"
                         >
                           <Volume2 className="w-4 h-4" />
                         </button>
@@ -437,14 +439,14 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
           </div>
 
           {/* Section 2: Key Vocabulary (Kotoba) */}
-          <div className="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-6 shadow-2xs flex flex-col gap-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
+          <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/90 dark:border-slate-800 p-5 sm:p-6 shadow-2xs flex flex-col gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-rose-600" />
-                <h3 className="text-base font-extrabold text-slate-900">
+                <CheckCircle2 className="w-4 h-4 text-rose-600 dark:text-rose-400" />
+                <h3 className="text-base font-extrabold text-slate-900 dark:text-white">
                   Kosakata Bab {currentLesson.chapter} (言葉 Kotoba)
                 </h3>
-                <span className="text-xs font-semibold text-slate-400">
+                <span className="text-xs font-semibold text-slate-400 dark:text-slate-500">
                   ({vocabSearch ? `${filteredKeyVocab.length} dari ` : ''}{currentLesson.keyVocab.length} Kata)
                 </span>
               </div>
@@ -455,17 +457,17 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                   placeholder="Cari kata / arti di bab ini..."
                   value={vocabSearch}
                   onChange={(e) => setVocabSearch(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 text-xs rounded-xl pl-8 pr-3 py-1.5 focus:outline-hidden focus:ring-2 focus:ring-rose-400 text-slate-800 placeholder-slate-400"
+                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs rounded-xl pl-8 pr-3 py-1.5 focus:outline-hidden focus:ring-2 focus:ring-rose-400 text-slate-800 dark:text-slate-100 placeholder-slate-400"
                 />
               </div>
             </div>
 
             {filteredKeyVocab.length === 0 ? (
-              <div className="text-center py-8 text-slate-500 text-xs bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+              <div className="text-center py-8 text-slate-500 dark:text-slate-400 text-xs bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-dashed border-slate-200 dark:border-slate-700">
                 Tidak ada kosakata yang cocok dengan kata kunci &quot;{vocabSearch}&quot;.
                 <button
                   onClick={() => setVocabSearch('')}
-                  className="block mx-auto mt-2 text-rose-600 font-bold hover:underline cursor-pointer"
+                  className="block mx-auto mt-2 text-rose-600 dark:text-rose-400 font-bold hover:underline cursor-pointer"
                 >
                   Reset Pencarian
                 </button>
@@ -475,24 +477,24 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                 {filteredKeyVocab.map((vocab, vIdx) => (
                   <div
                     key={vIdx}
-                    className="p-3 bg-slate-50/70 hover:bg-white hover:shadow-xs rounded-2xl border border-slate-200/80 transition-all flex items-center justify-between gap-2.5"
+                    className="p-3 bg-slate-50/70 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 hover:shadow-xs rounded-2xl border border-slate-200/80 dark:border-slate-700/80 transition-all flex items-center justify-between gap-2.5"
                   >
                     <div className="min-w-0 flex-1">
                       <div className="flex items-baseline gap-2">
-                        <span className="text-base font-extrabold text-slate-900 font-japanese">
+                        <span className="text-base font-extrabold text-slate-900 dark:text-white font-japanese">
                           {vocab.jp}
                         </span>
-                        <span className="text-xs text-rose-600 font-semibold truncate">
+                        <span className="text-xs text-rose-600 dark:text-rose-400 font-semibold truncate">
                           {vocab.reading}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-600 mt-0.5 font-medium line-clamp-1" title={vocab.id}>
+                      <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5 font-medium line-clamp-1" title={vocab.id}>
                         {vocab.id}
                       </p>
                     </div>
                     <button
                       onClick={(e) => handleSpeak(vocab.jp, vocab.reading, e)}
-                      className="p-2 rounded-xl bg-white hover:bg-rose-50 text-slate-500 hover:text-rose-600 border border-slate-200/60 shadow-2xs transition-colors shrink-0 cursor-pointer"
+                      className="p-2 rounded-xl bg-white dark:bg-slate-900 hover:bg-rose-50 dark:hover:bg-rose-950/50 text-slate-500 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-300 border border-slate-200/60 dark:border-slate-700 shadow-2xs transition-colors shrink-0 cursor-pointer"
                     >
                       <Volume2 className="w-3.5 h-3.5" />
                     </button>
@@ -504,10 +506,10 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
 
           {/* Section 3: Situational Dialogue (Kaiwa) if present */}
           {currentLesson.dialogue && (
-            <div className="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-6 shadow-2xs flex flex-col gap-4">
-              <div className="flex items-center gap-2 border-b border-slate-100 pb-3">
-                <BookOpen className="w-4 h-4 text-rose-600" />
-                <h3 className="text-base font-extrabold text-slate-900">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/90 dark:border-slate-800 p-5 sm:p-6 shadow-2xs flex flex-col gap-4">
+              <div className="flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+                <BookOpen className="w-4 h-4 text-rose-600 dark:text-rose-400" />
+                <h3 className="text-base font-extrabold text-slate-900 dark:text-white">
                   Percakapan Kontekstual (会話 Kaiwa): {currentLesson.dialogue.title}
                 </h3>
               </div>
@@ -516,25 +518,25 @@ export const MinnaView: React.FC<MinnaViewProps> = ({ speechRate, onPracticeLess
                 {currentLesson.dialogue.lines.map((line, lIdx) => (
                   <div
                     key={lIdx}
-                    className="bg-slate-50/80 p-3 sm:p-4 rounded-2xl border border-slate-200/80 flex items-start gap-3"
+                    className="bg-slate-50/80 dark:bg-slate-800/50 p-3 sm:p-4 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 flex items-start gap-3"
                   >
-                    <div className="w-16 sm:w-20 shrink-0 font-extrabold text-xs text-slate-700 bg-white border border-slate-200/70 px-2 py-1 rounded-lg text-center shadow-2xs">
+                    <div className="w-16 sm:w-20 shrink-0 font-extrabold text-xs text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-700 px-2 py-1 rounded-lg text-center shadow-2xs">
                       {line.speaker}
                     </div>
                     <div className="min-w-0 flex-1 space-y-0.5">
-                      <p className="text-sm sm:text-base font-bold text-slate-900 font-japanese">
+                      <p className="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-japanese">
                         {line.jp}
                       </p>
-                      <p className="text-xs text-rose-600 font-medium">
+                      <p className="text-xs text-rose-600 dark:text-rose-400 font-medium">
                         {line.reading}
                       </p>
-                      <p className="text-xs text-slate-600">
+                      <p className="text-xs text-slate-600 dark:text-slate-300">
                         {line.id}
                       </p>
                     </div>
                     <button
                       onClick={(e) => handleSpeak(line.jp, line.reading, e)}
-                      className="p-2 rounded-xl bg-white hover:bg-rose-100 text-slate-600 hover:text-rose-700 border border-slate-200/60 transition-colors shrink-0 cursor-pointer"
+                      className="p-2 rounded-xl bg-white dark:bg-slate-900 hover:bg-rose-100 dark:hover:bg-rose-900/50 text-slate-600 dark:text-slate-300 hover:text-rose-700 dark:hover:text-rose-300 border border-slate-200/60 dark:border-slate-700 transition-colors shrink-0 cursor-pointer"
                     >
                       <Volume2 className="w-4 h-4" />
                     </button>
